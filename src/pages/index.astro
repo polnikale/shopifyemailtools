@@ -31,6 +31,60 @@ const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.chan
 
   <section class="container py-16"><div class="mb-8"><span class="badge">Store contexts</span><h2 class="mt-3 text-4xl font-black tracking-tight">Email tooling changes by catalog and customer behavior</h2></div><div class="grid gap-4 md:grid-cols-4">{SEGMENTS.map(s=><a class="card" href={`/for/${s.slug}`}><h3 class="font-black">{s.name}</h3><p class="mt-2 text-sm text-slate-600">Plan around {s.pain}.</p></a>)}</div></section>
 
+  <section class="bg-indigo-50/70 py-16">
+    <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
+      <div>
+        <span class="badge">Practical buying rubric</span>
+        <h2 class="mt-3 text-4xl font-black tracking-tight">Score email tools by the jobs your Shopify team repeats every week.</h2>
+        <p class="mt-4 text-slate-700">A useful shortlist should be scored with the same concrete work the team will run after implementation. Give every app a one-to-five score for data access, audience building, message production, automation control, measurement, deliverability, governance, and cost predictability. Then weight the scores by the next ninety days of work instead of by the longest feature list.</p>
+        <p class="mt-4 text-slate-700">This approach keeps a merchant from confusing “powerful” with “useful.” A brand that sends two launches a month may need reusable product blocks, fast approvals, exclusion rules, and clean campaign reporting more than it needs a complex branching canvas. A retention team managing welcome, abandon, replenishment, winback, loyalty, and post-purchase education may need event depth, reusable segments, QA controls, and holdout measurement before it worries about template variety.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="card"><h3 class="font-black text-slate-950">1. Shopify data depth</h3><p class="mt-2 text-sm text-slate-600">Check whether the app can use order count, products purchased, variant, collection, discount use, checkout status, fulfillment, tags, location, subscription status, loyalty tier, and customer lifetime value without exports.</p></div>
+        <div class="card"><h3 class="font-black text-slate-950">2. Audience and suppression control</h3><p class="mt-2 text-sm text-slate-600">The app should make it easy to include the right buyers and exclude recent purchasers, refund risk, support cases, unengaged subscribers, and customers already receiving a conflicting flow.</p></div>
+        <div class="card"><h3 class="font-black text-slate-950">3. Production workflow</h3><p class="mt-2 text-sm text-slate-600">Look for reusable sections, product-aware blocks, mobile previews, approval notes, naming conventions, preview data, and a way to update common content without rebuilding every email.</p></div>
+        <div class="card"><h3 class="font-black text-slate-950">4. Reporting quality</h3><p class="mt-2 text-sm text-slate-600">Prefer reporting that separates campaign revenue from flow revenue, full-price orders from discounted orders, new buyers from repeat buyers, and attributed clicks from incremental lift.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-16">
+    <div class="grid gap-8 lg:grid-cols-3">
+      <article class="card lg:col-span-2 prose-shopify">
+        <h2>Implementation plan: a 30-day Shopify email stack build</h2>
+        <p><strong>Days 1–3: audit the current customer file.</strong> Export nothing unless you must; instead inspect how the tool reads Shopify customers, orders, products, consent, discounts, and checkout events. Identify duplicates, inactive subscribers, customers with missing consent, and high-value segments that need special treatment. Decide which tags and metafields are trustworthy enough to drive messages.</p>
+        <p><strong>Days 4–7: rebuild the essential journeys.</strong> Start with welcome, abandoned checkout, post-purchase education, replenishment or cross-sell, and winback. Each journey needs an entry event, delay logic, exit rule, message purpose, product logic, and suppression list. If the app cannot express those decisions cleanly, it will become harder to operate as the store grows.</p>
+        <p><strong>Days 8–14: create a campaign operating system.</strong> Build reusable layouts for product launches, editorial newsletters, sale announcements, back-in-stock messages, and customer education. Add a pre-send checklist for audience size, exclusions, preview data, UTM naming, discount code rules, inventory availability, and mobile rendering. The best email tool makes this checklist shorter, not longer.</p>
+        <p><strong>Days 15–21: protect deliverability and consent.</strong> Warm new sending domains carefully, suppress chronically unengaged subscribers, avoid sudden volume spikes, and separate transactional-style notices from promotional campaigns. A broad Shopify email tool should help the team send more relevant messages, not simply send more messages.</p>
+        <p><strong>Days 22–30: measure and decide what stays.</strong> Review placed order rate, revenue per recipient, unsubscribe rate, complaint rate, discount dependency, repeat purchase, and the qualitative reasons customers reply. Keep flows that help customers make better decisions. Rewrite or pause anything that creates sales only by adding pressure or coupons.</p>
+      </article>
+      <aside class="card h-fit">
+        <h3 class="text-2xl font-black text-slate-950">Common mistakes to avoid</h3>
+        <ul class="mt-4 space-y-3 text-sm text-slate-700">
+          <li><strong>Buying for the agency demo.</strong> A beautiful demo can hide a workflow that is too slow for a small merchant.</li>
+          <li><strong>Letting attribution decide everything.</strong> Email can claim revenue it did not create; use holdouts and customer-stage reporting where possible.</li>
+          <li><strong>Ignoring exclusions.</strong> Recent buyers, support cases, wholesale accounts, and customers in another promotion often need to be suppressed.</li>
+          <li><strong>Discounting by default.</strong> Many email jobs need clarity, proof, or timing before they need a coupon.</li>
+          <li><strong>Forgetting migration risk.</strong> Moving tools can break forms, flows, tags, DNS, templates, analytics, and historical segments if nobody owns the checklist.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="max-w-4xl"><span class="badge">Category advice</span><h2 class="mt-3 text-4xl font-black tracking-tight">The right email setup changes by store type.</h2><p class="mt-4 text-slate-600">Use store context to decide which capabilities matter first. The same app can be excellent for one catalog and frustrating for another if its segmentation model does not match customer behavior.</p></div>
+      <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div class="card"><h3 class="font-black">Fashion and drops</h3><p class="mt-2 text-sm text-slate-600">Prioritize size and variant availability, waitlists, drop calendars, VIP early access, back-in-stock coordination, and suppression for customers who bought the promoted item recently.</p></div>
+        <div class="card"><h3 class="font-black">Beauty, supplements, and food</h3><p class="mt-2 text-sm text-slate-600">Prioritize replenishment timing, subscription context, routine education, claims-safe copy review, bundles, and segments based on usage cycle rather than only last purchase date.</p></div>
+        <div class="card"><h3 class="font-black">High-AOV and jewelry</h3><p class="mt-2 text-sm text-slate-600">Prioritize trust proof, financing education, consultation prompts, reviews, warranty details, gift timing, and slower nurture sequences that do not rush consideration.</p></div>
+        <div class="card"><h3 class="font-black">Home goods and considered catalogs</h3><p class="mt-2 text-sm text-slate-600">Prioritize browse behavior, style preference collection, buying guides, room inspiration, delayed decision windows, and segmentation around categories viewed rather than only carts started.</p></div>
+        <div class="card"><h3 class="font-black">Subscription boxes</h3><p class="mt-2 text-sm text-slate-600">Prioritize upcoming-box previews, skip and pause education, churn signals, loyalty moments, gift subscriptions, and winback logic that recognizes former subscribers differently from one-time buyers.</p></div>
+        <div class="card"><h3 class="font-black">B2B and wholesale</h3><p class="mt-2 text-sm text-slate-600">Prioritize account approval state, rep handoff, bulk reorder reminders, quote or invoice workflows, and suppression rules that keep wholesale terms separate from direct-to-consumer promotions.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-[#0b1028] py-16 text-white">
     <div class="container grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
       <div>
