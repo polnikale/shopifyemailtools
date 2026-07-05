@@ -2,10 +2,10 @@
 import type { SiteProfile } from '../content';
 const { site } = Astro.props as { site: SiteProfile };
 ---
-<header class="sticky top-0 z-50 border-b border-emerald-900/10 bg-white/85 backdrop-blur-xl">
+<header class="sticky top-0 z-50 border-b border-indigo-900/10 bg-white/90 backdrop-blur-xl">
   <div class="container flex h-16 items-center justify-between">
-    <a href="/" class="flex items-center gap-3 font-bold text-slate-950">
-      <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-slate-950 to-emerald-500 text-white shadow-lg shadow-emerald-500/20">S</span>
+    <a href="/" class="flex items-center gap-3 font-black text-slate-950">
+      <span class="grid h-9 w-9 place-items-center rounded-md bg-gradient-to-br from-indigo-700 to-violet-400 text-white shadow-lg shadow-indigo-500/20">E</span>
       <span>{site.name}</span>
     </a>
     <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
