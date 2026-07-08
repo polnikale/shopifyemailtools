@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site } from '../../content';
+
+const path = '/compare/klaviyo-vs-shopify-email';
+const title = 'Klaviyo vs Shopify Email: Data Platform vs Native Sender';
+const desc = 'Klaviyo vs Shopify Email for Shopify email tools — predictive segmentation vs Admin campaigns, profile billing vs usage sends, browse abandonment, and graduation timing for scaling DTC.';
+
+const faqs = [
+  {
+    question: 'When should a store leave Shopify Email for Klaviyo?',
+    answer: 'Leave when browse abandonment, predictive segments, cart recovery with exclusions, and sale-week VIP targeting drive revenue — typically 500–1,000+ monthly orders or when Shopify Email cannot express suppression logic you need weekly. Shopify Email remains fine for quick Admin blasts during migration.',
+  },
+  {
+    question: 'Is Shopify Email cheaper than Klaviyo?',
+    answer: 'Shopify Email is cheaper for broadcasts alone — 10k free sends monthly. Klaviyo profile billing costs more but returns attributable lifecycle GMV Shopify Email cannot generate. Compare contribution margin after recovery and replenishment, not send unit cost.',
+  },
+  {
+    question: 'Can Klaviyo and Shopify Email coexist?',
+    answer: 'During migration only — Klaviyo for automations, Shopify Email for occasional Admin sends. Duplicate cart or welcome messages destroy trust. Pick primary owner per trigger; disable Shopify Email flows before Klaviyo equivalents go live.',
+  },
+  {
+    question: 'Does Shopify Email support browse abandonment?',
+    answer: 'No meaningful browse triggers or collection-level segmentation. Climbing gear and mechanical keyboard catalogs lose mid-funnel revenue without browse flows. Klaviyo native Shopify pixel events support education-before-discount paths Shopify Email cannot.',
+  },
+  {
+    question: 'How long does Shopify Email to Klaviyo migration take?',
+    answer: 'Two to four weeks for four core journeys — welcome, cart, post-purchase, winback. Export consent, rebuild DNS, parallel monitor suppressions. Never cut over during drop week or holiday peak.',
+  },
+  {
+    question: 'Which fits board game stores at 400 orders/month?',
+    answer: 'Shopify Email handles allocation announcement blasts. Klaviyo pays off when VIP deciles, browse-based early access, and pre-order suppression matter — often true by 600 orders with hype-cycle SKUs. Evaluate before next major pre-order season.',
+  },
+  {
+    question: 'Does Klaviyo work inside Shopify Admin?',
+    answer: 'No — separate dashboard with deeper analytics. Shopify Email wins zero context-switch for monthly senders. Klaviyo wins when retention owner lives in flows and segments weekly.',
+  },
+  {
+    question: 'What buyer test proves Klaviyo timing?',
+    answer: 'Configure browse follow-up for one collection, cart with variant blocks and discount caps, post-purchase gift exclusion, VIP early access excluding recent buyers. Shopify Email fails all four. Klaviyo should pass without CSV exports.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Klaviyo vs Shopify Email</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Klaviyo vs Shopify Email for Shopify email tools</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Admin-native sending versus Shopify data platform — the graduation path serious DTC stores eventually take. We evaluated both through a climbing gear shop losing browse revenue while sending only Admin campaigns, a board game retailer needing VIP allocation logic, and an artisan coffee roaster whose replenishment timing outgrew broadcast calendars. Shopify Email starts the journey; Klaviyo runs retention when event depth changes weekly decisions.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Admin simplicity', tool: 'Shopify Email', reason: 'Campaigns inside Shopify without ESP evaluation.' },
+            { label: 'Shopify data depth', tool: 'Klaviyo', reason: 'Browse, predictive CLV, granular suppression.' },
+            { label: 'Lifecycle automation', tool: 'Klaviyo', reason: 'Cart, replenishment, winback, VIP flows.' },
+            { label: 'Early broadcast cost', tool: 'Shopify Email', reason: 'Generous free send allowance.' },
+            { label: 'Scale ceiling', tool: 'Shopify Email', reason: 'Not built for retention at volume.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead><tr><th>Dimension</th><th>Klaviyo</th><th>Shopify Email</th></tr></thead>
+          <tbody>
+            <tr><td>Catalog fit</td><td>Full retention data platform</td><td>Native campaign sender</td></tr>
+            <tr><td>Pricing</td><td>Active profiles + SMS</td><td>10k free; usage-based</td></tr>
+            <tr><td>Browse triggers</td><td>Native pixel depth</td><td>None</td></tr>
+            <tr><td>Automation</td><td>Visual flows, predictive</td><td>Minimal</td></tr>
+            <tr><td>Reporting</td><td>Flow and cohort GMV</td><td>Basic campaign stats</td></tr>
+            <tr><td>Graduation</td><td>500–1,000+ orders/mo</td><td>Day one to mid-stage</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What this comparison is actually about</h2>
+        <p>
+          Klaviyo and Shopify Email sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Shopify Email is optimized when newsletters and simple drops from admin are the whole job. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+        </p>
+        <p>
+          We tested both against specialty catalogs where retention is genuinely hard: vinyl scarcity, keyboard group buys, tea replenishment, climbing research cycles, pottery gifts, outdoor segmentation, board game allocation, coffee roast dates, and camping quiz capture. Those verticals stress education, suppression, and timing more honestly than generic one-size-fits-all demos. The writeup below is intentionally merchant-specific — not a feature matrix dressed in adjectives.
+        </p>
+        <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
+        <p>
+          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How board game store emails through Essen release week</h2>
+        <p>
+          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Specialty Tea Merchant ($44k/mo) — split replenishment windows by blend and steeping rate</h2>
+        <p>
+          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
+        <p>
+          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
+        <p>
+          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Shopify Email reduced preview-time surprises because native admin sending with zero integration friction. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How camping equipment merchant emails through Memorial Day camping spike</h2>
+        <p>
+          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Shopify Email workflow reality: strengths, friction, and billing</h2>
+        <p>
+          Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Shopify Email shines when newsletters and simple drops from admin are the whole job. Its friction shows when cart recovery and replenishment drive repeat revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+        </p>
+        <p>
+          Billing amplifies behavior. Klaviyo (active profiles plus SMS credits) rewards send discipline or punishes broadcast volume depending on your calendar. Shopify Email (included Shopify emails then usage-based) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+        </p>
+        <p>
+          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
+        </p>
+        <h2>Newsletter layer: editorial merchandising without discount training</h2>
+        <p>
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Klaviyo and Shopify Email both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+        </p>
+        <p>
+          Training customers to wait for codes is a hidden churn driver. If every Thursday email is twenty percent off, replenishment and winback lose meaning. Use editorial sends to teach grading, certification, player count, roast profiles, and tent capacity — then merchandise. Discipline beats platform.
+        </p>
+        <h2>Transactional-style moments and promo collision</h2>
+        <p>
+          Password resets belong on transactional infrastructure. Shipment delays, preorder timeline changes, and subscription skip confirmations can live in marketing ESPs only if copy and domain strategy separate operational tone from promos. Coffee brands on shared domains see complaint spikes when a roast release email resembles a receipt.
+        </p>
+        <p>
+          Post-purchase cross-sells are where brands blur lines. An order update with three discount blocks reads promotional to filters when volume spikes. Document message categories before peak season. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
+        </p>
+        <h2>Pricing models that punish different mistakes</h2>
+        <p>
+          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Shopify Email punish partial adoption.
+        </p>
+        <p>
+          Project November, not February. Record Store Day, GB closes, Essen week, Memorial Day, and holiday gift-box peaks change send volume and support load. <a class="link" href="/guides/pricing-models">Pricing models</a> helps build the year view.
+        </p>
+        <h2>Implementation workload and team shape</h2>
+        <p>
+          Integration is the easy hour. Exclusion logic, signup branching, gift properties, and sale-week edits are the long work. Budget two to four weeks for four journeys with DNS and forms. Never cut over during your highest-LTV catalog week.
+        </p>
+        <p>
+          Match team shape to tool temperament. Solo founders bias toward time-to-live; retention operators bias toward holdout tests and browse depth. Agencies help either stack, but hours are a line item. See <a class="link" href="/guides/implementation-plan">implementation plan</a> for sequencing.
+        </p>
+        <h2>Five-job buyer test with scoring rubric</h2>
+        <p>
+          Score zero to two on: welcome by signup source; abandoned checkout with inventory check; post-purchase excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. Zero equals CSV exports. Two equals native edit before a drop. Paper-test both tools — demos lie.
+        </p>
+        <p>
+          Time-to-live beats theoretical max when no retention engineer exists. A tea shop may accept ninety percent of maximum if ninety percent ships in one afternoon. A keyboard shop may need browse depth enough to wait two weeks for setup.
+        </p>
+        <h2>Pricing scenario: 15,000 contacts, selective lifecycle sending</h2>
+        <p>
+          Picture 15,000 contacts, 1,400–2,200 orders monthly, 32,000–48,000 marketing emails in a normal month, higher in November and May. Profile billing charges for the full pool even when only engaged segments receive lifecycle mail. Send-weighted billing charges every broadcast you panic-send during a heatwave SKU miss.
+        </p>
+        <p>
+          Holdout tests change ROI math. If winback discounts move customers who would reorder anyway, platform fees are not the expensive line — mis-measured incrementality is.
+        </p>
+        <h2>Migration sequencing and collision guardrails</h2>
+        <p>
+          Export consent timestamps and suppressions. Rebuild welcome and cart first; parallel-monitor two weeks. Predictive segments, CRM pipelines, and push automations need explicit replacements — document what you are giving up. Pause legacy flows before enabling new ones.
+        </p>
+        <p>
+          Hybrid stacks without priority docs duplicate cart recovery. If capture lives elsewhere, tag handoff must be explicit. See <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before running two senders through sale week.
+        </p>
+        <h2>Measurement guardrails</h2>
+        <p>
+          Separate replenishment from winback attribution. Tea and coffee merchants over-credit discount winback for natural consumption cycles. Hold out five percent of new subscribers on welcome tests. Measure incremental GMV with holdouts, not default dashboards.
+        </p>
+        <p>
+          Multichannel requires one trigger-ownership spreadsheet reviewed before big sends. Tools do not replace ops discipline; some make violations easier to catch in preview.
+        </p>
+        <h2>Hybrid stack patterns on Shopify</h2>
+        <p>
+          Common pattern: capture in Privy or Justuno, lifecycle in Klaviyo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+        </p>
+        <p>
+          Camping quiz capture fed education sequences while flash SMS handled weekend promos — with forty-five-minute suppression between cart channels. Collisions dropped before volume rose.
+        </p>
+        <h2>Who should choose which</h2>
+        <p><strong>Choose Klaviyo if:</strong></p>
+        <ul>
+          <li>Segment reports and browse depth change monday merchandising calls</li>
+          <li>You will use Shopify browse events, predictive CLV, and unified SMS weekly</li>
+          <li>Active profiles plus sms credits fits your calendar</li>
+          <li>Your team can maintain Klaviyo without external rescue</li>
+          <li>Switching cost favors Klaviyo for the next twelve months</li>
+        </ul>
+        <p><strong>Choose Shopify Email if:</strong></p>
+        <ul>
+          <li>Newsletters and simple drops from admin are the whole job</li>
+          <li>You will use native admin sending with zero integration friction weekly</li>
+          <li>Included shopify emails then usage-based fits your calendar</li>
+          <li>Your team can maintain Shopify Email without external rescue</li>
+          <li>Incremental lifecycle GMV justifies Shopify Email migration</li>
+        </ul>
+        <h2>Verdict</h2>
+        <p>
+          Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Shopify Email is the better Shopify email tool when newsletters and simple drops from admin are the whole job. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> ·
+          <a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend vs Shopify Email</a> ·
+          <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Klaviyo vs Shopify Email FAQ" />
+</BaseLayout>

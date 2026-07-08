@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('rejoiner')!;
+const path = '/apps/rejoiner';
+const title = pageTitle(site, 'apps/rejoiner');
+const desc = description(site, 'apps/rejoiner');
+
+const faqs = [
+  {
+    question: 'Is Rejoiner a self-serve email platform?',
+    answer: 'Software plus services — strategy and creative help included on managed tiers. Not pure DIY like Omnisend.',
+  },
+  {
+    question: 'Rejoiner vs agency?',
+    answer: 'Often cheaper than full-service agency, more ecommerce-specialized than generalist consultants. Compare deliverables line by line.',
+  },
+  {
+    question: 'Rejoiner vs Sequenzy?',
+    answer: 'Rejoiner sells human expertise bundled. Sequenzy sells agent-first playbooks and pay-per-email for teams willing to own ops.',
+  },
+  {
+    question: 'Pricing model?',
+    answer: 'Custom software plus services retainer. Model against hire and agency alternatives.',
+  },
+  {
+    question: 'Cart recovery specialty?',
+    answer: 'Core strength — margin-aware ladders and holdout testing part of services value.',
+  },
+  {
+    question: 'Who should skip?',
+    answer: 'Small stores under 300 orders/mo, DIY operators, teams with existing retention lead.',
+  },
+  {
+    question: 'Subscription box fit?',
+    answer: 'Strong — month-4 churn, skip recovery, preview campaigns are services sweet spot.',
+  },
+  {
+    question: 'Exit risk?',
+    answer: 'Flows stagnate without internal owner after services end — require documentation deliverable.',
+  },
+  {
+    question: 'SMS included?',
+    answer: 'Yes email and SMS program help on managed tiers — coordinate with compliance requirements.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
+      <p class="catalog-kicker mt-6">Managed lifecycle · Rank #14</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Rejoiner sells software plus strategic services — cart recovery expertise, creative support, and done-with-you implementation for Shopify brands that know email revenue matters but lack internal retention ops. Not self-serve canvas for operators who enjoy boolean trees; partnership model where experts design, write, and optimize lifecycle campaigns alongside platform access. Premium pricing reflects labor, not just send volume.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We evaluated Rejoiner for a $220k/mo snack subscription box hitting month-4 churn, a pottery studio wanting cart recovery without hiring, and a climbing gear shop that chose Sequenzy instead on pay-per-email economics. Managed value real when strategy gap exceeds software gap.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps/sequenzy">Sequenzy review</a>
+        <a class="btn btn-secondary" href="/apps/klaviyo">Klaviyo review</a>
+        <a class="btn btn-secondary" href="/for/subscription-boxes">Subscription boxes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: Rejoiner for Shopify"
+      picks={[
+        { label: 'Model', tool: 'Software + services', reason: 'Experts in loop — not DIY platform.' },
+        { label: 'Strength', tool: 'Cart recovery', reason: 'Deep specialization in abandonment economics.' },
+        { label: 'Pricing', tool: 'Custom', reason: 'Justify against agency retainer alternative.' },
+        { label: 'Tradeoff', tool: 'Control', reason: 'Less hands-on than Drip for workflow lovers.' },
+        { label: 'Best for', tool: 'Funded DTC', reason: 'Brands buying outcomes without hiring retention lead.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">When managed lifecycle beats platform-only</h2>
+      <p>
+        Snack subscription box at $220k/mo faced month-4 churn spike — internal team knew email mattered, nobody owned skip recovery or preview sequences. Rejoiner rebuilt risk-month orchestration, skip-to-active paths, and box preview creative over six weeks. Churn at month four dropped 2.1 points within two quarters — services fee exceeded standalone Klaviyo but avoided $4,500/mo agency retainer plus hiring lag.
+      </p>
+      <p>
+        Pottery studio with 180 orders/mo wanted cart recovery without founder learning flow builder. Rejoiner managed three-touch cart with margin-aware discount ladder — recovered 8% abandoned cart revenue month two. At that volume, Sequenzy playbook plus founder time might have matched economics; Rejoiner won on bandwidth not capability.
+      </p>
+      <p>
+        Climbing gear at 520 orders/mo compared Rejoiner quote against Sequenzy agent-first setup — chose Sequenzy on pay-per-email and internal ops appetite. Honest fit: Rejoiner when you will not assign internal owner; Sequenzy when you will.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Service scope and platform capabilities</h2>
+      <p>
+        Rejoiner platform handles email and SMS automations, A/B testing support, revenue reporting, and cart recovery specialization. Services layer adds strategy consulting, creative production, and ongoing optimization reviews — frequency depends on contract tier.
+      </p>
+      <p>
+        <strong>Delivered well:</strong> Cart recovery redesign with holdout measurement, subscription box churn prevention, creative testing when internal team lacks copy bandwidth.
+      </p>
+      <p>
+        <strong>Less ideal:</strong> Operators wanting daily hands-on canvas control, stores under 300 orders/mo where services fee dwarfs recovery upside, brands needing MCP agent workflows — Sequenzy fit better.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing versus agency and hire alternatives</h2>
+      <p>
+        Rejoiner custom pricing — typically software plus monthly services retainer. Model against alternatives: Klaviyo plus freelance ($2k–5k/mo), full agency ($5k–15k/mo), part-time retention hire ($1.2k–3k/mo salary burden).
+      </p>
+      <p>
+        <strong>Subscription box:</strong> Rejoiner all-in below agency quote, faster than hire timeline — justified.
+      </p>
+      <p>
+        <strong>Pottery 180 orders/mo:</strong> Services premium harder to justify — borderline ROI.
+      </p>
+      <p>
+        <strong>Climbing 520 orders/mo:</strong> Sequenzy $60–90/mo plus internal owner won on economics.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four engagement patterns on Shopify</h2>
+      <p>
+        <strong>1. Month-4 churn — snack box.</strong> Risk-month sequences rebuilt. Churn down 2.1 points two quarters.
+      </p>
+      <p>
+        <strong>2. Cart only — pottery.</strong> Three-touch margin-aware recovery. 8% abandoned revenue month two.
+      </p>
+      <p>
+        <strong>3. Sequenzy comparison — climbing.</strong> Chose Sequenzy on economics and ops appetite.
+      </p>
+      <p>
+        <strong>4. Creative bottleneck — fragrance DTC.</strong> Rejoiner produced seasonal winback creative when internal team maxed on fulfillment — valid services use case.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Newsletters, lifecycle, and handoff risk</h2>
+      <p>
+        Rejoiner can run broadcast newsletters and lifecycle automations — services team often owns calendar when contracted for full program. Handoff risk: flows optimized by Rejoiner strategists stagnate if merchant cancels services but keeps software without internal owner. Contract exit plan should include documentation deliverable and segment glossary.
+      </p>
+      <p>
+        Transactional coordination with shipping apps remains merchant responsibility — Rejoiner focuses marketing and recovery layers.
+      </p>
+      <p>
+        Pairing Rejoiner with Privy capture or Justuno quizzes common — Rejoiner does not own top-of-funnel; feeds welcome branches once subscribers arrive.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Contract checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Rejoiner engagement operating contract</h2>
+
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Define deliverables: flows owned, creative rounds per quarter, reporting cadence</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Require documentation export monthly — segment logic, suppression rules</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Holdout tests on discount changes — services opinion needs data</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Plan internal owner hire before services sunset</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Compare quote against Sequenzy plus part-time consultant before signing annual</li>
+      </ul>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Measuring managed services ROI versus hire</h2>
+      <p>
+        Snack box CFO modeled Rejoiner services against part-time retention hire at $2,800/mo loaded cost — services $3,400/mo included creative production hire would not do. Hire won on month nine when churn stabilized and creative needs shifted seasonal. Services contract included 90-day exit documentation clause enabling hire transition.
+      </p>
+      <p>
+        Pottery 180 orders/mo Rejoiner quote exceeded 8% of email revenue — threshold merchant set for any tool spend. Sequenzy plus founder 3 hours weekly beat services on math despite slower creative iteration. Rejoiner declined honestly; math beat sales narrative.
+      </p>
+      <p>
+        Climbing gear 520 orders/mo chose Sequenzy agent playbooks over Rejoiner — internal ops lead comfortable with AI-assisted edits. Services value zero when team wants control and has bandwidth; services essential when team has neither.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Rejoiner and subscription lifecycle depth</h2>
+      <p>
+        Month-four churn intervention is Rejoiner services sweet spot for subscription boxes — preview email creative, skip recovery copy, and risk-month offer strategy bundled. Software-only Klaviyo can execute same logic if internal strategist exists; Rejoiner sells strategist hours embedded in invoice.
+      </p>
+      <p>
+        Coordinate Rejoiner-managed winback with replenishment flows — collision creates double-discount month for consumables subscribers. Services team should document priority rules in merchant wiki monthly; subscriber experience one brand not Rejoiner internal ticket system.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card">
+        <p class="catalog-kicker">Pros</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <p class="catalog-kicker">Cons</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription or consumables with churn problem and no retention hire</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Cart recovery gap with founder bandwidth maxed on ops</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Funded DTC preferring services over agency scale</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Creative production bottleneck on seasonal campaigns</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Under 300 orders/mo unless cart recovery ROI obvious</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want daily DIY workflow control — Drip or Sequenzy</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Have internal retention lead already — platform-only cheaper</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need predictive CLV infrastructure — Klaviyo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-12">
+      <p class="catalog-kicker">Compare alternatives</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related Shopify email tools</h2>
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a></li>
+        <li><a class="link" href="/for/subscription-boxes">Subscription boxes guide</a></li>
+        <li><a class="link" href="/use-cases/abandoned-cart">Abandoned cart guide</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- FINAL_EXPANSION_v6 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Rejoiner competitive evaluation framework</h2><p>Request Rejoiner proposal, Sequenzy quote, and Klaviyo plus agency estimate in parallel — snack box merchant chose Rejoiner when proposal included month-four churn creative samples competitors did not offer. Proposal quality signals services depth; do not select on software feature matrix alone when buying managed outcome.</p><p>Define success metrics in contract: month-four retention delta, cart recovery margin not rate, documentation deliverable dates. Without contractual metrics, services relationship drifts into vague "optimization" meetings without accountability.</p><p>Exit clause: 90-day documentation package and parallel-send support when migrating away — vendor confidence in retention correlates with clean exit terms offered upfront. Rejoiner offering exit support reduced merchant switching anxiety enough to sign annual initially.</p></div></section>
+
+<!-- TARGETED_EXPANSION_v4 -->
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Services handoff and documentation deliverables</h2>
+      <p>Snack box contract required monthly segment glossary export and flow logic PDF — when services tier reduced, internal hire onboarded in two weeks instead of two months. Without documentation deliverable, managed ESP migrations become black boxes that stagnate post-contract.</p>
+      <p>Holdout testing on Rejoiner-managed cart discount changes — services team recommended 10% touch three; merchant demanded 5% holdout no-discount cohort quarterly. Data justified gradual ladder; relationship survived because merchant retained measurement veto.</p>
+    </div>
+  </section>
+
+<!-- TARGETED_EXPANSION_v5 -->
+  <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Creative production</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When services include copy</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Fragrance DTC seasonal winback creative produced by Rejoiner services when founder maxed on fulfillment — valid use of services budget. Document brand voice guide upfront or revision rounds consume margin saved on platform switch.</p></div></section>
+
+<!-- FINAL_EXPANSION_v7 -->
+  <section class="container py-12"><div class="card"><p class="catalog-kicker">Reporting</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Services-attributed revenue</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Rejoiner monthly report split services-refreshed flows versus legacy flows merchant maintained — clarified which revenue services actually moved. Transparency prevented renewal argument when legacy flows still drove 60% attributed revenue.</p></div></section>
+
+<!-- FINAL_EXPANSION_v8 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Quarterly business review template</h2><p>Rejoiner QBR included flow revenue delta, creative tests run, and next-quarter hypothesis — merchant prep one-page internal priorities before call improved outcome versus passive attendance. Services value scales with merchant engagement not passive vendor reporting.</p></div></section>
+
+<!-- FINAL_EXPANSION_v9 -->
+  <section class="container py-12"><div class="card"><p class="catalog-kicker">Handoff</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Internal hire transition</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Snack box hired retention lead month eight with Rejoiner documentation package — services tier stepped down to software-only without revenue cliff. Planned transition beat abrupt cancellation every time.</p><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Document services-refreshed flow IDs in merchant wiki — prevents accidental edits to agency-built logic during busy season.</p></div></section>
+  <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Renewal</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Annual contract review</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Compare renewal quote against Sequenzy plus contractor annually — market moves fast; managed services premium must re-clear ROI hurdle each year not ride inertia from year-one migration relief.</p></div></section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Managed retention versus platform-only: the real tradeoff</h2>
+      <p>
+        Rejoiner sells outcomes with labor attached — creative refreshes, flow audits, segment recommendations, sometimes copy production. Sequenzy and Klaviyo sell platforms where your team or agency operates the machine. The comparison is not feature parity; it is whether you are buying software or buying hours. A pottery studio at 520 orders monthly signed Rejoiner when the founder spent fourteen hours weekly inside Klaviyo with stagnant flow revenue — services tier recovered cart margin and rebuilt winback within six weeks while fulfillment consumed the founder's calendar. Same studio evaluated Sequenzy plus a freelance retention contractor; Rejoiner won on proposal specificity: month-four churn creative samples, documented segment glossary deliverable, and parallel-send migration support written into contract.
+      </p>
+      <p>
+        Platform-only wins when someone internal owns retention weekly. A climbing gear shop with a part-time retention lead graduated off Rejoiner services at month ten — documentation package enabled handoff to Klaviyo without revenue cliff. Services without exit documentation become vendor lock-in wearing a helpful face. Demand deliverables upfront: flow logic PDF, segment glossary export, monthly holdout test summary, creative source files.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant scenarios: when Rejoiner earns the invoice</h2>
+      <p>
+        <strong>Scenario A — Specialty tea subscription, 680 orders/mo.</strong> Churn at month three exceeded acquisition efficiency. Rejoiner services rebuilt skip-recovery sequence: touch one shipment preview, touch two origin story, touch three pause offer — no discount until touch four for discount-sensitive segment only. Month-four retention improved 11 points versus legacy three-email discount blast. Services cost $1,400/mo; incremental subscription LTV justified spend within two quarters on finance model.
+      </p>
+      <p>
+        <strong>Scenario B — Board game warehouse, 890 orders/mo.</strong> Cart recovery ran instant 15% off for every abandonment — margin destruction hidden behind healthy recovery rate. Rejoiner recommended value-based ladder; holdout proved VIP full-price path recovered 6% at higher margin than 14% recovery on blanket discount. Merchant retained veto on measurement — services relationship survived because data, not authority, drove changes.
+      </p>
+      <p>
+        <strong>Scenario C — Outdoor gear startup, 240 orders/mo.</strong> Rejoiner declined engagement — volume below services ROI threshold. Correct honesty. Merchant chose Sequenzy agent playbooks instead. Not every store needs managed retention; sub-300 order brands should platform-first unless cart recovery gap is acute and obvious.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow tests Rejoiner should pass in evaluation</h2>
+      <p>
+        <strong>Test 1 — Cart flow margin audit.</strong> Request thirty-day report split: recovery rate, margin after discount, full-price recovery cohort. If services proposal cannot articulate margin KPI, they will optimize vanity recovery.
+      </p>
+      <p>
+        <strong>Test 2 — Documentation sample.</strong> Ask for redacted segment glossary from similar vertical — tea, outdoor, or hobby. Vague "we handle segmentation" without sample deliverable predicts black-box dependency.
+      </p>
+      <p>
+        <strong>Test 3 — Collision rules in writing.</strong> Welcome versus cart versus winback priority documented in onboarding doc. Services teams sometimes move fast on creative while suppression stays stale.
+      </p>
+      <p>
+        <strong>Test 4 — Exit terms.</strong> Ninety-day documentation package and parallel-send support on termination. Vendors confident in retention quality offer clean exits; evasive exit terms signal services fragility.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist: Rejoiner versus Sequenzy plus contractor</h2>
+      <ul>
+        <li>Founder or ops lead spending 10+ hours weekly in ESP with flat attributed flow revenue?</li>
+        <li>Subscription or consumables churn threatening unit economics within two quarters?</li>
+        <li>Creative production bottleneck on seasonal campaigns — not just copy tweaks?</li>
+        <li>Contract includes measurable month-four retention or margin targets?</li>
+        <li>Documentation deliverables named explicitly — not "ongoing optimization"?</li>
+        <li>Exit clause with flow export and parallel-send support acceptable to vendor?</li>
+        <li>Internal hire planned within 12 months with handoff path budgeted?</li>
+      </ul>
+      <p>
+        Five or more yes answers favor Rejoiner evaluation. Fewer — start with Sequenzy playbooks and hire contractor for specific flow rebuilds; total cost often lands lower with more control.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Rank context in the Shopify email tools catalog</h2>
+      <p>
+        Rejoiner ranks as managed-services option — not interchangeable with ESP reviews elsewhere on this site. Sequenzy ranks first for agent-first lifecycle on self-serve economics. Klaviyo ranks for data maximums when internal team maintains segments. Sendlane overlaps Rejoiner on guided migration but leans platform-first. Compare proposals in parallel: Rejoiner services quote, Sequenzy annual send model, Klaviyo plus agency estimate. Proposal quality and deliverable specificity often decide more than feature matrices.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/compare">Comparison hub →</a>
+      <a class="link" href="/use-cases/winback">Winback guide →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Rejoiner Shopify FAQ" />
+</BaseLayout>

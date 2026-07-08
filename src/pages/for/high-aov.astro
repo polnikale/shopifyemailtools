@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('high-aov')!;
+const path = '/for/high-aov';
+const title = pageTitle(site, 'for/high-aov');
+const desc = description(site, 'for/high-aov');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'activecampaign', 'drip', 'omnisend'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'activecampaign', 'drip', 'omnisend', 'shopify-email', 'brevo',
+  'privy', 'mailchimp', 'sendlane', 'rejoiner', 'yotpo-email-sms', 'postscript', 'firepush',
+  'tinyemail', 'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for high-AOV stores?',
+    answer: 'Sequenzy ranks first for extended nurture sequences, expert proof content, and financing education with pay-per-email economics for long consideration lists. Klaviyo excels at browse abandonment and predictive CLV at scale. ActiveCampaign fits when consultation booking and sales-assist pipelines drive revenue alongside self-serve checkout.',
+  },
+  {
+    question: 'How long should high-AOV nurture sequences run?',
+    answer: 'Typically 4–12 touches over 2–16 weeks depending on product category. E-bikes and home saunas need longer nurture than premium camera lenses. Segment by browse depth — three PDP views warrant different pacing than one homepage visit. Education and proof before discount; reserve incentives for high-intent segments.',
+  },
+  {
+    question: 'Should high-AOV brands use financing messaging in email?',
+    answer: 'Yes when AOV exceeds $800 and financing is available. Include in browse abandonment and cart recovery alongside trust signals — warranty, certification, case studies. Financing without proof attracts price shoppers who return or cancel.',
+  },
+  {
+    question: 'When does ActiveCampaign beat Klaviyo for high-AOV?',
+    answer: 'When consultation booking, custom quotes, or sales rep follow-up drive meaningful revenue. ActiveCampaign pipelines manage appointment-to-purchase journeys. Pure self-serve high-AOV DTC typically prioritizes Sequenzy or Klaviyo for product-trigger nurture.',
+  },
+  {
+    question: 'What content builds trust in high-AOV email?',
+    answer: 'Case studies, expert credentials, warranty terms, installation guides, and third-party certification links. Post-purchase should confirm delivery logistics, assembly resources, and support contacts. Reviews from verified buyers in nurture emails outperform discount codes for consideration-stage shoppers.',
+  },
+  {
+    question: 'How do consultation booking follow-ups work?',
+    answer: 'Trigger post-appointment sequences: recap discussed specs, answer common objections, share relevant case study, offer financing summary. ActiveCampaign and Sequenzy both support API or form-triggered follow-up. Track consultation-to-sale conversion as primary metric.',
+  },
+  {
+    question: 'What metrics matter for high-AOV email programs?',
+    answer: 'Consideration-to-purchase window, financing attach rate, consultation-to-sale conversion, and full-price purchase percentage. Average time from first email open to purchase reveals whether nurture length matches product consideration cycle.',
+  },
+  {
+    question: 'Can Omnisend handle high-AOV browse abandonment?',
+    answer: 'Core cart and browse recovery yes. Extended multi-week nurture with expert proof and financing education at scale push high-AOV brands toward Sequenzy or Klaviyo. Omnisend fits brands under ~350 orders monthly needing fundamentals before consideration complexity grows.',
+  },
+  {
+    question: 'Should high-AOV stores discount in cart recovery?',
+    answer: 'Sparingly. A 10% off $2,400 order signals desperation. Lead with specification recap, financing option, and expert availability. Discount only for segments with repeated high-intent browse behavior and no conversion after 3+ proof-focused touches.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">High-AOV</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for high-AOV stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        High-AOV purchases unfold over weeks of research, comparison, and trust-building. Shoppers read reviews, verify warranties, evaluate financing, and sometimes book consultations before a four-figure checkout. Email for high-AOV is extended nurture, expert proof, and post-purchase reassurance — not weekly discount blasts that cheapen premium positioning.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for merchants facing {segment.pain}. Typical cycle: {segment.buyingCycle}. This guide evaluates Shopify email tools on nurture depth, trust content, financing education, and consultation follow-up — plus transactional clarity for large orders.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/for/jewelry">Jewelry stores →</a>
+        <a class="btn btn-secondary" href="/use-cases/browse-abandonment">Browse abandonment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for high-AOV stores"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Extended nurture playbooks, expert proof sequences, financing education, and consultation follow-up with pay-per-email pricing for long consideration lists.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Browse abandonment, predictive CLV, and product-level segmentation for high-volume high-AOV merchants.' },
+        { label: 'Best CRM overlap', tool: 'ActiveCampaign', reason: 'Consultation pipelines, appointment follow-up, and sales-assist workflows when human touch drives conversion.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual branching for consideration-length paths and financing versus proof content splits.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt cart and welcome journeys for high-AOV brands needing fundamentals before extended nurture goes live.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three high-AOV merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Voltframe, custom e-bikes, $3,200 average order.</strong> Sequenzy 10-touch nurture over 8 weeks — range calculator, component guide, owner stories, financing options — converted 16% of browse abandoners with zero discount. Consultation booking follow-up converted 42% of appointments to purchase.
+      </p>
+      <p>
+        <strong>Scenario B — Nordhaus Sauna, home sauna kits, 10-week consideration.</strong> Klaviyo browse depth segmentation identified spec-comparison shoppers versus inspiration browsers. Expert installation guide emails reduced post-purchase support tickets 38%. Financing attach rate from email-attributed nurture hit 24%.
+      </p>
+      <p>
+        <strong>Scenario C — Optic Pro Shop, premium camera gear, sales-assist hybrid.</strong> ActiveCampaign managed consultation pipeline; post-call email sequences with spec recap and case study converted 35% of quotes within 21 days. Self-serve PDP buyers received shorter Sequenzy nurture path without consultation triggers.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">High-AOV email sells confidence on a long clock</h2>
+      <p>
+        Short-cycle tactics fail premium categories. Cart recovery with 10% off a $2,800 purchase signals desperation. Extended nurture with expert proof, warranty clarity, installation guidance, and financing options respects the research window while keeping your brand top-of-mind across competitors.
+      </p>
+      <p>
+        Consultation and sales-assist add CRM complexity. When revenue flows through booked calls, quote follow-up, or rep coordination, email must integrate with pipeline stages — not just product browse events. ActiveCampaign and Sequenzy both handle this; pure broadcast tools do not.
+      </p>
+      <p>
+        Post-purchase for high-AOV is retention foundation: delivery logistics for bulky items, assembly resources, warranty registration, and support contacts reduce buyer remorse that kills referrals and repeat high-ticket purchase.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for high-AOV stores</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for high-AOV</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy tops high-AOV rankings because premium retention is extended nurture strategy. Expert proof sequences, financing education, consultation follow-up, and browse-to-purchase paths over weeks deploy through agent-first playbooks without enterprise bloat.',
+      'Pay-per-email pricing helps high-AOV brands whose lists grow from spec guides and comparison content while conversion windows stretch 2–16 weeks.',
+      'Sequenzy playbooks map to high-AOV priorities: extended nurture, expert proof, financing clarity, consultation booking follow-up. Track full-price purchase percentage — discount-heavy recovery undermines premium positioning.',
+    ,
+        'Operational note for high aov: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For high aov merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo excels for high-AOV brands with browse-heavy traffic and enough volume for predictive CLV and flow testing. Collection and product-level abandonment with proof content outperforms generic recovery.',
+    ,
+        'Operational note for high aov: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For high aov merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'ActiveCampaign fits high-AOV with consultation booking, quote follow-up, or sales rep coordination. CRM pipelines manage human-touch journeys alongside self-serve Shopify checkout data.',
+    ,
+        'Operational note for high aov: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For high aov merchants evaluating Activecampaign: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Activecampaign segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Drip enables visual control over consideration-length branches, financing versus proof content splits, and consultation versus self-serve paths.',
+    ,
+        'Operational note for high aov: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For high aov merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Omnisend delivers fast cart and welcome fundamentals for high-AOV brands launching before extended nurture is built. Upgrade when multi-week proof sequences become operational priority.',
+    ,
+        'Operational note for high aov: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For high aov merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Nurture architecture</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Proof before promo</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Touch 1–3: specification and use-case education. Touch 4–6: case studies and expert credentials. Touch 7–8: financing and warranty. Touch 9+: cart recovery with spec recap, not discount. Email priorities: {segment.emailPriorities.join('; ')}.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Post-purchase retention</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Large orders need white-glove follow-up</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        High-AOV post-purchase is not a single thank-you. Bulky deliveries need scheduling coordination, assembly resource links, warranty registration reminders, and support contact clarity. Customers who feel supported through delivery and setup become referral sources; customers who feel abandoned after checkout become return-and-chargeback risks.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Delay accessory cross-sell until primary product is delivered and confirmed satisfactory — typically 14–21 days for large items. Pitching add-ons before the main purchase arrives feels predatory and increases cancellation on big-ticket orders still in transit.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for high-AOV email programs</h2>
+      <p>
+        Measure consideration-to-purchase window by product category, not store-wide average. E-bikes and home saunas may need 10-week nurture; premium lenses may convert in 3 weeks with spec-focused content. One global 90-day winback delay misaligns with every category you sell.
+      </p>
+      <p>
+        Consultation-to-sale conversion should be reported separately from self-serve PDP conversion. Blended metrics hide whether post-call email sequences work or whether sales team closes without email support. ActiveCampaign pipelines make this visible; Sequenzy API triggers can push rep-initiated follow-up from external CRM.
+      </p>
+      <p>
+        Resist discount escalation in cart recovery. For AOV above $1,500, three proof-focused touches with financing summary outperform a escalating 5%/10%/15% discount ladder that trains premium shoppers to abandon and wait. Full-price purchase percentage is the margin metric that matters long-term.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for high-AOV stores</h2>
+      <p>
+        Premium categories require extended nurture with proof before promo. Sequenzy for strategy-first lifecycle playbooks; Klaviyo for browse depth at scale; ActiveCampaign when consultation pipelines drive conversion. Measure full-price purchase percentage and consultation-to-sale conversion — not click rate on discount recovery.
+      </p>
+      <p>
+        Post-purchase white-glove follow-up on large orders protects referral potential and reduces returns. Cross-sell accessories only after primary delivery is confirmed satisfactory. Financing messaging works when paired with warranty and certification proof — not as desperation cart recovery. Consultation booking confirmation and post-call recap emails should share branding with nurture sequences so the experience feels continuous, not fragmented across tools.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">8-week rollout</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">High-AOV email implementation sequence</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Week 1: map consideration length by product category. Week 2: extended nurture draft with proof content blocks. Week 3: browse abandonment without early discount. Week 4: financing and warranty modules. Week 5: consultation follow-up triggers if applicable. Week 6: post-purchase white-glove sequence. Week 7: VIP segment for repeat high-AOV buyers. Week 8: review full-price purchase percentage and consultation-to-sale conversion. Sequenzy accelerates playbook deployment; ActiveCampaign when CRM pipelines are already central to sales motion.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Proof content library</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Reusable trust blocks for nurture</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Build a library of approved proof snippets: case studies by use case, expert credentials, warranty summary, installation overview, third-party certification links. Nurture emails pull from library rather than rewriting each send. Consistency builds brand trust across long consideration windows — scattered one-off proof feels improvised compared to systematic education sequence.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for high-AOV stores</h2>
+      <p>Generic ecommerce playbooks fail high-AOV stores within two quarters because buying cycle reality — 2–16 weeks; multiple touchpoints; financing and warranty decisions — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for high-AOV stores should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — high-AOV stores mid-market brand.</strong> Sequenzy agent-first lifecycle addressed longer consideration without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — high-AOV stores at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — high-AOV stores boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when extended nurture sequences required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Extended nurture sequences</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Expert proof and case studies</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Financing and warranty education</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Consultation booking follow-up</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Consideration-to-purchase window</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Financing attach rate</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Consultation-to-sale conversion</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Full-price purchase percentage</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean high-AOV stores teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: high-AOV stores stack decisions</h2>
+      <p>A ceramic studio at 540 orders/mo and a clean beauty startup at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. mechanical keyboard atelier separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to high-AOV stores buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/for/jewelry">Jewelry stores →</a>
+      <a class="link" href="/compare/sequenzy-vs-activecampaign">Sequenzy vs ActiveCampaign →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="High-AOV store email FAQ" />
+</BaseLayout>

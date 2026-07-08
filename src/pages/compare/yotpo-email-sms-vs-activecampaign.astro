@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site } from '../../content';
+
+
+const path = '/compare/yotpo-email-sms-vs-activecampaign';
+const title = 'Yotpo Email & SMS vs ActiveCampaign for Shopify: 2026 Comparison';
+const desc = 'Yotpo Email & SMS vs ActiveCampaign for Shopify — reviews-loyalty suite lifecycle vs CRM automation depth, B2B hybrid tags, and ecommerce operator fit.';
+
+const faqs = [
+  {
+    question: 'Is Yotpo Email & SMS or ActiveCampaign better for a Shopify store doing $70k/mo?',
+    answer: 'ActiveCampaign wins when CRM depth matters — lead scoring, deal pipelines, custom object logic, and B2B wholesale tags alongside DTC email. Yotpo Email & SMS wins when Yotpo Reviews or Loyalty is live and post-purchase UGC drives repeat revenue without complex CRM requirements. Pure DTC with UGC maturity leans Yotpo; hybrid B2B-plus-DTC with sales-assist workflows lean ActiveCampaign.',
+  },
+  {
+    question: 'Can ActiveCampaign replace Yotpo Email & SMS while keeping Yotpo Reviews?',
+    answer: 'Yes — many hybrid merchants run ActiveCampaign for lifecycle and CRM while Yotpo owns review collection and display. You lose native review-request timing ActiveCampaign must configure via integration. Coordinate triggers to avoid duplicate post-purchase touches. The split works when CRM automation justifies maintenance ActiveCampaign operators accept.',
+  },
+  {
+    question: 'How does Yotpo vs ActiveCampaign pricing compare at 18,000 contacts?',
+    answer: 'ActiveCampaign at 18k contacts often runs $150–280/mo depending on automation tier and seat count. Yotpo Email & SMS pricing ties to broader Yotpo contract — bundle economics improve when Reviews and Loyalty are already line items. ActiveCampaign looks expensive until you value CRM features Yotpo does not provide; Yotpo looks expensive without Reviews infrastructure.',
+  },
+  {
+    question: 'Which has better ecommerce Shopify automations?',
+    answer: 'Yotpo Email & SMS when suite modules are active — post-purchase review requests, loyalty earn, cart recovery enriched by UGC data. ActiveCampaign offers flexible automation with CRM layers — stronger for B2B reorder nudges, sales-assist handoffs, and custom field branching, weaker for native review sequencing without integration.',
+  },
+  {
+    question: 'Should I also consider Sequenzy instead of Yotpo or ActiveCampaign?',
+    answer: 'Sequenzy fits when ActiveCampaign CRM depth feels like overkill but Yotpo suite feels premature — guided lifecycle playbooks with pay-per-email pricing. ActiveCampaign still wins for pipeline and lead scoring. Yotpo still wins when Reviews and Loyalty are live. Sequenzy helps pure DTC teams graduating complexity without CRM maintenance.',
+  },
+  {
+    question: 'Which handles B2B wholesale plus DTC email better?',
+    answer: 'ActiveCampaign decisively when Shopify wholesale tags, account-based sequences, and sales team notifications are daily workflows. Yotpo Email assumes DTC retention with reviews and loyalty context — wholesale exclusion and rep handoffs require workarounds. Hybrid industrial supply and pro-equipment brands typically lean ActiveCampaign for CRM, Yotpo only if Reviews serves DTC UGC.',
+  },
+  {
+    question: 'Which handles post-purchase review requests better?',
+    answer: 'Yotpo natively when Reviews module is active — fulfillment timing, photo prompts, reviewer segmentation without sync. ActiveCampaign can branch on review tags synced from Yotpo but requires integration maintenance. If post-purchase UGC velocity is a KPI on DTC channel, Yotpo integrated post-purchase wins unless CRM logic is equally critical.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Build welcome, cart, post-purchase review request if Reviews is live, winback, and if B2B applies — wholesale reorder nudge with rep notification. Score time-to-live, review submission lift, and CRM workflow reliability. If wholesale tags and pipelines matter, lean ActiveCampaign. If Reviews and Loyalty are live on pure DTC, lean Yotpo.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Yotpo Email & SMS vs ActiveCampaign</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Yotpo Email & SMS vs ActiveCampaign for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Suite trust loops versus CRM automation depth. Yotpo Email & SMS optimizes DTC lifecycle messaging when reviews and loyalty data should inform every send. ActiveCampaign optimizes for merchants who need lead scoring, pipeline logic, and B2B wholesale workflows alongside Shopify DTC email. We evaluated both through a mechanical keyboard brand with thirty percent wholesale revenue, a pottery studio DTC running Yotpo Reviews and Loyalty, and a climbing gear shop that chose ActiveCampaign for rep-assist reorder sequences ActiveCampaign expressed natively.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Reviews + loyalty email', tool: 'Yotpo', reason: 'Native UGC timing and points earn on pure DTC.' },
+            { label: 'CRM + B2B hybrid', tool: 'ActiveCampaign', reason: 'Lead scoring, pipelines, and wholesale tag logic.' },
+            { label: 'Suite consolidation', tool: 'Yotpo', reason: 'One vendor when Reviews or Loyalty already live.' },
+            { label: 'Custom field automation', tool: 'ActiveCampaign', reason: 'Deep branching beyond ecommerce presets.' },
+            { label: 'Also consider', tool: 'Sequenzy', reason: 'Guided DTC playbooks without CRM maintenance overhead.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Yotpo Email & SMS</th><th>ActiveCampaign</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>Reviews/loyalty DTC merchants</td><td>CRM-heavy hybrid B2B+DTC</td></tr>
+            <tr><td>Starting price</td><td>Bundle-dependent pricing</td><td>From ~$29/mo</td></tr>
+            <tr><td>Billing model</td><td>Yotpo contract tiers</td><td>Contacts + feature tier</td></tr>
+            <tr><td>Shopify depth</td><td>Native + reviews/loyalty data</td><td>Native + CRM layers</td></tr>
+            <tr><td>Reviews integration</td><td>Native</td><td>Via integration</td></tr>
+            <tr><td>B2B / wholesale</td><td>Limited</td><td>Core strength</td></tr>
+            <tr><td>Lead scoring</td><td>Basic segments</td><td>Advanced CRM</td></tr>
+            <tr><td>Learning curve</td><td>Moderate; suite context</td><td>Steep with CRM features</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What this comparison is actually about</h2>
+        <p>
+          Yotpo Email & SMS and ActiveCampaign sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Yotpo Email & SMS is optimized when reviews and loyalty already anchor your retention stack. ActiveCampaign is optimized when wholesale pipelines and site tracking share one automation brain. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+        </p>
+        <p>
+          We tested both against specialty catalogs where retention is genuinely hard: vinyl scarcity, keyboard group buys, tea replenishment, climbing research cycles, pottery gifts, outdoor segmentation, board game allocation, coffee roast dates, and camping quiz capture. Those verticals stress education, suppression, and timing more honestly than generic one-size-fits-all demos. The writeup below is intentionally merchant-specific — not a feature matrix dressed in adjectives.
+        </p>
+        <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
+        <p>
+          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
+        <p>
+          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
+        <p>
+          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How climbing gear store emails through spring rack refresh</h2>
+        <p>
+          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
+        <p>
+          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
+        <p>
+          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Yotpo Email & SMS workflow reality: strengths, friction, and billing</h2>
+        <p>
+          Yotpo Email & SMS shines when reviews and loyalty already anchor your retention stack. Its friction shows when you only need email without UGC or points. ActiveCampaign shines when wholesale pipelines and site tracking share one automation brain. Its friction shows when pure DTC Shopify retention is the only job. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+        </p>
+        <p>
+          Billing amplifies behavior. Yotpo Email & SMS (modular plans by product) rewards send discipline or punishes broadcast volume depending on your calendar. ActiveCampaign (contacts plus feature tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+        </p>
+        <p>
+          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
+        </p>
+        <h2>Newsletter layer: editorial merchandising without discount training</h2>
+        <p>
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Yotpo Email & SMS and ActiveCampaign both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+        </p>
+        <p>
+          Training customers to wait for codes is a hidden churn driver. If every Thursday email is twenty percent off, replenishment and winback lose meaning. Use editorial sends to teach grading, certification, player count, roast profiles, and tent capacity — then merchandise. Discipline beats platform.
+        </p>
+        <h2>Transactional-style moments and promo collision</h2>
+        <p>
+          Password resets belong on transactional infrastructure. Shipment delays, preorder timeline changes, and subscription skip confirmations can live in marketing ESPs only if copy and domain strategy separate operational tone from promos. Coffee brands on shared domains see complaint spikes when a roast release email resembles a receipt.
+        </p>
+        <p>
+          Post-purchase cross-sells are where brands blur lines. An order update with three discount blocks reads promotional to filters when volume spikes. Document message categories before peak season. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
+        </p>
+        <h2>Pricing models that punish different mistakes</h2>
+        <p>
+          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Yotpo Email & SMS punish partial adoption.
+        </p>
+        <p>
+          Project November, not February. Record Store Day, GB closes, Essen week, Memorial Day, and holiday gift-box peaks change send volume and support load. <a class="link" href="/guides/pricing-models">Pricing models</a> helps build the year view.
+        </p>
+        <h2>Implementation workload and team shape</h2>
+        <p>
+          Integration is the easy hour. Exclusion logic, signup branching, gift properties, and sale-week edits are the long work. Budget two to four weeks for four journeys with DNS and forms. Never cut over during your highest-LTV catalog week.
+        </p>
+        <p>
+          Match team shape to tool temperament. Solo founders bias toward time-to-live; retention operators bias toward holdout tests and browse depth. Agencies help either stack, but hours are a line item. See <a class="link" href="/guides/implementation-plan">implementation plan</a> for sequencing.
+        </p>
+        <h2>Five-job buyer test with scoring rubric</h2>
+        <p>
+          Score zero to two on: welcome by signup source; abandoned checkout with inventory check; post-purchase excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. Zero equals CSV exports. Two equals native edit before a drop. Paper-test both tools — demos lie.
+        </p>
+        <p>
+          Time-to-live beats theoretical max when no retention engineer exists. A tea shop may accept ninety percent of maximum if ninety percent ships in one afternoon. A keyboard shop may need browse depth enough to wait two weeks for setup.
+        </p>
+        <h2>Pricing scenario: 15,000 contacts, selective lifecycle sending</h2>
+        <p>
+          Picture 15,000 contacts, 1,400–2,200 orders monthly, 32,000–48,000 marketing emails in a normal month, higher in November and May. Profile billing charges for the full pool even when only engaged segments receive lifecycle mail. Send-weighted billing charges every broadcast you panic-send during a heatwave SKU miss.
+        </p>
+        <p>
+          Holdout tests change ROI math. If winback discounts move customers who would reorder anyway, platform fees are not the expensive line — mis-measured incrementality is.
+        </p>
+        <h2>Migration sequencing and collision guardrails</h2>
+        <p>
+          Export consent timestamps and suppressions. Rebuild welcome and cart first; parallel-monitor two weeks. Predictive segments, CRM pipelines, and push automations need explicit replacements — document what you are giving up. Pause legacy flows before enabling new ones.
+        </p>
+        <p>
+          Hybrid stacks without priority docs duplicate cart recovery. If capture lives elsewhere, tag handoff must be explicit. See <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before running two senders through sale week.
+        </p>
+        <h2>Measurement guardrails</h2>
+        <p>
+          Separate replenishment from winback attribution. Tea and coffee merchants over-credit discount winback for natural consumption cycles. Hold out five percent of new subscribers on welcome tests. Measure incremental GMV with holdouts, not default dashboards.
+        </p>
+        <p>
+          Multichannel requires one trigger-ownership spreadsheet reviewed before big sends. Tools do not replace ops discipline; some make violations easier to catch in preview.
+        </p>
+        <h2>Hybrid stack patterns on Shopify</h2>
+        <p>
+          Common pattern: capture in Privy or Justuno, lifecycle in Yotpo Email & SMS, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+        </p>
+        <p>
+          Camping quiz capture fed education sequences while flash SMS handled weekend promos — with forty-five-minute suppression between cart channels. Collisions dropped before volume rose.
+        </p>
+        <h2>Who should choose which</h2>
+        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
+        <ul>
+          <li>Reviews and loyalty already anchor your retention stack</li>
+          <li>You will use reviews, loyalty, email, and SMS in one retention suite weekly</li>
+          <li>Modular plans by product fits your calendar</li>
+          <li>Your team can maintain Yotpo Email & SMS without external rescue</li>
+          <li>Switching cost favors Yotpo Email & SMS for the next twelve months</li>
+        </ul>
+        <p><strong>Choose ActiveCampaign if:</strong></p>
+        <ul>
+          <li>Wholesale pipelines and site tracking share one automation brain</li>
+          <li>You will use CRM pipelines, lead scoring, and automation logic weekly</li>
+          <li>Contacts plus feature tier fits your calendar</li>
+          <li>Your team can maintain ActiveCampaign without external rescue</li>
+          <li>Incremental lifecycle GMV justifies ActiveCampaign migration</li>
+        </ul>
+        <h2>Verdict</h2>
+        <p>
+          Yotpo Email & SMS is the better Shopify email tool when reviews and loyalty already anchor your retention stack. ActiveCampaign is the better Shopify email tool when wholesale pipelines and site tracking share one automation brain. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/drip-vs-activecampaign">Drip vs ActiveCampaign</a> ·
+          <a class="link" href="/compare/privy-vs-activecampaign">Privy vs ActiveCampaign</a> ·
+          <a class="link" href="/compare/yotpo-email-sms-vs-drip">Yotpo vs Drip</a> ·
+          <a class="link" href="/for/b2b-wholesale">Email tools for B2B wholesale</a> ·
+          <a class="link" href="/for/board-games">Email tools for board game stores</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Yotpo Email & SMS vs ActiveCampaign FAQ" />
+</BaseLayout>

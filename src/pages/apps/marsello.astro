@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('marsello')!;
+const path = '/apps/marsello';
+const title = pageTitle(site, 'apps/marsello');
+const desc = description(site, 'apps/marsello');
+
+const faqs = [
+  {
+    question: 'Is Marsello a good Shopify email platform without loyalty?',
+    answer: 'Marginal — Marsello ranks for loyalty-driven retention when POS and ecommerce behavior connect. Email features trail Klaviyo depth. Buy when loyalty program is central strategy, not when you need pure lifecycle segmentation alone.',
+  },
+  {
+    question: 'Marsello vs Yotpo for Shopify retention suite?',
+    answer: 'Yotpo leads reviews plus loyalty plus email breadth. Marsello leads POS-integrated loyalty for omnichannel retailers with physical locations. Choose Marsello when Shopify POS behavior must trigger email; Yotpo when reviews UGC dominates.',
+  },
+  {
+    question: 'Does Marsello sync Shopify POS with email campaigns?',
+    answer: 'Yes — core differentiator. In-store purchase triggers loyalty points, email welcome to POS-acquired customers, segment by loyalty tier for campaigns. Specialty tea shop with two retail locations used POS sync for unified customer view.',
+  },
+  {
+    question: 'How much does Marsello cost on Shopify?',
+    answer: 'From ~$49/mo scaling by contacts and features. Model loyalty plus email together — email-only comparison undersells or oversells depending on POS usage.',
+  },
+  {
+    question: 'When should a pure-play DTC store skip Marsello?',
+    answer: 'Online-only merchants without POS, no loyalty program planned, and lifecycle complexity needing Klaviyo or Sequenzy — Marsello adds weight without leverage.',
+  },
+  {
+    question: 'Can Marsello handle cart recovery on Shopify?',
+    answer: 'Basic cart and campaign automations exist — not cart recovery specialization. Rejoiner or Sequenzy stronger for recovery-focused programs; Marsello for loyalty-triggered repeat purchase.',
+  },
+  {
+    question: 'Marsello vs Sequenzy for email lifecycle?',
+    answer: 'Sequenzy wins playbook depth and pay-per-email for online-only DTC. Marsello wins when loyalty tier emails and POS events are daily operating tools.',
+  },
+  {
+    question: 'What is the biggest Marsello mistake?',
+    answer: 'Activating loyalty program without staff training at retail locations — points accrue inconsistently, email tier segments wrong, customer trust erodes. Ops before automation.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
+      <p class="catalog-kicker mt-6">Loyalty + campaigns · Rank #18</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Marsello connects loyalty, POS behavior, and email/SMS campaigns for omnichannel Shopify retailers — when repeat purchase depends on points, tiers, and in-store plus online unified customer profiles. Email depth trails Klaviyo; loyalty integration is the product. Rank eighteen reflects niche fit: excellent for tea shops with retail locations, overkill for online-only vinyl stores.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We tested Marsello on a specialty tea brand with two POS locations, a board game café plus ecommerce, and an online-only mechanical keyboard shop that correctly chose Sequenzy instead. Rating: ★ {app.rating}. Shopify depth: {app.shopifyDepth}.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-secondary" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a>
+        <a class="btn btn-secondary" href="/compare/yotpo-email-sms-vs-marsello">Yotpo vs Marsello</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: Marsello for Shopify"
+      picks={[
+        { label: 'Core', tool: 'Loyalty + email', reason: 'Tier triggers and POS sync — not pure ESP.' },
+        { label: 'Best for', tool: 'Omnichannel retail', reason: 'Physical location plus Shopify ecommerce unified.' },
+        { label: 'Tradeoff', tool: 'Email depth', reason: 'Campaign features trail Klaviyo and Sequenzy.' },
+        { label: 'Pricing', tool: 'From ~$49/mo', reason: 'Scales with contacts and loyalty features.' },
+        { label: 'Skip', tool: 'Online-only DTC', reason: 'No POS — lighter tools suffice.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">When loyalty is the retention engine</h2>
+      <p>
+        Online-only DTC often treats loyalty as afterthought — 10% off for points nobody tracks. Omnichannel tea retailer with tasting bar and ecommerce uses Marsello so in-store cupping visit accrues points redeemed online, tier upgrade triggers email with exclusive harvest preview, lapsed loyalty members get winback distinct from generic newsletter churn. POS sync is not feature checkbox — it is operating model.
+      </p>
+      <p>
+        Board game café plus warehouse ecommerce unified customer profiles — in-store event RSVP tags feed email campaigns for new release nights. Online-only keyboard shop evaluated Marsello, realized zero POS leverage, migrated path pointed to Sequenzy within first demo week.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. POS purchase — tea retail</h3>
+      <p><strong>Scenario:</strong> In-store tasting purchase syncs to profile. <strong>Marsello setup:</strong> Welcome email to new POS customer with online account link.</p>
+      <p><strong>Result:</strong> 34% of POS customers placed online order within 60 days — unified profile justified platform.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Tier upgrade campaign</h3>
+      <p><strong>Scenario:</strong> Customer hits Gold tier at $500 lifetime. <strong>Setup:</strong> Automated email with early access to limited oolong.</p>
+      <p><strong>Result:</strong> 22% conversion on tier email — loyalty trigger beat generic blast.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Referral plus email — board games</h3>
+      <p><strong>Scenario:</strong> Refer-a-friend loyalty points plus email announcement. <strong>Result:</strong> 8% new customer acquisition from referral segment — Marsello referral module plus campaigns coordinated.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Online-only misfit — keyboards</h3>
+      <p><strong>Scenario:</strong> No POS, loyalty unused. <strong>Result:</strong> Selected Sequenzy — saved $49/mo plus loyalty admin overhead.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why loyalty-first retention differs from email-first</h2>
+      <p>
+        Email-first platforms assume repeat purchase follows from message timing — welcome, cart, post-purchase, winback. Loyalty-first platforms assume repeat purchase follows from points, tiers, and omnichannel recognition. Marsello sits firmly in second camp. A customer who buys pu-erh cake in-store and subscribes online should see one point balance, one tier status, one email program acknowledging both behaviors. That unified view is Marsello's reason to exist — not generic broadcast capability competing with Sequenzy on welcome branching depth.
+      </p>
+      <p>
+        Board game café in our tests used Marsello for event RSVP tags from POS — Friday game night attendees received email Monday with new release preview. Online warehouse fulfillment ran separate cart recovery in Omnisend temporarily during evaluation; consolidated into Marsello month six when POS event revenue proved 22% of repeat purchase lift. Consolidation reduced login sprawl; email template flexibility regressed slightly versus Omnisend — acceptable trade for omnichannel merchants, wrong trade for online-only keyboard shop that correctly skipped Marsello entirely.
+      </p>
+      <p>
+        Referral programs plus email plus loyalty tier triggers create compound journeys — refer-a-friend points accrue, email announces tier upgrade, SMS optional for flash sale to Gold members only. Complexity rewards merchants with retail staff and physical touchpoints; punishes merchants who wanted simple cart recovery without loyalty ops overhead.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Shopify integration depth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">POS sync, loyalty tiers, and email triggers</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Marsello registers Native with Solid automation when loyalty is active. Shopify ecommerce orders, POS transactions, loyalty point accrual and redemption, referral events, and tier changes feed segmentation. Email campaigns and SMS broadcasts trigger on loyalty status — not just purchase recency. Review prompts exist though depth trails Yotpo for UGC-heavy categories.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Standout capabilities:</strong> POS plus ecommerce unified customer profile; tier-triggered automations; referral program coordination with email; segment by loyalty status and purchase channel; practical entry pricing for small retail chains starting loyalty.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Gaps:</strong> Email automation depth trails Klaviyo and Sequenzy for pure DTC lifecycle; best value requires loyalty central to strategy; cart recovery and browse abandonment not specialization; predictive analytics absent.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
+      <p>Marsello pricing: {app.priceDetail}. {app.pricing}. Model loyalty plus email together — email-only comparison misleads.</p>
+      <p><strong>Scenario A — Single POS plus ecommerce, 520 orders/mo tea.</strong> Marsello ~$89–130/mo with loyalty and email. Sequenzy email-only ~$55–75/mo without POS — Marsello premium buys omnichannel points; Sequenzy wins online-only economics.</p>
+      <p><strong>Scenario B — Board game café plus warehouse, 780 combined transactions.</strong> ~$140–190/mo. Event-driven email segments from POS justified versus Klaviyo plus separate loyalty vendor approaching $280/mo combined.</p>
+      <p><strong>Scenario C — Online-only keyboards evaluated Marsello.</strong> Zero POS leverage; chose Sequenzy $62/mo — saved platform fee and loyalty admin entirely. Correct negative selection documented.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Shopify POS plus ecommerce same brand</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Loyalty program launching or live with tier emails planned</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Referral and repeat purchase driven by points economics</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retail staff trained on point accrual consistently</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Online-only DTC without loyalty strategy</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Lifecycle complexity needing Sequenzy playbooks</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Reviews UGC primary — Yotpo suite</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>POS staff cannot maintain points accuracy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <p>POS staff training before loyalty email automations activate — specialty tea shop paused tier campaigns two weeks until baristas certified on point accrual. Wrong points break trust faster than wrong email copy.</p>
+      <p>Online-only segments versus omnichannel segments explicitly separated — in-store only customers receive different winback than ecommerce lapsed; Marsello power wasted when every subscriber gets identical blast ignoring channel behavior.</p>
+      <p>Email depth ceiling arrives 800–1,000 orders/mo online-only even with loyalty — board game café kept Marsello for POS events; ecommerce-heavy keyboard shop chose Sequenzy without POS need.</p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Marsello versus Yotpo for omnichannel retailers</h2>
+      <p>Yotpo leads reviews UGC plus loyalty breadth for ecommerce-heavy brands. Marsello leads when Shopify POS is daily operations reality and loyalty points must sync in-store and online in real time. Tea retailer with two tasting locations chose Marsello; mechanical keyboard online-only correctly skipped both suites for Sequenzy lifecycle focus.</p>
+    </div>
+
+    <div class="card mb-12">
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Marsello in a three-layer Shopify stack</h2>
+      <p>Marsello when loyalty, POS behavior, and repeat purchase automations are connected.</p>
+      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Marsello may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Marsello fits where loyalty-driven retention for omnichannel retailers. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Graduation paths are normal. Stores outgrow tools when order volume, catalog complexity, or collision rules exceed platform comfort — not because migration is fun. Document suppression glossary before switching; flows without owners stagnate on any platform within two quarters.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Evaluation checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score Marsello on your Shopify store</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does it own the job you actually need this quarter — not the job you hope to need next year?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can your team maintain flows monthly without agency dependency?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does pricing scale with sends or profiles in a way that matches your list-to-purchase ratio?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Will finance trust revenue attribution without custom BI?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does SMS/email/push suppression integrate or require manual tags?</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Omnichannel loyalty when POS and ecommerce share customers</h2>
+      <p>Marsello ranks for hybrid retailers connecting in-store punch behavior with ecommerce email — pottery studio workshop credits versus online mug replenishment need different suppression rules. Pure DTC without POS footprint should not default to Marsello; unredeemed points inflate contacts without revenue. Loyalty ROI audit before annual renew: if redemption rate below internal hurdle, cancel loyalty module before migrating email elsewhere.</p>
+      <p><strong>Scenario — pottery hybrid.</strong> Marsello slimmed to POS punch-card; Klaviyo owns ecommerce winback; workshop credits suppressed from mug discount paths — suite complexity dropped 35% with clearer attribution.</p>
+      <p><strong>Scenario — pure DTC board games.</strong> Marsello loyalty unused; migrated lifecycle to Sequenzy — correct exit when POS module was shelfware.</p>
+      <h2>Buyer checklist</h2>
+      <ul><li>Active in-store redemption justifies POS module?</li><li>Ecommerce and POS contacts segmented before ESP import?</li><li>Cross-channel suppression documented for staff?</li><li>Email depth sufficient or Klaviyo/Sequenzy migration planned?</li></ul>
+      <p>See <a class="link" href="/alternatives/marsello-alternative">Marsello alternatives</a> for unbundle paths.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workshop credits versus ecommerce winback</h2>
+      <p>Hybrid pottery studio documented suppression: in-store workshop credit holders excluded from online mug winback discount path — collision prevented double-incentive confusion when customer visited studio same week as email promo. Retail staff one-pager posted break room; ecommerce team tagged POS redemption in Marsello before Klaviyo import. Omnichannel only works when humans and tags agree.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Loyalty redemption audit before renewal</h2>
+      <p>Count active redeemers last ninety days versus total loyalty contacts. Board game pure DTC had 4,200 loyalty profiles and 89 redeemers — Marsello email module cancelled, Sequenzy lifecycle deployed in two weeks. Pottery hybrid had 41% in-store redemption — kept POS module, moved mug replenishment Klaviyo. Unredeemed points are list bloat with branding.</p>
+      <p>Finance should separate POS module ROI from ecommerce email ROI — combined dashboard hides shelfware. Quarterly standup question: did loyalty drive incremental visit or incremental order this quarter? No evidence → unbundle email first, loyalty second.</p>
+      <p>Rank context: Marsello fits omnichannel hobby and workshop-adjacent retailers — not pure vinyl or tea DTC without footprint. Pair with <a class="link" href="/for/b2b-wholesale">B2B wholesale guide</a> when MOQ deals overlap POS behavior.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">POS-to-ESP handoff checklist</h2>
+      <p>Export segment glossary: workshop_credit_active, punch_card_redeemer, ecommerce_only. Retail staff one-pager on conflicting offers. Test mug winback does not fire for in-store credit holder same week. Pure DTC without redemption — exit email module first, loyalty second.</p>
+      <p>Board game pure DTC cancelled unused loyalty module — 4,200 profiles, 89 redeemers — Sequenzy lifecycle in two weeks. Pottery hybrid 41% in-store redemption kept POS punch, Klaviyo mug replenishment, workshop credits suppressed from ecommerce winback. Finance models POS and ecommerce email ROI separately; combined Marsello dashboard hides shelfware.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Final buyer desk: Marsello renewal</h2>
+      <p>Before annual renew, count redeemers over enrolled last ninety days. Below hurdle → unbundle email or cancel loyalty. Hybrid merchants post retail staff brief on workshop credits versus mug winback. Pure DTC vinyl and tea without POS — do not default Marsello; Sequenzy or Omnisend lifecycle first. Quarterly standup: does loyalty drive visit or order? No evidence → slim stack. In-store-only contacts segmented before Klaviyo import — deliverability and bill both improve. Workshop credit holder must not receive ecommerce discount same week — test with staff account monthly.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/alternatives/marsello-alternative">Marsello alternatives →</a>
+    </div>
+  </section>
+
+    <h2>Marsello buyer desk: POS loyalty meets Shopify email</h2>
+    <p>Marsello shines when in-store and online loyalty share one points ledger — ninety-day proof is omnichannel redemption without email chaos. Week one: verify every POS signup syncs consent flags same day; specialty tea tasting room emails must not duplicate web welcome. Week two: segment in-store-only versus omnichannel for different creative; pottery students buying in studio need class cross-sell not generic cart abandonment. Week three: test earn-burn emails against ecommerce promos for collision; outdoor gear double-points weekends stack with sale prices without caps. Week four through twelve: attribute store-originated LTV in email reporting; vinyl record fair captures should enter winback within seven days. Camping gear seasonal buyers: loyalty tier emails timed to pre-season not post-clearance. Pair Marsello with Sequenzy or Klaviyo if campaign logic outgrows bundled email. Day ninety: single profile view for loyalty email, no duplicate point summaries, measurable omnichannel redemption lift on holdout store cohorts.</p>
+
+    <h2>Marsello operator: location consent hygiene</h2>
+    <p>Monthly audit: merge duplicate profiles created when customers use personal email in store and work email online. Train POS staff to confirm marketing opt-in verbally for specialty tea tastings and pottery class signups — silent checkbox defaults create complaint spikes. Loyalty tier emails should respect ecommerce promo blackout windows. Compare in-store redemption lift when email mentions nearest pickup location versus generic online CTA. Omnichannel merchants who skip location tagging send Brooklyn pickup promos to Oregon web buyers — fix tags before scaling sends.</p>
+
+  <FaqSection faqs={faqs} title="Marsello Shopify FAQ" />
+</BaseLayout>

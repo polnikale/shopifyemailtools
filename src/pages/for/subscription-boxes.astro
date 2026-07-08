@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('subscription-boxes')!;
+const path = '/for/subscription-boxes';
+const title = pageTitle(site, 'for/subscription-boxes');
+const desc = description(site, 'for/subscription-boxes');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'rejoiner', 'omnisend', 'drip'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'rejoiner', 'omnisend', 'drip', 'shopify-email', 'yotpo-email-sms',
+  'privy', 'brevo', 'postscript', 'mailchimp', 'activecampaign', 'sendlane', 'firepush',
+  'tinyemail', 'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for subscription box brands?',
+    answer: 'Sequenzy ranks first for upcoming box previews, skip recovery, and churn prevention at risk months with pay-per-email economics. Klaviyo excels at subscriber segmentation and predictive churn at scale. Rejoiner fits teams wanting managed lifecycle strategy alongside platform access.',
+  },
+  {
+    question: 'When does churn peak for subscription boxes?',
+    answer: 'Month 3–4 is the classic danger zone — novelty fades, skip behavior increases, and cancellation intent rises. Build risk-month sequences starting month 2 with value reinforcement, box previews, and pause-before-cancel offers. Do not wait for cancellation page to start retention email.',
+  },
+  {
+    question: 'How should upcoming box preview emails work?',
+    answer: 'Send 5–7 days before shipment with curated contents, brand story, and usage tips — not just product list. Preview emails correlated with lower skip rates when subscribers feel excited about arrival. VIP long-tenure subscribers can get early previews as loyalty recognition.',
+  },
+  {
+    question: 'How do skip recovery sequences work?',
+    answer: 'Touch 1: confirm skip, show what they will miss. Touch 2: highlight favorite past box item or community content. Touch 3: offer pause or one-time add-on before next billing. Three value touches before discount. Suppress skip recovery for customers who skipped due to vacation if they indicated travel.',
+  },
+  {
+    question: 'When does Rejoiner make sense for subscription boxes?',
+    answer: 'When you want experts designing skip recovery, churn prevention, and preview campaigns — not just software. Rejoiner combines strategic help with execution. Evaluate cost against hiring retention ops or an agency specializing in subscription DTC.',
+  },
+  {
+    question: 'Should subscription boxes use referral emails?',
+    answer: 'Yes — after month 2 when subscriber has received enough value to recommend. Gift subscription campaigns around holidays drive acquisition with different messaging than standard referral. Track referral revenue from email as distinct KPI.',
+  },
+  {
+    question: 'What metrics matter for subscription box email?',
+    answer: 'Skip-to-active recovery rate, churn by subscriber month, referral revenue from email, and box preview engagement correlation with retention. Month-4 retention is the headline metric most box brands under-invest in until it is too late.',
+  },
+  {
+    question: 'Can Omnisend handle subscription box churn prevention?',
+    answer: 'Core post-purchase and SMS reminders yes. Complex skip recovery branching and risk-month orchestration at scale push growing box brands toward Sequenzy or Klaviyo. Strong starting point under ~400 active subscribers.',
+  },
+  {
+    question: 'How do book-of-the-month boxes differ from snack boxes in email?',
+    answer: 'Book boxes need reading pace and discussion content between shipments. Snack boxes need dietary preference segmentation and freshness messaging. Build separate preview and education templates — conflating box types produces irrelevant content and higher skip rates.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">Subscription boxes</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for subscription box brands</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Subscription box retention is a monthly renewal decision disguised as passive billing. Subscribers skip, pause, and cancel when previews feel generic and month 3 novelty fades. Email must build anticipation before each shipment, recover skips with value not desperation, and intercept churn at risk months before the cancellation page.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for merchants facing {segment.pain}. Typical cycle: {segment.buyingCycle}. This guide covers newsletters, lifecycle automation, and transactional-style billing notices for the full subscription box email layer.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment guide</a>
+        <a class="btn btn-secondary" href="/for/food-and-beverage">Food & beverage →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for subscription box brands"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Box preview playbooks, skip recovery, month-3/4 churn prevention, and referral campaigns with pay-per-email pricing for subscriber lists.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Subscriber segmentation, predictive churn, and flow testing for high-volume box brands with complex SKU curation.' },
+        { label: 'Best managed strategy', tool: 'Rejoiner', reason: 'Lifecycle strategy support for skip recovery and churn prevention when team lacks dedicated retention ops.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt welcome and post-purchase journeys plus SMS for box brands needing fundamentals live quickly.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual branching for tenure-based paths, skip versus active logic, and gift subscription campaigns.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three subscription box merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Page Turners Club, kids book-of-the-month.</strong> Sequenzy box preview emails 6 days before shipment correlated with 12% lower skip rate versus no preview control group. Month-3 churn prevention sequence recovered 19% of at-risk subscribers before cancellation page visit.
+      </p>
+      <p>
+        <strong>Scenario B — Shaker &amp; Stir, craft cocktail kits.</strong> Klaviyo tenure segmentation sent long-subscriber loyalty content versus new-subscriber technique education. Referral campaign at month 2 generated 14% of new subscriptions from email. Gift subscription holiday push drove 28% of Q4 acquisition.
+      </p>
+      <p>
+        <strong>Scenario C — Region Bite, regional snack discovery.</strong> Rejoiner-designed skip recovery with three value touches before pause offer recovered 23% of skipped months. Dietary preference capture at signup reduced irrelevant preview unsubscribes 40%.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Box email is anticipation management</h2>
+      <p>
+        Subscribers cancel when they forget why they subscribed. Preview emails rebuild excitement before each shipment — curated contents, usage tips, community highlights. Generic "your box is coming" confirmations waste the highest-impact retention touchpoint in the calendar.
+      </p>
+      <p>
+        Month 3–4 churn is predictable, not random. Build risk-month sequences starting at month 2: value recap, favorite past items, community proof, pause-before-cancel. Waiting for cancellation intent means fighting uphill — intercept earlier with value.
+      </p>
+      <p>
+        Skip behavior is softer churn. Three-touch skip recovery with escalating value beats immediate discount. Understand skip reason when possible — vacation skips need different messaging than "too much product" skips.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for subscription box brands</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for box brands</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy tops subscription box rankings because retention is preview anticipation plus skip/churn interception. Box preview playbooks, skip recovery sequences, month-3/4 risk campaigns, and referral flows deploy through agent-first setup without rebuilding every curation cycle.',
+      'Pay-per-email pricing suits subscriber lists where send frequency is predictable but list size grows through referral and gift acquisition.',
+      'Sequenzy playbooks map to box priorities: upcoming previews, skip recovery, churn prevention, referral and gifting. Track month-4 retention as north-star before optimizing preview open rates alone.',
+    ,
+        'Operational note for subscription boxes: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For subscription boxes merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo scales for box brands with large subscriber bases and complex curation SKUs. Tenure segmentation, predictive churn, and flow A/B testing optimize preview timing and skip recovery content.',
+    ,
+        'Operational note for subscription boxes: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For subscription boxes merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Rejoiner fits box brands wanting managed skip recovery and churn prevention strategy — not just platform access. Evaluate when strategic help accelerates month-4 retention faster than DIY.',
+    ,
+        'Operational note for subscription boxes: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For subscription boxes merchants evaluating Rejoiner: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Rejoiner segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Omnisend delivers fast welcome, billing reminder, and SMS fundamentals for box brands launching first cohorts. Upgrade when skip recovery branching becomes weekly operations.',
+    ,
+        'Operational note for subscription boxes: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For subscription boxes merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Drip enables visual control over tenure-based branches, skip versus active paths, and gift subscription holiday campaigns.',
+    ,
+        'Operational note for subscription boxes: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For subscription boxes merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Risk month playbook</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Month 3–4 churn interception</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Month 2: value recap email. Month 3: favorite past box highlight + community story. Month 3.5: pause offer before cancel. Month 4: loyalty recognition or exclusive add-on. Email priorities: {segment.emailPriorities.join('; ')}.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Gift subscriptions</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Holiday acquisition with different messaging</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Gift subscription campaigns need distinct creative from standard referral — recipient onboarding, giver confirmation, and first-box preview timing differ from self-subscribe flows. Holiday push should lead with gift deadline dates and recipient experience, not subscriber churn prevention content meant for existing members.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for subscription box email</h2>
+      <p>
+        Box preview engagement should correlate with skip rate in monthly reporting. If preview open rate drops while skip rate rises, content — not discount — is the problem. Test preview format: curated story versus product list versus community highlight.
+      </p>
+      <p>
+        Month-4 retention is the metric investors and operators under-monitor until churn spikes. Build risk sequences starting month 2, not month 4 after cancellation intent forms. Sequenzy churn playbooks deploy fastest; Rejoiner when you want external strategy help.
+      </p>
+      <p>
+        Separate tenure segments in all reporting. Month-1 subscribers need onboarding and expectation-setting; month-6+ subscribers need loyalty recognition and referral prompts. One message list produces irrelevant sends that increase skip behavior across tenure bands.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for subscription box brands</h2>
+      <p>
+        Box retention is anticipation management — preview emails before shipment, skip recovery with value not desperation, month-3/4 churn interception before cancellation page. Sequenzy for playbook deployment; Klaviyo at scale; Rejoiner when managed strategy accelerates month-4 retention.
+      </p>
+      <p>
+        Tenure segmentation separates month-1 onboarding from month-6+ loyalty and referral content. Gift subscription campaigns need distinct messaging from subscriber churn prevention. Track preview engagement correlation with skip rate monthly — content problems show up there before churn spikes. Referral prompts at month 2, after subscribers have unboxed enough value to recommend authentically, outperform referral asks in welcome email.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Preview template</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">What a great box preview email includes</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Curated item reveal with brand story — not just SKU list. Usage tip or recipe for food and beverage boxes; discussion prompt for book boxes; technique note for craft kits. Send 5–7 days before shipment. Include skip/pause link prominently — easy skip reduces hard cancel. Long-tenure subscribers get early preview as loyalty recognition; month-1 subscribers get expectation-setting content about curation philosophy.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Churn post-mortem</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Learn from cancellations</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Tag cancellation reason when available from subscription app. Monthly review: did churn spike follow missing preview, excessive promo frequency, or irrelevant curation email? Month-3/4 cohort analysis should inform next quarter's risk-month sequence — not generic winback to entire lapsed list. Box brands that treat churn data as product feedback improve retention faster than those optimizing open rates alone.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for subscription box brands</h2>
+      <p>Generic ecommerce playbooks fail subscription box brands within two quarters because buying cycle reality — Monthly recurring; skip behavior common; churn at month 3–4 — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for subscription box brands should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — subscription box brands mid-market brand.</strong> Sequenzy agent-first lifecycle addressed subscriber retention without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — subscription box brands at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — subscription box brands boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when upcoming box preview emails required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Upcoming box preview emails</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Skip recovery sequences</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Churn prevention at risk months</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Referral and gifting campaigns</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Skip-to-active recovery rate</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Churn by subscriber month</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Referral revenue from email</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Box preview engagement correlation</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean subscription box brands teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: subscription box brands stack decisions</h2>
+      <p>A mechanical keyboard atelier at 540 orders/mo and a ceramic studio at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. clean beauty startup separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to subscription box brands buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/for/food-and-beverage">Food & beverage →</a>
+      <a class="link" href="/use-cases/replenishment">Replenishment guide →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Subscription box email FAQ" />
+</BaseLayout>

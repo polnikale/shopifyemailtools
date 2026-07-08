@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site } from '../../content';
+
+const path = '/compare/aftership-email-vs-klaviyo';
+const title = 'AfterShip Email vs Klaviyo: Post-Purchase Email Tools Compared';
+const desc = 'AfterShip Email vs Klaviyo for Shopify email tools — tracking-adjacent messaging vs full retention platform, shipment-triggered moments, and when post-purchase infrastructure should own campaigns.';
+
+const faqs = [
+  {
+    question: 'When should a Shopify store choose AfterShip Email over Klaviyo?',
+    answer: 'Choose AfterShip Email when you already run AfterShip Tracking and want shipment, delay, and delivery-adjacent messages in the same ecosystem without standing up a full retention platform. Klaviyo wins when browse segmentation, predictive CLV, cart recovery, and unified SMS drive weekly revenue decisions across the full lifecycle — not only post-purchase.',
+  },
+  {
+    question: 'Can AfterShip Email replace Klaviyo for lifecycle automation?',
+    answer: 'No for most growing DTC stores. AfterShip Email excels at post-purchase and tracking-context campaigns — delivery updates, review prompts after receipt, winback adjacent to returns. Klaviyo covers welcome, browse abandonment, cart, replenishment, VIP, and predictive segments. Replacement only makes sense when post-purchase is 90% of your email job and you accept lighter pre-purchase automation.',
+  },
+  {
+    question: 'Which handles vinyl pre-order fulfillment updates better?',
+    answer: 'AfterShip Email — when pre-order SKUs finally ship, tracking events naturally trigger delay and delivery messages tied to carrier data. Klaviyo can replicate with custom flows and Shopify fulfillment events but requires more setup. For shops where fulfillment anxiety drives support tickets, AfterShip\'s tracking-native timing reduces WISMO email volume.',
+  },
+  {
+    question: 'How does pricing compare for a 10,000-order store?',
+    answer: 'AfterShip Email pricing often bundles with Tracking and Returns modules — attractive when those products are already paid for. Klaviyo scales by profiles and SMS — typically $150–350/mo at moderate list sizes before SMS. Compare total stack cost: AfterShip plus a lighter campaign tool may beat Klaviyo if you only need post-purchase depth; Klaviyo wins when pre-purchase automation is load-bearing.',
+  },
+  {
+    question: 'Does Klaviyo integrate with AfterShip tracking events?',
+    answer: 'Yes via integrations and custom events — many merchants run Klaviyo for lifecycle and AfterShip for tracking pages only. Duplicate post-purchase messaging is the risk. Pick one owner for delivery-adjacent email; let the other handle tracking UX without parallel campaigns.',
+  },
+  {
+    question: 'Which protects deliverability when mixing shipping and promos?',
+    answer: 'Both require separating operational shipment updates from promotional cross-sells. AfterShip\'s product shape nudges operational framing; Klaviyo blurs lines when post-purchase flows include aggressive upsells on the same domain. Use subdomain discipline regardless — see deliverability guide.',
+  },
+  {
+    question: 'What about artisan coffee subscription skip notices?',
+    answer: 'Subscription skip and pause confirmations are transactional-style — often better on ESP transactional APIs or Recharge-native email. AfterShip Email handles shipment for subscription boxes well; skip logic lives in subscription tooling. Klaviyo can message skips if events sync — but neither replaces subscription platform notifications cleanly.',
+  },
+  {
+    question: 'What buyer test settles AfterShip Email vs Klaviyo?',
+    answer: 'Score five jobs: welcome pre-purchase, cart recovery, shipment delay communication, post-delivery review or education, winback at 90 days. If AfterShip passes only shipment and post-delivery while Klaviyo passes all five, Klaviyo is the retention platform. If you already pay for AfterShip Tracking and only need post-purchase plus light campaigns, AfterShip Email may be sufficient.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">AfterShip Email vs Klaviyo</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">AfterShip Email vs Klaviyo for Shopify email tools</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Post-purchase infrastructure versus full retention data platform — adjacent problems with very different scope. We evaluated both through a vinyl record shop drowning in pre-order WISMO tickets, an artisan coffee subscription box with variable roast fulfillment, and a pottery studio shipping fragile glazes with frequent carrier delays. The question is whether your email catalog should be anchored on tracking moments or on the entire lifecycle from browse to winback.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Shipment-native messaging', tool: 'AfterShip Email', reason: 'Delay and delivery triggers wired to tracking data you already use.' },
+            { label: 'Full lifecycle platform', tool: 'Klaviyo', reason: 'Welcome, browse, cart, replenishment, VIP, SMS in one stack.' },
+            { label: 'WISMO ticket reduction', tool: 'AfterShip Email', reason: 'Proactive tracking communication before support inbox floods.' },
+            { label: 'Predictive segmentation', tool: 'Klaviyo', reason: 'CLV, churn risk, and browse history for merchandising calls.' },
+            { label: 'Stack consolidation', tool: 'AfterShip Email', reason: 'When Tracking is paid and post-purchase is the main email job.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>AfterShip Email</th><th>Klaviyo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Catalog fit</td><td>Post-purchase and tracking-adjacent</td><td>Full Shopify retention platform</td></tr>
+            <tr><td>Starting price</td><td>Free/paid tiers with AfterShip products</td><td>Free tier; paid by profiles</td></tr>
+            <tr><td>Newsletters</td><td>Campaigns with shipment context</td><td>Broadcasts plus deep segmentation</td></tr>
+            <tr><td>Lifecycle depth</td><td>Strong post-purchase; lighter pre-purchase</td><td>Visual flows across full funnel</td></tr>
+            <tr><td>Transactional-style</td><td>Shipment delays, delivery, returns timing</td><td>Flows plus optional transactional API</td></tr>
+            <tr><td>Shopify data</td><td>Order and tracking events</td><td>Browse, orders, predictive metrics</td></tr>
+            <tr><td>SMS</td><td>SMS options in ecosystem</td><td>Native unified with email</td></tr>
+            <tr><td>Best when</td><td>AfterShip Tracking already live</td><td>Retention KPIs owned weekly</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What this comparison is actually about</h2>
+        <p>
+          AfterShip Email and Klaviyo sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. AfterShip Email is optimized when delivery and tracking moments drive retention timing. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+        </p>
+        <p>
+          We tested both against specialty catalogs where retention is genuinely hard: vinyl scarcity, keyboard group buys, tea replenishment, climbing research cycles, pottery gifts, outdoor segmentation, board game allocation, coffee roast dates, and camping quiz capture. Those verticals stress education, suppression, and timing more honestly than generic one-size-fits-all demos. The writeup below is intentionally merchant-specific — not a feature matrix dressed in adjectives.
+        </p>
+        <h2>Specialty Tea Merchant: 28–35 day tin replenishment with gift-box seasonality</h2>
+        <p>
+          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, AfterShip Email reduced preview-time surprises because post-purchase and tracking-adjacent messaging. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How artisan coffee roaster emails through holiday blend drop</h2>
+        <p>
+          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. AfterShip Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Climbing Gear Store ($89k/mo) — branch browse sequences by fall-rating and harness fit pages</h2>
+        <p>
+          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. AfterShip Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before Memorial Day camping spike: camping equipment merchant retention choices</h2>
+        <p>
+          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. AfterShip Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Pottery Studio: class waitlists and glaze-kit starter sets</h2>
+        <p>
+          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, AfterShip Email reduced preview-time surprises because post-purchase and tracking-adjacent messaging. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How vinyl record shop emails through Record Store Day</h2>
+        <p>
+          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. AfterShip Email contributes post-purchase and tracking-adjacent messaging; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. AfterShip Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Tool friction where AfterShip Email and Klaviyo diverge on Shopify</h2>
+        <p>
+          AfterShip Email shines when delivery and tracking moments drive retention timing. Its friction shows when pre-purchase lifecycle and drops dominate revenue. Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+        </p>
+        <p>
+          Billing amplifies behavior. AfterShip Email (product-tier dependent) rewards send discipline or punishes broadcast volume depending on your calendar. Klaviyo (active profiles plus SMS credits) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+        </p>
+        <p>
+          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
+        </p>
+        <h2>Newsletter layer: editorial merchandising without discount training</h2>
+        <p>
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. AfterShip Email and Klaviyo both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+        </p>
+        <p>
+          Training customers to wait for codes is a hidden churn driver. If every Thursday email is twenty percent off, replenishment and winback lose meaning. Use editorial sends to teach grading, certification, player count, roast profiles, and tent capacity — then merchandise. Discipline beats platform.
+        </p>
+        <h2>Transactional-style moments and promo collision</h2>
+        <p>
+          Password resets belong on transactional infrastructure. Shipment delays, preorder timeline changes, and subscription skip confirmations can live in marketing ESPs only if copy and domain strategy separate operational tone from promos. Coffee brands on shared domains see complaint spikes when a roast release email resembles a receipt.
+        </p>
+        <p>
+          Post-purchase cross-sells are where brands blur lines. An order update with three discount blocks reads promotional to filters when volume spikes. Document message categories before peak season. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
+        </p>
+        <h2>Pricing models that punish different mistakes</h2>
+        <p>
+          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Klaviyo punish partial adoption.
+        </p>
+        <p>
+          Project November, not February. Record Store Day, GB closes, Essen week, Memorial Day, and holiday gift-box peaks change send volume and support load. <a class="link" href="/guides/pricing-models">Pricing models</a> helps build the year view.
+        </p>
+        <h2>Implementation workload and team shape</h2>
+        <p>
+          Integration is the easy hour. Exclusion logic, signup branching, gift properties, and sale-week edits are the long work. Budget two to four weeks for four journeys with DNS and forms. Never cut over during your highest-LTV catalog week.
+        </p>
+        <p>
+          Match team shape to tool temperament. Solo founders bias toward time-to-live; retention operators bias toward holdout tests and browse depth. Agencies help either stack, but hours are a line item. See <a class="link" href="/guides/implementation-plan">implementation plan</a> for sequencing.
+        </p>
+        <h2>Five-job buyer test with scoring rubric</h2>
+        <p>
+          Score zero to two on: welcome by signup source; abandoned checkout with inventory check; post-purchase excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. Zero equals CSV exports. Two equals native edit before a drop. Paper-test both tools — demos lie.
+        </p>
+        <p>
+          Time-to-live beats theoretical max when no retention engineer exists. A tea shop may accept ninety percent of maximum if ninety percent ships in one afternoon. A keyboard shop may need browse depth enough to wait two weeks for setup.
+        </p>
+        <h2>Pricing scenario: 15,000 contacts, selective lifecycle sending</h2>
+        <p>
+          Picture 15,000 contacts, 1,400–2,200 orders monthly, 32,000–48,000 marketing emails in a normal month, higher in November and May. Profile billing charges for the full pool even when only engaged segments receive lifecycle mail. Send-weighted billing charges every broadcast you panic-send during a heatwave SKU miss.
+        </p>
+        <p>
+          Holdout tests change ROI math. If winback discounts move customers who would reorder anyway, platform fees are not the expensive line — mis-measured incrementality is.
+        </p>
+        <h2>Migration sequencing and collision guardrails</h2>
+        <p>
+          Export consent timestamps and suppressions. Rebuild welcome and cart first; parallel-monitor two weeks. Predictive segments, CRM pipelines, and push automations need explicit replacements — document what you are giving up. Pause legacy flows before enabling new ones.
+        </p>
+        <p>
+          Hybrid stacks without priority docs duplicate cart recovery. If capture lives elsewhere, tag handoff must be explicit. See <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before running two senders through sale week.
+        </p>
+        <h2>Measurement guardrails</h2>
+        <p>
+          Separate replenishment from winback attribution. Tea and coffee merchants over-credit discount winback for natural consumption cycles. Hold out five percent of new subscribers on welcome tests. Measure incremental GMV with holdouts, not default dashboards.
+        </p>
+        <p>
+          Multichannel requires one trigger-ownership spreadsheet reviewed before big sends. Tools do not replace ops discipline; some make violations easier to catch in preview.
+        </p>
+        <h2>Hybrid stack patterns on Shopify</h2>
+        <p>
+          Common pattern: capture in Privy or Justuno, lifecycle in AfterShip Email, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+        </p>
+        <p>
+          Camping quiz capture fed education sequences while flash SMS handled weekend promos — with forty-five-minute suppression between cart channels. Collisions dropped before volume rose.
+        </p>
+        <h2>Who should choose which</h2>
+        <p><strong>Choose AfterShip Email if:</strong></p>
+        <ul>
+          <li>Delivery and tracking moments drive retention timing</li>
+          <li>You will use post-purchase and tracking-adjacent messaging weekly</li>
+          <li>Product-tier dependent fits your calendar</li>
+          <li>Your team can maintain AfterShip Email without external rescue</li>
+          <li>Switching cost favors AfterShip Email for the next twelve months</li>
+        </ul>
+        <p><strong>Choose Klaviyo if:</strong></p>
+        <ul>
+          <li>Segment reports and browse depth change monday merchandising calls</li>
+          <li>You will use Shopify browse events, predictive CLV, and unified SMS weekly</li>
+          <li>Active profiles plus sms credits fits your calendar</li>
+          <li>Your team can maintain Klaviyo without external rescue</li>
+          <li>Incremental lifecycle GMV justifies Klaviyo migration</li>
+        </ul>
+        <h2>Verdict</h2>
+        <p>
+          AfterShip Email is the better Shopify email tool when delivery and tracking moments drive retention timing. Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
+          <a class="link" href="/compare/postscript-vs-aftership-email">Postscript vs AfterShip Email</a> ·
+          <a class="link" href="/compare/klaviyo-vs-shopify-email">Klaviyo vs Shopify Email</a> ·
+          <a class="link" href="/use-cases/post-purchase">Post-purchase education</a> ·
+          <a class="link" href="/guides/selection-framework">Selection framework</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="AfterShip Email vs Klaviyo FAQ" />
+</BaseLayout>

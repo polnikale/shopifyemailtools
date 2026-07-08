@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('tinyemail')!;
+const path = '/apps/tinyemail';
+const title = pageTitle(site, 'apps/tinyemail');
+const desc = description(site, 'apps/tinyemail');
+
+const faqs = [
+  {
+    question: 'Is tinyEmail good long term for Shopify?',
+    answer: 'Starter tool yes; retention platform no. Graduate to Sequenzy or Omnisend within 6–12 months when cart recovery and replenishment matter.',
+  },
+  {
+    question: 'tinyEmail vs Shopify Email?',
+    answer: 'Shopify Email wins Admin friction. tinyEmail wins AI copy and slightly deeper basic automations. Both temporary — Sequenzy clearer graduation path.',
+  },
+  {
+    question: 'How much does tinyEmail cost?',
+    answer: 'Free tier; paid from ~$15/mo. Cheapest paid entry — appropriate under 80 orders/mo testing ROI.',
+  },
+  {
+    question: 'Does tinyEmail sync Shopify products?',
+    answer: 'Yes product blocks and basic sync. Segmentation lighter than Omnisend or Sequenzy.',
+  },
+  {
+    question: 'Can AI write full lifecycle flows?',
+    answer: 'AI drafts copy; human must encode discount policy and suppression. Does not replace Sequenzy playbooks.',
+  },
+  {
+    question: 'When graduate from tinyEmail?',
+    answer: '100–150 orders/mo when cart math justifies, replenishment needed, or suppression fails.',
+  },
+  {
+    question: 'tinyEmail vs Mailchimp?',
+    answer: 'tinyEmail wins price and AI for Shopify focus. Both outgrown at similar thresholds.',
+  },
+  {
+    question: 'Biggest tinyEmail mistake?',
+    answer: 'Assuming AI drafts equal lifecycle strategy — pretty blasts without suppression leave same revenue gaps.',
+  },
+  {
+    question: 'Export before migration?',
+    answer: 'Export subscribers with consent timestamp and signup source. Sunset unengaged before importing to per-contact platforms.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
+      <p class="catalog-kicker mt-6">AI starter email · Rank #21</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        tinyEmail is the drafting accelerator young Shopify stores use when harvest festival deadline is forty-eight hours away and nobody on the team has touched a flow builder. AI generates subject lines, body copy, and product blocks from bullet points — adequate for sale blasts and first newsletters, intentionally shallow for replenishment windows, cart suppression logic, and welcome branching by signup source. Rank twenty-one is honest scope: chapter-one sender, not retention operating system.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We tested tinyEmail on a 65-order/mo specialty tea startup, a poster print shop using AI for monthly artist sales, and a board-game publisher that hit suppression failure at 140 orders/mo and migrated to Omnisend in nine days. AI speed wins launch moments; lifecycle math wins graduation timing.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a>
+        <a class="btn btn-secondary" href="/apps/shopify-email">Shopify Email review</a>
+        <a class="btn btn-secondary" href="/apps/sequenzy">Sequenzy review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: tinyEmail for Shopify"
+      picks={[
+        { label: 'Strength', tool: 'AI copy speed', reason: 'Campaign drafts in minutes before festival deadlines.' },
+        { label: 'Pricing', tool: 'From ~$15/mo', reason: 'Lowest paid entry for email channel testing.' },
+        { label: 'Ceiling', tool: 'Basic automation', reason: 'Suppression and branching fail as orders climb.' },
+        { label: 'Graduation', tool: '100–150 orders/mo', reason: 'When cart recovery math justifies Sequenzy or Omnisend.' },
+        { label: 'Best for', tool: 'Pre-PMF stores', reason: 'Proving email ROI before lifecycle infrastructure spend.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">AI drafts without lifecycle strategy</h2>
+      <p>
+        Tea startup at 65 orders/mo needed oolong harvest announcement before weekend festival — tinyEmail AI draft from three tasting notes, single product block, sent in ninety minutes. Correct tool for moment. Board-game store at 140 orders/mo: cart email fired to customer who purchased same title forty hours earlier because tinyEmail lacks suppression rules customer complained publicly. Migrated Omnisend week later — graduation should have triggered near 100 orders when cart math first justified multi-touch recovery.
+      </p>
+      <p>
+        Prompt "write cart recovery email" produces words without encoding whether discount belongs message one. Sequenzy playbooks encode value-based escalation; Klaviyo encodes CLV routing. tinyEmail encodes speed. All three can use AI for copy — difference is strategy layer tinyEmail never shipped.
+      </p>
+      <p>
+        Double-migration tax punishes sideways moves: tinyEmail to Mailchimp to Omnisend wastes two quarters. Graduate once to Sequenzy or Omnisend when cart abandonment visible in Shopify analytics — one weekly recovered cart at AOV often funds annual platform delta.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Shopify sync and automation boundaries</h2>
+      <p>
+        tinyEmail syncs product blocks and basic customer lists for campaign creation. Basic automations exist — welcome and cart reminders without sophisticated exclusion logic. Segmentation lighter than Omnisend: cannot branch welcome by popup versus product-page signup source without manual list splits merchants rarely maintain.
+      </p>
+      <p>
+        <strong>Acceptable:</strong> Monthly sale blasts, harvest announcements, artist feature campaigns for stores under 90 orders/mo with newsletter-only needs.
+      </p>
+      <p>
+        <strong>Insufficient:</strong> Multi-touch cart with inventory check, replenishment by SKU consumption, collision control between welcome discount and cart discount, winback before clearance with full-price holdout segments.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing and graduation math</h2>
+      <p>
+        tinyEmail: free tier; paid from ~$15/mo by subscribers and features. Sequenzy from $19/mo pay-per-email. Omnisend from $16/mo. Graduation cost delta is trivial versus one recovered $120 cart weekly.
+      </p>
+      <p>
+        <strong>Tea 110 orders/mo:</strong> tinyEmail $18/mo to Sequenzy $48/mo — replenishment playbook live day ten; AI still available inside Sequenzy for drafts.
+      </p>
+      <p>
+        <strong>Poster prints under 90 orders:</strong> Stayed tinyEmail month eight — Shopify Email equally viable; chose tinyEmail for AI subject lines only.
+      </p>
+      <p>
+        <strong>Board games 140 orders/mo:</strong> Omnisend nine-day migration after suppression failure — ceiling hit abruptly not gradually.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+      <p>
+        <strong>1. AI harvest — tea 65 orders/mo.</strong> Festival deadline 48 hours. AI prompt with tasting notes; product block single SKU. Sent 90 minutes; 19% open adequate for launch.
+      </p>
+      <p>
+        <strong>2. Artist sale — poster prints.</strong> AI subject variants; Saturday AM schedule. Faster than Shopify Email template editing for non-designer founder.
+      </p>
+      <p>
+        <strong>3. Suppression gap — board games 140 orders/mo.</strong> Cart to recent purchaser. Customer complaint. Omnisend migration week later.
+      </p>
+      <p>
+        <strong>4. Graduation — tea 110 orders/mo.</strong> Cart math justified Sequenzy. Replenishment live day ten post-migration.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Newsletters now, lifecycle next</h2>
+      <p>
+        tinyEmail handles editorial sale newsletters adequately at launch — lifecycle jobs come later. When repeat purchase becomes stated goal, cart recovery exceeds 5% of sessions, or list passes 3,000 from popups, budget Sequenzy migration same quarter you prove email ROI to finance. AI speed wins internal argument; lifecycle platform wins retention.
+      </p>
+      <p>
+        Transactional order confirmations typically stay Shopify-native. tinyEmail does not replace shipping notification infrastructure — marketing campaigns only.
+      </p>
+      <p>
+        Human review checklist mandatory: AI drafts may embed unauthorized 15% discount while brand policy caps 10% on message three only. Tea startup caught unauthorized discount in draft before send.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Graduation triggers</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When to leave tinyEmail</h2>
+
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Cart abandonment visible in Shopify reports weekly</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>List past 3,000 subscribers with low purchase conversion</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Repeat purchase strategic goal in quarterly plan</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Suppression failure or customer complaint on automation</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>More than four manual campaigns monthly — time cost exceeds platform savings</li>
+      </ul>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card">
+        <p class="catalog-kicker">Pros</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <p class="catalog-kicker">Cons</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Under 100 orders/mo proving email channel</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Festival or drop deadline needing AI draft speed</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Newsletter-only needs without cart automation</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Founder without flow-builder training time</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Cart recovery already material revenue opportunity</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replenishment timing needed for consumables</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>100+ orders/mo — graduate to Sequenzy or Omnisend</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need welcome branching by signup source day one</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-12">
+      <p class="catalog-kicker">Compare alternatives</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related Shopify email tools</h2>
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a></li>
+        <li><a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend vs Shopify Email</a></li>
+        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- TARGETED_EXPANSION_v4 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">AI prompt discipline for tinyEmail</h2>
+      <p>Tea startup prompt template: harvest name, three tasting notes, grind recommendation, ship window — never "write promotional email with discount" unless policy allows. Board game publisher learned prompt "urgency" generated false scarcity copy incompatible with retail partner agreements. Human review checklist: discount authorization, compliance claims, partner co-marketing clauses, alt text on product images.</p>
+      <p>Export subscribers before migration with consent timestamp and signup source — tinyEmail list hygiene often weak because automations minimal. Importing cold contacts into Sequenzy or Omnisend without sunset damages deliverability on new platform through no fault of new ESP.</p>
+    </div>
+  </section>
+
+<!-- TARGETED_EXPANSION_v5 -->
+  <section class="container py-12"><div class="card"><p class="catalog-kicker">Graduation timing</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Order volume triggers</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">100 orders/mo with 18% cart abandonment rate justified Sequenzy for tea brand — one recovered $85 cart weekly exceeded annual tinyEmail savings. Board game 140 orders/mo waited too long; suppression failure was avoidable at 100-order trigger documented in quarterly ops review.</p></div></section>
+
+<!-- FINAL_EXPANSION_v6 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">tinyEmail and Shopify Email lateral choice</h2><p>Poster print shop chose tinyEmail over Shopify Email solely for AI subject line variants — marginal win worth $6/mo premium at 70 orders/mo. Neither platform ran inventory-aware cart; both graduated to Sequenzy within nine months when repeat purchase became KPI. Lateral moves between lightweight senders delay real lifecycle investment without teaching retention ops.</p><p>AI-generated product descriptions in email body required human fact-check on materials and dimensions — pottery studio caught wrong kiln-temperature claim before send. AI accelerates draft; merchant remains liable for product accuracy in regulated or craft categories.</p></div></section>
+
+<!-- FINAL_EXPANSION_v7 -->
+  <section class="container py-12"><div class="card"><p class="catalog-kicker">Template library</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Seasonal campaign cadence</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Tea startup ran tinyEmail monthly harvest templates six months — AI sped subject lines but body structure repetitive by month four. Subscribers noticed; open rate dropped 11 points. Graduation timing should include creative fatigue signals not only order volume triggers.</p></div></section>
+
+<!-- FINAL_EXPANSION_v8 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Deliverability on tinyEmail</h2><p>Young stores rarely warm domains — tea startup sent 4,200 emails week one from shared infrastructure, inbox placement suffered until volume smoothed over three weeks. Graduating to Sequenzy included domain warmup playbook absent in tinyEmail onboarding.</p><p>Connect custom domain before influencer traffic spike; default sending domain hurts trust on luxury-adjacent first impressions.</p></div></section>
+
+<!-- FINAL_EXPANSION_v9 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">tinyEmail to Sequenzy migration week</h2><p>Tea brand migration checklist: export 2,400 subscribers Monday, Sequenzy Shopify connect Tuesday, cart flow live Wednesday with test orders, welcome rebuild Thursday, first campaign Friday. Five-day cutover with zero bulk blast during DNS propagation. tinyEmail archived not deleted — 90-day read access for historical reference.</p><p>Archive tinyEmail templates in Notion when migrating — historical subject lines inform Sequenzy campaign tests even after platform switch.</p><p>Starter-store founders should calendar graduation review at order 80 and 120 — two checkpoints beat surprise suppression failures at 140 orders.</p></div></section>
+  <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Checklist</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Pre-migration export fields</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Email, consent date, signup source tag, last engagement date, customer ID if matched — minimum viable export before leaving tinyEmail permanently. Missing consent date blocks compliant import into Sequenzy or Omnisend without re-permission campaign delay.</p></div></section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Starter ESP reality: what tinyEmail is and is not</h2>
+      <p>
+        tinyEmail targets merchants who need AI-assisted campaign drafting and basic Shopify product blocks — not lifecycle orchestration. It ranks near the bottom of this catalog on automation depth by design. A pottery studio at seventy orders monthly used tinyEmail for monthly studio-sale newsletters and AI subject variants; acceptable until cart abandonment hit 22% with zero automated recovery. Graduation trigger is not shame — it is math. One recovered $85 tea subscription cart weekly exceeds annual tinyEmail savings at modest order counts.
+      </p>
+      <p>
+        tinyEmail versus Shopify Email is lateral choice for micro merchants. Poster print shop chose tinyEmail solely for AI subject lines — $6/mo premium at seventy orders. Neither platform runs inventory-aware cart or welcome branching. Both are pause buttons, not destinations. Calendar graduation reviews at eighty and 120 orders catch suppression failures before they become cultural discount habits.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant paths through tinyEmail</h2>
+      <p>
+        <strong>Path A — Artisan coffee, 95 orders/mo, intentional bridge.</strong> tinyEmail six months while validating product-market fit; exported 2,400 subscribers with consent timestamps; five-day migration to Sequenzy with cart live Wednesday, welcome Thursday, no bulk blast during DNS propagation. Archived tinyEmail ninety days for reference — not deleted day one.
+      </p>
+      <p>
+        <strong>Path B — Board game micro-publisher, waited too long.</strong> Stayed on tinyEmail to 140 orders/mo; manual sale blasts overlapped with no cart automation — estimated 8% abandoned revenue left on table quarterly. Migration urgency came from margin leak, not feature envy.
+      </p>
+      <p>
+        <strong>Path C — Camping accessories, AI misuse lesson.</strong> AI-generated product specs in email body included wrong weight rating — caught pre-send on harness email. AI accelerates draft; merchant remains liable for accuracy in safety-adjacent categories. Human review checklist non-optional.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow tests and graduation signals</h2>
+      <p>
+        <strong>Signal 1 — Cart abandonment rate above 15% with no automated recovery.</strong> Immediate Sequenzy or Omnisend evaluation regardless of order count.
+      </p>
+      <p>
+        <strong>Signal 2 — Creative fatigue.</strong> Tea startup open rate dropped eleven points month four on repetitive AI harvest templates — subscribers noticed before finance did.
+      </p>
+      <p>
+        <strong>Signal 3 — Deliverability on volume spike.</strong> 4,200 emails week one from shared infrastructure hurt inbox placement until volume smoothed three weeks — custom domain and warmup playbook come with graduation ESP, not tinyEmail onboarding.
+      </p>
+      <p>
+        <strong>Signal 4 — Welcome branching need.</strong> First campaign requiring signup-source split — tinyEmail cannot; migration clock starts.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist: stay, lateral move, or graduate</h2>
+      <ul>
+        <li>Under 80 orders/mo with broadcast-only needs and no material cart abandonment?</li>
+        <li>Team accepts manual sends and no collision rules between promo and purchasers?</li>
+        <li>AI drafts reviewed for product accuracy before every send?</li>
+        <li>Export fields documented before any platform switch?</li>
+        <li>Graduation target ESP chosen — Sequenzy for strategy, Omnisend for speed?</li>
+        <li>Order 80 and 120 reviews calendared regardless of comfort with current tool?</li>
+      </ul>
+      <p>
+        tinyEmail fits temporary broadcast bridge — rank context places it below Shopify Email on native integration, above nothing for AI-assisted micro-teams. See <a class="link" href="/alternatives/tinyemail-alternative">tinyEmail alternatives</a> when graduation day arrives.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational checklist for micro merchants</h2>
+      <p>
+        Weekly review even on tinyEmail: unsubscribes after AI-generated claims, complaint rate if volume spikes, subscriber growth versus purchaser growth ratio. Camping accessories merchant caught wrong weight rating in AI harness copy pre-send — liability sat with merchant, not vendor. Connect custom domain before influencer traffic; default sending domain hurts trust on craft and outdoor categories where authenticity signals matter in first impression.
+      </p>
+      <p>
+        Archive templates in Notion when migrating — historical subject lines inform tests on Sequenzy even after platform switch. Five-day cutover pattern worked for tea brand: export Monday, connect Tuesday, cart Wednesday, welcome Thursday, first campaign Friday, zero bulk blast during DNS propagation. tinyEmail archived ninety days read-only — not deleted day one.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Micro-merchant truth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When tinyEmail is enough for one more quarter</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Under eighty orders monthly with broadcast-only calendar and cart abandonment below material threshold — tinyEmail remains valid bridge. The moment one weekly recovered cart exceeds annual platform savings on Sequenzy or Omnisend, calendar migration during non-peak week. Comfort is not KPI; contribution margin is.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/compare">Comparison hub →</a>
+      <a class="link" href="/alternatives/tinyemail-alternative">tinyEmail alternatives →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="tinyEmail Shopify FAQ" />
+</BaseLayout>

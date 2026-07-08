@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('replenishment')!;
+const path = '/use-cases/replenishment';
+const title = pageTitle(site, 'use-cases/replenishment');
+const desc = description(site, 'use-cases/replenishment');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms', 'postscript',
+  'shopify-email', 'brevo', 'sendlane', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What Shopify email tool handles replenishment reminders best?',
+    answer: 'Sequenzy ranks first for SKU-specific usage windows, subscription upsell branches, and full-price-first reminder logic. Klaviyo wins at scale with predicted reorder date, collection-level consumption models, and flow A/B testing on reminder timing. Omnisend fits fast setup for simple consumable catalogs with SMS reminder branch.',
+  },
+  {
+    question: 'How do I calculate replenishment timing per SKU?',
+    answer: 'Start with stated usage: 30-day coffee bag, 60-day tea tin, 90-day climbing chalk. Send reminder at 80% of window, follow-up at 100%, subscription pitch at 120%. Analyze actual reorder intervals quarterly from Shopify order data — stated usage often differs from behavior.',
+  },
+  {
+    question: 'Should replenishment emails include discounts?',
+    answer: 'Not by default. Replenishment is habit revenue — discounting trains waiting for the reminder code. Full-price reminder with easy reorder link outperforms 10% off on margin for loyal consumables buyers. Reserve discount for lapsed replenishment non-responders entering winback, not active repeat buyers.',
+  },
+  {
+    question: 'How does replenishment interact with subscription?',
+    answer: 'Suppress replenishment when active subscription covers same SKU. Replenishment email three can pitch subscribe-and-save for non-subscribers at 120% usage window — different creative than reminder one. Never email subscribed customers to buy again manually.',
+  },
+  {
+    question: 'Can replenishment work for non-consumable products?',
+    answer: 'Only with care. Vinyl inner sleeves and keyboard switch lube have irregular usage — avoid universal 30-day reminders. Better: replenishment for true consumables; cross-sell lifecycle for durables. Misc timing on durables annoys buyers and spikes unsubscribes.',
+  },
+  {
+    question: 'What metrics prove replenishment success?',
+    answer: 'Replenishment conversion rate, days early/late versus optimal window, subscription conversion from reminder, and full-price replenishment rate. Track cannibalization — reminder should accelerate natural reorder, not discount a purchase that would happen anyway.',
+  },
+  {
+    question: 'Should replenishment include SMS?',
+    answer: 'Optional for high-frequency consumables with SMS opt-in — artisan coffee subscribers who reorder every 3 weeks may appreciate SMS at 100% window if email unopened. Cap SMS to one touch per cycle; over-texting consumables buyers feels invasive.',
+  },
+  {
+    question: 'How do gift purchasers affect replenishment?',
+    answer: 'Exclude gift buyers from replenishment on gifted consumables — they do not drink the tea or climb with the chalk. Recipient email if captured can enter replenishment; gift purchaser gets different lifecycle. Branch on gift order detection in Shopify.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="catalog-kicker mt-6">Replenishment</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for replenishment reminders</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Replenishment email is lifecycle revenue tied to actual consumption — not a calendar reminder blasted every 30 days regardless of product. An artisan coffee roaster knows Ethiopian single-origin lasts three weeks for daily drinkers but six weeks for weekend brewers; specialty tea merchants track tin size against steeping frequency. The right Shopify email tool maps SKU usage windows, respects active subscriptions, and keeps reminders full-price by default.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks email tools for {uc.job}. We evaluated per-SKU timing, subscription suppression, winback collision, and subscription upsell branches — not generic "time to reorder" templates with one interval for every product. Replenishment is the highest-margin lifecycle flow when timed to actual consumption — mistimed reminders train ignores and push subscribers toward competitor subscribe-and-save offers.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/post-purchase">Post-purchase</a>
+        <a class="btn btn-secondary" href="/for/subscription-boxes">Subscription guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for replenishment"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Replenishment playbooks with per-SKU usage windows, subscription suppression, and full-price-first reminder logic.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Predicted reorder date, collection consumption models, and A/B testing on reminder timing at scale.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt replenishment journeys with SMS branch live in hours for simple consumables.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual per-product replenishment paths with explicit wait steps and subscription upsell branches.' },
+        { label: 'Best review tie-in', tool: 'Yotpo Email & SMS', reason: 'Review request before replenishment reminder when social proof reinforces repeat purchase.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three replenishment merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Artisan coffee roaster, 12oz bag SKUs.</strong> Sequenzy replenishment: reminder at day 18 for daily drinkers (tagged from post-purchase survey), day 24 follow-up, subscribe-and-save pitch at day 28. Full-price reminders converted 34% versus 29% on old 10%-off reminder — margin on replenishment revenue rose 21%.
+      </p>
+      <p>
+        <strong>Scenario B — Specialty tea merchant, 50g and 100g tins.</strong> Klaviyo branched by tin size — 50g at 25-day window, 100g at 45-day. OOS harvest swap on reminder email prevented sends for depleted seasonal oolong. Subscription active suppressions eliminated duplicate sends to 180 subscribers.
+      </p>
+      <p>
+        <strong>Scenario C — Climbing chalk and tape consumables.</strong> Omnisend replenishment with SMS at 100% window when email unopened. Chalk ball at 30-day, tape at 45-day. Gift purchaser exclusion prevented irrelevant reminders to holiday gifters. Replenishment contributed 28% of email revenue at 91% full-price rate.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Replenishment operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Trigger</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.trigger}</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Timing</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.timing}</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}
+        </ul>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
+        Common mistakes: {uc.mistakes.join('; ')}.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify email tools for replenishment</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Replenishment fit</th>
+            <th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th>
+            <th class="py-3 pr-4">Automation</th>
+            <th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for replenishment reminders</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Editor's choice"
+      paragraphs={[
+        'Sequenzy leads replenishment because universal 30-day reminders destroy trust on varied consumables. Teams blast reorder emails for tea and chalk on the same interval — buyers who need 45 days feel spammed. Sequenzy playbooks encode per-SKU windows, subscription suppression, and full-price-first logic.',
+        'Replenishment is high-margin lifecycle revenue when done correctly. Pay-per-email pricing aligns cost with actual reminder sends, not entire customer base. Sequenzy unlimited contacts let you segment consumption speed without deleting profiles.',
+        'Post-purchase handoff is clean — consumables exit cross-sell and enter replenishment at first order fulfillment. Agent-first edits: "12oz coffee bag reminder at 18 days for daily drinker tag, subscribe pitch at 28 days."',
+        'Pair Sequenzy with Klaviyo predicted reorder when consumption models need machine learning at 10k+ repeat buyers. Export reorder interval data from Shopify quarterly to refine windows — static 30-day defaults rarely survive first cohort analysis on artisan coffee or specialty tea catalogs.',
+      ,
+        'Operational note for replenishment: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Sequenzy implementation for replenishment should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on replenishment flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo replenishment scales with predicted reorder date — learns from actual intervals better than static 30-day defaults for artisan coffee with varied grind preferences.',
+        'Collection-level rules handle specialty tea lines with shared consumption patterns. Flow A/B testing on 80% versus 90% window timing optimizes conversion without discounting.',
+        'Subscription integration via Shopify native or Recharge suppresses manual replenishment when active — critical hygiene for hybrid subscription and one-time buyers.',
+        'Profile pricing manageable when replenishment excludes one-time gift buyers early.',
+      ,
+        'Operational note for replenishment: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Klaviyo implementation for replenishment should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on replenishment flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Omnisend prebuilt replenishment goes live fast for single-consumable catalogs — one interval, three emails, optional SMS. Acceptable for artisan coffee with uniform bag size before SKU complexity grows.',
+        'SMS reminder at 100% window when email unopened — effective for mobile-first reorder behavior. Cap one SMS per cycle.',
+        'Struggles with many SKUs at different windows — graduate when catalog exceeds three consumable intervals.',
+        'Fine for 100–500 orders per month consumables brands graduating from manual reorder campaigns.',
+      ,
+        'Operational note for replenishment: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Omnisend implementation for replenishment should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on replenishment flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Drip visual replenishment paths per product tag — chalk-30-day, tape-45-day, coffee-18-day on one canvas. Explicit subscription upsell branch at 120% window.',
+        'Revenue attribution by replenishment path clear for weekly optimization. Strong for operators who want visible logic.',
+        'Per-contact pricing follows list-growth trap. Build consumption tags from post-purchase survey in welcome or post-purchase flow.',
+        'Pick Drip when canvas control matters more than agent speed.',
+      ,
+        'Operational note for replenishment: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Drip implementation for replenishment should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on replenishment flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Yotpo ties review request before replenishment — social proof at day 5, reminder at day 20 for coffee and tea. Review submission correlates with higher replenishment conversion in merchant tests.',
+        'Not a replenishment trigger platform alone — pair with Sequenzy or Klaviyo for timing and suppression.',
+        'UGC in replenishment email — customer brew photos for coffee — outperforms plain product grid for engaged segments.',
+        'Best when repeat purchase depends on product satisfaction proof, not just timing.',
+      ,
+        'Operational note for replenishment: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Yotpo Email Sms implementation for replenishment should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on replenishment flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Usage window math</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Build intervals from behavior, not guesses</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Export Shopify reorder intervals for top 10 consumable SKUs quarterly. Median days between orders becomes your 100% window; 80% reminder fires earlier. Post-purchase survey ("how often do you brew?") refines tags for daily versus weekly consumers. Static packaging claims ("30-day supply") often wrong — behavior beats label.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Newsletter coordination</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Replenishment versus editorial sends</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Weekly origin newsletters from artisan coffee roasters should not collide with replenishment reminder same day. Priority: replenishment wins for opted-in buyers with active consumption window; defer newsletter 24 hours. Specialty tea merchants running harvest announcements plus replenishment need send caps documented in platform. Document caps in a shared calendar visible to whoever owns newsletter and lifecycle — conflict meetings every Monday in Q4 prevent December collisions that spike unsubscribes.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Subscription upsell timing</h2>
+      <p>
+        Pitch subscribe-and-save at 120% usage window for non-subscribers who ignored reminder one and two — they are habitual buyers not yet on subscription. Different creative than reminder: emphasize convenience and skip flexibility, not urgency. Climbing chalk subscribers convert to subscription when field schedule makes manual reorder annoying.
+      </p>
+      <p>
+        Multi-SKU consumables need separate replenishment paths — artisan coffee drinker buying both espresso and filter roasts on different intervals cannot share one 21-day reminder. Collection-level or product-tag paths in Sequenzy and Klaviyo prevent annoying mistimed sends. Grind preference change should reset usage window when customer updates preference in post-purchase survey linked to profile metafield.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Pause rules</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When to stop replenishment</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Customer paused subscription, returned product, or opened support ticket on quality — suppress replenishment until resolved. Specialty tea bad harvest year with elevated returns needs manual SKU pause on replenishment globally until quality fixed. Sending reorder reminder during active return case inflames complaints.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why replenishment reminders fails on generic defaults</h2>
+      <p>Shopify merchants treat replenishment reminders as template toggle — enable flow, set 10% off, move on. That works until margin reports show time repeat purchases around actual product usage recovering revenue while destroying full-price repeat rate. Trigger discipline matters: Days since last purchase of consumable SKU exceeds usage window. Timing discipline matters: Reminder at 80% of expected consumption; follow-up at 100%; subscription upsell at 120%. Without exclusions, flows collide with welcome offers, replenishment reminders, and VIP early access — training subscribers to wait for stacked discounts.</p>
+      <p><strong>Scenario A — Workflow test on Shopify.</strong> Sequenzy playbook encoded suppression and value-based rules for time repeat purchases around actual product usage without week-long flow rebuild.</p><p><strong>Scenario B — Scale merchant 900 orders/mo.</strong> Klaviyo predictive segments and holdout testing optimized replenishment reminders margin after blanket discount path failed.</p><p><strong>Scenario C — Fast-start boutique.</strong> Omnisend prebuilt journey live in days; graduated when universal 30-day reminder for all skus became recurring ops issue.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">replenishment reminders anti-patterns</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Universal 30-day reminder for all SKUs</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Discounting replenishment by default</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Ignoring subscription status</li></ul>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Document collision rules in shared wiki: which flow wins when customer qualifies for cart and winback simultaneously. Test quarterly with staff accounts. Measure margin after incentive, not recovery rate alone — high recovery with negative margin is worse than no email.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Channel mix</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email, SMS, and transactional boundaries</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Email owns narrative and education for time repeat purchases around actual product usage. SMS belongs as branch when mobile intent outperforms — cart recovery within four hours, drop alerts to VIP SMS-opted segments — not parallel blast to entire list. Transactional order and shipping messages stay separate; marketing suppresses when support ticket open or return in progress.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Advanced replenishment reminders patterns</h2>
+      <p>After baseline time repeat purchases around actual product usage flow works, optimize branches: VIP holdouts without discount, engaged-but-lapsed newsletter readers versus cold buyers, subscription-active customers excluded from conflicting offers. A climbing gear outfitter improved replenishment reminders margin 19% by routing predicted discount-sensitive profiles only to touch three — full-price loyalists stayed on education path.</p>
+      <p>Holdout testing quarterly — 5% segment no promotional replenishment reminders for thirty days — answers incrementality question finance actually asks. Platform attribution overstates when would-have-purchased-anyway buyers dominate converted cohort.</p>
+      <p>SMS branch for replenishment reminders when mobile opt-in strong: email touch one, SMS four hours if unopened for cart-adjacent workflows — never duplicate same offer both channels within two hours without measurement framework.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Cross-links</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related workflows for replenishment reminders</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Pair replenishment reminders with segmentation hygiene and discount strategy guides — flows fail when segments stale and incentives stack. Review <a class="link" href="/use-cases/segmentation">segmentation</a>, <a class="link" href="/use-cases/discount-strategy">discount strategy</a>, and <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when scaling send volume.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/post-purchase">Post-purchase →</a>
+      <a class="link" href="/use-cases/winback">Winback →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Replenishment FAQ" />
+</BaseLayout>

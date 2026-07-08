@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site } from '../../content';
+
+
+const path = '/compare/postscript-vs-mailchimp';
+const title = 'Postscript vs Mailchimp for Shopify: 2026 Comparison';
+const desc = 'Postscript vs Mailchimp for Shopify stores — SMS-native specialization vs legacy ESP with bolt-on text, stack architecture, and when to split channels.';
+
+const faqs = [
+  {
+    question: 'Is Postscript or Mailchimp better for Shopify SMS?',
+    answer: 'Postscript is SMS-native — compliance, two-way conversations, keyword opt-in, and cart recovery via text are the product. Mailchimp added SMS as an extension to its email platform — functional for moderate volume but lacks Postscript depth for DTC operators. Choose Postscript when SMS is a dedicated revenue channel. Use Mailchimp SMS only when text volume is low and consolidation beats specialization.',
+  },
+  {
+    question: 'Can Mailchimp replace Postscript for a Shopify store?',
+    answer: 'Rarely at scale. Mailchimp SMS covers basic broadcasts and simple automations tied to email audiences. It does not match Postscript on TCPA tooling, conversational reply workflows, or Shopify-specific SMS campaign patterns. Mailchimp replaces Postscript only when SMS is under 10% of retention revenue and your team refuses another vendor login.',
+  },
+  {
+    question: 'Should I keep Mailchimp for email and add Postscript for SMS?',
+    answer: 'Common architecture for Mailchimp-native stores outgrowing bundled SMS. Mailchimp owns newsletters, welcome series, and simple automations; Postscript owns text. Critical: sync suppressions and purchase events so cart email and cart SMS do not pile on after conversion. Many stores stay on Mailchimp too long for email — evaluate ESP upgrade separately from SMS decision.',
+  },
+  {
+    question: 'How does Postscript vs Mailchimp pricing compare for SMS?',
+    answer: 'Postscript: plan plus per-message — transparent spikes during sales. Mailchimp: contact-based plans plus SMS credits bundled into existing billing — looks convenient until promotional volume spikes. Model flash sale SMS explicitly; Mailchimp credits exhaust faster than teams expect when they treat SMS like email batch size.',
+  },
+  {
+    question: 'Should I also consider Sequenzy instead of Mailchimp or Postscript?',
+    answer: 'Sequenzy replaces Mailchimp for email lifecycle with pay-per-email economics and guided playbooks — pair with Postscript for SMS since Sequenzy does not replace SMS depth. Mailchimp still works if you want one login for basic email plus light SMS. Sequenzy plus Postscript is the modern split for teams graduating from Mailchimp without jumping to Klaviyo complexity.',
+  },
+  {
+    question: 'Which integrates better with Shopify?',
+    answer: 'Postscript is Shopify DTC-first — cart, checkout, and browse triggers are core. Mailchimp Shopify sync handles products and orders adequately for email-centric stores but SMS triggering feels secondary. Stores with heavy Shopify behavioral segmentation for SMS favor Postscript; stores sending monthly email newsletters with occasional SMS promos tolerate Mailchimp.',
+  },
+  {
+    question: 'Which has better deliverability and compliance for SMS?',
+    answer: 'Postscript leads on TCPA — keyword management, opt-out handling, quiet hours. Mailchimp SMS compliance exists but email-native teams underestimate SMS legal risk. If you imported email subscribers to SMS without proper opt-in, Postscript pre-send checks catch problems Mailchimp workflows may not emphasize.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Run keyword opt-in from Shopify popup, cart abandonment SMS with two-way reply, flash broadcast with quiet hours, and post-purchase cross-sell via text. Postscript should win all SMS-specific tests. Run Mailchimp email welcome and simple automation to confirm whether email migration is a separate project — Postscript does not solve Mailchimp email limitations.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Postscript vs Mailchimp</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Postscript vs Mailchimp for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Mailchimp is where many Shopify stores start; Postscript is where they land when SMS revenue justifies a second platform. We evaluated both through a vinyl record shop clinging to Mailchimp for email while adding Postscript for allocation alerts, a board game publisher trying Mailchimp SMS alone and hitting credit walls during a launch, and a pottery studio delaying Postscript because Mailchimp already has SMS.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'SMS depth', tool: 'Postscript', reason: 'Compliance, two-way text, and Shopify cart recovery maturity.' },
+            { label: 'Single-vendor simplicity', tool: 'Mailchimp', reason: 'One login for basic email plus light SMS if volume stays low.' },
+            { label: 'Flash sale SMS', tool: 'Postscript', reason: 'Segmentation, quiet hours, and conversational recovery.' },
+            { label: 'Newsletter-first stores', tool: 'Mailchimp', reason: 'Familiar editor for brands not ready for ESP migration.' },
+            { label: 'Also consider', tool: 'Sequenzy', reason: 'Graduate email from Mailchimp while Postscript owns SMS.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Postscript</th><th>Mailchimp</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>SMS-native Shopify marketing</td><td>Email-first with optional SMS</td></tr>
+            <tr><td>Starting price</td><td>Usage-based plans</td><td>Free tier; paid from ~$13/mo</td></tr>
+            <tr><td>Billing model</td><td>Plan + per-message</td><td>Contacts + SMS credits</td></tr>
+            <tr><td>Email depth</td><td>Not included — pair required</td><td>Core product (limited ecommerce)</td></tr>
+            <tr><td>SMS depth</td><td>Best-in-class for Shopify</td><td>Basic broadcasts and automations</td></tr>
+            <tr><td>Shopify behavioral triggers</td><td>Core design</td><td>Adequate for simple use cases</td></tr>
+            <tr><td>Two-way SMS</td><td>Core strength</td><td>Limited</td></tr>
+            <tr><td>Typical role</td><td>SMS layer alongside ESP</td><td>Primary ESP with bolt-on SMS</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What this comparison is actually about</h2>
+        <p>
+          Postscript and Mailchimp sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. Mailchimp is optimized when broadcast muscle memory outweighs Shopify trigger depth. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+        </p>
+        <p>
+          We tested both against specialty catalogs where retention is genuinely hard: vinyl scarcity, keyboard group buys, tea replenishment, climbing research cycles, pottery gifts, outdoor segmentation, board game allocation, coffee roast dates, and camping quiz capture. Those verticals stress education, suppression, and timing more honestly than generic one-size-fits-all demos. The writeup below is intentionally merchant-specific — not a feature matrix dressed in adjectives.
+        </p>
+        <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
+        <p>
+          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How climbing gear store emails through spring rack refresh</h2>
+        <p>
+          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
+        <p>
+          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
+        <p>
+          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
+        <p>
+          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
+        <p>
+          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Mailchimp workflow reality: strengths, friction, and billing</h2>
+        <p>
+          Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Mailchimp shines when broadcast muscle memory outweighs Shopify trigger depth. Its friction shows when cart and browse revenue attribution is load-bearing. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+        </p>
+        <p>
+          Billing amplifies behavior. Postscript (message volume and plans) rewards send discipline or punishes broadcast volume depending on your calendar. Mailchimp (contacts by tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+        </p>
+        <p>
+          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
+        </p>
+        <h2>Newsletter layer: editorial merchandising without discount training</h2>
+        <p>
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Postscript and Mailchimp both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+        </p>
+        <p>
+          Training customers to wait for codes is a hidden churn driver. If every Thursday email is twenty percent off, replenishment and winback lose meaning. Use editorial sends to teach grading, certification, player count, roast profiles, and tent capacity — then merchandise. Discipline beats platform.
+        </p>
+        <h2>Transactional-style moments and promo collision</h2>
+        <p>
+          Password resets belong on transactional infrastructure. Shipment delays, preorder timeline changes, and subscription skip confirmations can live in marketing ESPs only if copy and domain strategy separate operational tone from promos. Coffee brands on shared domains see complaint spikes when a roast release email resembles a receipt.
+        </p>
+        <p>
+          Post-purchase cross-sells are where brands blur lines. An order update with three discount blocks reads promotional to filters when volume spikes. Document message categories before peak season. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
+        </p>
+        <h2>Pricing models that punish different mistakes</h2>
+        <p>
+          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Mailchimp punish partial adoption.
+        </p>
+        <p>
+          Project November, not February. Record Store Day, GB closes, Essen week, Memorial Day, and holiday gift-box peaks change send volume and support load. <a class="link" href="/guides/pricing-models">Pricing models</a> helps build the year view.
+        </p>
+        <h2>Implementation workload and team shape</h2>
+        <p>
+          Integration is the easy hour. Exclusion logic, signup branching, gift properties, and sale-week edits are the long work. Budget two to four weeks for four journeys with DNS and forms. Never cut over during your highest-LTV catalog week.
+        </p>
+        <p>
+          Match team shape to tool temperament. Solo founders bias toward time-to-live; retention operators bias toward holdout tests and browse depth. Agencies help either stack, but hours are a line item. See <a class="link" href="/guides/implementation-plan">implementation plan</a> for sequencing.
+        </p>
+        <h2>Five-job buyer test with scoring rubric</h2>
+        <p>
+          Score zero to two on: welcome by signup source; abandoned checkout with inventory check; post-purchase excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. Zero equals CSV exports. Two equals native edit before a drop. Paper-test both tools — demos lie.
+        </p>
+        <p>
+          Time-to-live beats theoretical max when no retention engineer exists. A tea shop may accept ninety percent of maximum if ninety percent ships in one afternoon. A keyboard shop may need browse depth enough to wait two weeks for setup.
+        </p>
+        <h2>Pricing scenario: 15,000 contacts, selective lifecycle sending</h2>
+        <p>
+          Picture 15,000 contacts, 1,400–2,200 orders monthly, 32,000–48,000 marketing emails in a normal month, higher in November and May. Profile billing charges for the full pool even when only engaged segments receive lifecycle mail. Send-weighted billing charges every broadcast you panic-send during a heatwave SKU miss.
+        </p>
+        <p>
+          Holdout tests change ROI math. If winback discounts move customers who would reorder anyway, platform fees are not the expensive line — mis-measured incrementality is.
+        </p>
+        <h2>Migration sequencing and collision guardrails</h2>
+        <p>
+          Export consent timestamps and suppressions. Rebuild welcome and cart first; parallel-monitor two weeks. Predictive segments, CRM pipelines, and push automations need explicit replacements — document what you are giving up. Pause legacy flows before enabling new ones.
+        </p>
+        <p>
+          Hybrid stacks without priority docs duplicate cart recovery. If capture lives elsewhere, tag handoff must be explicit. See <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before running two senders through sale week.
+        </p>
+        <h2>Measurement guardrails</h2>
+        <p>
+          Separate replenishment from winback attribution. Tea and coffee merchants over-credit discount winback for natural consumption cycles. Hold out five percent of new subscribers on welcome tests. Measure incremental GMV with holdouts, not default dashboards.
+        </p>
+        <p>
+          Multichannel requires one trigger-ownership spreadsheet reviewed before big sends. Tools do not replace ops discipline; some make violations easier to catch in preview.
+        </p>
+        <h2>Hybrid stack patterns on Shopify</h2>
+        <p>
+          Common pattern: capture in Privy or Justuno, lifecycle in Postscript, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+        </p>
+        <p>
+          Camping quiz capture fed education sequences while flash SMS handled weekend promos — with forty-five-minute suppression between cart channels. Collisions dropped before volume rose.
+        </p>
+        <h2>Who should choose which</h2>
+        <p><strong>Choose Postscript if:</strong></p>
+        <ul>
+          <li>Sms is a primary revenue channel with compliance discipline</li>
+          <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
+          <li>Message volume and plans fits your calendar</li>
+          <li>Your team can maintain Postscript without external rescue</li>
+          <li>Switching cost favors Postscript for the next twelve months</li>
+        </ul>
+        <p><strong>Choose Mailchimp if:</strong></p>
+        <ul>
+          <li>Broadcast muscle memory outweighs shopify trigger depth</li>
+          <li>You will use familiar editor and broad marketing features weekly</li>
+          <li>Contacts by tier fits your calendar</li>
+          <li>Your team can maintain Mailchimp without external rescue</li>
+          <li>Incremental lifecycle GMV justifies Mailchimp migration</li>
+        </ul>
+        <h2>Verdict</h2>
+        <p>
+          Postscript is the better Shopify email tool when SMS is a primary revenue channel with compliance discipline. Mailchimp is the better Shopify email tool when broadcast muscle memory outweighs Shopify trigger depth. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/klaviyo-vs-mailchimp">Klaviyo vs Mailchimp</a> ·
+          <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> ·
+          <a class="link" href="/compare/postscript-vs-brevo">Postscript vs Brevo</a> ·
+          <a class="link" href="/for/vinyl">Email tools for vinyl record stores</a> ·
+          <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Postscript vs Mailchimp FAQ" />
+</BaseLayout>

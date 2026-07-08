@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const path = '/guides/revenue-attribution';
+const title = 'Shopify Email Revenue Attribution — Operator Playbook';
+const desc = description(site, 'guides/revenue-attribution');
+
+const featuredApps = ['sequenzy', 'klaviyo', 'drip', 'omnisend', 'yotpo-email-sms'].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is wrong with default ESP revenue attribution?',
+    answer: 'Last-click within 5–7 day window over-credits email for orders that would have happened anyway. Cart recovery claims full order value when customer was returning regardless. Winback credits subscription renewals. Default attribution inflates ROI and hides discount margin destruction.',
+  },
+  {
+    question: 'What is incremental revenue for email?',
+    answer: 'Orders that would not have occurred without the specific send — measured via holdout tests, send/no-send cohort comparison, or conservative attribution windows. Hard to prove perfectly; directional rigor beats dashboard vanity.',
+  },
+  {
+    question: 'How do I run an email holdout test?',
+    answer: 'Randomly exclude 5–10% of eligible segment from flow for 30–60 days. Compare purchase rate and revenue versus sent cohort. Account for seasonality. Klaviyo and Sequenzy support exclusion branches; document test in ops wiki.',
+  },
+  {
+    question: 'Should I trust Klaviyo attributed revenue dashboard?',
+    answer: 'Use as directional flow comparison, not finance truth. Cross-check with UTM-tagged links, Shopify order tag from ESP, and margin after discount. Compare flows relative to each other — welcome vs cart — more than absolute dollars.',
+  },
+  {
+    question: 'How does discount affect attributed revenue quality?',
+    answer: 'High attributed revenue with 25% average discount may be negative margin. Report revenue per send AND profit per send where finance provides COGS. Read discount-discipline guide alongside attribution.',
+  },
+  {
+    question: 'SMS attribution separate from email?',
+    answer: 'Yes — unique UTM parameters per channel, separate last-click windows. Postscript revenue report does not automatically deduplicate Klaviyo email credit on same order. Spreadsheet merge for true incrementality until unified UTM discipline.',
+  },
+  {
+    question: 'Subscription revenue attribution trap?',
+    answer: 'Recurring Recharge charges auto-attributed to winback or random campaign if click preceded renewal. Exclude active subscribers from winback. Tag subscription renewal orders separately in Shopify; filter from flow attribution exports.',
+  },
+  {
+    question: 'What UTM structure for Shopify email?',
+    answer: 'utm_source=klaviyo or sequenzy, utm_medium=email, utm_campaign=flow-slug-email-position. Consistent naming enables GA4 and Shopify analytics cross-check. SMS uses utm_medium=sms.',
+  },
+  {
+    question: 'How often to recalibrate attribution methodology?',
+    answer: 'Quarterly review of windows and holdout results. Immediately when adding subscription, wholesale, or new market — order types change incrementality assumptions.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
+      <p class="catalog-kicker mt-6">Revenue attribution</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Measure Shopify email revenue honestly — not rented last-click credit</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        ESP dashboards show impressive attributed revenue. Finance asks why margin flat. The gap is attribution methodology — last-click windows that credit cart recovery for loyal return buyers, winback that claims subscription renewals, welcome that counts orders from customers who would have purchased from retargeting anyway. This playbook defines incremental measurement, holdout testing, UTM discipline, margin-adjusted reporting, and platform-specific attribution limits for Shopify retention teams.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Sequenzy and Klaviyo both report flow revenue — use for relative flow comparison, not board-level ROI without holdout validation. Directional rigor beats precision theater when incrementality is the actual question.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/use-cases/analytics">Analytics use case</a>
+        <a class="btn btn-secondary" href="/guides/discount-discipline">Discount discipline</a>
+        <a class="btn btn-secondary" href="/guides/segmentation">Segmentation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Attribution hierarchy"
+      picks={[
+        { label: 'Gold', tool: 'Holdout tests', reason: '5–10% random exclusion from flow — true incrementality signal.' },
+        { label: 'Silver', tool: 'Margin-adjusted revenue', reason: 'Attributed orders minus discount depth and COGS — finance-aligned.' },
+        { label: 'Bronze', tool: 'UTM + flow comparison', reason: 'Relative performance welcome vs cart — not absolute ROI claims.' },
+        { label: 'Avoid', tool: 'Default 5-day last-click', reason: 'Over-credits recovery flows and post-purchase cross-sell.' },
+        { label: 'Best reporting', tool: 'Klaviyo + discipline', reason: 'Deep flow analytics when paired with holdout and margin review — Sequenzy for lean per-flow revenue tracking.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Attribution illusions in enthusiast-commerce stacks</h2>
+      <p>
+        <strong>Illusion A — Group-buy cart recovery.</strong> Dashboard credited $94k quarterly. Holdout on 9% of abandoner cohort: excluded converted 14.1%, sent 16.4% — true lift 2.3 points. Adjusted incremental roughly $28k. Still worth running; not worth doubling ad spend because of dashboard story.
+      </p>
+      <p>
+        <strong>Illusion B — Tea subscription winback.</strong> $61k attributed from lapsed segment. 37% orders were Recharge renewals that would have charged regardless. 29% used stacked harvest-sale codes. Finance-adjusted contribution under half headline number.
+      </p>
+      <p>
+        <strong>Illusion C — Keycap cross-sell post-purchase.</strong> $22k credited to recommendation email. 71% of clickers had keycap SKU in browse history pre-order — email accelerated timing. Holdout modest; kept for CX, removed from growth OKRs.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">UTM discipline for multi-SKU catalogs</h2>
+      <p>
+        Name campaigns by collection and flow position: <code class="text-sm">utm_campaign=vinyl-welcome-email-2</code>, <code class="text-sm">utm_campaign=keyboard-cart-sms-1</code>. Variant tests use <code class="text-sm">utm_content=plate-material-a</code>. Finance reconciles in Shopify with utm_source=klaviyo or sequenzy. Changing naming mid-quarter breaks spreadsheet joins — document breaks in ops wiki.
+      </p>
+      <p>
+        SMS from Postscript during keyboard drop week: separate utm_medium=sms and shorter attribution window (48h). Email and SMS both claiming same group-buy order is common without explicit dedup rules in monthly report.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Monthly attribution report template</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">What retention lead sends finance</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Per-flow attributed revenue (ESP default) — labeled "directional"</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Per-flow margin-adjusted revenue — discount and COGS applied</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Revenue per send and per recipient — efficiency metric</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Holdout test results if running — incremental lift %</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Full-price order rate trend among repeat buyers</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Unsubscribe and complaint rate per flow — list health cost</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Platform cost — ESP, SMS, capture tools — for net contribution</li>
+      </ul>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">UTM naming convention</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Standardize across flows</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <code class="text-sm">utm_source=sequenzy</code> or <code class="text-sm">klaviyo</code> · <code class="text-sm">utm_medium=email</code> · <code class="text-sm">utm_campaign=cart-email-2</code> · <code class="text-sm">utm_content=variant-a</code>
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        SMS: <code class="text-sm">utm_medium=sms</code>, <code class="text-sm">utm_source=postscript</code>. Campaign slug matches ESP flow name for spreadsheet joins. Never change naming mid-quarter without documentation break.
+      </p>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Platform attribution depth</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five tools — reporting reality</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      paragraphs={[
+        'Sequenzy revenue attribution per flow and campaign — lean reporting adequate for SMB flow comparison and weekly ops review. Pair with UTM discipline in Shopify analytics for cross-check.',
+        'Pay-per-email cost visible alongside revenue — net contribution per flow calculable without separate finance spreadsheet for send costs.',
+        'Holdout exclusion branches implementable via segment rules — document test cohort and review monthly.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      badge="Best analytics depth"
+      paragraphs={[
+        'Klaviyo benchmark reporting, flow comparison, segment revenue, predictive CLV integration — deepest native Shopify attribution. Still last-click biased — holdout tests still required for incrementality claims.',
+        'Shopify plus Klaviyo attributed revenue in Admin when integration complete — useful cross-check, same methodology limits.',
+        'Flow A/B revenue comparison mature — use for optimization within flow, not platform ROI proof alone.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Drip revenue dashboard clear per workflow — good for visual flow shops tracking branch performance. Export CSV for margin adjustment in spreadsheet.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Omnisend revenue per message adequate for SMB. Less granular segment attribution than Klaviyo — acceptable when flow count under ten.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Yotpo attribution spans email, SMS, reviews, loyalty — consolidation value when multiple modules active. Complexity increases double-count risk across touchpoints — define primary credit rules.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Attribution errors</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong>Dashboard to board.</strong> ESP attributed revenue as finance KPI without margin adjustment.</li>
+        <li><strong>No holdout ever.</strong> Years of flows, zero incrementality tests — optimization on noise.</li>
+        <li><strong>Subscription in winback.</strong> Renewal orders inflate winback credit.</li>
+        <li><strong>Channel double-count.</strong> Email and SMS both claim same order without UTM dedup.</li>
+        <li><strong>Window gaming.</strong> Extending attribution window to 14 days to inflate quarterly numbers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Shopify order reconciliation for hobby-commerce</h2>
+      <p>
+        Weekly export: ESP attributed orders, Shopify orders with matching utm_source, intersection count, delta notes. Common deltas for vinyl and keyboard catalogs: guest checkout lag, group-buy manual orders without UTM, subscription renewals miscredited to winback, phone orders from concierge buyers. Tag renewal and wholesale orders in Shopify; filter before leadership review.
+      </p>
+      <p>
+        Profit per send beats revenue per send for decisions. A tea merchant ranked flows quarterly by (revenue − discount − COGS − send cost) ÷ sends — discovered cart email three with free shipping on $22 carts was negative contribution. Killed third touch under $40 cart threshold; kept for subscription upgrade paths only.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Holdout rotation for small retention teams</h2>
+      <p>
+        One holdout at a time — cart in Q1, welcome in Q2, winback in Q3, replenishment in Q4. Eight percent random exclusion, 30-day minimum, document in shared spreadsheet. A vinyl shop ran cart holdout during quiet month — avoided contaminating results with RSD traffic spike. Incremental lift 2.1 points justified keeping three-touch cart; killed unnecessary fourth email that added no lift.
+      </p>
+      <p>
+        Pick one flow with stable volume when starting — cart recovery ideal. Create random 8% holdout segment in Klaviyo or Sequenzy. Exclude from flow sends 30 days. Track orders within 7-day window both cohorts. Incremental lift = sent conversion minus holdout conversion. Adjust flow investment by true lift not gross attribution.
+      </p>
+      <p>
+        Cross-read <a class="link" href="/guides/discount-discipline">discount discipline</a> for margin-adjusted reporting and <a class="link" href="/use-cases/analytics">analytics use case</a> for workflow-specific metrics.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Board reporting template</h2>
+      <p>
+        Monthly one-pager for leadership: directional ESP revenue by flow, margin-adjusted revenue, holdout incremental lift if running, full-price order rate among repeat buyers, platform cost, net email contribution estimate. Label ESP numbers "directional per methodology v2026-Q2" — methodology footnote prevents board anchoring on last-click. A keyboard shop stopped board arguments by fixing footnote once; same dashboards, fewer fights.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/guides">All guides →</a>
+      <a class="link" href="/guides/discount-discipline">Discount discipline →</a>
+      <a class="link" href="/use-cases/analytics">Analytics use case →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Revenue attribution FAQ" />
+
+  <section class="container py-12">
+    <article class="prose-shopify max-w-4xl">
+      <h2>Attribution glossary for cross-team alignment</h2>
+      <p><strong>Directional revenue:</strong> ESP last-click — flow comparison only. <strong>Finance revenue:</strong> Shopify orders with UTM match minus returns. <strong>Incremental revenue:</strong> holdout-adjusted lift. <strong>Contribution:</strong> incremental minus discount COGS and send cost. Using one term for all four guarantees executive mistrust — label every slide.</p>
+      <p>Tea subscription and vinyl drop businesses see attribution distortion from limited-inventory FOMO — orders that would have completed without email within 24h anyway. Shorter attribution windows and holdouts matter more in hype catalogs than replenishment CPG.</p>
+      <h2>Board reporting without attribution theater</h2>
+      <p>Executive slides need three numbers with explicit labels: directional ESP revenue (flow comparison only), finance revenue (Shopify UTM match minus returns), incremental revenue (holdout-adjusted). Mixing labels guarantees board mistrust when Klaviyo dashboard disagrees with Shopify finance export.</p>
+      <p>Keyboard and vinyl merchants should segment attribution by catalog type — limited drops get twenty-four hour windows and mandatory holdout; replenishment tea SKUs get seven-day windows and replenishment-flow credit only when reorder interval exceeded. Coffee subscription with grinder bundles needs line-item attribution not order-level when addon skews AOV.</p>
+      <p>Quarterly attribution retro: compare holdout trend, discount share among attributed orders, return rate by flow. Declining incremental lift with rising discounts is strategy failure requiring incentive guide revisit — not ESP swap.</p>
+    </article>
+  </section>
+</BaseLayout>

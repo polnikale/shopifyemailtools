@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const path = '/guides/segmentation';
+const title = 'Shopify Email Segmentation Playbook — Operator Guide';
+const desc = description(site, 'guides/segmentation');
+
+const featuredApps = ['sequenzy', 'klaviyo', 'drip', 'omnisend', 'activecampaign'].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the minimum viable segmentation for Shopify email?',
+    answer: 'Five segments: never purchased, one-time buyer, repeat buyer (2+ orders), VIP (top 10% LTV or 3+ orders), lapsed (no purchase 120+ days). Add vertical segments — subscription active, wholesale account, drop waitlist — before advanced RFM. Everything else builds on this foundation.',
+  },
+  {
+    question: 'Should I segment by products purchased or collections browsed?',
+    answer: 'Both, for different jobs. Purchased product drives replenishment and cross-sell. Browsed collection drives browse abandonment and launch interest. A customer who bought sencha and browsed matcha needs both tags — merged flows cause collision.',
+  },
+  {
+    question: 'How does Klaviyo predictive segmentation compare to Sequenzy?',
+    answer: 'Klaviyo offers native predicted CLV, churn risk, and discount sensitivity — powerful at scale with clean order history. Sequenzy supports deep behavioral segmentation with agent-defined rules and pay-per-email economics for aggressive splits. Pick Klaviyo when predictive scores change send decisions weekly; Sequenzy when rule clarity and send cost matter more.',
+  },
+  {
+    question: 'How many segments is too many?',
+    answer: 'More than 40 active segments without documented owner and send purpose each is operational debt. Segments should change offer, timing, or suppression — not just email headline. If two segments receive identical flows, merge them.',
+  },
+  {
+    question: 'RFM segmentation — when is it worth it?',
+    answer: 'Above 4,000 orders/month with enough repeat purchase density that recency/frequency/monetary tiers produce different creative. Tea and consumables benefit. One-time purchase heavy stores — limited vinyl, single pen grail — RFM adds complexity without revenue lift.',
+  },
+  {
+    question: 'How do I segment Shopify subscription customers?',
+    answer: 'Tag active subscriber, paused, cancelled, failed billing separately. Replenishment and winback logic differs per state. Recharge or Skio sync properties into Klaviyo, Sequenzy, or Drip — never email cancelled subscriber replenishment reminders.',
+  },
+  {
+    question: 'B2B wholesale segmentation on Shopify?',
+    answer: 'Company account, approval status, net terms, minimum order volume. Email to pending-approval accounts is activation; email to active wholesale is reorder and catalog — different jobs. ActiveCampaign and Klaviyo handle B2B overlap better than Privy or Shopify Email.',
+  },
+  {
+    question: 'How often should segments be audited?',
+    answer: 'Monthly orphan check — segments with zero sends 60 days. Quarterly logic review — do thresholds still match catalog and AOV? Immediately when adding new product category, pressing run, or international market.',
+  },
+  {
+    question: 'Segmentation versus personalization?',
+    answer: 'Segmentation decides who gets which flow. Personalization is dynamic content within flow — product block, first name, local currency. Segment first; personalize within segment. Personalizing without segment discipline broadcasts irrelevant products.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
+      <p class="catalog-kicker mt-6">Segmentation</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Shopify email segmentation — sort the shelf before you sell</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Segmentation fails when it is a reporting exercise — 200 Klaviyo segments, half orphaned, three that actually change discount logic. This playbook defines the foundation segments every Shopify store needs, how enthusiast catalog structure adds layers (switch type, tea region, rope diameter, nib width), when RFM earns its complexity, and how to audit segments monthly so list splits drive send behavior instead of dashboard vanity.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Sequenzy pay-per-email rewards aggressive segmentation — split freely without profile tier anxiety. Klaviyo predictive segments reward clean order data at scale. Drip tag triggers reward onsite behavior capture. Platform choice affects segmentation economics; segment logic is platform-agnostic operating discipline.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/use-cases/segmentation">Segmentation use case</a>
+        <a class="btn btn-secondary" href="/guides/revenue-attribution">Revenue attribution</a>
+        <a class="btn btn-secondary" href="/for">Store-type guides</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Segmentation layers"
+      picks={[
+        { label: 'Layer 1', tool: 'Lifecycle stage', reason: 'Never bought, one-time, repeat, VIP, lapsed — every store, every platform.' },
+        { label: 'Layer 2', tool: 'Intent signals', reason: 'Cart active, browse collection, back-in-stock waitlist, drop VIP.' },
+        { label: 'Layer 3', tool: 'Vertical attributes', reason: 'Switch type, tea cultivar, rope diameter, nib size, subscription status.' },
+        { label: 'Layer 4', tool: 'Offer sensitivity', reason: 'Full-price loyalist, discount responder, never-discounted VIP.' },
+        { label: 'Best lean depth', tool: 'Sequenzy', reason: 'Unlimited contacts + agent-defined rules without per-segment billing fear.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three segmentation wins and one failure — catalog operators</h2>
+      <p>
+        <strong>Win A — Specialty tea merchant.</strong> Segmented by tea type purchased and subscription cadence. Sencha replenishment at 28-day window; aged pu-erh at 84 days. Generic 30-day reminder underperformed 16 months. Revenue per replenishment send rose 34% with type-specific segments only — no new discount.
+      </p>
+      <p>
+        <strong>Win B — Mechanical keyboard vendor on Klaviyo.</strong> Predicted discount sensitivity split cart recovery: full-price loyalists reminder-only email one; predicted responders 8% email two. Margin on recovered group-buy carts up 26%. Segmentation changed offer, not just subject line.
+      </p>
+      <p>
+        <strong>Win C — Fountain pen boutique.</strong> Nib-width-purchased tag suppressed promos for sold-out widths in customer preference. Post-purchase branch for fit-issue tag on first purchase. Segmentation prevented trust-destroying OOS promos — unsubscribes dropped 0.18 points on VIP cohort.
+      </p>
+      <p>
+        <strong>Failure — Vinyl + merch hybrid, 134 segments.</strong> Agency built RFM x genre matrix nobody maintained. Winback sent to customers waiting on back-in-stock pressing notification. Quarterly audit merged to 26 active segments with documented send purpose. Revenue clarity improved; ops time dropped 7 hours/week.
+      </p>
+      <p>
+        <strong>Win D — Climbing rope shop.</strong> Segmented by rope diameter purchased and retirement interval. Half-rope buyers got different replenishment education than single-rope sport climbers. Cross-sell carabiner email suppressed for education-only segment until day 21. Returns on safety SKUs fell 8%.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Foundation segment definitions</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Build these five first</h2>
+      <div class="mt-6 space-y-6 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Never purchased</h3>
+          <p class="mt-2 text-[17px] leading-8">Subscribed, zero orders. Welcome series, browse abandonment. Exclude from winback and replenishment. Highest collision risk with cart — apply flow-collision-prevention rules. Common on keyboard group-buy interest lists.</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">One-time buyer</h3>
+          <p class="mt-2 text-[17px] leading-8">Single order, outside replenishment window. Post-purchase cross-sell, second-order nurture. Discount only after education sequence if no second purchase by day 60. Vinyl single-pressing buyers live here until second purchase.</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Repeat buyer (2+ orders)</h3>
+          <p class="mt-2 text-[17px] leading-8">Core retention audience. Replenishment, VIP track, launch early access. Lower default discount authority — they already trust you. Tea subscribers graduate here after second manual order or third subscription ship.</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">VIP (top 10% LTV or 3+ orders)</h3>
+          <p class="mt-2 text-[17px] leading-8">Exclusive access, no cart discount by default, human tone. See <a class="link" href="/use-cases/vip-segments">VIP use case</a>. Collision rule: VIP suppresses promotional discount stacks. Pen collectors and rope team leads often land here.</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Lapsed (120+ days no purchase)</h3>
+          <p class="mt-2 text-[17px] leading-8">Winback candidate. Exclude active subscribers and recent support escalations. Full-price touch before discount ladder. Longer lapse window (180d) for high-AOV pen browsers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Vertical overlay examples</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Layer 3 by catalog type</h2>
+      <div class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <p><strong>Vinyl:</strong> genre purchased, pressing format (LP/7"), RSD VIP, never-discount collector.</p>
+        <p><strong>Keyboards:</strong> switch type interest, group-buy participant, in-stock versus pre-order browser.</p>
+        <p><strong>Tea:</strong> cultivar, subscription active/paused, gongfu versus daily drinker tag from quiz.</p>
+        <p><strong>Rope:</strong> diameter, discipline (sport/trad), retirement due, certification course completer.</p>
+        <p><strong>Pens:</strong> nib width, ink type purchased, limited celluloid waitlist, dealer account.</p>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Monthly audit checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Segment hygiene</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>List segments with zero sends in 60 days — merge or delete</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Verify VIP count roughly stable — sudden 3x growth signals definition bug</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Check subscription tags sync from Recharge/Skio</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Confirm lapsed excludes purchasers last 120 days</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Document any new segment with: purpose, flows affected, owner</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Cross-check collision matrix for overlapping segment enrollments</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Platform segmentation depth</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five tools for Shopify segments</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Best segmentation economics"
+      paragraphs={[
+        'Sequenzy unlimited contacts removes the tax on fine-grained splits. Tea cultivar, switch type, subscription state, discount sensitivity — segment freely; pay per send not per stored profile. Lean teams use agent prompts: "create VIP segment: 3+ orders or top 10% LTV last 12 months, exclude wholesale."',
+        'Behavioral rules integrate Shopify order and tag data. Depth below Klaviyo on native predictive scores — compensate with explicit rules documented in ops wiki.',
+        'Segmentation strategy pairs with discount discipline: full-price loyalist segment should never receive cart 15% without override audit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo segmentation ceiling for Shopify: predictive CLV, churn risk, collection browse events, variant purchase history. RFM dashboards native. Wins when data science layer changes weekly campaign decisions on keyboard variant catalogs.',
+        'Profile pricing means every new segment has cost implication at scale — justify splits with revenue delta, not curiosity.',
+        'Segmentation best practice: dynamic segments over static lists. Static lists rot within weeks on growing Shopify stores.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Drip tag-triggered segmentation from onsite behavior — switch preference quiz, tea brewing quiz, sizing guide view. Strong for capture-to-segment pipeline when onsite quizzes feed tags.',
+        'Visual workflow builder makes segment-to-flow mapping transparent — good for teams that need boolean clarity over black-box predictive scores.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Omnisend segmentation adequate for SMB lifecycle splits — lifecycle stage, cart abandoners, purchasers. Less comfortable for 15-layer enthusiast taxonomy. Graduate when segment count exceeds 25 with distinct offer logic.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'ActiveCampaign when Shopify segments overlap CRM — high-ticket pens, B2B wholesale rope accounts, consultative sales. Ecommerce behavioral segments plus deal pipeline stages. Overkill for pure DTC under 2,000 orders/month.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Segmentation anti-patterns</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong>Segment sprawl.</strong> 100+ segments from agency build; 8 used. Audit quarterly.</li>
+        <li><strong>Static lists.</strong> Exported CSV segments that never refresh. Use dynamic Shopify-synced definitions.</li>
+        <li><strong>Same flow, different segment.</strong> Vanity split — merge and use dynamic content instead.</li>
+        <li><strong>Ignoring collision.</strong> Customer in winback and replenishment simultaneously. Suppression matrix required.</li>
+        <li><strong>Vertical blindness.</strong> Generic segments on enthusiast catalog without switch type, tea window, or nib attributes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Segment documentation template — one page per segment</h2>
+      <p>
+        Every segment beyond foundation five gets a Notion row: name, definition in plain English, Shopify properties used, flows that reference it, offer difference versus default, owner, last audited date. Example: <em>tea-sencha-replenishment</em> — purchased sencha, active subscriber or 2+ manual orders, last sencha order 22–32 days ago, receives replenishment not winback, no discount email one, owner @retention, audited 2026-03-01.
+      </p>
+      <p>
+        New segment proposal requires answer: what changes — timing, offer, or suppression? If answer is "subject line only," use dynamic content instead. Segment sprawl killed the vinyl+merch hybrid — documentation template prevents rebuild without purpose.
+      </p>
+      <p>
+        Merge review quarterly: segments with identical flow mapping merge into one definition with broader filter. Segments with zero sends 60 days delete or fix definition bug. VIP segment sudden 4× growth usually means LTV calculation broke or wholesale accounts leaked in.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Intent signals layer — browse, cart, waitlist</h2>
+      <p>
+        Layer 2 sits above lifecycle stage. <em>in-cart-flow</em> and <em>in-browse-flow</em> tags from collision guide are intent signals, not lifecycle segments. Back-in-stock waitlist per SKU — fountain pens and limited vinyl — is high-intent; launch email should suppress generic welcome promo. Group-buy interest without purchase is medium-intent; longer welcome nurture, no winback.
+      </p>
+      <p>
+        Do not merge intent into lifecycle permanently — intent tags clear on purchase or timeout. Lifecycle segments update on order events. Customer can be repeat buyer and in-cart-flow simultaneously; suppression matrix handles send priority, not segment deletion.
+      </p>
+      <p>
+        Offer sensitivity layer four pairs with discount discipline guide: full-price loyalist, occasional responder, never-discounted VIP, wholesale net-terms. Cart branch reads layer four before applying code. Tea merchant tagged wholesale accounts excluded from all promotional automation — separate B2B reorder cadence.
+      </p>
+      <p>
+        Segment naming convention: <code>lifecycle-repeat-buyer</code>, <code>vertical-tea-sencha</code>, <code>intent-in-cart</code>, <code>offer-full-price</code> — prefix tells layer, prevents orphan names like "Segment 47." Onboarding doc for new retention hire starts with naming convention before ESP login.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Dynamic content without segment sprawl</h2>
+      <p>
+        When only hero product block changes, use dynamic content inside one segment — not duplicate segments per SKU. Rope shop one repeat-buyer segment with dynamic block by diameter purchased beats twelve repeat-buyer-diameter segments each with separate flow copy. Segment when offer, timing, or suppression differs; personalize when only product image changes.
+      </p>
+      <p>
+        Quiz and onsite preference tags feed dynamic blocks: tea brewing style, keyboard switch preference, pen nib width. Tag without segment when same welcome timing and offer — different hero SKU in block only. Reduces collision surface and audit burden.
+      </p>
+      <p>
+        Export segment definition JSON or screenshot quarterly to ops archive — when agency rotates, definitions survive. Segment without export is tribal knowledge; tribal knowledge does not survive Shopify store replatform or ESP migration.
+      </p>
+      <p>
+        Start segmentation guide cross-read after foundation five live — not before. Merchants who build 40 vertical segments before welcome collision rules exist rebuild everything after first drop week disaster.
+      </p>
+      <p>
+        Sequenzy teams: segment freely early — economics support experimentation. Klaviyo teams: segment with revenue justification per split — profile tax is real. Platform economics shape segmentation appetite; foundation five is identical on both.
+      </p>
+      <p>
+        Pair with <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when intent and lifecycle segments overlap — segmentation defines who; collision defines who receives discount when both qualify.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">RFM when it earns its shelf space</h2>
+      <p>
+        RFM is not a maturity badge — it is a tool for repeat-dense catalogs. Tea subscribers with monthly cadence, rope buyers on retirement cycles, and keyboard customers on serial group-buys produce recency/frequency/monetary tiers that change offer logic. Limited vinyl pressings and single grail pen purchases do not — one-time high-AOV behavior makes RFM segments hollow. Test: do monetary quartiles receive different discounts or timing? If no, skip RFM until repeat density justifies it.
+      </p>
+      <p>
+        Foundation five segments plus one vertical layer — not vertical layer instead of foundation. Cross-read <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when intent segments overlap lifecycle segments.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/guides">All guides →</a>
+      <a class="link" href="/guides/flow-collision-prevention">Collision prevention →</a>
+      <a class="link" href="/use-cases/segmentation">Use-case playbook →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Segmentation FAQ" />
+</BaseLayout>

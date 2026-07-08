@@ -26,4 +26,7 @@ html{scroll-behavior:smooth} body{font-family:'Inter',system-ui,-apple-system,Bl
 .prose-shopify p{@apply mt-4 text-slate-700}
 .prose-shopify ul{@apply mt-4 list-disc space-y-2 pl-6 text-slate-700}
 .link{font-weight:900;color:#4f46e5} .link:hover{color:#312e81}
+.catalog-kicker{@apply text-xs font-black uppercase tracking-[0.22em] text-indigo-600}
+.rank-pill{@apply inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-sm font-black text-white}
+.ledger-card{@apply rounded-2xl border bg-white p-6 shadow-sm; border-color:#4f46e522}
 }

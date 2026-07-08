@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const leaving = appBySlug('brevo')!;
+const path = '/alternatives/brevo-alternative';
+const title = 'Best Brevo Alternatives for Shopify (2026)';
+const desc = 'Why Shopify merchants leave Brevo — thin ecommerce lifecycle, setup overhead, reporting gaps — plus eight ranked Shopify-native alternatives, migration checklist, and pricing comparison.';
+
+const altSlugs = ['sequenzy', 'omnisend', 'klaviyo', 'drip', 'mailchimp', 'shopify-email', 'tinyemail', 'activecampaign'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  { question: 'Why do Shopify stores leave Brevo?', answer: 'Brevo wins on pay-per-email volume and transactional options, but Shopify lifecycle — browse abandonment, collection segmentation, flow revenue attribution — requires more configuration than ecommerce-native platforms provide. Stores leave when setup time exceeds savings or when cart recovery revenue justifies upgrading beyond generalist tooling.' },
+  { question: 'What is the best upgrade from Brevo?', answer: 'Sequenzy when lifecycle strategy is the gap; Omnisend when you need prebuilt cart and welcome fast. Both justify leaving Brevo\'s generalist positioning for Shopify-specific retention operations.' },
+  { question: 'Can I keep Brevo for transactional email?', answer: 'Yes — some stacks use Brevo for order-adjacent transactional sends and Sequenzy or Klaviyo for marketing. Separate sending domains and clear suppression rules required; marketing and transactional must not share reputation blindly.' },
+  { question: 'Is Mailchimp a good Brevo replacement?', answer: 'Usually wrong direction for Shopify DTC — both are generalists. Move up to Omnisend or Sequenzy, not sideways to Mailchimp Customer Journeys that approximate ecommerce poorly.' },
+  { question: 'How hard is Brevo migration?', answer: 'Contact export is straightforward. Automations rebuild manually — document triggers and delays. Plan one to two weeks for core lifecycle flows; Brevo logic does not transfer natively.' },
+  { question: 'Is Brevo too cheap to leave?', answer: 'If revenue opportunity from cart recovery and replenishment exceeds five hundred dollars monthly and Brevo cannot run those flows reliably, the cheap bill is expensive silence — opportunity cost not subscription delta.' },
+  { question: 'Is Brevo SMS adequate for Shopify?', answer: 'Functional for broadcasts; lacks Shopify-native SMS depth of Postscript or Omnisend. SMS-first stores often graduate entirely rather than split Brevo marketing email and dedicated SMS.' },
+  { question: 'When should I stay on Brevo?', answer: 'Stay for straightforward newsletters, modest automation, and tight budget — artisan coffee shop under three thousand contacts sending twice monthly may fit until replenishment timing becomes revenue-critical.' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Brevo alternatives</span></nav>
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Upgrade path</p>
+        <h1 class="hero-title mt-5">Best Brevo alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
+          Brevo is the budget-conscious generalist — pay-per-email, transactional options, dependable volume. Merchants leave when Shopify lifecycle setup time exceeds savings, when browse abandonment across climbing-gear collections needs native catalog logic, or when a specialty-tea replenishment flow still does not exist three months after Brevo install.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Eight ranked upgrades for stores outgrowing Brevo on Shopify — not sideways to another generalist, but up to ecommerce-native lifecycle. Sequenzy leads when strategy is the gap; Omnisend when speed matters. Compare <a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> before migrating.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox title="Top Brevo upgrades" picks={[
+          { label: 'Best overall upgrade', tool: 'Sequenzy', reason: 'Shopify lifecycle playbooks — escape generalist configuration tax.' },
+          { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt cart and welcome when Brevo automations stalled.' },
+          { label: 'Best data depth', tool: 'Klaviyo', reason: 'When Brevo segmentation ceiling hit on catalog scale.' },
+          { label: 'Best workflow builder', tool: 'Drip', reason: 'Visual automation when Brevo rules felt too rigid.' },
+          { label: 'Best lateral (rare)', tool: 'Mailchimp', reason: 'Usually wrong direction — familiarity only.' },
+        ]} />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Brevo</h2>
+        <p>Brevo optimizes for volume and transactional reliability — not Shopify retention operations out of the box. Browse abandonment, collection-level segmentation, and flow revenue attribution require configuration generalist templates never productized for variant-aware catalogs. A mechanical-keyboard store spends weekends wiring Brevo automations Omnisend ships prebuilt — savings evaporate in founder hours.</p>
+        <p>Pay-per-email wins on bill size but loses when nobody maintains automations. Cheap platform with zero lifecycle revenue is expensive silence — a pottery studio paying twenty-five dollars monthly while abandoned checkout leaks three thousand dollars needs capability, not lower subscription.</p>
+        <p>Reporting gaps trigger exits. Brevo shows sends and clicks; finance asks incremental lift by first product category. Teams needing holdout testing, predictive winback, or variant back-in-stock graduate to Klaviyo or Sequenzy with clearer Shopify playbooks.</p>
+        <p>Brevo is not failing — you may be underbuilt on it. If newsletters twice monthly and one basic cart flow cover ninety percent of needs at three thousand contacts, stay. If you are exporting Shopify data weekly to patch Brevo gaps competitors solve natively, read alternatives skeptically about staying.</p>
+
+        <h2>Newsletters, lifecycle, and transactional split</h2>
+        <p>Some stacks keep Brevo for transactional order-adjacent sends while marketing moves to Sequenzy or Klaviyo — separate domains, documented suppression. Evaluate whether you leave Brevo entirely or split jobs: marketing lifecycle almost always upgrades; transactional may stay if deliverability and templates work.</p>
+        <p>Before switching, inventory Brevo automations that actually produced revenue last quarter. Migrate winners; retire rules nobody audited in twelve months. Popup-heavy lists need sunset before importing into per-contact platforms if Klaviyo is the target.</p>
+
+        <h2>Brevo migration checklist for Shopify</h2>
+        <p>Export is easy; rebuild is the work. Run this sequence before disconnecting Brevo from Shopify integrations.</p>
+        <ol>
+          <li><strong>Export contacts with attributes and consent</strong> — include signup source and engagement data.</li>
+          <li><strong>Document every live automation</strong> — triggers, delays, conditions; screenshot workflow logic.</li>
+          <li><strong>Identify revenue-producing flows</strong> — rebuild these first; skip abandoned experiments.</li>
+          <li><strong>Decide transactional split</strong> — marketing-only migration vs full exit; configure domains accordingly.</li>
+          <li><strong>Connect replacement to Shopify</strong> — verify product catalog and order history sync.</li>
+          <li><strong>Rebuild welcome and cart</strong> — pause Brevo equivalents after QA test orders.</li>
+          <li><strong>Fourteen-day parallel suppression</strong> — no duplicate abandonment messages.</li>
+          <li><strong>Migrate replenishment and winback</strong> — tea and coffee consumption cycles are time-sensitive.</li>
+          <li><strong>Redirect popup integrations</strong> — Privy, Justuno feeding new ESP.</li>
+          <li><strong>Warm domain if marketing infrastructure changes</strong>.</li>
+          <li><strong>Run holdout test on first broadcast</strong> — confirm attribution continuity for finance.</li>
+          <li><strong>Archive Brevo ninety days</strong> — keep transactional access if split stack.</li>
+        </ol>
+
+        <h2>Three merchant scenarios</h2>
+        <p><strong>Specialty tea — left Brevo after four months.</strong> Replenishment by blend never worked reliably; moved to Sequenzy for consumption-cycle sequences and pay-per-email. Setup hours saved exceeded Brevo subscription delta within first month.</p>
+        <p><strong>Vinyl shop — upgraded to Omnisend.</strong> Brevo cart existed but drop-day VIP segmentation and restock winback needed prebuilt ecommerce journeys faster than Brevo configuration allowed before major pressing launch.</p>
+        <p><strong>Artisan coffee — stayed on Brevo.</strong> Under three thousand contacts, twice-monthly newsletters, one cart flow — bill and capability aligned until subscription replenishment became strategic priority.</p>
+
+        <h2>Brevo upgrade timing signals</h2>
+        <p>Graduate from Brevo when configuration hours exceed subscription savings — founder weekends wiring automation rules signal upgrade readiness. Signals: replenishment logic needed, browse abandonment requested by merchandising, finance asks flow revenue Brevo reporting cannot answer, popup list passes five thousand with selective send strategy required. Sideways to Mailchimp is wrong; move up to Sequenzy or Omnisend.</p>
+        <p>Transactional split stacks valid short term — Brevo order-adjacent sends, Sequenzy marketing lifecycle — but require domain and suppression discipline. Marketing promotional copy must never leak into Brevo transactional templates post-split.</p>
+
+        <h2>Due diligence before leaving Brevo</h2>
+        <p>Export automation dependency map — which Shopify events trigger which rules. Sunset unengaged before importing to per-contact Klaviyo if upgrading. Document Brevo SMTP settings if transactional remains. Compare actual monthly send volume against Brevo tier headroom on replacement. Run parallel cart recovery test two weeks if abandonment revenue is primary upgrade driver — quantify opportunity cost of delayed migration.</p>
+      </article>
+
+      <section class="container space-y-12 py-16">
+        <p class="catalog-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Brevo alternatives for Shopify stores</h2>
+
+        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
+          'Sequenzy is the Brevo upgrade when generalist configuration tax exceeded subscription savings. Agent-first lifecycle — describe replenishment for thirty-day tea cycles, winback before clearance — without weekends wiring Brevo automation rules.',
+          'Pay-per-email economics familiar from Brevo, but Shopify playbooks and strategy defaults are native. Unlimited contacts with selective sends — same bill discipline, more retention capability.',
+          'Read <a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> and choose Sequenzy when strategy guidance matters as much as price.',
+        ]} />
+
+        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+          'Omnisend when Brevo automations stalled — prebuilt cart, welcome, post-purchase live in days. Shopify-native depth Brevo requires manual configuration to approximate.',
+          'Multichannel optional: SMS and push when vinyl drop urgency needs more than email. Contact pricing predictable at SMB scale.',
+          'Choose Omnisend when speed beats continuing Brevo setup — credible permanent home, not just bridge.',
+        ]} />
+
+        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+          'Klaviyo when Brevo segmentation ceiling hit — collection browse abandonment, predictive CLV, variant back-in-stock. Profile pricing requires list hygiene Brevo pay-per-email masked.',
+          'Agency ecosystem helps complex migrations from Brevo generalist automations. Assign weekly segment owner before migrating.',
+          'Pick Klaviyo when outdoor-gear catalog complexity drives margin — not when Brevo problem was neglect only.',
+        ]} />
+
+        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+          'Drip when Brevo automation rules felt too rigid — visual workflow builder, tag-based branching, revenue dashboards for board-game category splits.',
+          'Per-contact pricing follows list growth — sunset popup imports before migrating. Native Shopify sync for product triggers.',
+          'Choose Drip if team wants hands-on builder after Brevo rule frustration.',
+        ]} />
+
+        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+          'Mailchimp lateral move — rarely correct upgrade from Brevo for Shopify DTC. Customer Journeys approximate ecommerce; per-contact pricing continues pain.',
+          'Only if team refuses anything except Mailchimp UI — usually regretted within quarters.',
+          'Skip sideways; move up to Sequenzy or Omnisend.',
+        ]} />
+
+        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+          'Shopify Email downgrade — if Brevo was already too much and honest need is admin blasts only. Temporary reset, not lifecycle upgrade.',
+          'Native Admin lacks automation even Brevo attempted. Useful ninety-day pause while planning real platform.',
+          'Treat as backward capability step — rare correct Brevo exit.',
+        ]} />
+
+        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+          'tinyEmail stepping stone — wrong direction from Brevo for stores needing more automation. AI campaigns without lifecycle depth.',
+          'Only if deliberately simplifying to newsletters-only launch phase under one hundred monthly orders.',
+          'Avoid Brevo → tinyEmail → Sequenzy chain.',
+        ]} />
+
+        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+          'ActiveCampaign when Brevo overlapped CRM — wholesale pottery inquiries plus DTC automation in one system. Conditional branching exceeds Brevo for sales-follow-up.',
+          'Shopify-native depth trails Klaviyo. Setup can overbuild if replicating entire Brevo library without pruning.',
+          'Choose when sales ops and retention share database — not for catalog intelligence alone.',
+        ]} />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing vs Brevo</h2>
+        <p class="px-5 pb-4 text-slate-600">Compare capability uplift — cheap bill without recovery is false economy.</p>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>~10k sends/mo</th><th>Shopify lifecycle</th><th>Setup friction</th></tr></thead>
+          <tbody>
+            <tr><td>Brevo (leaving)</td><td>$25–65</td><td>Configurable</td><td>High DIY</td></tr>
+            <tr><td>Sequenzy</td><td>$19–79</td><td>Advanced</td><td>Low strategy-first</td></tr>
+            <tr><td>Omnisend</td><td>$60–100</td><td>Solid prebuilt</td><td>Low</td></tr>
+            <tr><td>Klaviyo</td><td>$150–200</td><td>Advanced</td><td>Medium</td></tr>
+            <tr><td>Drip</td><td>$80–120</td><td>Advanced</td><td>Medium builder</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-slate-950">Related guides</p>
+        <p class="mt-2"><a class="link" href="/apps/brevo">Brevo review</a> · <a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> · <a class="link" href="/compare/brevo-vs-mailchimp">Brevo vs Mailchimp</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+      </div>
+    </div>
+  </section>
+
+  <article class="prose-shopify container max-w-4xl pb-8">
+    <h2>Four-week Brevo upgrade timeline</h2>
+    <p><strong>Week 1 — Configuration audit.</strong> Which Brevo automations produced revenue. Founder hours spent monthly on rule maintenance quantified. Sequenzy or Omnisend trial connected to Shopify.</p>
+    <p><strong>Week 2 — Cart and welcome migration.</strong> Pause Brevo equivalents after QA. Replenishment prototype for tea or coffee if consumables. Transactional split domains confirmed if applicable.</p>
+    <p><strong>Week 3 — Browse or winback if needed.</strong> Only if merchandising requested — avoid overbuilding. Holdout broadcast five percent. Deliverability monitored daily.</p>
+    <p><strong>Week 4 — Brevo marketing cancel.</strong> Keep transactional only if split stack. Finance compares flow revenue uplift. Archive Brevo rules for reference.</p>
+
+    <h2>Buyer desk: Brevo upgrade economics</h2>
+    <p>Brevo exits should move up, not sideways. Configuration hours are true cost — founder weekends wiring automations exceed subscription delta. Model cart recovery revenue before choosing another generalist.</p>
+    <p>Transactional split is valid — marketing upgrades to Sequenzy while Brevo handles order-adjacent sends with separate domain reputation. Document suppression between stacks.</p>
+    <p>Success at ninety days: replenishment or cart recovery live with attributable revenue, team explains every journey without Brevo-era workarounds, deliverability stable. Cheaper bill without capability is not a win.</p>
+
+    <h2>Upgrade paths when Brevo ceiling arrives</h2>
+    <p><strong>Sequenzy:</strong> strategy playbooks and pay-per-email when Brevo templates cannot express blend-specific replenishment. <strong>Klaviyo:</strong> browse depth and predictive timing when catalog complexity exceeds manual segment refresh. <strong>Drip:</strong> visual branching when operator enjoys canvas control. French tea merchant kept Brevo transactional subdomain while Sequenzy owned marketing — valid split with documented suppression.</p>
+    <p><strong>Scenario — poster print shop.</strong> Brevo volume pricing won at 8k sends to 22k contacts until per-SKU replenishment became 12% revenue opportunity — Sequenzy migration in nine days off-peak.</p>
+    <h2>Workflow test before exit</h2>
+    <p>Attempt variant-aware cart block and three-touch replenishment in Brevo trial. If two of three require CSV workarounds weekly, upgrade economics already favor exit — founder configuration hours are hidden line item.</p>
+    <h2>Transactional split validity</h2>
+    <p>Keep Brevo transactional subdomain while Sequenzy owns marketing — valid split when EU compliance documentation and order-adjacent sends justify separate reputation path.</p>
+
+    <h2>Configuration hours true cost</h2>
+    <p>Founder weekends wiring Brevo automations exceed subscription delta — if variant cart and replenishment need weekly CSV, upgrade economics already favor exit. Poster shop Sequenzy migration nine days when replenishment hit 12% revenue opportunity.</p>
+
+    <h2>90-day Brevo upgrade proof plan</h2>
+    <p>Week 1: selective send ratio analysis. Week 2: attempt variant cart in Brevo. Week 3: replenishment template test. Week 4–8: if two of three need CSV weekly, trial Sequenzy. Week 9–12: holdout on replacement. Day 90: capability matches revenue opportunity or upgrade complete.</p>
+    <p>French tea kept Brevo transactional subdomain, Sequenzy marketing — valid split. Founder configuration hours exceed subscription delta when weekly CSV workarounds required for variant cart and replenishment.</p>
+
+    <h2>Brevo exit desk: CRM breadth versus Shopify depth</h2>
+    <p>Brevo departures on Shopify often trace to product-sync friction or sales-team features overshadowing ecommerce flows — camping merchants with simple SKU count loved Brevo until variant metafields multiplied. Week one: map Brevo lists to Shopify customer tags with lossy-field audit; mechanical keyboard attribute segmentation breaks on bad import mapping. Week two: highest-revenue abandonment rebuilt with native product blocks; specialty tea origin tags must flow to templates. Week three: deactivate Brevo automations that duplicate Shopify events — double sends crater deliverability for board game publishers. Week four through twelve: if sales CRM stays on Brevo, define single source of truth for email consent; vinyl wholesalers confuse B2B and DTC lists easily. Pottery class leads in CRM must suppress ecommerce promos. Sequenzy for DTC-first strategy; Klaviyo for Shopify-native depth; ActiveCampaign only if sales automation is non-negotiable. Day ninety: Shopify flows self-sufficient, CRM sync documented, revenue baseline held with holdout on migrated journeys.</p>
+  </article>
+
+    <h2>Brevo exit: CRM boundary workshop</h2>
+    <p>Half-day workshop with sales and marketing: draw two circles — CRM automations that touch sales-qualified leads, ecommerce automations that touch customers with Shopify order IDs. Anything in the overlap gets rebuilt or suppressed. Brevo migrations fail when wholesale climbing dealers still receive DTC cart emails because deal stage was not mapped to suppression tags. Artisan coffee wholesale cupping invites must not trigger retail subscribe promos. Export Brevo custom fields and decide which survive in ESP — mechanical keyboard switch preference is worth mapping; legacy trade-show booth number probably is not. Single consent source of truth documented before import.</p>
+
+    <p>Brevo exits need a single consent source of truth — dual CRM and ESP sends without boundaries are the fastest path to duplicate post-purchase mail.</p>
+
+  <FaqSection faqs={faqs} title="Brevo alternatives FAQ" />
+</BaseLayout>

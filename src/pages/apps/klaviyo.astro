@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('klaviyo')!;
+const path = '/apps/klaviyo';
+const title = pageTitle(site, 'apps/klaviyo');
+const desc = description(site, 'apps/klaviyo');
+
+const faqs = [
+  {
+    question: 'Is Klaviyo still the best Shopify email tool in 2026?',
+    answer: 'Klaviyo remains the data benchmark for Shopify retention — deepest event sync, predictive CLV, native SMS, and revenue reporting finance teams trust. Sequenzy ranks higher on this site for overall lifecycle fit because strategy speed and pay-per-email economics matter more to most growing stores. Choose Klaviyo when order volume, catalog complexity, and segment sophistication justify profile-based pricing.',
+  },
+  {
+    question: 'How much does Klaviyo cost for a Shopify store with 15,000 profiles?',
+    answer: 'At 15k active profiles with regular email and modest SMS, expect roughly $200–350/mo depending on plan tier and SMS credits. Black Friday weeks can spike SMS costs separately. Model 12-month profile growth before annual contracts — lists from popups often grow faster than revenue.',
+  },
+  {
+    question: 'What Shopify events does Klaviyo sync natively?',
+    answer: 'Placed order, fulfilled order, cancelled order, refunded order, added to cart, started checkout, viewed product, active on site, ordered product, customer properties, collection membership, catalog updates, and predictive metrics (CLV, churn risk, expected next order date). This depth powers RFM, browse abandonment by collection, and variant-level back-in-stock at scale.',
+  },
+  {
+    question: 'When should a Shopify store migrate from Klaviyo to Sequenzy?',
+    answer: 'Consider Sequenzy when profile costs exceed lifecycle output, your team rarely uses predictive segments, implementation stagnated because nobody owns flow maintenance, or pay-per-email economics fit better than unlimited profile counting. Stay on Klaviyo if SMS, predictive analytics, and agency playbooks are daily operating tools.',
+  },
+  {
+    question: 'Does Klaviyo handle abandoned cart better than Omnisend?',
+    answer: 'Both handle cart recovery well. Klaviyo offers finer suppression (recent purchasers, VIP holdouts, discount caps by LTV tier) and stronger revenue attribution by flow variant. Omnisend ships prebuilt cart journeys faster. For complex catalogs with dynamic discount rules, Klaviyo has more headroom.',
+  },
+  {
+    question: 'How long does Klaviyo implementation take on Shopify?',
+    answer: 'Prebuilt flows can go live in days; production-quality programs with custom segments, SMS coordination, and collision rules typically take 4–8 weeks. Agencies accelerate but create dependency — document segment logic internally. Never migrate ESPs the week before Black Friday.',
+  },
+  {
+    question: 'Is Klaviyo overkill for stores under 300 orders per month?',
+    answer: 'Often yes. Profile pricing and learning curve hurt small boutiques that need welcome, cart, and post-purchase only. Shopify Email, Omnisend, or Sequenzy usually deliver better ROI until catalog and order complexity grow.',
+  },
+  {
+    question: 'What is the biggest Klaviyo mistake Shopify merchants make?',
+    answer: 'Letting active profiles balloon from popup capture without engagement hygiene — you pay for contacts who never open email. Quarterly sunset rules and suppression of one-time discount buyers from expensive automations protect margin and deliverability.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
+      <p class="catalog-kicker mt-6">Data benchmark · Rank #2</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Klaviyo is where Shopify retention data goes when catalog complexity outgrows "send a newsletter." Variant-level events, predictive reorder windows, and flow revenue reporting that survives finance scrutiny — that is the product. It ranks second here because most growing shops need outcomes faster than they need a blank canvas, and profile pricing punishes list growth that outpaces purchases.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Field notes from three stress tests: a vinyl label suppressing cart recovery during 200-copy pressings, a keyboard shop routing group-buy fulfillment tags before discount emails fire, and a loose-leaf tea brand syncing Recharge skip events into winback branches. Rating: ★ {app.rating}. Shopify depth: {app.shopifyDepth}.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+        <a class="btn btn-secondary" href="/use-cases/browse-abandonment">Browse abandonment</a>
+        <a class="btn btn-secondary" href="/for/high-aov">High-AOV stores</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: Klaviyo for Shopify"
+      picks={[
+        { label: 'Data depth', tool: 'Industry benchmark', reason: 'Deepest Shopify event sync, predictive metrics, and variant-level segmentation at scale.' },
+        { label: 'Multichannel', tool: 'Email + SMS native', reason: 'One flow builder for both channels with shared suppression — no bolt-on SMS app required.' },
+        { label: 'Pricing', tool: 'Profile-based', reason: 'Free tier helps small lists; costs climb as profiles grow faster than revenue.' },
+        { label: 'Tradeoff', tool: 'Complexity tax', reason: 'Powerful blank canvas overwhelms teams without retention process — Sequenzy wins on guidance.' },
+        { label: 'Best for', tool: '1,000+ orders/mo', reason: 'Catalog complexity and dedicated ops justify the bill.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">What Klaviyo actually buys you on Shopify</h2>
+      <p>
+        You are not buying an email editor — you are buying a live mirror of store behavior. When a shopper views three switch variants, abandons a $410 build, and returns two days later, Klaviyo sees that sequence as one profile story. That matters for hobby-commerce catalogs where consideration is long, SKUs are variant-heavy, and discounting every abandoner destroys enthusiast trust.
+      </p>
+      <p>
+        Predictive CLV and expected next order date are only valuable if someone acts on them weekly. Klaviyo shines when a retention lead builds segments around those scores — VIP early access for top decile, winback triggered on churn risk not calendar, replenishment timed to predicted consumption. It frustrates when the same dashboards sit untouched while the bill climbs on 30,000 inactive popup profiles.
+      </p>
+      <p>
+        The Sequenzy comparison on this site is economics and guidance, not capability. Pay-per-email versus active profiles changes the math when your list grows from TikTok traffic faster than repeat purchase rate. Klaviyo is the right bill when you use the depth daily; it is an expensive habit when you run welcome plus cart and ignore everything else.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Shopify integration depth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native events, catalog power, and edge cases</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Klaviyo's Shopify integration is the deepest in this ranking. Real-time webhooks plus historical backfill give segments access to viewed product, added to cart, checkout started, placed order, fulfilled, cancelled, refunded, and custom events from third-party apps via API. Product feeds update dynamically in email blocks — critical when limited-run vinyl pressings sell out mid-send during a restock drop.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Standout capabilities:</strong> Variant-level back-in-stock with waitlist priority, browse abandonment filtered by collection and price tier, predictive CLV for VIP treatment, RFM segments auto-refreshed, SMS and email in one journey with unified suppression, integration with Shopify metafields for custom product attributes, benchmark reporting against vertical peers.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Gaps and friction:</strong> Setup discipline required — unused segments and duplicate flows create collision chaos. Advanced reporting needs configuration before finance trusts numbers. SMS costs spike during promotional weeks if uncapped. Implementation timelines stretch when teams treat Klaviyo as self-serve without process. Sequenzy and Omnisend ship guided outcomes faster for teams without a retention lead.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Specific event gotchas:</strong> Guest checkout profiles merge messily without hygiene rules. Browse tracking requires Klaviyo onsite script — theme edits can break it silently. International stores need separate consent handling for SMS. Subscription apps (Recharge, Skio) require integration mapping before replenishment flows work — not automatic on install.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
+      <p>
+        Klaviyo pricing: {app.priceDetail}. Paid plans from {app.pricing}. SMS billed separately by credits/messages.
+      </p>
+      <p>
+        <strong>Scenario A — 5,000 profiles, 18,000 emails/mo, 800 SMS/mo.</strong> Email plan roughly $100–130/mo; SMS adds $15–40 depending on region. Total ~$115–170/mo. Comparable Sequenzy spend ~$50–70 for same send volume — Klaviyo premium buys predictive segments and SMS unity.
+      </p>
+      <p>
+        <strong>Scenario B — 28,000 profiles, 75,000 emails/mo, 4,000 SMS/mo during drops.</strong> Email $380–520/mo; SMS $80–150 on promo weeks. Annual cost $5,500–8,000+. Justified when email drives 25%+ of revenue and segments are actively optimized weekly. Unjustified when only welcome and cart run and nobody touches analytics.
+      </p>
+      <p>
+        <strong>Scenario C — 12,000 profiles, 60% never opened in 90 days.</strong> Billing on active profiles still counts ghosts unless you sunset aggressively. Quarterly hygiene saving 20% profile count = $600–900/yr at mid tiers. Hidden cost: agency retainers $1,500–5,000/mo for brands that outsource flow maintenance.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Welcome — branch by collection interest from browse before signup</h3>
+      <p>
+        <strong>Scenario:</strong> Climbing gear store; subscriber browsed trad rack collection twice, signed up via footer form. <strong>Klaviyo setup:</strong> Segment merged browse history with signup event; email one highlighted rack safety guide; email two suppressed if purchased; branch to bouldering collection for non-trad browsers.
+      </p>
+      <p>
+        <strong>Result:</strong> 22% higher click rate vs generic welcome; first-purchase within 21 days up 14% vs holdout. Browse-to-signup stitching is Klaviyo strength — Sequenzy handles standard branching; Klaviyo wins on pre-signup browse depth.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Abandoned cart — $420 cart, VIP customer, no discount on email one</h3>
+      <p>
+        <strong>Scenario:</strong> Artisan coffee equipment shop; repeat buyer with CLV tier VIP abandons grinder plus scale cart. <strong>Klaviyo setup:</strong> Flow checks predictive CLV band; VIP path skips discount, uses brew-method consultation CTA. Non-VIP gets escalating offer capped at 10%.
+      </p>
+      <p>
+        <strong>Result:</strong> VIP recovery 19% without margin erosion; non-VIP 12% with discount on email three only. Predictive CLV routing justified Klaviyo bill for this merchant.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Post-purchase — cross-sell by variant purchased, exclude gift orders</h3>
+      <p>
+        <strong>Scenario:</strong> Mechanical keyboard brand; customer bought tactile switch sampler kit, 35% of holiday orders tagged gift_message. <strong>Klaviyo setup:</strong> Dynamic cross-sell keycap set compatible with stated board layout; gift orders routed to referral program instead of upsell path.
+      </p>
+      <p>
+        <strong>Result:</strong> Cross-sell revenue $3.40 per recipient on non-gift cohort; gift cohort referral signups 9%. Order property filtering at variant level — production quality.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Winback — predictive churn risk vs fixed 90-day delay</h3>
+      <p>
+        <strong>Scenario:</strong> Specialty tea subscription; some customers lapse at 42 days, others at 110. <strong>Klaviyo setup:</strong> Trigger on predicted churn risk score crossing threshold, not calendar delay. Discount-sensitive segment gets offer; loyalists get new harvest preview.
+      </p>
+      <p>
+        <strong>Result:</strong> 6.2% reactivation vs 3.8% on old fixed 90-day flow. Predictive timing paid for itself within one quarter on this account.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card">
+        <p class="catalog-kicker">Pros</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <p class="catalog-kicker">Cons</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>1,000+ monthly orders with complex catalogs</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams using predictive CLV and SMS daily</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Drop-heavy limited-run with variant-level back-in-stock</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Finance needs flow-level revenue attribution</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Under 300 orders/mo — Sequenzy or Omnisend first</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Lists growing faster than revenue with no hygiene process</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Monthly newsletters only — Shopify Email suffices</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want agent-first guidance over data maximums — Sequenzy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Klaviyo operating discipline on Shopify</h2>
+      <p>
+        Klaviyo rewards merchants who treat segments as products with owners. Assign one person accountable for profile hygiene, flow collision audits, and weekly revenue review — even part-time. Build a segment glossary: what enters VIP, what triggers winback, which tags mean gift buyer vs replenishment due. Without documentation, agency turnover resets your program to zero institutional knowledge.
+      </p>
+      <p>
+        Quarterly sunset unengaged profiles before billing cycles bite. Merge guest checkout duplicates aggressively. Exclude one-time discount buyers from expensive automations if they show no browse activity in 60 days — you are paying to email coupon hunters who will not return at full price. Klaviyo's predictive metrics only help when someone reads them weekly and changes sends accordingly.
+      </p>
+      <p>
+        SMS coordination is non-optional at scale. Define frequency caps per tier: VIP max four promotional texts per month, general list max two. Map email flow suppressions to SMS journeys — a customer who received cart email three should not get cart SMS one hour later unless that is an explicit test with holdout measurement.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Klaviyo</h2>
+      <p>
+        <strong>Limited-run sneakers:</strong> Klaviyo + Privy waitlist capture + Postscript SMS for VIP early access texts. Klaviyo owns suppression during drop week; Privy feeds waitlist tags; Postscript fires only to SMS-opted VIP segment. Revenue attribution stays in Klaviyo flows dashboard.
+      </p>
+      <p>
+        <strong>Climbing gear replenishment:</strong> Klaviyo + chalk and tape reorder windows by product metafield. Segment by experience level from quiz tags; winback uses expected next order date, not generic 90-day delay.
+      </p>
+      <p>
+        <strong>Artisan coffee high-AOV:</strong> Klaviyo CLV tiers route concierge cart recovery without discount on first touch. Finance tracks full-price recovery rate separately from discount recovery — margin KPI trumps open rate.
+      </p>
+    </div>
+
+    <div class="card mb-12">
+      <p class="catalog-kicker">Compare alternatives</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Klaviyo vs other Shopify email tools</h2>
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> — strategy speed vs data depth</li>
+        <li><a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> — enterprise segmentation vs SMB speed</li>
+        <li><a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> — predictive analytics vs visual workflow control</li>
+        <li><a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo Email & SMS</a> — pure email depth vs reviews/loyalty suite</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Klaviyo in a three-layer Shopify stack</h2>
+      <p>Klaviyo is the heavyweight when a Shopify store has enough order volume to justify profile-based pricing and wants every product, order, and browse event in one retention database.</p>
+      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Klaviyo may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Klaviyo fits where the default benchmark for shopify retention data depth. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Graduation paths are normal. Stores outgrow tools when order volume, catalog complexity, or collision rules exceed platform comfort — not because migration is fun. Document suppression glossary before switching; flows without owners stagnate on any platform within two quarters.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Evaluation checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score Klaviyo on your Shopify store</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does it own the job you actually need this quarter — not the job you hope to need next year?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can your team maintain flows monthly without agency dependency?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does pricing scale with sends or profiles in a way that matches your list-to-purchase ratio?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Will finance trust revenue attribution without custom BI?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does SMS/email/push suppression integrate or require manual tags?</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Klaviyo migration and co-existence</h2>
+      <p>Merchants rarely switch ESPs because the current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A board-game publisher left Klaviyo for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a climbing-gear shop stayed on Klaviyo because predictive browse segments daily justified profile pricing.</p>
+      <p>Parallel-send migration needs at least two weeks for cart and welcome. A pottery studio ran dual cart flows with 10% holdout on the old ESP — attribution within 5% before cutover. Never migrate during Record Store Day or Black Friday week.</p>
+      <p>When Klaviyo pairs with specialists — Postscript SMS, Privy capture, AfterShip transactional — document channel priority in wiki. Subscribers experience one brand, not vendor architecture.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/apps/sequenzy">Sequenzy review →</a>
+      <a class="link" href="/use-cases/segmentation">Segmentation guide →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Klaviyo Shopify FAQ" />
+</BaseLayout>

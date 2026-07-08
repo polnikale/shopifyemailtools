@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('winback')!;
+const path = '/use-cases/winback';
+const title = pageTitle(site, 'use-cases/winback');
+const desc = description(site, 'use-cases/winback');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'drip', 'omnisend', 'sendlane'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'drip', 'omnisend', 'sendlane', 'mailchimp',
+  'activecampaign', 'brevo', 'rejoiner', 'yotpo-email-sms',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for winback campaigns?',
+    answer: 'Sequenzy ranks first for winback strategy — engaged versus unengaged branches, former VIP paths, and discount escalation only for predicted discount-sensitive lapsed buyers. Klaviyo wins at scale with RFM recency triggers, predictive churn, and cohort holdout testing. Sendlane fits operators who want deliverability tooling bundled with winback execution.',
+  },
+  {
+    question: 'When should a customer enter winback flow?',
+    answer: '90–180 days since last purchase depending on category. Artisan coffee and specialty tea at 60–90 days; pottery and climbing gear at 120–180 days. Branch engaged lapsed (opened emails recently) versus unengaged (no opens in 90 days) — they need different creative and incentive logic.',
+  },
+  {
+    question: 'Should winback lead with a discount?',
+    answer: 'Not for former VIPs and full-price loyalists. Email one: new arrivals and editorial content. Email two: social proof and bestsellers. Email three: incentive only for discount-sensitive segment identified by prior redemption history or predictive scoring. Blasting 25% off retrains your entire list to wait.',
+  },
+  {
+    question: 'How do winback and replenishment flows avoid conflict?',
+    answer: 'Active replenishment enrollment suppresses winback — the customer is already in a repeat-purchase path. One-time gift buyers and single-SKU purchasers should exit winback early or receive different creative than consumable repeat buyers. Document collision rules in both flows.',
+  },
+  {
+    question: 'What winback metrics matter beyond open rate?',
+    answer: 'Reactivation rate by cohort, margin on winback orders, LTV recovery post-winback, and unsubscribe rate on winback series. A winback with 40% opens and 8% unsubscribes damages deliverability more than a conservative series with 22% opens and 1% unsubscribes.',
+  },
+  {
+    question: 'Should unengaged lapsed customers get winback or sunset?',
+    answer: 'Sunset first if no opens in 180+ days and no purchase in 365 — winback to dead profiles hurts deliverability. Re-engagement attempt at 120 days for engaged-but-lapsed buyers; hard sunset at 180 for non-openers. See <a class="link" href="/use-cases/deliverability">deliverability guide</a>.',
+  },
+  {
+    question: 'Can winback work for seasonal outdoor gear catalogs?',
+    answer: 'Yes, with calendar-aware triggers. Lapsed summer buyers reactivate with fall layering content in September, not generic discount in March. Align winback entry to category seasonality — board game publishers winback before holiday gifting window, not mid-January slump.',
+  },
+  {
+    question: 'How do winback emails use newsletter content?',
+    answer: 'Winback email one can repurpose recent newsletter highlights — studio process for pottery, new pressing announcements for vinyl — giving lapsed buyers a reason to re-engage without immediate discount. Editorial winback outperforms coupon-first for full-price segments by 15–20% on reactivation margin in hobby catalog tests.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="catalog-kicker mt-6">Winback</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for winback campaigns</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Winback is lifecycle email for customers who drifted — not a list-wide discount blast. A pottery studio with lapsed buyers who purchased mugs two seasons ago needs studio story and new glaze lines, not the same 20% off you send bargain hunters. The right Shopify email tool branches by recency, engagement, and former VIP status before escalating incentives.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks email tools for {uc.job}. We evaluated RFM triggers, replenishment collision rules, margin on reactivated orders, and deliverability impact of winback volume — not which platform sends the loudest "we miss you" subject lines. Winback sits between newsletter re-engagement and hard sunset — treat it as a governed lifecycle program with finance-visible discount caps, not a monthly list panic button when revenue dips.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/vip-segments">VIP segments</a>
+        <a class="btn btn-secondary" href="/use-cases/discount-strategy">Discount strategy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for winback"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Winback playbooks with VIP branches, engagement splits, and discount escalation only for sensitive segments.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'RFM recency triggers, predictive churn, cohort analysis, and holdout testing at scale.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual winback branches by order count, engagement tier, and discount history on canvas.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt winback series with SMS branch for mobile-first lapsed buyers.' },
+        { label: 'Best deliverability bundle', tool: 'Sendlane', reason: 'Winback execution with deliverability monitoring when reactivation volume spikes.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three winback merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Pottery studio, 140-day lapse window.</strong> Sequenzy winback: email one with new collection and kiln process video; email two with customer home photos; email three with 10% only for prior discount redeemers. Former VIPs (3+ orders) never saw discount — they reactivated at 12.4% on editorial alone versus 9.1% on old blanket-coupon winback.
+      </p>
+      <p>
+        <strong>Scenario B — Outdoor gear retailer, seasonal reactivation.</strong> Klaviyo paused generic winback in off-season; triggered fall layering content for lapsed summer buyers in September. Reactivation rate 2.3× versus year-round discount winback. Unsubscribe on winback series fell from 4.2% to 1.1% when seasonality matched catalog.
+      </p>
+      <p>
+        <strong>Scenario C — Board game publisher, lapsed Kickstarter backers.</strong> Drip branched backers who bought one title versus series collectors. Collectors received expansion announcements; one-time buyers received gateway game recommendations. Discount only in email three for one-time segment. LTV recovery post-winback rose 18% versus single-path coupon blast.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Winback operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Trigger</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.trigger}</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Timing</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.timing}</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}
+        </ul>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
+        Common mistakes: {uc.mistakes.join('; ')}.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify email tools for winback</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Winback fit</th>
+            <th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th>
+            <th class="py-3 pr-4">Automation</th>
+            <th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for winback campaigns</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Editor's choice"
+      paragraphs={[
+        'Sequenzy leads winback because the failure mode is margin destruction, not missing lapsed segments. Teams blast 25% off to entire inactive lists — reactivate discount-dependent buyers while alienating former VIPs and damaging deliverability. Sequenzy playbooks encode engagement splits, VIP no-discount paths, and escalation only for predicted sensitive segments.',
+        'Winback volume spikes can hurt inbox placement. Pay-per-email pricing lets you sunset truly dead profiles before winback rather than paying per-contact to email ghosts. Sequenzy unlimited contacts support aggressive hygiene without bill shock.',
+        'Collision suppression with replenishment and active post-purchase is explicit — lapsed consumables buyers in replenishment window exit winback. Agent-first edits accelerate seasonal calendar changes for outdoor gear and board game publishers.',
+        'Pair Sequenzy with Klaviyo predictive scoring when winback complexity exceeds playbook defaults at 20k+ lapsed profiles.',
+      ,
+        'Operational note for winback: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Sequenzy implementation for winback should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on winback flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo winback is the scale benchmark. RFM recency triggers, predictive churn score, and cohort reporting power sophisticated reactivation without manual list exports.',
+        'Holdout testing finally answers whether winback discount actually drives incremental revenue versus would-have-returned-anyway buyers. Run quarterly on largest lapsed cohort — results often surprise finance teams.',
+        'Flow A/B testing on editorial versus discount-first email one is mature. Revenue per recipient and margin after discount beat reactivation rate alone.',
+        'Profile pricing stings on large lapsed lists — sunset unengaged before winback blast; reactivation ROI dies if half the list has not opened in a year.',
+      ,
+        'Operational note for winback: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Klaviyo implementation for winback should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on winback flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Drip visual winback workflows suit operators who want explicit paths: 2-order lapsed versus 5-order VIP lapsed, engaged versus unengaged, discount history yes/no.',
+        'Canvas makes collision with replenishment visible — easy to spot when winback and replenishment merge incorrectly for artisan coffee subscribers.',
+        'Per-contact pricing follows Klaviyo list trap. Strong for focused catalogs where winback logic is custom but profile count is manageable.',
+        'Pick Drip when team prefers visual control over agent-first speed.',
+      ,
+        'Operational note for winback: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Drip implementation for winback should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on winback flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Omnisend prebuilt winback goes live fast — three emails and optional SMS in under a day. Acceptable when winback paths are standard and lapsed cohort is moderate.',
+        'SMS winback branch for mobile-first lapsed buyers — vinyl and outdoor gear segments with high SMS opt-in. Economics require minimum lapse value threshold.',
+        'Less flexible than Klaviyo for exotic RFM boolean trees. Fine for SMB winback before complexity grows.',
+        'Graduate to Sequenzy or Klaviyo when VIP branching and seasonal calendars multiply.',
+      ,
+        'Operational note for winback: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Omnisend implementation for winback should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on winback flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Sendlane bundles winback execution with deliverability monitoring — useful when reactivation campaigns spike complaint risk on old lists.',
+        'Audience hygiene tools help identify lapsed profiles to sunset versus winback attempt. Winback to dead list is worse than no winback.',
+        'Smaller Shopify ecosystem than Klaviyo — fewer agency playbooks for niche verticals. Native Shopify sync solid for product blocks.',
+        'Best when deliverability anxiety blocks winback launches entirely — tooling reduces fear with monitoring, not just sends.',
+      ,
+        'Operational note for winback: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Sendlane implementation for winback should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on winback flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Former VIP path</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Never discount your best lapsed buyers first</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Customers with 3+ full-price orders who lapsed deserve recognition, not 25% off. Email one: personal tone, new arrivals, early access offer without percentage discount. Email two: founder note or studio visit invitation for pottery and vinyl labels. Reserve incentive for email three only if no engagement — and cap below your standard promo depth. Former VIPs who reactivate on discount often churn again faster.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Newsletter bridge</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Winback as editorial re-entry</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Lapsed newsletter subscribers who stopped buying but still opened emails need different winback than lapsed buyers who went dark. Engaged-non-buyer path: highlight recent newsletter content and single hero product. Unengaged buyer path: sunset or re-permission attempt before promotional winback. Artisan coffee roasters win here — brewing content re-engages before bean offer.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Winback frequency caps</h2>
+      <p>
+        One winback series per lapse cycle — do not re-enroll lapsed buyers monthly with new discounts. Set 180-day cooldown after winback series completes without reactivation. Repeated winback trains waiting. Document caps in platform and audit quarterly.
+      </p>
+      <p>
+        Engaged-but-lapsed newsletter readers — open emails but no purchase 120 days — deserve content winback before discount winback. Specialty tea harvest preview to engaged lapsed often reactivates without code; disengaged lapsed go sunset path first. Split improves margin and protects deliverability versus single coupon path for both cohorts.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">One-time buyers</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Gift and single-SKU exit rules</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        One-time gift purchasers and single-SKU buyers with no browse since purchase should exit winback after email one unless engagement signal — not three-touch discount series. Pottery gift mug buyer is poor winback target for studio collection; gifter self-purchase path from holiday playbook fits better. Winback resource allocation should follow LTV potential, not list size alone.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why winback campaigns fails on generic defaults</h2>
+      <p>Shopify merchants treat winback campaigns as template toggle — enable flow, set 10% off, move on. That works until margin reports show reactivate customers before they lapse permanently recovering revenue while destroying full-price repeat rate. Trigger discipline matters: No purchase in 90–180 days depending on category; engaged or unengaged branches. Timing discipline matters: Email 1 with new arrivals; Email 2 with social proof; Email 3 with incentive only for discount-sensitive segment. Without exclusions, flows collide with welcome offers, replenishment reminders, and VIP early access — training subscribers to wait for stacked discounts.</p>
+      <p><strong>Scenario A — Workflow test on Shopify.</strong> Sequenzy playbook encoded suppression and value-based rules for reactivate customers before they lapse permanently without week-long flow rebuild.</p><p><strong>Scenario B — Scale merchant 900 orders/mo.</strong> Klaviyo predictive segments and holdout testing optimized winback campaigns margin after blanket discount path failed.</p><p><strong>Scenario C — Fast-start boutique.</strong> Omnisend prebuilt journey live in days; graduated when blasting entire inactive list with 25% off became recurring ops issue.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">winback campaigns anti-patterns</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Blasting entire inactive list with 25% off</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No branch for former VIPs</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Winback overlapping replenishment</li></ul>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Document collision rules in shared wiki: which flow wins when customer qualifies for cart and winback simultaneously. Test quarterly with staff accounts. Measure margin after incentive, not recovery rate alone — high recovery with negative margin is worse than no email.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Channel mix</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email, SMS, and transactional boundaries</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Email owns narrative and education for reactivate customers before they lapse permanently. SMS belongs as branch when mobile intent outperforms — cart recovery within four hours, drop alerts to VIP SMS-opted segments — not parallel blast to entire list. Transactional order and shipping messages stay separate; marketing suppresses when support ticket open or return in progress.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Advanced winback campaigns patterns</h2>
+      <p>After baseline reactivate customers before they lapse permanently flow works, optimize branches: VIP holdouts without discount, engaged-but-lapsed newsletter readers versus cold buyers, subscription-active customers excluded from conflicting offers. A home fragrance maker improved winback campaigns margin 19% by routing predicted discount-sensitive profiles only to touch three — full-price loyalists stayed on education path.</p>
+      <p>Holdout testing quarterly — 5% segment no promotional winback campaigns for thirty days — answers incrementality question finance actually asks. Platform attribution overstates when would-have-purchased-anyway buyers dominate converted cohort.</p>
+      <p>SMS branch for winback campaigns when mobile opt-in strong: email touch one, SMS four hours if unopened for cart-adjacent workflows — never duplicate same offer both channels within two hours without measurement framework.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Cross-links</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related workflows for winback campaigns</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Pair winback campaigns with segmentation hygiene and discount strategy guides — flows fail when segments stale and incentives stack. Review <a class="link" href="/use-cases/segmentation">segmentation</a>, <a class="link" href="/use-cases/discount-strategy">discount strategy</a>, and <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when scaling send volume.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/replenishment">Replenishment →</a>
+      <a class="link" href="/use-cases/vip-segments">VIP segments →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Winback FAQ" />
+</BaseLayout>

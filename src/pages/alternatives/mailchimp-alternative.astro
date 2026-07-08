@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const leaving = appBySlug('mailchimp')!;
+const path = '/alternatives/mailchimp-alternative';
+const title = 'Best Mailchimp Alternatives for Shopify (2026)';
+const desc = 'Why Shopify merchants leave Mailchimp — weak ecommerce automation, per-contact pricing, shallow Shopify sync — plus eight ranked alternatives, migration checklist, and pricing at 10k–25k contacts.';
+
+const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'brevo', 'drip', 'shopify-email', 'activecampaign', 'tinyemail'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave Mailchimp?',
+    answer: 'Mailchimp treats Shopify as an integration, not a native retention database — browse abandonment, variant back-in-stock, and flow-level revenue attribution require workarounds Customer Journeys do not provide. A board-game store cannot segment Kickstarter backers from retail buyers without manual tags that break when staff turns over.',
+  },
+  {
+    question: 'What is the best Mailchimp alternative for beginners?',
+    answer: 'Omnisend for prebuilt cart and welcome live in days; Sequenzy if you want strategy guidance with pay-per-email pricing from the start. Both beat Mailchimp for Shopify lifecycle within the first month — neither requires rebuilding Customer Journeys from scratch.',
+  },
+  {
+    question: 'How do I export Mailchimp to Klaviyo or Sequenzy?',
+    answer: 'Export audience with tags, merge fields, and consent timestamps; rebuild automations manually from screenshots. Map Mailchimp tags to Shopify customer properties where possible. Document Customer Journey logic before disconnecting — flows do not transfer natively.',
+  },
+  {
+    question: 'Is Brevo like Mailchimp but cheaper?',
+    answer: 'Similar generalist positioning with pay-per-email — still lighter on Shopify lifecycle than Sequenzy or Omnisend. Good lateral move when cost is primary pain, but many Mailchimp exits should move up to ecommerce-native tools, not sideways to another generalist.',
+  },
+  {
+    question: 'What does Mailchimp cost at 20,000 contacts?',
+    answer: 'Often $200–350/month on Standard or Premium without ecommerce depth — at that price Klaviyo or Sequenzy usually deliver more retention ROI for active DTC stores sending lifecycle automations, not just monthly newsletters.',
+  },
+  {
+    question: 'Can I keep Mailchimp for newsletters only?',
+    answer: 'Possible short-term while lifecycle runs elsewhere — dual sending hurts deliverability and splits consent records. Pick one primary marketing ESP within sixty days. Wholesale pottery newsletters and DTC lifecycle on separate tools is the rare exception with clear ownership.',
+  },
+  {
+    question: 'Which flows should I migrate first from Mailchimp?',
+    answer: 'Welcome, abandoned cart, post-purchase, winback — in that order unless cart recovery revenue visibly exceeds all other flows. See our <a class="link" href="/use-cases/welcome-series">welcome</a> and <a class="link" href="/use-cases/abandoned-cart">cart recovery</a> playbooks.',
+  },
+  {
+    question: 'When should I stay on Mailchimp?',
+    answer: 'Stay if you send monthly newsletters to a static B2B list with no cart recovery needs — rare for active Shopify DTC selling vinyl, specialty tea, or climbing gear. If Shopify is your primary revenue channel, Mailchimp graduation is usually overdue.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-slate-500">/</span>
+        <span class="text-slate-600">Mailchimp alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Ecommerce graduation</p>
+        <h1 class="hero-title mt-5">Best Mailchimp alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
+          Mailchimp is where Shopify stores start when the founder already had an account from a blog or side project. The break arrives when Shopify data does not behave like a Mailchimp audience — products have variants, carts abandon hourly, and "last opened email" is not a segmentation strategy. Merchants leave when per-contact pricing climbs on a list Mailchimp cannot monetize through lifecycle automation.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Eight ranked replacements for Shopify merchants graduating off Mailchimp — covering newsletters, lifecycle automation, and transactional-style updates. Sequenzy leads when strategy and pay-per-email beat generic Customer Journeys. Compare <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> before you export.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top Mailchimp replacements"
+          picks={[
+            { label: 'Best overall', tool: 'Sequenzy', reason: 'Shopify lifecycle playbooks with pay-per-email — the anti-generic-newsletter upgrade.' },
+            { label: 'Best data platform', tool: 'Klaviyo', reason: 'When Mailchimp segmentation failed at catalog scale for outdoor gear and vinyl.' },
+            { label: 'Best fast setup', tool: 'Omnisend', reason: 'Ecommerce-native automations live in days, not Customer Journey months.' },
+            { label: 'Best budget', tool: 'Brevo', reason: 'Volume pricing without Mailchimp contact tiers — lateral, not always optimal.' },
+            { label: 'Best workflow builder', tool: 'Drip', reason: 'Behavior automation Customer Journeys approximated poorly for Shopify events.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Mailchimp</h2>
+        <p>
+          Shopify sync in Mailchimp is functional for product blocks in campaigns — not for retention operations. Customer Journeys handle basic welcome and cart templates but lack variant-aware back-in-stock, collection browse abandonment, predictive winback, and suppression when shoppers sit in multiple journeys simultaneously. Operators export CSVs to patch gaps competitors solve natively — a mechanical-keyboard store tagging group-buy participants manually because Mailchimp cannot read Shopify metafields.
+        </p>
+        <p>
+          Per-contact pricing punishes ecommerce list growth. Giveaway imports, popup captures, and guest checkout contacts inflate Standard plan costs while only fifteen percent ever purchase. Mailchimp's pricing page optimizes for marketers sending weekly newsletters — not a specialty-tea brand running always-on replenishment to engaged subsets while forty thousand popup subscribers inflate the bill.
+        </p>
+        <p>
+          Reporting shows campaign clicks, not revenue per flow by first product purchased. Finance asks what email contributed; Mailchimp answers with engagement metrics from a 2014 playbook. A climbing-gear store cannot easily answer which harness education email drove repeat carabiner orders without exporting to spreadsheets weekly.
+        </p>
+        <p>
+          Agencies and contractors default to Klaviyo or Omnisend for Shopify clients — staying on Mailchimp means reinventing ecommerce playbooks Mailchimp never productized. The exit is usually overdue by six months when merchants finally measure lost cart revenue against Mailchimp bill. Compare <a class="link" href="/compare/klaviyo-vs-mailchimp">Klaviyo vs Mailchimp</a> or <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> for depth gaps before choosing direction.
+        </p>
+
+        <h2>Newsletters, lifecycle, and transactional moments</h2>
+        <p>
+          Mailchimp handles editorial newsletters adequately — vinyl drop calendars, artisan-coffee roast announcements, pottery workshop invitations work in the familiar editor. Lifecycle automation is where Mailchimp fails Shopify: welcome-to-winback with product-aware branching needs ecommerce-native tools. Transactional-style shipping updates often live in Shopify or AfterShip; Mailchimp is not the right layer unless you accept manual triggers disconnected from order events.
+        </p>
+        <p>
+          Before switching, inventory which jobs Mailchimp actually runs versus which jobs you pay for. If newsletters and one cart flow are ninety percent of revenue, a leaner tool with pay-per-email economics may outperform a data platform your team cannot maintain. If browse abandonment across two hundred outdoor-gear variants drives margin, document segment logic before migration — rebuilding chaos under a new logo wastes the switch.
+        </p>
+
+        <h2>Mailchimp migration checklist for Shopify</h2>
+        <p>Run this sequence before disconnecting Mailchimp from Shopify. Skipping steps causes duplicate sends, consent gaps, and finance attribution black holes.</p>
+        <ol>
+          <li><strong>Export all audiences</strong> with tags, merge fields, signup dates, and marketing consent.</li>
+          <li><strong>Document Customer Journeys</strong> — screenshot triggers, delays, exit conditions, and suppression rules.</li>
+          <li><strong>Clean list before import</strong> — sunset unengaged six-plus months; do not migrate dead weight into per-contact platforms.</li>
+          <li><strong>Map integrations</strong> — list Shopify apps pushing purchase data into Mailchimp segments.</li>
+          <li><strong>Connect new platform to Shopify</strong> — verify historical orders sync for winback segments.</li>
+          <li><strong>Rebuild welcome and cart first</strong> — pause Mailchimp journeys only after new flows pass test orders.</li>
+          <li><strong>Update popup integrations</strong> — point Privy, Justuno, or native forms to new ESP.</li>
+          <li><strong>Run parallel suppression for fourteen days</strong> — tag migrated customers; zero duplicate abandonment.</li>
+          <li><strong>Migrate post-purchase and winback</strong> — flows Mailchimp never ran well for consumables and hobby catalogs.</li>
+          <li><strong>Warm new sending domain</strong> if infrastructure changes — see <a class="link" href="/use-cases/deliverability">deliverability guide</a>.</li>
+          <li><strong>Cancel Mailchimp paid tier</strong> after thirty-day overlap ends clean.</li>
+          <li><strong>Archive Mailchimp for ninety days</strong> — keep read access for historical campaign reference.</li>
+        </ol>
+
+        <h2>Three merchant scenarios</h2>
+        <p><strong>Mechanical-keyboard store — 8k contacts, $120/mo, no cart automation.</strong> Customer Journeys existed on paper; nobody maintained them. Moved to Omnisend; cart recovery alone paid migration in eleven days. Group-buy suppression rebuilt with Shopify tags feeding Omnisend segments.</p>
+        <p><strong>Artisan coffee — 22k contacts, bloated giveaway imports.</strong> Cleansed to 9k engaged buyers, migrated to Sequenzy for subscription replenishment and pay-per-email; bill dropped forty percent with stronger winback before warehouse sale weeks.</p>
+        <p><strong>Pottery studio — B2B wholesale plus DTC.</strong> Moved DTC lifecycle to Klaviyo for browse abandonment on mug collections; kept Mailchimp for wholesale newsletter only — intentional split with separate sending domains and clear ownership.</p>
+      </article>
+
+      <section class="container space-y-12 py-16">
+        <p class="catalog-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Mailchimp alternatives for Shopify stores</h2>
+
+        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
+          'Sequenzy is the Mailchimp upgrade path built for Shopify lifecycle outcomes — not another drag-drop newsletter tool. Agent-first setup replaces blank Customer Journeys with welcome, cart, post-purchase, replenishment, and winback described in plain language. Pay-per-email pricing fixes Mailchimp\'s contact-tier trap on popup-heavy vinyl and board-game lists.',
+          'Sequenzy assumes you want strategy defaults: suppress recent buyers, educate before discount, winback before clearance. Mailchimp assumes you know what to build. That gap is why stores leave when the founder is also fulfillment lead and nobody maintains journeys.',
+          'See <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> for the full tradeoff map. Pair Postscript for SMS if Mailchimp SMS was underused.',
+        ]} />
+
+        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+          'Klaviyo when Mailchimp failed at data depth — collection segmentation, predictive CLV, SMS unified with email suppression. Worth profile pricing if someone audits segments weekly. Overkill if Mailchimp problem was neglect, not capability — profile bills return without an owner.',
+          'Native Shopify event sync handles variant back-in-stock and browse abandonment Mailchimp patched with exports. Agency ecosystem is deepest for complex migrations from Mailchimp Customer Journeys.',
+          'Pick Klaviyo if outdoor-gear browse abandonment across shells, layers, and footwear drives margin — not if you only need cart recovery and monthly newsletters.',
+        ]} />
+
+        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+          'Omnisend fastest Mailchimp exit for ecommerce automations — prebuilt journeys versus Mailchimp\'s generic automation builder that never learned Shopify variant logic. Multichannel optional for climbing-gear flash sales needing SMS and email same week.',
+          'Contact pricing behaves predictably under fifteen thousand engaged contacts. Teams report lower friction than Mailchimp Standard at similar list sizes when bundled multichannel value is used.',
+          'Choose Omnisend when speed beats predictive maximums — credible permanent home for SMB DTC, not just a bridge.',
+        ]} />
+
+        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+          'Brevo lateral move from Mailchimp with pay-per-email — acceptable if budget is primary pain and lifecycle needs remain modest. Prebuilt Shopify lifecycle templates are thinner than Omnisend or Sequenzy.',
+          'Advanced ecommerce segmentation and retention reporting trail Mailchimp at similar configuration effort — you may save money without gaining capability. Brevo wins on cost discipline for merchants who overpaid for Mailchimp features never configured.',
+          'Upgrade again to Sequenzy when strategy becomes bottleneck — common path for specialty-tea stores that left Mailchimp for price then hit replenishment ceiling.',
+        ]} />
+
+        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+          'Drip for behavior workflows Mailchimp Customer Journeys could not express — tag-based branching, visual control, revenue dashboards for board-game category splits by genre and expansion type.',
+          'Per-contact pricing follows Mailchimp\'s list-growth trap though entry tier is often gentler. Native Shopify sync reliable for product triggers — mechanical-keyboard stores segment by switch type and kit tier.',
+          'Pick Drip if someone on your team likes hands-on automation design. Compare <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> before committing.',
+        ]} />
+
+        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+          'Shopify Email downgrade if Mailchimp was overkill and honest assessment is "sale blasts only" — temporary reset, not strategic for retention-focused DTC. Native Admin lacks automation Mailchimp at least attempted.',
+          'Useful ninety-day pause while rebuilding strategy in Sequenzy or Omnisend. Stores that left Mailchimp for capability reasons boomerang to dedicated platforms within two quarters if they land on Shopify Email alone.',
+          'Treat Shopify Email as pause button — not Mailchimp replacement for vinyl drops or tea replenishment.',
+        ]} />
+
+        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+          'ActiveCampaign when Mailchimp plus spreadsheets tracked wholesale deals — CRM pipelines plus Shopify sync for pottery studio B2B inquiries alongside DTC welcome series.',
+          'Shopify-native depth trails Klaviyo: browse events, predictive metrics, catalog merchandising lighter. Setup can become overbuilt if you replicate entire Mailchimp journey library without pruning.',
+          'Choose ActiveCampaign when leaving Mailchimp because retention and sales ops share one database — not when you need maximum Shopify catalog intelligence.',
+        ]} />
+
+        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+          'tinyEmail AI campaigns — small step from Mailchimp, not lifecycle solution. Brief stepping stone only for young stores under one hundred monthly orders.',
+          'Graduate again to Sequenzy or Omnisend when cart recovery matters — avoid Mailchimp → tinyEmail → Omnisend chains.',
+          'Choose tinyEmail only when AI copy speed matters more than automation for the next two quarters.',
+        ]} />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing comparison vs Mailchimp</h2>
+        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs — adjust for send frequency and SMS.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>Shopify lifecycle</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mailchimp (leaving)</td><td>$80–135</td><td>$200–350</td><td>Basic</td></tr>
+            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>Advanced</td></tr>
+            <tr><td>Klaviyo</td><td>$150–200</td><td>$350–450</td><td>Advanced</td></tr>
+            <tr><td>Omnisend</td><td>$60–100</td><td>$120–180</td><td>Solid</td></tr>
+            <tr><td>Brevo</td><td>$25–65</td><td>$50–120</td><td>Solid</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-slate-950">Related guides</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/mailchimp">Mailchimp review</a> ·
+          <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> ·
+          <a class="link" href="/compare/brevo-vs-mailchimp">Brevo vs Mailchimp</a> ·
+          <a class="link" href="/compare/omnisend-vs-mailchimp">Omnisend vs Mailchimp</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <article class="prose-shopify container max-w-4xl pb-8">
+    <h2>Buyer desk: Mailchimp graduation metrics</h2>
+    <p>Customer Journeys approximate ecommerce — Shopify DTC needs native browse, variant back-in-stock, and flow revenue attribution. Giveaway imports inflate per-contact bills while fifteen percent purchase — sunset before migrating to another per-contact tool or you recreate the bill problem under Klaviyo or Omnisend logos.</p>
+    <p>Holdout-test replacement cart recovery for fourteen days before annual Mailchimp cancel. Sideways to Brevo rarely corrects capability gaps — move up to Sequenzy or Omnisend when lifecycle is the job. Assign one owner for suppression rules; Mailchimp neglect becomes expensive neglect on any per-contact platform.</p>
+    <p>Success at ninety days: incremental recovery and repeat purchase revenue versus Mailchimp baseline, deliverability stable, team articulates every live journey, finance sees attributable flow reporting. The right alternative is whichever platform your team operates next quarter — trial that reality with cart recovery first, not demo theater.</p>
+  </article>
+
+  <FaqSection faqs={faqs} title="Mailchimp alternatives FAQ" />
+</BaseLayout>

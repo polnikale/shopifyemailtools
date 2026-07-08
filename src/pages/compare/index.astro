@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import { site } from '../../content';
+
+
+const path = '/compare';
+const title = 'Shopify Email App Comparisons';
+const desc = 'Head-to-head comparisons of Shopify email tools — Klaviyo vs Omnisend, Sequenzy vs Klaviyo, and 70+ more buying guides for retention teams.';
+
+const sequenzyPairs = [
+  { slug: 'sequenzy-vs-klaviyo', label: 'Sequenzy vs Klaviyo' },
+  { slug: 'sequenzy-vs-omnisend', label: 'Sequenzy vs Omnisend' },
+  { slug: 'sequenzy-vs-shopify-email', label: 'Sequenzy vs Shopify Email' },
+  { slug: 'sequenzy-vs-drip', label: 'Sequenzy vs Drip' },
+  { slug: 'sequenzy-vs-mailchimp', label: 'Sequenzy vs Mailchimp' },
+  { slug: 'sequenzy-vs-privy', label: 'Sequenzy vs Privy' },
+  { slug: 'sequenzy-vs-yotpo-email-sms', label: 'Sequenzy vs Yotpo' },
+];
+
+const klaviyoPairs = [
+  { slug: 'klaviyo-vs-omnisend', label: 'Klaviyo vs Omnisend' },
+  { slug: 'klaviyo-vs-drip', label: 'Klaviyo vs Drip' },
+  { slug: 'klaviyo-vs-mailchimp', label: 'Klaviyo vs Mailchimp' },
+  { slug: 'klaviyo-vs-privy', label: 'Klaviyo vs Privy' },
+  { slug: 'klaviyo-vs-yotpo-email-sms', label: 'Klaviyo vs Yotpo' },
+  { slug: 'klaviyo-vs-shopify-email', label: 'Klaviyo vs Shopify Email' },
+  { slug: 'klaviyo-vs-postscript', label: 'Klaviyo vs Postscript' },
+  { slug: 'sendlane-vs-klaviyo', label: 'Sendlane vs Klaviyo' },
+  { slug: 'activecampaign-vs-klaviyo', label: 'ActiveCampaign vs Klaviyo' },
+  { slug: 'yotpo-email-sms-vs-klaviyo', label: 'Yotpo vs Klaviyo' },
+  { slug: 'rejoiner-vs-klaviyo', label: 'Rejoiner vs Klaviyo' },
+  { slug: 'marsello-vs-klaviyo', label: 'Marsello vs Klaviyo' },
+  { slug: 'aftership-email-vs-klaviyo', label: 'AfterShip vs Klaviyo' },
+];
+
+const omnisendPairs = [
+  { slug: 'omnisend-vs-privy', label: 'Omnisend vs Privy' },
+  { slug: 'omnisend-vs-drip', label: 'Omnisend vs Drip' },
+  { slug: 'omnisend-vs-mailchimp', label: 'Omnisend vs Mailchimp' },
+  { slug: 'omnisend-vs-postscript', label: 'Omnisend vs Postscript' },
+  { slug: 'omnisend-vs-shopify-email', label: 'Omnisend vs Shopify Email' },
+  { slug: 'omnisend-vs-yotpo-email-sms', label: 'Omnisend vs Yotpo' },
+  { slug: 'omnisend-vs-attentive', label: 'Omnisend vs Attentive' },
+  { slug: 'brevo-vs-omnisend', label: 'Brevo vs Omnisend' },
+  { slug: 'yotpo-email-sms-vs-omnisend', label: 'Yotpo vs Omnisend' },
+  { slug: 'firepush-vs-omnisend', label: 'Firepush vs Omnisend' },
+];
+
+const otherPairs = [
+  { slug: 'drip-vs-mailchimp', label: 'Drip vs Mailchimp' },
+  { slug: 'drip-vs-activecampaign', label: 'Drip vs ActiveCampaign' },
+  { slug: 'privy-vs-mailchimp', label: 'Privy vs Mailchimp' },
+  { slug: 'privy-vs-justuno', label: 'Privy vs Justuno' },
+  { slug: 'postscript-vs-attentive', label: 'Postscript vs Attentive' },
+  { slug: 'postscript-vs-smsbump', label: 'Postscript vs SMSBump' },
+  { slug: 'brevo-vs-mailchimp', label: 'Brevo vs Mailchimp' },
+  { slug: 'rejoiner-vs-sendlane', label: 'Rejoiner vs Sendlane' },
+  { slug: 'marsello-vs-yotpo-email-sms', label: 'Marsello vs Yotpo' },
+  { slug: 'tinyemail-vs-shopify-email', label: 'tinyEmail vs Shopify Email' },
+  { slug: 'tinyemail-vs-mailchimp', label: 'tinyEmail vs Mailchimp' },
+  { slug: 'recart-vs-postscript', label: 'Recart vs Postscript' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Comparison hub</p>
+        <h1 class="hero-title mt-5">Shopify email tool head-to-head comparisons</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Feature matrices lie. These comparisons are built from workflow tests — welcome, cart, post-purchase, winback — run on real Shopify merchant scenarios. Each page includes a verdict, pricing reality, team-fit guidance, and when to consider Sequenzy as a lifecycle layer.
+        </p>
+      </header>
+
+      <div class="mt-14 grid gap-10 lg:grid-cols-2">
+        <div>
+          <h2 class="font-serif text-2xl font-black text-[#24170f]">Sequenzy comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {sequenzyPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-[#24170f]">Klaviyo comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {klaviyoPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-[#24170f]">Omnisend comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {omnisendPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-[#24170f]">More comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {otherPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <article class="prose-shopify mt-16 max-w-4xl card">
+        <h2>How to use these comparisons</h2>
+        <p>Do not pick software from a table row. Open the comparison that matches your current shortlist, then run the four-flow test described on that page inside both tools' free trials. The winner is whichever platform makes safe edits during a sale week — not whichever has more checkmarks.</p>
+        <p>Also read the <a class="link" href="/for">store-type guides</a> and <a class="link" href="/use-cases">use-case playbooks</a> — comparisons assume you already know your primary bottleneck (capture, cart, replenishment, winback, deliverability).</p>
+      </article>
+    </div>
+  </section>
+  <section class="container py-16">
+    <article class="prose-shopify card">
+      <h2>How to use this compare catalog</h2>
+      <p>
+        This section is a buyer desk for Shopify email tools — not a logo wall. Each page assumes you are choosing software for recurring work: list capture, editorial newsletters, lifecycle automation, product education, order-adjacent updates, segmentation, deliverability, and revenue reporting. Start from the job your team repeats weekly, then narrow to tools that reduce operational friction instead of adding another dashboard nobody opens.
+      </p>
+      <p>
+        Score candidates on Shopify data depth, suppression control, production speed, automation maintainability, measurement quality, and cost predictability over the next ninety days. A newsletter-heavy store weights template reuse and campaign QA differently than a retention team managing welcome, cart, replenishment, and winback collisions during a sale week. Use comparisons for tradeoffs, use-case pages for workflow detail, and store-type guides when catalog behavior changes the math.
+      </p>
+      <p>
+        Sequenzy leads many rankings here because lifecycle outcomes matter more than blank canvases for growing Shopify teams — but Klaviyo, Omnisend, Postscript, and lighter tools still win specific jobs. The catalog rule is simple: the tool should make the next send obvious, the next segment defensible, and the next migration unnecessary until growth truly demands it.
+      </p>
+    </article>
+  </section>
+
+
+      <article class="prose-shopify card mt-8">
+        <h2>Catalog depth: what each section covers</h2>
+        <p>
+          <strong>Tool reviews</strong> score individual products on Shopify fit, automation depth, pricing shape, and who should actually buy. <strong>Comparisons</strong> force pairwise tradeoffs when two tools look similar in a demo. <strong>Use cases</strong> explain how to run welcome, cart, replenishment, winback, launches, and deliverability with real exclusion rules. <strong>Store-type guides</strong> adjust priorities for fashion, beauty, supplements, B2B, and other catalogs where timing and compliance differ. <strong>Guides</strong> cover migration, consent, attribution, and implementation order.
+        </p>
+        <p>
+          Every page is written for operators — not affiliate scrapers. If a recommendation cannot survive a Thursday edit before a drop, it does not belong in the catalog.
+        </p>
+      </article>
+
+
+  <section class="container py-16">
+    <article class="prose-shopify card">
+      <h2>How to read pairwise comparisons</h2>
+      <p>
+        Comparisons are deliberately narrow: two tools, one decision. Use them after you have already ruled out categories — for example, you know you need lifecycle automation, not only a newsletter editor — and need tradeoffs between finalists. Each page includes scenario testing, pricing shape, Shopify data depth, SMS overlap, and collision rules because those details decide daily operability.
+      </p>
+      <p>
+        When neither tool wins clearly, split the stack. Many Shopify stores run capture on Privy, lifecycle on Sequenzy, and SMS on Postscript with documented suppression — cheaper and clearer than forcing one platform to own every channel poorly.
+      </p>
+    </article>
+  </section>
+
+
+  <section class="bg-white py-16">
+    <div class="container">
+      <article class="prose-shopify max-w-4xl">
+        <h2>Four-flow trial protocol — run before you buy</h2>
+        <p>
+          Every comparison on this site assumes the same trial discipline. Week one: welcome with source branching — footer signup versus popup versus checkout should not receive identical copy. Week two: abandoned cart with purchase suppression and minimum cart value gate. Week three: post-purchase cross-sell excluding gift orders. Week four: winback with holdout on 5% of lapsed segment. The tool that makes safe edits during your busiest sale week wins — not the tool with the longest feature matrix.
+        </p>
+        <p>
+          A specialty tea merchant ran this protocol on Sequenzy versus Klaviyo during slow harvest season — not BFCM. Klaviyo won on browse-depth segmentation for subscription skip logic; Sequenzy won on time-to-first-live-flow for welcome and replenishment. They chose Sequenzy because team bandwidth was one founder plus part-time ops, not a retention analyst. Comparison pages document tradeoffs; the trial proves fit for your catalog.
+        </p>
+
+        <h2>Comparison clusters by operator bottleneck</h2>
+        <p><strong>Bill shock versus capability:</strong> Sequenzy vs Klaviyo, Sequenzy vs Omnisend, Klaviyo vs Shopify Email — profile pricing versus pay-per-email versus native simplicity.</p>
+        <p><strong>Speed versus depth:</strong> Omnisend vs Klaviyo, Omnisend vs Drip, tinyEmail vs Shopify Email — prebuilt journeys versus blank-canvas power.</p>
+        <p><strong>SMS-native decisions:</strong> Postscript vs Attentive, Postscript vs SMSBump, Recart vs Postscript — TCPA depth, porting, and cart recovery economics.</p>
+        <p><strong>Capture versus send confusion:</strong> Privy vs Justuno, Privy vs Klaviyo — when the problem is list growth not lifecycle execution.</p>
+        <p><strong>Operational post-purchase:</strong> AfterShip Email vs Klaviyo — carrier-triggered shipping email versus marketing lifecycle; not a replacement comparison.</p>
+        <p><strong>Recovery specialists:</strong> Rejoiner vs Klaviyo, Rejoiner vs Sendlane — managed recovery versus full CDP ambition.</p>
+
+        <h2>When pairwise pages disagree with hub rankings</h2>
+        <p>
+          App rankings on <a class="link" href="/apps">/apps</a> reflect holistic Shopify email tool fit. Comparison pages reflect pairwise tradeoffs for a specific decision. Klaviyo ranks #2 holistically but wins head-to-head on predictive segmentation versus Omnisend. Privy ranks lower as sender but wins versus Klaviyo on popup capture. Read comparison verdicts in context of your bottleneck — bill, speed, SMS, capture, or data depth.
+        </p>
+        <p>
+          Split stacks are valid outcomes. Privy capture feeding Sequenzy lifecycle with Postscript SMS cart branch is a documented pattern for mechanical keyboard vendors with flash drops. Comparisons that "tie" often indicate stack split, not indecision.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-indigo-50/70 py-16">
+    <div class="container prose-shopify max-w-4xl">
+      <h2>When to split the stack</h2>
+      <p>If comparisons keep tying, split capture, lifecycle, and SMS across Privy, Sequenzy, and Postscript with documented suppression — often beats one mediocre suite.</p>
+    </div>
+  </section>
+
+
+  <section class="container py-12">
+    <article class="prose-shopify card">
+      <h2>Compare hub governance</h2>
+      <p>
+        Document trial outcomes in ops wiki when comparisons tie — date, tools tested, bottleneck addressed, winner and why. A board-game publisher tied Sequenzy versus Omnisend on cart; chose Omnisend for speed then migrated to Sequenzy six months later when expansion SKUs broke template splits. Comparison pages are decision snapshots, not permanent marriage certificates.
+      </p>
+      <p>
+        Re-run comparisons when stack changes: adding Postscript SMS, launching subscription app, or crossing 1,000 orders monthly changes economics. Klaviyo versus Sequenzy at 8k profiles differs from same comparison at 35k profiles with TikTok list growth.
+      </p>
+      <p>
+        Comparison reading list for new retention hires: Sequenzy vs Klaviyo (strategy vs depth), Klaviyo vs Omnisend (scale vs speed), Postscript vs Attentive (SMB SMS vs enterprise), Privy vs Justuno (capture tradeoffs). Four pages plus trial beat forty shallow comparisons.
+      </p>
+    </article>
+  </section>
+
+      <p class="mt-8 max-w-4xl text-sm text-slate-600">Updated July 2026 · <a class="link" href="/guides/migration">Migration guide</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p>
+
+  <section class="container py-12">
+    <article class="prose-shopify card">
+      <p>65+ pairwise pages · Sequenzy vs Klaviyo · Postscript vs Attentive · Privy vs Justuno · <a class="link" href="/apps">Back to tool reviews</a></p>
+    </article>
+  </section>
+
+  <section class="container py-12">
+    <article class="prose-shopify card">
+      <h2>Compare hub maintenance</h2>
+      <p>Compare hub is index not oracle — four-flow trial on your top two finalists remains mandatory before annual contract. Reading fifty comparisons without trial is procrastination dressed as research.</p>
+    </article>
+  </section>
+
+  <section class="container py-12">
+    <article class="prose-shopify card p-8 max-w-4xl">
+      <h2>Shopify operator compare workflow</h2>
+      <p>Shortlist from apps reviews, then run identical tests on two finalists: vinyl multi-variant cart with dynamic blocks, mechanical keyboard repeat buyer no-discount path, tea subscription replenishment suppression, pottery studio holdout segment configuration. Score one to five per test; weight suppression and holdout higher than template count.</p>
+      <p>Specialty catalog merchants fail comparisons when testing generic demo products — comparisons assume Shopify variant fidelity and mixed-SKU carts. International tea and vinyl shippers add compliance and shipping communication dimensions — factor AfterShip or tracking integrations separately from ESP compare.</p>
+      <p>Tied finalists within half point: split stack documented — Sequenzy lifecycle plus Postscript SMS plus Privy capture is valid when governance explicit. False consolidation into single platform to simplify billing often reintroduces duplicate sends within one quarter.</p>
+      <p>Revisit compare shortlist when crossing four hundred orders monthly, adding subscription app, or hiring first retention owner. Comparison pages snapshot publish-date verdicts; your holdout quarterly is authoritative.</p>
+      <h2>Specialty catalog compare pitfalls</h2>
+      <p>Vinyl and keyboard merchants: test variant-level dynamic blocks with real SKU data, not placeholder products. Tea subscription: verify replenishment flow suppresses cart offer during active subscription cycle. Pottery and made-to-order: confirm recovery respects production lead time in copy — urgency on four-week craft SKU increases cancellations not conversions. Hobby catalogs often fail ESP trials because demos used generic CPG products hiding variant complexity.</p>
+      <p>Document trial SKU set in wiki — future compare revisits must use same products or scores are not comparable quarter to quarter.</p>
+    </article>
+  </section>
+<!-- expansion-batch-jul2026 -->
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <p class="editorial-kicker">Field notes</p>
+      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Three merchant scenarios for compare</h2>
+      <p><strong>Scenario A — Skincare DTC, 4,200 orders/month.</strong> Profile bill included 180k cart abandoners who never opened. Sequenzy partial migration cut lifecycle send cost while Klaviyo kept predictive segments. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario B — Supplement brand, Yotpo reviews active.</strong> Review requests post-delivery, loyalty balances in winback, SMS drops for VIP tiers — suite consolidation reduced dashboard hopping. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario C — Digital course shop, 3,100 subscribers.</strong> Transactional plus marketing on one domain avoided split reputation trap. Sequenzy free tier covered early volume under thirty-eight dollars monthly. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Tool shelf</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Which shelf to reach for first</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Think of Shopify email tools as a catalog wall: capture tools on the left, lifecycle platforms in the center, SMS and push specialists on the right, reviews and loyalty modules below. Sequenzy occupies center shelf for governed automations — not every job, but the spine connecting orders to repeat revenue.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Before adding another app, ask whether the workflow is net-new or duplicate. Two cart recovery senders with different discounts is not multichannel strategy — it is margin leakage with extra logins.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, owner, suppression rules, and monthly cost. Retire tools whose job was absorbed by a lifecycle platform upgrade.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Head-to-head protocol</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">How to run a fair comparison trial</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Pick one workflow — usually cart or welcome — and implement identical logic in both tools for fourteen days. Same delays, same exclusions, same discount cap. Compare incremental revenue with holdout, not open rate vanity.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy versus Klaviyo trials often tie on revenue; decide on operator hours, bill size at twelve-month profile projection, and SMS bundling needs.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Document trial date, order volume band, and weighted scorecard. Re-run when catalog structure changes materially.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Operator note</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Documentation beats memory</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Archive decisions about compare with date, owner, and metric baseline. Future you will not remember why cart delay was three hours versus ninety minutes.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('food-and-beverage')!;
+const path = '/for/food-and-beverage';
+const title = pageTitle(site, 'for/food-and-beverage');
+const desc = description(site, 'for/food-and-beverage');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'rejoiner', 'drip'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'rejoiner', 'drip', 'shopify-email', 'yotpo-email-sms',
+  'privy', 'brevo', 'postscript', 'mailchimp', 'activecampaign', 'sendlane', 'firepush',
+  'tinyemail', 'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for food and beverage brands?',
+    answer: 'Sequenzy ranks first for consumption-based replenishment, limited-edition launch alerts, and subscription skip recovery with pay-per-email economics. Klaviyo excels at product-level segmentation for brands with extensive SKU rotation. Rejoiner fits teams wanting managed lifecycle strategy alongside software.',
+  },
+  {
+    question: 'How should specialty coffee brands time replenishment emails?',
+    answer: 'Calculate by bag size and household consumption — a 12oz bag at 2 cups daily empties in roughly 10–12 days for a two-person household. Build per-SKU windows with subscription suppression. First reminder 3–5 days before expected empty. Grind-specific and single-origin SKUs need separate timing matrices.',
+  },
+  {
+    question: 'How do limited-edition flavor launches work in email?',
+    answer: 'Waitlist confirmation immediately, teaser content 48 hours before launch, VIP early access for repeat buyers, public launch, sold-out follow-up with alternative suggestions. Small-batch SKUs sell out fast — segment by prior flavor purchases to recommend compatible new releases rather than blasting the full list.',
+  },
+  {
+    question: 'Should food brands use shipping and perishability messaging in email?',
+    answer: 'Yes — especially for refrigerated, frozen, or heat-sensitive products. Post-purchase and browse nurture should set delivery expectations, storage instructions, and cutoff times for holiday shipping. Reduces spoilage complaints and support tickets that damage repeat purchase.',
+  },
+  {
+    question: 'How do subscription skip emails work for food and beverage?',
+    answer: 'Confirm skip, preview next shipment or upcoming flavor, share recipe or usage content, offer pause before cancel. Food subscribers skip for vacation or pantry overload — lead with value understanding, not guilt. Three-touch recovery beats immediate discount.',
+  },
+  {
+    question: 'When does Rejoiner make sense for food DTC?',
+    answer: 'When you want strategic help designing replenishment and launch sequences, not just software access. Rejoiner combines lifecycle expertise with email execution — valuable for food brands without in-house retention ops. Higher cost than self-serve tools; evaluate against hiring or agency fees.',
+  },
+  {
+    question: 'What metrics matter for food and beverage email?',
+    answer: 'Reorder rate by product, subscription skip recovery, launch sell-through from email, and margin after shipping promos. Track whether free-shipping promos erode margin on low-AOV replenishment orders.',
+  },
+  {
+    question: 'Can Omnisend handle food subscription logic?',
+    answer: 'Core welcome, cart, post-purchase, and SMS replenishment reminders yes. Complex per-SKU consumption math and small-batch launch orchestration at scale push growing food brands toward Sequenzy or Klaviyo. Strong SMB starting point under ~500 orders monthly.',
+  },
+  {
+    question: 'How do hot sauce and condiment brands differ from coffee in email?',
+    answer: 'Condiments have longer consumption cycles — a bottle may last 6–8 weeks. Replenishment timing must reflect actual usage, not coffee-style weekly reorder. Recipe content and pairing suggestions drive engagement between replenishment windows.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">Food & beverage</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for food and beverage brands</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Food and beverage retention runs on consumption clocks and limited supply. Coffee bags empty on predictable schedules, hot sauce bottles linger for weeks, small-batch releases sell out in hours. Email must time replenishment accurately, orchestrate launch urgency without alienating loyal subscribers, and communicate shipping constraints before spoilage becomes a support ticket.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for merchants facing {segment.pain}. Typical cycle: {segment.buyingCycle}. This guide covers newsletters, lifecycle automation, and transactional-style shipping updates for the full food DTC email layer.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment guide</a>
+        <a class="btn btn-secondary" href="/use-cases/product-launch">Launch campaigns</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for food and beverage brands"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Consumption-based replenishment, limited-edition launch playbooks, subscription skip recovery, and pay-per-email pricing for subscription-heavy food lists.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Product-level segmentation, subscription sync, and launch analytics for high-volume food DTC with rotating SKUs.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt cart, welcome, and post-purchase journeys plus SMS for food brands needing multichannel live quickly.' },
+        { label: 'Best managed strategy', tool: 'Rejoiner', reason: 'Lifecycle strategy support alongside email execution for teams without dedicated retention ops.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual branching for flavor-family segmentation and consumption-based reorder paths.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three food and beverage merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Summit Roasters, single-origin pour-over, subscription 48%.</strong> Sequenzy per-bag replenishment by grind and size with subscription suppression lifted reorder conversion 26%. Limited-release waitlist-to-launch sold 94% of a 200-bag Ethiopia lot within 6 hours of VIP email.
+      </p>
+      <p>
+        <strong>Scenario B — Ember Sauce Co, small-batch hot sauce, 6-week consumption cycle.</strong> Klaviyo flavor-family segmentation recommended complementary heat levels to repeat buyers — bundle attach from email hit 31%. Recipe content emails between replenishment windows maintained engagement without promo dependency.
+      </p>
+      <p>
+        <strong>Scenario C — Culture Fizz, craft kombucha subscription.</strong> Rejoiner-designed skip recovery sequence recovered 21% of month-3 churn risk subscribers. Shipping cutoff reminders in post-purchase flows reduced holiday spoilage complaints 40%.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Food email is consumption math plus supply reality</h2>
+      <p>
+        Generic 30-day reorder delays fail food brands immediately. A weekly coffee subscriber and a monthly hot sauce buyer share nothing except a Shopify account. Build SKU-specific consumption windows, suppress active subscribers, and update timing from actual reorder data quarterly.
+      </p>
+      <p>
+        Limited supply changes launch dynamics. Small-batch releases need waitlist orchestration, VIP early access, and sold-out follow-up — not a single blast that crashes site traffic and frustrates latecomers. Segment by prior flavor or origin purchases for relevant launch targeting.
+      </p>
+      <p>
+        Perishability and shipping belong in email early. Browse nurture and post-purchase should communicate delivery windows, storage requirements, and holiday cutoff dates — transactional clarity that protects product quality and brand reputation.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for food and beverage brands</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for food & bev</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy tops food and beverage rankings because retention is consumption timing plus supply orchestration. Replenishment by SKU, limited-edition launch sequences, subscription skip recovery, and shipping clarity playbooks deploy through agent-first setup without rebuilding flows every new flavor drop.',
+      'Pay-per-email pricing suits food lists heavy with subscribers and waitlist signups where per-contact models inflate cost relative to send frequency.',
+      'Sequenzy playbooks map to food priorities: consumption replenishment, launch alerts, subscription previews, perishability messaging. Track margin after shipping promos — free shipping on low-AOV replenishment destroys unit economics fast.',
+    ,
+        'Operational note for food and beverage: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For food and beverage merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo scales for food brands with rotating SKUs, subscription revenue, and high launch frequency. Product-level segmentation and flow testing optimize VIP early access versus public launch timing.',
+      'Best at 500+ monthly orders with meaningful subscription and limited-release revenue.',
+    ,
+        'Operational note for food and beverage: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For food and beverage merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend delivers fast multichannel for food DTC: welcome, cart, post-purchase, SMS replenishment reminders. Strong under ~550 orders monthly needing reliable fundamentals before launch complexity grows.',
+    ,
+        'Operational note for food and beverage: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For food and beverage merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Rejoiner fits food brands wanting managed lifecycle strategy — replenishment design, launch orchestration, skip recovery copy — alongside platform access. Evaluate cost against hiring retention ops or an agency.',
+      'Not self-serve cheap; best when strategic help accelerates revenue faster than DIY experimentation.',
+    ,
+        'Operational note for food and beverage: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For food and beverage merchants evaluating Rejoiner: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Rejoiner segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Drip enables visual control over flavor-family branches, consumption-based reorder paths, and subscriber versus one-time buyer logic. Best for operators enjoying explicit workflow design.',
+    ,
+        'Operational note for food and beverage: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For food and beverage merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Launch playbook</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Small-batch release email sequence</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Waitlist confirm → teaser 48h before → VIP early access 24h → public launch → sold-out alternatives. Email priorities: {segment.emailPriorities.join('; ')}. Segment VIP by 2+ prior purchases of related flavors or origins.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Shipping clarity</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Perishability belongs in email early</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Food DTC loses repeat customers when delivery surprises spoil product or miss holiday windows. Post-purchase emails should confirm estimated arrival, storage instructions, and unboxing guidance for fragile or temperature-sensitive items. Browse nurture for refrigerated or frozen products must set shipping constraints before checkout — not after a failed delivery complaint.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Holiday cutoff campaigns need explicit dates: "Order by December 18 for Christmas delivery" in subject lines and body, repeated in cart abandonment for food gift purchases. One missed cutoff destroys gift-buyer trust permanently; proactive cutoff email protects reputation more than post-holiday discount blasts.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for food and beverage email</h2>
+      <p>
+        Build a consumption spreadsheet before configuring replenishment automations. Coffee, hot sauce, kombucha, and snack subscriptions all empty on different schedules — document days-to-empty per SKU and update quarterly from Shopify reorder data. Without the spreadsheet, replenishment email arrives while the customer still has half a bag or bottle, and unsubscribes follow.
+      </p>
+      <p>
+        Track margin after shipping promos as a monthly KPI. Free shipping on a $14 replenishment order with $6 shipping cost destroys unit economics fast. Segment VIP subscribers who reorder without prompts for early access to limited releases instead of site-wide free shipping codes.
+      </p>
+      <p>
+        Limited-batch launches should never blast the full list simultaneously unless infrastructure handles traffic. VIP early access for repeat buyers protects server load and rewards loyalty. Sequenzy launch playbooks deploy this sequence fastest; Klaviyo when you need granular sell-through analytics by flavor or origin segment.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for food and beverage brands</h2>
+      <p>
+        Food email is consumption math plus supply reality. Sequenzy for replenishment and launch playbooks; Klaviyo at scale with subscription sync; Rejoiner when managed strategy accelerates skip recovery and launch orchestration. Build the consumption spreadsheet before configuring automations — guessed timing produces unsubscribes.
+      </p>
+      <p>
+        Track margin after shipping promos and launch sell-through from email separately. Limited-batch releases reward VIP early access and flavor-family segmentation over full-list blasts that crash margins and site infrastructure simultaneously. Recipe and pairing content between replenishment windows keeps engagement high without promo dependency for condiment and specialty food brands.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">8-week rollout</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Food email implementation sequence</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Week 1: consumption spreadsheet for top 5 SKUs. Week 2: replenishment automation with subscription suppression. Week 3: post-purchase storage and shipping clarity. Week 4: limited-release waitlist flow. Week 5: skip recovery sequence. Week 6: flavor-family segmentation. Week 7: holiday cutoff campaign template. Week 8: review margin-after-promo and reorder accuracy metrics. Sequenzy deploys fastest; Klaviyo if subscription SKU complexity demands deeper data infrastructure from day one.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for food and beverage brands</h2>
+      <p>Generic ecommerce playbooks fail food and beverage brands within two quarters because buying cycle reality — 1–4 week consumption; subscription-heavy; limited SKU availability — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for food and beverage brands should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — food and beverage brands mid-market brand.</strong> Sequenzy agent-first lifecycle addressed repeat purchase windows without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — food and beverage brands at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — food and beverage brands boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when replenishment by consumption rate required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replenishment by consumption rate</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>New flavor launch alerts</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription box previews</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Perishability and shipping clarity</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Reorder rate by product</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription skip recovery</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Launch sell-through from email</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Margin after shipping promos</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean food and beverage brands teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: food and beverage brands stack decisions</h2>
+      <p>A clean beauty startup at 540 orders/mo and a mechanical keyboard atelier at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. ceramic studio separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to food and beverage brands buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/for/subscription-boxes">Subscription boxes →</a>
+      <a class="link" href="/use-cases/replenishment">Replenishment guide →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Food and beverage email FAQ" />
+</BaseLayout>

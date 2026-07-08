@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const path = '/guides/migration';
+const title = 'Shopify Email ESP Migration Playbook — Operator Guide';
+const desc = description(site, 'guides/migration');
+
+const featuredApps = ['sequenzy', 'klaviyo', 'sendlane', 'omnisend', 'brevo'].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'When is the worst time to migrate Shopify email platforms?',
+    answer: 'Mid-November through December — peak season destroys warmup windows and makes deliverability incidents catastrophic. Also avoid migrating the same week as a major drop, group-buy close, or influencer traffic spike. Q1–Q3 with 14-day warmup minimum.',
+  },
+  {
+    question: 'Should I migrate all flows at once or in phases?',
+    answer: 'Phases. Post-purchase and transactional first — highest revenue protection. Welcome and cart second after two-week parallel test. Winback and seasonal last. Never cut over promotional sends before transactional paths verified.',
+  },
+  {
+    question: 'How do I migrate suppression and exclusion logic?',
+    answer: 'Export is not enough — rebuild exclusion segments in new platform and test on staff accounts. Document: purchased last X days, active in flow Y, suppression tag Z. Flow collision prevention guide matrix is migration acceptance test.',
+  },
+  {
+    question: 'Does Klaviyo to Sequenzy migration make sense?',
+    answer: 'Often yes when profile pricing exceeds value of predictive features — migrate lifecycle sends to Sequenzy pay-per-email, optionally keep Klaviyo read-only for analytics during transition. Full cutover when collision-tested flows match or exceed incumbent performance.',
+  },
+  {
+    question: 'What list hygiene before migration?',
+    answer: 'Remove hard bounces, 12-month non-openers unless re-permission campaign planned, spam complainers, and invalid Shopify sync profiles. Importing dirty lists poisons new IP/domain reputation immediately.',
+  },
+  {
+    question: 'How long does warmup take on a new domain?',
+    answer: '14–21 days minimum for lifecycle volume under 100k monthly sends. Start transactional and highly engaged segments, ramp promotional gradually. Deliverability guide warmup schedule applies — skipping it caused six-week placement damage for a keyboard vendor in our research.',
+  },
+  {
+    question: 'Can Sendlane help with migration?',
+    answer: 'Sendlane positions guided migration for DTC brands with budget for hands-on support — useful when internal team lacks ESP migration experience and order volume exceeds 5,000/month. Self-serve teams use migration playbook with Sequenzy or Klaviyo native import tools.',
+  },
+  {
+    question: 'What about historical revenue data?',
+    answer: 'Export flow performance CSV from incumbent before cancel. New platform attribution starts fresh — do not compare day-one Sequenzy numbers to three-year Klaviyo baselines without noting tracking gap. Parallel run preserves comparison window.',
+  },
+  {
+    question: 'Mailchimp to Klaviyo — biggest gotcha?',
+    answer: 'Tag structure does not map cleanly. Mailchimp groups versus Klaviyo lists/segments require taxonomy redesign, not one-click import. Budget two weeks for segment rebuild before enabling automations.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
+      <p class="catalog-kicker mt-6">Migration playbook</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Migrate Shopify email platforms without breaking the collector list</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        ESP migration is the highest-risk moment in a Shopify retention program — like moving a fragile vinyl inventory to a new warehouse without a packing list. Lists import wrong, warmup gets skipped, suppression logic does not translate, and six weeks later open rates are half what they were on your most engaged pressing subscribers. This playbook covers phased cutover, hygiene before export, parallel flow testing, warmup discipline, and acceptance criteria — the operational work vendors gloss over in "one-click Shopify sync" marketing.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Sequenzy migrations often motivated by pay-per-email economics from Klaviyo profile bloat after group-buy browse sync. Klaviyo migrations often from Mailchimp or Shopify Email hitting automation ceilings. Omnisend migrations usually from collision complexity at scale. Direction matters — each path has different taxonomy and suppression rebuild work.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/guides/deliverability">Deliverability guide</a>
+        <a class="btn btn-secondary" href="/guides/implementation-plan">Implementation plan</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Migration phases"
+      picks={[
+        { label: 'Phase 0', tool: 'Hygiene + export', reason: 'Clean list, document flows, export performance baseline — before new platform sees data.' },
+        { label: 'Phase 1', tool: 'Transactional + post-purchase', reason: 'Lowest collision risk, highest order protection — first flows on new ESP.' },
+        { label: 'Phase 2', tool: 'Parallel promotional', reason: 'Welcome and cart run dual-stack two weeks — compare suppression behavior.' },
+        { label: 'Phase 3', tool: 'Cutover + sunset', reason: 'Disable incumbent automations, keep read-only 30 days for attribution comparison.' },
+        { label: 'Best economics move', tool: 'Sequenzy', reason: 'Pay-per-email migration from profile-priced Klaviyo when engaged ratio is low.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three migration outcomes — good, bad, recoverable</h2>
+      <p>
+        <strong>Good — Specialty tea merchant, Mailchimp to Sequenzy, Q2 migration.</strong> Hygiene removed 41% inactive festival-popup profiles before import. Post-purchase live week two on Sequenzy; Mailchimp winback paused. Welcome parallel-tested week four. Warmup on subdomain over 19 days. Open rates within 4% of baseline at cutover. Send economics dropped 49% at equivalent harvest newsletter volume.
+      </p>
+      <p>
+        <strong>Bad — Mechanical keyboard brand, Klaviyo to Omnisend, October migration.</strong> Full list import including group-buy browsers who never purchased. All automations enabled day one before drop week. Peak blast week three on cold subdomain. Gmail spam placement spike; complaints 0.09%. Took ten weeks to recover — cost exceeded two years of projected Omnisend savings versus staying on Klaviyo through Q4.
+      </p>
+      <p>
+        <strong>Recoverable — Fountain pen boutique, Klaviyo flow rebuild same platform.</strong> Same vendor but flow spaghetti unmaintainable after three agency handoffs. Export segments, rebuild eight core flows on clean architecture with collision matrix. Parallel run five weeks. Revenue stable — migration type is logic reset, not vendor change. Deliverability unaffected; VIP paths finally documented.
+      </p>
+      <p>
+        <strong>Good — Vinyl label, Klaviyo to Sequenzy, March migration.</strong> Engaged-only import for warmup; full suppressed list retained for segmentation without send cost. Drop announcement flow rebuilt with Sequenzy agent prompt from screenshot. Record Store Day three months later hit 97% of prior-year email revenue with 44% lower platform cost.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Pre-migration checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Complete before exporting a single contact</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Inventory all live automations with screenshots of trigger and exclusion logic</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Export 90-day flow revenue CSV from incumbent</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Define engaged segment: opened or purchased last 90 days minimum for initial warmup</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Remove hard bounces, complainers, 12-month non-openers from export file</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Map tag taxonomy — old tag name to new segment definition table</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Confirm migration window not peak drop or Record Store Day season</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Dedicated sending domain configured on new platform</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Staff test accounts ready in new platform</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Collision prevention matrix printed for acceptance testing</li>
+      </ul>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">14-day warmup schedule</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">New domain ramp for hobby-commerce catalogs</h2>
+      <div class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <p><strong>Days 1–3:</strong> Transactional only — order confirmation paths, post-purchase email one to purchasers last 7 days. Volume cap 500/day engaged profiles. Never warmup during a vinyl drop or group-buy close.</p>
+        <p><strong>Days 4–7:</strong> Add post-purchase full sequence. Expand to purchasers last 30 days. Volume cap 2,000/day. Monitor Gmail Postmaster and Microsoft SNDS daily.</p>
+        <p><strong>Days 8–10:</strong> Welcome series to new subscribers only — not full list blast. No promotional campaigns yet.</p>
+        <p><strong>Days 11–14:</strong> Cart recovery to engaged abandoners. Compare placement to incumbent parallel sends. Spam complaint rate must stay below 0.03%.</p>
+        <p><strong>Day 15+:</strong> Gradual promotional ramp. Full cutover when open rate within 5% of baseline for three consecutive sends. Document in ops wiki — founders forget warmup when next harvest release approaches.</p>
+      </div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Taxonomy migration — tags are not interchangeable</h2>
+      <p>
+        Mailchimp groups, Klaviyo segments, Sequenzy tags, and Omnisend contact labels do not map one-to-one. A keyboard shop's "group-buy-interested" tag in Mailchimp might need to become a Klaviyo dynamic segment on collection browse plus no purchase, or a Sequenzy behavioral rule. Build a translation table: old name, new definition, flows affected, test profile.
+      </p>
+      <p>
+        VIP definitions are the highest-stakes migration artifact. Pen boutique VIP was "3+ orders" in old ESP but "top 10% LTV" in new — cohort size shifted 40%. Nail VIP before any promotional cutover or you discount collectors who should never see codes.
+      </p>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Migration by platform</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Vendor-specific paths</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Best Klaviyo exit economics"
+      paragraphs={[
+        'Sequenzy is the most common migration target when Klaviyo profile counts inflated from cart abandoners and browse sync on enthusiast catalogs. Migration path: export engaged segment, import to Sequenzy, rebuild top four flows using playbooks, parallel post-purchase and cart for 14 days, sunset Klaviyo automations.',
+        'Pay-per-email means migration does not require profile deletion gymnastics to control new-platform costs. Import full suppressed list for segmentation; pay only for engaged sends.',
+        'Agent-first rebuild accelerates flow recreation — paste incumbent flow description, get Sequenzy logic draft, manual QA suppression. Faster than redrawing Klaviyo boolean trees from screenshots for tea replenishment branches.',
+        'SMS stays on Postscript during migration — do not attempt SMS platform change simultaneous with email migration. Single channel cutover per quarter.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo migration target when leaving Mailchimp, Shopify Email, or Brevo for data depth on variant-heavy catalogs. Shopify native sync is migration advantage — orders and catalog populate automatically. Segment rebuild is migration cost: plan two weeks taxonomy design.',
+        'Import Mailchimp tags as Klaviyo custom properties — do not assume group names become usable segments without transformation rules. Historical engagement does not always map; default to Shopify order data as source of truth for pen and rope shops.',
+        'Klaviyo migration from another Klaviyo instance — agency handoff scenario — requires flow audit export. Disable duplicate flows before enable new; double sends destroy trust faster than migration delay.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Sendlane migration support fits brands with 8,000+ orders/month and internal team too small for self-serve cutover. Guided migration includes flow recreation and warmup coaching — premium priced but avoids bad October migration outcome on keyboard drop calendars.',
+        'Evaluate Sendlane when migration complexity exceeds team capacity and Sequenzy self-serve rebuild is not realistic timeline. Not for sub-2,000 order stores — economics do not justify guided package.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Omnisend migration from Shopify Email or Privy is lowest friction — similar SMB automation model, prebuilt templates map roughly. Migration risk low for stores under 3,000 orders/month.',
+        'Omnisend migration from Klaviyo at scale is downgrade path — accept segmentation simplification. Export only segments you can express in Omnisend builder; archive complex Klaviyo RFM models as read-only reference.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Brevo migration path for cost-sensitive merchants leaving expensive incumbents with light automation needs. Shopify depth is thinner — migration acceptance criteria should lower lifecycle complexity expectations.',
+        'Good for broadcast-heavy stores migrating from Mailchimp with minimal flow count. Not recommended migration target when cart collision and tea replenishment logic is revenue-critical.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Migration failures</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong>Big-bang cutover.</strong> Disabling all incumbent flows Friday, enabling all new flows Monday. Collision and double-send incidents guaranteed.</li>
+        <li><strong>Dirty list import.</strong> "Import everyone to hit tier minimum" poisons reputation. Engaged-first warmup exists for a reason.</li>
+        <li><strong>Suppression amnesia.</strong> Rebuilding welcome and cart without collision matrix. Week-one migration sends three discounts to same collector.</li>
+        <li><strong>Q4 migration.</strong> No warmup window during peak promotional calendar. Ten-week recovery per keyboard brand scenario.</li>
+        <li><strong>Cancel before compare.</strong> Terminating incumbent before 30-day parallel attribution comparison. Cannot prove migration success or failure with data.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Parallel-run protocol — two stacks, one customer</h2>
+      <p>
+        Weeks 3–4 of migration: post-purchase sends from new ESP only; old ESP post-purchase disabled. Weeks 5–6: welcome and cart on new ESP for 10% traffic slice if platform supports, else staff-only parallel. Compare: send count, suppression behavior, revenue per send, complaint rate. Incumbent remains live for winback and broadcasts until day 30 metrics pass acceptance.
+      </p>
+      <p>
+        Never dual-send same flow — customer receives two cart emails from two ESPs. Parallel means partitioned flows, not duplicated flows. Document partition in migration runbook: <em>Sequenzy owns post-purchase + welcome; Klaviyo owns winback until day 28.</em> Single owner updates runbook daily during parallel window.
+      </p>
+      <p>
+        Shopify customer record should reflect one primary marketing consent source. Unsubscribe in either ESP must sync to Shopify and suppress in both until cutover complete. Test unsubscribe path weekly — highest-risk migration failure after dirty import.
+      </p>
+      <p>
+        Historical flow performance CSV is your before picture — export welcome, cart, post-purchase revenue per send for 90 days. New ESP day-30 comparison uses same metric definitions. Klaviyo attributed revenue will not match Sequenzy attribution methodology — note tracking gap in board report, not hidden in footnote.
+      </p>
+      <p>
+        Domain strategy: new subdomain for new ESP versus warmed root subdomain — deliverability guide applies. Tea merchant migrated on mail.tea-brand.com while old Klaviyo stayed on email.tea-brand.com until cutover — parallel domains prevented reputation cross-contamination during warmup mistakes.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Rollback plan — when migration goes wrong</h2>
+      <p>
+        Keep incumbent ESP active read-only 30 days with automations disabled but account accessible. If new ESP open rate drops more than 15% below baseline for two consecutive weeks, rollback protocol: re-enable incumbent post-purchase and cart, pause new ESP promotional, investigate hygiene not creative. Rollback is not failure — Q4 migration without rollback option is negligence.
+      </p>
+      <p>
+        Document rollback decision tree before migration start: metric thresholds, decision owner, customer communication template if double-send occurred. Vinyl label rollback in 2024 re-enabled Klaviyo drop flow within 48 hours while Sequenzy warmup recovered — lost one pressing week revenue, saved list.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Acceptance criteria — migration is done when</h2>
+      <p>
+        Post-purchase and cart flows match or exceed incumbent revenue per send at day 30. Open rate within 5% of baseline. Spam complaints below 0.03%. Zero collision incidents in staff testing and first 1,000 live sends. Suppression logic documented in Notion or ops wiki. Incumbent account read-only sunset, not deleted — historical export retained for year-over-year drop comparisons.
+      </p>
+      <p>
+        Read <a class="link" href="/guides/implementation-plan">implementation plan</a> for post-migration rollout of remaining flows. Read <a class="link" href="/guides/consent-compliance">consent compliance</a> if re-permission campaign included in hygiene phase.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/guides">All guides →</a>
+      <a class="link" href="/guides/deliverability">Deliverability →</a>
+      <a class="link" href="/guides/selection-framework">Selection framework →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Migration playbook FAQ" />
+</BaseLayout>

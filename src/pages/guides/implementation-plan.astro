@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const path = '/guides/implementation-plan';
+const title = 'Shopify Email Implementation Plan — Operator Playbook';
+const desc = description(site, 'guides/implementation-plan');
+
+const featuredApps = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'privy'].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What order should Shopify lifecycle flows go live?',
+    answer: 'Post-purchase and deliverability foundation first. Welcome with source branching second. Cart and browse with collision rules third. Vertical retention — replenishment, VIP, launch — fourth. Winback and seasonal peaks last. Parallel launch of six flows produces collision bugs discovered only after sends fire.',
+  },
+  {
+    question: 'How long does full implementation take on Sequenzy?',
+    answer: 'Eight to ten weeks for six core flows with agent-first setup — compressed from fourteen on Klaviyo for equivalent logic. Allow two weeks minimum per workflow for testing, suppression verification, and staff-account QA regardless of platform.',
+  },
+  {
+    question: 'Should I pause all email during implementation?',
+    answer: 'Never pause transactional or order confirmation. Pause promotional broadcasts and broken automations. Run new flows parallel to old for two weeks when migrating — cutover only after suppression tests pass on staff accounts.',
+  },
+  {
+    question: 'Who should own the implementation plan?',
+    answer: 'Single retention lead with Shopify Admin access, ESP admin access, and authority to change discount codes. Founder can own at under 1,000 orders/month. Agency implements only with internal owner signing off each flow go-live.',
+  },
+  {
+    question: 'What is the minimum viable flow set?',
+    answer: 'Post-purchase, welcome, abandoned cart — three flows. Add browse abandonment when catalog exceeds 200 SKUs. Add replenishment when repeat purchase exceeds 25% of revenue. Winback and peak campaigns wait until foundations stable.',
+  },
+  {
+    question: 'How do I test flows before go-live?',
+    answer: 'Staff accounts with real email addresses, tagged test profiles, and documented expected send sequence over 14 days. Flow collision prevention guide priority matrix tested explicitly — signup plus cart within 48 hours must not stack discounts.',
+  },
+  {
+    question: 'Can I implement during Q4?',
+    answer: 'New flow builds yes with caution. Platform migrations no — deliverability risk during peak send volume. Peak flow changes freeze four weeks before highest traffic unless emergency. Implementation plan assumes Q1–Q3 primary build window.',
+  },
+  {
+    question: 'What metrics prove implementation success?',
+    answer: 'Per-flow incremental revenue, unsubscribe rate below vertical baseline, collision incident count zero in first 30 days, deliverability placement stable, time-to-second-order improving for welcome cohort. Not aggregate email revenue alone.',
+  },
+  {
+    question: 'How does implementation plan relate to use-case playbooks?',
+    answer: 'Use-case pages define what each flow should do — triggers, timing, exclusions. Implementation plan defines when and in what order you build them. Read post-purchase use-case before week one; read cart use-case before week five.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
+      <p class="catalog-kicker mt-6">Implementation plan</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Shopify email implementation plan — assemble the shelf in order</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Most Shopify email programs fail in implementation, not selection. The platform is live, templates look fine, and then welcome discount stacks on cart recovery because nobody sequenced rollout or documented suppression — like stocking limited vinyl before you have mailers and post-purchase thank-you cards ready. This plan is an eight-to-twelve week operator schedule: which flows go live in which order, who owns each gate, what gets tested before send, and which metrics prove the foundation is stable before you add winback or peak-season complexity.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Sequenzy teams often compress timeline via agent-first flow builds. Klaviyo teams need longer for segment hygiene and boolean documentation. Omnisend teams go live faster on prebuilt templates but hit collision walls sooner — plan manual suppression tags from week one. Platform changes schedule, not sequence discipline.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/guides/flow-collision-prevention">Collision prevention</a>
+        <a class="btn btn-secondary" href="/use-cases/post-purchase">Post-purchase playbook</a>
+        <a class="btn btn-secondary" href="/guides/deliverability">Deliverability</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Implementation sequence"
+      picks={[
+        { label: 'Weeks 1–2', tool: 'Post-purchase + deliverability', reason: 'Protect every order and inbox placement before acquisition flows add volume.' },
+        { label: 'Weeks 3–4', tool: 'Welcome series', reason: 'Source branching for popup vs product-page opt-ins; no discount email one by default.' },
+        { label: 'Weeks 5–6', tool: 'Cart + browse', reason: 'Collision rules documented; cart wins priority over browse and welcome offers.' },
+        { label: 'Weeks 7–8', tool: 'Vertical retention', reason: 'Replenishment, VIP, or launch — pick primary repeat-revenue workflow for your catalog.' },
+        { label: 'Weeks 9+', tool: 'Winback + peaks', reason: 'Only after foundations stable; peak prep starts early, not four weeks before drop.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three implementation post-mortems — catalog operators</h2>
+      <p>
+        <strong>Scenario A — Vinyl label, Klaviyo, six flows launched same week before Record Store Day.</strong> Welcome 10% and cart free shipping hit new subscribers who browsed pressings within 24 hours of popup signup. Unsubscribe spike 0.3% to 0.9% in eight days. Rewind to implementation sequence: post-purchase only week one, welcome week three with cart suppression rule, cart week six, launch orchestration week eight. Collision guide priority matrix added to ops doc; RSD revenue protected after sequence fix.
+      </p>
+      <p>
+        <strong>Scenario B — Specialty tea merchant, Sequenzy, disciplined rollout.</strong> Post-purchase with brewing-ratio education week one. Replenishment at 28-day sencha window week four — before cart recovery. Cart recovery week six with subscription SKU branch. Winback deferred to month four. Incremental email revenue rose 31% without discount escalation — sequence respected consumption curves, not generic 30-day defaults.
+      </p>
+      <p>
+        <strong>Scenario C — Fountain pen boutique, Omnisend, fast template deploy.</strong> All prebuilt automations enabled day one. Browse and cart fired simultaneously on high-consideration nib browsers. Fixed by pausing browse, implementing 14-day delay, and VIP tag exclusion. Lesson: fast go-live without sequence discipline costs list health before $800 AOV revenue materializes.
+      </p>
+      <p>
+        <strong>Scenario D — Climbing rope brand, Sequenzy, safety-first sequencing.</strong> Post-purchase retirement-interval education weeks 1–2 before any promotional flow. Carabiner cross-sell email three gated behind education open or day 21. Cart recovery week six with no discount email one — trust positioning matched catalog. Returns on safety SKUs dropped 9% in quarter one.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Week-by-week plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Standard 10-week rollout</h2>
+      <div class="mt-6 space-y-6 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Weeks 1–2: Foundation</h3>
+          <ul class="mt-3 space-y-2">
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Deliverability audit: SPF, DKIM, DMARC, dedicated sending domain</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/use-cases/post-purchase">Post-purchase</a> flow live — education before cross-sell</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Suppression baseline: purchased last 24h, support escalation tag, bounced profiles</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Staff test accounts created; expected sends documented</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Weeks 3–4: Acquisition</h3>
+          <ul class="mt-3 space-y-2">
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/use-cases/welcome-series">Welcome series</a> with signup source branches</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Privy or capture tool feeding tags to ESP — not parallel discount logic</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/guides/consent-compliance">Consent audit</a> on popup and checkout</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Welcome discount delayed to email 3+ for non-buyers; never email 1</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Weeks 5–6: Intent recovery</h3>
+          <ul class="mt-3 space-y-2">
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/use-cases/abandoned-cart">Cart recovery</a> with inventory check before send</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/use-cases/browse-abandonment">Browse abandonment</a> with softer touch, longer delay</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/guides/flow-collision-prevention">Collision matrix</a> signed off by retention lead</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>SMS branch optional — Postscript at hour 4 if email unopened</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Weeks 7–8: Retention depth</h3>
+          <ul class="mt-3 space-y-2">
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Primary vertical workflow: <a class="link" href="/use-cases/replenishment">replenishment</a>, <a class="link" href="/use-cases/vip-segments">VIP</a>, or <a class="link" href="/use-cases/product-launch">launch</a></li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/guides/segmentation">Segmentation</a> inventory updated — no orphan segments</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/guides/revenue-attribution">Attribution baseline</a> per flow documented</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Weeks 9–10: Reactivation</h3>
+          <ul class="mt-3 space-y-2">
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/use-cases/winback">Winback</a> with full-price attempt before discount</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span><a class="link" href="/guides/discount-discipline">Discount ladder</a> applied to winback tier</li>
+            <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>Monthly ops review calendar set — quarterly collision audit scheduled</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Go-live gate checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Every flow passes before enable</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Trigger documented in one sentence — no ambiguous "entered segment"</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Exclusion list includes: purchased, unsubscribed, suppressed flows, support tags</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Staff account test completed — actual sends match expected sequence</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Discount code single-use and capped — finance approved margin floor</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Mobile preview checked — 70%+ opens on mobile for most enthusiast DTC</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>UTM parameters standardized for attribution</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">☐</span>Owner assigned for weekly metric review</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Platform implementation notes</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Rollout by vendor</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Fastest strategy execution"
+      paragraphs={[
+        'Sequenzy compresses implementation because playbooks encode operational contracts — post-purchase before cross-sell, cart discount caps by value band — before creative work. Agent prompts accelerate week-three welcome branches: "split festival popup subscribers from footer opt-ins, delay discount to email four for product-page tea signups."',
+        'Pay-per-email means enabling cart recovery for all abandoners without profile-count anxiety. Implementation plan week five can include aggressive cart segmentation — VIP delay path, guest versus logged-in — without tier upgrade triggers.',
+        'Document collision rules in Sequenzy suppression templates explicitly. Week-six gate includes verification that welcome offer suppresses when cart flow active — built into cart playbook defaults, not manual tags.',
+        'Pairing Postscript in week five: Sequenzy email touches one and two, SMS branch at hour four. Implementation owner maintains channel priority doc — email primary, SMS secondary, never parallel blast during drop hour.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo implementation needs segment hygiene upfront — week zero export engaged profiles, define core segments before first flow. Rushing to enable prebuilt flows without exclusion segments causes week-three list damage on vinyl drop lists.',
+        'Boolean tree documentation is mandatory for Klaviyo rollout. Each flow gets a Lucidchart or Notion page: triggers, splits, suppression joins. Agency-built flows without docs become unmaintainable by month six.',
+        'Klaviyo flow A/B tests belong in week eight+, not week one. Foundation flows need stable baselines before optimization. Predictive segments for cart discount sensitivity — week seven enhancement, not launch blocker.',
+        'Profile count grows with every enabled automation — implementation plan should schedule 90-day inactive profile suppression in week two, not as afterthought when bill spikes after keyboard group-buy browse sync.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Omnisend week-one to week-four is fastest path — prebuilt welcome, cart, post-purchase templates. Implementation plan risk: enabling all templates day one skips sequence discipline. Enable post-purchase week one, welcome week three, cart week five — templates do not replace ordering.',
+        'Omnisend collision visibility weaker than Klaviyo — week five must add manual tags for "in-welcome" and "in-cart" mutual exclusion. Flow collision prevention guide matrix adapted for tag-based suppression.',
+        'Push notification branch in cart flow: week six optional. Push overuse during implementation testing annoys real subscribers — use staff accounts only until gate checklist passes.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Drip visual workflows suit implementation plans that map explicit branches on whiteboard first — guest cart path, repeat buyer path, high-AOV delay for pen browsers. Week five cart implementation is diagram-to-builder translation.',
+        'Tag triggers from onsite behavior enrich week-seven vertical flow — "viewed-sizing-guide" adds fit FAQ to post-purchase for rope harness cross-sell. Plan tag taxonomy in week two before flows multiply tags chaotically.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Privy is capture layer in week three, not lifecycle platform. Implementation plan positions Privy popup feeding welcome source tags into Sequenzy or Klaviyo — Privy should not run parallel cart automation at scale.',
+        'Under 300 orders/month, Privy basic welcome plus cart acceptable weeks three through six. Graduate to dedicated ESP when collision rules and replenishment exceed Privy automation depth.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Implementation failures we see repeatedly</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong>Parallel flow launch.</strong> Six automations enabled in one sprint before group-buy. Collision incidents within 72 hours. Sequence exists for a reason.</li>
+        <li><strong>Discount before trust.</strong> Welcome email one with 20% off trains coupon hunters before brand story. Delay incentives.</li>
+        <li><strong>No staff testing.</strong> Flows go live on production logic without 14-day test accounts. First real casualty is a VIP collector.</li>
+        <li><strong>Peak before foundation.</strong> Building drop flows when cart and welcome still collide. Peak amplifies broken logic.</li>
+        <li><strong>Orphan agency build.</strong> Agency ships flows; internal team cannot edit suppression. Owner must shadow every week of build.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Minimum viable versus full shelf — scope control</h2>
+      <p>
+        Minimum viable: post-purchase, welcome, cart — three flows, eight weeks, collision matrix for cart-welcome only. Full shelf: add browse, replenishment or VIP, winback, launch — ten weeks, full matrix, SMS branch optional. Vinyl label before RSD might choose MVP plus launch only; tea subscription chooses MVP plus replenishment week four. Saying no to winback in month one is scope discipline, not failure.
+      </p>
+      <p>
+        Track scope in implementation tracker: planned flows, actual go-live dates, deferred flows with reason. Deferred winback with documented reason beats broken winback colliding with cart during first drop.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Role clarity — who owns which gate</h2>
+      <p>
+        Retention lead: flow logic, suppression, staff tests, weekly metrics. Founder/GM: discount code approval, peak calendar collision freeze. Finance: margin floor sign-off on any new automation code. Agency (if any): build to spec; internal owner signs each go-live gate. Shopify admin access required for retention lead — order tags, customer edits, checkout settings for consent.
+      </p>
+      <p>
+        Week five gate cannot pass without retention lead signature on collision matrix. Week eight vertical flow cannot pass without finance acknowledgment if discounts involved. Document signatures in implementation tracker — Notion table or spreadsheet with date and initials.
+      </p>
+      <p>
+        Post-launch handoff: weekly metrics review calendar invite recurring; quarterly collision audit assigned; migration playbook link bookmarked if second ESP trial planned. Implementation plan becomes ops rhythm document, not archived project plan.
+      </p>
+      <p>
+        New hire onboarding: assign reading order from this guide — post-purchase use-case week one shadow, cart use-case week five shadow, collision matrix test supervised before solo flow edits. Prevents well-meaning intern enabling browse and welcome same afternoon.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Compressed six-week path — when drop date is fixed</h2>
+      <p>
+        Sometimes catalog reality overrides ideal sequence. Record Store Day in ten weeks, group-buy close in six — compress but do not parallelize discounts. Weeks 1–2: post-purchase + deliverability only. Week 3: welcome without promotional branch — education and list hygiene only. Week 4: cart with collision tags, no discount email one. Week 5: launch or drop flow on engaged segment. Week 6: staff collision tests under load. Skip winback and browse until after peak. Accept temporary revenue left on table versus collision damage to engaged collectors.
+      </p>
+      <p>
+        Sequenzy compression works here because playbooks supply suppression defaults — agent builds welcome and cart in same week only if collision sentences explicit in both prompts. Klaviyo compression needs daily staff QA; Omnisend compression needs manual tags before any send.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operating rhythm after go-live</h2>
+      <p>
+        Weekly: per-flow revenue, unsubscribes, spam complaints, collision incident log. Monthly: segment hygiene, discount redemption rate, deliverability placement. Quarterly: full collision audit, discount ladder review, attribution methodology check. Implementation plan does not end at week ten — it becomes recurring ops calendar pinned beside your catalog release schedule.
+      </p>
+      <p>
+        Cross-read <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before week five. Cross-read <a class="link" href="/guides/revenue-attribution">revenue attribution</a> before week seven. Store-type guide at <a class="link" href="/for">/for/</a> overrides week-seven vertical pick — tea replenishment week four, pen VIP week seven, vinyl launch week eight.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/guides">All guides →</a>
+      <a class="link" href="/guides/migration">Migration playbook →</a>
+      <a class="link" href="/use-cases">Use-case playbooks →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Implementation plan FAQ" />
+</BaseLayout>

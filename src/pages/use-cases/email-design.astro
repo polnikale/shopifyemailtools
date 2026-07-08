@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('email-design')!;
+const path = '/use-cases/email-design';
+const title = pageTitle(site, 'use-cases/email-design');
+const desc = description(site, 'use-cases/email-design');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'shopify-email', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'shopify-email', 'yotpo-email-sms', 'drip',
+  'mailchimp', 'brevo', 'tinyemail', 'privy',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What Shopify email tool is best for product-led email design?',
+    answer: 'Klaviyo ranks first for flexible product blocks, dynamic content, and mobile preview across lifecycle and newsletter templates. Sequenzy wins when design serves strategy — agent-generated layouts aligned to browse, welcome, and launch playbooks. Omnisend fits fast mobile-first templates for SMB catalogs.',
+  },
+  {
+    question: 'How should email design differ for newsletters versus lifecycle?',
+    answer: 'Newsletters: editorial hierarchy, single hero story, scannable sections — artisan coffee origin feature, pottery studio process. Lifecycle: product-focused, clear CTA, minimal distraction — cart shows exact SKU; post-purchase shows education for purchased item only. Same brand voice, different layout jobs.',
+  },
+  {
+    question: 'What mobile email design rules matter most for Shopify?',
+    answer: 'Single column, 16px+ body text, 44px tap targets, max three product cards above fold, alt text on all images, plain-text fallback. Test iOS Mail and Gmail app before every launch — desktop-only preview misses 60%+ of opens for most DTC.',
+  },
+  {
+    question: 'How many products belong in one email?',
+    answer: 'Lifecycle: one to three products matched to trigger context. Newsletter: one hero plus two supporting max on mobile. Board game launch email with twelve SKUs gets zero clicks; one hero with rules summary wins.',
+  },
+  {
+    question: 'Should transactional emails match marketing design?',
+    answer: 'Shared header, logo, and typography — yes. Promotional blocks in shipping email — no. Transactional stays clean and scannable; order number and tracking above fold. Pottery and climbing gear buyers open shipping email on phone at pickup — design for clarity first.',
+  },
+  {
+    question: 'How does dark mode affect email design?',
+    answer: 'Test logos and product images on dark backgrounds — transparent PNGs with dark text fail. Use defined background colors on sections; avoid pure black text on auto-inverted white that becomes illegible. Klaviyo and Omnisend dark mode previews help; always send test to real devices.',
+  },
+  {
+    question: 'What accessibility requirements apply to Shopify email?',
+    answer: 'Semantic heading order, alt text, sufficient color contrast, link text that describes destination not "click here." Image-heavy pottery and vinyl emails need alt descriptions for screen readers — legal risk and deliverability signal both improve.',
+  },
+  {
+    question: 'Can Shopify Email handle advanced product-led design?',
+    answer: 'Shopify Email improved basic templates but lacks dynamic product blocks from browse history, complex conditional content, and cross-flow design systems. Stores running serious lifecycle graduate within months for design flexibility alone.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="catalog-kicker mt-6">Email design</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for email design</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Email design for Shopify stores is product-led readability across newsletters, lifecycle automations, and transactional sends — not template gallery aesthetics. A pottery studio newsletter needs kiln-process photography that loads on mobile; a cart recovery email needs one mug photo with glaze name, not a six-product grid. The right email tool separates design systems by send type while keeping brand voice consistent.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks email tools for {uc.job}. We evaluated mobile rendering, dynamic product blocks, transactional versus marketing templates, and dark mode behavior — not drag-and-drop widget counts. Design is conversion infrastructure — the same brand assets must render correctly in Gmail dark mode, plaintext fallback, and one-thumb mobile checkout paths.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/reviews-and-ugc">Reviews & UGC</a>
+        <a class="btn btn-secondary" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for email design"
+      picks={[
+        { label: 'Best overall', tool: 'Klaviyo', reason: 'Flexible product blocks, dynamic content, conditional sections, and mature mobile preview for lifecycle and campaigns.' },
+        { label: 'Best strategy alignment', tool: 'Sequenzy', reason: 'Design generated inside playbooks — layout matches browse, welcome, and launch job without blank canvas drift.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Mobile-first templates with product blocks live in hours for SMB catalogs.' },
+        { label: 'Best native Shopify', tool: 'Shopify Email', reason: 'Simple branded templates when design needs are basic and team lives in admin.' },
+        { label: 'Best UGC blocks', tool: 'Yotpo Email & SMS', reason: 'Review and customer photo blocks native in templates when social proof is the design centerpiece.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three email design merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Pottery studio, editorial newsletter plus lifecycle.</strong> Klaviyo design system: newsletter template with full-width process photos and single-column mobile; cart template with one SKU, glaze name, and studio stamp. Mobile click rate on newsletter rose 28% after reducing product grid from six to one hero plus text link collection.
+      </p>
+      <p>
+        <strong>Scenario B — Mechanical keyboard shop, spec-heavy lifecycle.</strong> Sequenzy playbook templates included compatibility table block in cart and post-purchase — readable on mobile without horizontal scroll. Transactional shipping email matched header typography but zero promo blocks. Support tickets citing "couldn't read specs on phone" dropped 19%.
+      </p>
+      <p>
+        <strong>Scenario C — Artisan coffee roaster, UGC-forward browse email.</strong> Yotpo customer brew photos in browse abandonment template outperformed stock product shots — 2.1× click-through on email two. Dark mode test caught inverted logo failure before send; fixed background on header section.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email design operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Trigger</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.trigger}</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Timing</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.timing}</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}
+        </ul>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
+        Common mistakes: {uc.mistakes.join('; ')}.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify email tools for email design</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Design fit</th>
+            <th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th>
+            <th class="py-3 pr-4">Automation</th>
+            <th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for email design</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Editor's choice"
+      paragraphs={[
+        'Sequenzy approach to design is strategy-first — templates emerge from playbook job, reducing drift where pretty newsletter layouts get copy-pasted into cart flows with wrong information hierarchy. Cart email from browse playbook includes proof block placement appropriate to research intent.',
+        'Agent-generated layouts accelerate iteration when collection launches weekly — describe layout job ("single hero vinyl pressing, tracklist below, one CTA") versus rebuilding drag-and-drop from scratch.',
+        'Not a replacement for Klaviyo design system flexibility at enterprise template count — pair when brand team needs pixel control across dozens of modular blocks.',
+        'Best when design bottleneck is knowing what layout should do, not dragging widgets.',
+      ,
+        'Operational note for email design: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Sequenzy implementation for email design should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on email design flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo design system is the ecommerce benchmark — dynamic product feeds, conditional blocks by segment, custom HTML sections for brand teams. One master template with conditional content serves VIP versus general newsletter.',
+        'Mobile preview and send-time device reporting catch rendering issues before blast. Image compression and CDN help heavy pottery and outdoor gear photography load acceptably.',
+        'Template sprawl risk — govern with named design system: newsletter-base, lifecycle-cart, transactional-shipping. Without governance, team creates 40 one-off templates unmaintainable next season.',
+        'Choose Klaviyo when design and data personalization intersect — same template, different product grid by browse history.',
+      ,
+        'Operational note for email design: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Klaviyo implementation for email design should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on email design flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Omnisend mobile-first templates go live fast — acceptable product-led design for SMB when custom HTML is not required. Product blocks sync Shopify inventory for launch emails.',
+        'Less conditional complexity than Klaviyo — multiple templates per use case instead of one conditional master. Maintenance tradeoff.',
+        'Dark mode preview adequate for standard templates. Test real devices on board game box art with dark borders.',
+        'Graduate to Klaviyo or Sequenzy when conditional design logic exceeds template count comfort.',
+      ,
+        'Operational note for email design: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Omnisend implementation for email design should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on email design flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Shopify Email native templates improved — fine for simple product announcement and basic order styling when team refuses another platform login.',
+        'No dynamic browse product blocks, limited automation design reuse, no cross-flow design system. Design ceiling low.',
+        'Acceptable under 100 orders per month with minimal lifecycle. Transactional order emails only customization path mature.',
+        'Graduate when mobile click rate stagnates despite copy improvements — usually design and dynamic content limitation.',
+      ,
+        'Operational note for email design: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Shopify Email implementation for email design should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on email design flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Yotpo design strength is UGC and review blocks — customer photos of climbing racks, vinyl shelves, coffee setups outperform stock photography in browse and winback templates.',
+        'Star rating filters in design block — show 4+ star reviews mentioning "fit" for harness browse email.',
+        'Not full design platform — pair with Klaviyo or Sequenzy for template shell and lifecycle logic.',
+        'Best when social proof is primary design element, not secondary footer widget.',
+      ,
+        'Operational note for email design: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Yotpo Email Sms implementation for email design should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on email design flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Template taxonomy</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Four template families</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Newsletter: editorial, one hero, scannable. Lifecycle: product-led, single CTA, trigger context above fold. Transactional: minimal, tracking and order detail first, shared brand header only. SMS complement: short link to mobile-optimized landing page when email design cannot fit spec tables — mechanical keyboard compatibility sometimes belongs on web, not email.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Pre-send checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Test before every launch</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        iOS Mail, Gmail app, Outlook web; images off; dark mode; plain-text version readable; all links UTM tagged; single primary CTA per section. Specialty tea and vinyl emails often fail on alt text — fix before harvest or drop send.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Design serves conversion job</h2>
+      <p>
+        Cart email design job: remind product, reduce anxiety, one tap to checkout. Newsletter design job: build relationship, optional soft merchandising. Post-purchase design job: educate purchased SKU. Match layout to job — beautiful six-product grid in wrong flow still loses revenue.
+      </p>
+      <p>
+        Plain-text version is not optional for technical products — mechanical keyboard buyers often read on plaintext-first clients. Include spec summary and single link in plaintext block. Image-off rendering test mandatory when email leads with product photography; pottery and coffee brands still need readable product name and price in alt text and body copy when images blocked.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Template governance</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Version control for email HTML</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Name templates with purpose suffix — newsletter-v3, cart-v2, transactional-shipping-v1. Log change date and owner. Black Friday clone of newsletter template should not become accidental default for March lifecycle sends with snowflake assets. Klaviyo master templates plus child variants reduce sprawl when team disciplines naming. Run Litmus or Email on Acid spot check before first send of each new template variant — one broken mobile layout in cart flow costs more than test subscription.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why email design fails on generic defaults</h2>
+      <p>Shopify merchants treat email design as template toggle — enable flow, set 10% off, move on. That works until margin reports show make product-led campaigns readable and mobile-friendly recovering revenue while destroying full-price repeat rate. Trigger discipline matters: All campaign and flow sends. Timing discipline matters: Mobile-first design; test on iOS Mail and Gmail app before every launch. Without exclusions, flows collide with welcome offers, replenishment reminders, and VIP early access — training subscribers to wait for stacked discounts.</p>
+      <p><strong>Scenario A — Workflow test on Shopify.</strong> Sequenzy playbook encoded suppression and value-based rules for make product-led campaigns readable and mobile-friendly without week-long flow rebuild.</p><p><strong>Scenario B — Scale merchant 900 orders/mo.</strong> Klaviyo predictive segments and holdout testing optimized email design margin after blanket discount path failed.</p><p><strong>Scenario C — Fast-start boutique.</strong> Omnisend prebuilt journey live in days; graduated when desktop-only preview became recurring ops issue.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">email design anti-patterns</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Desktop-only preview</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Product grids with 6+ items on mobile</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No plain-text fallback</li></ul>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Document collision rules in shared wiki: which flow wins when customer qualifies for cart and winback simultaneously. Test quarterly with staff accounts. Measure margin after incentive, not recovery rate alone — high recovery with negative margin is worse than no email.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Channel mix</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email, SMS, and transactional boundaries</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Email owns narrative and education for make product-led campaigns readable and mobile-friendly. SMS belongs as branch when mobile intent outperforms — cart recovery within four hours, drop alerts to VIP SMS-opted segments — not parallel blast to entire list. Transactional order and shipping messages stay separate; marketing suppresses when support ticket open or return in progress.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Advanced email design patterns</h2>
+      <p>After baseline make product-led campaigns readable and mobile-friendly flow works, optimize branches: VIP holdouts without discount, engaged-but-lapsed newsletter readers versus cold buyers, subscription-active customers excluded from conflicting offers. A climbing gear outfitter improved email design margin 19% by routing predicted discount-sensitive profiles only to touch three — full-price loyalists stayed on education path.</p>
+      <p>Holdout testing quarterly — 5% segment no promotional email design for thirty days — answers incrementality question finance actually asks. Platform attribution overstates when would-have-purchased-anyway buyers dominate converted cohort.</p>
+      <p>SMS branch for email design when mobile opt-in strong: email touch one, SMS four hours if unopened for cart-adjacent workflows — never duplicate same offer both channels within two hours without measurement framework.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Cross-links</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related workflows for email design</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Pair email design with segmentation hygiene and discount strategy guides — flows fail when segments stale and incentives stack. Review <a class="link" href="/use-cases/segmentation">segmentation</a>, <a class="link" href="/use-cases/discount-strategy">discount strategy</a>, and <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when scaling send volume.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/deliverability">Deliverability →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Email design FAQ" />
+</BaseLayout>

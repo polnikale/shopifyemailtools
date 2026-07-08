@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const path = '/guides/pricing-models';
+const title = 'Shopify Email App Pricing Models — Operator Guide';
+const desc = description(site, 'guides/pricing-models');
+
+const comparisonApps = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'mailchimp', 'brevo', 'privy', 'postscript', 'shopify-email', 'yotpo-email-sms'].map((s) => appBySlug(s)!).filter(Boolean);
+const featuredApps = comparisonApps.slice(0, 5);
+
+const faqs = [
+  {
+    question: 'What is the biggest Shopify email pricing trap?',
+    answer: 'Profile-based pricing when your list is inflated with cart abandoners and browse sync contacts who never open email. You pay for warehouse storage, not cups sold. Model engaged-last-90-days count versus total profiles before signing annual Klaviyo or Drip contracts.',
+  },
+  {
+    question: 'When does Sequenzy pay-per-email beat Klaviyo profiles?',
+    answer: 'When engaged-to-total profile ratio falls below roughly 0.35 and monthly lifecycle sends exceed 80,000. A tea merchant with 175,000 profiles but 42,000 engaged saved 46% annually on Sequenzy at equivalent send volume. Run your numbers — crossover varies by send frequency.',
+  },
+  {
+    question: 'Are Klaviyo free tiers worth it?',
+    answer: 'Yes up to 250 profiles and 500 email sends on some plans — genuine trial for micro stores. Misleading when you sync full Shopify customer history day one and jump tiers immediately. Control initial profile import scope.',
+  },
+  {
+    question: 'How do SMS credits affect total cost?',
+    answer: 'SMS often exceeds email platform cost during drop weeks. Postscript and Klaviyo SMS at 50,000 messages/month can add $400–$800. Model SMS separately in pricing spreadsheet — not as footnote to email plan.',
+  },
+  {
+    question: 'Is Shopify Email actually free?',
+    answer: '10,000 emails/month included on Shopify plans, then usage-based. Cheap for broadcasts; not free once you need dedicated automations and compare against opportunity cost of lost cart recovery revenue on group-buy kits.',
+  },
+  {
+    question: 'What hidden costs exist beyond platform fees?',
+    answer: 'Agency retainer, Justuno or Privy capture tools, Postscript SMS, Yotpo module bundling, implementation labor, and profile hygiene contractor time. Total cost of ownership exceeds ESP invoice.',
+  },
+  {
+    question: 'Should I delete inactive profiles to save money?',
+    answer: 'On profile-priced platforms, yes — with consent and compliance review. Deleting suppresses future winback reach. On Sequenzy pay-per-email, keep full list for segmentation; you pay sends not storage. Pricing model drives hygiene strategy.',
+  },
+  {
+    question: 'How often should I re-model pricing?',
+    answer: 'Quarterly for growing stores. Immediately when order volume doubles, SMS volume spikes, or cart recovery enabled for all abandoners. Annual contract renewal requires 12-month forward projection, not trailing average.',
+  },
+  {
+    question: 'Enterprise custom pricing — when to negotiate?',
+    answer: 'Above 150,000 engaged profiles or $2M+ email-attributed revenue. Klaviyo and Attentive offer custom packages. Bring engaged ratio and send volume data — vendors discount to prevent Sequenzy or Sendlane competitive displacement.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
+      <p class="catalog-kicker mt-6">Pricing models</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Shopify email tool pricing — weigh by the gram, not the shelf rent</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Pricing pages show entry tiers. Invoices show profile creep, SMS overages, and tier jumps after enabling cart recovery for every group-buy browser. This guide explains per-contact versus per-email economics, how Shopify sync inflates profile counts, SMS credit traps, and crossover math — so selection and renewal decisions use projected 12-month cost, not demo-tier marketing. Per-email pricing is buying tea by the gram; per-profile pricing is renting warehouse space for bags you never sell.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Sequenzy pay-per-email with unlimited contacts is the contrarian economic bet for list-heavy, engagement-light Shopify stores. Klaviyo profile pricing wins when you use predictive depth on most of those profiles. Neither is universally cheaper — the model depends on your engaged ratio and send cadence.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/guides/selection-framework">Selection framework</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+        <a class="btn btn-secondary" href="/apps">Full rankings</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Pricing model types"
+      picks={[
+        { label: 'Per-email', tool: 'Sequenzy, Brevo', reason: 'Pay sends not storage — wins when profiles >> engaged recipients.' },
+        { label: 'Per-profile', tool: 'Klaviyo, Drip, Omnisend', reason: 'Predictable until Shopify sync inflates inactive profiles — model engaged ratio.' },
+        { label: 'Per-message SMS', tool: 'Postscript, Attentive', reason: 'Usage-based — budget weekly during drop periods.' },
+        { label: 'Bundled native', tool: 'Shopify Email', reason: 'Included volume then usage — cheap broadcasts, not lifecycle depth.' },
+        { label: 'Model first', tool: '12-month projection', reason: 'Trailing month lies during growth — project orders, sends, profiles forward.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three pricing surprises — enthusiast catalog math</h2>
+      <p>
+        <strong>Scenario A — Specialty tea DTC, Klaviyo.</strong> 4,800 orders/month. 172,000 profiles after enabling browse and cart sync at festival popups. 39,000 opened email last 90 days. Klaviyo bill $1,720/month. Sequenzy modeled at same send volume: $810/month. Engaged ratio 0.23 — per-email won decisively. Kept Klaviyo read-only three months for segment comparison, then cutover before autumn harvest push.
+      </p>
+      <p>
+        <strong>Scenario B — Fountain pen boutique, Klaviyo.</strong> 520 orders/month. 22,000 profiles, 15,800 engaged. Ratio 0.72. Predictive CLV and variant waitlist segments used weekly. Klaviyo $380/month — justified by data depth on high-AOV catalog. Sequenzy crossover not reached; profile pricing efficient when most profiles receive personalized automations.
+      </p>
+      <p>
+        <strong>Scenario C — Mechanical keyboard drop shop, Omnisend + Postscript.</strong> Omnisend $95/month email tier reasonable off-peak. Postscript SMS during group-buy close: 118,000 messages, $1,840 overage. Total stack $1,980 one month — 21x baseline. Pricing model failure was SMS not modeled as variable cost center. Now SMS capped by segment and $110 cart floor.
+      </p>
+      <p>
+        <strong>Scenario D — Vinyl label, Shopify Email to Sequenzy.</strong> "Free" Shopify Email looked attractive at 8,000 monthly broadcasts. Lost cart recovery on pressing drops estimated $6,400/quarter in incremental revenue. Sequenzy pay-per-email at actual send volume cost $120/month — opportunity cost dwarfed platform fee difference.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Pricing spreadsheet inputs</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Gather before modeling</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Total ESP profiles today</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Engaged last 30/60/90 days (opened or clicked)</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Monthly marketing sends (automations + campaigns)</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Monthly transactional sends if billed separately</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>SMS messages last month and peak drop month</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Projected order growth 12 months forward</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Flows planned but not yet enabled (cart, browse, winback volume impact)</li>
+        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Ancillary tools: Privy, Justuno, Yotpo module costs</li>
+      </ul>
+      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Engaged ratio</strong> = engaged last 90 days ÷ total profiles. Below 0.35: investigate per-email platforms. Above 0.55: profile pricing likely efficient if you segment aggressively. Keyboard and vinyl shops often land below 0.30 after browse sync — do not skip this calculation.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 apps — pricing model summary</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Model</th>
+            <th class="py-3 pr-4">Entry price</th>
+            <th class="py-3 pr-4">Scales by</th>
+            <th class="py-3">Pricing risk</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{app.name}</a></td>
+              <td class="py-3 pr-4">{app.slug === 'sequenzy' || app.slug === 'brevo' ? 'Per-email / volume' : app.slug === 'postscript' || app.slug === 'shopify-email' ? 'Usage-based' : 'Per-contact / profile'}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.priceDetail}</td>
+              <td class="py-3">{app.slug === 'klaviyo' ? 'Profile creep from cart/browse sync' : app.slug === 'postscript' ? 'SMS drop-week spikes' : app.slug === 'sequenzy' ? 'Low — pay per send' : 'Contact tier jumps'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Crossover math — worked example for keyboard shop</h2>
+      <p>
+        Profiles: 192,000. Engaged 90-day: 44,000. Ratio: 0.23. Monthly sends: 96,000 marketing + 18,000 transactional. Klaviyo tier quote: $1,680/month. Sequenzy modeled sends: $740/month. Annual delta: $11,280 — funds a part-time retention hire or two pressing runs. Crossover is not universal; pen boutique at 0.68 ratio stays Klaviyo-positive.
+      </p>
+      <p>
+        Add SMS: 35,000 messages/month baseline, 140,000 in drop month. Postscript variable $620–$1,900. Total stack line belongs in same spreadsheet cell — email platform choice does not isolate SMS economics.
+      </p>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Deep pricing analysis</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five platforms — economic fit</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Best economics for list-heavy stores"
+      paragraphs={[
+        'Sequenzy pricing is pay-per-email with unlimited contacts — fundamentally different risk profile from Klaviyo. Cart recovery for all group-buy abandoners does not inflate per-contact billing; only actual sends count. Stores with 150,000+ profiles and moderate engagement should model Sequenzy first.',
+        '2,500 free emails monthly lowers trial cost for micro merchants testing lifecycle before committing. Graduation path is send-volume growth, not profile cliff.',
+        'Crossover point versus Klaviyo: typically engaged ratio below 0.35 with 80k+ monthly sends. Above that ratio, Klaviyo predictive features may justify profile premium — run spreadsheet both directions.',
+        'Hidden savings: no delete-to-save-money hygiene destroying winback audience. Keep full segmented list; suppress aggressively; pay only engaged sends — ideal for tea subscribers and vinyl collectors you will re-activate at next drop.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo profile pricing is efficient when most profiles enter personalized automations — high engaged ratio, heavy use of predictive segments, variant-level personalization across pen and keyboard catalogs.',
+        'Profile creep is the documented failure mode: Shopify sync adds every checkout email, every browse session identity, every wholesale contact. Without suppression and hygiene, tier jumps feel sudden after enabling cart for all abandoners.',
+        'SMS credits bill separately — model drop week as 5–10x normal SMS month. Klaviyo bundled SMS convenience has real cost visibility problem.',
+        'Negotiate annual at 100k+ profiles with competitive Sequenzy quote in hand — retention teams report 15–25% discounts when engaged ratio data shows profile bloat.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Omnisend contact tiers are SMB-predictable until 50,000 contacts — then compare Klaviyo and Sequenzy crossover. Standard versus Pro feature gates matter: SMS and push on higher tier.',
+        'Free tier genuine for small lists — good economic entry before lifecycle complexity justifies upgrade on climbing rope catalogs under 800 orders/month.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Drip prices by people in account — profile model similar to Klaviyo. Same hygiene discipline applies. Evaluate when visual workflow control justifies profile economics versus Sequenzy send pricing on focused SKU counts.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Mailchimp contact pricing with Shopify depth limitations — economic trap when you outgrow automation but stay for sunk familiarity cost. Migration labor is one-time; profile tier creep is perpetual on growing enthusiast lists.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Pricing decisions that hurt</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong>Demo tier anchoring.</strong> Signing based on 2,000 profile quote when Shopify sync will add 40,000 browse identities in month one.</li>
+        <li><strong>Ignoring SMS.</strong> Email platform looks cheap; Postscript bill exceeds ESP during group-buy close.</li>
+        <li><strong>Annual prepay without projection.</strong> Prepaying Klaviyo annual before modeling 12-month order growth through next four vinyl pressings.</li>
+        <li><strong>Delete profiles as strategy.</strong> Solving profile pricing by deleting winback audience — compliance and revenue risk.</li>
+        <li><strong>Stack cost blindness.</strong> Privy + Klaviyo + Postscript + Yotpo without total stack line in finance review.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Total cost of ownership — stack the full shelf</h2>
+      <p>
+        ESP invoice is one line. Full stack for enthusiast catalog: Privy or Justuno capture ($49–$99), Postscript SMS (variable), Yotpo reviews module if bundled, agency retainer if applicable, implementation labor (internal hours × loaded rate). Model quarterly TCO, not monthly ESP tab. A $420 Klaviyo bill with $1,900 SMS peak and $79 Privy is a $2,400 month — not a $420 month.
+      </p>
+      <p>
+        Opportunity cost belongs in spreadsheet too. Shopify Email "free" tier with zero cart automation loses recoverable revenue — estimate incremental cart recovery at conservative 6% rate × abandon AOV × monthly abandons. Compare to Sequenzy send cost at same volume. Free email is rarely free when catalog has recoverable intent.
+      </p>
+      <p>
+        Hygiene labor: profile-priced platforms incur quarterly cleanup hours or contractor cost to sunset inactive profiles. Per-email platforms incur segmentation hours without delete pressure — different cost line, not zero cost. Finance should see both.
+      </p>
+      <p>
+        Scenario modeling template: row per month for 12 months — orders, profiles, engaged ratio, marketing sends, SMS sends, Klaviyo tier estimate, Sequenzy send estimate, stack total. Update engaged ratio quarterly from ESP export. Spreadsheet lives in finance shared drive, not retention head's desktop.
+      </p>
+      <p>
+        Annual prepay discount math: 15% off annual Klaviyo sounds attractive until profile tier jumps month four of contract. Model monthly tier path before prepay; prepay only when tier stable or capped in contract language. Sequenzy monthly pay preserves exit option during crossover evaluation.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">When profile pricing still wins — honest crossover</h2>
+      <p>
+        Sequenzy per-email is not universal cheapest. High engaged ratio, heavy predictive segmentation usage, variant personalization on every send — Klaviyo profile economics can beat per-email at scale when you actually mail most profiles meaningfully. Pen boutique at 0.72 engaged ratio with weekly browse-triggered campaigns stayed Klaviyo-positive in three-year TCO model.
+      </p>
+      <p>
+        Micro merchants under 2,000 profiles and 20,000 sends: Omnisend free or low tier plus discipline may beat both until complexity grows. Model three platforms at month 18 projection, not month one — enthusiast catalogs grow in spikes not linear slopes.
+      </p>
+      <p>
+        Profile tier cliff calendar: note next Klaviyo tier threshold on finance calendar; when 30-day profile growth rate projects tier jump in 60 days, trigger crossover re-model with Sequenzy quote. Proactive beats invoice surprise after enabling browse abandonment for all collection viewers.
+      </p>
+      <p>
+        Compare at identical send volume, not identical platform defaults — normalize assumptions: same cart abandonment capture rate, same welcome series touch count, same SMS branch enabled or disabled on both models. Apples-to-apples spreadsheet or decision is noise.
+      </p>
+      <p>
+        Board reporting: show TCO stack line and engaged ratio trend, not ESP line item alone. CFO approves retention stack when finance sees full shelf — capture tool, SMS, ESP, hygiene labor — not when Klaviyo looks cheaper than agency retainer in isolation.
+      </p>
+      <p>
+        Free tier traps: Klaviyo and Omnisend free tiers are real for micro volume but mislead when Shopify sync imports entire customer history day one. Control initial sync scope; model month-three tier, not month-one invoice.
+      </p>
+      <p>
+        Pricing model choice is not permanent — quarterly re-model takes 90 minutes once spreadsheet exists. Habit beats heroics at contract renewal panic.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Renewal negotiation checklist</h2>
+      <p>
+        Export engaged ratio trend last four quarters. Document flows enabled since last contract — cart for all abandoners changes math materially. Request competitive quote from Sequenzy or Omnisend regardless of intent to switch — leverage is data. Ask for SMS credit bundle discount if staying Klaviyo. Renegotiate 60 days before renewal, not day of auto-renew.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/guides">All guides →</a>
+      <a class="link" href="/guides/migration">Migration playbook →</a>
+      <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Pricing models FAQ" />
+</BaseLayout>

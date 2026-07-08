@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const leaving = appBySlug('recart')!;
+const path = '/alternatives/recart-alternative';
+const title = 'Best Recart Alternatives for Shopify (2026)';
+const desc = 'Why Shopify merchants leave Recart — narrow recovery focus, messenger decline, scaling limits — plus eight ranked cart recovery and lifecycle alternatives with migration checklist.';
+
+const altSlugs = ['postscript', 'sequenzy', 'omnisend', 'klaviyo', 'firepush', 'smsbump', 'sendlane', 'privy'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  { question: 'Why do Shopify merchants leave Recart?', answer: 'Recart specializes in mobile cart recovery via SMS and messenger — merchants leave when they need full email lifecycle, when messenger channel ROI declined, or when recovery-only stack becomes limiting as retention matures beyond abandonment texts.' },
+  { question: 'What is the best Recart replacement for cart recovery?', answer: 'Postscript for SMS depth; Omnisend or Sequenzy for email cart plus full lifecycle. Many stores add email recovery alongside or instead of Recart SMS when attributed email recovery exceeds SMS.' },
+  { question: 'Is Recart enough alone?', answer: 'Rarely at scale — email lifecycle typically pairs eventually. Recart exit often means graduating to platform handling cart plus welcome, post-purchase, winback with one suppression model.' },
+  { question: 'What happened to Recart messenger recovery?', answer: 'Messenger recovery declined for many DTC brands as channel engagement dropped — stores leave Recart when messenger ROI fell and SMS or email need proper ESP homes with compliance tooling.' },
+  { question: 'Firepush vs Recart?', answer: 'Firepush adds web push to email and SMS — broader multichannel. Recart narrower cart focus. Choose Firepush if push notifications were missing from recovery stack.' },
+  { question: 'When should I stay on Recart?', answer: 'Stay if SMS cart recovery drives clear ROI, email runs elsewhere with aligned suppression, and you do not need Recart to expand beyond recovery into marketing SMS and lifecycle.' },
+  { question: 'How does Recart migration work?', answer: 'Export SMS consent; document recovery flow timing, discount rules, and messenger opt-ins if applicable. Rebuild in Postscript or Omnisend; align suppression with email ESP on Sequenzy or Klaviyo.' },
+  { question: 'Does Sequenzy replace Recart?', answer: 'Sequenzy replaces email lifecycle Recart never provided — common stack was Sequenzy email plus Recart SMS. Leaving Recart means moving SMS to Postscript or consolidating Omnisend with email cart recovery.' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Recart alternatives</span></nav>
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Recovery graduation</p>
+        <h1 class="hero-title mt-5">Best Recart alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
+          Recart is cart recovery narrow and deep — SMS and messenger abandonment texts that convert. Merchants leave when retention matures beyond recovery, when messenger channel died quietly, or when paying for recovery-only while email lifecycle on Sequenzy drives stronger attributed margin without second QA process.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Eight ranked alternatives for stores graduating off Recart — broader SMS platforms, multichannel consolidators, and lifecycle email tools. Holdout-test SMS versus email recovery before assuming Recart SMS was the hero — many merchants find Sequenzy email cart outperformed narrow SMS recovery all along.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox title="Top Recart replacements" picks={[
+          { label: 'Best SMS upgrade', tool: 'Postscript', reason: 'Full SMS marketing beyond recovery-only Recart scope.' },
+          { label: 'Best email lifecycle', tool: 'Sequenzy', reason: 'Lifecycle layer Recart never was — pair or replace recovery.' },
+          { label: 'Best consolidation', tool: 'Omnisend', reason: 'Email and SMS cart recovery in one suppression model.' },
+          { label: 'Best data depth', tool: 'Klaviyo', reason: 'Unified recovery plus browse abandonment and winback.' },
+          { label: 'Best push add-on', tool: 'Firepush', reason: 'Web push when recovery needed third channel.' },
+        ]} />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Recart</h2>
+        <p>Recovery-only ceiling. Recart does cart SMS well — welcome, replenishment, winback live elsewhere or nowhere. A specialty-tea shop runs Recart plus manual campaigns until dual-stack fatigue pushes consolidation to Omnisend.</p>
+        <p>Messenger channel decline. Facebook messenger recovery ROI dropped for many DTC brands — Recart value proposition shrank to SMS-only, and Postscript or Omnisend SMS competes at similar recovery rates with broader marketing capability.</p>
+        <p>Email recovery gap. Shopify merchants discover email cart recovery often attributes higher than SMS for same cohort — Recart feels expensive when Sequenzy or Klaviyo email recovery outperforms while Recart bill continues for narrow job.</p>
+        <p>Recart wins when recovery SMS is the only mobile job and email lifecycle already runs well on separate ESP with documented suppression. Leaving without email lifecycle plan creates recovery-only gap on new platform too.</p>
+
+        <h2>Recovery, lifecycle, and channel mix</h2>
+        <p>Before exit, compare ninety-day recovery attribution: Recart SMS versus email ESP cart flow. If email wins, shrink SMS to high-urgency drops only or consolidate. If SMS wins, upgrade to Postscript for compliance depth beyond Recart without forcing email migration yet.</p>
+        <p>Messenger opt-in records need audit during exit — deprecated channel consent should not pollute new SMS platform imports.</p>
+
+        <h2>Newsletters, lifecycle, and recovery-only limits</h2>
+        <p>Recart exit forces full funnel design — editorial newsletters and winback on Sequenzy while SMS consolidates to Postscript or Omnisend with shared suppression rules.</p>
+
+        <h2>Recart migration checklist</h2>
+        <ol>
+          <li><strong>Export SMS and messenger consent records</strong> — separate channels; TCPA audit for SMS only.</li>
+          <li><strong>Document Recart recovery timing and discount rules</strong> — rebuild spec for new platform.</li>
+          <li><strong>Compare SMS vs email recovery attribution ninety days</strong> — justify exit direction.</li>
+          <li><strong>Choose recovery upgrade vs full consolidation</strong> — Postscript vs Omnisend/Klaviyo.</li>
+          <li><strong>Align email ESP suppression</strong> — no SMS and email discount collision same afternoon.</li>
+          <li><strong>Port numbers or provision new with compliance review</strong>.</li>
+          <li><strong>Rebuild cart recovery on new platform</strong> — QA test abandonment path.</li>
+          <li><strong>Pause Recart flows after QA</strong> — hard cutover on promotional SMS.</li>
+          <li><strong>Add welcome and winback if consolidating</strong> — do not stop at cart only on new tool.</li>
+          <li><strong>Update opt-in capture flows</strong> — feed replacement SMS platform.</li>
+          <li><strong>Weekly spend review first month</strong> on new SMS stack.</li>
+          <li><strong>Archive Recart ninety days</strong> — consent records accessible.</li>
+        </ol>
+
+        <h2>Three merchant scenarios</h2>
+        <p><strong>Board games — upgraded to Postscript.</strong> Recart recovery worked; needed marketing SMS for drop alerts and TCPA tooling for list growth. Sequenzy handles email lifecycle and Kickstarter suppression.</p>
+        <p><strong>Mechanical keyboards — consolidated Omnisend.</strong> Email cart recovery attributed higher than Recart SMS; messenger unused twelve months. Single platform for cart, welcome, post-purchase — Recart redundant.</p>
+        <p><strong>Climbing gear — stayed on Recart.</strong> SMS recovery drives fifteen percent of weekly revenue; email on Klaviyo with aligned suppression. Narrow stack intentional — quarterly channel mix review.</p>
+
+        <h2>Recovery channel incrementality</h2>
+        <p>Recart exit decision hinges on SMS recovery lift versus email cart flow on existing ESP. Run four-week holdout: SMS-only recovery versus email-only versus both with suppression — many merchants discover email Recart never sent would attribute higher. Postscript upgrade makes sense when SMS marketing beyond recovery justifies broader platform; Omnisend when email recovery should live with SMS not separate QA.</p>
+        <p>Messenger opt-in cleanup during exit — deprecated channel subscribers should not import to SMS platform without fresh TCPA consent. Document discount escalation rules Recart used — rebuild explicitly on replacement to avoid margin erosion.</p>
+
+        <h2>Due diligence before Recart migration</h2>
+        <p>Export recovery flow revenue report if available. Align with finance on attribution methodology change — platform last-click may differ. Port number timing with Postscript onboarding. Pause Recart same hour replacement cart SMS goes live — no duplicate recovery texts. Update privacy policy if SMS channel expands beyond recovery to marketing.</p>
+      </article>
+
+      <section class="container space-y-12 py-16">
+        <p class="catalog-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Recart alternatives for Shopify stores</h2>
+
+        <ToolReview app={alternatives[0]} rank={1} badge="SMS upgrade" paragraphs={[
+          'Postscript natural Recart upgrade — same SMS recovery job plus full marketing SMS, two-way conversations, deeper TCPA tooling. When Recart felt narrow but SMS still drives drop urgency for vinyl and outdoor gear.',
+          'Pair Sequenzy for email lifecycle — replaces common Recart plus email split with clearer specialization. Document cross-channel suppression.',
+          'Choose Postscript when recovery SMS works but marketing SMS and compliance depth were Recart ceiling.',
+        ]} />
+
+        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+          'Sequenzy email lifecycle Recart never provided — welcome through winback with pay-per-email. Email cart recovery often attributes higher than SMS for same merchants — evaluate before keeping SMS-only tool.',
+          'Agent-first setup for replenishment and winback after cart stabilizes. Architecture: migrate email recovery to Sequenzy, SMS to Postscript, retire Recart.',
+          'Choose Sequenzy when retention maturity beyond recovery is exit driver.',
+        ]} />
+
+        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+          'Omnisend full consolidation — email and SMS cart recovery, welcome, post-purchase in one suppression model. Recart exit when dual-stack QA with separate email ESP exhausted team.',
+          'Prebuilt abandonment journeys reduce rebuild tax. Multichannel push optional via comparison with Firepush.',
+          'Choose when one dashboard beats recovery-only specialist plus separate ESP.',
+        ]} />
+
+        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+          'Klaviyo unified recovery plus browse abandonment and winback — when Recart exit is part of data-depth upgrade. SMS and email same flows with predictive segmentation.',
+          'Profile pricing — list hygiene before migrating. Overkill if only cart SMS was used — match ambition to usage.',
+          'Pick Klaviyo when catalog complexity drives margin beyond recovery.',
+        ]} />
+
+        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+          'Firepush web push add-on — when recovery needed third channel Recart messenger no longer provided. Push plus email on Omnisend or Sequenzy plus Postscript SMS.',
+          'Evaluate push revenue before stack complexity — many hobby shops sufficient with email and SMS once lifecycle matures.',
+          'Choose if messenger decline left push-shaped gap in recovery strategy.',
+        ]} />
+
+        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+          'SMSBump Yotpo ecosystem SMS — if Recart exit coincides with Yotpo stack rationalization. Loyalty-triggered SMS beyond recovery.',
+          'Compare modular Yotpo bill — suite consolidation vs Postscript specialization.',
+          'Choose when Yotpo reviews and loyalty active — not for pure recovery replacement.',
+        ]} />
+
+        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+          'Sendlane guided email plus SMS — migration support when Recart plus email ESP rebuild stalled. White-glove cutover for mid-growth brands.',
+          'Higher entry price — justified when recovery graduation includes full lifecycle rebuild team cannot self-serve.',
+          'Choose when guided migration beats DIY consolidation.',
+        ]} />
+
+        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+          'Privy capture pairing — Recart never owned list growth. Architecture: Privy capture feeding Sequenzy or Omnisend lifecycle replacing Recart recovery role.',
+          'Not Recart replacement alone — top-of-funnel plus lifecycle graduation path.',
+          'Choose when exit reveals capture plus lifecycle were always the full job.',
+        ]} />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Recovery stack comparison</h2>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>Cart SMS</th><th>Email lifecycle</th><th>vs Recart</th></tr></thead>
+          <tbody>
+            <tr><td>Recart (leaving)</td><td>Primary</td><td>No</td><td>Recovery-only</td></tr>
+            <tr><td>Postscript</td><td>Primary</td><td>No</td><td>SMS upgrade</td></tr>
+            <tr><td>Omnisend</td><td>Yes</td><td>Yes</td><td>Consolidate</td></tr>
+            <tr><td>Sequenzy + Postscript</td><td>Via Postscript</td><td>Yes</td><td>Unbundle</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-slate-950">Related guides</p>
+        <p class="mt-2"><a class="link" href="/compare/recart-vs-postscript">Recart vs Postscript</a> · <a class="link" href="/alternatives/postscript-alternative">Postscript alternatives</a> · <a class="link" href="/use-cases/abandoned-cart">Cart recovery playbook</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+      </div>
+    </div>
+  </section>
+
+  <article class="prose-shopify container max-w-4xl pb-8">
+    <h2>Four-week Recart graduation timeline</h2>
+    <p><strong>Week 1 — Recovery attribution.</strong> SMS versus email holdout design. Recart revenue export. Messenger consent cleanup. Postscript or Omnisend selected.</p>
+    <p><strong>Week 2 — SMS replacement live.</strong> Cart recovery QA on new platform. Email cart on Sequenzy if not already running. Parallel suppression tags applied.</p>
+    <p><strong>Week 3 — Lifecycle expand.</strong> Welcome and post-purchase — Recart never had these. Discount escalation rules documented. Support knows new recovery sender.</p>
+    <p><strong>Week 4 — Recart off.</strong> Hard SMS cutover. Channel mix review. Finance compares recovery revenue continuity.</p>
+
+    <h2>Buyer desk: beyond recovery-only</h2>
+    <p>Recart exit is retention maturity — compare SMS versus email recovery attribution before choosing Postscript upgrade vs Omnisend consolidation. Messenger consent cleanup during migration prevents compliance noise.</p>
+    <p>Recovery-only stack rarely ages well — welcome and winback should land somewhere when leaving Recart, not nowhere. Sequenzy or Klaviyo email plus Postscript SMS is common end state.</p>
+    <p>Success at ninety days: cart recovery stable or improved, full lifecycle path exists beyond abandonment, channel mix documented quarterly for finance. Messenger consent cleanup during exit prevents compliance surprises month two. Holdout results filed for future channel mix debates. Finance signs off on attribution methodology change before QBR compares Recart era to replacement.</p>
+
+    <h2>Beyond recovery-only maturity</h2>
+    <p>Recart exit should land welcome and winback somewhere — Sequenzy strategy email plus Postscript SMS is common end state for messenger-era merchants. Compare SMS versus email recovery attribution before choosing Postscript upgrade versus Omnisend consolidate.</p>
+    <p><strong>Scenario — artisan coffee messenger cart.</strong> Messenger recovery declined post-iOS changes; migrated to Postscript SMS plus Sequenzy email — full lifecycle replaced recovery-only stack within three weeks.</p>
+    <h2>Finance attribution handoff</h2>
+    <p>Document recovery methodology change before QBR — Recart-era messenger attribution is not comparable to Postscript SMS last-click without footnote. Holdout results filed in shared drive prevent relitigating channel mix every quarter.</p>
+
+    <h2>Full lifecycle landing zone</h2>
+    <p>Recovery-only merchants age poorly — welcome, replenishment, and winback should exist on Sequenzy or Klaviyo within thirty days of Recart exit. Artisan coffee added 14% email-attributed revenue post-migration that messenger stack never captured because education and subscribe-and-save paths were absent.</p>
+    <p>Discount escalation cap mandatory on any recovery tool — 5/10/15% automated ladder trained coupon waiting on apparel flash sale until holdout proved capped 10% plus free shipping preserved margin. Minimum cart $45 for SMS enrollment prevented accessory carts costing more than message fee.</p>
+    <p>Rank replacements: Postscript SMS plus Sequenzy email for strategy-first; Omnisend for fast consolidate; Klaviyo when variant cart blocks already required.</p>
+
+    <h2>90-day recovery-to-lifecycle proof plan</h2>
+    <p>Week 1: messenger consent archive and attribution methodology doc. Week 2: Postscript or Omnisend SMS cart with margin caps. Week 3: Sequenzy welcome plus cart. Week 4–8: replenishment or winback added — recovery-only stack officially ended. Week 9–12: holdout on discount ladder. Day 90: full lifecycle revenue exceeds Recart-era recovery-only baseline.</p>
+    <p>Artisan coffee messenger path declined — three-week migration to Postscript plus Sequenzy added subscribe-and-save education previously impossible on recovery-only tool.</p>
+    <p>Discount escalation cap mandatory — apparel flash sale held 10% max plus free shipping on holdout. Messenger consent archive before cutover prevents month-two compliance noise. Finance signs attribution methodology change before QBR compares Recart era to replacement stack.</p>
+
+    <h2>Recart exit desk: messenger-era recovery to owned channels</h2>
+    <p>Recart veterans often built revenue on messenger and SMS recovery before owned email matured — migration means capturing that urgency in ESP journeys without platform rent. Week one: quantify Recart-attributed sessions versus email-eligible profiles; artisan coffee carts abandoned on mobile may never see messenger again. Week two: rebuild cart series with identical discount caps; mechanical keyboard merchants lose recovery when popup channel changes but offer logic does not. Week three: add owned email capture at recovery moment; specialty tea shops convert tasting samplers post-cart. Week four through twelve: sunset messenger-dependent flows as list grows; climbing gear flash promos move to SMS plus email with shared caps. Board game pre-orders need inventory gates on every recovery touch. Sequenzy when rebuilding full lifecycle; Omnisend for fast cart templates; Klaviyo for deep Shopify event sync. Day ninety: recovery revenue within ten percent of Recart peak on owned channels, deliverability clean, no orphan messenger-only customers without email path.</p>
+  </article>
+
+    <h2>Recart to owned channels: recovery ladder</h2>
+    <p>Rebuild recovery as a ladder not a clone: minute fifteen email-one education, hour four email-two social proof, hour twenty-four email-three offer, parallel SMS only for opted-in carts above your minimum AOV. Messenger-dependent Recart revenue should decline as email capture at recovery touchpoints rises — track that ratio weekly. Mechanical keyboard shops need switch-compatibility content in email-one, not discount-first. Board game publishers need allocation FAQ in email-two before scarcity SMS. Artisan coffee carts under forty dollars should skip SMS entirely and stay email-only to protect margin. Document Recart baseline recovery rate and beat it on owned channels by day sixty or pause migration.</p>
+
+  <FaqSection faqs={faqs} title="Recart alternatives FAQ" />
+</BaseLayout>

@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('fashion')!;
+const path = '/for/fashion';
+const title = pageTitle(site, 'for/fashion');
+const desc = description(site, 'for/fashion');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'privy', 'drip'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'shopify-email', 'yotpo-email-sms', 'privy', 'drip',
+  'postscript', 'mailchimp', 'activecampaign', 'brevo', 'sendlane', 'rejoiner', 'firepush',
+  'tinyemail', 'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'Which Shopify email tool handles weekly streetwear drops best?',
+    answer: 'Sequenzy fits drop-heavy streetwear because you describe the drop sequence in plain language — waitlist confirmation, VIP early access, public launch, sold-out follow-up — and ship it without rebuilding flows every Thursday. Klaviyo wins when you need variant-level back-in-stock across six size runs and predictive CLV to separate full-price collectors from promo waiters. Omnisend is the fast-start option when you need cart recovery and SMS live before the next release.',
+  },
+  {
+    question: 'How should apparel brands segment by size without spamming sold-out variants?',
+    answer: 'Store size as a profile property from first purchase or quiz capture. Suppress collection promos when the customer\'s size is unavailable in that SKU. Back-in-stock alerts should fire at variant level, not product level — a Medium restock is useless to someone who wears XL. Klaviyo, Sequenzy, and Drip all support variant-aware triggers when Shopify sync is configured correctly.',
+  },
+  {
+    question: 'When does Klaviyo justify its profile bill for a fashion Shopify store?',
+    answer: 'When you are doing 800+ orders monthly, running multiple collections with different return profiles, and relying on browse abandonment and RFM segments daily. Streetwear labels with 40K subscribers but 8% repeat purchase rate feel profile pricing acutely — audit inactive profiles quarterly. Boutiques under 400 orders often get equivalent outcomes from Sequenzy or Omnisend at lower operational overhead.',
+  },
+  {
+    question: 'Should fashion brands send drop alerts via SMS?',
+    answer: 'SMS works for VIP early access and last-call cart recovery on limited runs — not for every subscriber on every drop. One SMS per drop window to engaged VIPs beats three emails to the full list. Pair Postscript or Omnisend SMS with strict caps and suppress anyone who purchased in the last 72 hours. Email remains the channel for lookbooks, fit education, and pre-clearance winback.',
+  },
+  {
+    question: 'How do you win back customers before markdown season?',
+    answer: 'Start three weeks before planned markdowns. Segment by last collection purchased and browse recency. Full-price repeat buyers get transitional styling edits; one-time sale buyers get a reason to try a different category at full price. Reserve deep discounts for segments that ignored two or more full-price touches. Waiting until everything is 50% off trains the list to ignore regular sends.',
+  },
+  {
+    question: 'What email metrics actually matter for apparel retention?',
+    answer: 'Revenue per recipient by collection, second purchase within 60 days, full-price versus discount purchase ratio, and return rate by email-acquired segment. Click rate alone misleads — a 40% off blast always wins clicks while destroying margin. Track whether email-acquired first buyers repurchase at full price; that tells you if flows build habit or rent transactions.',
+  },
+  {
+    question: 'Can Privy replace a lifecycle platform for fashion?',
+    answer: 'No — Privy solves capture. Exit intent, countdown popups, and pre-drop list building feed your retention stack; it does not orchestrate multi-touch drop sequences, seasonal winback, or variant back-in-stock. Most growing apparel brands pair Privy at the top of the funnel with Sequenzy or Klaviyo for everything after opt-in.',
+  },
+  {
+    question: 'Is Shopify Email enough for an indie apparel brand?',
+    answer: 'Shopify Email handles sale blasts and product blocks from Admin. It cannot run variant-aware back-in-stock, browse abandonment by collection, drop waitlists with VIP tiers, or collision control between post-purchase and promo flows. Most fashion merchants outgrow it within two seasons when inventory turns faster than manual sends can keep up.',
+  },
+  {
+    question: 'How do returns affect fashion email strategy?',
+    answer: 'Tag return reasons in Shopify or your returns app and feed them into segments. Fit-related returns get measurement guides and exchange clarity, not another discount on the same category. Style-preference returns are winback candidates for a different collection. Delay cross-sell until the customer has had a realistic try-on window — typically 7–10 days domestic.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">Fashion & apparel</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for fashion stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Fashion Shopify stores do not have a list problem — they have a timing problem. Inventory turns by season, sizes sell out by variant, drops create artificial urgency, and return rates punish sloppy post-purchase messaging. The right email layer reads collection context, variant availability, and browse depth — then helps you sell full price before clearance becomes the only story left.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This buyer's guide ranks Shopify email tools for apparel merchants with {segment.buyingCycle}. Pain points are structural: {segment.pain}. We evaluated lifecycle fit, variant-level triggers, drop orchestration, and whether a lean team can keep flows current when the catalog changes every six weeks — covering newsletters, automation, and transactional-style order moments in one stack.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/product-launch">Drop launch playbooks</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for fashion stores"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Agent-first lifecycle strategy for drops, waitlists, seasonal winback, and post-purchase education — pay-per-email pricing scales better than per-contact models when your list grows faster than repeat purchase rate.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Unmatched Shopify variant sync, predictive CLV, and collection-level segmentation for brands with large catalogs and serious order volume.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt cart, welcome, and post-purchase journeys plus SMS and push for boutiques that need multichannel live in days.' },
+        { label: 'Best list capture', tool: 'Privy', reason: 'Exit intent, countdown popups, and on-site capture before your retention platform takes over for drop sequences.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual automation builder for operators who want hands-on control over browse-to-purchase journeys by collection and purchase behavior.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three fashion merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Archive Dept, indie streetwear, Thursday drops.</strong> A 12-person label releases 40–60 units per colorway with no restock guarantee. Sequenzy waitlist-to-drop sequence gave VIP subscribers 24-hour early access; 81% of drop inventory moved at full price before the public email. Privy pre-drop countdown popups on collection landing pages grew the waitlist 34% quarter-over-quarter without a site-wide discount code.
+      </p>
+      <p>
+        <strong>Scenario B — Woven Label, workwear capsule, high size variance.</strong> Customers return 22% of orders for fit issues on new silhouettes. Post-purchase measurement guides and exchange-window clarity in a Sequenzy education flow cut fit returns 18% before any cross-sell fired. Klaviyo variant-level back-in-stock for sold-out waist sizes recovered $38K in Q1 from size-specific waitlists that generic product alerts would have missed.
+      </p>
+      <p>
+        <strong>Scenario C — Resell Collective, curated vintage plus-size, 320 orders/month.</strong> Omnisend went live in four days for welcome and cart recovery ahead of a spring edit launch. At 650 orders/month with weekly new-arrival drops, the team migrated to Sequenzy when seasonal winback before markdown became a weekly operational task instead of a quarterly project.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why fashion email is a different discipline</h2>
+      <p>
+        A generic ecommerce welcome series fails apparel brands within the first season. Fashion customers browse across multiple collections, save sizes mentally, wait for drops, and often buy once during a sale window never to return at full price. Your email stack must understand that someone who viewed the linen capsule three times is not the same as a customer who bought matching sets from last fall's collection and has not opened an email in ninety days.
+      </p>
+      <p>
+        Merchants winning on Shopify treat email as inventory-aware merchandising, not broadcast marketing. They segment by collection affinity, suppress sold-out variants in the customer's size, time winback before markdowns begin, and use post-purchase flows to reduce fit-related returns before pitching the next drop. That requires real Shopify catalog depth — or a strategy layer like Sequenzy that helps you decide what to build before you drown in flow-builder complexity.
+      </p>
+      <p>
+        Fashion also punishes discount addiction faster than most verticals. If every email trains shoppers to wait for 20% off, full-price drops underperform and margin collapses. The tools ranked here differ in how well they support suppression logic, VIP treatment, and education-first sequences that protect price integrity. See our <a class="link" href="/use-cases/discount-strategy">discount strategy guide</a> and <a class="link" href="/use-cases/segmentation">segmentation playbook</a> for the operational detail behind these picks.
+      </p>
+      <p>
+        Transactional-style moments matter too: order confirmation clarity, shipping updates, and return/exchange instructions reduce anxiety on high-consideration purchases. The best fashion stacks coordinate marketing sends with post-purchase transactional timing so a customer never receives a promo for the jacket they just returned for size.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for fashion stores</h2>
+      <p class="mt-4 text-[#4a2d17]">Ranked by lifecycle fit for apparel — not feature count. <a class="link" href="/apps">See full reviews →</a></p>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Best for fashion</th>
+            <th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th>
+            <th class="py-3 pr-4">Automation</th>
+            <th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">The five email tools fashion merchants should evaluate first</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Editor's choice"
+      paragraphs={[
+        'Sequenzy earns the top spot for fashion Shopify stores because apparel retention is a strategy problem before it is a design problem. Most brands know they need drop waitlists, size-aware back-in-stock, and seasonal winback — they stall because every collection change forces a flow rebuild. Sequenzy\'s agent-first setup lets operators describe the outcome ("VIP early access for repeat buyers three days before public drop, suppress anyone who bought last season\'s capsule at full price") and get a working sequence without spending a week in a blank canvas.',
+        'The pay-per-email model matters more in fashion than analysts admit. Apparel lists grow fast from popups and influencer traffic, but repeat purchase rates lag until you earn trust on fit and style. Per-contact pricing punishes you for building an audience before that audience converts. Sequenzy\'s unlimited contacts with usage-based sends align cost with actual retention output — especially for young DTC labels running frequent drops on thin margin.',
+        'Where Sequenzy differentiates for fashion is lifecycle playbooks tuned to revenue moments: welcome-to-first-purchase for new subscribers who have never ordered, browse abandonment by collection for high-intent window shoppers, post-purchase fit education before cross-sell, and winback timed to seasonal transitions rather than arbitrary 90-day delays. API access and MCP integration also matter for teams wiring external inventory or merchandising tools — a growing pattern among Shopify Plus apparel brands.',
+        'Sequenzy is not a Klaviyo replacement for every fashion enterprise. If you need the deepest variant-level predictive analytics and a massive agency ecosystem, Klaviyo still wins on raw data infrastructure. But for the majority of Shopify fashion merchants who need clear strategy, fast iteration on drops, and email that protects full-price selling, Sequenzy is the best starting point. Pair it with Privy for capture and Postscript for SMS drop alerts if needed.',
+      ,
+        'Operational note for fashion: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For fashion merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo remains the benchmark for fashion brands with complex catalogs and enough order volume to justify profile-based pricing. The native Shopify integration pulls variant-level product data, collection membership, and browse events into segments that reflect how people actually shop apparel — not just whether they opened an email last Tuesday.',
+        'For fashion specifically, Klaviyo shines on back-in-stock by variant (critical when size runs sell out asymmetrically), predictive CLV for identifying full-price loyalists versus discount responders, and flow A/B testing when you are optimizing drop sequences under time pressure. Brands running multiple collections per season — workwear, weekend, accessories — can build RFM segments that keep messaging relevant without manual list splits.',
+        'The cost curve is the honest caveat. Fashion lists balloon from lead-gen popups and influencer codes long before repeat purchase rate catches up. Klaviyo\'s active profile pricing can sting when you are acquiring subscribers at $8 CPA but only 12% convert to first purchase within 60 days. Audit profile hygiene quarterly: suppress non-engaged contacts, merge duplicates from guest checkout, and exclude one-time discount buyers from expensive automations if they show no browse activity.',
+        'Choose Klaviyo when you have dedicated retention ops (even part-time), 1,000+ monthly orders, and real dependence on collection-level segmentation and SMS in one platform. It pairs well with <a class="link" href="/use-cases/back-in-stock">back-in-stock workflows</a> and <a class="link" href="/use-cases/browse-abandonment">browse abandonment</a> at scale.',
+      ,
+        'Operational note for fashion: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For fashion merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Omnisend is the practical choice for fashion boutiques that need welcome, cart recovery, and post-purchase flows live before the next drop — not after. The one-click Shopify install and prebuilt ecommerce journeys reduce the implementation gap that kills momentum for small apparel teams without a retention specialist.',
+        'Multichannel matters in fashion when SMS and push can nudge VIPs for early access without flooding the entire list. Omnisend coordinates email, SMS, and push in one builder, which simplifies suppression compared to juggling three tools. For brands doing flash sales on limited size runs, a well-timed SMS to engaged subscribers often outperforms a fourth email in the same week.',
+        'Omnisend\'s segmentation is solid for SMB fashion but less flexible than Klaviyo when you need complex boolean logic across dozens of collections and custom properties. Reporting is practical for campaign-level decisions but less granular for diagnosing margin impact by segment. That is acceptable when you are optimizing for speed and clarity, not building a data science layer.',
+        'Omnisend fits Shopify fashion stores doing roughly 100–800 orders per month that want reliable automations without hiring an agency for every seasonal refresh. Many merchants run Omnisend for 12–18 months, then migrate to Klaviyo or Sequenzy when catalog complexity and order volume demand deeper control.',
+      ,
+        'Operational note for fashion: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For fashion merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Privy is not a lifecycle platform — it is the capture layer fashion brands need before Sequenzy or Klaviyo can do anything useful. Apparel traffic from TikTok, Instagram, and influencer codes arrives with intent but no subscriber relationship. Privy\'s exit intent, spin-to-win, and cart saver bars convert that traffic into owned audience with minimal dev work.',
+        'For fashion drops specifically, Privy excels at pre-drop list building: countdown popups, VIP list segmentation by collection interest, and coupon delivery that does not automatically train 100% of subscribers to wait for codes. You can A/B test popup creative by collection landing page, which matters when traffic lands on PDPs and capsule pages rather than a single homepage.',
+        'The limitation is depth. Privy\'s email automation is basic — fine for simple welcome and cart reminders, insufficient for seasonal winback, variant-level back-in-stock, or multi-touch drop sequences. Treat Privy as top-of-funnel infrastructure that feeds your primary retention tool.',
+        'If your immediate problem is "we have traffic but no list before the spring drop," start with Privy. If your problem is "we have a list but email revenue flatlines after the first sale," Privy alone will not fix it — graduate to a lifecycle platform and keep Privy for ongoing capture optimization.',
+      ,
+        'Operational note for fashion: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For fashion merchants evaluating Privy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Privy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Drip appeals to fashion operators who want to see and control every branch of the customer journey. The visual workflow builder makes it straightforward to build collection-specific browse abandonment, post-purchase cross-sell by category purchased, and winback paths that diverge for full-price buyers versus discount-first customers.',
+        'Behavior-based segmentation in Drip works well for apparel brands tracking tags like "browsed-denim," "purchased-outerwear," or "returned-for-size." You can trigger education content on fit for customers tagged with size-related returns while routing style-preference returners toward a different collection preview. That level of explicit logic suits teams who enjoy hands-on automation design.',
+        'Drip\'s Shopify sync is native and reliable, but the ecosystem is smaller than Klaviyo\'s — fewer agency playbooks, fewer off-the-shelf fashion templates. Per-contact pricing follows the same list-growth trap as Klaviyo, though Drip\'s entry price is often lower for mid-size lists. Revenue dashboards are clear enough for weekly optimization without enterprise BI overhead.',
+        'Pick Drip if you have someone on the team who likes building workflows and your fashion brand needs custom branching that template-only tools resist. Compare directly with Sequenzy in our <a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip breakdown</a>.',
+      ,
+        'Operational note for fashion: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For fashion merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-3">
+      <div class="card lg:col-span-2">
+        <p class="catalog-kicker">Drop orchestration</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">How to structure email around fashion drops</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Drops fail in email when every subscriber gets the same blast at the same time. A better model: VIP early access for full-price loyalists and repeat buyers, waitlist confirmation and teaser content for new subscribers, browse abandonment for collection viewers who did not convert during the drop window, and post-drop winback for sold-out sizes when restocks land. Map each stage to a Shopify segment with explicit suppression — recent purchasers should not receive cart recovery for the item they already bought.
+        </p>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Document your drop calendar in the same place you plan inventory. Email should lead merchandising narrative by 48–72 hours, not chase sold-out PDPs. Use <a class="link" href="/use-cases/product-launch">product launch workflows</a> and <a class="link" href="/use-cases/vip-segments">VIP segmentation</a> as operational references when building this in Sequenzy or Klaviyo.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Size & returns</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Post-purchase email that reduces fit returns</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Fashion returns destroy email ROI when you ignore them. Build a post-purchase sequence that delivers size confidence before cross-sell: measurement guides, styling tips, care instructions, and clear exchange windows. Delay promotional content until the customer has had a realistic try-on period — typically 7–10 days for domestic apparel. Tag return reasons in Shopify or your returns app and feed that data into your email platform so fit-issue buyers receive education, not another discount on the same category.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Email priorities for fashion: {segment.emailPriorities.join('; ')}. Each maps to specific flows in our <a class="link" href="/use-cases/post-purchase">post-purchase</a> and <a class="link" href="/use-cases/winback">winback</a> guides — adapt timing to your calendar, not generic 90-day defaults.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Seasonal playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Winback before clearance, not after</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Clearance email is easy. Full-price winback is hard — and that is the email that protects margin. Three weeks before end-of-season markdowns, segment lapsed buyers by last collection purchased and send styled edits with social proof from their prior category. One-time buyers get a reason to try a complementary category; repeat buyers get first look at transitional pieces. Reserve deep discounts for segments that have ignored multiple full-price touches.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Streetwear labels with no restock policy should treat sold-out follow-up differently than replenishment brands. Waitlist subscribers who missed a drop need alternative collection suggestions, not perpetual "back in stock" pings for products that will never return. Configure your platform to distinguish one-time drops from core replenishment SKUs — the logic differs and conflating them erodes trust.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for fashion stores</h2>
+      <p>Generic ecommerce playbooks fail fashion stores within two quarters because buying cycle reality — 2–8 weeks between discovery and purchase; heavy browse behavior; high return rates on sizing — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for fashion stores should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — Archive Dept streetwear, Thursday drops.</strong> Sequenzy waitlist-to-drop with VIP 24h early access; 81% drop inventory at full price before public email. Privy pre-drop countdown grew waitlist 34% QoQ without site-wide code.</p><p><strong>Scenario B — Woven Label workwear, high size variance.</strong> Post-purchase fit guide cut returns 18% before cross-sell. Klaviyo variant back-in-stock recovered $38K Q1 from waist-size waitlists.</p><p><strong>Scenario C — Curated vintage plus-size, 320 orders/mo.</strong> Omnisend live four days for welcome and cart ahead of spring edit; migrated Sequenzy when seasonal winback became weekly ops not quarterly project.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Drop and waitlist campaigns</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Size and fit education</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Back-in-stock by variant</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Seasonal winback before clearance</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Revenue per recipient by collection</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Second purchase within 60 days</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Return rate by email segment</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Full-price vs discount purchase ratio</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean fashion stores teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: fashion stores stack decisions</h2>
+      <p>A indie vinyl label at 540 orders/mo and a board game publisher at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. home fragrance maker separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to fashion stores buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/compare">Comparison hub →</a>
+      <a class="link" href="/use-cases/back-in-stock">Back-in-stock guide →</a>
+      <a class="link" href="/for/beauty">Beauty brands →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Fashion store email FAQ" />
+</BaseLayout>

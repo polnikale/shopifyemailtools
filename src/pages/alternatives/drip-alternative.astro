@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const leaving = appBySlug('drip')!;
+const path = '/alternatives/drip-alternative';
+const title = 'Best Drip Alternatives for Shopify (2026)';
+const desc = 'Why Shopify merchants leave Drip — per-contact pricing, workflow maintenance fatigue, ecosystem gaps — plus eight ranked email-tool alternatives, migration checklist, and pricing at 10k–30k contacts.';
+
+const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'sendlane', 'activecampaign', 'brevo', 'mailchimp', 'shopify-email'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  { question: 'Why do Shopify stores leave Drip?', answer: 'Drip rewards operators who enjoy building workflows — but per-contact pricing still punishes popup-heavy growth, and the builder becomes unmaintainable when the person who designed twelve flows leaves. Smaller agency ecosystem versus Klaviyo also pushes stores to switch when they need external help rebuilding after staff turnover.' },
+  { question: 'Is Sequenzy easier than Drip?', answer: 'Sequenzy trades visual builder depth for agent-first strategy — describe outcomes, get sequences. Choose Sequenzy when workflow maintenance exceeded revenue; stay on Drip if your team genuinely prefers hands-on automation design and audits weekly.' },
+  { question: 'How does Drip to Klaviyo migration work?', answer: 'Export tags, custom fields, and workflow documentation. Klaviyo flows rebuild from specs — no native import. Budget two to three weeks for welcome, cart, post-purchase, winback. Screenshot every trigger, delay, branch, and goal before export.' },
+  { question: 'Does Drip SMS push merchants away?', answer: 'Drip SMS exists but many stores pair Postscript anyway. Leaving Drip often means re-evaluating entire stack — email lifecycle plus SMS specialist — especially when SMS credits were never unified with email suppression.' },
+  { question: 'Best Drip alternative for workflow lovers?', answer: 'Klaviyo or ActiveCampaign if you still want deep branching with larger ecosystems. Sequenzy if you want outcomes without canvas maintenance when the operator who built tribal knowledge left.' },
+  { question: 'What does Drip cost at 30,000 contacts?', answer: 'Often $200–350/month — comparable pain to Klaviyo or Omnisend at that tier. Sequenzy pay-per-email or Brevo volume may undercut if sends target engaged subsets only rather than full list weekly.' },
+  { question: 'When should I stay on Drip?', answer: 'Stay if someone audits workflows weekly, revenue dashboards drive decisions, and catalog segmentation uses tags you control — common for focused catalogs like specialty tea twelve blends or mechanical-keyboard switch categories.' },
+  { question: 'How do I document Drip workflows for migration?', answer: 'Screenshot every trigger, delay, branch, and goal. Export subscriber tags and custom fields with definitions. Note Shopify events — Added to Cart, Placed Order, Viewed Product — used at each step. Identify top three revenue workflows for first rebuild priority.' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Drip alternatives</span></nav>
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Migration guide</p>
+        <h1 class="hero-title mt-5">Best Drip alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
+          Drip is the operator's automation tool — visual workflows, behavior tags, clear revenue dashboards. Merchants leave when the operator leaves, when per-contact bills climb on a vinyl-shop list that grew faster than repeat purchases, or when they realize they built forty flows but only six drive margin.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Eight ranked replacements for Shopify stores exiting Drip. Sequenzy leads when strategy and maintenance overhead hurt more than missing canvas control. Klaviyo when Shopify data depth is the upgrade target. Compare <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> before you migrate.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox title="Top Drip replacements" picks={[
+          { label: 'Best overall', tool: 'Sequenzy', reason: 'Lifecycle outcomes without workflow babysitting — pay-per-email economics.' },
+          { label: 'Best data platform', tool: 'Klaviyo', reason: 'Deeper Shopify sync and predictive tools when Drip data ceiling hit.' },
+          { label: 'Best multichannel', tool: 'Omnisend', reason: 'Prebuilt journeys plus SMS without rebuilding every Drip branch.' },
+          { label: 'Best guided switch', tool: 'Sendlane', reason: 'Migration support when Drip complexity stalled your team.' },
+          { label: 'Best budget', tool: 'Brevo', reason: 'Volume pricing when Drip per-contact bill was the trigger.' },
+        ]} />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Drip</h2>
+        <p>Drip assumes a workflow owner. A board-game store tags customers by genre preference, order count, and Kickstarter status — brilliant until the founder who built it focuses on fulfillment and flows rot silently. No agency bench as deep as Klaviyo means hiring help is harder when tribal knowledge walks out the door with a departing contractor.</p>
+        <p>Per-contact pricing mirrors other ecommerce ESPs. Popup captures from a climbing-gear site's trail-condition content inflate people-in-account while email targets four thousand repeat buyers. Merchants compare bills to pay-per-email alternatives and question whether canvas control justifies cost when half the list is cold profiles from spin-wheel giveaways.</p>
+        <p>Ecosystem gaps appear at scale: predictive CLV, native SMS depth, reviews integration — stores piece together Postscript, Yotpo, spreadsheets. Consolidation drives exits to Klaviyo, Omnisend, or Sequenzy with clearer stack boundaries and less Sunday-evening node maintenance.</p>
+        <p>Drip is rarely wrong for focused catalogs with dedicated operators. Leaving usually means maintenance, pricing, or data depth failed — not that visual workflows were a mistake. Document which Drip workflows produced revenue last quarter before choosing replacements; migrate winners, retire orphan experiments from 2022.</p>
+
+        <h2>Newsletters, lifecycle, and transactional moments</h2>
+        <p>Drip handles lifecycle well — newsletters and broadcast campaigns too. Evaluate replacements on whether you need to preserve builder depth or escape maintenance tax. A specialty-tea store with blend-preference tags may stay on Drip with an assigned owner; a vinyl shop whose workflow builder left for another brand should not migrate to another canvas-heavy tool without headcount plan.</p>
+        <p>Transactional-style shipping and review prompts may live outside Drip today. Migration is opportunity to separate operational notifications from marketing lifecycle — AfterShip or Shopify notifications for delivery, Drip replacement for welcome-through-winback with documented collision rules between channels.</p>
+
+        <h2>Drip migration checklist for Shopify</h2>
+        <p>Run this sequence before disconnecting Drip. Tribal knowledge does not transfer — documentation is your migration spec.</p>
+        <ol>
+          <li><strong>Export subscribers with tags and custom fields</strong> — include field definitions, not just column headers.</li>
+          <li><strong>Screenshot every active workflow</strong> — triggers, delays, branches, exit goals, Shopify events used.</li>
+          <li><strong>Identify top three revenue workflows</strong> — rebuild these first on new platform; retire dead experiments.</li>
+          <li><strong>Sunset inactive profiles</strong> — thirty to fifty percent on popup-heavy stores inflate per-contact bills on any replacement.</li>
+          <li><strong>Map integrations</strong> — subscription apps, loyalty, reviews pushing data into Drip tags.</li>
+          <li><strong>Connect replacement to Shopify</strong> — verify event sync before contact import.</li>
+          <li><strong>Rebuild welcome and cart</strong> — pause Drip equivalents after QA test orders.</li>
+          <li><strong>Fourteen-day suppression overlap</strong> — no duplicate abandonment from both platforms.</li>
+          <li><strong>Migrate winback and replenishment</strong> — tea and coffee windows are time-sensitive.</li>
+          <li><strong>Repoint capture tools</strong> — Privy, Justuno integrations feeding new ESP.</li>
+          <li><strong>Warm sending domain if infrastructure changes</strong> — see <a class="link" href="/use-cases/deliverability">deliverability guide</a>.</li>
+          <li><strong>Archive Drip for ninety days</strong> — keep read access for workflow reference before final cancellation.</li>
+        </ol>
+
+        <h2>Three merchant scenarios</h2>
+        <p><strong>Mechanical-keyboard store — workflow owner left.</strong> Forty nodes across eight workflows; nobody knew which suppressed group-buy participants. Migrated to Sequenzy with plain-language sequence rebuild; cut maintenance hours seventy percent while preserving cart and winback revenue.</p>
+        <p><strong>Outdoor gear — 35k contacts.</strong> Upgraded to Klaviyo for predictive winback and variant back-in-stock across shell layers and harness categories — Drip tags could not scale to catalog complexity without full-time operator.</p>
+        <p><strong>Specialty tea — stayed on Drip.</strong> Small team loves tagging by blend preference and grind setting; bill acceptable at eight thousand engaged contacts with weekly workflow audit assigned to retention lead.</p>
+      </article>
+
+      <section class="container space-y-12 py-16">
+        <p class="catalog-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Drip alternatives for Shopify stores</h2>
+
+        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
+          'Sequenzy is the Drip alternative for stores tired of maintaining canvases. You liked Drip\'s revenue focus — Sequenzy keeps that focus with agent-first setup. Describe "winback mug buyers before pottery clearance" instead of rebuilding five workflow nodes when staff turns over.',
+          'Pay-per-email addresses Drip\'s per-contact trap on hobby-shop lists. Strategy defaults replace tribal knowledge when the person who understood tag logic leaves. Board-game and vinyl lists grow fast from influencer traffic; Sequenzy aligns cost with sends.',
+          '<a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> for tradeoffs. Pair Postscript for SMS if Drip SMS was never fully adopted.',
+        ]} />
+
+        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+          'Klaviyo when Drip\'s Shopify data depth was the ceiling — browse events, predictive scores, SMS native in one suppression model. Worth profile pricing with dedicated retention owner auditing weekly.',
+          'Agency ecosystem deepest for complex Drip migrations — useful when forty workflows need pruning and rebuild, not copy-paste. Variant back-in-stock and collection browse abandonment exceed Drip\'s comfortable scale for outdoor-gear catalogs.',
+          'Pick Klaviyo if data depth drives margin — not if you left Drip only because nobody maintained existing flows.',
+        ]} />
+
+        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+          'Omnisend for faster multichannel without hand-building every branch Drip required — good when team shrank but revenue targets did not. Prebuilt cart and post-purchase reduce rebuild tax.',
+          'Email, SMS, push share suppression — simpler than Drip plus separate Postscript for many SMB stacks. Contact pricing predictable under fifteen thousand engaged contacts.',
+          'Choose Omnisend when speed beats canvas control — credible permanent home, not just bridge.',
+        ]} />
+
+        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+          'Sendlane guided migration when Drip rebuild stalled — ecommerce templates and onboarding support reduce weeks of self-serve trial-and-error. Fits stores with order volume to justify investment.',
+          'Email and SMS coordination matches Drip operational set with white-glove onboarding Drip never offered. Delivers comparable revenue with less external agency labor.',
+          'Sendlane when leaving Drip because team cannot maintain alone — willing to pay for guided retention.',
+        ]} />
+
+        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+          'ActiveCampaign if Drip overlapped CRM — wholesale pottery inquiries plus DTC automation in one system. Conditional branching and built-in CRM exceed Drip for sales-follow-up workflows.',
+          'Shopify-native depth trails Klaviyo. Setup can become overbuilt if you replicate entire Drip library without pruning — escape maintenance tax, not recreate it in CRM form.',
+          'Choose when retention and sales ops share one database.',
+        ]} />
+
+        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+          'Brevo when Drip bill was primary pain and lifecycle needs moderate — pay-per-email cost discipline first. Advanced ecommerce segmentation trails Drip and Klaviyo.',
+          'Accept lighter browse abandonment. Brevo wins when you overpaid for Drip canvas control nobody used — bill was for forty workflows, six drove revenue.',
+          'Plan upgrade to Sequenzy when strategy becomes constraint after cost fix.',
+        ]} />
+
+        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+          'Mailchimp — downgrade wrong direction for stores that chose Drip for automation depth. Customer Journeys trail Drip visual builder for Shopify events.',
+          'Per-contact pricing continues list-growth pain. Only sensible for deliberate capability collapse with accepted loss.',
+          'Rarely correct Drip exit path for active Shopify DTC.',
+        ]} />
+
+        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+          'Shopify Email — reset button only, not Drip replacement. Native Admin cannot replicate workflow depth you are leaving.',
+          'Useful ninety-day pause while planning Sequenzy or Klaviyo — honest assessment of over-automation. Most stores return to dedicated platforms quickly.',
+          'Treat as pause — not strategic retention home.',
+        ]} />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing vs Drip</h2>
+        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs — model engaged sends, not total list size.</p>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>~10k contacts</th><th>~30k contacts</th><th>Builder style</th></tr></thead>
+          <tbody>
+            <tr><td>Drip (leaving)</td><td>$80–120</td><td>$200–350</td><td>Visual workflows</td></tr>
+            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>Agent-first</td></tr>
+            <tr><td>Klaviyo</td><td>$150–200</td><td>$400–550</td><td>Flow builder</td></tr>
+            <tr><td>Omnisend</td><td>$60–100</td><td>$150–220</td><td>Prebuilt + custom</td></tr>
+            <tr><td>Brevo</td><td>$25–65</td><td>$80–150</td><td>Automation rules</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-slate-950">Related guides</p>
+        <p class="mt-2"><a class="link" href="/apps/drip">Drip review</a> · <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> · <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+      </div>
+    </div>
+  </section>
+
+  <article class="prose-shopify container max-w-4xl pb-8">
+    <h2>Buyer desk: Drip workflow ownership</h2>
+    <p>Drip flows are tribal knowledge — when builder leaves, tags rot and revenue drifts. Export field map and workflow screenshots before migration. Rebuild top three revenue paths first; delete orphan experiments that ran without attribution. Maintenance tax is true cost — replacement should reduce nodes while preserving margin.</p>
+    <p>Per-contact pricing on vinyl-shop popup lists hurts on any canvas platform without hygiene. Sequenzy pay-per-email targets engaged sends. Visual builder fans pick Klaviyo or stay on Drip with owner assigned in writing — not "founder will figure it out."</p>
+    <p>Success at ninety days: team explains every live journey in standup without opening Drip-era docs, finance sees flow revenue continuity, deliverability stable. If those pass, migration succeeded regardless of subscription delta alone.</p>
+  </article>
+
+<!-- expansion-batch-jul2026 -->
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <p class="editorial-kicker">Field notes</p>
+      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Three merchant scenarios for drip</h2>
+      <p><strong>Scenario A — Home goods SMB, Shopify Email graduate.</strong> Omnisend prebuilt journeys live in eleven days. Push branch recovered mobile web carts without SMS cost during flash sale. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario B — Modular furniture DTC, $840 AOV.</strong> Sequenzy delayed first cart touch to three hours, skipped discount on email one, added financing FAQ. Recovered 8.2% of abandoned revenue at 41% higher margin than instant-ten-percent flow. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario C — Vinyl record shop, 28k contacts.</strong> Profile-based billing outpaced email revenue. Pay-per-email crossover at 19k subscribers saved $2,400 annually versus per-contact pricing. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Tool shelf</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Which shelf to reach for first</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Think of Shopify email tools as a catalog wall: capture tools on the left, lifecycle platforms in the center, SMS and push specialists on the right, reviews and loyalty modules below. Sequenzy occupies center shelf for governed automations — not every job, but the spine connecting orders to repeat revenue.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Before adding another app, ask whether the workflow is net-new or duplicate. Two cart recovery senders with different discounts is not multichannel strategy — it is margin leakage with extra logins.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, owner, suppression rules, and monthly cost. Retire tools whose job was absorbed by a lifecycle platform upgrade.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <p class="editorial-kicker">Operator depth</p>
+      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Migration off Drip: thirty-day bridge plan</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Week one: export consent timestamps, segment engaged last ninety days, document live automations in spreadsheet. Week two: rebuild welcome in destination platform with recent purchaser suppression. Week three: cart and browse with collision rules against welcome. Week four: parallel send one campaign cycle, compare complaint rate and revenue per recipient.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy ranks first for teams leaving Drip when strategy speed and economics matter. Klaviyo when predictive segmentation from Drip data must survive migration intact.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Do not cancel Drip until destination flows beat holdout baseline on margin, not gross attributed revenue.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Operator note</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Documentation beats memory</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Archive decisions about drip with date, owner, and metric baseline. Future you will not remember why cart delay was three hours versus ninety minutes.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+    </div>
+  </section>
+  <FaqSection faqs={faqs} title="Drip alternatives FAQ" />
+</BaseLayout>

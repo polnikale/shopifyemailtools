@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site } from '../../content';
+
+const path = '/compare/tinyemail-vs-shopify-email';
+const title = 'tinyEmail vs Shopify Email: AI Drafting vs Native Admin';
+const desc = 'tinyEmail vs Shopify Email for Shopify email tools — AI-assisted campaigns vs Admin-native sending, automation limits, graduation timing, and when to add lifecycle platforms.';
+
+const faqs = [
+  {
+    question: 'Is tinyEmail or Shopify Email better for new Shopify stores?',
+    answer: 'Shopify Email wins zero-friction Admin blasts with 10k free sends. tinyEmail wins when AI drafting speed matters and you want light Shopify sync outside Admin. Neither handles real lifecycle automation — both are pre-retention tools.',
+  },
+  {
+    question: 'Does tinyEmail have better automation than Shopify Email?',
+    answer: 'Slightly — basic automations versus Shopify Email minimal triggers. Gap versus Sequenzy or Omnisend is larger than gap between tinyEmail and Shopify Email. Do not choose either expecting cart recovery depth.',
+  },
+  {
+    question: 'How does pricing compare at 5,000 subscribers?',
+    answer: 'Shopify Email free under 10k sends monthly. tinyEmail paid tiers by subscribers — often $25–45/mo. tinyEmail costs more in cash; Shopify Email costs more in operator drafting time for frequent campaigns.',
+  },
+  {
+    question: 'Which handles vinyl shop drop announcements faster?',
+    answer: 'tinyEmail — AI drafts subject and body from staff bullet points in minutes. Shopify Email requires manual composition in Admin. Speed advantage tinyEmail; convenience advantage Shopify Email same login.',
+  },
+  {
+    question: 'Can both run together?',
+    answer: 'Risky — duplicate sends to same list without coordination. Pick one broadcaster for manual campaigns; use other only after explicit list split or migration.',
+  },
+  {
+    question: 'When do you graduate from both?',
+    answer: 'When cart recovery and replenishment matter — typically 250–400 orders/month. Graduate to Sequenzy, Omnisend, or Klaviyo; retire both senders for automations.',
+  },
+  {
+    question: 'Does tinyEmail AI replace strategy?',
+    answer: 'No — drafts copy faster; suppression, segmentation, and lifecycle strategy still merchant responsibility. AI does not fix wrong send to gift buyers.',
+  },
+  {
+    question: 'What workflow test proves graduation?',
+    answer: 'Try cart at 45 minutes, post-purchase gift exclusion, replenishment windows in either tool. Both fail. Sequenzy or Omnisend passes — graduation trigger.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">tinyEmail vs Shopify Email</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">tinyEmail vs Shopify Email for Shopify email tools</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Two starter senders for merchants not ready for lifecycle platforms — one optimizes AI drafting speed outside Admin, one optimizes zero-switch native blasts. We evaluated both through a pottery studio sending class updates, a board game shop drafting allocation announcements, and a camping merchant emailing gear guides before cart recovery became a KPI.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Admin convenience', tool: 'Shopify Email', reason: 'Send inside Shopify, 10k free sends.' },
+            { label: 'AI drafting speed', tool: 'tinyEmail', reason: 'Fast copy from bullet points.' },
+            { label: 'Automation depth', tool: 'tinyEmail', reason: 'Light edge over native minimal.' },
+            { label: 'Starter cost', tool: 'Shopify Email', reason: 'Free tier generous for blasts.' },
+            { label: 'Lifecycle ceiling', tool: 'Both', reason: 'Graduate to Sequenzy or Omnisend.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead><tr><th>Dimension</th><th>tinyEmail</th><th>Shopify Email</th></tr></thead>
+          <tbody>
+            <tr><td>UX</td><td>Separate app, AI assist</td><td>Native Admin</td></tr>
+            <tr><td>Pricing</td><td>Subscriber tiers</td><td>10k free; usage</td></tr>
+            <tr><td>Automation</td><td>Basic</td><td>Minimal</td></tr>
+            <tr><td>Drafting</td><td>AI-assisted</td><td>Manual</td></tr>
+            <tr><td>Retention fit</td><td>Pre-lifecycle</td><td>Pre-lifecycle</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What this comparison is actually about</h2>
+        <p>
+          tinyEmail and Shopify Email sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. tinyEmail is optimized when you need campaigns drafted and sent this week. Shopify Email is optimized when newsletters and simple drops from admin are the whole job. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+        </p>
+        <p>
+          We tested both against specialty catalogs where retention is genuinely hard: vinyl scarcity, keyboard group buys, tea replenishment, climbing research cycles, pottery gifts, outdoor segmentation, board game allocation, coffee roast dates, and camping quiz capture. Those verticals stress education, suppression, and timing more honestly than generic one-size-fits-all demos. The writeup below is intentionally merchant-specific — not a feature matrix dressed in adjectives.
+        </p>
+        <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
+        <p>
+          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Shopify Email reduced preview-time surprises because native admin sending with zero integration friction. tinyEmail remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
+        <p>
+          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, tinyEmail reduced preview-time surprises because AI-assisted quick campaigns for lean teams. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
+        <p>
+          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, tinyEmail reduced preview-time surprises because AI-assisted quick campaigns for lean teams. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>How board game store emails through Essen release week</h2>
+        <p>
+          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, tinyEmail reduced preview-time surprises because AI-assisted quick campaigns for lean teams. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Specialty Tea Merchant ($44k/mo) — split replenishment windows by blend and steeping rate</h2>
+        <p>
+          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, tinyEmail reduced preview-time surprises because AI-assisted quick campaigns for lean teams. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
+        <p>
+          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. tinyEmail contributes AI-assisted quick campaigns for lean teams; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+        </p>
+        <p>
+          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Shopify Email reduced preview-time surprises because native admin sending with zero integration friction. tinyEmail remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+        </p>
+        <p>
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+        </p>
+        <h2>tinyEmail workflow reality: strengths, friction, and billing</h2>
+        <p>
+          tinyEmail shines when you need campaigns drafted and sent this week. Its friction shows when four-plus journeys need exclusion depth at scale. Shopify Email shines when newsletters and simple drops from admin are the whole job. Its friction shows when cart recovery and replenishment drive repeat revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+        </p>
+        <p>
+          Billing amplifies behavior. tinyEmail (subscribers and features) rewards send discipline or punishes broadcast volume depending on your calendar. Shopify Email (included Shopify emails then usage-based) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+        </p>
+        <p>
+          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
+        </p>
+        <h2>Newsletter layer: editorial merchandising without discount training</h2>
+        <p>
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. tinyEmail and Shopify Email both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+        </p>
+        <p>
+          Training customers to wait for codes is a hidden churn driver. If every Thursday email is twenty percent off, replenishment and winback lose meaning. Use editorial sends to teach grading, certification, player count, roast profiles, and tent capacity — then merchandise. Discipline beats platform.
+        </p>
+        <h2>Transactional-style moments and promo collision</h2>
+        <p>
+          Password resets belong on transactional infrastructure. Shipment delays, preorder timeline changes, and subscription skip confirmations can live in marketing ESPs only if copy and domain strategy separate operational tone from promos. Coffee brands on shared domains see complaint spikes when a roast release email resembles a receipt.
+        </p>
+        <p>
+          Post-purchase cross-sells are where brands blur lines. An order update with three discount blocks reads promotional to filters when volume spikes. Document message categories before peak season. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
+        </p>
+        <h2>Pricing models that punish different mistakes</h2>
+        <p>
+          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Shopify Email punish partial adoption.
+        </p>
+        <p>
+          Project November, not February. Record Store Day, GB closes, Essen week, Memorial Day, and holiday gift-box peaks change send volume and support load. <a class="link" href="/guides/pricing-models">Pricing models</a> helps build the year view.
+        </p>
+        <h2>Implementation workload and team shape</h2>
+        <p>
+          Integration is the easy hour. Exclusion logic, signup branching, gift properties, and sale-week edits are the long work. Budget two to four weeks for four journeys with DNS and forms. Never cut over during your highest-LTV catalog week.
+        </p>
+        <p>
+          Match team shape to tool temperament. Solo founders bias toward time-to-live; retention operators bias toward holdout tests and browse depth. Agencies help either stack, but hours are a line item. See <a class="link" href="/guides/implementation-plan">implementation plan</a> for sequencing.
+        </p>
+        <h2>Five-job buyer test with scoring rubric</h2>
+        <p>
+          Score zero to two on: welcome by signup source; abandoned checkout with inventory check; post-purchase excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. Zero equals CSV exports. Two equals native edit before a drop. Paper-test both tools — demos lie.
+        </p>
+        <p>
+          Time-to-live beats theoretical max when no retention engineer exists. A tea shop may accept ninety percent of maximum if ninety percent ships in one afternoon. A keyboard shop may need browse depth enough to wait two weeks for setup.
+        </p>
+        <h2>Pricing scenario: 15,000 contacts, selective lifecycle sending</h2>
+        <p>
+          Picture 15,000 contacts, 1,400–2,200 orders monthly, 32,000–48,000 marketing emails in a normal month, higher in November and May. Profile billing charges for the full pool even when only engaged segments receive lifecycle mail. Send-weighted billing charges every broadcast you panic-send during a heatwave SKU miss.
+        </p>
+        <p>
+          Holdout tests change ROI math. If winback discounts move customers who would reorder anyway, platform fees are not the expensive line — mis-measured incrementality is.
+        </p>
+        <h2>Migration sequencing and collision guardrails</h2>
+        <p>
+          Export consent timestamps and suppressions. Rebuild welcome and cart first; parallel-monitor two weeks. Predictive segments, CRM pipelines, and push automations need explicit replacements — document what you are giving up. Pause legacy flows before enabling new ones.
+        </p>
+        <p>
+          Hybrid stacks without priority docs duplicate cart recovery. If capture lives elsewhere, tag handoff must be explicit. See <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a> before running two senders through sale week.
+        </p>
+        <h2>Measurement guardrails</h2>
+        <p>
+          Separate replenishment from winback attribution. Tea and coffee merchants over-credit discount winback for natural consumption cycles. Hold out five percent of new subscribers on welcome tests. Measure incremental GMV with holdouts, not default dashboards.
+        </p>
+        <p>
+          Multichannel requires one trigger-ownership spreadsheet reviewed before big sends. Tools do not replace ops discipline; some make violations easier to catch in preview.
+        </p>
+        <h2>Hybrid stack patterns on Shopify</h2>
+        <p>
+          Common pattern: capture in Privy or Justuno, lifecycle in tinyEmail, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+        </p>
+        <p>
+          Camping quiz capture fed education sequences while flash SMS handled weekend promos — with forty-five-minute suppression between cart channels. Collisions dropped before volume rose.
+        </p>
+        <h2>Who should choose which</h2>
+        <p><strong>Choose tinyEmail if:</strong></p>
+        <ul>
+          <li>You need campaigns drafted and sent this week</li>
+          <li>You will use AI-assisted quick campaigns for lean teams weekly</li>
+          <li>Subscribers and features fits your calendar</li>
+          <li>Your team can maintain tinyEmail without external rescue</li>
+          <li>Switching cost favors tinyEmail for the next twelve months</li>
+        </ul>
+        <p><strong>Choose Shopify Email if:</strong></p>
+        <ul>
+          <li>Newsletters and simple drops from admin are the whole job</li>
+          <li>You will use native admin sending with zero integration friction weekly</li>
+          <li>Included shopify emails then usage-based fits your calendar</li>
+          <li>Your team can maintain Shopify Email without external rescue</li>
+          <li>Incremental lifecycle GMV justifies Shopify Email migration</li>
+        </ul>
+        <h2>Verdict</h2>
+        <p>
+          tinyEmail is the better Shopify email tool when you need campaigns drafted and sent this week. Shopify Email is the better Shopify email tool when newsletters and simple drops from admin are the whole job. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail vs Mailchimp</a> ·
+          <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> ·
+          <a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend vs Shopify Email</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="tinyEmail vs Shopify Email FAQ" />
+</BaseLayout>

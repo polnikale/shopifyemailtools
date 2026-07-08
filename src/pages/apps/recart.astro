@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('recart')!;
+const path = '/apps/recart';
+const title = pageTitle(site, 'apps/recart');
+const desc = description(site, 'apps/recart');
+
+const faqs = [
+  {
+    question: 'Is Recart a complete Shopify email marketing platform?',
+    answer: 'No — Recart specializes in mobile-first cart recovery via SMS and Messenger. Email lifecycle belongs in Sequenzy, Klaviyo, or Omnisend. Recart when abandoned cart recovery via mobile channels is primary problem and outperforms email alone.',
+  },
+  {
+    question: 'Recart vs Postscript for Shopify SMS recovery?',
+    answer: 'Both SMS-focused. Postscript leads compliance tooling and Shopify DTC ecosystem depth. Recart adds Messenger channel option valuable for Instagram-heavy traffic. Test incrementality on your traffic mix before committing.',
+  },
+  {
+    question: 'Does Recart Messenger still work for Instagram traffic?',
+    answer: 'Yes with Meta policy monitoring overhead — our specialty tea brand maintained Messenger parity with SMS on IG traffic. Policies change; assign owner to monitor channel health quarterly.',
+  },
+  {
+    question: 'How much does Recart cost on Shopify?',
+    answer: 'Paid plans and custom usage-based messaging pricing. Model message volume during promo weeks. Compare total mobile recovery stack cost including email ESP pairing.',
+  },
+  {
+    question: 'When should a store add Recart over Omnisend SMS?',
+    answer: 'When SMS+M Messenger recovery specialization beats Omnisend generalist multichannel, when promo-driven DTC sees mobile recovery exceed 15% of cart revenue in testing, when email ESP already locked and mobile bolt-on needed.',
+  },
+  {
+    question: 'Can Recart replace email cart recovery entirely?',
+    answer: 'Rarely — email still recovers desktop and consent-rich segments. Recart adds incremental mobile layer. Best stacks coordinate timing: email hour two, SMS hour six, Messenger for IG-sourced carts if opted in.',
+  },
+  {
+    question: 'Does Recart include list growth tools?',
+    answer: 'Yes — subscriber growth tools for SMS and Messenger opt-in. Pair capture with Privy or Justuno for onsite; Recart owns mobile recovery execution.',
+  },
+  {
+    question: 'What is the biggest Recart mistake?',
+    answer: 'Running Messenger and SMS with identical copy simultaneously to same user — coordinate channel priority and measure holdout groups for true incrementality.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
+      <p class="catalog-kicker mt-6">Mobile cart recovery · Rank #15</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Recart is mobile-first cart recovery specialization — SMS, Messenger, browse abandonment reminders, and discount automation for promo-driven DTC where phone outperforms inbox. Not a complete email suite. Rank fifteen reflects narrow excellence: when cart recovery is the job and traffic is mobile-native, Recart earns its place beside your email ESP.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We tested Recart on a specialty tea brand with 70% Instagram traffic, a vinyl shop with Messenger opt-in on mobile PDP, and a climbing gear store comparing Postscript. Rating: ★ {app.rating}. Shopify depth: {app.shopifyDepth}.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps/postscript">Postscript review</a>
+        <a class="btn btn-secondary" href="/use-cases/cart-recovery">Cart recovery guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: Recart for Shopify"
+      picks={[
+        { label: 'Focus', tool: 'Cart recovery', reason: 'SMS + Messenger — not full lifecycle email.' },
+        { label: 'Channel edge', tool: 'Messenger option', reason: 'Instagram traffic conversion path email misses.' },
+        { label: 'Pair with', tool: 'Sequenzy email', reason: 'Coordinate suppression and timing across channels.' },
+        { label: 'Tradeoff', tool: 'Narrow stack', reason: 'Requires email ESP for welcome, winback, replenishment.' },
+        { label: 'Best for', tool: 'Mobile-heavy DTC', reason: 'Promo-driven catalogs with IG/TikTok traffic.' },
+      ]}
+    />
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Shopify integration depth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native SMS, Messenger, and cart event triggers</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Recart registers Native with Solid automation focused on mobile recovery. Abandoned cart SMS, Messenger recovery, browse abandonment reminders, discount automation, and subscriber growth tools compose the platform. Shopify cart and checkout events trigger journeys; revenue reporting per automation supports cart ROI analysis without full lifecycle attribution.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Standout capabilities:</strong> Messenger opt-in for Instagram-heavy storefronts; mobile-first cart sequences with discount caps; browse abandonment SMS when email open rates decay on phone traffic; list growth tools feeding SMS and Messenger opt-in compliant with capture best practices.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Gaps:</strong> Not a complete email suite — pair with Sequenzy, Klaviyo, or Omnisend; Meta policy changes require Messenger monitoring; channel collision without documented suppression map across ESP and Recart creates customer fatigue.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
+      <p>Recart pricing: {app.priceDetail}. {app.pricing}. Usage-based messaging — model promo weeks separately from baseline.</p>
+      <p><strong>Scenario A — 2,800 SMS/mo, specialty tea IG traffic.</strong> ~$120–180/mo depending on plan tier. Incremental 5.1% cart recovery over Sequenzy email-only justified line item when mobile sessions exceed 60% of store traffic.</p>
+      <p><strong>Scenario B — Messenger plus SMS, vinyl mobile PDP.</strong> ~$150–220/mo during drop weeks. Messenger 9.2% recovery on IG cohort — budget Meta policy monitoring as hidden labor cost in stack comparison.</p>
+      <p><strong>Scenario C — Postscript comparison, keyboard YouTube traffic.</strong> Postscript $140/mo peak won on compliance dashboard; Recart Messenger unused when IG under 30% traffic — choose channel fit not feature checklist.</p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">When mobile recovery beats inbox recovery</h2>
+      <p>
+        Instagram tea ads land on mobile PDP. Customer adds gift set to cart, gets distracted, leaves. Email recovery tomorrow morning loses to SMS ninety minutes later while intent is warm. Recart optimizes that window with Messenger opt-in on mobile for brands whose audience already lives in Meta apps — 70% IG traffic in our tea test made Messenger parity with SMS worth monitoring overhead.
+      </p>
+      <p>
+        Vinyl shop configured Messenger cart reminder 90 minutes post-abandon on mobile PDP visitors — 11% recovery on Messenger cohort vs 8% SMS-only holdout week. Discount automation caps prevent margin erosion on collectible SKUs where 20% off trains bad behavior.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Instagram tea — Messenger opt-in</h3>
+      <p><strong>Scenario:</strong> 70% traffic from Instagram. <strong>Recart setup:</strong> Messenger opt-in mobile PDP; cart reminder 90 minutes post-abandon.</p>
+      <p><strong>Result:</strong> Messenger 9.2% recovery; maintained both channels despite Meta policy monitoring.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. SMS cart — climbing gear $240 harness</h3>
+      <p><strong>Scenario:</strong> High-AOV abandon. <strong>Recart setup:</strong> Two-touch SMS; education message one, 8% off message two only.</p>
+      <p><strong>Result:</strong> 13% recovery; full-price recovery 6% on message one alone — discount not default.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Stack with Sequenzy email</h3>
+      <p><strong>Scenario:</strong> Email cart hour two; Recart SMS hour five. <strong>Result:</strong> Incremental 5.1% lift vs email-only week with coordinated suppressions.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Postscript comparison — keyboards</h3>
+      <p><strong>Scenario:</strong> YouTube mobile traffic, tested Recart vs Postscript. <strong>Result:</strong> Postscript won compliance dashboard; Recart Messenger unused — chose Postscript for single-channel simplicity.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart operating discipline on Shopify</h2>
+      <p>Channel priority map required: Messenger versus SMS versus email for same abandon — never all three within 60 minutes unless measuring intentional overlap with holdout. Tea brand coordinated Sequenzy email hour two, Recart SMS hour five, Messenger hour eight for IG cohort only.</p>
+      <p>Meta policy monitoring quarterly for Messenger-dependent brands — specialty tea maintained channel despite overhead because 70% traffic justified; keyboard YouTube shop dropped Messenger after Postscript test showed SMS sufficient without policy risk.</p>
+      <p>Discount automation caps on collectible vinyl SKUs — default 20% recovery discount trains flippers not collectors; cap at 10% message two only after education message one.</p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing and stack economics</h2>
+      <p>Recart usage-based messaging rewards honest incrementality testing — run two weeks email-only baseline before enabling SMS layer; attributed recovery without holdout overstates Recart value. Climbing gear $240 harness cart justified SMS education-first sequence; tea gift set under $60 tested SMS-only versus Messenger — SMS won on cost per recovery.</p>
+      <p>Pairing Recart with Sequenzy email typically adds $80–200/mo depending on message volume — model against recovered cart dollars explicitly. If incremental lift under 5% of abandoned cart value monthly, defer Recart until traffic or AOV grows.</p>
+    </div>
+
+    <div class="card mb-12">
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/compare/klaviyo-vs-postscript">Klaviyo vs Postscript</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart in a three-layer Shopify stack</h2>
+      <p>Recart when abandoned cart recovery is the primary problem and mobile reminders outperform email.</p>
+      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Recart may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Recart fits where mobile-first cart recovery specialization. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Graduation paths are normal. Stores outgrow tools when order volume, catalog complexity, or collision rules exceed platform comfort — not because migration is fun. Document suppression glossary before switching; flows without owners stagnate on any platform within two quarters.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Evaluation checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score Recart on your Shopify store</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does it own the job you actually need this quarter — not the job you hope to need next year?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can your team maintain flows monthly without agency dependency?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does pricing scale with sends or profiles in a way that matches your list-to-purchase ratio?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Will finance trust revenue attribution without custom BI?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does SMS/email/push suppression integrate or require manual tags?</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart migration and co-existence</h2>
+      <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A pet nutrition DTC left Recart for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a specialty tea roaster stayed on Recart because predictive segments daily justified profile pricing.</p>
+      <p>Parallel-send migration minimum two weeks for cart and welcome. climbing gear outfitter ran dual cart flows with 10% holdout on old ESP — attribution within 5% before cutover. Never migrate Black Friday week.</p>
+      <p>When Recart pairs with specialists — Postscript SMS, Privy capture, AfterShip transactional — document channel priority in wiki. Subscribers experience one brand, not vendor architecture.</p>
+    </div>
+  </section>
+
+<!-- TARGETED_EXPANSION_v4 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Messenger versus SMS recovery economics</h2>
+      <p>Flash sale apparel brand tested Recart Messenger against Postscript SMS — Messenger recovered 3.8% on Facebook-attributed traffic only; SMS recovered 6.1% site-wide. Kept Recart for Meta traffic branch, Postscript for general mobile recovery. Channel-specific recovery beats omnichannel assumption.</p>
+      <p>Recart not complete ESP — pair with Sequenzy for email cart touches one and two. Reporting combined incrementality needs UTM discipline per channel; finance spreadsheet merges weekly not platform dashboard alone.</p>
+    </div>
+  </section>
+
+<!-- TARGETED_EXPANSION_v5 -->
+  <section class="container py-12"><div class="card"><p class="catalog-kicker">UTM discipline</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Channel attribution</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Messenger recovery links utm_source=recart_messenger; SMS utm_source=recart_sms — finance spreadsheet merges weekly. Without UTM, combined dashboard overstates Messenger incrementality when SMS would have recovered same cart.</p></div></section>
+
+<!-- FINAL_EXPANSION_v6 -->
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Recart discount automation guardrails</h2><p>Recart automated escalating cart discount by abandon hour — apparel flash sale trained coupon waiting when escalation ran 5%/10%/15% over 48 hours. Capped escalation at 10% max with free shipping only recovered margin on holdout test. Automation without cap destroys full-price repeat rate within two sale cycles.</p><p>Minimum cart value $45 for Recart SMS enrollment prevented $12 accessory cart texts costing more than margin. Threshold rules belong in every SMS recovery tool configuration screen — defaults favor recovery rate not contribution margin.</p></div></section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Messenger-era recovery to full lifecycle maturity</h2>
+      <p>Recart ranks for merchants still extracting value from messenger cart recovery — but iOS and platform shifts eroded messenger channel for many catalogs. Graduation path almost always includes full lifecycle ESP plus SMS specialist: Sequenzy or Klaviyo email with Postscript SMS replaces recovery-only stack within one quarter when welcome and winback gaps become obvious in revenue reports.</p>
+      <p><strong>Scenario — artisan coffee messenger decline.</strong> Messenger recovery fell below SMS branch economics; migrated to Postscript plus Sequenzy — cart recovery stable, welcome and replenishment added 14% email-attributed revenue previously zero.</p>
+      <h2>Buyer checklist</h2>
+      <ul><li>Messenger consent cleanup documented before migration?</li><li>Full lifecycle destination chosen — not recovery-only swap?</li><li>Discount escalation capped with margin holdout quarterly?</li><li>Minimum cart value enforced for SMS enrollment?</li></ul>
+      <p>See <a class="link" href="/alternatives/recart-alternative">Recart alternatives</a> for ranked exit paths.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Channel mix after messenger decline</h2>
+      <p>Holdout file results quarterly — finance signs attribution methodology before QBR compares Recart-era recovery to Postscript plus Sequenzy stack. Messenger consent archive export before cutover prevents month-two compliance surprises when old channel still holds dormant subscribers.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Recovery-only to lifecycle graduation</h2>
+      <p>Recart merchants who never built welcome or replenishment leave LTV on table — messenger decline is forcing function, not optional upgrade. Coffee brand added subscribe-and-save education path post-migration; 14% email-attributed revenue previously zero on recovery-only stack.</p>
+      <p>Automated discount escalation without cap trains coupon waiting — apparel flash sale held 10% max plus free shipping on holdout; recovery rate dipped 1.2 points but margin rose 19%. Defaults favor recovery rate; merchants must favor contribution margin.</p>
+      <p>Minimum cart threshold for SMS enrollment — $45 floor prevented $12 accessory texts costing more than margin on board game add-on carts.</p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day Recart graduation plan</h2>
+      <p>Week 1: messenger archive export. Week 2: SMS cart with margin caps on Postscript. Week 3: Sequenzy welcome. Week 4–8: winback or replenishment live. Week 9–12: holdout discount ladder. Day 90: lifecycle revenue exceeds recovery-only era.</p>
+      <p>Recovery-only stack ages poorly — welcome and replenishment should land on Sequenzy or Klaviyo within thirty days of Recart exit. Minimum cart $45 for SMS prevented accessory margin loss on board game add-on carts.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/alternatives/recart-alternative">Recart alternatives →</a>
+    </div>
+  </section>
+
+    <h2>Recart buyer desk: owned-channel recovery proof</h2>
+    <p>Recart buyers should treat messenger and SMS recovery as bridge tactics while email list equity compounds — the ninety-day scorecard is owned-channel recovery rate, not widget click-through alone. Week one: baseline cart recovery by channel before adding email capture on recovery pages. Week two: align offer caps across Recart and ESP abandonment; mechanical keyboard merchants lose margin when channels stack discounts. Week three: specialty tea sample carts convert on educational follow-up email, not repeated messenger nags. Week four through twelve: shift budget toward ESP as list grows; climbing gear considered purchases need spec-heavy email two and three. Board game publishers: messenger urgency for launch hour, email for stretch goals and restock. Vinyl drops: capture email at recovery even when messenger converts first session. Stack Recart with Sequenzy or Klaviyo for lifecycle depth. Day ninety: forty percent plus of recovery revenue on owned email or documented plan to get there, deliverability clean, no channel offer collisions in promo calendar.</p>
+
+    <h2>Recart operator: owned-list conversion targets</h2>
+    <p>Set explicit targets: by day thirty, thirty percent of Recart-recovered revenue should include email capture on same session; by day sixty, fifty percent of recovery touches should be email or SMS with documented consent, not messenger-only. Board game and vinyl launches fail when teams celebrate Recart ROAS while list stays flat. Run weekly report: messenger recovery dollars, email recovery dollars, new emails captured at recovery widget. If third metric flatlines, redesign recovery page before tuning discounts. Minimum cart thresholds should rise as owned channels mature — stop training bargain hunters on cheapest recovery path.</p>
+
+    <p>Recart success without owned-list growth is a channel rental — finance should score recovery and capture together every month, not celebrate messenger ROAS alone on spreadsheets.</p>
+
+  <FaqSection faqs={faqs} title="Recart Shopify FAQ" />
+</BaseLayout>

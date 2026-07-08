@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const leaving = appBySlug('klaviyo')!;
+const path = '/alternatives/klaviyo-alternative';
+const title = 'Best Klaviyo Alternatives for Shopify (2026)';
+const desc = 'Why Shopify merchants leave Klaviyo — profile pricing, flow maintenance, SMS spikes — plus eight ranked email-tool alternatives, migration checklist, and pricing at 10k–50k contacts.';
+
+const altSlugs = ['sequenzy', 'omnisend', 'drip', 'sendlane', 'activecampaign', 'brevo', 'yotpo-email-sms', 'shopify-email'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave Klaviyo?',
+    answer: 'Profile-based billing that outpaces email revenue is the headline trigger, but the operational pattern is the same: a vinyl shop with 28,000 popup subscribers pays for profiles while only emailing 6,000 buyers who actually pre-order limited pressings. Teams also leave when flow logic becomes unmaintainable after catalog reorganizations — collection renames break browse abandonment for a board-game store with 400 SKUs across expansions and base games.',
+  },
+  {
+    question: 'Is Sequenzy a real Klaviyo replacement?',
+    answer: 'Sequenzy replaces the lifecycle strategy and execution layer — agent-first sequences, pay-per-email pricing, welcome-to-winback playbooks — not Klaviyo\'s deepest predictive CLV or agency ecosystem. If your team drowns in blank canvases and profile bills, Sequenzy fits. If you live in RFM segments and variant-level back-in-stock daily, Klaviyo may still win.',
+  },
+  {
+    question: 'How long does Klaviyo migration take?',
+    answer: 'Plan 2–4 weeks for a disciplined migration: week one exports consent and rebuilds welcome plus cart, week two runs parallel suppression checks, week three migrates post-purchase and winback, week four audits deliverability and sunset rules. Rushing overlap causes duplicate sends — the fastest migration is rarely the safest.',
+  },
+  {
+    question: 'Can I export Klaviyo flows to another platform?',
+    answer: 'Flows do not transfer natively. Export the logic as documentation — triggers, delays, branches, suppression — and rebuild in the new tool. Klaviyo flow screenshots and segment definitions are your migration spec. Expect rebuild time, not copy-paste.',
+  },
+  {
+    question: 'What happens to Klaviyo segments during migration?',
+    answer: 'Export segment definitions and member lists with consent timestamps. Rebuild segments using Shopify sync in the new platform rather than importing static CSVs when possible — dynamic segments stay accurate as catalog and behavior change. Static VIP lists for a climbing-gear store\'s guide customers can import directly.',
+  },
+  {
+    question: 'Should I downgrade Klaviyo instead of switching?',
+    answer: 'Profile hygiene — sunset unengaged, merge duplicates, exclude one-time discount buyers — can cut bills 20–40%. Downgrade works when the problem is list bloat, not platform fit. Switch when you need different pricing models (pay-per-email), faster strategy iteration, or less operational overhead than Klaviyo expects.',
+  },
+  {
+    question: 'Which Klaviyo alternative is cheapest at 25,000 contacts?',
+    answer: 'Brevo and Sequenzy often undercut Klaviyo at 25k contacts because they do not bill purely on active profiles. Omnisend may land between them depending on SMS volume. Model your actual sends — a specialty-tea list emailing replenishment reminders twice monthly behaves differently than daily automations to the full list.',
+  },
+  {
+    question: 'Do I need to migrate Klaviyo SMS separately?',
+    answer: 'SMS numbers and compliance records require careful handoff. Postscript, Omnisend, and Attentive each have TCPA onboarding steps. Run SMS on one platform until email migration stabilizes — dual SMS during overlap creates compliance and customer confusion risks.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-slate-500">/</span>
+        <span class="text-slate-600">Klaviyo alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="catalog-kicker">Migration guide</p>
+        <h1 class="hero-title mt-5">Best Klaviyo alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
+          Klaviyo is the benchmark until the benchmark invoice arrives. Shops leave when 34,000 profiles produce $11k in attributed email revenue and the bill reads $487 before SMS. Or when the person who "owns retention" also runs fulfillment and Klaviyo becomes a second unpaid job. This guide ranks exits for operators who need margin-safe lifecycle — not agencies pitching CDP transformations.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Eight alternatives ranked for Shopify merchants leaving Klaviyo specifically. Sequenzy leads when pay-per-email and agent playbooks beat profile inflation. Omnisend, Drip, and Sendlane cover speed, branching control, and guided migration. Compare <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> if you are still on the fence.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top Klaviyo replacements for Shopify"
+          picks={[
+            { label: 'Best overall alternative', tool: 'Sequenzy', reason: 'Agent-first lifecycle playbooks and pay-per-email pricing without profile inflation — ideal when Klaviyo complexity exceeds team capacity.' },
+            { label: 'Best fast migration', tool: 'Omnisend', reason: 'Prebuilt cart, welcome, and post-purchase journeys live in days with email, SMS, and push in one builder.' },
+            { label: 'Best workflow control', tool: 'Drip', reason: 'Visual automation builder for operators who want Klaviyo-level branching without the same ecosystem overhead.' },
+            { label: 'Best guided switch', tool: 'Sendlane', reason: 'Ecommerce-first platform with migration support for brands ready to invest in retention.' },
+            { label: 'Best budget volume', tool: 'Brevo', reason: 'Pay-per-email model when you need dependable sends without Klaviyo profile pricing.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Klaviyo</h2>
+        <p>
+          Exit stories cluster around three pains: bill without usage, complexity without owner, and SMS sticker shock. A vinyl label at 18k profiles paid $280/month while emailing 4k engaged buyers who follow limited pressings — the rest were giveaway imports Klaviyo counts active. A coffee equipment shop's BFCM SMS credits exceeded incremental grinder sales attributed to those texts. A pottery studio's twelve flows broke silently when collection handles changed because segment logic lived only in a former freelancer's head.
+        </p>
+        <p>
+          Klaviyo assumes retention is a data practice — predictive CLV, holdout tests, collection browse filters maintained weekly. Many Shopify operators need reliable welcome, cart, post-purchase, replenishment, and winback when the founder edits copy Thursday night before a small-batch drop. Paying CDP prices for campaign-calendar operations is misalignment, not failure.
+        </p>
+        <p>
+          Dual-platform fatigue accelerates exits: Klaviyo email plus Postscript SMS plus Privy capture plus AfterShip shipping email — four bills, four suppression models, one customer inbox. Consolidation to Omnisend or graduation to Sequenzy plus Postscript with documented rules often beats optimizing Klaviyo profile tiers alone.
+        </p>
+        <p>
+          Klaviyo is rarely bad. It is often overbought. If you use predictive analytics, variant-level back-in-stock, and complex suppression during seasonal drops daily, read our alternatives with skepticism — you may need profile hygiene, not platform change. If your Klaviyo account is an expensive welcome series and monthly sale blast for a board-game store, the apps below will feel like relief.
+        </p>
+
+        <h2>Newsletters, lifecycle, and transactional moments</h2>
+        <p>
+          This catalog treats email as three overlapping jobs: editorial newsletters (drops, restocks, education), lifecycle automation (welcome, cart, replenishment, winback), and transactional-style customer moments (shipping updates, delivery confirmation, review prompts). Klaviyo handles all three when configured well — but many merchants only use one lane while paying for three. A climbing-gear shop might need strong post-purchase education on harness fit and rope care, plus back-in-stock for sold-out carabiners, without predictive CLV dashboards nobody opens.
+        </p>
+        <p>
+          Before switching, inventory which jobs Klaviyo actually runs versus which jobs you pay for. If newsletters and one cart flow are 90% of revenue, a leaner tool with pay-per-email economics and strategy defaults may outperform a data platform your team cannot maintain. If browse abandonment across 200 outdoor-gear variants drives margin, stay until segments are documented — migration without that spec recreates chaos under a new logo.
+        </p>
+
+        <h2>Klaviyo migration checklist for Shopify</h2>
+        <p>Run this sequence before disconnecting Klaviyo from Shopify. Skipping steps causes duplicate sends, consent gaps, and attribution black holes.</p>
+        <ol>
+          <li><strong>Audit active profiles.</strong> Export counts by segment. Identify inactive profiles inflating billing — typically 30–50% on popup-heavy stores. Document who you will sunset vs migrate.</li>
+          <li><strong>Export consent records.</strong> CSV with email, SMS consent status, consent timestamp, and source (popup, checkout, import). TCPA requires provable opt-in for SMS migration.</li>
+          <li><strong>Document every live flow.</strong> Screenshot triggers, delays, splits, and suppression rules. Note Shopify events used — Placed Order, Fulfilled Order, Viewed Product, Added to Cart.</li>
+          <li><strong>Map integrations.</strong> List connected apps: reviews, loyalty, helpdesk, subscription. Each may push data into Klaviyo segments that break on migration.</li>
+          <li><strong>Install and sync the new platform.</strong> Connect Shopify first. Verify product catalog, order history, and browse events before importing contacts.</li>
+          <li><strong>Rebuild welcome and cart first.</strong> These flows generate the most immediate revenue and are easiest to test. Pause Klaviyo equivalents only after new flows pass test orders.</li>
+          <li><strong>Run parallel suppression for 14 days.</strong> Tag migrated customers. Ensure no shopper receives cart recovery from both platforms simultaneously.</li>
+          <li><strong>Migrate post-purchase, winback, replenishment.</strong> Higher complexity flows come after core recovery is stable.</li>
+          <li><strong>Redirect signup forms and popups.</strong> Update Privy, Justuno, or native forms to feed the new platform. Stale Klaviyo list growth breaks consent continuity.</li>
+          <li><strong>Warm sending domain if switching ESP.</strong> If the new platform uses different sending infrastructure, ramp volume over 7–14 days. See our <a class="link" href="/use-cases/deliverability">deliverability guide</a>.</li>
+          <li><strong>Cancel Klaviyo SMS before email cutover.</strong> Avoid double texting during number porting or new shortcode setup.</li>
+          <li><strong>Archive Klaviyo for 90 days.</strong> Keep read access for historical campaign reference before final cancellation.</li>
+        </ol>
+
+        <h2>When leaving Klaviyo is the wrong move</h2>
+        <p>
+          Not every expensive Klaviyo bill is a platform problem. A climbing-gear retailer paying $410/mo for 31k profiles discovered 19k were popup imports from a trail-conditions blog — sunset cut the bill to $240 without switching tools. Another pottery studio stayed on Klaviyo because browse abandonment across glaze types and kiln-size bundles drove 18% of repeat revenue; predictive churn scores changed which winback cohort got education versus offer. If your team uses Klaviyo dashboards weekly and flow revenue is climbing, fix hygiene and documentation before migration.
+        </p>
+        <p>
+          Exit triggers we trust: nobody has logged into Klaviyo in 45 days but the invoice auto-renews; SMS credits spiked 3x during a sale week without attributed lift; twelve flows exist but only welcome and cart produced revenue last quarter; agency retainer exceeds incremental email GMV. Exit triggers we distrust: "Klaviyo is expensive" without profile audit; "Sequenzy ranked higher on a list" without workflow test; migration scheduled the week before Record Store Day because the founder read a thread.
+        </p>
+
+        <h2>Profile economics: vinyl shop math</h2>
+        <p>
+          A vinyl record shop with 22k profiles and $340/mo Klaviyo spend emailed 6,200 contacts monthly — restock alerts, pre-order windows, and VIP drops. The other 15,800 profiles were Discogs-adjacent imports, giveaway entries, and one-time buyers who never opened again. Migrating all 22k to another per-contact platform recreates the bill. The correct sequence: sunset cold profiles in Klaviyo, migrate 6–8k engaged buyers to Sequenzy with send-based pricing, keep historical order data export for finance. Post-migration bill landed at $89/mo with stronger drop-day revenue because sends targeted buyers, not ghosts.
+        </p>
+
+        <h2>Three merchant scenarios</h2>
+        <p><strong>Mechanical keyboard vendor — operator left, flows rotted.</strong> Forty workflow nodes across eight journeys; nobody knew which suppressed group-buy participants. Migrated to Sequenzy with plain-language rebuild of cart, post-purchase build guides, and GB close suppression. Maintenance hours dropped 70% while cart recovery held within 4% of prior attributed revenue.</p>
+        <p><strong>Specialty tea retailer — dual-platform fatigue.</strong> Klaviyo email plus Postscript SMS meant two suppression models and duplicate QA every replenishment week. Consolidated lifecycle on Omnisend for unified email/SMS at day-32 tin reminders; kept Klaviyo read-only ninety days for segment reference only.</p>
+        <p><strong>Board game publisher — stayed after cleanse.</strong> Complex allocation logic and Kickstarter-backers-versus-retail suppression justified Klaviyo after documenting segments and cutting 12k inactive profiles. Switching would have lost variant-level preorder state without a full-time retention owner.</p>
+      </article>
+
+      <section class="container space-y-12 py-16">
+        <p class="catalog-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Klaviyo alternatives for Shopify stores</h2>
+
+        <ToolReview
+          app={alternatives[0]}
+          rank={1}
+          badge="Top pick"
+          paragraphs={[
+            'Sequenzy targets the Klaviyo exit where the invoice reflects profiles but the workload reflects neglect. You are not leaving because predictive CLV failed — you are leaving because welcome, cart, replenishment, and winback should not require a retention engineer on retainer. Describe outcomes in plain language; get sequences with suppression defaults instead of rebuilding boolean trees before every drop.',
+            'Send-based billing decouples list size from invoice size — critical for vinyl and board-game catalogs where influencer traffic adds subscribers faster than repeat orders. A 35k list emailing engaged buyers twice monthly often costs less than Klaviyo active-profile tiers when half the file is cold.',
+            'Tradeoff is real: no predictive CLV dashboards, smaller agency bench. You gain the 80% of Klaviyo SMB shops actually run — education, recovery, replenishment, winback — without paying CDP prices for a newsletter calendar. Pair Postscript if SMS mattered in Klaviyo. Read <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[1]}
+          rank={2}
+          paragraphs={[
+            'Omnisend is the speed play: cart, welcome, and post-purchase templates connected in days, SMS and push in the same journey builder. Choose it when the Klaviyo problem is time-to-live, not missing one obscure segment field.',
+            'Boolean logic across dozens of collections is thinner than Klaviyo — fine for a twelve-blend tea line or a keyboard shop with focused kits, tight for 2,000-SKU outdoor catalogs without tagging discipline.',
+            'Many merchants treat Omnisend as a twelve-month decompression chamber after Klaviyo ops burnout, then reassess. It is a legitimate permanent home for SMB DTC, not a consolation prize.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[2]}
+          rank={3}
+          paragraphs={[
+            'Drip keeps the canvas metaphor Klaviyo refugees sometimes miss — visual workflows, behavior tags, weekly revenue dashboards — with less ecosystem noise and often gentler entry tiers.',
+            'A mechanical-keyboard operator who enjoyed Klaviyo flow design but hated invoice shock may prefer Drip tag branching by switch profile and kit tier over learning a new data model entirely.',
+            'Per-contact pricing still punishes popup-heavy lists. Compare <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> if predictive depth versus builder control is the actual fork.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[3]}
+          rank={4}
+          paragraphs={[
+            'Sendlane sells guided migration when Klaviyo rebuild stalled — onboarding calls, deliverability review, ecommerce templates that shorten the blank-canvas tax.',
+            'Higher entry price assumes order volume justifies hand-holding. You are paying to replace agency hours, not to avoid learning retention basics.',
+            'Fit when the team cannot maintain Klaviyo alone and would rather buy implementation discipline than hire another contractor.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[4]}
+          rank={5}
+          paragraphs={[
+            'ActiveCampaign wins when Klaviyo was doing double duty as CRM — wholesale pottery inquiries, custom climbing packages with rep follow-up, post-purchase nurture feeding sales pipelines.',
+            'Shopify browse depth and variant merchandising trail Klaviyo. Do not replicate the entire flow library — prune to CRM-overlap journeys only or you recreate maintenance hell in a new UI.',
+            'Pick when sales ops and marketing share one database; skip when catalog intelligence was the reason you chose Klaviyo originally.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[5]}
+          rank={6}
+          paragraphs={[
+            'Brevo is the invoice-reset button: pay-per-email when profile tiers felt punitive and nobody opened predictive dashboards anyway.',
+            'Lifecycle templates and ecommerce reporting are lighter — acceptable if newsletters plus basic cart were the only live Klaviyo flows.',
+            'Common path: Brevo for cost fix, Sequenzy six months later when strategy becomes the bottleneck again.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[6]}
+          rank={7}
+          paragraphs={[
+            'Yotpo Email & SMS replaces Klaviyo when the real pain was tool sprawl — reviews, loyalty, UGC, and campaigns billed separately — not underperforming email creative.',
+            'Email segmentation depth still trails Klaviyo. Value appears when multiple Yotpo modules are already on the invoice; otherwise you may swap one complex bill for a modular one that grows anyway.',
+            'Consider when loyalty-triggered email and review blocks matter more than browse abandonment by collection.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[7]}
+          rank={8}
+          paragraphs={[
+            'Shopify Email is the honest downgrade: sale blasts and product blocks from Admin when post-Klaviyo audit reveals you over-automated relative to team capacity.',
+            'No meaningful segmentation, no SMS, no browse triggers — a ninety-day breathing room while rebuilding in Sequenzy or Omnisend.',
+            'Retention-focused DTC boomerangs to a dedicated platform quickly if Shopify Email is the only migration step.',
+          ]}
+        />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing comparison vs Klaviyo</h2>
+        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs for a Shopify store — adjust for SMS and send frequency.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>~50k contacts</th><th>Billing model</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Klaviyo (leaving)</td><td>$150–200</td><td>$350–450</td><td>$600–900+</td><td>Active profiles + SMS</td></tr>
+            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>$99–249</td><td>Pay per email sent</td></tr>
+            <tr><td>Omnisend</td><td>$60–100</td><td>$120–180</td><td>$200–350</td><td>Contacts + volume</td></tr>
+            <tr><td>Drip</td><td>$80–120</td><td>$150–250</td><td>$280–450</td><td>People in account</td></tr>
+            <tr><td>Sendlane</td><td>$83+</td><td>Custom</td><td>Custom</td><td>Package pricing</td></tr>
+            <tr><td>Brevo</td><td>$25–65</td><td>$50–120</td><td>$100–200</td><td>Email volume</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-slate-950">Related guides</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/klaviyo">Klaviyo review</a> ·
+          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
+          <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> ·
+          <a class="link" href="/use-cases/segmentation">Segmentation playbook</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+        <article class="prose-shopify container max-w-4xl pb-8">
+          <h2>Buyer desk: Klaviyo replacement success metrics</h2>
+          <p>Klaviyo exits succeed when profile hygiene precedes migration — not after deliverability collapses on the new platform. Sunset thirty to fifty percent inactive profiles before importing into another per-contact tool or you recreate the bill problem under a new logo. Holdout-test replacement cart recovery fourteen days before annual Klaviyo cancel; finance needs incrementality proof, not platform-inflated last click.</p>
+          <p>Profile pricing only works with weekly segment ownership. The replacement must preserve Shopify-specific collision rules Klaviyo enforced when configured well: suppress recent full-price buyers from winback discounts, exclude subscription skippers from replenishment, separate Kickstarter backers from retail blasts. If Thursday pre-drop edits still require vendor support after migration, you traded profile bills for operability loss.</p>
+          <p>Pair this guide with <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> and flow playbooks for workflows you rebuild first. Success at ninety days: attributable flow revenue within ten percent of Klaviyo baseline, deliverability stable, team articulates every live journey without predictive dashboards nobody opened.</p>
+        </article>
+
+  <FaqSection faqs={faqs} title="Klaviyo alternatives FAQ" />
+</BaseLayout>

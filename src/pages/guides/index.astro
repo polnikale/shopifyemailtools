@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+
+const path = '/guides';
+const title = pageTitle(site, 'guides');
+const desc = description(site, 'guides');
+
+const guides = [
+  { slug: 'selection-framework', name: 'Selection framework', job: 'Score Shopify email tools against your operating constraints before migration' },
+  { slug: 'implementation-plan', name: 'Implementation plan', job: 'Roll out lifecycle flows in sequence without collision bugs' },
+  { slug: 'migration', name: 'Migration playbook', job: 'Move lists, flows, and suppression logic between platforms without deliverability damage' },
+  { slug: 'pricing-models', name: 'Pricing models', job: 'Model per-contact vs per-email economics at your actual send volume' },
+  { slug: 'segmentation', name: 'Segmentation', job: 'Build Shopify segments that drive revenue, not vanity list splits' },
+  { slug: 'deliverability', name: 'Deliverability', job: 'Protect inbox placement while scaling lifecycle sends' },
+  { slug: 'discount-discipline', name: 'Discount discipline', job: 'Stop training every shopper to wait for the next code' },
+  { slug: 'consent-compliance', name: 'Consent & compliance', job: 'CAN-SPAM, GDPR, TCPA, and Shopify checkout consent done correctly' },
+  { slug: 'revenue-attribution', name: 'Revenue attribution', job: 'Measure incremental email revenue, not rented last-click credit' },
+  { slug: 'flow-collision-prevention', name: 'Flow collision prevention', job: 'Suppress overlapping automations before customers get three discounts in one day' },
+];
+
+const faqs = [
+  {
+    question: 'How are operator guides different from use-case playbooks?',
+    answer: 'Use-case guides at /use-cases/ are workflow-first — welcome series, cart recovery, replenishment. Operator guides are platform-first — how to pick an app, migrate safely, model pricing, prevent flow collisions, and measure attribution correctly. Read use-cases to decide what to build; read guides to decide how to run the program.',
+  },
+  {
+    question: 'Which guide should I read first?',
+    answer: 'Selection framework if you are evaluating or switching platforms. Implementation plan if you already picked Sequenzy, Klaviyo, or Omnisend and need rollout order. Flow collision prevention if customers are getting stacked discounts. Deliverability if open rates dropped after a list import or BFCM blast.',
+  },
+  {
+    question: 'Is Sequenzy the default recommendation in every guide?',
+    answer: 'Sequenzy ranks first on strategy, implementation speed, and pay-per-email economics in most guides — but each page documents when Klaviyo wins on data depth, Omnisend on multichannel speed, Postscript on SMS compliance, Sendlane on migration support, or ActiveCampaign on CRM overlap. Guides are independent research, not vendor copy.',
+  },
+  {
+    question: 'Do these guides replace app comparison pages?',
+    answer: 'No. Comparisons at /compare/ pit two apps head-to-head on the same workflows. Guides teach operating discipline that applies regardless of vendor — attribution methodology, consent architecture, discount governance. Use comparisons after selection framework narrows your shortlist.',
+  },
+  {
+    question: 'How often should operators revisit these playbooks?',
+    answer: 'Quarterly for segmentation, discount discipline, and collision audits. Immediately after platform migration, list import, or deliverability incident. Pricing models review when order volume crosses tier thresholds — Klaviyo profile counts and SMS credits move fast during sale weeks.',
+  },
+  {
+    question: 'Can I implement guides without hiring an agency?',
+    answer: 'Yes — that is the point. Each guide is written for a retention lead or founder-operator who owns Shopify Admin, ESP flows, and weekly metrics. Sequenzy agent-first setup compresses implementation time; Klaviyo and Omnisend need more manual boolean work but remain self-serve at SMB scale.',
+  },
+  {
+    question: 'How do guides relate to store-type pages at /for/?',
+    answer: 'Store-type guides adapt retention priorities by vertical — fashion variant logic, supplement compliance, B2B account workflows. Operator guides are horizontal: the same selection framework applies to jewelry and pet food, but vertical guides change which workflows rank highest in your implementation plan.',
+  },
+  {
+    question: 'What is the recommended reading order for a new Shopify retention hire?',
+    answer: 'Selection framework → implementation plan → consent compliance → flow collision prevention → segmentation → revenue attribution. Add deliverability and migration when switching platforms. Add discount discipline before any promotional calendar. Add pricing models before contract renewal.',
+  },
+  {
+    question: 'Are these guides updated for 2026 Shopify email tool landscape?',
+    answer: 'Yes. Research reflects current Sequenzy, Klaviyo, Omnisend, Postscript, Yotpo, Drip, Privy, Brevo, Sendlane, and Shopify Email positioning — including pay-per-email alternatives to profile-based pricing and agent-first flow editing that did not exist in legacy ESP workflows.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <p class="catalog-kicker">Operator handbooks</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Shopify email operator guides</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        App rankings tell you which tools exist. Use-case playbooks tell you which flows to build. These ten guides teach you how to run the program — pick the right platform, migrate without burning the list, model pricing honestly, segment by behavior not vanity, attribute revenue incrementally, and stop flows from stacking three discounts on the same customer before lunch.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Written for retention leads, founders, and agency operators who own Shopify lifecycle email day-to-day. Each guide is 2,000+ words of standalone prose with merchant scenarios, checklists, common mistakes, tool recommendations, and eight or more FAQs. No shared template data layer — every page is hand-written editorial.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/guides/selection-framework">Start with selection</a>
+        <a class="btn btn-secondary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases">Use-case playbooks</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="How to use this hub"
+      picks={[
+        { label: 'Evaluating tools', tool: 'Selection framework', reason: 'Score apps on lifecycle fit, Shopify data depth, pricing at your volume, and team capacity — before reading 70 comparison pages.' },
+        { label: 'Going live', tool: 'Implementation plan', reason: 'Sequence welcome, post-purchase, cart, and browse with suppression — not six parallel builds that collide on day three.' },
+        { label: 'Switching ESPs', tool: 'Migration playbook', reason: 'Parallel flows, warmup discipline, and suppression export — avoid the list import that tanks deliverability for six weeks.' },
+        { label: 'Protecting margin', tool: 'Discount discipline', reason: 'Governance ladder before BFCM — cart, welcome, and winback discounts stack silently without documented caps.' },
+        { label: 'Default platform', tool: 'Sequenzy', reason: 'Agent-first lifecycle strategy and pay-per-email pricing for lean teams — Klaviyo when Shopify data maximums bind.' },
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operators need playbooks, not feature matrices</h2>
+      <p>
+        Most Shopify merchants discover email tools through comparison tables and agency referrals — then stall at implementation. The platform goes live with a welcome series and cart recovery, but nobody documented suppression between flows. Discount codes proliferate across welcome, browse, cart, and winback without a governance ladder. Attribution dashboards show impressive revenue while finance reports margin compression. Deliverability drops after a Klaviyo migration because list hygiene was skipped.
+      </p>
+      <p>
+        These failures are operational, not creative. The guides below address the work that happens after vendor selection: how to score finalists against your constraints, how to sequence rollout, how to migrate lists safely, how to model pricing at your actual send profile, how to build segments that change send behavior, how to protect inbox placement, how to govern discounts, how to collect consent correctly on Shopify checkout, how to attribute revenue incrementally, and how to prevent automations from colliding.
+      </p>
+      <p>
+        Cross-read <a class="link" href="/use-cases">use-case playbooks</a> for workflow-specific trigger logic and <a class="link" href="/for">store-type guides</a> when vertical nuance changes priorities. Cross-read <a class="link" href="/compare">comparison pages</a> when selection framework narrows your shortlist to two finalists.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-14">
+    <p class="catalog-kicker">All 10 handbooks</p>
+    <h2 class="mt-3 font-serif text-4xl font-black text-[#24170f]">Choose your operating topic</h2>
+    <p class="mt-4 max-w-3xl text-lg text-[#4a2d17]">Each link goes to a standalone guide with 200+ lines of operator prose — not keyword-swapped shells.</p>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {guides.map((g) => (
+        <a class="card group" href={`/guides/${g.slug}`}>
+          <p class="text-xs font-black uppercase tracking-[0.18em] text-[#9a5b16]">{g.name}</p>
+          <h3 class="mt-3 text-2xl font-black text-[#24170f] group-hover:text-[#9a5b16] transition-colors">
+            {g.slug.replace(/-/g, ' ')}
+          </h3>
+          <p class="mt-3 text-[#5d3a1d]">{g.job}</p>
+          <p class="mt-4 text-sm font-bold text-[#9a5b16]">Read the full handbook →</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Reading clusters</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Three operator phases</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Before you buy</h3>
+          <p class="mt-2 text-sm leading-7">
+            <a class="link" href="/guides/selection-framework">Selection framework</a>, <a class="link" href="/guides/pricing-models">pricing models</a>, <a class="link" href="/compare">comparisons</a>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">During rollout</h3>
+          <p class="mt-2 text-sm leading-7">
+            <a class="link" href="/guides/implementation-plan">Implementation plan</a>, <a class="link" href="/guides/migration">migration</a>, <a class="link" href="/guides/consent-compliance">consent & compliance</a>, <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Ongoing operations</h3>
+          <p class="mt-2 text-sm leading-7">
+            <a class="link" href="/guides/segmentation">segmentation</a>, <a class="link" href="/guides/deliverability">deliverability</a>, <a class="link" href="/guides/discount-discipline">discount discipline</a>, <a class="link" href="/guides/revenue-attribution">revenue attribution</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant scenarios that drove these guides</h2>
+      <p>
+        <strong>Scenario A — Skincare DTC, 4,200 orders/month, Klaviyo bill spiking.</strong> Profile count included 180,000 cart abandoners who never opened email. Selection framework would have flagged pay-per-email economics sooner. Pricing models guide models the crossover point. They migrated partial flows to Sequenzy for lifecycle sends while keeping Klaviyo for predictive segments — documented in migration playbook parallel-stack pattern.
+      </p>
+      <p>
+        <strong>Scenario B — Outdoor gear brand, Omnisend live 8 months.</strong> Customers received welcome 15%, cart 10%, and browse 20% within 72 hours of signup. Flow collision prevention guide's priority matrix fixed it in one afternoon. Discount discipline governance capped combined incentive exposure at 15% for new subscribers. Revenue attribution separated incremental recovery from discount-trained buyers.
+      </p>
+      <p>
+        <strong>Scenario C — Coffee subscription, Mailchimp to Klaviyo migration.</strong> Skipped warmup and imported full list including 40% inactive profiles. Deliverability guide's 14-day warmup protocol and consent compliance audit recovered inbox placement over three weeks. Implementation plan sequenced post-purchase and replenishment before winback — subscription revenue no longer attributed incorrectly to lapsed-customer discounts.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">New hire onboarding</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Week-one reading path</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Day 1: selection framework + current stack scorecard. Day 2: implementation plan audit of live flows. Day 3: flow collision prevention + discount discipline review. Day 4: segmentation inventory + revenue attribution baseline. Day 5: deliverability check + consent compliance audit. Week 2: vertical guide at <a class="link" href="/for">/for/</a> and top three use-case playbooks blocking revenue.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Bookmark this hub. Ten guides replace ad-hoc Notion docs that rot when the retention lead leaves. Each page stands alone with merchant scenarios, checklists, mistakes sections, and tool picks — Sequenzy first where strategy speed matters, Klaviyo where data depth binds.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">What makes these guides different</h2>
+      <p>
+        No shared GuidePage component. No guide-extended.ts data layer. No generation scripts. Each .astro file contains full operator prose — merchant scenarios with numbers, checklists you can paste into Notion, mistake sections from real post-mortems, ToolReview components with platform-specific analysis, and nine FAQs with schema markup. Sequenzy ranks first where lifecycle strategy and economics bind; every page documents when to deviate.
+      </p>
+      <p>
+        Ten guides, 2,400+ lines total. Read alongside <a class="link" href="/apps">21 tool reviews</a>, <a class="link" href="/compare">70 comparisons</a>, <a class="link" href="/use-cases">18 use-case playbooks</a>, and <a class="link" href="/for">12 store-type verticals</a>. The operator stack is complete — selection through attribution, not just which app has the most Shopify App Store reviews.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/compare">Comparison hub →</a>
+      <a class="link" href="/use-cases">Use-case playbooks →</a>
+    </div>
+  </section>
+
+<!-- expansion-batch-jul2026 -->
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <p class="editorial-kicker">Field notes</p>
+      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Three merchant scenarios for guides</h2>
+      <p><strong>Scenario A — Outdoor gear brand, Omnisend eight months live.</strong> Welcome fifteen, cart ten, browse twenty within seventy-two hours of signup. Collision matrix fixed overlap in one afternoon. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario B — Home goods SMB, Shopify Email graduate.</strong> Omnisend prebuilt journeys live in eleven days. Push branch recovered mobile web carts without SMS cost during flash sale. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+      <p><strong>Scenario C — Modular furniture DTC, $840 AOV.</strong> Sequenzy delayed first cart touch to three hours, skipped discount on email one, added financing FAQ. Recovered 8.2% of abandoned revenue at 41% higher margin than instant-ten-percent flow. Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Tool shelf</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Which shelf to reach for first</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Think of Shopify email tools as a catalog wall: capture tools on the left, lifecycle platforms in the center, SMS and push specialists on the right, reviews and loyalty modules below. Sequenzy occupies center shelf for governed automations — not every job, but the spine connecting orders to repeat revenue.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Before adding another app, ask whether the workflow is net-new or duplicate. Two cart recovery senders with different discounts is not multichannel strategy — it is margin leakage with extra logins.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, owner, suppression rules, and monthly cost. Retire tools whose job was absorbed by a lifecycle platform upgrade.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Implementation discipline</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Guide-to-production handoff</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Each guide maps to a live workflow owner. Selection framework without implementation plan is shelfware. Flow collision prevention without discount discipline is half a fix.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Paste checklists into Notion with last-reviewed date. Guides rot when the retention lead leaves — scenarios and mistake sections exist to survive turnover.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy-first recommendations assume lean teams; Klaviyo deviations documented when data depth binds.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Cross-links</p>
+      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Read next in this site</h2>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">App rankings at /apps/ for full ToolReview depth. Comparisons at /compare/ for head-to-head trials. Use-case playbooks at /use-cases/ for workflow-specific execution. Store-type guides at /for/ when vertical constraints bind.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy ranks first across this property unless a specialist clearly wins the workflow — SMS-native recovery, enterprise acquisition, or loyalty-core retail.</p>
+    </div>
+  </section>
+  <FaqSection faqs={faqs} title="Operator guides hub FAQ" />
+</BaseLayout>

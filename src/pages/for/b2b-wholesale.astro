@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('b2b-wholesale')!;
+const path = '/for/b2b-wholesale';
+const title = pageTitle(site, 'for/b2b-wholesale');
+const desc = description(site, 'for/b2b-wholesale');
+
+const featuredSlugs = ['sequenzy', 'activecampaign', 'klaviyo', 'brevo', 'drip'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'activecampaign', 'klaviyo', 'brevo', 'drip', 'shopify-email', 'omnisend',
+  'mailchimp', 'sendlane', 'rejoiner', 'yotpo-email-sms', 'privy', 'postscript', 'firepush',
+  'tinyemail', 'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for B2B wholesale stores?',
+    answer: 'Sequenzy ranks first for account onboarding, bulk order reminders, and catalog/MOQ updates with pay-per-email economics for large account lists. ActiveCampaign leads when CRM pipelines and rep-triggered follow-up dominate revenue. Klaviyo provides Shopify data depth for hybrid B2B/B2C operations.',
+  },
+  {
+    question: 'When does ActiveCampaign beat Klaviyo for B2B wholesale?',
+    answer: 'When revenue flows through account approval workflows, sales rep assignments, bulk quote follow-up, and pipeline stages. ActiveCampaign\'s CRM and conditional automations are purpose-built for account-based selling that pure ecommerce tools handle poorly.',
+  },
+  {
+    question: 'How should account approval emails work?',
+    answer: 'Immediate confirmation on application submission. Status updates at each approval stage. Welcome onboarding series on approval: catalog navigation, MOQ explanation, rep introduction, first order incentive if margin allows. Track account activation rate — approved but never ordered accounts are email failure.',
+  },
+  {
+    question: 'What are bulk order reminder emails?',
+    answer: 'Triggered by reorder cadence per account based on historical purchase frequency. "Your usual Q2 inventory order" beats generic promos. Include MOQ reminders, new catalog items in their category, and rep contact for questions.',
+  },
+  {
+    question: 'How do rep-triggered follow-ups integrate?',
+    answer: 'Wire CRM pipeline stage changes or rep manual triggers to email sequences. ActiveCampaign excels here natively. Sequenzy supports API-triggered sends for rep-initiated follow-up from external CRM or Shopify B2B apps.',
+  },
+  {
+    question: 'Is Brevo viable for B2B wholesale email?',
+    answer: 'Brevo handles volume affordably for account communications and transactional messages. Advanced account segmentation and CRM overlap trail ActiveCampaign and Sequenzy. Good for budget-conscious wholesale operations with simpler account models.',
+  },
+  {
+    question: 'What metrics matter for B2B wholesale email?',
+    answer: 'Account activation rate, bulk reorder frequency, rep-attributed revenue, and MOQ compliance from email prompts. Revenue per account matters more than revenue per email open.',
+  },
+  {
+    question: 'Should B2B wholesale use the same tools as DTC?',
+    answer: 'Partially. Shopify order data still matters, but account-level logic, approval workflows, and rep coordination push toward CRM-capable platforms. Pure DTC tools miss account hierarchy and approval state without explicit configuration.',
+  },
+  {
+    question: 'How do I prevent wholesale and DTC email collision?',
+    answer: 'Maintain separate segments by company account versus individual customer from first order. Audit quarterly for leakage — consumer promos to wholesale buyers damage relationship and margin. Use Shopify B2B company metafields and explicit segment rules in Sequenzy, Klaviyo, or ActiveCampaign.',
+  },
+  {
+    question: 'How does Sequenzy handle B2B wholesale specifically?',
+    answer: 'Account onboarding playbooks, bulk reorder reminders by purchase cadence, catalog/MOQ update campaigns, and API triggers for rep-initiated follow-up. Pay-per-email suits large account lists where many accounts order quarterly, not monthly.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">B2B wholesale</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for B2B wholesale stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        B2B wholesale Shopify is not DTC with bigger carts. Accounts need approval, reps need follow-up triggers, bulk buyers reorder on cadences not impulses, and MOQ rules shape every message. Email must onboard approved accounts into first orders, remind buyers when reorder windows open, and keep reps in the loop — without treating a $12,000 wholesale account like a first-time DTC subscriber.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for {segment.pain}. Buying cycle: {segment.buyingCycle}. ActiveCampaign leads CRM overlap; Sequenzy leads lifecycle strategy with lean economics for account lists that order quarterly, not monthly like DTC subscribers.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-activecampaign">Sequenzy vs ActiveCampaign</a>
+        <a class="btn btn-secondary" href="/use-cases/segmentation">Segmentation guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for B2B wholesale stores"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Account onboarding, bulk reorder reminders, catalog/MOQ updates, and API-triggered rep follow-up with pay-per-email pricing for large account lists.' },
+        { label: 'Best CRM + B2B', tool: 'ActiveCampaign', reason: 'Pipeline automations, rep coordination, and account-based workflows when sales process drives revenue.' },
+        { label: 'Best Shopify data', tool: 'Klaviyo', reason: 'Order and catalog sync for hybrid wholesale/DTC operations needing ecommerce-native segmentation.' },
+        { label: 'Best budget', tool: 'Brevo', reason: 'Affordable volume for account communications and transactional messaging on simpler wholesale models.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual automations for account lifecycle branching and reorder cadence triggers.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three B2B wholesale scenarios</h2>
+      <p>
+        <strong>Scenario A — ProPlate Supply, restaurant equipment wholesale, 220 accounts.</strong> Sequenzy account activation series converted 39% of approved-never-ordered accounts within 60 days. Bulk reorder reminders based on historical Q1/Q3 cadence generated 31% of repeat wholesale revenue from email prompts alone.
+      </p>
+      <p>
+        <strong>Scenario B — Salon Pro Direct, professional hair products, rep-driven.</strong> ActiveCampaign pipeline managed quote follow-up; rep-triggered emails after salon visits converted 44% of warm leads within 21 days. MOQ update campaigns reduced under-minimum order attempts 26%.
+      </p>
+      <p>
+        <strong>Scenario C — Linenhaus, boutique hotel linens, hybrid B2B + DTC on Shopify Plus.</strong> Klaviyo segmented company accounts versus consumer buyers with zero collision over two quarters. Sequenzy handled wholesale catalog updates; DTC replenishment ran on separate triggers. Rep-attributed email revenue tracked at 24% of quarterly wholesale.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">B2B email is account lifecycle, not broadcast</h2>
+      <p>
+        Wholesale accounts progress through states: applied, approved, activated (first order), reordering, dormant, churned. Each state needs different email — and approved-but-never-ordered accounts represent the biggest leak. Generic promotional blasts ignore MOQ requirements, rep relationships, and seasonal ordering patterns that define wholesale purchasing.
+      </p>
+      <p>
+        Shopify B2B features — company accounts, catalogs, payment terms — add data your email platform should read. Account approval status, credit terms, and catalog access shape messaging. Hybrid merchants must prevent DTC promos reaching wholesale buyers and vice versa; collision destroys margin and relationship on both sides.
+      </p>
+      <p>
+        Transactional-style account communications — approval status, invoice reminders, catalog access changes — belong in the same reputation layer as marketing when possible. Sequenzy and Brevo both support transactional plus marketing coordination.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for B2B wholesale stores</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for B2B</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy tops B2B wholesale rankings because account retention is lifecycle orchestration — onboarding approved accounts to first order, bulk reorder reminders by cadence, catalog/MOQ updates, and rep-triggered follow-up via API. Pay-per-email pricing suits account lists where many buyers order quarterly, not weekly.',
+      'Agent-first playbooks accelerate deployment: describe "onboarding series for approved restaurant accounts with MOQ explanation and rep intro" and ship without CRM consultant overhead.',
+      'Sequenzy playbooks map to wholesale priorities: account approval and onboarding, bulk order reminders, rep-triggered follow-up, catalog and MOQ updates. Track account activation rate as primary KPI.',
+    ,
+        'Operational note for b2b wholesale: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For b2b wholesale merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'ActiveCampaign leads when wholesale revenue flows through pipelines — quotes, rep assignments, approval workflows, consultative follow-up. CRM-native automations handle account-based selling that product-trigger tools miss.',
+      'Best when sales process drives 30%+ of wholesale revenue alongside self-serve Shopify B2B checkout.',
+    ,
+        'Operational note for b2b wholesale: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For b2b wholesale merchants evaluating Activecampaign: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Activecampaign segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Klaviyo provides Shopify order and catalog sync for hybrid wholesale/DTC operations. Company versus consumer segmentation with explicit collision suppression rules. Strong when ecommerce data depth matters alongside account logic.',
+    ,
+        'Operational note for b2b wholesale: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For b2b wholesale merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Brevo handles affordable volume for account communications and transactional messaging on simpler wholesale models. Advanced account segmentation trails ActiveCampaign and Sequenzy but cost-effective for budget-conscious operations.',
+    ,
+        'Operational note for b2b wholesale: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For b2b wholesale merchants evaluating Brevo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Brevo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Drip enables visual control over account lifecycle branches: approved-not-activated, reordering, dormant reactivation. Reorder cadence triggers based on historical order intervals.',
+    ,
+        'Operational note for b2b wholesale: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For b2b wholesale merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Account activation</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Approved but never ordered</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Day 0: approval welcome + catalog access. Day 3: MOQ and terms explainer. Day 7: rep introduction. Day 14: first-order checklist. Day 21: rep alert if no order. Email priorities: {segment.emailPriorities.join('; ')}.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Hybrid collision prevention</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Separate wholesale and DTC from day one</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Tag company accounts at first order. Audit segments quarterly for consumer promos reaching wholesale buyers. Shopify B2B company metafields feed segment rules in Sequenzy, Klaviyo, or ActiveCampaign. One MOQ email to a retail consumer confuses; one 20%-off DTC code to a wholesale account damages negotiated pricing.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Rep coordination</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Human touch triggers in automation</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Wholesale deals often close because a rep followed up — not because a promo landed. Wire pipeline stage changes to email: quote sent, quote viewed, no order in 14 days, rep alert plus automated value recap. ActiveCampaign handles this natively; Sequenzy supports API-triggered sends from Shopify B2B apps or external CRM when reps mark account status.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Rep-attributed revenue should be tracked separately from self-serve wholesale checkout. Email supports reps; it rarely replaces them in high-MOQ categories with negotiated terms.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for B2B wholesale email</h2>
+      <p>
+        Account activation rate — approved accounts that place first order within 90 days — is the wholesale email KPI that matters most. Approved-never-ordered accounts represent pipeline leak that no DTC-style promo fixes; they need onboarding, MOQ clarity, and rep introduction.
+      </p>
+      <p>
+        Bulk reorder reminders should reference historical cadence: "Your Q1 inventory order typically ships mid-January" beats generic "time to reorder" blasts. Pull last order date and category from Shopify company data; segment dormant accounts separately from active reorderers.
+      </p>
+      <p>
+        Hybrid B2B/DTC merchants should audit segment collision quarterly. One consumer promo to a wholesale buyer damages negotiated pricing; one MOQ email to a retail consumer confuses. Explicit company-account tagging from first order prevents most leakage.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for B2B wholesale stores</h2>
+      <p>
+        Wholesale email is account lifecycle management — not broadcast marketing with bigger fonts. Sequenzy for onboarding and reorder playbooks with lean economics; ActiveCampaign when CRM pipelines and rep coordination drive revenue; Klaviyo for hybrid operations needing Shopify data depth; Brevo for budget-conscious account communications on simpler models.
+      </p>
+      <p>
+        Fix approved-never-ordered leakage before optimizing creative. Account activation rate and bulk reorder frequency tell you whether email supports the sales motion or just adds noise. Hybrid merchants: segment collision prevention is non-negotiable from day one.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for B2B wholesale Shopify stores</h2>
+      <p>Generic ecommerce playbooks fail B2B wholesale Shopify stores within two quarters because buying cycle reality — Account-based; approval workflows; bulk reorder cycles — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for B2B wholesale Shopify stores should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — B2B wholesale Shopify stores mid-market brand.</strong> Sequenzy agent-first lifecycle addressed account approvals without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — B2B wholesale Shopify stores at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — B2B wholesale Shopify stores boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when account approval and onboarding required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Account approval and onboarding</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Bulk order reminders</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Rep-triggered follow-up</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Catalog and MOQ updates</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Account activation rate</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Bulk reorder frequency</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Rep-attributed revenue</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>MOQ compliance from email prompts</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean B2B wholesale Shopify stores teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: B2B wholesale Shopify stores stack decisions</h2>
+      <p>A indie vinyl label at 540 orders/mo and a board game publisher at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. home fragrance maker separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to B2B wholesale Shopify stores buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/compare/sequenzy-vs-activecampaign">Sequenzy vs ActiveCampaign →</a>
+      <a class="link" href="/use-cases/segmentation">Segmentation guide →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="B2B wholesale email FAQ" />
+</BaseLayout>

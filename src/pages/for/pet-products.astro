@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('pet-products')!;
+const path = '/for/pet-products';
+const title = pageTitle(site, 'for/pet-products');
+const desc = description(site, 'for/pet-products');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms', 'shopify-email', 'privy',
+  'brevo', 'postscript', 'mailchimp', 'sendlane', 'rejoiner', 'firepush', 'tinyemail',
+  'aftership-email', 'marsello', 'activecampaign',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for pet product stores?',
+    answer: 'Sequenzy ranks first for pet life-stage segmentation, consumption-based reorder math, and new pet onboarding with pay-per-email economics. Klaviyo excels at scale with subscription sync and product-level segmentation. Omnisend fits fast multichannel setup for growing pet DTC brands.',
+  },
+  {
+    question: 'How should artisan dog gear brands segment email?',
+    answer: 'Capture dog size, breed category, and gear type at purchase — harness buyers differ from leash-only buyers. Life-stage matters for fit: puppy gear sizes change fast. Post-purchase flows should confirm sizing and break-in guidance before cross-selling complementary artisan pieces.',
+  },
+  {
+    question: 'How does reorder timing work for pet food versus gear?',
+    answer: 'Food and treats follow consumption math by bag size and pet weight. Harnesses and beds follow replacement cycles measured in years, not weeks. Never apply food replenishment timing to durable goods — separate SKU categories need separate automation logic.',
+  },
+  {
+    question: 'What is new pet onboarding email?',
+    answer: '7-touch series for first-time pet product buyers: product usage, fit adjustment, care instructions, complementary product introductions staggered over 30 days. Reduces churn from confused new pet parents and builds brand relationship before Chewy-style convenience comparison.',
+  },
+  {
+    question: 'Should pet brands use breed-specific recommendations?',
+    answer: 'Yes when data exists. Large breed owners need different harness sizing and treat portions than toy breeds. Quiz capture via Privy feeding custom properties into your email platform enables recommendations that generic "top sellers" blocks cannot match.',
+  },
+  {
+    question: 'What metrics matter for pet email programs?',
+    answer: 'Reorder rate by pet segment, life-stage transition revenue, subscription retention, and education-to-purchase conversion. LTV by pet life-stage cohort reveals whether puppy acquisitions become adult loyalists.',
+  },
+  {
+    question: 'Does Yotpo make sense for pet brands?',
+    answer: 'When UGC — dogs wearing harnesses, cats with enrichment toys — and loyalty points drive retention. Yotpo consolidates reviews, loyalty, and email. If email is standalone need, Sequenzy or Klaviyo deliver more focused lifecycle depth.',
+  },
+  {
+    question: 'How do pet brands avoid over-emailing?',
+    answer: 'Separate education, replenishment, and promo frequency caps. Pet parents unsubscribe fast from daily promos. One replenishment reminder, one education email, one promo per week maximum for most segments.',
+  },
+  {
+    question: 'How do raw feeding and meal prep brands differ in email?',
+    answer: 'Perishability and delivery windows dominate messaging. Post-purchase must cover storage, thawing, and portion guidance. Replenishment timing follows feeding plan size and pet count — not generic monthly intervals. Shipping cutoff emails are transactional necessities, not marketing extras.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">Pet products</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for pet product stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Pet product retention is lifecycle math tied to another living creature. Food bags empty on predictable schedules that change as pets grow. New puppy parents need onboarding; senior pet owners need joint support education. Email that treats every customer identically loses to big-box convenience — unless your segmentation respects pet life stage, size, and consumption rate.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for {segment.pain}. Buying cycle: {segment.buyingCycle}. Tools evaluated on life-stage logic, reorder accuracy, and education-to-purchase conversion — covering newsletters, lifecycle automation, and transactional delivery updates.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment guide</a>
+        <a class="btn btn-secondary" href="/use-cases/welcome-series">Welcome series</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for pet product stores"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Pet life-stage playbooks, consumption-based reorder, breed/size segmentation, and new pet onboarding with pay-per-email economics.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Product-level segmentation and subscription sync for pet brands with large SKU catalogs and high volume.' },
+        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Fast-setup email, SMS, and push for growing pet DTC needing reliable core automations.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual branching for life-stage transitions and consumption-based reorder paths.' },
+        { label: 'Best reviews + loyalty', tool: 'Yotpo Email & SMS', reason: 'UGC and loyalty integration when community photos and rewards drive pet product retention.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three pet merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Trailhound Supply, artisan dog harnesses and leashes.</strong> Breed-size quiz at checkout fed Sequenzy segments; harness fit guide in post-purchase flow cut exchange requests 24%. Cross-sell to matching leash and treat pouch at day 21 post-delivery drove 18% attach rate.
+      </p>
+      <p>
+        <strong>Scenario B — Primal Bowl Co, raw feeding meal prep, subscription 61%.</strong> Perishability messaging in post-purchase and replenishment flows reduced spoilage complaints 35%. Klaviyo subscription suppression prevented reorder promos hitting active weekly delivery customers.
+      </p>
+      <p>
+        <strong>Scenario C — Whisker Workshop, cat enrichment toys, 520 orders/month.</strong> Omnisend new-cat-parent onboarding series over 30 days lifted second purchase rate 19%. Yotpo UGC requests after delivery built product photos for seasonal collection emails.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pet email must know the pet, not just the owner</h2>
+      <p>
+        Capture pet data early: species, breed size, age, dietary needs. A Great Dane puppy and a senior cat should never receive the same product recommendations. Life-stage transitions — puppy to adult, adult to senior — are revenue moments when needs change and loyalty is tested.
+      </p>
+      <p>
+        Consumption math drives replenishment for consumables; replacement cycles drive durable goods. Treats, food, and supplements follow days-to-empty calculations. Harnesses, beds, and carriers follow wear-and-upgrade logic measured in years. Conflating the two produces mistimed emails that erode trust.
+      </p>
+      <p>
+        Independent pet brands compete on relationship and expertise, not logistics alone. Email moat is knowing pet life stage, perfect reorder timing, and breed-relevant recommendations — experiences big retailers automate at scale but without your brand voice.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for pet stores</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for pet</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy tops pet rankings because retention requires pet lifecycle stage and consumption rate — not just the owner\'s email. New pet onboarding, life-stage transition triggers, breed/size recommendations, and consumption-based reorder deploy through agent-first playbooks without weeks of flow building.',
+      'Pay-per-email pricing helps pet brands whose lists grow through breed quizzes and new-pet content before reorder behavior establishes.',
+      'Sequenzy playbooks map to pet priorities: life-stage segmentation, reorder by consumption math, breed/size recommendations, new pet onboarding. Revenue attribution by pet segment shows whether puppy acquisitions convert to adult loyalists.',
+    ,
+        'Operational note for pet products: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For pet products merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo scales for pet brands with extensive SKU catalogs across food, treats, gear, and accessories. Product-level replenishment, subscription integration, and predictive CLV identify high-value pet parents worth VIP treatment.',
+      'Best at 700+ monthly orders with subscription and replenishment revenue share.',
+    ,
+        'Operational note for pet products: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For pet products merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend provides fast multichannel for pet DTC: welcome, cart, post-purchase, replenishment, SMS reorder reminders in one builder. Strong under ~600 monthly orders.',
+    ,
+        'Operational note for pet products: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For pet products merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Drip enables visual control over pet lifecycle branches: puppy onboarding, adult replenishment, senior health education — each with distinct product triggers. Tags like "pet-puppy," "gear-large-breed," "subscriber-active" drive logic.',
+    ,
+        'Operational note for pet products: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For pet products merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Yotpo fits pet brands where UGC and loyalty drive repeat purchase. Review requests after delivery build social proof for gear and toy categories where visual appeal matters.',
+    ,
+        'Operational note for pet products: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For pet products merchants evaluating Yotpo Email Sms: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Yotpo Email Sms segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Life-stage transitions</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Puppy to adult to senior</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Trigger transition emails based on pet birth date captured at signup. Puppy→adult gear and food switches at breed-appropriate ages. Each transition is a cross-sell moment with education-first messaging. Email priorities: {segment.emailPriorities.join('; ')}.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Reorder math</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Build the pet consumption spreadsheet</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Document every consumable SKU: package size, recommended daily serving by pet weight band, days-to-empty per band. Treats and supplements use different curves than primary food. Update quarterly from actual reorder intervals in Shopify data. Without the spreadsheet, pet owners notice immediately when reorder email arrives while half a bag remains.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">8-week rollout</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Implementation plan for pet product email</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Week 1: post-purchase survey capturing species, breed size, birth date. Week 2: consumption-based reorder for hero consumable SKU. Week 3: new pet onboarding series. Week 4: life-stage transition triggers. Week 5: subscription suppression audit. Week 6: breed-specific recommendation blocks. Week 7: VIP segment for 3+ order customers. Week 8: review metrics and adjust reorder windows from actual Shopify data.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for pet product email</h2>
+      <p>
+        Pet metadata quality determines ROI. If post-purchase survey completion is below 40%, fix capture before optimizing reorder timing — incentivize with monthly treat giveaway entry, not discount on current order. Store birth date as date field, not string, so life-stage automations fire reliably.
+      </p>
+      <p>
+        Compete on relationship and timing, not logistics alone. Perfect reorder email to the right life stage feels like care; generic promo feels like noise. Artisan gear brands should double down on fit guides and breed-relevant recommendations — experiences big retailers automate without your brand voice.
+      </p>
+      <p>
+        Cap promotional frequency at two sends per month for most segments. Pet parents tolerate education and replenishment; they reject daily promos. Use VIP early access instead of site-wide codes that train comparison shopping against big-box autoship.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for pet product stores</h2>
+      <p>
+        Pet email ROI depends on metadata quality — species, size, birth date — before creative optimization. Sequenzy for life-stage and replenishment playbooks; Klaviyo at scale; Omnisend for fast multichannel start. Compete on relationship and timing, not logistics alone.
+      </p>
+      <p>
+        Separate consumable reorder logic from durable goods replacement cycles. Subscription suppression on replenishment flows is non-negotiable — one mistimed food reorder email to an active subscriber damages trust faster than in most categories. Raw feeding and artisan gear brands should over-index on education and fit guidance rather than competing on price with big-box autoship programs.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Audit checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Monthly pet email health check</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Pet data completeness above 40%? Life-stage triggers firing on schedule? Reorder math reflects bag size and pet weight? New pet onboarding reaching day 30 with second purchase tracked? Frequency caps respected — no segment over 4 emails/week? Subscription suppression active on all replenishment flows? Fix metadata capture before optimizing creative; pet email without species, size, and birth date is guessing.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for pet product stores</h2>
+      <p>Generic ecommerce playbooks fail pet product stores within two quarters because buying cycle reality — 2–8 week reorder by pet size and product type; life-stage transitions — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for pet product stores should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — pet product stores mid-market brand.</strong> Sequenzy agent-first lifecycle addressed pet lifecycle without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — pet product stores at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — pet product stores boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when pet life-stage segmentation required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Pet life-stage segmentation</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Reorder by consumption math</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Breed/size-specific recommendations</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>New pet onboarding series</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Reorder rate by pet segment</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Life-stage transition revenue</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription retention</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Education-to-purchase conversion</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean pet product stores teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: pet product stores stack decisions</h2>
+      <p>A ceramic studio at 540 orders/mo and a clean beauty startup at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. mechanical keyboard atelier separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to pet product stores buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/use-cases/welcome-series">Welcome series →</a>
+      <a class="link" href="/for/food-and-beverage">Food & beverage →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Pet product email FAQ" />
+</BaseLayout>

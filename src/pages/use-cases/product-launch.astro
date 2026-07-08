@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('product-launch')!;
+const path = '/use-cases/product-launch';
+const title = pageTitle(site, 'use-cases/product-launch');
+const desc = description(site, 'use-cases/product-launch');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'privy', 'omnisend', 'postscript'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'privy', 'omnisend', 'postscript', 'drip',
+  'firepush', 'yotpo-email-sms', 'shopify-email', 'attentive',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What Shopify email tool is best for product launch campaigns?',
+    answer: 'Sequenzy ranks first for launch playbooks — VIP early access, waitlist fulfillment order, inventory-aware sends, and post-launch exclusion rules. Klaviyo wins at scale with segment boolean logic, A/B testing on launch creative, and predictive buyer scoring. Privy leads waitlist capture when paired with Sequenzy or Klaviyo execution.',
+  },
+  {
+    question: 'How should VIP early access work for a product launch?',
+    answer: 'VIP segment receives 24-hour early access before general list — full-price, no stacking with other promos. Define VIP by order count or LTV, not discount history. Board game publishers and vinyl labels use early access as recognition, not coupon depth.',
+  },
+  {
+    question: 'When should waitlist subscribers receive launch email?',
+    answer: 'First, in signup order, when inventory confirmed — not when product page goes live for general public. Waitlist fulfillment before broad blast prevents "sold out before my email arrived" support tickets on limited runs.',
+  },
+  {
+    question: 'How do launch emails handle inventory sync?',
+    answer: 'Check variant inventory at send time. Suppress sold-out SKUs from dynamic blocks; route to back-in-stock for remaining waitlist. Mechanical keyboard group buys and first-print board games fail publicly when launch email shows available but checkout says OOS.',
+  },
+  {
+    question: 'Should recent purchasers receive launch emails?',
+    answer: 'Exclude customers who bought in last 14–30 days unless launch is direct upgrade or expansion — second harness model for climbing gear, expansion for board games. Recent full-price buyers receiving launch discount feel punished for buying early.',
+  },
+  {
+    question: 'How do launch campaigns coordinate email, SMS, and push?',
+    answer: 'Email carries story and product detail; SMS for VIP early access hour and last-chance when inventory low; push optional for app subscribers. Shared suppression prevents triple-touch same hour. Postscript and Omnisend coordinate SMS; document channel priority.',
+  },
+  {
+    question: 'What launch metrics matter beyond day-one revenue?',
+    answer: 'Launch sell-through in 48 hours, waitlist conversion rate, VIP versus general revenue split, inventory accuracy in emails, and unsubscribe spike. High day-one with 5% unsubscribes damages next launch deliverability.',
+  },
+  {
+    question: 'Can Shopify Email run a full launch sequence?',
+    answer: 'Shopify Email handles one-off announcement blasts, not VIP branching, waitlist ordering, inventory-aware automation, or multi-touch launch nurture. Limited-run catalogs graduate quickly to lifecycle platforms.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="catalog-kicker mt-6">Product launch</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for product launch campaigns</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Product launch email coordinates waitlists, VIP early access, inventory truth, and post-drop nurture — not a single "we're live" blast to everyone. A board game publisher dropping a Kickstarter fulfillment run needs waitlist-first sends and variant accuracy; a mechanical keyboard shop running a group buy needs backorder clarity in transactional and marketing layers. The right Shopify email tool sequences access tiers and stops selling when inventory dies.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks email tools for {uc.job}. We evaluated waitlist ordering, VIP timing, inventory sync, and collision with cart and welcome flows — not which platform has the flashiest launch template.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/back-in-stock">Back in stock</a>
+        <a class="btn btn-secondary" href="/use-cases/vip-segments">VIP segments</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for product launch"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Launch playbooks with VIP early access, waitlist ordering, inventory checks, and post-launch exclusion baked in.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Complex segment logic, launch A/B testing, and revenue split reporting by access tier.' },
+        { label: 'Best waitlist capture', tool: 'Privy', reason: 'Waitlist popups passing signup order and source into launch execution platform.' },
+        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Email + SMS launch coordination with shared suppression in one builder.' },
+        { label: 'Best SMS launch', tool: 'Postscript', reason: 'VIP hour alert and last-chance SMS when limited inventory drops sell through fast.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three product launch merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Board game publisher, first-print run 2,000 units.</strong> Sequenzy launch: VIP backers email 24 hours early; waitlist fulfilled in signup order at go-live; general list 6 hours later. Inventory check suppressed standard edition email when allocation hit 98%. Waitlist conversion 67%; zero "sold out before email" tickets versus prior launch chaos.
+      </p>
+      <p>
+        <strong>Scenario B — Mechanical keyboard group buy, 6-week fulfillment window.</strong> Klaviyo launch with Privy waitlist capture. Transactional order confirmation set backorder expectation; marketing launch to waitlist emphasized build timeline. Postscript SMS to VIP at early access hour. Cart recovery suppressed during launch window to avoid discount collision with launch pricing.
+      </p>
+      <p>
+        <strong>Scenario C — Vinyl label, limited 500-copy pressing.</strong> Omnisend VIP segment (2+ orders) received 12-hour early access full-price. General list at public drop. Sold out in 4 hours — back-in-stock waitlist auto-enrolled for cancelled checkout attempts. Launch email contributed 81% of day-one revenue; newsletter subscribers who missed drop entered browse abandonment with proof blocks, not discount.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="catalog-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Product launch operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div>
+          <h3 class="font-black text-[#24170f]">Trigger</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.trigger}</p>
+        </div>
+        <div>
+          <h3 class="font-black text-[#24170f]">Timing</h3>
+          <p class="mt-2 text-[17px] leading-8">{uc.timing}</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}
+        </ul>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">
+          {uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
+        Common mistakes: {uc.mistakes.join('; ')}.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify email tools for product launch</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th>
+            <th class="py-3 pr-4">Launch fit</th>
+            <th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th>
+            <th class="py-3 pr-4">Automation</th>
+            <th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="catalog-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for product launch campaigns</h2>
+
+    <ToolReview
+      app={featuredApps[0]}
+      rank={1}
+      badge="Editor's choice"
+      paragraphs={[
+        'Sequenzy leads product launch because limited-run chaos is operational, not creative. Teams blast entire list at once — waitlist buyers see sold-out pages, VIPs get same timing as bargain hunters, inventory blocks show OOS variants. Sequenzy launch playbooks encode tier timing, waitlist order, and inventory gates.',
+        'Launch week volume spikes email sends. Pay-per-email pricing avoids per-contact bill shock when waitlist inflates profile counts pre-drop. Sequenzy unlimited contacts support aggressive segmentation without deleting waitlist profiles post-launch.',
+        'Agent-first launch edits: "VIP 24h early, waitlist by signup order at noon, general list 6h later, suppress at 98% inventory." Collision rules with cart and welcome documented — launch discount must not stack with cart recovery.',
+        'Pair Sequenzy with Privy waitlist capture and Postscript VIP SMS for full launch stack.',
+      ,
+        'Operational note for product launch: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Sequenzy implementation for product launch should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on product launch flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[1]}
+      rank={2}
+      paragraphs={[
+        'Klaviyo launch campaigns scale segment complexity — backers versus general, genre preference for vinyl, switch interest for keyboards. Flow A/B testing on subject and hero product for launch email optimizes sell-through without deeper discount.',
+        'Dynamic product blocks with inventory filters prevent OOS embarrassment at send time. Revenue reporting by launch tier proves VIP early access ROI to finance.',
+        'Profile pricing spikes during launch list growth — sunset non-converting waitlist profiles 90 days post-launch if they never purchased.',
+        'Best when launch calendar includes multiple drops per quarter with shared exclusion logic.',
+      ,
+        'Operational note for product launch: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Klaviyo implementation for product launch should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on product launch flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[2]}
+      rank={3}
+      paragraphs={[
+        'Privy is waitlist capture infrastructure for launches — signup order, source page, and consent metadata pass to Sequenzy or Klaviyo for fulfillment sequencing.',
+        'Pre-launch teaser popups grow waitlist while Privy passes position number for ordered fulfillment. Critical for board games and vinyl where fairness matters to community.',
+        'Privy alone cannot execute tiered launch — pair with lifecycle executor. Spin-to-win and waitlist should not share confusing offer logic.',
+        'If launch bottleneck is waitlist size not send logic, optimize Privy first.',
+      ,
+        'Operational note for product launch: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Privy implementation for product launch should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on product launch flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[3]}
+      rank={4}
+      paragraphs={[
+        'Omnisend coordinates email and SMS launch in one builder — VIP SMS ping at early access, email carries story. Shared suppression prevents duplicate touches.',
+        'Prebuilt launch templates go live fast for SMB single-SKU drops. Acceptable when tier logic is VIP plus general, not six waitlist segments.',
+        'Push notification optional for mobile waitlist — outdoor gear flash drops use sparingly.',
+        'Graduate to Sequenzy or Klaviyo when waitlist ordering and inventory gates exceed template capacity.',
+      ,
+        'Operational note for product launch: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Omnisend implementation for product launch should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on product launch flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+
+    <ToolReview
+      app={featuredApps[4]}
+      rank={5}
+      paragraphs={[
+        'Postscript SMS for launch hour alert — VIP segment gets 15-minute heads-up before public drop. Highest conversion touch for mobile-first collectors when inventory is truly limited.',
+        'Two-way SMS handles "is this in stock" flood during launch — reduces support load. Compliance and quiet hours matter during midnight drops.',
+        'Economics: SMS cost justified on $80+ board game or $45 vinyl, not $12 accessory launch.',
+        'Pair with Sequenzy or Klaviyo email tiers — SMS is punctuation, not the whole launch narrative.',
+      ,
+        'Operational note for product launch: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'Postscript implementation for product launch should document trigger, timing, and exclusions in merchant wiki — not only inside platform UI. Agency and contractor turnover resets programs to zero when logic lives only in flow canvas.',
+        'Measure margin after discount on product launch flows, not recovery or open rate alone. Finance weekly review of flow-level contribution margin catches discount treadmills before they become cultural habit.',
+      ]}
+    />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Launch calendar</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Teaser, access, close</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Week minus one: teaser to newsletter with product story, no buy link. VIP early access minus 24 hours. Public drop at documented time with timezone clarity. Last chance plus 48 hours only if inventory remains — never fake scarcity. Post-sellout: waitlist to back-in-stock, browse abandonment for missed buyers with proof not panic discount.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Transactional alignment</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Launch marketing versus order confirmation</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Group buys and pre-orders need honest fulfillment dates in transactional email — separate from hype marketing. Mechanical keyboard buyers tolerate wait when timeline is clear in order confirmation; they churn when marketing promised "ships now." One source of truth from Shopify fulfillment status synced to email platform.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Post-launch nurture</h2>
+      <p>
+        Buyers who purchased launch SKU exit launch promos and enter post-purchase education. Missed buyers enter browse or back-in-stock paths — not repeated launch blast daily. Board game publishers follow launch with rules tutorial email; vinyl labels with pressing quality care. Launch is day zero of lifecycle, not a one-off campaign.
+      </p>
+      <p>
+        Failed launch — inventory cancelled or delayed — needs honest email sequence: waitlist apology, revised timeline, opt-down to notify-only. Mechanical keyboard group buys with factory delays lose community trust on silence. Transactional update separate from marketing hype; one voice, factual tone. Privy waitlist metadata preserves order for reprioritized fulfillment when units finally land.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Press and list coordination</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Influencer and email timing</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Influencer unboxing hitting before VIP email trains list to ignore your channel. Align embargo: VIP email first, influencer posts plus public drop second. Board game preview copies and vinyl review channels need calendar lock — email is not afterthought to YouTube premiere unless intentionally building external hype first.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why product launch campaigns fails on generic defaults</h2>
+      <p>Shopify merchants treat product launch campaigns as template toggle — enable flow, set 10% off, move on. That works until margin reports show coordinate drops, waitlists, and VIP early access recovering revenue while destroying full-price repeat rate. Trigger discipline matters: New product live, waitlist signup, or VIP segment qualification. Timing discipline matters: VIP access 24h early; general launch at go-live; waitlist fulfillment in order. Without exclusions, flows collide with welcome offers, replenishment reminders, and VIP early access — training subscribers to wait for stacked discounts.</p>
+      <p><strong>Scenario A — Workflow test on Shopify.</strong> Sequenzy playbook encoded suppression and value-based rules for coordinate drops, waitlists, and VIP early access without week-long flow rebuild.</p><p><strong>Scenario B — Scale merchant 900 orders/mo.</strong> Klaviyo predictive segments and holdout testing optimized product launch campaigns margin after blanket discount path failed.</p><p><strong>Scenario C — Fast-start boutique.</strong> Omnisend prebuilt journey live in days; graduated when sending launch to entire list including recent buyers became recurring ops issue.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Common mistakes</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">product launch campaigns anti-patterns</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Sending launch to entire list including recent buyers</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No inventory sync on variants</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>VIP and general list same timing</li></ul>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Document collision rules in shared wiki: which flow wins when customer qualifies for cart and winback simultaneously. Test quarterly with staff accounts. Measure margin after incentive, not recovery rate alone — high recovery with negative margin is worse than no email.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Channel mix</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email, SMS, and transactional boundaries</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Email owns narrative and education for coordinate drops, waitlists, and VIP early access. SMS belongs as branch when mobile intent outperforms — cart recovery within four hours, drop alerts to VIP SMS-opted segments — not parallel blast to entire list. Transactional order and shipping messages stay separate; marketing suppresses when support ticket open or return in progress.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Advanced product launch campaigns patterns</h2>
+      <p>After baseline coordinate drops, waitlists, and VIP early access flow works, optimize branches: VIP holdouts without discount, engaged-but-lapsed newsletter readers versus cold buyers, subscription-active customers excluded from conflicting offers. A home fragrance maker improved product launch campaigns margin 19% by routing predicted discount-sensitive profiles only to touch three — full-price loyalists stayed on education path.</p>
+      <p>Holdout testing quarterly — 5% segment no promotional product launch campaigns for thirty days — answers incrementality question finance actually asks. Platform attribution overstates when would-have-purchased-anyway buyers dominate converted cohort.</p>
+      <p>SMS branch for product launch campaigns when mobile opt-in strong: email touch one, SMS four hours if unopened for cart-adjacent workflows — never duplicate same offer both channels within two hours without measurement framework.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Cross-links</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Related workflows for product launch campaigns</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Pair product launch campaigns with segmentation hygiene and discount strategy guides — flows fail when segments stale and incentives stack. Review <a class="link" href="/use-cases/segmentation">segmentation</a>, <a class="link" href="/use-cases/discount-strategy">discount strategy</a>, and <a class="link" href="/guides/flow-collision-prevention">collision prevention</a> when scaling send volume.</p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/black-friday">Black Friday →</a>
+      <a class="link" href="/use-cases/welcome-series">Welcome series →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Product launch FAQ" />
+</BaseLayout>

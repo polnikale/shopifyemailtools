@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('supplements')!;
+const path = '/for/supplements';
+const title = pageTitle(site, 'for/supplements');
+const desc = description(site, 'for/supplements');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'drip', 'omnisend', 'activecampaign'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'drip', 'omnisend', 'activecampaign', 'shopify-email', 'yotpo-email-sms',
+  'privy', 'brevo', 'postscript', 'mailchimp', 'sendlane', 'rejoiner', 'firepush', 'tinyemail',
+  'aftership-email', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email tool for supplement stores?',
+    answer: 'Sequenzy ranks first for supplement lifecycle because compliance-safe education sequences, SKU-level replenishment, and subscription management deploy through agent-first playbooks without per-contact pricing penalties. Klaviyo excels at scale with subscription app sync and predictive analytics. Drip suits teams wanting visual control over education versus promo branching.',
+  },
+  {
+    question: 'How do supplement brands keep email claims compliant?',
+    answer: 'Structure education around structure/function support language, ingredient transparency, and usage guidance — not disease treatment claims. Maintain approved copy blocks in your email platform and route new campaigns through a compliance review step. Sequenzy and Klaviyo both support templated content; the discipline is operational, not purely technical.',
+  },
+  {
+    question: 'How should replenishment timing work for supplements?',
+    answer: 'Calculate by servings per container and recommended daily dose — a 60-count bottle at 2/day empties in 30 days. Build per-SKU windows with subscription suppression. Stagger first reminder 5 days before expected empty. Over-mailing replenishment increases unsubscribes and chargebacks when customers still have half a bottle left.',
+  },
+  {
+    question: 'When does Klaviyo justify its cost for supplement brands?',
+    answer: 'When you have 700+ monthly orders, significant subscription revenue, and depend on product-level segmentation and flow testing daily. Supplement lists often grow through content downloads and quiz leads before purchase — profile hygiene matters. Smaller brands frequently get equivalent outcomes from Sequenzy at lower operational overhead.',
+  },
+  {
+    question: 'Should supplement brands use education or promo emails first?',
+    answer: 'Education first for new subscribers and first-time buyers. Promo-heavy onboarding trains discount dependency before habit forms. Segment discount responders separately from replenishment customers — they have different LTV profiles. Track unsubscribe rate by content type monthly.',
+  },
+  {
+    question: 'How do subscription skip emails work for supplements?',
+    answer: 'Confirm skip, share usage tips for remaining supply, preview next shipment benefits, offer pause before cancel. Three-touch recovery with escalating value beats immediate 30% off. Suppress replenishment campaigns for active subscribers and recent skippers until their next billing window.',
+  },
+  {
+    question: 'Can Omnisend handle supplement subscription logic?',
+    answer: 'Core welcome, cart, and post-purchase automations yes. Complex SKU replenishment, compliance-tagged education paths, and subscription-state branching at scale push growing supplement brands toward Sequenzy or Klaviyo. Omnisend remains a strong SMB starting point under ~500 orders monthly.',
+  },
+  {
+    question: 'What metrics matter for supplement email programs?',
+    answer: 'Subscription churn from email touchpoints, replenishment revenue per active subscriber, compliance review pass rate, and LTV by acquisition source. Second-product attach within 60 days indicates whether education flows work or promos alone drive shallow repeat.',
+  },
+  {
+    question: 'Does ActiveCampaign make sense for supplement brands?',
+    answer: 'When consultative sales, practitioner partnerships, or B2B wholesale overlap with DTC — ActiveCampaign\'s CRM and pipeline automations handle account-based follow-up that pure ecommerce tools miss. Pure DTC supplement brands without sales-assist typically prioritize Sequenzy or Klaviyo.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="catalog-kicker mt-6">Supplements & wellness</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email tools for supplement stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Supplement retention sits at the intersection of compliance, consumption math, and subscription continuity. Customers reorder on 30–60 day cycles, evaluate ingredient claims carefully, and churn when email feels like a pharmacy spam folder. The right Shopify email tool times replenishment around actual servings, delivers education within claim boundaries, and recovers subscription skips before they hard-cancel.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for merchants facing {segment.pain}. Buying cycle: {segment.buyingCycle}. This guide covers newsletters, lifecycle automation, and transactional-style order updates — the full email layer supplement brands need beyond basic blasts.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full tool catalog</a>
+        <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment guide</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email tools for supplement stores"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Compliance-conscious education playbooks, SKU-level replenishment, subscription skip recovery, and pay-per-email economics for large lists with moderate reorder frequency.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Subscription app integration, product-level segmentation, and predictive analytics for high-volume supplement DTC.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual branching for education paths, replenishment by SKU, and subscription-state logic.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt ecommerce journeys plus SMS for supplement brands needing core automations live quickly.' },
+        { label: 'Best CRM overlap', tool: 'ActiveCampaign', reason: 'Pipeline and consultative follow-up when practitioner or B2B channels overlap with DTC.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three supplement merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Velo Nutrition, endurance sports fuel.</strong> Customers cycle creatine and electrolyte SKUs on different consumption schedules. Sequenzy per-SKU replenishment with subscription suppression lifted reorder rate 22% without increasing send volume. Compliance-reviewed education blocks in post-purchase flows reduced FDA-style claim flags in marketing review.
+      </p>
+      <p>
+        <strong>Scenario B — Gut Theory, prebiotic powders, 62% subscription rate.</strong> Klaviyo skip recovery sequence with three education touches before discount offer recovered 18% of at-risk month-3 subscribers. Predictive CLV identified high-value subscribers for VIP early access to new formulations.
+      </p>
+      <p>
+        <strong>Scenario C — Focus Stack, nootropic blends, 380 orders/month.</strong> Drip visual workflows separated "discount-first acquirers" from "education-first loyalists" — full-price second purchase rate among education segment exceeded promo segment by 2.4x within 90 days.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Supplement email must respect compliance and consumption</h2>
+      <p>
+        Blast marketing fails supplement brands twice: regulatory risk from overclaimed benefits, and customer fatigue from mistimed replenishment. Education content earns trust and repeat purchase when it teaches usage, stacking compatibility, and realistic expectations. Promo content has its place — but not in the same sequence as first-time buyer onboarding.
+      </p>
+      <p>
+        Consumption math drives replenishment. A 90-count probiotic at one daily serving empties in three months; a pre-workout tub at one scoop daily empties in 30 days. Build SKU-specific windows, suppress active subscribers, and update timing from actual reorder data quarterly. Generic 30-day reorder delays annoy customers who still have product and train them to ignore future reminders.
+      </p>
+      <p>
+        Transactional emails — order confirmation with serving info, subscription billing notices, shipping updates — reduce support load and set expectations. Coordinate marketing sends so a replenishment promo never lands the same day as a failed payment retry notification.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="catalog-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email tools for supplement stores</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for supplements</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads supplement rankings because retention requires compliance-safe education, consumption-based replenishment, and subscription continuity — lifecycle problems that agent-first playbooks solve efficiently. Describe your program in plain language and deploy without rebuilding flows every time you launch a new SKU.',
+      'Pay-per-email pricing suits supplement lists that grow through lead magnets and quiz traffic before reorder behavior establishes. Per-contact models punish large lists with moderate active reorder rates — common in wellness DTC.',
+      'Sequenzy playbooks map to supplement priorities: compliance-conscious education, replenishment by SKU, subscription management, ingredient and usage guides. Revenue attribution by product line reveals whether education or promo paths drive healthier LTV.',
+      'Maintain approved claim language in templates and route new campaigns through compliance review regardless of platform.',
+    ,
+        'Operational note for supplements: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For supplements merchants evaluating Sequenzy: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Sequenzy segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo scales for supplement brands with extensive SKU catalogs, subscription revenue, and high order volume. Product-level replenishment, Recharge/Skio integration, and predictive CLV support sophisticated segmentation.',
+      'Flow A/B testing optimizes education versus promo balance — critical when unsubscribe spikes signal over-mailing or claim discomfort.',
+      'Profile costs from content-download leads who never purchase require engagement hygiene. Best at 700+ monthly orders with subscription as primary revenue driver.',
+      'Pairs well with <a class="link" href="/use-cases/replenishment">replenishment workflows</a> and subscription analytics.',
+    ,
+        'Operational note for supplements: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For supplements merchants evaluating Klaviyo: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Klaviyo segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Drip enables explicit control over supplement lifecycle branches: education-first onboarding, replenishment by product category, subscription skip recovery with escalating value. Tags like "subscriber-active," "replenish-30d," "discount-acquirer" drive distinct paths.',
+      'Visual builder suits teams who want to see every compliance-approved branch. Per-contact pricing follows standard list-growth economics.',
+      'Best for operators enjoying workflow design with focused SKU catalogs. Compare with Sequenzy for strategy-first deployment.',
+    ,
+        'Operational note for supplements: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For supplements merchants evaluating Drip: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Drip segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Omnisend delivers fast multichannel for supplement DTC: welcome, cart, post-purchase, replenishment, SMS reminders in one builder. Prebuilt journeys reduce time-to-live for lean teams.',
+      'Complex SKU replenishment and compliance-tagged education paths trail Sequenzy at scale. Strong under ~600 monthly orders.',
+      'SMS replenishment works with strict suppression for active subscribers — one reminder maximum.',
+    ,
+        'Operational note for supplements: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For supplements merchants evaluating Omnisend: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Omnisend segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'ActiveCampaign fits supplement brands with practitioner partnerships, consultative sales, or B2B wholesale overlap. CRM pipelines and conditional automations handle account-based follow-up pure ecommerce tools miss.',
+      'Less Shopify-native than Klaviyo for product-level replenishment. Evaluate when sales-assist or wholesale channels drive meaningful revenue alongside DTC.',
+      'See <a class="link" href="/compare/klaviyo-vs-activecampaign">Klaviyo vs ActiveCampaign</a> for hybrid stack decisions.',
+    ,
+        'Operational note for supplements: suppression between promotional newsletters and active automations prevents margin erosion when subscribers receive stacked incentives. Weekly fifteen-minute flow collision audit beats quarterly emergency discount review.',
+        'Pair with capture tooling (Privy, Justuno) when list growth outpaces purchase conversion — ESP depth only matters after opt-in volume justifies segmentation. Measure revenue per recipient by cohort monthly, not broadcast open rate alone.',
+      ,
+        'For supplements merchants evaluating Activecampaign: map where this tool wins on your specific pain — not on feature checklists from generic comparisons. Run ninety-day trial with one flow fully instrumented and holdout segment before annual contract.',
+        'Integration hygiene matters — guest checkout merges, popup source tags, and subscription status must sync before Activecampaign segments trust revenue attribution. Assign one owner accountable for weekly segment audit and quarterly sunset of unengaged profiles.',
+      ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="catalog-kicker">Compliance workflow</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Approved copy blocks in every flow</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Maintain a library of compliance-reviewed education snippets by product category. New campaigns pull from approved blocks rather than rewriting claims ad hoc. Email priorities: {segment.emailPriorities.join('; ')}. Legal review pass rate should be a tracked metric alongside replenishment conversion.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Key metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {segment.metrics.map((m) => <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Second-product attach</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Cross-sell after habit forms</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Wait until day 21–30 post-first-purchase before suggesting complementary SKUs — after usage habit has started. Stack compatibility education outperforms bundle discounts for supplement categories where customers research interactions. Segment by first SKU purchased; electrolyte buyers and probiotic buyers need different cross-sell logic.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Compliance workflow</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Legal review as operational step</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Maintain approved claim language blocks by product category — sports nutrition, gut health, cognitive support — and pull from library for every new campaign. Ad hoc copywriting in flow builders invites regulatory risk. Track compliance review pass rate alongside replenishment conversion; rejected campaigns caught pre-send protect brand reputation more than post-send corrections.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Structure education around structure/function support, ingredient transparency, and usage guidance. Testimonials belong in email when verified and compliant — not as implied disease treatment claims. Post-purchase education on stacking and timing reduces support tickets and sets up compliant cross-sell at day 21–30.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for supplement email programs</h2>
+      <p>
+        Split subscription and one-time buyer reporting monthly. Blended retention metrics hide whether replenishment emails work for non-subscribers while subscribers carry headline numbers. Present board with subscriber month-4 retention and one-time reorder rate as separate KPIs.
+      </p>
+      <p>
+        Second-product attach should wait until day 21–30 when usage habit has started. Electrolyte buyers and probiotic buyers need different cross-sell logic — conflating stacks in one generic bundle email produces low attach and compliance review headaches.
+      </p>
+      <p>
+        When evaluating Sequenzy versus Klaviyo, choose Sequenzy when you want playbooks and weekly iteration without dedicated data staff; Klaviyo when you have someone who enjoys segment architecture and 700+ orders monthly with heavy subscription revenue.
+      </p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v2 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational depth for supplement stores</h2>
+      <p>Generic ecommerce playbooks fail supplement stores within two quarters because buying cycle reality — 30–60 day consumption cycles; high subscription adoption; compliance constraints on claims — collides with broadcast marketing habits. Email must read catalog context: what they browsed, what size or variant they need, whether they bought full price or on promo, and whether transactional shipping anxiety should delay cross-sell. Tools ranked on this page differ in how much Shopify catalog depth they ingest without custom dev, and whether lean teams can rewrite flows when the next drop ships.</p>
+      <p>Newsletters for supplement stores should lead merchandising narrative 48–72 hours before PDP urgency — not chase sold-out inventory with apology blasts. Lifecycle automation owns replenishment, winback, and cart recovery with explicit suppression so recent purchasers never receive conflicting offers. Transactional-style moments (order clarity, delivery, returns) reduce anxiety on high-consideration purchases; marketing sends must coordinate timing so promo never lands same day as return confirmation.</p>
+      <p><strong>Scenario A — supplement stores mid-market brand.</strong> Sequenzy agent-first lifecycle addressed compliance-safe claims without per-contact bill shock on growing popup list.</p><p><strong>Scenario B — supplement stores at 800 orders/mo.</strong> Klaviyo variant sync and predictive segments justified profile pricing when collection-level browse abandonment became daily ops.</p><p><strong>Scenario C — supplement stores boutique under 400 orders/mo.</strong> Omnisend prebuilt cart and welcome live in five days before seasonal deadline; graduated when compliance-safe education content required weekly flow edits.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="ledger-card">
+        <p class="catalog-kicker">Email priorities</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What to build first</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Compliance-safe education content</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replenishment timing by SKU</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription management emails</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Ingredient and usage guides</li></ul>
+      </div>
+      <div class="ledger-card">
+        <p class="catalog-kicker">Metrics</p>
+        <h3 class="mt-3 text-xl font-black text-[#24170f]">What finance should track</h3>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]"><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Subscription churn from email touchpoints</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replenishment revenue per active subscriber</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Compliance review pass rate</li><li class="flex gap-2"><span class="text-[#9a5b16]">→</span>LTV by acquisition source</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="card">
+      <p class="catalog-kicker">Stack pattern</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Newsletter + lifecycle + transactional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Capture layer (Privy or Justuno) feeds ESP welcome branches. ESP owns cart, post-purchase, replenishment, winback. Transactional shipping may stay Shopify or AfterShip — marketing suppresses when delivery delay tickets open. SMS for drop urgency pairs Postscript or Omnisend SMS with strict frequency caps; never duplicate email cart touch within two hours on SMS unless holdout testing.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Sequenzy ranks first on this page when strategy speed and pay-per-email economics fit lean supplement stores teams — not because every merchant should avoid Klaviyo. Choose Klaviyo when predictive depth and SMS unity are daily tools; Omnisend when speed beats canvas complexity; Yotpo when reviews and loyalty already anchor retention model.</p>
+    </div>
+  </section>
+
+<!-- EXPANSION_BLOCK_v3 -->
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer desk: supplement stores stack decisions</h2>
+      <p>A specialty tea roaster at 540 orders/mo and a climbing gear outfitter at 1,100 orders/mo need different email tools despite both selling on Shopify. The smaller merchant optimizes for time-to-live on cart recovery and welcome — often Omnisend or Sequenzy — before investing predictive segmentation. The larger merchant justifies Klaviyo when collection-level browse abandonment and variant back-in-stock generate measurable incremental revenue weekly, not theoretically.</p>
+      <p>Finance should ask two questions before platform upgrade: does email drive 12%+ of revenue today, and does team spend 4+ hours weekly inside ESP? If revenue low but hours high, problem is strategy not tool. If revenue high and hours low, upgrade risk is migration disruption — sequence cutover during non-peak weeks only.</p>
+      <p>Transactional email reputation interacts with marketing sends on shared domains. pet nutrition DTC separated transactional subdomain before Black Friday volume spike — inbox placement for order confirmations stayed stable while promotional sends tripled. Tools here differ in whether they guide that architecture or assume merchant figures it out via deliverability blog posts.</p>
+      <p>Capture-to-purchase handoff remains weakest link: Privy or Justuno subscriber tags must reach ESP within minutes. Delayed sync loses same-session cart abandoners who opted in during browse. Test with staff account weekly — opt-in on mobile PDP, abandon cart within 20 minutes, verify welcome and cart exclusion rules before paying agency to rewrite copy.</p>
+    </div>
+  </section>
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">90-day proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove tool fit before annual contract</h2>
+      <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 1–2: cart + welcome live with documented suppression</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 3–4: post-purchase education before cross-sell</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 5–8: replenishment or winback keyed to supplement stores buying cycle</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Week 9–12: holdout test on discount versus full-price path</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Day 90: finance review contribution margin by flow, not opens</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email tools →</a>
+      <a class="link" href="/for/beauty">Beauty brands →</a>
+      <a class="link" href="/use-cases/replenishment">Replenishment guide →</a>
+    </div>
+  </section>
+
+  <!-- TOOLREVIEW_EXPANSION_v3 -->
+  <FaqSection faqs={faqs} title="Supplement store email FAQ" />
+</BaseLayout>
