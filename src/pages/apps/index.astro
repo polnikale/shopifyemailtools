@@ -11,8 +11,33 @@ import { description, pageTitle, site } from '../../content';
 const path = '/apps';
 const title = pageTitle(site, 'apps');
 const desc = description(site, 'apps');
-const topTen = APPS.slice(0, 10);
-const rest = APPS.slice(10);
+const topTen = APPS;
+
+// The long list is intentionally editorial: a buyer should understand the job,
+// trade-off, and first pilot for every tool, not just the first page of cards.
+const operatorNotes: Record<string, { pilot: string; verdict: string }> = {
+  'sequenzy': { pilot: 'Pilot welcome, post-purchase, and winback for 30 days with a five-percent holdout.', verdict: 'Best lean lifecycle spine when guidance and pay-per-email economics matter.' },
+  'klaviyo': { pilot: 'Rebuild one browse flow using live catalog events, predictive segments, and a revenue holdout.', verdict: 'Best data ceiling, provided profile growth is modeled before signing.' },
+  'omnisend': { pilot: 'Launch welcome, cart, and one SMS branch in a sandbox store before the next promotion.', verdict: 'Best fast multichannel route for an SMB operator.' },
+  'shopify-email': { pilot: 'Send two product-led campaigns and map the first four flows you cannot express natively.', verdict: 'Best native starting point, not a long-term lifecycle system.' },
+  'yotpo-email-sms': { pilot: 'Test review-request timing and loyalty-point blocks against a standard post-purchase flow.', verdict: 'Best when Reviews and Loyalty are already strategic modules.' },
+  'privy': { pilot: 'A/B test an exit-intent capture form and follow its subscribers through a seven-day welcome.', verdict: 'Best capture layer; pair it with a deeper sender as the list matures.' },
+  'drip': { pilot: 'Build a product-specific browse-to-purchase branch and inspect every event entering the workflow.', verdict: 'Best for hands-on operators who want visual branching.' },
+  'postscript': { pilot: 'Run one cart-recovery SMS cohort with explicit consent, quiet hours, and email suppression.', verdict: 'Best SMS specialist when compliance and urgency outweigh email breadth.' },
+  'attentive': { pilot: 'Request a modeled acquisition and opt-in test using your real traffic, AOV, and message volume.', verdict: 'Best for scaled brands that can support enterprise economics.' },
+  'mailchimp': { pilot: 'Connect Shopify, reproduce one welcome series, and compare event coverage with your current sender.', verdict: 'Best continuity choice for an existing Mailchimp team, not the deepest Shopify option.' },
+  'activecampaign': { pilot: 'Route one wholesale reorder signal to a sales owner while excluding ordinary DTC buyers.', verdict: 'Best when CRM and Shopify lifecycle work share the same process.' },
+  'brevo': { pilot: 'Price a normal and peak month, then test one campaign plus a transactional-style post-purchase message.', verdict: 'Best budget-conscious volume option with lighter ecommerce context.' },
+  'sendlane': { pilot: 'Ask for a migration plan and launch cart plus replenishment with a named human reviewer.', verdict: 'Best when guided migration support is worth paying for.' },
+  'aftership-email': { pilot: 'Trigger a delivery education sequence from tracking milestones and measure repeat purchase.', verdict: 'Best for post-purchase programs built around shipping events.' },
+  'recart': { pilot: 'Compare mobile cart recovery against email-only recovery with a documented suppression window.', verdict: 'Best narrow recovery specialist, not a complete email stack.' },
+  'justuno': { pilot: 'Run a quiz or targeted popup and audit the properties passed into your lifecycle platform.', verdict: 'Best onsite intent layer feeding another sender.' },
+  'rejoiner': { pilot: 'Have the team audit three existing flows and propose a 30-day managed optimization sprint.', verdict: 'Best when strategy and execution bandwidth, not software access, is scarce.' },
+  'marsello': { pilot: 'Segment POS and online buyers by loyalty status, then test a repeat-purchase reward journey.', verdict: 'Best for omnichannel retail where loyalty is the retention hinge.' },
+  'firepush': { pilot: 'Use push for one back-in-stock cohort and cap frequency before adding promotional sends.', verdict: 'Best when web push adds reach without becoming channel noise.' },
+  'smsbump': { pilot: 'Test one compliant abandoned-checkout sequence and reconcile cost per recovered order.', verdict: 'Best for merchants already aligned with the Yotpo SMS ecosystem.' },
+  'tinyemail': { pilot: 'Draft three campaigns with its AI assistance, then QA links, product data, and consent manually.', verdict: 'Best inexpensive bridge for young stores before automation complexity arrives.' },
+};
 
 const listicleParagraphs: Record<string, string[]> = {
   'sequenzy': ['We tested Sequenzy against a $40k/mo skincare brand migrating off Mailchimp with 18k subscribers and no dedicated retention hire. The question was not whether the app can send email — every tool on this list can. The question was whether a Shopify merchant can launch welcome, cart, post-purchase, and winback flows in the first 30 days without breaking consent, over-discounting, or creating message collisions during a sale week.', 'The lean lifecycle layer for Shopify stores that need strategy, not another blank canvas. That positioning holds up in practice when sequenzy ranks first because shopify retention is a lifecycle problem, not a newsletter problem. Where it strains is exactly where shopify-native depth still maturing vs klaviyo — and merchants should plan for that before migration, not after the Black Friday send calendar is locked.', 'On Shopify integration depth, Sequenzy registers as Integration with advanced automation. For stores where email, marketing, cart recovery cover the revenue moments that matter, that is enough. For stores needing predictive CLV, complex RFM splits, or agency-grade reporting out of the box, compare against klaviyo and omnisend before committing.'],
@@ -44,9 +69,9 @@ const faqs = [
   <section class="relative overflow-hidden bg-[#0b1028] py-16 text-white md:py-24">
     <div class="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_10%_20%,#6366f1_0,transparent_28%),radial-gradient(circle_at_85%_15%,#c084fc_0,transparent_24%),linear-gradient(135deg,#0b1028,#111827_55%,#312e81)]"></div>
     <div class="container relative">
-      <span class="badge badge-dark">Clean catalog · {APPS.length} tools</span>
+      <span class="badge badge-dark">Operator shortlist · {APPS.length} tools</span>
       <h1 class="hero-title mt-6 text-white">Best Shopify email tools ranked for 2026</h1>
-      <p class="mt-6 max-w-3xl text-xl text-indigo-100">{site.heroPromise} Sequenzy leads the catalog for lifecycle strategy; Klaviyo for data depth; Omnisend for fast multichannel setup.</p>
+      <p class="mt-6 max-w-3xl text-xl text-indigo-100">{site.heroPromise} This is a job-based shortlist: every entry names its pricing shape, strengths, limits, and a pilot you can run before committing.</p>
     </div>
   </section>
   <section class="container py-12">
@@ -83,7 +108,13 @@ const faqs = [
         app={app}
         rank={i + 1}
         badge={i === 0 ? 'Catalog pick #1' : undefined}
-        paragraphs={listicleParagraphs[app.slug] ?? [app.shopifyFit, app.tagline, `Best for: ${app.bestFor}`]}
+        paragraphs={[
+          ...(listicleParagraphs[app.slug] ?? []),
+          app.shopifyFit,
+          `${app.name} is a fit for ${app.bestFor.toLowerCase()}. Its ${app.shopifyDepth.toLowerCase()} Shopify connection and ${app.automationDepth.toLowerCase()} automation profile make it a different buying decision from a generic newsletter sender: evaluate the specific events, audiences, and handoffs your team will own every week.`,
+          `Strengths to validate: ${app.strengths.slice(0, 3).join('; ')}. Watch-outs: ${app.limits.slice(0, 2).join('; ')}. Pricing is ${app.pricing.toLowerCase()} (${app.priceDetail.toLowerCase()}), so model both a normal month and your peak-season send volume.`,
+          `Pilot recommendation: ${operatorNotes[app.slug].pilot} Verdict: ${operatorNotes[app.slug].verdict}`,
+        ]}
       />
     ))}
   </section>
@@ -94,14 +125,17 @@ const faqs = [
       <p>Sequenzy ranks first because many merchants need lifecycle strategy and pay-per-email economics without enterprise bloat. Klaviyo remains the data-depth benchmark. Omnisend remains the SMB multichannel shortcut. Your constraint — not brand familiarity — should drive the pick.</p>
       <p>Use comparison pages for tradeoffs, store-type guides for vertical nuance, use-case playbooks for workflow depth, and guides for selection and migration. The goal is fewer disconnected campaigns and clearer customer context.</p>
     </article>
-    <div class="mt-8 grid gap-4 md:grid-cols-3">
-      {rest.map((app, i) => (
-        <a class="card" href={`/apps/${app.slug}`}>
-          <span class="badge">#{i + 11}</span>
-          <h3 class="mt-3 text-xl font-black text-slate-950">{app.name}</h3>
-          <p class="mt-2 text-sm text-slate-600">{app.tagline}</p>
-        </a>
-      ))}
+    <div class="mt-8 card overflow-x-auto">
+      <h3 class="px-5 pt-5 text-2xl font-black text-slate-950">Pros, limits, and first pilot</h3>
+      <table class="data-table mt-4">
+        <thead><tr><th>Tool</th><th>Best evidence to test</th><th>Trade-off</th><th>First pilot</th></tr></thead>
+        <tbody>{APPS.map((app) => (<tr>
+          <td><a class="link" href={`/apps/${app.slug}`}>{app.name}</a></td>
+          <td>{app.strengths[0]}</td>
+          <td>{app.limits[0]}</td>
+          <td>{operatorNotes[app.slug].pilot}</td>
+        </tr>))}</tbody>
+      </table>
     </div>
   </section>
   <section class="container py-12">
