@@ -10,9 +10,9 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('omnisend')!;
 const path = '/alternatives/omnisend-alternative';
 const title = 'Best Omnisend Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Omnisend — segmentation ceilings, SMS cost spikes, contact-tier jumps — plus eight ranked replacements, migration checklist, and pricing at 10k–25k contacts.';
+const desc = 'Why Shopify merchants leave Omnisend — segmentation ceilings, SMS cost spikes, contact-tier jumps — plus 15 ranked replacements, fit guidance, migration checklist, and an evidence-safe pilot plan.';
 
-const altSlugs = ['sequenzy', 'klaviyo', 'drip', 'sendlane', 'brevo', 'activecampaign', 'mailchimp', 'shopify-email'];
+const altSlugs = ['sequenzy', 'klaviyo', 'drip', 'sendlane', 'brevo', 'activecampaign', 'mailchimp', 'shopify-email', 'yotpo-email-sms', 'privy', 'postscript', 'attentive', 'aftership-email', 'rejoiner', 'justuno'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
@@ -139,11 +139,57 @@ const faqs = [
           'Useful ninety-day reset after over-automating on Omnisend — honest assessment that you need fewer flows, not more tools. Most stores return to dedicated platforms within two quarters.',
           'Treat as pause button — native email will not replicate Omnisend cart recovery.',
         ]} />
+
+        <ToolReview app={alternatives[8]} rank={9} badge="Best email + SMS suite alternative" paragraphs={[
+          'Yotpo Email & SMS is a credible replacement when the Omnisend exit is really a desire to connect lifecycle messaging with reviews, loyalty, and other retention surfaces. It suits a fashion or beauty store that already uses Yotpo products and wants fewer handoffs between post-purchase proof, replenishment, and promotional sends.',
+          'Treat the bundle as a commercial and implementation decision, not proof that every module is included in one price. Confirm which Yotpo products, contacts, SMS credits, and service levels are in the quote. It is a fit when the team values suite coordination; it is weaker when you only need inexpensive email and do not use the surrounding Yotpo stack.',
+        ]} />
+
+        <ToolReview app={alternatives[9]} rank={10} badge="Best capture-first alternative" paragraphs={[
+          'Privy is the practical choice when Omnisend felt expensive because list growth came from popups and onsite capture rather than engaged lifecycle demand. Its strength is turning traffic into identifiable subscribers with forms, banners, and targeted offers; use it as the capture layer alongside an email platform when capture is the actual bottleneck.',
+          'Do not treat Privy as a like-for-like replacement for Omnisend automation without checking the flow contract you need. Map welcome, cart, post-purchase, and consent handoffs first, then confirm whether the selected email system receives source, consent, and discount metadata. Pricing is usually shaped by traffic, contacts, or messaging scope, so request a current quote for your storefront rather than reusing Omnisend tier math.',
+        ]} />
+
+        <ToolReview app={alternatives[10]} rank={11} badge="Best SMS specialist pairing" paragraphs={[
+          'Postscript is relevant when Omnisend is being replaced for email but SMS remains a material revenue channel during launches, replenishment windows, or low-inventory drops. It is a specialist layer for merchants who want SMS-specific consent, segmentation, and send controls while a separate ESP owns email lifecycle.',
+          'A two-platform setup adds suppression and reporting work. Keep one written definition of eligible subscribers, recent purchasers, and active cart audiences; otherwise the same customer can receive overlapping reminders. SMS pricing is usage-based and country-dependent, so model normal and peak message counts separately and verify carrier, compliance, and opt-out handling before committing.',
+        ]} />
+
+        <ToolReview app={alternatives[11]} rank={12} badge="Best enterprise SMS-led option" paragraphs={[
+          'Attentive belongs on the shortlist when mobile messaging is the primary growth channel and the store has the volume, compliance ownership, and budget to operate an enterprise-oriented program. It can make sense for high-frequency fashion or beauty launches where SMS capture and coordinated messaging are strategic rather than an add-on to email.',
+          'It is not a default Omnisend upgrade for a small Shopify team. Validate minimums, contract terms, onboarding scope, email depth, and the exact Shopify events available in your plan. Ask for a written estimate covering peak sends and shared suppression; advertised starting prices are not a reliable proxy for a negotiated enterprise program.',
+        ]} />
+
+        <ToolReview app={alternatives[12]} rank={13} badge="Best transactional adjacency" paragraphs={[
+          'AfterShip Email is worth considering when the store’s biggest communication gap sits after checkout: shipping updates, delivery context, review requests, and post-purchase education. It can complement a lean campaign platform for merchants who want order-status communications to feel more useful and branded than a generic carrier notification.',
+          'It should not be presented as a full Omnisend replacement until you confirm campaign, segmentation, and automation requirements. Keep marketing consent separate from transactional necessity, and calculate the cost of retaining a second lifecycle system. Its best-for case is operational post-purchase messaging, not complex multi-branch acquisition or winback.',
+        ]} />
+
+        <ToolReview app={alternatives[13]} rank={14} badge="Best focused cart-recovery rebuild" paragraphs={[
+          'Rejoiner fits a merchant whose Omnisend exit is narrow: cart and browse recovery need more focused testing, while newsletters and other flows can remain elsewhere. It is a sensible specialist candidate for high-AOV stores where a small number of recovery journeys deserve careful creative, timing, and holdout discipline.',
+          'Specialization creates a coordination cost. Document which platform owns each trigger and make purchase, suppression, and consent events authoritative in both systems before launch. Confirm current Shopify integration scope, contact limits, and whether advanced testing or onboarding is included; a specialist quote may be worthwhile for recovery, but not if it duplicates an existing ESP without a measurable hypothesis.',
+        ]} />
+
+        <ToolReview app={alternatives[14]} rank={15} badge="Best onsite conversion layer" paragraphs={[
+          'Justuno is a fit when the store is leaving Omnisend because acquisition and onsite conversion are underdeveloped, not because it needs another all-purpose ESP. Its value is targeted popups, promotional experiences, and visitor segmentation that can feed a chosen email platform with better-qualified leads.',
+          'Use it as a companion unless its current automation and messaging scope demonstrably covers your required lifecycle flows. Pricing can depend on traffic, views, features, and plan level; verify overage rules and the destination platform’s sync behavior. The pilot should measure qualified opt-ins and downstream revenue, not popup conversion alone.',
+        ]} />
       </section>
 
       <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Capability matrix for the first shortlist</h2>
+        <p class="px-5 pb-4 text-slate-600">Directional fit only: verify current features, regional availability, and plan gates with each vendor before purchase.</p>
+        <table class="data-table">
+          <thead><tr><th>Tool</th><th>Primary job</th><th>Shopify fit</th><th>Use it when</th></tr></thead>
+          <tbody>
+            {alternatives.map((app) => <tr><td><a class="link" href={`/apps/${app.slug}`}>{app.name}</a></td><td>{app.category}</td><td>{app.shopifyDepth}</td><td>{app.bestFor}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
         <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing vs Omnisend</h2>
-        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs for a Shopify store — adjust for SMS volume.</p>
+        <p class="px-5 pb-4 text-slate-600">Illustrative planning bands, not quotes. Verify current billing units, contact definitions, email volume, SMS credits, taxes, onboarding, and annual-contract terms with the vendor.</p>
         <table class="data-table">
           <thead><tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>Lifecycle depth</th></tr></thead>
           <tbody>
@@ -156,6 +202,20 @@ const faqs = [
         </table>
       </div>
 
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Exit trigger → first test</h2>
+        <table class="data-table">
+          <thead><tr><th>Observed Omnisend problem</th><th>First test</th><th>Success evidence</th></tr></thead>
+          <tbody>
+            <tr><td>Contact tiers grow faster than engaged sends</td><td>Sequenzy or Brevo on a clean engaged segment</td><td>90-day contribution margin after platform and migration labor</td></tr>
+            <tr><td>Segmentation and catalog logic is the ceiling</td><td>Klaviyo or Drip on one real product-variant flow</td><td>Fewer manual tags, correct suppression, no missed product context</td></tr>
+            <tr><td>SMS is the main growth channel</td><td>Postscript or Attentive with email suppression contract</td><td>Opt-in quality, complaint rate, revenue per delivered message</td></tr>
+            <tr><td>Acquisition is weak, lifecycle is acceptable</td><td>Privy or Justuno feeding one controlled welcome flow</td><td>Qualified opt-ins and downstream first-order rate, not popup CVR alone</td></tr>
+            <tr><td>Post-purchase communication is the gap</td><td>AfterShip Email alongside a lean campaign platform</td><td>Delivery-message engagement, support deflection, repeat purchase without consent leakage</td></tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="container max-w-4xl pb-8 text-sm">
         <p class="font-black text-slate-950">Related guides</p>
         <p class="mt-2"><a class="link" href="/apps/omnisend">Omnisend review</a> · <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> · <a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a> · <a class="link" href="/use-cases/segmentation">Segmentation playbook</a> · <a class="link" href="/alternatives">All alternatives</a></p>
@@ -163,7 +223,7 @@ const faqs = [
     </div>
   </section>
 
-  <article class="prose-shopify container max-w-4xl pb-8">
+      <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Buyer desk: Omnisend replacement success</h2>
     <p>Omnisend exits fail when merchants import full lists without sunset passes, rebuild every flow before highest-revenue flow works, or choose on price alone when Omnisend was expensive because nobody maintained segments. Dual cart recovery during overlap is the fastest trust killer — a pottery customer should never get abandonment email from Omnisend and Sequenzy the same afternoon.</p>
     <p>Measure incrementality with holdout tests when attribution differs between platforms. Finance needs continuity, not a spreadsheet gap after cutover. The replacement must make Thursday pre-drop edits safe — suppress recent full-price buyers, exclude subscription skippers, separate Kickstarter backers from retail blasts.</p>
@@ -182,6 +242,13 @@ const faqs = [
 
     <h2>90-day proof plan on replacement platform</h2>
     <p>Weeks 1–2: popup redirect and welcome plus cart with documented suppression. Weeks 3–4: post-purchase before cross-sell. Weeks 5–8: replenishment or winback keyed to catalog. Weeks 9–12: holdout on discount path. Day ninety: finance reviews flow contribution margin — not opens. Pair with <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> if debating upgrade versus lateral move.</p>
+
+    <h2>Implementation pilot: one flow, one cohort, one owner</h2>
+    <p>Choose one high-value flow that is active in Omnisend and has a clean Shopify trigger: for example, a cart recovery journey for a single collection. Export the trigger, audience, consent state, waits, suppression rules, product fields, and success metric into a one-page contract. Assign one owner for QA and one approver for send permission. Do not import the whole database or rebuild every flow before this test is stable.</p>
+    <p>Run a controlled 14-day pilot on a clearly defined cohort, with Omnisend paused for that cohort and a holdout where feasible. Verify test orders, unsubscribe and SMS opt-out behavior, revenue timestamps, and duplicate-send logs. A passing pilot means the replacement sends the intended messages to the intended people, preserves consent, and produces comparable or better contribution margin after fees. Only then move welcome, post-purchase, and winback in that order. Use the internal <a class="link" href="/guides/implementation-plan">implementation plan</a> and <a class="link" href="/guides/consent-compliance">consent guide</a> as the handoff checklist.</p>
+
+    <h2>Official verification links</h2>
+    <p>Before publishing a comparison or approving a migration, check the vendor’s current documentation and pricing directly: <a class="link" href="https://www.klaviyo.com/pricing">Klaviyo pricing</a>, <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing</a>, <a class="link" href="https://www.brevo.com/pricing/">Brevo pricing</a>, <a class="link" href="https://www.shopify.com/email-marketing">Shopify Email</a>, and <a class="link" href="https://www.attentive.com/pricing">Attentive sales/pricing</a>. Prices and included features change; this page uses the site’s catalog data for directional ranking and does not treat entry pricing as a quote.</p>
 
     <h2>Push channel decision on exit</h2>
     <p>Export push consent separately from email and SMS during migration. Board game shop retained Firepush after Omnisend email moved to Klaviyo — desktop research traffic justified push increment. Camping brand sunset push after 0.8% mobile opt-in; budget shifted Postscript SMS. Fourteen-day parallel suppression must cover all channels in overlap — triple abandonment same afternoon destroys brand trust faster than single-platform misconfiguration.</p>
