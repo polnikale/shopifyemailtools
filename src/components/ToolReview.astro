@@ -26,10 +26,12 @@ const { app, rank, badge, paragraphs } = Astro.props;
   </div>
 
   <div class="mt-6 grid gap-4 sm:grid-cols-3 text-sm">
+    <div><span class="font-black text-slate-950">Best for</span><p class="text-slate-600">{app.bestFor}</p></div>
     <div><span class="font-black text-slate-950">Category</span><p class="text-slate-600">{app.category}</p></div>
     <div><span class="font-black text-slate-950">Shopify depth</span><p class="text-slate-600">{app.shopifyDepth}</p></div>
-    <div><span class="font-black text-slate-950">Automation</span><p class="text-slate-600">{app.automationDepth}</p></div>
   </div>
+
+  <p class="mt-4 text-sm text-slate-600"><strong>Pricing caveat:</strong> {app.pricing}; {app.priceDetail}. Confirm current tiers, message credits, taxes, and overages on the vendor’s pricing page before comparing totals.</p>
 
   <div class="prose-shopify mt-6">
     {paragraphs.map((p) => <p>{p}</p>)}

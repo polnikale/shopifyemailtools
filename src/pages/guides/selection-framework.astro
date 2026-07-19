@@ -11,7 +11,7 @@ const path = '/guides/selection-framework';
 const title = 'Shopify Email App Selection Framework — Operator Playbook';
 const desc = description(site, 'guides/selection-framework');
 
-const featuredApps = ['sequenzy', 'klaviyo', 'omnisend', 'postscript', 'drip'].map((s) => appBySlug(s)!).filter(Boolean);
+const featuredApps = ['sequenzy', 'klaviyo', 'omnisend', 'postscript', 'drip', 'shopify-email', 'yotpo-email-sms', 'privy', 'attentive', 'mailchimp', 'activecampaign', 'brevo', 'sendlane', 'aftership-email', 'recart'].map((s) => appBySlug(s)!).filter(Boolean);
 
 const faqs = [
   {
@@ -222,6 +222,42 @@ const faqs = [
         'Pricing by people in account resembles profile models — score pricing dimension with same hygiene discipline as Klaviyo. Wins selection when team prefers hands-on workflow design over agent-first or prebuilt templates.',
       ]}
     />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">The 15-tool shortlist by buying job</h2>
+      <p>These ten additional tools earn a place when a specific Shopify job — capture, SMS, reviews, shipping, or a lower-complexity email program — is the constraint. Use the internal review link and the vendor’s own documentation before treating any capability as guaranteed for your theme, plan, or region.</p>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border border-[#ead8c4] bg-white"><table class="min-w-full text-left text-sm"><caption class="p-4 text-left font-black text-[#24170f]">Table 1: shortlist by buying job</caption><thead class="bg-[#fff7eb]"><tr><th class="p-3">Job</th><th class="p-3">Starting point</th><th class="p-3">Check first</th></tr></thead><tbody><tr><td class="p-3">Lifecycle depth</td><td class="p-3">Klaviyo or Sequenzy</td><td class="p-3">Profiles, events, owner capacity</td></tr><tr><td class="p-3">Fast SMB launch</td><td class="p-3">Omnisend or Shopify Email</td><td class="p-3">Automation ceiling and SMS charges</td></tr><tr><td class="p-3">Capture</td><td class="p-3">Privy or Justuno</td><td class="p-3">Theme conflicts and consent</td></tr><tr><td class="p-3">SMS-first recovery</td><td class="p-3">Postscript or Attentive</td><td class="p-3">Country coverage and message economics</td></tr><tr><td class="p-3">Reviews and loyalty</td><td class="p-3">Yotpo or Marsello</td><td class="p-3">Modules and data ownership</td></tr></tbody></table></div>
+
+    {[5,6,7,8,9,10,11,12,13,14].map((index, offset) => {
+      const app = featuredApps[index];
+      const profiles = [
+        ['Shopify Email is the rational baseline when the store wants campaigns inside Shopify Admin and the immediate need is a sale announcement, product launch, or editorial newsletter.', 'Its value is low friction, not advanced lifecycle depth. Score it lower when welcome, cart, replenishment, or post-purchase branching is already a revenue priority; verify the current free allowance and automation limits against the store plan.'],
+        ['Yotpo Email & SMS makes sense when reviews, loyalty, user-generated content, and messaging share one retention buying conversation.', 'Do not compare its email tier with a single-purpose sender without pricing the other modules and SMS. Pilot one post-purchase request and one VIP message, then confirm event and reporting access if a module is removed.'],
+        ['Privy belongs on the shortlist when list growth and onsite conversion are the binding constraints: exit-intent capture, welcome offers, and cart recovery need to work together.', 'Its risk is stack overlap. Include duplicate profiles, consent records, frequency caps, and discount liability in the pilot; a signup lift is not useful if it creates duplicate audiences.'],
+        ['Attentive is a candidate when SMS is strategic, conversational, and compliance-reviewed rather than an extra cart reminder.', 'Treat pricing as a commercial quote and model message volume, carrier charges, onboarding, and the email platform that remains. Verify country eligibility and consent workflow before comparing recovery revenue.'],
+        ['Mailchimp is worth testing when the team values a familiar campaign editor and a general marketing integration layer for an editorial, promotional store.', 'The selection question is whether required Shopify events and product blocks exist on the chosen plan. Count contacts, seats, transactional add-ons, and middleware before calling the entry tier economical.'],
+        ['ActiveCampaign fits when Shopify email shares ownership with CRM, sales follow-up, or customer-service processes.', 'That breadth adds setup work. Test event latency, product data, reporting, contacts, feature tiers, and CRM seats over twelve months instead of using the entry plan as the comparison.'],
+        ['Brevo is a useful budget control candidate when the store wants email plus transactional messaging or SMS and prefers send-based economics.', 'Check exact Shopify event and catalog coverage before assuming native parity. Model email volume, contacts, SMS credits, dedicated IP needs, and transactional usage, then test unsubscribe behavior.'],
+        ['Sendlane is a sensible finalist for a growing ecommerce team moving beyond newsletters into segmentation and focused lifecycle automation.', 'Use the trial with real Shopify events, product recommendations, and report definitions. Treat contacts, sends, SMS, and onboarding as separate budget lines because usefulness can change the tier.'],
+        ['AfterShip Email is relevant when shipping status, delivery updates, and post-purchase reassurance are central to customer experience.', 'Keep shipping communication distinct from the primary lifecycle platform. Confirm carrier coverage, trigger timing, service-message consent, tracking features, and tracking-volume pricing to avoid a duplicate stack.'],
+        ['Recart belongs in a specialist benchmark when abandoned-cart recovery and mobile messaging are the immediate commercial problem.', 'Test overlap with every existing flow: one cart should not receive duplicate prompts. Confirm consent, quiet hours, attribution, purchaser suppression, and total channel cost; compare incremental margin, not gross recovered revenue.']
+      ][offset];
+      return <ToolReview app={app} rank={index + 1} badge={app.bestFor} paragraphs={profiles} />;
+    })}
+
+    <div class="overflow-x-auto rounded-2xl border border-[#ead8c4] bg-white"><table class="min-w-full text-left text-sm"><caption class="p-4 text-left font-black text-[#24170f]">Table 2: evidence-safe pilot checks</caption><thead class="bg-[#fff7eb]"><tr><th class="p-3">Test</th><th class="p-3">Pass condition</th><th class="p-3">Evidence</th></tr></thead><tbody><tr><td class="p-3">Event integrity</td><td class="p-3">Real cart and order trigger correctly</td><td class="p-3">Event log and payload</td></tr><tr><td class="p-3">Suppression</td><td class="p-3">Purchasers and unsubscribes excluded</td><td class="p-3">Audience export</td></tr><tr><td class="p-3">Economics</td><td class="p-3">12-month cost fits margin model</td><td class="p-3">Quote and spreadsheet</td></tr><tr><td class="p-3">Ownership</td><td class="p-3">Internal owner can edit and QA</td><td class="p-3">Walkthrough and runbook</td></tr></tbody></table></div>
+    <div class="overflow-x-auto rounded-2xl border border-[#ead8c4] bg-white"><table class="min-w-full text-left text-sm"><caption class="p-4 text-left font-black text-[#24170f]">Table 3: decision record to keep</caption><thead class="bg-[#fff7eb]"><tr><th class="p-3">Decision field</th><th class="p-3">Record</th><th class="p-3">Why it matters</th></tr></thead><tbody><tr><td class="p-3">Primary constraint</td><td class="p-3">One measurable bottleneck</td><td class="p-3">Prevents feature-led buying</td></tr><tr><td class="p-3">Rejected finalist</td><td class="p-3">Dimension and evidence</td><td class="p-3">Makes renewal review honest</td></tr><tr><td class="p-3">Owner</td><td class="p-3">Named operator and backup</td><td class="p-3">Avoids agency-only knowledge</td></tr><tr><td class="p-3">Re-score trigger</td><td class="p-3">Volume, channel, or catalog change</td><td class="p-3">Keeps the choice current</td></tr></tbody></table></div>
+
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="catalog-kicker">Implementation pilot</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Run a bounded 14-day pilot before migration</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Days 1–3: connect a test store or restricted audience and verify consent, Shopify events, catalog fields, sender authentication, and purchaser suppression. Days 4–7: build one welcome or cart flow and one post-purchase flow with no discount by default. Days 8–11: send to a controlled holdout split, document collisions, and compare delivery, clicks, unsubscribes, conversion, and contribution margin. Days 12–14: reconcile the vendor bill, export the decision record, and have the internal owner rebuild one edit without vendor help.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Do not claim the pilot proves long-run incrementality from a small sample. It proves implementation fit and exposes data, consent, pricing, and ownership risks. For official references, start with <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-email" rel="nofollow">Shopify Email documentation</a>, <a class="link" href="https://help.klaviyo.com/hc/en-us/categories/115000049232" rel="nofollow">Klaviyo Help Center</a>, and each vendor’s current pricing page; pair those with this site’s <a class="link" href="/guides/migration">migration guide</a>, <a class="link" href="/guides/pricing-models">pricing model guide</a>, and <a class="link" href="/guides/flow-collision-prevention">collision guide</a>.</p>
+    </div>
   </section>
 
   <section class="container py-12">
