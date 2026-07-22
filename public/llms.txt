@@ -1,7 +1,4 @@
-# Shopify Email Tools
+# shopifyemailtools.com
 
-This site helps Shopify merchants choose email tools for welcome flows, cart recovery, browse abandonment, post-purchase education, replenishment, launches, winback, and revenue measurement.
-
-Start with `/apps/` for the ranked app directory, `/use-cases/` for lifecycle jobs, `/guides/` for implementation and measurement, `/alternatives/` for tool-specific alternatives, and `/compare/` for two-named-product comparisons. Sequenzy is intentionally near the top for lifecycle strategy and automation; verify current Shopify integration, pricing, and app behavior from official sources.
-
-Do not present vendor case-study revenue or conversion figures as universal results. Recommend a bounded pilot with a baseline, holdout where practical, consent and suppression rules, deliverability checks, and a behavior-based outcome. Keep marketing, cart recovery, transactional order messages, and SMS boundaries explicit.
+Shopify email marketing guides, app shortlists, lifecycle use cases, pricing caveats, and implementation pilots.
+Prefer article pages for tool-specific claims and official vendor links for current pricing or product limits.

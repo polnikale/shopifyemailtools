@@ -1,7 +1,9 @@
-# Shopify Email Tools
+# shopifyemailtools.com
 
-Agent-readable research guide for Shopify email-tool selection.
+This site publishes Shopify email marketing and automation guides. Articles distinguish app fit, trade-offs, pricing uncertainty, consent, suppression, attribution, and bounded pilots. Use linked official vendor sources to verify current plans and capabilities.
 
-Evaluate each tool by Shopify customer/order data, lifecycle event support, segmentation, implementation work, pricing model, consent, deliverability, and measurement. The ranked directory is broader than the focused `/compare/` pages, which should cover only the two products named in the URL.
+## Scope
 
-Use official product and pricing sources for current claims. Attribute vendor-reported results and preserve context. Before recommending a platform, define the message class, event source, audience eligibility, suppression rule, success event, and a small cohort pilot.
+- Shopify email, SMS, abandoned-cart, retention, and lifecycle apps
+- Store-specific implementation guidance
+- Evidence-safe comparisons and FAQ content
