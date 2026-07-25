@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Can Postscript replace Privy for list growth?',
-    answer: 'No. Postscript is SMS-first — it assumes email and capture live elsewhere. Privy owns popups, exit intent, and spin wheels Postscript does not offer. Typical architecture: Privy for capture, Postscript for SMS lifecycle, Omnisend or Sequenzy for email. Postscript-only without capture tooling leaves money on the session-to-subscriber table.',
+    answer: 'No. Postscript is SMS-first — it assumes email and capture live elsewhere. Privy owns popups, exit intent, and spin wheels Postscript does not offer. Typical architecture: Privy for capture and Postscript for SMS lifecycle. Postscript-only without capture tooling leaves money on the session-to-subscriber table.',
   },
   {
     question: 'How does Privy vs Postscript pricing compare?',
@@ -26,10 +26,6 @@ const faqs = [
   {
     question: 'Should I use Privy and Postscript together?',
     answer: 'Yes, often at scale. Privy captures email and can collect SMS opt-in at popup. Postscript owns text journeys — cart recovery, drop alerts, keyword campaigns. Critical: sync suppression so email and SMS do not double-message the same abandonment. Pass signup source metadata so welcome paths branch correctly across channels.',
-  },
-  {
-    question: 'Should I also consider Sequenzy instead of Privy or Postscript?',
-    answer: 'Sequenzy fits email lifecycle strategy with pay-per-email pricing — pair with Postscript for SMS since Sequenzy does not replace dedicated SMS platforms. Keep Privy for capture. Postscript still wins SMS specialization. Sequenzy plus Privy plus Postscript is a lean three-tool stack for teams avoiding Klaviyo pricing.',
   },
   {
     question: 'Which has better TCPA compliance tooling?',
