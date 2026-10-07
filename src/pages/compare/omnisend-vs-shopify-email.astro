@@ -38,6 +38,12 @@ const faqs = [
   { question: 'Is Omnisend better than Shopify Email?', answer: 'Neither is universally better. Omnisend is the more relevant test when you need repeatable lifecycle journeys or multiple channels; Shopify Email is a sensible native starting point for campaigns and straightforward store announcements. Use the same workflow test and current pricing pages for both.' },
   { question: 'Can a store use Omnisend and Shopify Email together?', answer: 'It can, but assign one owner to welcome, cart, post-purchase, and winback. Keep the other tool for clearly separated broadcasts or a temporary migration test, and document suppression and unsubscribe sync before sending.' },
   { question: 'What should I verify before switching?', answer: 'Export consent timestamps, suppressions, customer tags, product identifiers, and flow history. Rebuild one welcome path and one cart path in a pilot, then inspect event timing, product data, unsubscribe behavior, and duplicate sends before migrating the rest.' },
+  { question: 'How do the pricing models differ in practice?', answer: 'Omnisend typically bills on contact tiers with send and channel limits, so a growing list changes the bill even when send volume stays flat. Shopify Email is included with Shopify plans with separate send limits and usage terms, so the cost conversation happens inside your Shopify invoice. Model a twelve-month list and send projection including peak months, then verify both on official pricing pages — figures here are planning clues, not quotes.' },
+  { question: 'Which handles purchaser suppression better?', answer: 'Both can suppress recent purchasers, but the operator must build and test the rule. Omnisend exposes more event conditions for complex exclusions; Shopify Email keeps it simple with targeted segments. In a pilot, place a test order and confirm both tools exclude that customer from every scheduled promotion before any sale week decides for you.' },
+  { question: 'Which is safer for margin during sale weeks?', answer: 'Whichever stack the team can govern. Document discount caps, exclude concurrent flow participants, and run a holdout or no-mail control so incremental margin — not platform-attributed revenue — decides whether each channel stays. Neither vendor name alone protects margin.' },
+  { question: 'What do app costs look like beyond the sticker tier?', answer: 'Ask each vendor about overage rates at peak send volume, SMS or push message fees where channels are used, onboarding or migration help, and what happens to billing when the list dips after a cleanup. App costs also include the staff hours to QA two suppression models if both tools remain active.' },
+  { question: 'Which tool is easier to leave later?', answer: 'Model the export path before you adopt: Shopify Email inherits native customer state, so its data lock-in risk is low in one direction; Omnisend exports consent and flow definitions but rebuilding branches takes operator hours. Neither is a trap if consent records and a verified export path exist before the contract matters.' },
+  { question: 'What breaks first in a dual-stack store?', answer: 'Suppression. Two platforms mean two viewers of consent, purchases, refunds, and journey state. Document which tool owns welcome, cart, and broadcast, then test one-click unsubscribe propagation and duplicate-send scenarios weekly until one system is retired.' },
 ];
 ---
 
@@ -48,18 +54,45 @@ const faqs = [
     <p class="catalog-kicker mt-6">Shopify comparison</p>
     <h1 class="hero-title mt-4 max-w-5xl">{title}</h1>
     <p class="mt-7 max-w-3xl text-xl leading-9">Omnisend and Shopify Email solve different versions of the same problem. Shopify Email keeps campaign creation close to the product catalog and admin. Omnisend is built for more deliberate lifecycle work across email, SMS, and push. The right choice depends on the journeys your store will actually maintain, not the longest feature checklist.</p>
-    <p class="mt-5 max-w-3xl text-lg leading-8">This page compares those two products first, then adds 11 credible alternatives for stores whose needs sit elsewhere: deeper event modeling, capture, SMS, loyalty, CRM handoff, or a smaller operating surface. Product capabilities and pricing change, so verify commercial details on each official page before procurement.</p>
-  </section>
+      <p class="mt-5 max-w-3xl text-lg leading-8">This page compares those two products first, then adds 11 credible alternatives for stores whose needs sit elsewhere: deeper event modeling, capture, SMS, loyalty, CRM handoff, or a smaller operating surface. Product capabilities and pricing change, so verify commercial details on each official page before procurement.</p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps/omnisend">Omnisend review</a>
+        <a class="btn btn-primary" href="/apps/shopify-email">Shopify Email review</a>
+        <a class="btn btn-secondary" href="/guides/pricing-models">Pricing models guide</a>
+      </div>
+    </section>
 
   <section class="container pb-12">
     <div class="ledger-card overflow-x-auto">
       <h2 class="font-serif text-3xl font-black">Omnisend vs Shopify Email at a glance</h2>
-      <table class="mt-5 w-full min-w-[760px] text-left text-sm"><thead><tr><th class="p-3">Decision point</th><th class="p-3">Omnisend</th><th class="p-3">Shopify Email</th><th class="p-3">Verify in pilot</th></tr></thead><tbody>
-        <tr><td class="p-3">Primary fit</td><td class="p-3">Lifecycle journeys and multiple channels</td><td class="p-3">Native campaigns and store announcements</td><td class="p-3">The two journeys you will own weekly</td></tr>
-        <tr><td class="p-3">Data question</td><td class="p-3">Which Shopify events, catalog fields, and consent states sync?</td><td class="p-3">Which customer segments and product blocks are available natively?</td><td class="p-3">Event timing, product accuracy, exclusions</td></tr>
-        <tr><td class="p-3">Channel question</td><td class="p-3">Will email, SMS, and push share suppression?</td><td class="p-3">Is email-only enough for the current job?</td><td class="p-3">Duplicate-send and opt-out tests</td></tr>
-        <tr><td class="p-3">Scale question</td><td class="p-3">How do contact and message tiers behave in peak months?</td><td class="p-3">What is included and what is usage-based?</td><td class="p-3">A 12-month send and list model</td></tr>
-      </tbody></table>
+      <table class="mt-5 w-full min-w-[760px] text-left text-sm">
+        <thead><tr><th class="p-3">Decision point</th><th class="p-3">Omnisend</th><th class="p-3">Shopify Email</th><th class="p-3">Verify in pilot</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3">Primary fit</td><td class="p-3">Lifecycle journeys and multiple channels</td><td class="p-3">Native campaigns and store announcements</td><td class="p-3">The two journeys you will own weekly</td></tr>
+          <tr><td class="p-3">Data question</td><td class="p-3">Which Shopify events, catalog fields, and consent states sync?</td><td class="p-3">Which customer segments and product blocks are available natively?</td><td class="p-3">Event timing, product accuracy, exclusions</td></tr>
+          <tr><td class="p-3">Channel question</td><td class="p-3">Will email, SMS, and push share suppression?</td><td class="p-3">Is email-only enough for the current job?</td><td class="p-3">Duplicate-send and opt-out tests</td></tr>
+          <tr><td class="p-3">Scale question</td><td class="p-3">How do contact and message tiers behave in peak months?</td><td class="p-3">What is included and what is usage-based?</td><td class="p-3">A 12-month send and list model</td></tr>
+          <tr><td class="p-3">Migration question</td><td class="p-3">Import consent and flows; test before full cutover</td><td class="p-3">Lowest-friction start, fewer flows to port</td><td class="p-3">Consent export and duplicate-send tests</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Pricing deep-dive: cost lines modeled with Shopify context</h2>
+      <p class="mt-4 max-w-3xl">Vendor pricing changes frequently; the lines below are planning checks, not quotes. Confirm each on the official pricing pages and in a trial with your own list shape.</p>
+      <table class="mt-5 w-full min-w-[760px] text-left text-sm">
+        <thead><tr><th class="p-3">Cost line</th><th class="p-3">Omnisend pattern</th><th class="p-3">Shopify Email pattern</th><th class="p-3">Validate before procurement</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3">Contact or profile definition</td><td class="p-3">Contact tiers broader than buyers — popup-captured subscribers count, so the tier can climb without more customers</td><td class="p-3">Paid with your Shopify plan; audience targeting draws from store customer data</td><td class="p-3">Current tier thresholds, billing example, archive rules</td></tr>
+          <tr><td class="p-3">Included sends</td><td class="p-3">Email volume limits within plan levels; sale-week spikes test the ceiling</td><td class="p-3">Send limits per plan; check whether additional sends are purchasable and at what rate</td><td class="p-3">Peak-month send projection and overage rate</td></tr>
+          <tr><td class="p-3">SMS and push fees</td><td class="p-3">Channel messages priced separately; costs differ by country and carrier</td><td class="p-3">Email-only, so no channel fee — but no channel coverage either</td><td class="p-3">Rate card, quiet hours, opt-out behavior</td></tr>
+          <tr><td class="p-3">Purchaser suppression window</td><td class="p-3">Suppression requires building exclusions; event depth supports it</td><td class="p-3">Segments are simple; confirm purchase-date filtering meets your window</td><td class="p-3">Test-order suppression on all live flows</td></tr>
+          <tr><td class="p-3">Margin after incentives</td><td class="p-3">Discount features can accelerate a coupon ladder if ungoverned</td><td class="p-3">Native discount codes make stacking easy to miss in QA</td><td class="p-3">Discount caps and holdout margin reporting</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -70,18 +103,110 @@ const faqs = [
     <tr><td class="p-3">Implementation</td><td class="p-3">Migration, templates, and QA consume staff time</td><td class="p-3">Support scope, onboarding cost, export/import limits</td></tr>
   </tbody></table></div></section>
 
-  <section class="container space-y-10 pb-16"><p class="catalog-kicker">Relevant alternatives</p><h2 class="font-serif text-4xl font-black">Thirteen tools for different Shopify jobs</h2>{reviews.map((item, index) => <ToolReview app={item.app} rank={index + 1} paragraphs={item.paragraphs} />)}</section>
+  <section class="container pb-12">
+    <div class="ledger-card">
+      <h2 class="font-serif text-3xl font-black">Two products, different operating risk</h2>
+      <p class="mt-4 max-w-3xl">Omnisend concentrates ownership: one builder for email and other channels, one suppression model, one bill — at the price of moving data and consent out of Shopify's native surface. Shopify Email minimizes integration risk: the customer file, consent state, and product blocks come from the same admin — at the price of less expressive lifecycle logic. The safer procurement question is not "which is better" but "which failure mode can this team repair in a sale week."</p>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div><h3 class="font-black">Choose Omnisend-differentiation when</h3><p>Welcome, cart, post-purchase, and replenishment each need their own branch logic or a second channel. Confirm event latency, consent propagation, and channel fees before scaling SMS or push.</p></div>
+        <div><h3 class="font-black">Choose Shopify Email-differentiation when</h3><p>Campaign production speed matters more than branching depth, and the team wants consent and purchase state handled natively. Confirm send limits and the export path before treating it as a permanent retention system.</p></div>
+      </div>
+    </div>
+  </section>
 
-  <section class="container pb-16"><div class="ledger-card"><h2 class="font-serif text-3xl font-black">Official sources and internal follow-up</h2><p class="mt-4 max-w-3xl">Use official product and pricing pages for current commercial facts. The internal app reviews add Shopify-specific questions; they are not substitutes for a vendor quote or current documentation.</p><div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-    <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing ↗</a><a class="link" href="https://www.shopify.com/email-marketing">Shopify Email ↗</a><a class="link" href="https://www.klaviyo.com/pricing">Klaviyo pricing ↗</a><a class="link" href="https://www.drip.com/pricing">Drip pricing ↗</a><a class="link" href="https://www.yotpo.com/products/email-sms/">Yotpo Email & SMS ↗</a><a class="link" href="https://www.privy.com/pricing">Privy pricing ↗</a><a class="link" href="https://postscript.io/pricing">Postscript pricing ↗</a><a class="link" href="https://www.attentive.com/pricing">Attentive ↗</a><a class="link" href="https://mailchimp.com/pricing/">Mailchimp pricing ↗</a><a class="link" href="https://www.activecampaign.com/pricing">ActiveCampaign pricing ↗</a><a class="link" href="https://www.sendlane.com/pricing">Sendlane pricing ↗</a><a class="link" href="https://recart.com/pricing">Recart pricing ↗</a><a class="link" href="https://tinyemail.com/pricing">tinyEmail pricing ↗</a>
-  </div><p class="mt-6"><a class="link" href="/apps">Browse all Shopify app reviews →</a> · <a class="link" href="/guides/migration">Migration guide →</a></p></div></section>
+  <section class="container space-y-10 pb-16">
+    <p class="catalog-kicker">Relevant alternatives</p>
+    <h2 class="font-serif text-4xl font-black">Thirteen tools for different Shopify jobs</h2>
+    {reviews.map((item, index) => <ToolReview app={item.app} rank={index + 1} paragraphs={item.paragraphs} />)}
+  </section>
 
-  <section class="container pb-16"><div class="ledger-card"><h2 class="font-serif text-4xl font-black">A 14-day comparison pilot</h2><table class="mt-6 w-full text-left text-sm"><thead><tr><th class="p-3">Days</th><th class="p-3">Work</th><th class="p-3">Pass condition</th></tr></thead><tbody>
-    <tr><td class="p-3">1–3</td><td class="p-3">Connect a test store or limited audience; document consent, product, order, and customer events.</td><td class="p-3">Events arrive with usable IDs and expected timing.</td></tr>
-    <tr><td class="p-3">4–8</td><td class="p-3">Build welcome and abandoned-checkout journeys with purchase, refund, support, and unsubscribe exclusions.</td><td class="p-3">Test records receive the right message once, or are cleanly suppressed.</td></tr>
-    <tr><td class="p-3">9–11</td><td class="p-3">Send one campaign to a permissioned slice; test product blocks, links, mobile rendering, and replies.</td><td class="p-3">Merchandising, consent, and support handoff are reviewable.</td></tr>
-    <tr><td class="p-3">12–14</td><td class="p-3">Model 12-month cost and compare eligible orders, margin after incentives, opt-outs, complaints, and holdout results.</td><td class="p-3">The winner is operationally maintainable and economically explainable.</td></tr>
-  </tbody></table><p class="mt-7">Use the <a class="link" href="/guides/selection-framework">selection framework</a>, <a class="link" href="/guides/flow-collision-prevention">flow collision guide</a>, <a class="link" href="/guides/consent-compliance">consent guide</a>, and <a class="link" href="/guides/pricing-models">pricing models guide</a> alongside the pilot. Platform-attributed revenue is directional; a holdout is stronger evidence of incrementality.</p></div></section>
+  <section class="container pb-16">
+    <div class="ledger-card">
+      <h2 class="font-serif text-3xl font-black">Official sources and internal follow-up</h2>
+      <p class="mt-4 max-w-3xl">Use official product and pricing pages for current commercial facts. The internal app reviews add Shopify-specific questions; they are not substitutes for a vendor quote or current documentation.</p>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+        <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing ↗</a><a class="link" href="https://www.shopify.com/email-marketing">Shopify Email ↗</a><a class="link" href="https://www.klaviyo.com/pricing">Klaviyo pricing ↗</a><a class="link" href="https://www.drip.com/pricing">Drip pricing ↗</a><a class="link" href="https://www.yotpo.com/products/email-sms/">Yotpo Email & SMS ↗</a><a class="link" href="https://www.privy.com/pricing">Privy pricing ↗</a><a class="link" href="https://postscript.io/pricing">Postscript pricing ↗</a><a class="link" href="https://www.attentive.com/pricing">Attentive ↗</a><a class="link" href="https://mailchimp.com/pricing/">Mailchimp pricing ↗</a><a class="link" href="https://www.activecampaign.com/pricing">ActiveCampaign pricing ↗</a><a class="link" href="https://www.sendlane.com/pricing">Sendlane pricing ↗</a><a class="link" href="https://recart.com/pricing">Recart pricing ↗</a><a class="link" href="https://tinyemail.com/pricing">tinyEmail pricing ↗</a>
+      </div>
+      <p class="mt-6"><a class="link" href="/apps">Browse all Shopify app reviews →</a> · <a class="link" href="/guides/migration">Migration guide →</a></p>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <div class="ledger-card">
+      <h2 class="font-serif text-4xl font-black">A 14-day comparison pilot</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead><tr><th class="p-3">Days</th><th class="p-3">Work</th><th class="p-3">Pass condition</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3">1–3</td><td class="p-3">Connect a test store or limited audience; document consent, product, order, and customer events.</td><td class="p-3">Events arrive with usable IDs and expected timing.</td></tr>
+          <tr><td class="p-3">4–8</td><td class="p-3">Build welcome and abandoned-checkout journeys with purchase, refund, support, and unsubscribe exclusions.</td><td class="p-3">Test records receive the right message once, or are cleanly suppressed.</td></tr>
+          <tr><td class="p-3">9–11</td><td class="p-3">Send one campaign to a permissioned slice; test product blocks, links, mobile rendering, and replies.</td><td class="p-3">Merchandising, consent, and support handoff are reviewable.</td></tr>
+          <tr><td class="p-3">12–14</td><td class="p-3">Model 12-month cost and compare eligible orders, margin after incentives, opt-outs, complaints, and holdout results.</td><td class="p-3">The winner is operationally maintainable and economically explainable.</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-7">Use the <a class="link" href="/guides/selection-framework">selection framework</a>, <a class="link" href="/guides/flow-collision-prevention">flow collision guide</a>, <a class="link" href="/guides/consent-compliance">consent guide</a>, and <a class="link" href="/guides/pricing-models">pricing models guide</a> alongside the pilot. Platform-attributed revenue is directional; a holdout is stronger evidence of incrementality.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">Consent, purchaser suppression, and margin overlap checks</h2>
+      <p>Whichever platform wins, the same Shopify controls decide whether it stays healthy. Run these checks against both products' trials before choosing:</p>
+      <ul>
+        <li><strong>Consent:</strong> confirming that checkout consent, popup consent, and unsubscribe state export with timestamps and survive a migration or a dual-stack period.</li>
+        <li><strong>Purchaser suppression:</strong> placing one test order and verifying each tool removes that customer from campaign sends and lifecycle journeys where appropriate — not just from the blast you remembered to exclude.</li>
+        <li><strong>Refund and cancellation exits:</strong> testing how journeys handle a refunded order after a reminder already delivered, and whether re-entry timing is explainable to support.</li>
+        <li><strong>Margin:</strong> reviewing discount stacking between popup coupons and cart recovery, and requiring a no-discount control so lift is provable against incentives.</li>
+        <li><strong>App costs:</strong> asking both vendors for peak-month examples — contact tier climb, send overages, SMS fees — and what happens to billing after a list cleanup.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="ledger-card">
+      <h2 class="font-serif text-3xl font-black">Migration-risk comparison</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div><h3 class="font-black">Moving to Omnisend</h3><p>Export consent timestamps, suppressions, and flow definitions. Rebuilt welcome and cart first, run two weeks of parallel suppression, then migrate the rest. SMS adds a channel consent review.</p></div>
+        <div><h3 class="font-black">Moving to Shopify Email</h3><p>Simplest migration path when coming from another email vendor: consent draws from Shopify customer state. Confirm send limits and the export path you would need if you later outgrow it.</p></div>
+        <div><h3 class="font-black">Staying split-stack</h3><p>One suppression wiki, one priority doc, weekly drift audit. The extra cost is staff hours — name the owner before both tools bill for the same customer at the same moment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Matchup decision table</h2>
+      <table class="mt-5 w-full min-w-[760px] text-left text-sm">
+        <thead><tr><th class="p-3">If your store needs…</th><th class="p-3">Better test</th><th class="p-3">Not a guarantee</th></tr></thead>
+  <section class="container pb-12">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Matchup decision table</h2>
+      <table class="mt-5 w-full min-w-[760px] text-left text-sm">
+        <thead><tr><th class="p-3">If your store needs…</th><th class="p-3">Better test</th><th class="p-3">Not a guarantee</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3">Welcome, cart, and post-purchase maintained weekly</td><td class="p-3">Omnisend journey depth</td><td class="p-3">Depth still needs an operator and documented suppression</td></tr>
+          <tr><td class="p-3">Native announcements with minimal staff</td><td class="p-3">Shopify Email</td><td class="p-3">Native context does not automate lifecycle judgment</td></tr>
+          <tr><td class="p-3">Consent cleanup before a migration</td><td class="p-3">Either, after export and timestamp verification</td><td class="p-3">A newer tool does not cleanse a stale list</td></tr>
+          <tr><td class="p-3">Margin control during sale weeks</td><td class="p-3">Whichever tool your team can govern</td><td class="p-3">Attributed revenue is not incremental revenue</td></tr>
+          <tr><td class="p-3">Multi-country campaigns</td><td class="p-3">Omnisend with regional consent review</td><td class="p-3">Channel reach does not substitute for compliance work</td></tr>
+          <tr><td class="p-3">One owner, one bill, fastest QA</td><td class="p-3">The tool your team edits without vendor help</td><td class="p-3">Simplicity inside one dashboard still needs priority rules</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <div class="ledger-card">
+      <h2 class="font-serif text-3xl font-black">Hedged verdict</h2>
+      <p class="mt-4 max-w-3xl">When the shortlist survives the tests above, most Shopify teams we catalog lean Omnisend-first when journeys and a second channel are the operating plan, and Shopify Email when broadcast speed and native customer context are the whole job. That ordering is a planning default, not a verdict: the pilot table, the pricing deep-dive, and the suppression checks decide faster than any ranking. Pricing and automation behavior change frequently — confirm the current tiers, send definitions, and channel fees on the official pages and inside a trial with your own list shape before signing anything.</p>
+      <p class="mt-4 max-w-3xl">Record a two-page preference memo in the trial: the journeys each tool ran cleanly, the cost lines it failed, and the export state it leaves behind. That memo — not this page's table — is the artifact that should carry the decision.</p>
+      <div class="mt-6 flex flex-wrap gap-4 text-sm font-bold">
+        <a class="link" href="/compare">← All comparisons</a>
+        <a class="link" href="/apps">All app reviews →</a>
+        <a class="link" href="/use-cases/welcome-series">Welcome playbook →</a>
+        <a class="link" href="/use-cases/abandoned-cart">Cart recovery playbook →</a>
+      </div>
+    </div>
+  </section>
 
   <FaqSection faqs={faqs} title="Omnisend vs Shopify Email FAQ" />
 </BaseLayout>

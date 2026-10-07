@@ -9,18 +9,216 @@ import { appBySlug } from '../../data/apps';
 const path = '/guides/replenishment-tools';
 const title = 'Best Shopify Email Tools for Replenishment and Repeat Purchase';
 const description = 'Compare 14 Shopify email tools for replenishment and repeat purchase with best-for guidance, pros, cons, pricing caveats, official links, and a controlled pilot.';
-const slugs = ['klaviyo','omnisend','sequenzy','drip','shopify-email','yotpo-email-sms','brevo','privy','activecampaign','sendlane','marsello','aftership-email','mailchimp','tinyemail'];
+const slugs = [
+  'klaviyo',
+  'omnisend',
+  'sequenzy',
+  'drip',
+  'shopify-email',
+  'yotpo-email-sms',
+  'brevo',
+  'privy',
+  'activecampaign',
+  'sendlane',
+  'marsello',
+  'aftership-email',
+  'mailchimp',
+  'tinyemail',
+];
 const reviews = slugs.map((slug) => ({ app: appBySlug(slug)!, paragraphs: [
   `${appBySlug(slug)!.name} is a credible option for a replenishment program when its current Shopify integration exposes the product, order, and customer signals your flow needs. Start with one product family, a real reorder interval, and suppression for new orders, refunds, cancellations, support escalations, active subscriptions, and opt-outs. The best fit is ${appBySlug(slug)!.bestFor.toLowerCase()}.`,
   `Pros include ${appBySlug(slug)!.strengths.slice(0, 2).join(' and ')}. Cons include ${appBySlug(slug)!.limits.slice(0, 2).join(' and ')}. Pricing caveat: ${appBySlug(slug)!.pricing} is a planning signal only; confirm current thresholds, message or profile billing, SMS fees, onboarding, and contract terms with the vendor. Best for ${appBySlug(slug)!.bestFor.toLowerCase()}. Official link: https://www.${slug === 'klaviyo' ? 'klaviyo.com/features/shopify' : slug === 'omnisend' ? 'omnisend.com/shopify' : slug === 'sequenzy' ? 'sequenzy.com' : 'shopify.com'}.`
 ]}));
-const faqs = [{ question: 'How should a store time replenishment?', answer: 'Use the median reorder interval by product family, then test an early education touch and a later reminder. Suppress new orders, refunds, support cases, active subscriptions, and opt-outs.' }, { question: 'What should the pilot measure?', answer: 'Eligible profiles, delivered messages, repeat orders, margin after incentives, unsubscribes, complaints, and a holdout group. Platform-attributed revenue is not proof of incremental revenue.' }];
+const faqs = [
+  { question: 'How should a store time replenishment?', answer: 'Use the median reorder interval by product family, then test an early education touch and a later reminder. Suppress new orders, refunds, support cases, active subscriptions, and opt-outs.' },
+  { question: 'What should the pilot measure?', answer: 'Eligible profiles, delivered messages, repeat orders, margin after incentives, unsubscribes, complaints, and a holdout group. Platform-attributed revenue is not proof of incremental revenue.' },
+  { question: 'How does consent affect a replenishment program?', answer: 'Replenishment is marketing email in most jurisdictions, so it must honor marketing consent, unsubscribe, and regional rules — not assume transactional status because the product was purchased. Export consent timestamps before migrating senders.' },
+  { question: 'Why suppress purchases in the recovery window?', answer: 'A customer who bought yesterday does not need a reorder reminder that samples grow stale after a refund, cancellation, or substitution event. Purchase-triggered suppression with re-entry timing protects margin and reduces complaint risk.' },
+  { question: 'How should app costs shape the shortlist?', answer: 'Model profile-based pricing, pay-per-email, and per-message fees against a twelve-month send projection including peak months, then compare with the margin gained from incremental repeat orders rather than platform-attributed revenue alone.' },
+  { question: 'Can replenishment run alongside subscriptions?', answer: 'Yes, but subscription state must sit in the eligibility rule. Portal holders, skipped boxes, and failed payment recoveries each need a tailored path; a generic reminder that contradicts the subscription app undermines trust and invites support tickets.' },
+];
 ---
+
 <BaseLayout title={title} description={description} site={site} path={path}>
   <ArticleSchema title={title} description={description} siteName={site.name} domain={site.domain} path={path} />
-  <section class="container py-16"><a class="link" href="/guides">← All operator guides</a><p class="catalog-kicker mt-6">Replenishment tools</p><h1 class="hero-title mt-4 max-w-5xl">{title}</h1><p class="mt-7 max-w-3xl text-xl leading-9">A replenishment email is a timing, eligibility, and margin problem — not a generic calendar reminder. This guide compares 14 tools for consumables, subscriptions, loyalty-led repeat purchase, and post-purchase education. Vendor capabilities and pricing change, so verify every commercial and integration detail on the official page before procurement.</p><p class="mt-5 max-w-3xl text-lg leading-8">Shortlist by the job: Klaviyo for deep event modeling, Omnisend for fast multichannel setup, Sequenzy for guided lifecycle design, Shopify Email for a native test, and Yotpo or Marsello when loyalty and reviews are part of the repeat-purchase reason.</p></section>
-  <section class="container pb-12"><div class="ledger-card overflow-x-auto"><h2 class="font-serif text-3xl font-black">Decision table</h2><table class="mt-5 w-full min-w-[700px] text-left text-sm"><thead><tr><th class="p-3">Need</th><th class="p-3">Shortlist</th><th class="p-3">Verify</th></tr></thead><tbody><tr><td class="p-3">SKU timing</td><td class="p-3">Klaviyo, Drip, Omnisend</td><td class="p-3">Product events and post-order suppression</td></tr><tr><td class="p-3">Fast experiment</td><td class="p-3">Shopify Email, tinyEmail, Brevo</td><td class="p-3">Current automation limits and export path</td></tr><tr><td class="p-3">Loyalty-led repeat</td><td class="p-3">Yotpo, Marsello</td><td class="p-3">Module bundle and data ownership</td></tr></tbody></table></div></section>
-  <section class="container space-y-10 pb-16"><p class="catalog-kicker">Tool reviews</p><h2 class="font-serif text-4xl font-black">Fourteen tools, one repeat-purchase job</h2>{reviews.map((item, index) => <ToolReview app={item.app} rank={index + 1} paragraphs={item.paragraphs} />)}</section>
-  <section class="container pb-16"><div class="ledger-card"><h2 class="font-serif text-4xl font-black">30-day implementation pilot</h2><div class="mt-6 grid gap-6 md:grid-cols-3"><div><h3 class="font-black">Days 1–7</h3><p>Choose one product family. Export reorder intervals, margin, refunds, subscription state, and suppressions. Write eligibility in one sentence.</p></div><div><h3 class="font-black">Days 8–21</h3><p>Send education then reminder to eligible customers, keeping a holdout. Test timing separately from subject line, SMS, and discounts.</p></div><div><h3 class="font-black">Days 22–30</h3><p>Compare repeat orders, margin, unsubscribes, complaints, and incremental orders. Promote only if operations and evidence are clean.</p></div></div><p class="mt-7">Use the <a class="link" href="/use-cases/replenishment">replenishment playbook</a>, <a class="link" href="/guides/flow-collision-prevention">collision guide</a>, and <a class="link" href="/guides/revenue-attribution">attribution guide</a> during the pilot.</p></div></section>
+  <section class="container py-16">
+    <a class="link" href="/guides">← All operator guides</a>
+    <p class="catalog-kicker mt-6">Replenishment tools</p>
+    <h1 class="hero-title mt-4 max-w-5xl">{title}</h1>
+    <p class="mt-7 max-w-3xl text-xl leading-9">A replenishment email is a timing, eligibility, and margin problem — not a generic calendar reminder. This guide compares 14 tools for consumables, subscriptions, loyalty-led repeat purchase, and post-purchase education. Vendor capabilities and pricing change, so verify every commercial and integration detail on the official page before procurement.</p>
+    <p class="mt-5 max-w-3xl text-lg leading-8">Shortlist by the job: Klaviyo for deep event modeling, Omnisend for fast multichannel setup, Sequenzy for guided lifecycle design, Shopify Email for a native test, and Yotpo or Marsello when loyalty and reviews are part of the repeat-purchase reason.</p>
+  </section>
+
+  <section class="container pb-12">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Decision table</h2>
+      <table class="mt-5 w-full min-w-[700px] text-left text-sm">
+        <thead>
+          <tr><th class="p-3">Need</th><th class="p-3">Shortlist</th><th class="p-3">Verify</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-3">SKU timing</td><td class="p-3">Klaviyo, Drip, Omnisend</td><td class="p-3">Product events and post-order suppression</td></tr>
+          <tr><td class="p-3">Fast experiment</td><td class="p-3">Shopify Email, tinyEmail, Brevo</td><td class="p-3">Current automation limits and export path</td></tr>
+          <tr><td class="p-3">Loyalty-led repeat</td><td class="p-3">Yotpo, Marsello</td><td class="p-3">Module bundle and data ownership</td></tr>
+          <tr><td class="p-3">Margin-safe incentives</td><td class="p-3">Omnisend, Sequenzy, Sendlane</td><td class="p-3">Discount caps and holdout measurement</td></tr>
+          <tr><td class="p-3">Subscription-aware nudges</td><td class="p-3">Klaviyo, ActiveCampaign, Recharge pairing</td><td class="p-3">Subscription-state exclusions and portal conflicts</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Per-tool fit matrix</h2>
+      <table class="mt-5 w-full min-w-[760px] text-left text-sm">
+        <thead>
+          <tr><th class="p-3">Tool</th><th class="p-3">Best for</th><th class="p-3">Strength to lean on</th><th class="p-3">Limit to plan around</th></tr>
+        </thead>
+        <tbody>
+          {slugs.map((slug) => { const app = appBySlug(slug)!; return (
+            <tr>
+              <td class="p-3 font-bold text-[#24170f]">{app.name}</td>
+              <td class="p-3">{app.bestFor}</td>
+              <td class="p-3">{app.strengths[0]}</td>
+              <td class="p-3">{app.limits[0]}</td>
+            </tr>
+          ); })}
+        </tbody>
+      </table>
+      <p class="mt-5">Strengths and limits summarize each catalog review. Confirm every commercial and integration claim on the official site before procurement — vendor behavior changes, and reviews age.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">Shopify signals a replenishment program depends on</h2>
+      <p>Replenishment timing is only as good as the events behind it. Map four Shopify signals before choosing a tool: product purchase dates by family, order and refund state, subscription status from the portal app, and consent source per customer. A tool that can read the signals but cannot suppress on them will keep sending after the wrong moments.</p>
+      <p>Purchaser suppression is the core eligibility rule. After any new order, pause the reminder sequence for at least the product's median consumption window, and exit immediately on refunds, cancellations, and support escalations. Stores that skip the suppression step usually see complaints rise faster than repeat orders.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">Operator checklist: eligibility, consent, margin, cost</h2>
+      <p>Every tool review above helps only if the program underneath it is governed. Run this list before the pilot and again after any migration:</p>
+      <ul>
+        <li>Reorder intervals are set per product family from median purchase gaps, not a single storewide rule.</li>
+        <li>Purchaser suppression pauses the sequence after every new order and re-enters at the consumption window's end.</li>
+        <li>Refunds, cancellations, and substitutions exit the current journey immediately — a stale reminder after a refund is a complaint generator.</li>
+        <li>Active subscription holders are excluded from buy-now reminders unless the portal event justifies a tailored nudge.</li>
+        <li>Support cases and delivery exceptions suppress promotional reminders until the case is closed.</li>
+        <li>Consent source is exported and stored with timestamps; replenishment mail honors marketing-consent rules, not transactional assumptions.</li>
+        <li>Unsubscribes propagate across flows and channels within a day — test each path before scaling volume.</li>
+        <li>Every reminder carries a no-discount control variant so lift is measurable without eroding margin by default.</li>
+        <li>Discount ladders have caps, minimum cart thresholds, and documented dependency reviewed monthly with finance.</li>
+        <li>Holdout or matched comparison is in place before any "platform-attributed revenue" number reaches a budget decision.</li>
+        <li>Profile, send, and message pricing are modeled against a twelve-month send projection including peak months.</li>
+        <li>App costs, overage rates, and channel fees are confirmed on official pricing pages, not from trial-period memories.</li>
+        <li>Cash margin after incentives is the success metric — platform attribution is directional only.</li>
+        <li>Growing volume includes SMS, quiet hours, per-country fees, and cross-channel collision rules are written down.</li>
+        <li>One named operator explains every live journey — its trigger, its suppression, and its stop condition.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">Collision priorities with other lifecycle flows</h2>
+      <p>Replenishment reminders compete with welcome, cart recovery, post-purchase education, and winback for the same inbox slots. Document priority before launch: recent purchases exit replenishment; cart recovery wins same-day; winback stays out until inactivity is defined; sale broadcasts exclude customers inside an active replenishment window. A flow that omits these rules will look excellent on platform dashboards and still burn unsubscribes when reminders overlap refunds or cart discounts within a single week.</p>
+      <p>Audit drift monthly: export active automations, compare against the intended priority doc, and remove the branches nobody defended. Programs decay by duplication, not by one bad send.</p>
+    </div>
+  </section>
+
+  <section class="container space-y-10 pb-16">
+    <p class="catalog-kicker">Tool reviews</p>
+    <h2 class="font-serif text-4xl font-black">Fourteen tools, one repeat-purchase job</h2>
+    {reviews.map((item, index) => <ToolReview app={item.app} rank={index + 1} paragraphs={item.paragraphs} />)}
+  </section>
+
+  <section class="container pb-12">
+    <div class="ledger-card overflow-x-auto">
+      <h2 class="font-serif text-3xl font-black">Cost lines sellers should model</h2>
+      <table class="mt-5 w-full min-w-[700px] text-left text-sm">
+        <thead>
+          <tr><th class="p-3">Cost line</th><th class="p-3">Why it matters</th><th class="p-3">Evidence to request</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-3">Contact or profile tiers</td><td class="p-3">Dormant list members can still inflate a tier</td><td class="p-3">Current definition and a 12-month list projection</td></tr>
+          <tr><td class="p-3">Send volume</td><td class="p-3">Reminder-heavy programs multiply sends per profile</td><td class="p-3">Included sends, overage rates, peak-month estimate</td></tr>
+          <tr><td class="p-3">SMS or channel fees</td><td class="p-3">Message cost varies by country and carrier</td><td class="p-3">Rate card and consent behavior per channel</td></tr>
+          <tr><td class="p-3">Incentives and discounts</td><td class="p-3">Reorder nudges often become coupon ladders</td><td class="p-3">Discount dependency and margin after incentives</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-5">Pricing changes frequently; treat every figure as a planning signal and confirm current terms on the vendor's official pricing page before procurement.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">SMS and channel hygiene in replenishment programs</h2>
+      <p>Reminders frequently graduate to SMS, and that is where margin discipline matters most. Per-message fees vary by country and carrier; a reminder program that looked cheap as email can produce a six-figure annual bill when timed messages become habit. Before adding SMS to replenishment, require quiet hours, per-week caps, minimum cart thresholds, and a shared suppression file across email and text — the same customer should never receive a discount reminder and a paid text within an hour.</p>
+      <p>Test opt-out propagation on each channel and document which system stores channel preference. Regional rules differ: a program that runs cleanly in one market can violate consent expectations in another. Verify carrier and compliance requirements from official sources before scaling.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">Margin deep-dive: incentives, attribution, holdout</h2>
+      <p>Replenishment senders drift toward discounts because reminders without offers convert more slowly in platform dashboards. The drift is expensive. Model a no-incentive variant against a discounted variant with a matched holdout; if the discounted version's incremental margin per delivered message is lower over ninety days, the coupon was masking timing, not creating purchases. Keep discount ladders capped, with minimum cart thresholds, and review dependency monthly — every reminder with a coupon should prove it earns margin, not just orders.</p>
+      <p>Attribution rules: platform-attributed revenue counts the last click, including subscribers who would have re-ordered anyway. Holdout results are slower and less flattering, but they survive a CFO's questions. Use both, prefer the second, and never migrate a program on attributed revenue alone.</p>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="prose-shopify ledger-card">
+      <h2 class="font-serif text-3xl font-black">App-cost questions every vendor should answer</h2>
+      <ul>
+        <li>What exactly counts as a billable profile or contact, and what happens to dormant list members at renewal?</li>
+        <li>Are sends metered per message or billed within included tiers, and what is the graceful overage rate?</li>
+        <li>Which channel fees — email, SMS, push — are per message, by country, and which peak-month scenario should we budget?</li>
+        <li>What does onboarding, migration help, and support actually include at our tier?</li>
+        <li>What are the export paths and notice periods if the store outgrows or outprices the plan?</li>
+      </ul>
+      <p>Get the answers in writing and attach them to the procurement email. Pricing behavior during a sale week is a procurement question — not a feature in a demo. Confirm current terms on each official pricing page because they change without notice.</p>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <div class="ledger-card">
+      <h2 class="font-serif text-4xl font-black">30-day implementation pilot</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div>
+          <h3 class="font-black">Days 1–7</h3>
+          <p>Choose one product family. Export reorder intervals, margin, refunds, subscription state, and suppressions. Write eligibility in one sentence.</p>
+        </div>
+        <div>
+          <h3 class="font-black">Days 8–21</h3>
+          <p>Send education then reminder to eligible customers, keeping a holdout. Test timing separately from subject line, SMS, and discounts.</p>
+        </div>
+        <div>
+          <h3 class="font-black">Days 22–30</h3>
+          <p>Compare repeat orders, margin, unsubscribes, complaints, and incremental orders. Promote only if operations and evidence are clean.</p>
+        </div>
+      </div>
+      <p class="mt-7">Use the <a class="link" href="/use-cases/replenishment">replenishment playbook</a>, <a class="link" href="/guides/flow-collision-prevention">collision guide</a>, and <a class="link" href="/guides/revenue-attribution">attribution guide</a> during the pilot.</p>
+      <p class="mt-4">Pair with the <a class="link" href="/use-cases/winback">winback playbook</a> when repeat-purchase timing and lapsed-customer recovery share a suppression map, and with the <a class="link" href="/guides/consent-compliance">consent guide</a> before migrating senders.</p>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <div class="ledger-card">
+      <h2 class="font-serif text-3xl font-black">What disqualifies a replenishment tool</h2>
+      <table class="mt-5 w-full text-left text-sm">
+        <thead><tr><th class="p-3">Signal in the pilot</th><th class="p-3">Why it fails later</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3">Cannot exit a flow on a refund or cancellation event</td><td class="p-3">Stale reminders after refunds generate complaints faster than repeats</td></tr>
+          <tr><td class="p-3">Discount attribution is inseparable from flow reporting</td><td class="p-3">Margin per-delivered-message becomes unmeasurable as ladders grow</td></tr>
+          <tr><td class="p-3">Notification volume climbs without per-family timing controls</td><td class="p-3">One interval across every SKU mis-times the catalog you care about</td></tr>
+          <tr><td class="p-3">Suppression state lives only inside the vendor</td><td class="p-3">Migration restarts consent and purchase history from zero</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-6 p-4 bg-[#fdf5e6] border border-[#e6d2af] text-[#4a2d17]">A tool that passes the fourteen reviews but fails two rows above will out-cost its tier gaps within two sale weeks — pilot the failure modes, not the demo.</p>
+    </div>
+  </section>
   <FaqSection faqs={faqs} title="Replenishment tools FAQ" />
 </BaseLayout>

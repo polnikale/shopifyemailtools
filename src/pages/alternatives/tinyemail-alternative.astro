@@ -189,8 +189,22 @@ const faqs = [
     <p>Merchants outgrow TinyEmail when broadcast scheduling cannot express inventory gates — artisan coffee roasters need to suppress promos when a single-origin lot sells out mid-send. Week one: inventory every flow TinyEmail could not branch on and tag each with revenue last quarter. Week two: migrate highest-margin abandonment first; specialty tea shops often see more lift from restock alerts than welcome discounts. Week three: test gift-order and pre-order splits on staff accounts; board game publishers launch SKUs on Tuesday drops that collide with weekly newsletters unless suppression rules exist. Week four through twelve: compare cost per send against incremental flow revenue, not list size vanity. Outdoor gear brands hitting TinyEmail contact caps mid-holiday need migration before Black Friday, not after deliverability damage. Camping merchants with seasonal list churn should segment by last purchase quarter before blasting spring gear. Sequenzy fits strategy-heavy catalogs; Omnisend fits fast Shopify sync; Klaviyo fits deep product feeds. Day-ninety pass: team runs standup without vendor tickets, collision doc lives in wiki, holdout shows measurable lift on at least two flows.</p>
   </article>
 
+  <div class="prose-shopify container max-w-4xl pb-8">
     <h2>TinyEmail graduation: catalog complexity triggers</h2>
     <p>Move off TinyEmail when any three of these fire in one quarter: you manually export CSV for collection-specific sends more than twice; back-in-stock requests exceed fifty and you cannot auto-notify; gift orders need different post-purchase than self-purchase and TinyEmail sends one template; variant metafields drive creative and do not sync; SMS recovery lives in a second app without shared suppression; finance asks for flow-level margin and TinyEmail only shows broadcast totals; Black Friday list size bumps you into a pricing tier without incremental automation. Vinyl pressings, keyboard group buys, and board game allocation drops all hit multiple triggers simultaneously — plan migration before peak, not during DNS panic.</p>
+    <h2>Consent and suppression handoff from tinyEmail</h2>
+    <p>Export subscribers with consent source and timestamp — popup lists without provenance should not enter the new ESP's inactive flows until ownership is proven. Rebuild suppression in the replacement ESP on day one: recent purchasers, refund risk, support cases, and concurrent journey members. tinyEmail's light tooling rarely built out stop conditions, so most migrations inherit no suppression history — the first week on the new ESP is when lists are cleanest and cheapest to segment correctly.</p>
+    <h2>Margin after incentives during the tinyEmail exit</h2>
+    <p>tinyEmail stages rarely ran discount-capped automation, so the replacement ESP inherits offers with no documented dependency. Before cutover, write the coupon ladder explicitly: welcome discount, cart minimum threshold, winback cap, and a no-discount control variant. A five-day cutover that ships disciplined rule beats a twenty-day cutover that ships blanket ten-percent codes — margin erosion is the most common post-migration complaint among stores that graduated during a sale season.</p>
+    <h2>App-cost lines to model before leaving tinyEmail</h2>
+    <ul>
+      <li><strong>Subscriber tiers</strong> — the same three-thousand-contact list priced by contacts in the replacement versus per-send here.</li>
+      <li><strong>Automation limits</strong> inside each tier — what counts toward the cap and what gets metered separately.</li>
+      <li><strong>Parallel-run window</strong> — two platform bills while welcome and cart run side by side on a live store.</li>
+      <li><strong>Campaign rebuild hours</strong> — editor templates, saved blocks, and mobile previews that do not transfer between vendors.</li>
+    </ul>
+    <p>Model all four lines for ninety days, not one average month — a quiet quarter hides exactly the overage ceilings that push tinyEmail graduations in the first place.</p>
+  </div>
 
   <FaqSection faqs={faqs} title="tinyEmail alternatives FAQ" />
 </BaseLayout>
