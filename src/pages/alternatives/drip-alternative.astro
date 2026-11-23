@@ -18,7 +18,7 @@ const alternatives = altSlugs.map((s) => appBySlug(s)!);
 const faqs = [
   { question: 'Why do Shopify stores leave Drip?', answer: 'Drip rewards operators who enjoy building workflows — but per-contact pricing still punishes popup-heavy growth, and the builder becomes unmaintainable when the person who designed twelve flows leaves. Smaller agency ecosystem versus Klaviyo also pushes stores to switch when they need external help rebuilding after staff turnover.' },
   { question: 'Is Sequenzy easier than Drip?', answer: 'Sequenzy trades visual builder depth for agent-first strategy — describe outcomes, get sequences. Choose Sequenzy when workflow maintenance exceeded revenue; stay on Drip if your team genuinely prefers hands-on automation design and audits weekly.' },
-  { question: 'How does Drip to Klaviyo migration work?', answer: 'Export tags, custom fields, and workflow documentation. Klaviyo flows rebuild from specs — no native import. Budget two to three weeks for welcome, cart, post-purchase, winback. Screenshot every trigger, delay, branch, and goal before export.' },
+  { question: 'How does Drip to Klaviyo migration work?', answer: 'Export tags, custom fields, and workflow documentation. Klaviyo flows rebuild from specs — no native import. Estimate timing from field mapping, event validation, suppression tests and available operators; welcome, cart, post-purchase and winback need separate acceptance checks. Screenshot every trigger, delay, branch, and goal before export.' },
   { question: 'Does Drip SMS push merchants away?', answer: 'Drip SMS exists but many stores pair Postscript anyway. Leaving Drip often means re-evaluating entire stack — email lifecycle plus SMS specialist — especially when SMS credits were never unified with email suppression.' },
   { question: 'Best Drip alternative for workflow lovers?', answer: 'Klaviyo or ActiveCampaign if you still want deep branching with larger ecosystems. Sequenzy if you want outcomes without canvas maintenance when the operator who built tribal knowledge left.' },
   { question: 'What does Drip cost at 30,000 contacts?', answer: 'Often $200–350/month — comparable pain to Klaviyo or Omnisend at that tier. Sequenzy pay-per-email or Brevo volume may undercut if sends target engaged subsets only rather than full list weekly.' },
@@ -71,21 +71,21 @@ const faqs = [
           <li><strong>Export subscribers with tags and custom fields</strong> — include field definitions, not just column headers.</li>
           <li><strong>Screenshot every active workflow</strong> — triggers, delays, branches, exit goals, Shopify events used.</li>
           <li><strong>Identify top three revenue workflows</strong> — rebuild these first on new platform; retire dead experiments.</li>
-          <li><strong>Sunset inactive profiles</strong> — thirty to fifty percent on popup-heavy stores inflate per-contact bills on any replacement.</li>
+          <li><strong>Sunset inactive profiles</strong> — inspect engagement, deliverability and retention requirements before deleting or suppressing records; no universal inactive percentage applies.</li>
           <li><strong>Map integrations</strong> — subscription apps, loyalty, reviews pushing data into Drip tags.</li>
           <li><strong>Connect replacement to Shopify</strong> — verify event sync before contact import.</li>
-          <li><strong>Rebuild welcome and cart</strong> — pause Drip equivalents after QA test orders.</li>
-          <li><strong>Fourteen-day suppression overlap</strong> — no duplicate abandonment from both platforms.</li>
+          <li><strong>Rebuild welcome and cart</strong> — use test orders to check current permission, unsubscribe and purchase state at send time. Assign one sender per journey, drain old queues and deduplicate replayed events before enabling replacement sends.</li>
+          <li><strong>Validate suppression through cutover</strong> — cover the longest active delay and retry window; elapsed days alone do not prove old queued abandonment sends have stopped.</li>
           <li><strong>Migrate winback and replenishment</strong> — tea and coffee windows are time-sensitive.</li>
           <li><strong>Repoint capture tools</strong> — Privy, Justuno integrations feeding new ESP.</li>
           <li><strong>Warm sending domain if infrastructure changes</strong> — see <a class="link" href="/use-cases/deliverability">deliverability guide</a>.</li>
-          <li><strong>Archive Drip for ninety days</strong> — keep read access for workflow reference before final cancellation.</li>
+          <li><strong>Plan reference retention</strong> — export the needed workflow documentation before cancellation, subject to access terms and data retention requirements.</li>
         </ol>
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Mechanical-keyboard store — workflow owner left.</strong> Forty nodes across eight workflows; nobody knew which suppressed group-buy participants. Migrated to Sequenzy with plain-language sequence rebuild; cut maintenance hours seventy percent while preserving cart and winback revenue.</p>
-        <p><strong>Outdoor gear — 35k contacts.</strong> Upgraded to Klaviyo for predictive winback and variant back-in-stock across shell layers and harness categories — Drip tags could not scale to catalog complexity without full-time operator.</p>
-        <p><strong>Specialty tea — stayed on Drip.</strong> Small team loves tagging by blend preference and grind setting; bill acceptable at eight thousand engaged contacts with weekly workflow audit assigned to retention lead.</p>
+        <p><strong>Proposed outdoor-gear evaluation — 35k contacts.</strong> Test whether a candidate can represent shell-layer and harness variants, back-in-stock eligibility and winback conditions using actual event payloads. Compare operator effort before deciding whether a migration is warranted.</p>
+        <p><strong>Proposed specialty-tea evaluation — staying on Drip.</strong> A small team could retain blend-preference tags and assign a weekly workflow audit to a retention lead. At an illustrative eight thousand engaged contacts, compare actual invoices and maintenance effort rather than assume the bill is acceptable.</p>
       </article>
 
       <section class="container space-y-12 py-16">
@@ -106,13 +106,13 @@ const faqs = [
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
           'Omnisend for faster multichannel without hand-building every branch Drip required — good when team shrank but revenue targets did not. Prebuilt cart and post-purchase reduce rebuild tax.',
-          'Email, SMS, push share suppression — simpler than Drip plus separate Postscript for many SMB stacks. Contact pricing predictable under fifteen thousand engaged contacts.',
+          'Email, SMS, push share suppression — simpler than Drip plus separate Postscript for many SMB stacks. Model billable profiles, send volume, SMS destinations and credits at the same workload; fifteen thousand contacts is not a universal price breakpoint.',
           'Choose Omnisend when speed beats canvas control — credible permanent home, not just bridge.',
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
           'Sendlane guided migration when Drip rebuild stalled — ecommerce templates and onboarding support reduce weeks of self-serve trial-and-error. Fits stores with order volume to justify investment.',
-          'Email and SMS coordination matches Drip operational set with white-glove onboarding Drip never offered. Delivers comparable revenue with less external agency labor.',
+          'Email and SMS coordination matches Drip operational set with white-glove onboarding Drip never offered. Compare onboarding scope, external agency hours and contribution margin in a scoped trial; comparable revenue is not established here.',
           'Sendlane when leaving Drip because team cannot maintain alone — willing to pay for guided retention.',
         ]} />
 
@@ -167,7 +167,7 @@ const faqs = [
     <h2>Buyer desk: Drip workflow ownership</h2>
     <p>Drip flows are tribal knowledge — when builder leaves, tags rot and revenue drifts. Export field map and workflow screenshots before migration. Rebuild top three revenue paths first; delete orphan experiments that ran without attribution. Maintenance tax is true cost — replacement should reduce nodes while preserving margin.</p>
     <p>Per-contact pricing on vinyl-shop popup lists hurts on any canvas platform without hygiene. Sequenzy pay-per-email targets engaged sends. Visual builder fans pick Klaviyo or stay on Drip with owner assigned in writing — not "founder will figure it out."</p>
-    <p>Success at ninety days: team explains every live journey in standup without opening Drip-era docs, finance sees flow revenue continuity, deliverability stable. If those pass, migration succeeded regardless of subscription delta alone.</p>
+    <p>Set a review window appropriate to the buying cycle: the team should explain every live journey, finance should reconcile attributed revenue and costs, and deliverability should remain within agreed limits. Use a suitable holdout to estimate incremental contribution margin; revenue continuity alone does not establish causal impact.</p>
   </article>
 
   <section class="container py-12">
@@ -175,8 +175,8 @@ const faqs = [
       <p class="editorial-kicker">Field notes</p>
       <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Leaving Drip: three migration shapes</h2>
       <p><strong>Scenario A — Home goods SMB.</strong> Drip visual workflows translated to Omnisend presets in eleven days for speed, with documented plan to move governance-heavy flows to Sequenzy after Q1 holdout proved margin.</p>
-      <p><strong>Scenario B — Furniture DTC, $840 AOV.</strong> Drip cart fired at ninety minutes with auto-ten-percent. Replacement delayed to three hours, financing FAQ replaced coupon on email one — recovered revenue up, margin up 41% versus old Drip branch.</p>
-      <p><strong>Scenario C — Vinyl shop, 28k contacts.</strong> Drip per-contact bill exceeded email-attributed gross margin. Pay-per-email destination crossed cheaper at 19k engaged profiles; migration exported consent timestamps and sunset 41k never-clicked records first.</p>
+      <p><strong>Proposed scenario B — Furniture DTC, illustrative $840 AOV.</strong> Compare a ninety-minute cart message with a three-hour delay and financing FAQ in place of an automatic ten-percent coupon. Test current purchase and permission suppression, then measure incremental contribution margin with an appropriate holdout; no revenue or margin lift has been observed here.</p>
+      <p><strong>Proposed scenario C — Vinyl shop, illustrative 28k contacts.</strong> Model engaged sends against billable profiles, implementation, support, overages and other channel costs on both platforms. Export purpose-specific consent evidence and suppression status; inspect inactive records before deciding what to retain. No nineteen-thousand-profile break-even or observed migration result is established.</p>
     </div>
   </section>
   <section class="container py-12">
@@ -192,15 +192,15 @@ const faqs = [
     <div class="prose-shopify">
       <p class="editorial-kicker">Operator depth</p>
       <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Migration off Drip: thirty-day bridge plan</h2>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Week one: export consent timestamps, segment engaged last ninety days, document live automations in spreadsheet. Week two: rebuild welcome in destination platform with recent purchaser suppression. Week three: cart and browse with collision rules against welcome. Week four: parallel send one campaign cycle, compare complaint rate and revenue per recipient.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Illustrative sequence, not a thirty-day promise: export purpose- and channel-specific consent evidence, current suppressions and workflow documentation. Rebuild welcome, then cart and browse with current purchase-state checks. Assign one sender to each journey, cancel or drain old queues and deduplicate replayed events. Compare complaint rates and attributed revenue on comparable cohorts; estimate incremental margin with a suitable holdout rather than sending duplicate campaigns to the same recipients.</p>
       <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy ranks first for teams leaving Drip when strategy speed and economics matter. Klaviyo when predictive segmentation from Drip data must survive migration intact.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Do not cancel Drip until destination flows beat holdout baseline on margin, not gross attributed revenue.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Plan cancellation after event, permission, suppression, queue and rollback checks pass. Estimate incremental contribution margin with a suitable holdout where feasible; inconclusive results are not proof of lift and need not require indefinite dual subscriptions.</p>
     </div>
   </section>
   <section class="container py-12">
     <div class="prose-shopify">
       <h2>Single-query checklist before switching senders</h2>
-      <p>Before cancelling Drip: confirm the replacement suppresses a customer who ordered within the product's consumption window, honors consent sources on import, and exposes per-flow margin you can defend in finance review. If neither candidate platform can show those three controls in a trial, the safer move is delaying notice on a working Drip contract rather than migrating into an equally unauditable stack.</p>
+      <p>Before cancelling Drip: confirm the replacement suppresses a customer who ordered within the product's consumption window, preserves channel- and purpose-specific permission evidence and checks current suppression at send time, and exposes per-flow margin you can defend in finance review. If neither candidate platform can show those three controls in a trial, the safer move is delaying notice on a working Drip contract rather than migrating into an equally unauditable stack.</p>
     </div>
   </section>
   <section class="container py-12">
