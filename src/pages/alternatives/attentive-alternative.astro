@@ -16,14 +16,14 @@ const altSlugs = ['postscript', 'sequenzy', 'omnisend', 'klaviyo', 'smsbump', 'r
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
-  { question: 'Why do Shopify merchants leave Attentive?', answer: 'Attentive fits high-volume DTC with enterprise budgets — SMB stores leave when five-hundred-plus monthly custom contracts exceed SMS-attributed revenue, implementation timelines stretch quarters, or self-serve agility matters more than concierge onboarding nobody maintains post-launch.' },
+  { question: 'Why do Shopify merchants leave Attentive?', answer: 'A merchant may evaluate leaving when its actual quoted all-in cost, implementation needs or internal editing workload no longer fit. Compare matched volume and services; neither a universal monthly minimum nor attributed revenue alone establishes value.' },
   { question: 'What is the best Attentive downgrade for Shopify?', answer: 'Postscript for SMS-first at SMB scale; Omnisend or Klaviyo for email+SMS consolidation; Sequenzy for email lifecycle with Postscript SMS pairing. Match replacement tier to real SMS volume — not logo prestige.' },
-  { question: 'How does Attentive to Postscript migration work?', answer: 'Export TCPA consent audit trail, port numbers with compliance review, rebuild journeys from documentation. Budget three to four weeks; involve legal if list size is large. Hard cutover — no dual promotional texting.' },
-  { question: 'When should I stay on Attentive?', answer: 'Stay with high SMS volume, managed creative services in active use, and multi-market compliance needs — scaled outdoor gear and vinyl labels with drop-heavy calendars often fit when SMS-attributed revenue clears enterprise minimums comfortably.' },
+  { question: 'How does Attentive to Postscript migration work?', answer: 'Export available permission evidence and current suppression state, review sender and country requirements, and rebuild documented journeys. Timing depends on contract notice, provisioning and testing. Assign one sender per journey; stop old queues and deduplicate replays before enabling replacements. Review applicable requirements regardless of list size.' },
+  { question: 'When should I stay on Attentive?', answer: 'Consider staying when verified country coverage, required services, volume economics and internal workload justify the actual quote. For outdoor gear or vinyl drops, compare all-in costs and incremental contribution; attributed revenue above a minimum does not establish profit or causality.' },
   { question: 'Is Klaviyo enough to leave Attentive?', answer: 'Klaviyo SMS plus email covers many Attentive use cases without enterprise contract — loses some acquisition innovation and managed services. Evaluate if those services were actually used versus sold.' },
   { question: 'Is Attentive email adequate?', answer: 'Attentive added email but SMS remains core — stores leaving often want email-first lifecycle elsewhere regardless, especially when email module sat underutilized while SMS bills dominated.' },
   { question: 'What SMS options exist for SMB without Attentive?', answer: 'Postscript, Omnisend, SMSBump — match volume to pricing model. Do not buy enterprise SMS for two hundred monthly orders; downshift deliberately with compliance discipline.' },
-  { question: 'When should I review Attentive contract exit?', answer: 'Review notice period and data export clauses ninety days before renewal. Parallel SMS during overlap risks compliance violations — plan hard cutover with consent audit and legal review for large lists.' },
+  { question: 'When should I review Attentive contract exit?', answer: 'Use the actual notice deadline and data export clauses to plan backward from renewal. Review permission portability and applicable requirements for each country and purpose. Prevent duplicate promotional sends by stopping old scheduled and queued journeys before activating replacements.' },
 ];
 ---
 
@@ -37,7 +37,7 @@ const faqs = [
         <p class="catalog-kicker">Enterprise SMS exit</p>
         <h1 class="hero-title mt-5">Best Attentive alternatives for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Attentive is enterprise SMS — two-tap opt-in, journey orchestration, creative services, custom contracts. Merchants leave when order volume does not justify premium pricing, when implementation finished but nobody internally owns the platform, or when Klaviyo or Omnisend consolidation delivers eighty percent of value at forty percent of cost.
+          Attentive is enterprise SMS — two-tap opt-in, journey orchestration, creative services, custom contracts. Merchants leave when order volume does not justify premium pricing, when implementation finished but nobody internally owns the platform, or when a matched-cost evaluation suggests Klaviyo or Omnisend consolidation is worth testing. No fixed value-retention or savings percentage is established here.
         </p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
           Eight ranked alternatives for stores downsizing or consolidating Attentive — practical guide for SMS within full email operations. Downgrade is stack-market fit when enterprise minimums outpace SMB SMS economics — not a comment on your brand ambition, a comment on order velocity and internal ownership capacity.
@@ -57,9 +57,9 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Attentive</h2>
         <p>Contract economics mismatch. A pottery studio doing three hundred orders monthly with six-hundred-dollar Attentive minimum — SMS drives engagement but not margin to justify enterprise pricing when email Sequenzy handles replenishment cheaper.</p>
-        <p>Implementation hangover. Concierge onboarding delivers polished journeys; then account manager bandwidth thins and internal team never learned maintenance. Platform sits expensive and underutilized while mechanical-keyboard drop calendar needs edits nobody can make without ticketing support.</p>
+        <p>Potential implementation gap: a mechanical-keyboard merchant should test whether its internal owner can edit the drop calendar after onboarding. Record support dependencies and staff time; do not assume an account manager or internal team has failed.</p>
         <p>Consolidation opportunity. Stores audit stack and realize Klaviyo or Omnisend runs email plus SMS adequately — Attentive becomes redundant line item, especially when managed creative services were sold but never used after launch quarter.</p>
-        <p>Attentive wins at scale — vinyl labels with multi-country drops, outdoor brands with flash SMS driving twenty-plus percent weekly revenue. Leaving without channel mix analysis is as wrong as staying without ROI proof.</p>
+        <p>For a proposed vinyl-label or outdoor-brand evaluation, compare country coverage, drop volume and required services. Measure channel contribution with a comparable holdout where practical; attributed weekly revenue alone does not prove incremental return.</p>
 
         <h2>Downgrade, consolidate, or unbundle</h2>
         <p><strong>Downgrade:</strong> Attentive → Postscript for SMS-only at SMB scale with TCPA discipline intact.</p>
@@ -68,31 +68,31 @@ const faqs = [
 
         <h2>Attentive migration checklist</h2>
         <ol>
-          <li><strong>Review contract notice and export rights</strong> — ninety days before renewal.</li>
-          <li><strong>Export full TCPA consent audit trail</strong> — timestamp, source, keyword, country if multi-market.</li>
+          <li><strong>Review contract notice and export rights</strong> — use the actual contractual notice period and allow time for dependencies.</li>
+          <li><strong>Export available channel- and purpose-specific permission evidence</strong> — timestamp, source, disclosure version, keyword, country and current opt-out state; have applicable requirements reviewed.</li>
           <li><strong>Document journey map and revenue attribution by channel</strong> — justify downgrade or consolidation with finance.</li>
           <li><strong>Select replacement tier matched to real SMS volume</strong> — not aspirational growth projections.</li>
           <li><strong>Port numbers or provision new with legal review</strong> — large lists need compliance sign-off.</li>
-          <li><strong>Align email platform suppression</strong> — no double discount weekend across channels.</li>
-          <li><strong>Rebuild cart and campaign flows on new platform</strong> — QA test opt-ins and test orders.</li>
+          <li><strong>Align permission and suppression rules</strong> — email and SMS permissions remain distinct; apply current opt-outs, purchases and frequency limits at send time.</li>
+          <li><strong>Rebuild cart and campaign flows on new platform</strong> — propose test opt-ins and orders; assign one sender per journey, cancel old queues and deduplicate replayed events.</li>
           <li><strong>Hard cutover — avoid dual SMS sends</strong> — compliance risk dwarfs savings from overlap.</li>
           <li><strong>Estimate managed creative replacement cost</strong> — in-house or agency if Attentive creative was actually used.</li>
           <li><strong>Weekly SMS spend cap alerts on new platform</strong> — first month post-migration.</li>
           <li><strong>Update popup and keyword opt-in flows</strong> — feed replacement platform.</li>
-          <li><strong>Archive Attentive ninety days</strong> — keep consent records accessible.</li>
+          <li><strong>Archive required records</strong> — agree retention, access and deletion obligations before closing the account.</li>
         </ol>
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Mechanical keyboards — downgraded to Postscript.</strong> Drop SMS without enterprise minimums; Sequenzy handles email lifecycle and group-buy suppression. Eighty-five percent of Attentive value at forty percent of cost.</p>
-        <p><strong>Climbing gear — consolidated to Klaviyo.</strong> Unified flows across email and SMS; Attentive creative services unused six months. Predictive winback justified profile pricing with assigned owner.</p>
-        <p><strong>Vinyl label — stayed on Attentive.</strong> High drop volume, multi-country SMS, managed creative worth premium — SMS-attributed revenue clears enterprise hurdle quarterly.</p>
+        <p><strong>Proposed climbing-gear scenario — evaluate Klaviyo consolidation.</strong> Compare the cost of unified email and SMS flows, whether creative services are used, and the work an assigned owner needs for winback. No merchant result is established here.</p>
+        <p><strong>Proposed vinyl-label scenario — evaluate staying on Attentive.</strong> Test whether country coverage, drop volume and managed creative justify the quoted all-in cost. Separate attributed revenue from incremental contribution before deciding.</p>
 
         <h2>Enterprise to SMB downshift framing</h2>
         <p>Attentive exit is not failure — it is matching SMS infrastructure to order velocity and team capacity. Postscript plus Sequenzy architecture serves many vinyl and board-game SMBs previously on enterprise contracts signed during growth optimism. Model creative services replacement: if Attentive managed creative produced drop copy, budget internal or freelance against savings.</p>
         <p>Multi-country SMS compliance simplifies on SMB platform only if you actually exit countries — do not assume Postscript handles every Attentive market without verification. Canadian and UK subscribers need separate compliance review during port.</p>
 
         <h2>Due diligence before Attentive contract exit</h2>
-        <p>Legal review notice period and data portability clauses ninety days out. Export keyword opt-in flows by country. Document quiet hours and frequency caps Attentive enforced — rebuild on replacement. Finance forecast: enterprise minimum versus Postscript usage-based at actual send volume. Brief customer support on SMS sender ID change if shortcode changes. Archive creative performance reports for drop campaign benchmarking post-exit.</p>
+        <p>Review the actual notice period and data portability clauses before scheduling exit. Export keyword opt-in flows by country. Document quiet hours and frequency caps Attentive enforced — rebuild on replacement. Finance forecast: enterprise minimum versus Postscript usage-based at actual send volume. Brief customer support on SMS sender ID change if shortcode changes. Archive creative performance reports for drop campaign benchmarking post-exit.</p>
       </article>
 
       <section class="container space-y-12 py-16">
@@ -171,31 +171,31 @@ const faqs = [
 
   <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Four-week Attentive downshift timeline</h2>
-    <p><strong>Week 1 — Contract and compliance.</strong> Legal notice review. TCPA export by country. Creative asset archive. Postscript or Klaviyo provisioning starts.</p>
+    <p><strong>Illustrative week 1 — Contract and compliance.</strong> Legal notice review. TCPA export by country. Creative asset archive. Postscript or Klaviyo provisioning starts.</p>
     <p><strong>Week 2 — Journey rebuild SMB scale.</strong> Drop alerts and cart SMS on replacement. Sequenzy email lifecycle aligned. Quiet hours and frequency caps copied from Attentive docs.</p>
-    <p><strong>Week 3 — Internal owner training.</strong> Self-serve edit drills before Black Friday or vinyl drop. Support briefed on opt-out path changes. Five percent SMS test send.</p>
-    <p><strong>Week 4 — Enterprise off.</strong> Hard SMS cutover. TCO spreadsheet to finance. Quarterly channel mix review calendar created.</p>
+    <p><strong>Illustrative week 3 — Internal owner training.</strong> Propose self-serve edit drills before a vinyl drop. Brief support on opt-out changes. Use internal test recipients first; any limited live pilot requires current permission, eligible countries and approved sender configuration.</p>
+    <p><strong>Illustrative week 4 — Cutover decision.</strong> Proceed only when contract, sender provisioning and permission checks pass. Disable old journeys and queued sends before enabling replacements; retain event IDs to prevent replay duplicates. Give finance the TCO comparison and schedule a channel review.</p>
 
     <h2>Buyer desk: enterprise downshift discipline</h2>
-    <p>Attentive downshift is stack-market fit — not failure. Model SMS-attributed revenue against enterprise minimum quarterly. Creative services have replacement cost if actually used; if unused, consolidation savings are real.</p>
-    <p>TCPA porting non-negotiable — legal review for large lists, hard cutover, no dual texting. Internal owner mandatory on self-serve stacks; concierge onboarding does not maintain journeys for you post-launch.</p>
-    <p>Success at ninety days: SMS ROI stable or improved at lower TCO, compliance audit clean, climbing-gear flash sales and vinyl drops still execute without enterprise ticket queue. Self-serve edit drill before first post-exit drop is non-negotiable pass criteria.</p>
+    <p>Attentive downshift is stack-market fit — not failure. Compare matched quarterly all-in costs: platform minimums, usage, carrier fees, country mix, staff time, creative services and migration overlap. Unused services may offer savings, but replacement costs and contract obligations can offset them. Assess incremental contribution separately from SMS-attributed revenue.</p>
+    <p>Review permission portability and sender requirements for each jurisdiction and purpose regardless of list size; use a controlled cutover with one active journey owner. Internal owner mandatory on self-serve stacks; concierge onboarding does not maintain journeys for you post-launch.</p>
+    <p>Proposed ninety-day criteria: compare incremental contribution and matched TCO, review permission handling, and test whether climbing-gear flash sales and vinyl drops can be edited by the internal owner. Self-serve edit drill before first post-exit drop is non-negotiable pass criteria.</p>
 
     <h2>Downshift alternatives ranked</h2>
     <p><strong>Postscript:</strong> standalone SMS specialization without enterprise minimum. <strong>Klaviyo SMS:</strong> when email already on Klaviyo and unified suppression worth premium. <strong>Omnisend:</strong> SMB multichannel when Attentive felt heavy for under-800-order catalogs. <strong>Sequenzy plus Postscript:</strong> strategy email with compliance SMS when enterprise creative services were unused.</p>
-    <p><strong>Scenario — outdoor gear enterprise minimum pain.</strong> Attentive contract floor exceeded SMS-attributed GMV two quarters running; Postscript migration with legal TCPA review recovered same recovery rate at 41% lower TCO.</p>
+    <p><strong>Proposed outdoor-gear scenario — evaluate contract minimums.</strong> Compare an actual Attentive quote with a replacement quote at matched volume, countries and services. Test recovery with a comparable cohort and attribution window; no recovery-rate or 41% savings result has been demonstrated.</p>
     <h2>Self-serve operability test</h2>
     <p>Before canceling Attentive, rebuild one flash-sale SMS journey in replacement tool with internal owner — if Thursday edit requires ticket queue, downshift fails regardless of price.</p>
     <h2>Legal porting checklist</h2>
-    <p>TCPA records export with timestamps before number port; hard cutover date on calendar; no dual promotional texting during overlap — legal review for lists over fifty thousand subscribers.</p>
+    <p>Before a number port, retain available permission records and timestamps and review sender and jurisdiction requirements. Set a cutover date only after testing; disable old scheduled and queued promotions. List size alone does not determine legal obligations.</p>
 
     <h2>Downshift economics worksheet</h2>
     <p>Quarterly: SMS-attributed GMV minus contract floor minus creative services actually used equals true Attentive TCO. Outdoor gear negative two quarters → Postscript plus Sequenzy matched recovery at 41% lower spend.</p>
     <p>Self-serve replacement must pass Thursday edit drill before first flash drop post-exit — enterprise ticket queue nostalgia is not ROI.</p>
 
     <h2>90-day downshift proof plan</h2>
-    <p>Week 1: TCPA export and legal review threshold check. Week 2: rebuild flash-sale journey in Postscript or Klaviyo SMS with internal owner. Week 3: quiet hours and state rules configured. Week 4: first controlled drop with holdout cohort. Week 5–8: frequency caps and minimum cart thresholds. Week 9–12: quarterly TCO worksheet versus Attentive floor. Day 90: SMS ROI stable at lower spend, compliance audit clean.</p>
-    <p>Climbing gear flash SMS edited same-day by ops lead post-downshift — Attentive required three-day ticket; downshift validated on operability not price alone.</p>
+    <p>Illustrative plan, subject to contract and provisioning: first export permission evidence and review applicable requirements; rebuild a flash-sale journey with an internal owner; verify quiet hours, frequency limits and current purchase suppression. Propose a controlled drop with an eligible holdout, then compare matched TCO and incremental contribution over a defined period. Lower spend, stable ROI and compliant operation are objectives to verify, not observed results.</p>
+    <p>Proposed climbing-gear operability test: ask the ops lead to edit a flash SMS in each candidate platform and record elapsed time, approvals and support dependencies. No same-day improvement or three-day Attentive delay has been measured here.</p>
     <p>Enterprise creative services unused year two — line item guilt drove Postscript plus Sequenzy evaluation. TCPA port for 62k list required legal review; hard cutover avoided dual texting overlap week. Downshift success: same recovery rate, 41% lower TCO, Thursday edits without ticket queue.</p>
 
     <h2>Attentive exit desk: enterprise SMS handoffs</h2>
