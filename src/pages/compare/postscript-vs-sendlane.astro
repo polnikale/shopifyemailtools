@@ -13,19 +13,19 @@ const desc = 'Postscript vs Sendlane for Shopify stores — SMS-native specializ
 const faqs = [
   {
     question: 'Is Postscript or Sendlane better for Shopify SMS?',
-    answer: 'Postscript is SMS-native with superior TCPA tooling, two-way conversations, keyword campaigns, and drop execution refined for DTC. Sendlane bundles SMS with email automations as a Klaviyo alternative — strong unified segments for moderate SMS volume. Choose Postscript when SMS is 25%+ of retention revenue with dedicated ownership. Choose Sendlane SMS when you want one platform for email and text without Klaviyo pricing.',
+    answer: 'Compare the exact SMS workflows your team needs rather than treating a revenue-share threshold as a buying rule. Test purpose-specific SMS permission, keyword entry, reply routing, quiet hours, current opt-out and purchase suppression, and queue cancellation in each candidate configuration. Postscript is the SMS-specialist candidate here; verify Sendlane capabilities and limits in a current demonstration before choosing consolidation.',
   },
   {
     question: 'Can Sendlane replace Postscript entirely?',
-    answer: 'For moderate SMS volume on brands already committed to Sendlane email, often yes — cart SMS, broadcasts, and basic automations are included. Postscript wins when promotional SMS exceeds ~30k messages monthly, two-way reply volume is high, or TCPA compliance demands SMS-first guardrails Sendlane treats as one channel among two.',
+    answer: 'A replacement decision requires workflow parity, not a monthly message threshold. Inventory broadcasts, cart journeys, replies, sender identities, opt-out propagation and queued messages. Verify each requirement in the proposed Sendlane plan and document any gaps before retiring Postscript. Volume alone does not establish functional equivalence or compliance.',
   },
   {
     question: 'Should I use Sendlane for email and Postscript for SMS?',
-    answer: 'Common when Sendlane email wins on price versus Klaviyo but SMS revenue outgrows Sendlane text depth. Sendlane owns email flows and unified reporting; Postscript owns drop campaigns and conversational recovery. Sync purchase suppressions bidirectionally — duplicate cart touches destroy trust faster than redundant software spend.',
+    answer: 'A split stack is a proposed architecture when each channel has a clear owner. Designate one owner for every cart journey, propagate purpose-specific permission and current suppression and purchase state, cancel stale queued touches, and deduplicate retried events. Verify integration latency and failure handling; a dashboard shared by neither system is not proof that cross-channel coordination works.',
   },
   {
     question: 'How does Postscript vs Sendlane pricing compare?',
-    answer: 'Sendlane bundles SMS into contact-based plans plus per-message costs — predictable platform fee with variable text. Postscript separates SMS platform from message usage — often higher total at peak SMS but transparent attribution. Model BFCM promotional volume; Sendlane looks cheaper until conversion gap on flash sends exceeds fee delta.',
+    answer: 'Request current written quotes for the same twelve-month workload. Include platform fees, billable contacts, email volume, SMS segments and carrier fees, support, integration, migration, overlap and operator time. Use the same currency, annual terms, peak calendar and tax basis. Compare total cost before assuming a flash-send conversion difference; attributed revenue alone cannot establish that difference.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Sendlane or Postscript?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Which has better email automation for Shopify?',
-    answer: 'Sendlane wins email — browse abandonment, post-purchase, winback, and Shopify segment depth are core product. Postscript does not compete on email; comparing email features misses the point. If email migration to Sendlane is the project, evaluate SMS separately; do not assume Sendlane SMS equals Postscript because both send text.',
+    answer: 'Evaluate Sendlane as the email candidate and confirm the current channel scope of both products. Test welcome, browse, post-purchase and winback with realistic event and catalog data. Establish whether each required trigger, filter and suppression is available in the quoted plan rather than assuming that sending text proves email lifecycle parity.',
   },
   {
     question: 'Which has stronger TCPA compliance for SMS?',
-    answer: 'Postscript leads — keyword libraries, pre-send compliance scans, and opt-out dashboards built for SMS operators. Sendlane SMS compliance is adequate for brands running unified email-SMS with moderate promotional volume. High SMS revenue stores with aggressive list growth favor Postscript guardrails.',
+    answer: 'No comparative compliance ranking is established here. Have the responsible operator verify collection evidence, purpose and channel permission, quiet-hour handling, opt-out propagation, sender registration and applicable jurisdiction requirements for the actual configuration. Product guardrails do not certify a merchant program or replace a review of its messages and collection flows.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'SMS tests: keyword opt-in, cart abandonment with reply, flash broadcast with quiet hours — Postscript should win depth tests. Unified tests: email welcome plus SMS cart in one Sendlane journey — Sendlane should win if consolidation matters. If Sendlane SMS passes all tests at your volume, skip Postscript; if flash sends underperform, specialize.',
+    answer: 'Propose a keyword signup, cart event followed by purchase, opt-out after queueing, reply handoff and duplicate-event replay. Check current permission and suppression before each send, one queue owner per journey and cancellation of stale messages. Use a randomized eligible holdout with uncertainty and contribution margin to assess causal lift; dashboard attribution is a separate measure.',
   },
 ];
 ---
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Postscript vs Sendlane for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Sendlane markets itself as the Klaviyo escape hatch with bundled SMS; Postscript assumes you already chose an email home and need text done right. We evaluated both through a climbing gear brand migrating Klaviyo to Sendlane while keeping Postscript for flash drops, a mechanical keyboard shop going Sendlane-only to cut stack cost, and a camping subscription box that added Postscript after Sendlane SMS throttled during a restock flash.
+          Sendlane markets itself as the Klaviyo escape hatch with bundled SMS; Postscript assumes you already chose an email home and need text done right. The examples below are proposed numeric fixtures for comparing catalog and queue behavior, not observed merchant evaluations. They establish no conversion, throttling or time-saving results. Verify current product scope, integration support and quoted pricing before making a purchase decision.
         </p>
       </header>
 
@@ -104,70 +104,70 @@ const faqs = [
         
         <h2>How board game store emails through Essen release week</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          In this proposed fixture, the board game store has 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          For the board game fixture, test allocation status, edition choice and fulfillment timing before a promotional reminder. A paid pre-order must exit cart recovery; an allocation delay must not trigger a discount message that implies stock is ready. No margin result is claimed. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise Essen release week becomes a complaint magnet regardless of ESP.
         </p>
         
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          In this proposed fixture, the specialty tea merchant has 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          For the tea fixture, separate blend preferences, gift buyers and recurring subscribers. Propose different replenishment windows for tin size and steeping frequency, and verify that a skipped subscription does not receive a contradictory reorder nudge. These are test branches, not observed CTR gains. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          In this proposed fixture, the artisan coffee roaster has 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Sendlane remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          For the coffee fixture, separate gift purchasers, retail bean buyers and wholesale sample leads. Test roast-date and product-specific replenishment with subscription pause state, using the correct buyer relationship and permission. Record whether each configuration can exclude a paused subscriber; no unsubscribe result is claimed. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          In this proposed fixture, the climbing gear store has 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Sendlane remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For the climbing fixture, branch on harness fit and product-specific manufacturer education. Verify that catalog content matches the item actually viewed; do not infer a safety recommendation from a marketing segment. Compare education and discount sequences only through a planned experiment with appropriate eligible audiences. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
         </p>
         <h2>How camping equipment merchant emails through Memorial Day camping spike</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          In this proposed fixture, the camping equipment merchant has 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For the camping fixture, distinguish tent capacity, family car-camping and lightweight trip preferences. Test quiz-to-welcome routing, inventory changes and mobile browse-to-cart transitions. Measure the operator time required to repair each case; no six-hour saving or channel-performance result has been observed. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          In this proposed fixture, the pottery studio has 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; Sendlane contributes guided ecommerce retention with migration support. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority is operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Keep operational and marketing purposes distinct; an order update does not confer promotional email or SMS permission. In both candidate configurations, test current suppression, purchase and subscription state at execution time. Assign one journey and queue owner, cancel stale touches after purchase or opt-out, and deduplicate replayed events. Record failures and operator effort rather than assuming a preview winner.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For the pottery fixture, keep class waitlists separate from glaze-kit buyers and gift recipients. Verify that a class availability notification does not enroll the recipient in unrelated product promotions, and test purchase exits for starter kits. Measure support workload before claiming savings. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. For a proposed forty-five-minute coordination window, test current channel permission, suppression and purchase state, queue cancellation and replay deduplication; a fixed delay alone is insufficient — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Postscript workflow reality: strengths, friction, and billing</h2>
         <p>
           Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Sendlane shines when migration bandwidth is the constraint leaving Klaviyo. Its friction shows when you enjoy self-serve canvas or agent-first iteration. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Postscript (message volume and plans) rewards send discipline or punishes broadcast volume depending on your calendar. Sendlane (custom packages with support tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model billing against a full proposed year. A vinyl waitlist fixture can increase stored contacts without increasing orders; an outdoor fixture can increase seasonal message volume without increasing contacts. Neither is an observed invoice anecdote. Obtain current plan and usage terms for each product and compare matched all-in costs including carrier charges, support, migration, overlap, integration and operator time.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -177,7 +177,7 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Sendlane punish partial adoption.
+          Use 12,000–18,000 contacts as a proposed quoting fixture, not evidence that prices converge. Identify billable contacts under each current contract and model lawful suppression and retention without deleting evidence needed for opt-outs. Add only required modules and document limits, minimum commitments and peak usage on the same annual cost basis.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
@@ -188,19 +188,19 @@ const faqs = [
         <h2>Who should choose which</h2>
         <p><strong>Choose Postscript if:</strong></p>
         <ul>
-          <li>Sms is a primary revenue channel with compliance discipline</li>
+          <li>SMS is a primary revenue channel with compliance discipline</li>
           <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
-          <li>Message volume and plans fits your calendar</li>
+          <li>Message volume and plans fit your calendar</li>
           <li>Your team can maintain Postscript without external rescue</li>
           <li>Switching cost favors Postscript for the next twelve months</li>
         </ul>
         <p><strong>Choose Sendlane if:</strong></p>
         <ul>
-          <li>Migration bandwidth is the constraint leaving klaviyo</li>
+          <li>Migration bandwidth is the constraint leaving Klaviyo</li>
           <li>You will use guided ecommerce retention with migration support weekly</li>
-          <li>Custom packages with support tier fits your calendar</li>
+          <li>Custom packages with support tier fit your calendar</li>
           <li>Your team can maintain Sendlane without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Sendlane migration</li>
+          <li>A randomized eligible holdout supports a contribution-margin case for migration, with uncertainty reported</li>
         </ul>
         <h2>Verdict</h2>
         <p>
