@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'How does Omnisend vs Drip pricing compare at 12,000 contacts?',
-    answer: 'Omnisend Standard/Pro at 12k often runs $100–180/mo depending on SMS volume. Drip at 12k people typically lands $120–200/mo. Drip has no meaningful free tier at scale. Omnisend\'s free tier helps early but becomes irrelevant past ~2,500 contacts. Model SMS and push separately — Omnisend bundles channels; Drip is more email-workflow centric.',
+    answer: 'Obtain current quotes using the same eligible 12,000-contact audience, country mix, send calendar and peak volumes. Compare twelve months including email overages, SMS credits and carrier fees, push or other required apps, onboarding, migration and operator time. Check billable-contact and suppression rules. Current plan prices and channel availability require verification; the comparison does not establish a quoted price.',
   },
   {
     question: 'Which has the better workflow builder?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: 'Can I migrate from Omnisend to Drip or vice versa?',
-    answer: 'Yes. Export contacts with consent metadata. Rebuild welcome and cart first; run parallel two weeks with strict suppression to avoid duplicate sends. Omnisend push and SMS journeys need channel-specific replacements in Drip. Budget 2–3 weeks for mid-size stores with four active automations.',
+    answer: 'Export contacts with purpose, channel, source, timestamp and suppression evidence; an imported address alone does not establish permission. Rebuild welcome and cart with one sender and queue owner per job. Before cutover, cancel outstanding old jobs, recheck purchase and subscription state at dispatch, and test replay deduplication. Verify event and field mappings and channel replacements before scheduling a migration; two weeks is not a guaranteed safe overlap.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Omnisend or Drip?',
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Omnisend vs Drip for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two capable automation platforms with different temperaments. Omnisend optimizes for speed — prebuilt ecommerce journeys with email, SMS, and push in one interface. Drip optimizes for control — a visual workflow canvas for operators who design behavior-based logic. We evaluated both through a $62k/mo climbing gear brand, an artisan coffee roaster with irregular reorder timing, and a pottery studio graduating off Mailchimp.
+          Two capable automation platforms with different temperaments. Omnisend optimizes for speed — prebuilt ecommerce journeys with email, SMS, and push in one interface. Drip optimizes for control — a visual workflow canvas for operators who design behavior-based logic. The examples below are proposed evaluation fixtures, not observed merchant results: a climbing gear store, an artisan coffee roaster with irregular reorder timing, and a pottery studio considering migration from Mailchimp.
         </p>
       </header>
 
@@ -104,70 +104,70 @@ const faqs = [
         
         <h2>Artisan Coffee Roaster ($52k/mo) — suppress subscribers on pause from roast-date replenishment nudges</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          Assume the artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          For coffee, test roast-date and bean preferences against recent purchases, active subscriptions and paused subscriptions. A paused subscription must not trigger a contradictory replenishment nudge. Compare an education-first branch with an eligible reorder reminder; measure operator time rather than claiming hours saved. Verify cross-channel suppression before the holiday blend drop.
         </p>
         <h2>Before spring rack refresh: climbing gear store retention choices</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          Assume the climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For climbing gear, branch harness-fit education separately from rope-care content using relevant product interests. Exclude recent purchasers from stale recovery and apply gift-buyer exclusions only when supported by recorded order properties. Product education must use manufacturer guidance rather than an invented certification claim. Test cancellation and state refresh before the spring rack refresh.
         </p>
         <h2>Camping Equipment Merchant: tent-capacity quizzes and family car-camping segments</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          Assume the camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For camping equipment, route quiz outcomes into separate tent-capacity and trip-season branches. Verify that a later quiz answer replaces stale queued content and that mobile browse events cannot duplicate cart recovery. Compare education and promotion for eligible audiences without assuming a winning channel. Check suppression latency before the Memorial Day camping spike.
         </p>
         <h2>How pottery studio emails through holiday starter-set rush</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          Assume the pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For pottery, keep class waitlists separate from glaze-kit purchase intent and distinguish purchaser from gift recipient only where recorded data supports it. Test sold-out classes, pending fulfillment, purchase after queue entry and later suppression. Record whether both tools cancel obsolete recovery and prevent event replays from creating duplicate jobs before the starter-set rush.
         </p>
         <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          Assume the vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          For vinyl, test scarce-pressing inventory changes, recent full-price purchases and fulfillment state before discount eligibility. Keep grading education separate from drop allocation promises. An imported waitlist is not proof of permission for every channel. Record safe behavior when stock changes after a message has entered a queue.
         </p>
         <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          Assume the outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: operational updates, eligible cart recovery, welcome education, then broadcasts. Classify each message by its actual purpose; an order relationship does not authorize promotional email, SMS or push. Test both platforms against the same current channel permission, suppression, purchase and subscription state at dispatch. Assign one owner to each job, cancel superseded queued sends, and deduplicate retries and replayed events before scoring operator effort.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          For outdoor gear, propose separate ultralight and family car-camping branches with appropriate hero tents. Use a randomized eligible holdout if estimating incremental orders or margin; report sample size, uncertainty, returns and discount cost. A click-through or attributed-revenue increase alone cannot establish causal lift. Test state refresh and cancellation before the Memorial Day sale.
         </p>
         <h2>Drip workflow reality: strengths, friction, and billing</h2>
         <p>
-          Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          Omnisend shines when you need cart, welcome, and post-purchase live in days. Test its friction when custom preorder or fulfillment states dominate the proposed workflows. Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Omnisend (contacts plus message volume) rewards send discipline or punishes broadcast volume depending on your calendar. Drip (people in account) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model billing with the same twelve-month workload. In the vinyl fixture, simulate a growing waitlist without assuming that orders grow with it. In the outdoor fixture, include peak-season broadcast volume. Compare current billable audience definitions, overages, channel fees, required apps, migration and maintenance labor; do not infer either vendor's price behavior from an unverified billing label.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -177,12 +177,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Drip punish partial adoption.
+          For a proposed 12,000–18,000-contact workload, obtain matched current quotes rather than assuming prices converge. Preserve suppression history when removing ineligible imports. Include only the modules each workflow actually requires, and verify who provides and bills for them; this page does not establish that Drip supplies a modular reviews or loyalty suite.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Omnisend, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          Common pattern: capture in Privy or Justuno, lifecycle in Omnisend, SMS in a separately verified sender when the required workflow and channel permissions support it. Compliance depends on the implementation and message purpose, not the vendor name. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
         </p>
         
         <h2>Who should choose which</h2>
