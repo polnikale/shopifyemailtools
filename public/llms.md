@@ -6,4 +6,4 @@ This site publishes Shopify email marketing and automation guides. Articles dist
 
 - Shopify email, SMS, abandoned-cart, retention, and lifecycle apps
 - Store-specific implementation guidance
-- Evidence-safe comparisons and FAQ content
+- App comparisons and FAQ content
