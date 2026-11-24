@@ -12,23 +12,23 @@ const desc = 'Drip vs Brevo for Shopify email tools — visual behavior workflow
 const faqs = [
   {
     question: 'Is Drip or Brevo better for Shopify DTC stores?',
-    answer: 'Drip wins behavior-based ecommerce automation with visual canvas control and revenue-oriented workflows. Brevo wins send-volume economics, transactional SMTP separation, and stores needing CRM pipelines alongside Shopify DTC. Pure DTC lifecycle favors Drip; hybrid wholesale-plus-DTC may favor Brevo breadth.',
+    answer: 'Test the same DTC jobs in the quoted Drip and Brevo plans: welcome by signup source, cart with purchase exits, post-purchase gift exclusion and education-led winback. Compare workflow visibility, available Shopify events and maintenance effort. A wholesale pipeline or transactional requirement belongs in the evaluation only if the team will actually use it; neither establishes a universal winner.',
   },
   {
     question: 'How does Drip vs Brevo pricing compare at 12,000 contacts?',
-    answer: 'Drip people billing near $150–220/mo at 12k. Brevo often lower when emailing engaged subsets at high monthly send volume — selective senders win on Brevo sticker. Drip ROI shows in cart and winback if canvas maintained weekly.',
+    answer: 'Obtain dated quotes at the same 12,000 eligible contacts and monthly email volume. Include feature tiers, send limits, stored-contact limits, overages, SMS destinations, transactional traffic, onboarding and operator time. Selective sending and high total volume are different inputs. Do not assume lower cost or recovered revenue from either billing label.',
   },
   {
     question: 'Which handles mechanical keyboard GB suppression?',
-    answer: 'Drip canvas — tag transition visible when pre-order closes. Brevo automation achieves same with contact attributes — less auditable during frantic drop weeks. GB-heavy operators favor Drip visibility.',
+    answer: 'Test a keyboard group-buy closing while a cart message is queued. Confirm the Shopify state reaches each workflow, cancel the stale job, then replay the closing event and check that no duplicate recovery is sent. Score how easily an operator can inspect the branch and prove the exit. Canvas visibility alone does not establish that one platform handles the state better.',
   },
   {
     question: 'Does Brevo transactional SMTP matter for Shopify?',
-    answer: 'Yes — pottery studios and coffee merchants separate operational order updates on Brevo SMTP subdomain from marketing on Drip or Brevo campaigns. Drip marketing-focused; Brevo dual-layer common in hybrid stacks.',
+    answer: 'A separate transactional sender can matter if there is a real operational email requirement. First document which order notices Shopify or another app already owns; avoid duplicate confirmations. Verify the current Brevo SMTP/API plan, authentication, error handling and integration route. Keep promotional permission separate from necessary service messages; a separate subdomain does not itself establish compliance.',
   },
   {
     question: 'Can Brevo replace Drip for ecommerce automation?',
-    answer: 'Partially for simple journeys at lower send cost. Drip canvas depth, workflow revenue reporting, and tag branching ergonomics beat Brevo for complex DTC catalogs. Migration Drip to Brevo rare; reverse more common for cost at moderate complexity.',
+    answer: 'Rebuild the required journeys in the current Brevo plan before deciding whether it can replace Drip. Verify event coverage, branching, purchase exits and subscription-state updates against Drip using the same fixtures. Record gaps and maintenance effort rather than assuming a direction of migration is common. Switch only after permission, suppression and queued-job migration tests pass.',
   },
   {
     question: 'When do you outgrow both for Klaviyo?',
@@ -36,11 +36,11 @@ const faqs = [
   },
   {
     question: 'Which fits climbing gear wholesale plus DTC?',
-    answer: 'Brevo CRM pipelines for dealer inquiries; Drip for DTC cart and winback — hybrid until sales tooling separates. Document wholesale tag exclusion from promotional cart on both platforms.',
+    answer: 'For a climbing-gear wholesale and DTC catalog, test separate dealer-inquiry and consumer paths. Verify any proposed CRM pipeline in the quoted plan, and prevent wholesale tags from accidentally authorizing consumer promotions. Drip, Brevo or a split stack should be judged on the actual handoff, data mapping and ownership requirements, including who resolves stale or conflicting tags.',
   },
   {
     question: 'What workflow test settles Drip vs Brevo?',
-    answer: 'Build welcome by source, cart with discount cap, post-purchase gift exclusion, winback education-first. Score canvas visibility, send pricing at your volume, transactional needs. Drip if canvas and DTC depth win; Brevo if volume economics and SMTP win.',
+    answer: 'Build welcome by source, cart with a discount cap, post-purchase gift exclusion and education-first winback. Test current consent, withdrawal, purchases and subscription pauses at dispatch; cancel stale jobs and deduplicate event replays. Score workflow inspection, integration effort and matched annual costs, including any transactional sender. Choose from demonstrated requirements rather than a preset platform ranking.',
   },
 ];
 ---
@@ -60,18 +60,18 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Drip vs Brevo for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Visual ecommerce canvas versus send-volume generalist with transactional SMTP — different ergonomics for different operator types. We evaluated both through a mechanical keyboard vendor needing GB tag visibility on canvas, a pottery studio splitting operational kiln alerts via Brevo SMTP from Drip marketing, and a climbing gear shop running Brevo CRM for wholesale dealer nurture alongside Drip DTC cart recovery.
+          Use hypothetical keyboard group-buy state changes, pottery operational notices and climbing dealer inquiries to compare the proposed setups. Demonstrate workflow visibility and any required CRM or SMTP route in the current quoted plans. A split architecture is a candidate to test, with named sender ownership and matched total costs, rather than an established merchant implementation.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'Ecommerce canvas', tool: 'Drip', reason: 'Visual workflows, tag branching, revenue focus.' },
-            { label: 'Send-volume economics', tool: 'Brevo', reason: 'Pricing favors selective high-volume senders.' },
-            { label: 'Transactional SMTP', tool: 'Brevo', reason: 'Operational email on separate subdomain.' },
-            { label: 'CRM pipelines', tool: 'Brevo', reason: 'Wholesale and dealer follow-up native.' },
-            { label: 'DTC lifecycle depth', tool: 'Drip', reason: 'Behavior automation canvas ergonomics.' },
+            { label: 'Ecommerce canvas', tool: 'Drip', reason: 'Trace a delayed purchase through the workflow and its queued jobs.' },
+            { label: 'Send-volume economics', tool: 'Brevo', reason: 'Compare matched annual contact, send, feature and staffing costs.' },
+            { label: 'Transactional SMTP', tool: 'Brevo', reason: 'Verify service-message access, retries and a single sender owner.' },
+            { label: 'CRM pipelines', tool: 'Brevo', reason: 'Trace dealer inquiries, replies and stage changes in the quoted plan.' },
+            { label: 'DTC lifecycle depth', tool: 'Drip', reason: 'Reproduce replenishment and preorder exits before choosing.' },
           ]}
         />
       </div>
@@ -81,11 +81,11 @@ const faqs = [
         <table class="data-table">
           <thead><tr><th>Dimension</th><th>Drip</th><th>Brevo</th></tr></thead>
           <tbody>
-            <tr><td>Focus</td><td>Ecommerce automation canvas</td><td>Volume sends + CRM + SMTP</td></tr>
-            <tr><td>Pricing</td><td>People in account</td><td>Send volume/features</td></tr>
-            <tr><td>Workflow UI</td><td>Visual canvas</td><td>Automation builder</td></tr>
-            <tr><td>Transactional</td><td>Marketing focus</td><td>SMTP API strong</td></tr>
-            <tr><td>Best fit</td><td>DTC workflow ops</td><td>Hybrid DTC + CRM/SMTP</td></tr>
+            <tr><td>Focus</td><td>Reproduce required ecommerce branches</td><td>Verify required sends, CRM and service routes</td></tr>
+            <tr><td>Pricing</td><td>Request dated profile, send and feature quote</td><td>Request matched quote including channel usage and fees</td></tr>
+            <tr><td>Workflow UI</td><td>Inspect branch editing and event history</td><td>Inspect branch editing and event history</td></tr>
+            <tr><td>Transactional</td><td>Verify service-message scope separately</td><td>Verify API access, retries and queue ownership</td></tr>
+            <tr><td>Best fit</td><td>Time routine workflow operations</td><td>Test dealer and operational-message handoffs</td></tr>
           </tbody>
         </table>
       </div>
@@ -93,112 +93,112 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Drip and Brevo sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Drip is optimized when an operator will maintain canvas logic every month. Brevo is optimized when cost per send matters more than predictive merchandising. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          This comparison uses hypothetical Shopify planning cases, not observed merchant tests. Evaluate Drip and Brevo against the same required events, permission records and workflow jobs in the quoted plans. Maintain a field map and a named owner for each integration. Order notices, marketing campaigns and recovery messages have different purposes; a purchase or imported tag alone does not authorize every channel.
         </p>
         
         <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          For this illustrative scenario, assume the vinyl record shop processes 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Model a 200–400-unit pressing selling out while a campaign is queued. Recheck variant availability and allocation before dispatch, suppress recent full-price buyers from an immediate discount and provide a safe sold-out destination. Treat clicks and attributed orders as observations to measure, not a promised lift.
         </p>
         <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          For this illustrative scenario, assume the outdoor gear retailer processes 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Brevo reduced preview-time surprises because affordable email volume with SMS and transactional options. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          Use the tent-capacity quiz to distinguish family car camping from lightweight trips. Test consent separately from quiz completion, then verify that the selected segment reaches the correct welcome and browse branch. Stock and current purchase state must be checked again before a tent promotion is dispatched.
         </p>
         <h2>Mechanical Keyboard Vendor ($58k/mo) — halt cart recovery when preorder tags flip to closed</h2>
         <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+          For this illustrative scenario, assume the mechanical keyboard vendor processes 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          Close a six-week group buy on a $180–$420 kit while recovery is queued. Verify that preorder state cancels the job, including delayed or replayed tag updates. Keep switch education mapped to the relevant product pages, and require an explicit safe fallback if the connector cannot resolve current status.
         </p>
         <h2>Before Essen release week: board game store retention choices</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          For this illustrative scenario, assume the board game store processes 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Brevo reduced preview-time surprises because affordable email volume with SMS and transactional options. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          Keep allocation, preorder and shipped states distinct. An order awaiting fulfillment should not be treated as a lapsed buyer simply because a timer expired. Test a state change during queue processing, cancel obsolete winback and recovery jobs and keep necessary allocation notices with the designated order-message owner.
         </p>
         <h2>Specialty Tea Merchant: 28–35 day tin replenishment with gift-box seasonality</h2>
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          For this illustrative scenario, assume the specialty tea merchant processes 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          Use blend, quantity and gift status to test the proposed 28–35-day replenishment window. Exclude gift recipients and paused subscribers where appropriate, and recheck December gift-box purchases before dispatch. Treat consumption timing as an assumption to validate rather than an observed replenishment result.
         </p>
         <h2>How artisan coffee roaster emails through holiday blend drop</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Brevo contributes affordable email volume with SMS and transactional options. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          For this illustrative scenario, assume the artisan coffee roaster processes 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Brevo reduced preview-time surprises because affordable email volume with SMS and transactional options. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Brevo; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Use distinct clocks for retail bean replenishment and wholesale samples. A proposed day-thirty reminder must be reset after a new purchase and cancelled while a subscription is paused. Check product quantity and roast-date inputs rather than assuming every buyer consumes at the same rate.
         </p>
         <h2>Drip workflow reality: strengths, friction, and billing</h2>
         <p>
-          Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Brevo shines when cost per send matters more than predictive merchandising. Its friction shows when browse abandonment and CLV segments steer weekly calls. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          Assign an operator to maintain each proposed workflow and its data mapping. In Drip and Brevo, demonstrate branch inspection, recovery exits and error handling with the same fixtures. Record any feature or integration gap in the actual quoted plan. Team familiarity can reduce maintenance effort, but neither monthly orders nor an assumed product ceiling decides the fit.
         </p>
         <p>
-          Billing amplifies behavior. Drip (people in account) rewards send discipline or punishes broadcast volume depending on your calendar. Brevo (email volume and features) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Separate billable profiles, sends and feature tiers in the cost model. A contact-priced plan does not automatically charge more for every broadcast, and a usage-priced plan may still have minimums or contact limits. Request dated terms for ordinary and peak months, including overages, integrations, onboarding and operator time; do not infer a merchant result from a billing label.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Drip and Brevo both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Use coffee origin stories, vinyl staff picks, keyboard switch explainers and climbing trip reports as proposed editorial tests. Verify the email sender and required plan before assigning this job. Test how product blocks behave when a hero SKU changes or sells out mid-queue; a cached campaign preview is not proof of current inventory at dispatch.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Brevo punish partial adoption.
+          For an illustrative 12,000–18,000-contact account, quote the same eligible audience, sends and feature requirements in every candidate. Model peaks and quieter months separately; include SMS destination and carrier fees, transactional traffic and any additional app actually needed. Retain withdrawal records during list cleanup. Compare all-in annual costs rather than assuming plans converge or that an unused module is required.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Drip, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A possible split stack has one capture layer, a designated email lifecycle sender and a separate SMS sender only where needed. Document which system owns each recovery job and the authoritative purchase, permission and suppression state. Test withdrawal propagation, stale-job cancellation and replay deduplication across the boundary before enabling either sender. Capture tools do not independently establish marketing eligibility.
         </p>
         
         <h2>Who should choose which</h2>
         <p><strong>Choose Drip if:</strong></p>
         <ul>
-          <li>An operator will maintain canvas logic every month</li>
-          <li>You will use visual workflow canvas with behavior-based branching weekly</li>
-          <li>People in account fits your calendar</li>
-          <li>Your team can maintain Drip without external rescue</li>
-          <li>Switching cost favors Drip for the next twelve months</li>
+          <li>A named operator demonstrates safe branch edits and rollback</li>
+          <li>Required Shopify events and recovery exits pass the same fixtures</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <p><strong>Choose Brevo if:</strong></p>
         <ul>
-          <li>Cost per send matters more than predictive merchandising</li>
-          <li>You will use affordable email volume with SMS and transactional options weekly</li>
-          <li>Email volume and features fits your calendar</li>
-          <li>Your team can maintain Brevo without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Brevo migration</li>
+          <li>The same eligible audience and peak send calendar fit the complete dated quote</li>
+          <li>Required marketing and service-message workflows have separate ownership and permission checks</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Drip is the better Shopify email tool when an operator will maintain canvas logic every month. Brevo is the better Shopify email tool when cost per send matters more than predictive merchandising. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose from demonstrated requirements, operator effort and matched annual costs in Drip and Brevo. Test five jobs: source-based welcome, cart recovery, post-purchase exclusions, education-led winback and a permission-aware peak campaign. Set the migration schedule from actual data mapping and queue ownership work. Compare incremental contribution margin with a suitable holdout; attributed lifecycle GMV alone cannot establish causal lift. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 

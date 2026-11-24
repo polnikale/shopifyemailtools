@@ -13,19 +13,19 @@ const desc = 'Drip vs Postscript for Shopify stores — visual email workflow co
 const faqs = [
   {
     question: 'Is Drip or Postscript better for a Shopify store doing $80k/mo?',
-    answer: 'Neither alone. Drip owns email lifecycle with visual workflow control — welcome, cart, post-purchase, winback. Postscript owns SMS with superior compliance, two-way conversations, and keyword campaigns. At $80k/mo, most stores need Drip (or similar ESP) for email plus Postscript for SMS depth. Postscript cannot replace Drip\'s email canvas; Drip cannot match Postscript\'s SMS specialization.',
+    answer: 'Monthly revenue alone cannot determine the right stack. Demonstrate welcome, cart, post-purchase and winback email requirements alongside permission-aware SMS recovery and drop alerts. Confirm the current channel scope and integrations of both quoted products. Keep separate tools only when their demonstrated capabilities justify the combined cost and coordination work.',
   },
   {
     question: 'Can Postscript replace Drip entirely?',
-    answer: 'No for most stores. Postscript is SMS-first — it does not replace Drip\'s email depth, visual workflow canvas, or behavior-based branching. Typical architecture: Drip for email automation, Postscript for SMS broadcasts and conversational recovery. Some stores use Drip for moderate SMS when volume is low, but SMS-heavy brands outgrow Drip text quickly.',
+    answer: 'Confirm current channel coverage and reproduce the required email and SMS journeys before replacing Drip. Test behavior branches, purchase exits, subscription pauses and the complete capture-to-send path in the proposed setup. Do not assume Drip provides native SMS or that Postscript can replace every email job. Document a separate email sender if the proposed stack requires one.',
   },
   {
     question: 'How does Drip vs Postscript pricing compare?',
-    answer: 'Drip bills on people in account — typically $120–200/mo at 12k contacts. Postscript uses plan plus usage-based messaging — transparent for SMS-heavy stores but spikes during flash sales. Model promotional SMS volume explicitly for BFCM. Combined stack cost often exceeds either platform alone — justify with attributable SMS revenue.',
+    answer: 'Obtain dated quotes for matched eligible profiles, email volume, SMS destinations and peak traffic. Include plan minimums, usage and carrier fees, onboarding, integrations and operator time. Model BFCM separately from ordinary months. A combined stack needs evidence of incremental contribution margin; attributed SMS revenue alone cannot justify its added cost.',
   },
   {
     question: 'Should I use Drip and Postscript together?',
-    answer: 'Common when SMS drives 15%+ of retention revenue. Drip owns email workflows with canvas visibility; Postscript owns SMS drop alerts, cart recovery texts, and keyword opt-in. Sync suppression to prevent duplicate cart touches across channels. The mistake is paying for both without coordination logic or shared exclusion rules.',
+    answer: 'A split stack can work when each channel has a clear purpose and owner. Map separate email and SMS permissions, current withdrawals and shared purchase state. Recheck eligibility at dispatch, cancel stale queued recovery across both senders and deduplicate event replays. Choose cadence from the journey and test collisions; an attributed-revenue percentage is not a universal reason to buy both.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Drip or Postscript?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Which has better TCPA compliance tooling?',
-    answer: 'Postscript leads for SMS-specific compliance — keywords, opt-out handling, quiet hours, and conversational consent flows. Drip SMS compliance is solid but email-native teams may underestimate TCPA risk at scale. High SMS revenue stores should weigh Postscript guardrails seriously before relying on Drip text alone.',
+    answer: 'Compare the exact proposed SMS sender and current plan controls for permission records, withdrawals, quiet-time configuration, replies and queued-message cancellation. Do not assume a native Drip SMS product or certify legal compliance from a feature list. Test the integration end to end and assign an accountable operator; legal requirements need jurisdiction-specific review before publication or live sending.',
   },
   {
     question: 'Which handles cart abandonment better?',
-    answer: 'Depends on channel. Drip email cart workflows excel at branching by discount sensitivity, purchase history, and tag logic — strong for education-first recovery on higher AOV. Postscript SMS cart recovery wins on immediacy for mobile-first flash drops — vinyl pressings, limited releases, drop-day urgency. Best results combine Drip email with Postscript SMS, not either alone.',
+    answer: 'Build the same recovery scenario with separate channel permissions and current cart and purchase state. Test education-led email for a considered purchase and an opted-in SMS reminder for a limited release. Check stock, discounts, withdrawals and duplicate events before dispatch. Evaluate outcomes with a suitable holdout; immediacy or channel attribution does not establish a universal recovery winner.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'For email: build welcome (branch by signup source), three-step cart (winback suppression), post-purchase cross-sell — Drip wins. For SMS: cart abandonment text, flash broadcast with quiet hours, keyword opt-in, two-way reply — Postscript wins SMS tests. Most stores need Drip (or similar ESP) plus optional Postscript — not Postscript alone as a full retention stack.',
+    answer: 'For email, test signup-source welcome, a three-step cart path with purchase exits and post-purchase cross-sell. For SMS, test an opted-in cart reminder, quiet-time handling, keyword capture and replies in the quoted setup. Recheck current state, cancel stale jobs and deduplicate event replays. Record evidence and full costs before choosing a single product or a split stack.',
   },
 ];
 ---
@@ -61,17 +61,17 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Drip vs Postscript for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          A channel architecture question merchants still Google wrong. Drip is visual email automation for operators who design behavior-based workflows on a canvas. Postscript is SMS infrastructure that assumes email lives elsewhere. We evaluated both through a board game store pairing Drip email nurture with Postscript allocation texts, a camping equipment merchant that wrongly treated Postscript as its only marketing platform, and a vinyl record shop whose retention owner built custom cart branching in Drip while outsourcing drop-day SMS to Postscript.
+          Start with email and SMS requirements, then verify current channel scope and integration routes. Test hypothetical board-game allocation alerts, camping education paths and vinyl cart exits in each proposed setup. A combined email and SMS stack is an option to evaluate, with explicit sender ownership and permission handoffs; no merchant failure or successful implementation is established here.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'Email workflows', tool: 'Drip', reason: 'Visual canvas for branching, tags, and behavior triggers.' },
-            { label: 'SMS specialization', tool: 'Postscript', reason: 'Compliance, two-way text, and Shopify SMS focus.' },
-            { label: 'Operator control', tool: 'Drip', reason: 'Hands-on logic without enterprise overhead.' },
-            { label: 'SMS revenue focus', tool: 'Postscript', reason: 'When text is a primary channel, not an add-on.' },
+            { label: 'Email workflows', tool: 'Drip', reason: 'Reproduce education, purchase exits and paused-subscription handling.' },
+            { label: 'SMS specialization', tool: 'Postscript', reason: 'Verify current channel coverage, regional controls and reply routing.' },
+            { label: 'Operator control', tool: 'Drip', reason: 'Inspect event history and cancel stale jobs without losing suppressions.' },
+            { label: 'SMS revenue focus', tool: 'Postscript', reason: 'Use a holdout and matched costs before expanding attributed SMS revenue.' },
             { label: 'Also consider', tool: 'Sequenzy', reason: 'Email playbooks paired with Postscript for SMS depth.' },
           ]}
         />
@@ -84,14 +84,14 @@ const faqs = [
             <tr><th>Dimension</th><th>Drip</th><th>Postscript</th></tr>
           </thead>
           <tbody>
-            <tr><td>Best for</td><td>Visual email workflow operators</td><td>SMS-native Shopify marketing</td></tr>
-            <tr><td>Starting price</td><td>From ~$39/mo</td><td>Usage-based plans</td></tr>
-            <tr><td>Email</td><td>Core product</td><td>Not primary</td></tr>
-            <tr><td>SMS depth</td><td>Moderate — journey-integrated</td><td>Best-in-class for Shopify</td></tr>
-            <tr><td>Workflow UI</td><td>Visual canvas</td><td>SMS automations</td></tr>
-            <tr><td>Compliance</td><td>Solid for email</td><td>SMS-first guardrails</td></tr>
-            <tr><td>Shopify depth</td><td>Native — orders, tags, products</td><td>Native — SMS events</td></tr>
-            <tr><td>Typical role</td><td>Primary email ESP</td><td>SMS layer in combined stack</td></tr>
+            <tr><td>Best for</td><td>Reproduce email branches and purchase exits</td><td>Verify required SMS jobs and regions</td></tr>
+            <tr><td>Starting price</td><td>Request dated profile, send and feature quote</td><td>Request matched quote including channel usage and fees</td></tr>
+            <tr><td>Email</td><td>Test complete email lifecycle in quoted plan</td><td>Confirm current email scope; reproduce required journeys</td></tr>
+            <tr><td>SMS depth</td><td>Confirm current channel scope and integration route</td><td>Test SMS jobs, replies and queue controls in quoted plan</td></tr>
+            <tr><td>Workflow UI</td><td>Inspect branch editing and event history</td><td>Inspect SMS branches and cancellation</td></tr>
+            <tr><td>Compliance</td><td>Verify purpose, permission and suppression</td><td>Verify withdrawal, regional controls and suppression</td></tr>
+            <tr><td>Shopify depth</td><td>Verify order, tag and product mappings</td><td>Verify SMS event mappings and latency</td></tr>
+            <tr><td>Typical role</td><td>Assign email sender and queue ownership</td><td>Assign SMS sender and queue ownership</td></tr>
           </tbody>
         </table>
       </div>
@@ -99,112 +99,112 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Drip and Postscript sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Drip is optimized when an operator will maintain canvas logic every month. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          This comparison uses hypothetical Shopify planning cases, not observed merchant tests. Evaluate Drip and Postscript against the same required events, permission records and workflow jobs in the quoted plans. Maintain a field map and a named owner for each integration. Order notices, marketing campaigns and recovery messages have different purposes; a purchase or imported tag alone does not authorize every channel.
         </p>
         
         <h2>Before Essen release week: board game store retention choices</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          For this illustrative scenario, assume the board game store processes 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          Keep allocation, preorder and shipped states distinct. An order awaiting fulfillment should not be treated as a lapsed buyer simply because a timer expired. Test a state change during queue processing, cancel obsolete winback and recovery jobs and keep necessary allocation notices with the designated order-message owner.
         </p>
         <h2>Specialty Tea Merchant: 28–35 day tin replenishment with gift-box seasonality</h2>
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          For this illustrative scenario, assume the specialty tea merchant processes 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          Use blend, quantity and gift status to test the proposed 28–35-day replenishment window. Exclude gift recipients and paused subscribers where appropriate, and recheck December gift-box purchases before dispatch. Treat consumption timing as an assumption to validate rather than an observed replenishment result.
         </p>
         <h2>How artisan coffee roaster emails through holiday blend drop</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          For this illustrative scenario, assume the artisan coffee roaster processes 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Use distinct clocks for retail bean replenishment and wholesale samples. A proposed day-thirty reminder must be reset after a new purchase and cancelled while a subscription is paused. Check product quantity and roast-date inputs rather than assuming every buyer consumes at the same rate.
         </p>
         <h2>Climbing Gear Store ($89k/mo) — branch browse sequences by fall-rating and harness fit pages</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          For this illustrative scenario, assume the climbing gear store processes 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Keep harness-fit education separate from rope-care information. Product safety statements need supplier documentation; a promotional workflow cannot certify equipment suitability. Test the seven-to-fourteen-day consideration window as an assumption, and stop the sequence when purchase or eligibility changes.
         </p>
         <h2>Before Memorial Day camping spike: camping equipment merchant retention choices</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          For this illustrative scenario, assume the camping equipment merchant processes 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          Use the tent-capacity quiz to distinguish family car camping from lightweight trips. Test consent separately from quiz completion, then verify that the selected segment reaches the correct welcome and browse branch. Stock and current purchase state must be checked again before a tent promotion is dispatched.
         </p>
         <h2>Pottery Studio: class waitlists and glaze-kit starter sets</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Drip contributes visual workflow canvas with behavior-based branching; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          For this illustrative scenario, assume the pottery studio processes 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Verify the required event fields and branch behavior in both quoted plans. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender per job across Drip and Postscript; service-message priority must not confer marketing permission. Recheck purpose-specific consent, current withdrawals, suppression and purchase state at dispatch. Cancel stale queued jobs in every connected sender and deduplicate replayed events. Test this behavior before a peak week rather than assuming either platform handles it automatically.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Keep class waitlist permission separate from glaze-kit marketing. Test the signup source, a class booking, a gift purchase and a later withdrawal as different states. A kiln-care service message should not silently authorize promotions; confirm which system owns each notice before enabling the journey.
         </p>
         <h2>Drip workflow reality: strengths, friction, and billing</h2>
         <p>
-          Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          Assign an operator to maintain each proposed workflow and its data mapping. In Drip and Postscript, demonstrate branch inspection, recovery exits and error handling with the same fixtures. Record any feature or integration gap in the actual quoted plan. Team familiarity can reduce maintenance effort, but neither monthly orders nor an assumed product ceiling decides the fit.
         </p>
         <p>
-          Billing amplifies behavior. Drip (people in account) rewards send discipline or punishes broadcast volume depending on your calendar. Postscript (message volume and plans) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Separate billable profiles, sends and feature tiers in the cost model. A contact-priced plan does not automatically charge more for every broadcast, and a usage-priced plan may still have minimums or contact limits. Request dated terms for ordinary and peak months, including overages, integrations, onboarding and operator time; do not infer a merchant result from a billing label.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Drip and Postscript both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Use coffee origin stories, vinyl staff picks, keyboard switch explainers and climbing trip reports as proposed editorial tests. Verify the email sender and required plan before assigning this job. Test how product blocks behave when a hero SKU changes or sells out mid-queue; a cached campaign preview is not proof of current inventory at dispatch.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Postscript punish partial adoption.
+          For an illustrative 12,000–18,000-contact account, quote the same eligible audience, sends and feature requirements in every candidate. Model peaks and quieter months separately; include SMS destination and carrier fees, transactional traffic and any additional app actually needed. Retain withdrawal records during list cleanup. Compare all-in annual costs rather than assuming plans converge or that an unused module is required.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Postscript, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A possible split stack has one capture layer, a designated email lifecycle sender and a separate SMS sender only where needed. Document which system owns each recovery job and the authoritative purchase, permission and suppression state. Test withdrawal propagation, stale-job cancellation and replay deduplication across the boundary before enabling either sender. Capture tools do not independently establish marketing eligibility.
         </p>
         
         <h2>Who should choose which</h2>
         <p><strong>Choose Drip if:</strong></p>
         <ul>
-          <li>An operator will maintain canvas logic every month</li>
-          <li>You will use visual workflow canvas with behavior-based branching weekly</li>
-          <li>People in account fits your calendar</li>
-          <li>Your team can maintain Drip without external rescue</li>
-          <li>Switching cost favors Drip for the next twelve months</li>
+          <li>A named operator demonstrates safe branch edits and rollback</li>
+          <li>Required Shopify events and recovery exits pass the same fixtures</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <p><strong>Choose Postscript if:</strong></p>
         <ul>
-          <li>Sms is a primary revenue channel with compliance discipline</li>
-          <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
-          <li>Message volume and plans fits your calendar</li>
-          <li>Your team can maintain Postscript without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Postscript migration</li>
+          <li>The proposed SMS workload has valid permission for its channel and purpose</li>
+          <li>The SMS sender demonstrates withdrawal propagation and stale-job cancellation</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Drip is the better Shopify email tool when an operator will maintain canvas logic every month. Postscript is the better Shopify email tool when SMS is a primary revenue channel with compliance discipline. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose from demonstrated requirements, operator effort and matched annual costs in Drip and Postscript. Test five jobs: source-based welcome, cart recovery, post-purchase exclusions, education-led winback and a permission-aware peak campaign. Set the migration schedule from actual data mapping and queue ownership work. Compare incremental contribution margin with a suitable holdout; attributed lifecycle GMV alone cannot establish causal lift. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
