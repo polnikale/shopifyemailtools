@@ -3,71 +3,75 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('drip')!;
 const path = '/alternatives/drip-alternative';
 const title = 'Best Drip Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Drip — per-contact pricing, workflow maintenance fatigue, ecosystem gaps — plus eight ranked email-tool alternatives, migration checklist, and pricing at 10k–30k contacts.';
-
-const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'sendlane', 'activecampaign', 'brevo', 'mailchimp', 'shopify-email'];
-const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
+const desc = 'Compare Drip alternatives through workflow ownership and event mapping, practical workflow checks and matched operating costs.';
 const faqs = [
-  { question: 'Why do Shopify stores leave Drip?', answer: 'Drip rewards operators who enjoy building workflows — but per-contact pricing still punishes popup-heavy growth, and the builder becomes unmaintainable when the person who designed twelve flows leaves. Smaller agency ecosystem versus Klaviyo also pushes stores to switch when they need external help rebuilding after staff turnover.' },
-  { question: 'Is Sequenzy easier than Drip?', answer: 'Sequenzy trades visual builder depth for agent-first strategy — describe outcomes, get sequences. Choose Sequenzy when workflow maintenance exceeded revenue; stay on Drip if your team genuinely prefers hands-on automation design and audits weekly.' },
-  { question: 'How does Drip to Klaviyo migration work?', answer: 'Export tags, custom fields, and workflow documentation. Klaviyo flows rebuild from specs — no native import. Estimate timing from field mapping, event validation, suppression tests and available operators; welcome, cart, post-purchase and winback need separate acceptance checks. Screenshot every trigger, delay, branch, and goal before export.' },
-  { question: 'Does Drip SMS push merchants away?', answer: 'Drip SMS exists but many stores pair Postscript anyway. Leaving Drip often means re-evaluating entire stack — email lifecycle plus SMS specialist — especially when SMS credits were never unified with email suppression.' },
-  { question: 'Best Drip alternative for workflow lovers?', answer: 'Klaviyo or ActiveCampaign if you still want deep branching with larger ecosystems. Sequenzy if you want outcomes without canvas maintenance when the operator who built tribal knowledge left.' },
-  { question: 'What does Drip cost at 30,000 contacts?', answer: 'Often $200–350/month — comparable pain to Klaviyo or Omnisend at that tier. Sequenzy pay-per-email or Brevo volume may undercut if sends target engaged subsets only rather than full list weekly.' },
-  { question: 'When should I stay on Drip?', answer: 'Stay if someone audits workflows weekly, revenue dashboards drive decisions, and catalog segmentation uses tags you control — common for focused catalogs like specialty tea twelve blends or mechanical-keyboard switch categories.' },
-  { question: 'How do I document Drip workflows for migration?', answer: 'Screenshot every trigger, delay, branch, and goal. Export subscriber tags and custom fields with definitions. Note Shopify events — Added to Cart, Placed Order, Viewed Product — used at each step. Identify top three revenue workflows for first rebuild priority.' },
+  {
+    "question": "Why consider leaving Drip?",
+    "answer": "A documented maintenance, integration or operating-cost gap can justify review. First assign an owner and reproduce the problem. A handover failure is not evidence that Drip cannot support the workflow."
+  },
+  {
+    "question": "Does Drip require a separate SMS vendor?",
+    "answer": "Not necessarily. Drip advertises staged integrated SMS access for existing paid US customers with Support All People enabled. Phone records require email; launch scope is one-way toll-free sending without SMS-only subscribers, keyword joining, short codes or two-way replies. Verify access before changing an existing SMS arrangement."
+  },
+  {
+    "question": "Is Sequenzy automatically easier or cheaper?",
+    "answer": "No. Sequenzy documents AI drafting, a visual builder and send-volume billing with unlimited contacts. Compare rebuilding and editing the same workflow, plus matched all-in costs. Draft generation does not demonstrate correct Shopify event mapping or purchase suppression."
+  },
+  {
+    "question": "What should a Drip workflow specification contain?",
+    "answer": "Record the trigger and event payload, tag and custom-field definitions, delay, branches, goal and exit rules, current audience, queue state, integrations and owner. Prioritize economically important journeys while retaining explanations for subscription, gift and group-buy exclusions."
+  },
+  {
+    "question": "Can the old and new platforms coexist?",
+    "answer": "Yes, with a written division of journeys. Assign one sender and queue owner to each journey. Preserve permission evidence by purpose and channel, withdrawals, suppressions and current purchase state. Stop old entry, drain or cancel pending messages, deduplicate replayed events and test rollback before enabling replacement sends. A fixed overlap period cannot establish readiness."
+  },
+  {
+    "question": "How should I compare migration cost?",
+    "answer": "Compare the same contacts, sends, channels and required workflows. Include platform fees, add-ons, overages, implementation, support, maintenance and overlapping subscriptions. Separate attributed orders from incremental contribution after discounts and returns; one recovered cart does not establish payback."
+  },
+  {
+    "question": "What should transfer with subscribers?",
+    "answer": "Export field definitions, permission sources and timestamps, withdrawal history, suppressions, journey membership and relevant order state. Verify the actual export and import fields. Quarantine records whose eligibility is unresolved; an importable email address is not evidence of permission for every purpose or channel."
+  },
+  {
+    "question": "When can the old account be closed?",
+    "answer": "After event mapping, current eligibility checks, purchase exits, queue reconciliation, sender authentication and rollback have passed. Export needed documentation under applicable access and retention terms. Choose an observation period appropriate to the product buying cycle rather than imposing a universal deadline."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
-  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Drip alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Migration guide</p>
-        <h1 class="hero-title mt-5">Best Drip alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Drip is the operator's automation tool — visual workflows, behavior tags, clear revenue dashboards. Merchants leave when the operator leaves, when per-contact bills climb on a vinyl-shop list that grew faster than repeat purchases, or when they realize they built forty flows but only six drive margin.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked replacements for Shopify stores exiting Drip. Sequenzy leads when strategy and maintenance overhead hurt more than missing canvas control. Klaviyo when Shopify data depth is the upgrade target. Compare <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> before you migrate.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Drip replacements" picks={[
-          { label: 'Best overall', tool: 'Sequenzy', reason: 'Lifecycle outcomes without workflow babysitting — pay-per-email economics.' },
-          { label: 'Best data platform', tool: 'Klaviyo', reason: 'Deeper Shopify sync and predictive tools when Drip data ceiling hit.' },
-          { label: 'Best multichannel', tool: 'Omnisend', reason: 'Prebuilt journeys plus SMS without rebuilding every Drip branch.' },
-          { label: 'Best guided switch', tool: 'Sendlane', reason: 'Migration support when Drip complexity stalled your team.' },
-          { label: 'Best budget', tool: 'Brevo', reason: 'Volume pricing when Drip per-contact bill was the trigger.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Drip</h2>
-        <p>Drip assumes a workflow owner. A board-game store tags customers by genre preference, order count, and Kickstarter status — brilliant until the founder who built it focuses on fulfillment and flows rot silently. No agency bench as deep as Klaviyo means hiring help is harder when tribal knowledge walks out the door with a departing contractor.</p>
-        <p>Per-contact pricing mirrors other ecommerce ESPs. Popup captures from a climbing-gear site's trail-condition content inflate people-in-account while email targets four thousand repeat buyers. Merchants compare bills to pay-per-email alternatives and question whether canvas control justifies cost when half the list is cold profiles from spin-wheel giveaways.</p>
-        <p>Ecosystem gaps appear at scale: predictive CLV, native SMS depth, reviews integration — stores piece together Postscript, Yotpo, spreadsheets. Consolidation drives exits to Klaviyo, Omnisend, or Sequenzy with clearer stack boundaries and less Sunday-evening node maintenance.</p>
-        <p>Drip is rarely wrong for focused catalogs with dedicated operators. Leaving usually means maintenance, pricing, or data depth failed — not that visual workflows were a mistake. Document which Drip workflows produced revenue last quarter before choosing replacements; migrate winners, retire orphan experiments from 2022.</p>
-
-        <h2>Newsletters, lifecycle, and transactional moments</h2>
-        <p>Drip handles lifecycle well — newsletters and broadcast campaigns too. Evaluate replacements on whether you need to preserve builder depth or escape maintenance tax. A specialty-tea store with blend-preference tags may stay on Drip with an assigned owner; a vinyl shop whose workflow builder left for another brand should not migrate to another canvas-heavy tool without headcount plan.</p>
-        <p>Transactional-style shipping and review prompts may live outside Drip today. Migration is opportunity to separate operational notifications from marketing lifecycle — AfterShip or Shopify notifications for delivery, Drip replacement for welcome-through-winback with documented collision rules between channels.</p>
-
-        <h2>Drip migration checklist for Shopify</h2>
-        <p>Run this sequence before disconnecting Drip. Tribal knowledge does not transfer — documentation is your migration spec.</p>
-        <ol>
+<ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+<div class="container py-14 max-w-4xl">
+<nav><a class="link" href="/alternatives">Alternatives</a></nav>
+<h1 class="hero-title mt-5">{title}</h1>
+<TldrBox title="Decision checks" picks={[
+{ label: 'Workflow', tool: 'Current setup first', reason: 'Reproduce the unmet requirement before selecting a replacement.' },
+{ label: 'Migration', tool: 'One queue owner', reason: 'Preserve eligibility, purchase exits and replay deduplication.' },
+{ label: 'Economics', tool: 'Matched workload', reason: 'Compare actual invoices and quotes; measure contribution separately.' },
+]} />
+<section class="prose-shopify mt-12"><h2>Start with the workflow that needs to change</h2><p>Replacing Drip starts with recovering workflow knowledge. A replacement must preserve the meaning of tags, purchase events, delays and exits before it can improve maintenance or cost. For a keyboard shop, group-buy exclusions are a more useful acceptance case than the number of nodes in a builder.</p><p>This guide proposes acceptance exercises, not performed merchant tests. Supplier documentation establishes advertised scope; it does not establish launch speed, comparative performance, payback or legal permission for a particular recipient. Alternatives appear as a shortlist, without a score or universal winner.</p></section>
+<section class="prose-shopify mt-12"><h2>Documented scope before comparison</h2><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify Messaging documentation</a> covers native campaigns and automations. Its <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">automation guide</a> distinguishes channel eligibility and directs custom or third-party workflows to Shopify Flow. Default marketing subscription checks and configurable checkout behavior need account review, not assumptions about universal permission.</p><p><a class="link" href="https://www.tinyemail.com/faqs">tinyEmail’s current FAQ</a> advertises Shopify connectivity, automation, unlimited contacts and a Shopify-specific free send allowance. Check eligibility and add-ons rather than carrying forward an old contact-tier estimate or a campaign-only label.</p><p><a class="link" href="https://www.sequenzy.com/features/shopify-integration">Sequenzy’s Shopify page</a> documents customer, order and product sync and cart, post-purchase and winback sequences. Its <a class="link" href="https://www.sequenzy.com/pricing">pricing page</a> describes send-volume billing, unlimited contacts, AI drafting and a visual builder. Test custom consumption data, gift and subscription exclusions; these documents do not prove that a natural-language request produces a validated merchant policy.</p><p><a class="link" href="https://www.drip.com/sms">Drip’s SMS page</a> describes staged access for existing paid US customers with Support All People enabled. It requires an email with a phone record and lists one-way toll-free sending at launch. Check actual access, number arrangements and separate SMS charges before replacing or retaining an SMS specialist.</p></section>
+<section class="prose-shopify mt-12"><h2>When preserving Drip is the better change</h2><p>Keep the existing branches when they express a policy the store still needs and the failure is missing ownership. For the tea shop, a documented blend tag, subscription exclusion and purchase exit can be worth preserving. Assign a backup, remove obsolete paths and measure the effort of one real policy edit before commissioning a rebuild. A replacement builder does not supply the missing policy owner.</p><p>Preserve measurement meaning too. Write down which order event starts attribution, its window, how refunds and discounts enter the report, and whether a workflow total includes repeat buyers who would have purchased anyway. Keep a dated Drip baseline and reconcile order identifiers with store records. A new dashboard using a different window can change reported revenue without changing customer behavior. If the only promised benefit is a larger attributed total, there is no demonstrated reason to move.</p></section>
+<section class="prose-shopify mt-12"><h2>Choose a replacement for a specific missing job</h2><p>The following are proposed evaluation briefs. Ask each candidate to demonstrate the relevant requirement with the Drip branch specification; these are not scored product tests. Request plan and integration confirmation before relying on a feature or service.</p></section>
+<section class="prose-shopify mt-12"><h2>Sequenzy</h2><p>An AI-assisted rebuild of a small, understood lifecycle library is a reason to evaluate Sequenzy. Its documented sync and visual builder give the operator a concrete starting point: draft the keyboard welcome path, then compare every group-buy exception with the Drip specification. Have the backup operator change one exclusion and explain the resulting audience.</p><p>The useful benefit to establish is less drafting and editing work. The limit is policy translation: AI copy and a drawn branch do not establish equivalent event semantics. Quote quiet and peak send volumes, then add the human review and rebuild work before comparing with the current Drip invoice.</p><p><a class="link" href="/compare/sequenzy-vs-drip">Sequenzy and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Klaviyo</h2><p>Make Klaviyo the data-requirement candidate when the outdoor store has a specific unresolved variant-restock or collection-interest rule. Bring the actual payload and ask where variant identity, inventory state and interest history will live, which integration updates each field, and what happens when the update arrives late.</p><p>A richer data model is useful only if it answers that missing question. Ask who maintains the connector and who can edit the segment after handover. Quote the required profiles, events, sends and channels; do not fund the rebuild on an assumed data ceiling in Drip or an assumed revenue uplift.</p><p><a class="link" href="/compare/klaviyo-vs-drip">Klaviyo and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Omnisend</h2><p>Evaluate Omnisend for a deliberate consolidation of email and SMS operations. Use one cart that progresses to checkout and then purchase; ask the vendor to show the chosen journey templates, cross-channel stop conditions and where channel-specific permission is checked. Compare those steps with the current Drip plus SMS-vendor arrangement.</p><p>The potential benefit is fewer separately maintained journey configurations. The contract question is whether the offered plan, destinations, number arrangements and SMS charges cover the required operation. Compare this with actual Drip SMS access described above; neither shared branding nor a shared profile proves that both channels can send to the same person.</p><p><a class="link" href="/compare/omnisend-vs-drip">Omnisend and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Sendlane</h2><p>Treat Sendlane as a managed-help evaluation when the Drip operator has left and the team cannot safely rebuild alone. Send the workflow inventory before requesting an onboarding proposal. Ask for named deliverables: tag definitions recovered, branches rebuilt, templates transferred, purchase exits exercised and a backup operator trained.</p><p>Guidance has value only with an agreed boundary. Identify who resolves a subscription-app mapping error after launch, which corrections are included and when support becomes separately billable. Compare the written service scope with repairing Drip using paid help; do not infer a guaranteed migration service or completion date from a sales conversation.</p><p><a class="link" href="/compare/drip-vs-sendlane">Sendlane and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>ActiveCampaign</h2><p>For a pottery business mixing wholesale inquiries with DTC purchases, evaluate ActiveCampaign against the sales handoff job. Trace a shop buyer requesting a trade account: who owns follow-up, which status should stop retail offers, and which system writes that status back to the marketing record? Ask for a demonstration on the proposed plan and connectors.</p><p>The benefit to establish is a reliable handoff between sales and marketing. The limit is another source of state to maintain. A wholesale status must not silently replace Shopify purchase or subscription state. If the store has no sales pipeline requirement, rebuilding the Drip library around one adds work without solving the stated problem.</p><p><a class="link" href="/compare/drip-vs-activecampaign">ActiveCampaign and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Brevo</h2><p>Evaluate Brevo as a cost-reduction candidate only after deciding which Drip branches the store will actually retain. Give it the vinyl shop’s quiet-month and release-week send schedules, including bursts, transactional traffic kept elsewhere and the required automation audience. Request the exact plan and connector costs for that workload.</p><p>The potential benefit is a better matched bill for a simpler retained program. The acceptance limit is the surviving branch list: demonstrate late purchases, catalog fields and exclusions before approving any reduction in workflow scope. Compare the quote with a pruned Drip account; deleting necessary journeys to make a quote smaller is a different business decision.</p><p><a class="link" href="/compare/drip-vs-brevo">Brevo and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Mailchimp</h2><p>Consider Mailchimp when the team already operates there for another brand and wants shared training and campaign production. Ask that operator to reproduce one retained Drip journey using the actual tags and purchase events, then edit a template and exclusion without help from the departing builder.</p><p>Existing familiarity may reduce training, but templates, permissions and journey state still need a transfer plan. Obtain a quote using the candidate’s billable audience definition and required automation access. Choose it only if the retained jobs pass; neither an automatic capability downgrade nor an automatic saving follows from the product name.</p><p><a class="link" href="/compare/drip-vs-mailchimp">Mailchimp and Drip comparison</a></p></section>
+<section class="prose-shopify mt-12"><h2>Shopify Messaging</h2><p>Use Shopify Messaging for a deliberate reduction to store-owned campaigns and required native automations. Map each retained Drip journey to a native automation, a specified Flow extension or an explicit retirement decision. For a simple tea catalog, staying in the store admin may be a lasting operating choice.</p><p>The benefit to establish is fewer external mappings and accounts. The limit is every exception that still needs custom state: assign ownership for blend preferences and subscription updates rather than dropping them in the reset. Include the documented allowance and automation counting rules below, plus any Flow or app work, in the native cost baseline.</p></section>
+<section class="prose-shopify mt-12"><h2>Pair-specific trial scenarios</h2></section>
+<section class="prose-shopify mt-12"><h2>Keyboard shop: owner handover</h2><p>Proposed exercise: inventory eight workflows and forty nodes, then ask a backup operator to explain group-buy exclusions. Rebuild one path from the specification, replay an event and purchase during its delay. Record editing and review effort; no maintenance saving or preserved revenue is claimed.</p></section>
+<section class="prose-shopify mt-12"><h2>Outdoor gear: 35,000-contact quote workload</h2><p>Use shell-layer and harness variants to test restock eligibility and winback conditions against actual event payloads. Quote both active and inactive records under each provider’s billable definition. Contact count alone establishes neither a data ceiling nor a cost winner.</p></section>
+<section class="prose-shopify mt-12"><h2>Specialty tea: retain Drip</h2><p>A small catalog may remain on Drip with a named workflow owner. Audit blend-preference tags, subscription data and replenishment exclusions. Use an illustrative 8,000 engaged contacts to compare invoices and maintenance work; staying can pass the same criteria as migration.</p></section>
+<section class="prose-shopify mt-12"><h2>Furniture: discount restraint</h2><p>For an illustrative $840 basket, compare a ninety-minute reminder with a three-hour delay and financing FAQ instead of an automatic ten-percent coupon. Verify purchase and permission suppression first. A suitable holdout can estimate incremental margin; no lift or rollout duration has been observed.</p></section>
+<section class="prose-shopify mt-12"><h2>Vinyl: list growth and billing</h2><p>For an illustrative 28,000-contact list, distinguish captured addresses, eligible recipients and actual monthly sends. Include support, extra channels and overlap in quotes. Review inactive records before retention or deletion; there is no universal profile-count break-even.</p></section>
+<section class="prose-shopify mt-12"><h2>Migration checklist and queue ownership</h2><p>The original migration jobs remain relevant. Adapt their order to dependencies and risk; a fixed launch calendar cannot replace readiness checks.</p></section>
+<ol>
           <li><strong>Export subscribers with tags and custom fields</strong> — include field definitions, not just column headers.</li>
           <li><strong>Screenshot every active workflow</strong> — triggers, delays, branches, exit goals, Shopify events used.</li>
           <li><strong>Identify top three revenue workflows</strong> — rebuild these first on new platform; retire dead experiments.</li>
@@ -80,136 +84,11 @@ const faqs = [
           <li><strong>Repoint capture tools</strong> — Privy, Justuno integrations feeding new ESP.</li>
           <li><strong>Warm sending domain if infrastructure changes</strong> — see <a class="link" href="/use-cases/deliverability">deliverability guide</a>.</li>
           <li><strong>Plan reference retention</strong> — export the needed workflow documentation before cancellation, subject to access terms and data retention requirements.</li>
-        </ol>
+        </ol><section class="prose-shopify mt-12"><h2>Translate branch meaning before rebuilding the canvas</h2><p>For each Drip branch, write the question it answers in merchant language: purchased this variant, holds an unfulfilled group buy, subscribes to this blend, or has already received the offer. Then identify the event or field that answers it. A tag named “customer” may describe a past import rather than current purchase state. Moving that tag without its update rule preserves the label and loses the decision.</p><p>Build a mapping sheet with source event, customer identifier, order identifier, timestamp, field type and updating integration. Include one missing value and one late update in each important branch exercise. For a keyboard preorder, replay a purchase after the reminder is scheduled and check that a later fulfillment event cannot restart the sales path. This is a proposed acceptance test, not a claim about either provider’s behavior.</p><p>Capture tools and subscription apps belong in that sheet. Repoint one input only after confirming how it creates or updates a person and how withdrawals reach the replacement. Keep order confirmations with their notification owner while rebuilding promotional paths; a marketing migration need not move every message.</p></section>
+<section class="prose-shopify mt-12"><h2>Matched billing worksheet</h2><p>Build two quote workloads: a quiet period and a representative peak. Record retained contacts, billable contacts under each supplier’s definition, total sends, capture traffic, destinations and required features. Add SMS segments, extra apps, support, overages, migration labor and overlapping subscriptions.</p><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/email/pricing/">Shopify email pricing</a> documents 10,000 monthly free emails on supported plans, with ordinary automations counting and abandoned-checkout emails excluded. Treat the native allowance and tinyEmail’s Shopify offer as real comparison inputs rather than assuming every captured profile adds cost.</p><p>Use current written quotes for all other suppliers. A price indexed only by contact count cannot establish a send-volume platform’s total. Avoid numeric automation ratings; attach a pass, failure or unresolved requirement to each tested workflow instead.</p></section>
+<table class="data-table"><thead><tr><th>Cost line</th><th>Current setup</th><th>Candidate</th><th>Evidence needed</th></tr></thead><tbody><tr><td>Platform and channels</td><td>Actual invoice</td><td>Matched quote</td><td>Billing definition, sends and destinations</td></tr><tr><td>Implementation</td><td>Maintenance baseline</td><td>Rebuild and review</td><td>Named tasks and recorded operator hours</td></tr><tr><td>Overlap</td><td>Old queues and access</td><td>Activation and rollback</td><td>One sender per journey</td></tr><tr><td>Contribution</td><td>Comparable baseline</td><td>Incremental estimate</td><td>Discounts, returns and uncertainty</td></tr></tbody></table><section class="prose-shopify mt-12"><h2>Price the workflow library and account exit</h2><p>Count active branches and external dependencies alongside messages. A small list with subscription exceptions can take more review work than a larger list running one newsletter. Request separate estimates for field mapping, workflow rebuilds, template transfer, authentication, operator training and rollback. Compare that one-time effort with fixing the documented maintenance problem inside Drip.</p><p>Assign each delayed journey a cutover decision: drain it in Drip, cancel and restart only eligible people, or leave that journey there temporarily. Do not import everyone at the beginning of a sequence merely because their contact record transfers. Record which queued step each person would receive next and how recent purchases and withdrawals will be reconciled.</p><p>Before closing the account, export the workflow definitions and reports needed to explain historical decisions, confirm access and retention terms, and remove obsolete capture connections. A backup operator should be able to change the group-buy exclusion from the mapping sheet. If that handover still depends on the original builder’s memory, the maintenance problem has survived the migration.</p></section>
+<section class="prose-shopify mt-12"><h2>Related guides</h2><p><a class="link" href="/apps/drip">Drip review</a> · <a class="link" href="/alternatives">All alternatives</a> · <a class="link" href="/use-cases/deliverability">Deliverability planning</a></p></section>
 
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Mechanical-keyboard store — workflow owner left.</strong> Forty nodes across eight workflows; nobody knew which suppressed group-buy participants. Migrated to Sequenzy with plain-language sequence rebuild; cut maintenance hours seventy percent while preserving cart and winback revenue.</p>
-        <p><strong>Proposed outdoor-gear evaluation — 35k contacts.</strong> Test whether a candidate can represent shell-layer and harness variants, back-in-stock eligibility and winback conditions using actual event payloads. Compare operator effort before deciding whether a migration is warranted.</p>
-        <p><strong>Proposed specialty-tea evaluation — staying on Drip.</strong> A small team could retain blend-preference tags and assign a weekly workflow audit to a retention lead. At an illustrative eight thousand engaged contacts, compare actual invoices and maintenance effort rather than assume the bill is acceptable.</p>
-      </article>
-
-      <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Drip alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy is the Drip alternative for stores tired of maintaining canvases. You liked Drip\'s revenue focus — Sequenzy keeps that focus with agent-first setup. Describe "winback mug buyers before pottery clearance" instead of rebuilding five workflow nodes when staff turns over.',
-          'Pay-per-email addresses Drip\'s per-contact trap on hobby-shop lists. Strategy defaults replace tribal knowledge when the person who understood tag logic leaves. Board-game and vinyl lists grow fast from influencer traffic; Sequenzy aligns cost with sends.',
-          '<a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> for tradeoffs. Pair Postscript for SMS if Drip SMS was never fully adopted.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Klaviyo when Drip\'s Shopify data depth was the ceiling — browse events, predictive scores, SMS native in one suppression model. Worth profile pricing with dedicated retention owner auditing weekly.',
-          'Agency ecosystem deepest for complex Drip migrations — useful when forty workflows need pruning and rebuild, not copy-paste. Variant back-in-stock and collection browse abandonment exceed Drip\'s comfortable scale for outdoor-gear catalogs.',
-          'Pick Klaviyo if data depth drives margin — not if you left Drip only because nobody maintained existing flows.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Omnisend for faster multichannel without hand-building every branch Drip required — good when team shrank but revenue targets did not. Prebuilt cart and post-purchase reduce rebuild tax.',
-          'Email, SMS, push share suppression — simpler than Drip plus separate Postscript for many SMB stacks. Model billable profiles, send volume, SMS destinations and credits at the same workload; fifteen thousand contacts is not a universal price breakpoint.',
-          'Choose Omnisend when speed beats canvas control — credible permanent home, not just bridge.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Sendlane guided migration when Drip rebuild stalled — ecommerce templates and onboarding support reduce weeks of self-serve trial-and-error. Fits stores with order volume to justify investment.',
-          'Email and SMS coordination matches Drip operational set with white-glove onboarding Drip never offered. Compare onboarding scope, external agency hours and contribution margin in a scoped trial; comparable revenue is not established here.',
-          'Sendlane when leaving Drip because team cannot maintain alone — willing to pay for guided retention.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'ActiveCampaign if Drip overlapped CRM — wholesale pottery inquiries plus DTC automation in one system. Conditional branching and built-in CRM exceed Drip for sales-follow-up workflows.',
-          'Shopify-native depth trails Klaviyo. Setup can become overbuilt if you replicate entire Drip library without pruning — escape maintenance tax, not recreate it in CRM form.',
-          'Choose when retention and sales ops share one database.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Brevo when Drip bill was primary pain and lifecycle needs moderate — pay-per-email cost discipline first. Advanced ecommerce segmentation trails Drip and Klaviyo.',
-          'Accept lighter browse abandonment. Brevo wins when you overpaid for Drip canvas control nobody used — bill was for forty workflows, six drove revenue.',
-          'Plan upgrade to Sequenzy when strategy becomes constraint after cost fix.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Mailchimp — downgrade wrong direction for stores that chose Drip for automation depth. Customer Journeys trail Drip visual builder for Shopify events.',
-          'Per-contact pricing continues list-growth pain. Only sensible for deliberate capability collapse with accepted loss.',
-          'Rarely correct Drip exit path for active Shopify DTC.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Shopify Email — reset button only, not Drip replacement. Native Admin cannot replicate workflow depth you are leaving.',
-          'Useful ninety-day pause while planning Sequenzy or Klaviyo — honest assessment of over-automation. Most stores return to dedicated platforms quickly.',
-          'Treat as pause — not strategic retention home.',
-        ]} />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing vs Drip</h2>
-        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs — model engaged sends, not total list size.</p>
-        <table class="data-table">
-          <thead><tr><th>Platform</th><th>~10k contacts</th><th>~30k contacts</th><th>Builder style</th></tr></thead>
-          <tbody>
-            <tr><td>Drip (leaving)</td><td>$80–120</td><td>$200–350</td><td>Visual workflows</td></tr>
-            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>Agent-first</td></tr>
-            <tr><td>Klaviyo</td><td>$150–200</td><td>$400–550</td><td>Flow builder</td></tr>
-            <tr><td>Omnisend</td><td>$60–100</td><td>$150–220</td><td>Prebuilt + custom</td></tr>
-            <tr><td>Brevo</td><td>$25–65</td><td>$80–150</td><td>Automation rules</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/apps/drip">Drip review</a> · <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> · <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
-    </div>
-  </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Buyer desk: Drip workflow ownership</h2>
-    <p>Drip flows are tribal knowledge — when builder leaves, tags rot and revenue drifts. Export field map and workflow screenshots before migration. Rebuild top three revenue paths first; delete orphan experiments that ran without attribution. Maintenance tax is true cost — replacement should reduce nodes while preserving margin.</p>
-    <p>Per-contact pricing on vinyl-shop popup lists hurts on any canvas platform without hygiene. Sequenzy pay-per-email targets engaged sends. Visual builder fans pick Klaviyo or stay on Drip with owner assigned in writing — not "founder will figure it out."</p>
-    <p>Set a review window appropriate to the buying cycle: the team should explain every live journey, finance should reconcile attributed revenue and costs, and deliverability should remain within agreed limits. Use a suitable holdout to estimate incremental contribution margin; revenue continuity alone does not establish causal impact.</p>
-  </article>
-
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <p class="editorial-kicker">Field notes</p>
-      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Leaving Drip: three migration shapes</h2>
-      <p><strong>Scenario A — Home goods SMB.</strong> Drip visual workflows translated to Omnisend presets in eleven days for speed, with documented plan to move governance-heavy flows to Sequenzy after Q1 holdout proved margin.</p>
-      <p><strong>Proposed scenario B — Furniture DTC, illustrative $840 AOV.</strong> Compare a ninety-minute cart message with a three-hour delay and financing FAQ in place of an automatic ten-percent coupon. Test current purchase and permission suppression, then measure incremental contribution margin with an appropriate holdout; no revenue or margin lift has been observed here.</p>
-      <p><strong>Proposed scenario C — Vinyl shop, illustrative 28k contacts.</strong> Model engaged sends against billable profiles, implementation, support, overages and other channel costs on both platforms. Export purpose-specific consent evidence and suppression status; inspect inactive records before deciding what to retain. No nineteen-thousand-profile break-even or observed migration result is established.</p>
-    </div>
-  </section>
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Tool shelf</p>
-      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Which shelf to reach for first</h2>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Think of Shopify email tools as a catalog wall: capture tools on the left, lifecycle platforms in the center, SMS and push specialists on the right, reviews and loyalty modules below. Sequenzy occupies center shelf for governed automations — not every job, but the spine connecting orders to repeat revenue.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Before adding another app, ask whether the workflow is net-new or duplicate. Two cart recovery senders with different discounts is not multichannel strategy — it is margin leakage with extra logins.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, owner, suppression rules, and monthly cost. Retire tools whose job was absorbed by a lifecycle platform upgrade.</p>
-    </div>
-  </section>
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <p class="editorial-kicker">Operator depth</p>
-      <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Migration off Drip: thirty-day bridge plan</h2>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Illustrative sequence, not a thirty-day promise: export purpose- and channel-specific consent evidence, current suppressions and workflow documentation. Rebuild welcome, then cart and browse with current purchase-state checks. Assign one sender to each journey, cancel or drain old queues and deduplicate replayed events. Compare complaint rates and attributed revenue on comparable cohorts; estimate incremental margin with a suitable holdout rather than sending duplicate campaigns to the same recipients.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy ranks first for teams leaving Drip when strategy speed and economics matter. Klaviyo when predictive segmentation from Drip data must survive migration intact.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Plan cancellation after event, permission, suppression, queue and rollback checks pass. Estimate incremental contribution margin with a suitable holdout where feasible; inconclusive results are not proof of lift and need not require indefinite dual subscriptions.</p>
-    </div>
-  </section>
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <h2>Single-query checklist before switching senders</h2>
-      <p>Before cancelling Drip: confirm the replacement suppresses a customer who ordered within the product's consumption window, preserves channel- and purpose-specific permission evidence and checks current suppression at send time, and exposes per-flow margin you can defend in finance review. If neither candidate platform can show those three controls in a trial, the safer move is delaying notice on a working Drip contract rather than migrating into an equally unauditable stack.</p>
-    </div>
-  </section>
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Operator note</p>
-      <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Documentation beats memory</h2>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Archive decisions about drip with date, owner, and metric baseline. Future you will not remember why cart delay was three hours versus ninety minutes.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy sits on the top shelf for lifecycle automation — the tool you reach for when welcome, cart, replenishment, and winback must run as one governed system.</p>
-    </div>
-  </section>
-  <FaqSection faqs={faqs} title="Drip alternatives FAQ" />
+<FaqSection faqs={faqs} title="Drip alternatives FAQ" />
+</div>
 </BaseLayout>
