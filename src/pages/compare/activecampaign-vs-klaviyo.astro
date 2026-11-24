@@ -13,31 +13,31 @@ const desc = 'ActiveCampaign vs Klaviyo for Shopify stores — CRM automation br
 const faqs = [
   {
     question: 'Is ActiveCampaign or Klaviyo better for a Shopify store doing $80k/mo?',
-    answer: 'Klaviyo usually wins for pure DTC ecommerce — cart, browse abandonment, predictive CLV, and flow revenue attribution are native. ActiveCampaign wins when CRM pipelines, lead scoring for wholesale, and automations spanning Shopify plus content site plus sales inbox matter. At $80k/mo pure DTC, Klaviyo ships revenue flows faster. With hybrid B2B/DTC or membership upsells, ActiveCampaign competes.',
+    answer: 'Use revenue as workload context, not a winner threshold. Test Shopify events, required CRM handoffs, purchaser exclusions and team maintenance effort in both accounts. The supplement, coffee and fitness examples are planning cases, not observed deployments; current feature and plan coverage require verification.',
   },
   {
     question: 'How does ActiveCampaign vs Klaviyo pricing compare at 15,000 contacts?',
-    answer: 'Klaviyo at 15k active profiles typically lands $200–350/mo depending on SMS. ActiveCampaign Plus at 15k often runs $140–220/mo depending on feature tier. Similar bands at mid-size lists — differentiate on workflow fit, not sticker price alone. Both punish list bloat; sunset stale contacts before comparing quotes.',
+    answer: 'Obtain dated quotes for the same 15,000-contact definition, eligible audience, send volume, channels, seats and billing period. Include integrations, migration, operations and reply labor. Preserve suppression records when cleaning data; no current price range or universal billing advantage is certified here.',
   },
   {
     question: 'Which has better Shopify ecommerce automation?',
-    answer: 'Klaviyo by a wide margin for DTC — real-time browse and cart events, dynamic product blocks, predictive CLV, and segment-level flow revenue are first-class. ActiveCampaign handles Shopify cart abandonment via integrations and custom triggers — competent but not preset-driven. If cart recovery and browse must ship this week for pure ecommerce, Klaviyo wins. If cart is one automation among CRM-heavy journeys, ActiveCampaign fits.',
+    answer: 'Compare actual event payloads, latency, catalog fields and required branch behavior in both accounts. Test browse and cart entry, current purchaser exits, opt-outs and replay deduplication. A preset or integration label does not establish feature coverage, implementation speed or a universal DTC winner.',
   },
   {
     question: 'Can I migrate from ActiveCampaign to Klaviyo or vice versa?',
-    answer: 'Yes. Export contacts with consent metadata and custom fields. Rebuild welcome and cart first; run parallel two weeks with strict suppression. ActiveCampaign deal pipelines and site-tracking automations need CRM-specific replacements in Klaviyo — often simplified to tags and segments. Klaviyo browse flows have no ActiveCampaign equivalent without significant custom build. Budget 2–4 weeks for mid-size stores with four active automations plus CRM logic.',
+    answer: 'Verify export and import coverage for identity, custom fields, permission purpose and channel, source evidence, suppression and purchase history. Inventory CRM dependencies and queued jobs before rebuilding flows. Assign one sender and queue owner per job, cancel stale source jobs, test replay deduplication and verify rollback; duration depends on demonstrated coverage rather than a fixed parallel-send period.',
   },
   {
     question: 'Which handles B2B wholesale better?',
-    answer: 'ActiveCampaign leads — deal pipelines, sales automation, and lead scoring map naturally to wholesale inquiry follow-up. Klaviyo can tag and branch but lacks CRM pipeline UI sales teams expect. The hybrid supplement merchant chose ActiveCampaign for distributor deals and Klaviyo for consumer retention — eventually consolidating consumer onto Klaviyo only after wholesale moved to a dedicated CRM.',
+    answer: 'For wholesale, trace an inquiry through buyer role, account pricing, deal ownership, sales reply and Shopify purchase. Verify required pipeline and handoff features in each actual plan. A hybrid supplement example can test these requirements but is not evidence of a merchant consolidation result or a categorical missing capability.',
   },
   {
     question: 'Which platform handles Black Friday better?',
-    answer: 'Klaviyo offers segment-level VIP early access, recent purchaser suppression, holdout testing, and sunset tools built for ecommerce scale — critical when order volume spikes 5x. ActiveCampaign can broadcast and run complex automations but ecommerce suppression requires more manual list hygiene and tag discipline. Both need deliverability prep; Klaviyo\'s ecommerce-native tooling reduces sale-week panic for DTC operators.',
+    answer: 'Test peak traffic against current permission, purchase state, suppression and inventory. Define priority between service, recovery and marketing jobs and enforce it at dispatch, with one owner per queue and clear reply handling. No fixed traffic multiplier or vendor-wide manual-work advantage establishes sale-week reliability.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Build welcome (branch by signup source), browse or cart abandonment, post-purchase (gift buyer exclusion), winback (split engaged vs unengaged), and one CRM-triggered follow-up if applicable. Score time-to-live, Shopify trigger accuracy, browse depth needs, and whether sales pipelines matter. Pure DTC lean Klaviyo. Hybrid DTC-plus-B2B lean ActiveCampaign.',
+    answer: 'Build welcome with signup-source branching, browse or cart recovery, gift-aware post-purchase, inactivity-based winback and a CRM handoff if required. Score event accuracy, current exclusions, queue ownership, replay safety, reviewer effort and matched costs. Use a holdout to distinguish attributed purchases from causal incremental contribution rather than presuming a winner.',
   },
 ];
 ---
@@ -57,7 +57,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">ActiveCampaign vs Klaviyo for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          CRM automation powerhouse versus Shopify-native retention maximums. ActiveCampaign optimizes for teams who need deal pipelines, lead scoring, and automations spanning Shopify orders plus wholesale inbox plus content site engagement. Klaviyo optimizes for DTC operators who design behavior-based retention around browse events, predictive CLV, and unified email-plus-SMS reporting. We evaluated both through a hybrid supplement merchant splitting B2B and DTC, a $74k/mo coffee subscription that migrated from ActiveCampaign to Klaviyo for browse recovery, and a home fitness brand running ActiveCampaign because blog leads and Shopify orders share one automation brain.
+          Compare the Shopify lifecycle and CRM jobs your team must operate in the actual accounts. The hybrid supplement, coffee subscription and home fitness examples are illustrative requirement maps, not observed merchant tests. Verify event coverage, sales handoffs, current exclusions, plan access and matched costs before choosing; no measured speed or revenue advantage is established.
         </p>
       </header>
 
@@ -80,12 +80,12 @@ const faqs = [
           </thead>
           <tbody>
             <tr><td>Best for</td><td>CRM + marketing automation</td><td>Shopify retention at scale</td></tr>
-            <tr><td>Starting price</td><td>From ~$29/mo</td><td>Free tier; paid from ~$20/mo</td></tr>
+            <tr><td>Starting price</td><td>Obtain a dated matched-workload quote</td><td>Obtain a dated matched-workload quote</td></tr>
             <tr><td>Billing model</td><td>Contacts + feature tier</td><td>Active profiles + SMS credits</td></tr>
-            <tr><td>Shopify depth</td><td>Good — one of many connectors</td><td>Native — browse, predictive, catalog</td></tr>
-            <tr><td>CRM pipelines</td><td>Core strength</td><td>Limited</td></tr>
-            <tr><td>Browse abandonment</td><td>Custom build required</td><td>Core strength</td></tr>
-            <tr><td>SMS</td><td>Add-on on higher plans</td><td>Built-in, unified segments</td></tr>
+            <tr><td>Shopify depth</td><td>Verify required fields and latency</td><td>Verify required fields and latency</td></tr>
+            <tr><td>CRM pipelines</td><td>Verify required behavior in the account</td><td>Verify required behavior in the account</td></tr>
+            <tr><td>Browse abandonment</td><td>Verify supported setup for required event</td><td>Verify required behavior in the account</td></tr>
+            <tr><td>SMS</td><td>Verify current plan and regional coverage</td><td>Verify current plan and regional coverage</td></tr>
             <tr><td>Learning curve</td><td>Moderate–steep</td><td>Moderate–steep</td></tr>
           </tbody>
         </table>
@@ -94,90 +94,90 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          ActiveCampaign and Klaviyo sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. ActiveCampaign is optimized when wholesale pipelines and site tracking share one automation brain. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          This comparison concerns campaigns, lifecycle jobs and CRM handoffs, with transactional service messages evaluated separately. Define the required customer state and message owner first. Vendor positioning and catalog labels are hypotheses to test in the current plan, not proof of fit or a fixed ninety-day ceiling.
         </p>
         
         <h2>Before spring rack refresh: climbing gear store retention choices</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          Illustrative climbing gear store case: evaluate fall-rating and harness fit pages for spring rack refresh. Verify safety and certification education against approved product records. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For climbing gear store operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Compare harness-fit and trip-intent branches without assuming a click lift. Keep the fall-rating and harness fit pages requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>Camping Equipment Merchant: tent-capacity quizzes and family car-camping segments</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          Illustrative camping equipment merchant case: evaluate tent-capacity quiz outcomes and family car-camping segments for Memorial Day camping planning. Carry quiz answers into known test records and verify welcome entry. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For camping equipment merchant operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          Compare mobile product-page education with cart reminders using a justified holdout. Keep the tent-capacity quiz outcomes and family car-camping segments requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>How pottery studio emails through holiday starter-set rush</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          Illustrative pottery studio case: evaluate class waitlists, glaze-kit starter sets and gift exclusions for holiday starter-set planning. Keep class waitlist permission separate from product promotion and test kiln-care content after fulfillment. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For pottery studio operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Test recipient and buyer identity so gift purchases do not trigger inappropriate replenishment. Keep the class waitlists, glaze-kit starter sets and gift exclusions requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          Illustrative vinyl record shop case: evaluate recent full-price purchasers and scarce-pressing allocation for Record Store Day planning. Verify current stock, allocation state and grading education before scheduling a promotion. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For vinyl record shop operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Test purchaser exclusion after the cart is queued and after an allocation closes. Keep the recent full-price purchasers and scarce-pressing allocation requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          Illustrative outdoor gear retailer case: evaluate ultralight versus family car-camping hero tents for Memorial Day sale planning. Verify collection tags and layering-guide context before selecting a hero SKU. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For outdoor gear retailer operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          Measure incremental contribution and support load rather than assuming that state-aware flows pay for themselves. Keep the ultralight versus family car-camping hero tents requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
         <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+          Illustrative mechanical keyboard vendor case: evaluate group-buy closure and switch-type education for group-buy close planning. Test preorder-state changes and halt recovery when an offer closes. In both accounts, inspect the actual Shopify payload, identity mapping, event freshness and required branch conditions. The scenario does not establish observed revenue, order counts or a vendor capability advantage.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For mechanical keyboard vendor operations, define priority between required service notices, recovery, education and promotions by purpose and channel. Assign one sender and queue owner per job; recheck current permission, suppression and purchase state at dispatch. Test cancellation of stale jobs and deduplication when events replay rather than relying on a fixed cross-channel delay or manual tags alone.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          Distinguish gift buyers from intended users and verify switch compatibility before follow-up. Keep the group-buy closure and switch-type education requirement explicit in both implementations. Define eligible audiences and a randomized holdout or justified comparison before traffic is enabled. Vendor-attributed orders are not causal incremental lift; include returns, discounts, channel fees and reply labor. No observed merchant result, time saving or universal suppression interval is claimed.
         </p>
         <h2>ActiveCampaign workflow reality: strengths, friction, and billing</h2>
         <p>
-          ActiveCampaign shines when wholesale pipelines and site tracking share one automation brain. Its friction shows when pure DTC Shopify retention is the only job. Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          For CRM-heavy work, verify pipeline stages, sales ownership and site-to-Shopify identity mapping. For commerce work, verify browse and catalog payloads, exclusions and reporting definitions. Compare maintenance effort for the same requirements in both accounts rather than assuming a permanent specialization ceiling.
         </p>
         <p>
-          Billing amplifies behavior. ActiveCampaign (contacts plus feature tier) rewards send discipline or punishes broadcast volume depending on your calendar. Klaviyo (active profiles plus SMS credits) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model the actual year using dated quotes and the same contact definition, send volumes, channel mix, seats and plan coverage. Include integration maintenance, migration, operations and reply labor, plus any overlap period. No observed vinyl-shop or outdoor-retailer billing outcome is claimed.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. ActiveCampaign and Klaviyo both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Use coffee origin stories, vinyl staff picks, keyboard switch explainers and climbing trip reports as proposed editorial briefs. Verify approved claims, live inventory and product mapping in both accounts before scheduling. Record review effort and audience response rather than assuming identical campaign capabilities or a conversion advantage.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Klaviyo punish partial adoption.
+          Compare quotes at the actual audience and traffic levels rather than assuming plans converge at a particular contact range. Keep opt-outs and suppression evidence intact during cleanup. Include required SMS, reviews or loyalty connections only when their current scope is verified, and compare the same workload and billing period.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Klaviyo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed stack might separate capture, lifecycle, SMS and service notifications. Verify every supported connection and channel permission rather than treating a specialist label as compliance assurance. Assign one owner per job, cancel obsolete queued sends during cutover, and test event replay and rollback before enabling traffic.
         </p>
         
         <h2>Who should choose which</h2>
@@ -199,7 +199,7 @@ const faqs = [
         </ul>
         <h2>Verdict</h2>
         <p>
-          ActiveCampaign is the better Shopify email tool when wholesale pipelines and site tracking share one automation brain. Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose from demonstrated coverage of the five-job test, reviewer effort and matched annual costs. For wholesale, verify pipeline and reply handoffs; for DTC, verify event freshness and current purchaser exits. Use controlled evidence rather than presumed vendor superiority. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before evaluating contracts.
         </p>
       </article>
 
