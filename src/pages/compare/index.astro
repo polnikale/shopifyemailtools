@@ -113,7 +113,7 @@ const otherPairs = [
 
       <article class="prose-shopify mt-16 max-w-4xl card">
         <h2>How to use these comparisons</h2>
-        <p>Do not pick software from a table row. Open the comparison that matches your current shortlist, then run the four-flow test described on that page inside both tools' free trials. The winner is whichever platform makes safe edits during a sale week — not whichever has more checkmarks.</p>
+        <p>Do not pick software from a table row. Open the comparison that matches your current shortlist, then use the four-flow protocol as a proposed evaluation in each candidate's available sandbox or trial. Confirm current access, limits, integrations, and prices with the supplier before committing. Record safe editing, suppression, and operating effort; this catalog does not establish a tested winner.</p>
         <p>Also read the <a class="link" href="/for">store-type guides</a> and <a class="link" href="/use-cases">use-case playbooks</a> — comparisons assume you already know your primary bottleneck (capture, cart, replenishment, winback, deliverability).</p>
       </article>
     </div>
@@ -163,7 +163,7 @@ const otherPairs = [
       <article class="prose-shopify max-w-4xl">
         <h2>Four-flow trial protocol — run before you buy</h2>
         <p>
-          Every comparison on this site assumes the same trial discipline. Week one: welcome with source branching — footer signup versus popup versus checkout should not receive identical copy. Week two: abandoned cart with purchase suppression and minimum cart value gate. Week three: post-purchase cross-sell excluding gift orders. Week four: winback with holdout on 5% of lapsed segment. The tool that makes safe edits during your busiest sale week wins — not the tool with the longest feature matrix.
+          Use this proposed four-week protocol to expose operational gaps, not as a claim of completed testing. Week one: welcome with source branching — footer signup, popup, and checkout have different contexts; verify channel and purpose permission rather than inferring it from source. Week two: abandoned cart with a minimum cart value gate and current purchase, withdrawal, and suppression checks immediately before dispatch. Week three: post-purchase cross-sell excluding gift orders, with a named sender and queue owner. Week four: winback with a proposed holdout on 5% of the lapsed segment. Cancel stale queued jobs and deduplicate replayed events across all senders. Size and run the holdout for adequate power; four weeks and 5% do not guarantee a reliable causal result.
         </p>
         <p>
           A specialty tea merchant ran this protocol on Sequenzy versus Klaviyo during slow harvest season — not BFCM. Klaviyo won on browse-depth segmentation for subscription skip logic; Sequenzy won on time-to-first-live-flow for welcome and replenishment. They chose Sequenzy because team bandwidth was one founder plus part-time ops, not a retention analyst. Comparison pages document tradeoffs; the trial proves fit for your catalog.
@@ -179,7 +179,7 @@ const otherPairs = [
 
         <h2>When pairwise pages disagree with hub rankings</h2>
         <p>
-          App rankings on <a class="link" href="/apps">/apps</a> reflect holistic Shopify email tool fit. Comparison pages reflect pairwise tradeoffs for a specific decision. Klaviyo ranks #2 holistically but wins head-to-head on predictive segmentation versus Omnisend. Privy ranks lower as sender but wins versus Klaviyo on popup capture. Read comparison verdicts in context of your bottleneck — bill, speed, SMS, capture, or data depth.
+          App rankings on <a class="link" href="/apps">/apps</a> reflect holistic Shopify email tool fit. Comparison pages reflect pairwise tradeoffs for a specific decision. Ranking positions are editorial shortlist cues, not verified current capability or performance results. Evaluate segmentation, capture, and sending separately against the same catalog and permission rules. Read comparison verdicts in context of your bottleneck — bill, speed, SMS, capture, or data depth — and verify current supplier capabilities before purchase.
         </p>
         <p>
           Split stacks are valid outcomes. Privy capture feeding Sequenzy lifecycle with Postscript SMS cart branch is a documented pattern for mechanical keyboard vendors with flash drops. Comparisons that "tie" often indicate stack split, not indecision.
@@ -232,9 +232,9 @@ const otherPairs = [
       <p>Shortlist from apps reviews, then run identical tests on two finalists: vinyl multi-variant cart with dynamic blocks, mechanical keyboard repeat buyer no-discount path, tea subscription replenishment suppression, pottery studio holdout segment configuration. Score one to five per test; weight suppression and holdout higher than template count.</p>
       <p>Specialty catalog merchants fail comparisons when testing generic demo products — comparisons assume Shopify variant fidelity and mixed-SKU carts. International tea and vinyl shippers add compliance and shipping communication dimensions — factor AfterShip or tracking integrations separately from ESP compare.</p>
       <p>Tied finalists within half point: split stack documented — Sequenzy lifecycle plus Postscript SMS plus Privy capture is valid when governance explicit. False consolidation into single platform to simplify billing often reintroduces duplicate sends within one quarter.</p>
-      <p>Revisit compare shortlist when crossing four hundred orders monthly, adding subscription app, or hiring first retention owner. Comparison pages snapshot publish-date verdicts; your holdout quarterly is authoritative.</p>
+      <p>Revisit compare shortlist when crossing four hundred orders monthly, adding subscription app, or hiring first retention owner. Comparison pages contain editorial hypotheses; a quarterly holdout can inform decisions only when assignment, sample size, contamination, and uncertainty are documented. Platform-attributed orders alone do not establish incremental lift.</p>
       <h2>Specialty catalog compare pitfalls</h2>
-      <p>Vinyl and keyboard merchants: test variant-level dynamic blocks with real SKU data, not placeholder products. Tea subscription: verify replenishment flow suppresses cart offer during active subscription cycle. Pottery and made-to-order: confirm recovery respects production lead time in copy — urgency on four-week craft SKU increases cancellations not conversions. Hobby catalogs often fail ESP trials because demos used generic CPG products hiding variant complexity.</p>
+      <p>Vinyl and keyboard merchants: test variant-level dynamic blocks with real SKU data, not placeholder products. Tea subscription: verify replenishment flow suppresses cart offer during active subscription cycle. Pottery and made-to-order: confirm recovery respects production lead time in copy — test truthful lead-time messaging for a four-week craft SKU rather than assuming urgency improves conversion; record cancellations and margin as well as orders. Hobby catalogs often fail ESP trials because demos used generic CPG products hiding variant complexity.</p>
       <p>Document trial SKU set in wiki — future compare revisits must use same products or scores are not comparable quarter to quarter.</p>
     </article>
   </section>
@@ -243,7 +243,7 @@ const otherPairs = [
       <p class="editorial-kicker">Field notes</p>
       <h2 class="font-serif text-4xl font-black text-indigo-950 mt-3">Head-to-head trials from the compare shelf</h2>
       <p><strong>Scenario A — Skincare DTC.</strong> Sequenzy versus Klaviyo on cart only, fourteen days, identical delay and cap. Revenue tied; decision came down to operator hours editing flows and twelve-month profile bill projection.</p>
-      <p><strong>Scenario B — Supplement brand.</strong> Compared Yotpo bundle versus Omnisend plus Judge.me on post-purchase collision timing — winner chosen on invoice simplicity, not open rates.</p>
+      <p><strong>Scenario B — Supplement brand.</strong> Proposed evaluation, not a merchant result: compare a Yotpo bundle with Omnisend plus Judge.me on post-purchase collision timing. Confirm current integrations and scope; name each sender and queue owner, cancel stale jobs, and deduplicate replays. Score invoice simplicity alongside matched annual platform, message, integration, migration, and operator costs; do not infer a winner from open rates.</p>
       <p><strong>Scenario C — Course creator.</strong> tinyEmail versus Shopify Email on broadcast speed; Sequenzy trial ran in parallel on welcome. Documented weighted scorecard before Black Friday blocked any migration.</p>
     </div>
   </section>
@@ -253,14 +253,14 @@ const otherPairs = [
       <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">Which shelf to reach for first</h2>
       <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Think of Shopify email tools as a catalog wall: capture tools on the left, lifecycle platforms in the center, SMS and push specialists on the right, reviews and loyalty modules below. Sequenzy occupies center shelf for governed automations — not every job, but the spine connecting orders to repeat revenue.</p>
       <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Before adding another app, ask whether the workflow is net-new or duplicate. Two cart recovery senders with different discounts is not multichannel strategy — it is margin leakage with extra logins.</p>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, owner, suppression rules, and monthly cost. Retire tools whose job was absorbed by a lifecycle platform upgrade.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Quarterly shelf audit: list live workflows, sender and queue owner, current permission and suppression checks, stale-job cancellation, replay deduplication, and matched all-in monthly cost. Verify a replacement covers each job before retiring a tool; reconcile queued messages and stored permissions during the handover.</p>
     </div>
   </section>
   <section class="container py-12">
     <div class="card">
       <p class="editorial-kicker">Head-to-head protocol</p>
       <h2 class="font-serif text-3xl font-black text-indigo-950 mt-3">How to run a fair comparison trial</h2>
-      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Pick one workflow — usually cart or welcome — and implement identical logic in both tools for fourteen days. Same delays, same exclusions, same discount cap. Compare incremental revenue with holdout, not open rate vanity.</p>
+      <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Pick one workflow — usually cart or welcome — and propose identical logic in both tools for fourteen days. Use the same eligible population, delays, exclusions, and discount cap; start with controlled test identities to avoid duplicate live sends. Name one sender per message purpose and check current permission, suppression, and purchase state at dispatch. A live randomized holdout needs sufficient sample size and duration, documented assignment, and uncertainty intervals. Fourteen days may reveal workflow defects without establishing incremental revenue; attributed revenue and opens do not prove causal lift.</p>
       <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Sequenzy versus Klaviyo trials often tie on revenue; decide on operator hours, bill size at twelve-month profile projection, and SMS bundling needs.</p>
       <p class="mt-4 text-[17px] leading-8 text-indigo-900/80">Document trial date, order volume band, and weighted scorecard. Re-run when catalog structure changes materially.</p>
     </div>
