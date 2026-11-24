@@ -13,19 +13,19 @@ const desc = 'Omnisend vs Postscript for Shopify stores — bundled multichannel
 const faqs = [
   {
     question: 'Is Omnisend or Postscript better for Shopify SMS?',
-    answer: 'Postscript is SMS-native with superior compliance tooling, two-way conversations, and keyword campaigns. Omnisend bundles SMS with email and push in one journey builder — better for unified multichannel without stack sprawl. Choose Postscript when SMS is 25%+ of retention revenue with dedicated ownership. Choose Omnisend SMS when moderate text volume and one dashboard matter more.',
+    answer: 'Choose by an eligible SMS workflow test rather than an unsupported winner or revenue threshold. Test opt-in evidence, quiet hours, replies, opt-out propagation and cancellation after purchase. Verify current channel features and country support before comparing unified operation with a dedicated SMS owner.',
   },
   {
     question: 'Can Postscript replace Omnisend entirely?',
-    answer: 'No for most stores. Postscript is SMS-first — it does not replace Omnisend\'s email depth, push notifications, or prebuilt ecommerce email journeys. Typical architecture: Omnisend for email and push, Postscript for SMS. Some stores use Omnisend for all channels when SMS volume is moderate.',
+    answer: 'Check current channel availability and required email workflows before replacing a platform. If email and SMS use separate tools, assign each queue and sender an owner and test shared suppression and purchase cancellation. A second tool is justified only if it meets a documented need.',
   },
   {
     question: 'How does Omnisend vs Postscript pricing compare?',
-    answer: 'Omnisend bundles SMS into contact-based plans plus per-message costs. Postscript uses plan plus usage-based messaging — can be more transparent for SMS-heavy stores but spikes during flash sales. Model promotional SMS volume explicitly for BFCM on both.',
+    answer: 'Request matched twelve-month quotes for the same eligible contacts, countries, sends and peak SMS segments. Include carrier fees, credits, companion email tooling, integrations, migration and operator time. Current plans and pricing need verification; no quote or cost advantage was established here.',
   },
   {
     question: 'Should I use Omnisend and Postscript together?',
-    answer: 'Common when SMS revenue justifies specialization. Omnisend owns email and push; Postscript owns SMS broadcasts and conversational recovery. Sync suppression to prevent duplicate cart touches. The mistake is paying for both without coordination logic.',
+    answer: 'A combined stack is a proposed architecture, not a measured recommendation. Give each purpose and channel a sender owner, enforce current permission and suppression at dispatch, cancel queued recovery after purchase, and replay events to check deduplication across tools.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Omnisend or Postscript?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Which has better TCPA compliance tooling?',
-    answer: 'Postscript leads for SMS-specific compliance — keywords, opt-out, quiet hours. Omnisend SMS compliance is solid but email-native teams may underestimate risk. High SMS revenue stores should weigh Postscript guardrails seriously.',
+    answer: 'No comparative legal or compliance assurance was established. Verify current opt-in records, opt-out propagation, quiet hours, country restrictions and operator controls for the intended program. Product guardrails do not by themselves establish that a particular send is permitted.',
   },
   {
     question: 'Does Omnisend push matter vs Postscript?',
-    answer: 'Push is Omnisend-only in this comparison — recovers mobile intent without SMS cost. Postscript does not offer push. If your channel mix is email + push with selective SMS, Omnisend covers two channels Postscript cannot.',
+    answer: 'Verify current push availability, browser requirements and separate push permission before giving it weight. Test purchase cancellation and suppression across push, email and SMS, then include delivery and operator costs; no measured recovery advantage is claimed.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'For SMS: cart abandonment text, flash broadcast with quiet hours, keyword opt-in, two-way reply. Postscript wins SMS tests. For full lifecycle: Omnisend email welcome, cart, push. Most stores need Omnisend (or similar ESP) plus optional Postscript — not Postscript alone.',
+    answer: 'Propose tests for cart recovery after purchase, quiet-hour broadcasts, opt-in and opt-out propagation, replies, welcome and any supported push workflow. Replay events to check queue ownership and deduplication. Compare operator effort and randomized incremental margin with uncertainty rather than declaring unrun test winners.',
   },
 ];
 ---
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Omnisend vs Postscript for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Omnisend bundles email, SMS, and push for SMB multichannel retention. Postscript is SMS infrastructure that assumes email lives elsewhere. We evaluated both through a specialty tea merchant consolidating on Omnisend-only, a vinyl record shop pairing Omnisend email with Postscript allocation alerts, and a camping equipment store that wrongly treated Postscript as its only marketing platform.
+          Omnisend bundles email, SMS, and push for SMB multichannel retention. Postscript is SMS infrastructure that assumes email lives elsewhere. The examples below are proposed numeric fixtures, not merchant observations or completed product tests. Use them to test a tea replenishment program, vinyl allocation alerts, and camping equipment education; verify current channel availability before choosing either stack.
         </p>
       </header>
 
@@ -104,80 +104,80 @@ const faqs = [
         
         <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          Proposed fixture: the pottery studio handles 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Propose a browse-to-cart collision test using this catalog: move an eligible shopper from product education to cart recovery, then purchase before the queued reminder. Confirm the old reminder is cancelled and replay does not create another send. Record channel ownership and current permission separately from delivery priority. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before Record Store Day: vinyl record shop retention choices</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          Proposed fixture: the vinyl record shop handles 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Propose a ten-day education window for this catalog rather than claiming an observed lift or time saving. Compare relevant product education with a discount-led variant among eligible shoppers. Record operator time and use a randomized holdout to estimate incremental orders with uncertainty; platform-attributed revenue alone does not establish causality. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Outdoor Gear Retailer: layering guides and ultralight segment tags</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          Proposed fixture: the outdoor gear retailer handles 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          Propose a browse-to-cart collision test using this catalog: move an eligible shopper from product education to cart recovery, then purchase before the queued reminder. Confirm the old reminder is cancelled and replay does not create another send. Record channel ownership and current permission separately from delivery priority. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
         </p>
         <h2>How mechanical keyboard vendor emails through GB close deadlines</h2>
         <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+          Proposed fixture: the mechanical keyboard vendor handles 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          Propose a browse-to-cart collision test using this catalog: move an eligible shopper from product education to cart recovery, then purchase before the queued reminder. Confirm the old reminder is cancelled and replay does not create another send. Record channel ownership and current permission separately from delivery priority. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          Proposed fixture: the board game store handles 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          Propose a ten-day education window for this catalog rather than claiming an observed lift or time saving. Compare relevant product education with a discount-led variant among eligible shoppers. Record operator time and use a randomized holdout to estimate incremental orders with uncertainty; platform-attributed revenue alone does not establish causality. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise Essen release week becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          Proposed fixture: the specialty tea merchant handles 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week send priority is: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. Test both candidates against the same catalog events. Record which queue and sender owns each purpose and channel. Check purpose-specific channel permission and current suppression, purchase and subscription state immediately before dispatch; a Shopify tag alone does not establish eligibility. Cancel obsolete queued recovery after purchase or preorder closure, and replay the event to verify deduplication across senders.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          Propose a browse-to-cart collision test using this catalog: move an eligible shopper from product education to cart recovery, then purchase before the queued reminder. Confirm the old reminder is cancelled and replay does not create another send. Record channel ownership and current permission separately from delivery priority. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Treat forty-five minutes as a proposed collision-test interval, not a universal safe delay; pair email with SMS only when current permission and cross-channel suppression are enforced — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Postscript workflow reality: strengths, friction, and billing</h2>
         <p>
           Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Omnisend (contacts plus message volume) rewards send discipline or punishes broadcast volume depending on your calendar. Postscript (message volume and plans) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Billing amplifies behavior. Omnisend (contacts plus message volume) rewards send discipline or punishes broadcast volume depending on your calendar. Postscript (message volume and plans) does the opposite in many stores. As proposed cost stress tests, add thousands of eligible vinyl waitlist contacts without increasing orders, then model a May campaign spike for outdoor gear. Neither is a measured merchant outcome. Compare matched twelve-month quotes including contact tiers, message segments, carrier fees, countries, credits, required email tooling, onboarding, migration, integrations and operator time. Model your real year, not a calm month.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Omnisend and Postscript both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Newsletters still matter. Tea blend stories, vinyl staff picks, keyboard switch explainers, and camping trip reports build trust before product blocks. Omnisend and Postscript both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Postscript punish partial adoption.
+          Use 12,000–18,000 contacts as a proposed quote fixture, not evidence of price convergence. Separate marketable contacts from suppressed records and retain necessary suppression history. Quote identical countries, channel volumes and seasonal peaks, and include any required companion tools. Verify current plans and supported modules rather than assuming reviews, loyalty or push are available from either vendor.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
@@ -200,7 +200,7 @@ const faqs = [
           <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
           <li>Message volume and plans fits your calendar</li>
           <li>Your team can maintain Postscript without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Postscript migration</li>
+          <li>Randomized incremental margin, with uncertainty and all-in costs, justifies Postscript migration</li>
         </ul>
         <h2>Verdict</h2>
         <p>
