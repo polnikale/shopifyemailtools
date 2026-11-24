@@ -12,27 +12,27 @@ const desc = 'Klaviyo vs Drip for Shopify email tools — predictive segmentatio
 const faqs = [
   {
     question: 'When should a Shopify store choose Klaviyo over Drip?',
-    answer: 'Choose Klaviyo when browse abandonment, predictive CLV, variant back-in-stock, and native Shopify pixel depth drive weekly merchandising. Drip wins when your team prefers visual canvas control, tag-heavy branching, and ecommerce automation without paying for predictive fields you will not maintain.',
+    answer: 'Choose Klaviyo only if a configured trial demonstrates the browse events, prediction eligibility, variant handling and audience checks your weekly merchandising requires. Choose Drip if its configured canvas makes your required branches easier to inspect and maintain. Neither product name establishes event coverage or a safe workflow; test the installed integration and current plan.',
   },
   {
     question: 'How does Klaviyo vs Drip pricing compare at 15,000 contacts?',
-    answer: 'Klaviyo profiles near $200–320/mo at 15k depending on SMS. Drip people billing near $180–260/mo at 15k. Similar bands — differentiate on Shopify data depth versus canvas ergonomics, not sticker price alone.',
+    answer: 'Obtain dated quotes for 15,000 contacts using the same billable population, monthly and peak sends, SMS destinations and credits, overages, support and contract term. Include integrations, migration, implementation and maintenance across twelve months. No verified current price quote is supplied here; a contact count alone does not establish comparable all-in cost.',
   },
   {
     question: 'Which handles mechanical keyboard group-buy state better?',
-    answer: 'Drip canvas shows tag transitions when GB closes — cart branch off, fulfillment branch on, visible in one screen. Klaviyo handles GB suppression with flow filters and custom metrics once configured — more powerful at scale, steeper setup. Concurrent GBs favor Drip visibility; predictive VIP targeting favors Klaviyo.',
+    answer: 'Use a proposed three-concurrent-group-buy trial: close one buy, remove its queued cart reminders, move eligible purchasers into fulfillment updates, and leave the other two buys unchanged. Inspect both the configured canvas and flow filters. Name the sender and queue owner; test delayed closure events and duplicate replays. Choose on demonstrated correctness and edit safety rather than an assumed winner.',
   },
   {
     question: 'Can Drip replace Klaviyo for browse abandonment?',
-    answer: 'Partially. Klaviyo native browse events with collection and price-band filters recover more mid-funnel revenue on climbing-gear catalogs with nine-day research cycles. Drip browse triggers exist but filtering depth trails Klaviyo for high-consideration outdoor catalogs.',
+    answer: 'Use a proposed nine-day climbing-gear research journey to test identified browse events, collection and price-band context, permission, purchase suppression and dispatch latency in each configured integration. Verify current trigger availability before relying on either. More attributed recovery does not establish incremental revenue: use a suitable holdout and record attribution windows and uncertainty.',
   },
   {
     question: 'Should I migrate from Drip to Klaviyo?',
-    answer: 'Migrate when Drip segmentation feels cramped — sale-week VIP targeting needs manual CSVs, browse recovery underperforms, or reporting cannot attribute cohort GMV. Stay on Drip if canvas control and current revenue meet KPIs and team lacks bandwidth for Klaviyo maintenance.',
+    answer: 'Migrate only when a documented trial resolves a specific current limitation at an acceptable total cost. Test VIP selection, browse-event availability, export needs and cohort reporting before moving. Preserve purpose-specific consent, withdrawals, suppressions and event identities; disable old queues and test cancellation, replay deduplication and rollback before enabling the new sender.',
   },
   {
     question: 'What about SMS on both platforms?',
-    answer: 'Klaviyo SMS unified with email suppression is mature. Drip SMS add-on works for moderate volume. Neither replaces Postscript for SMS-primary programs. Document channel collision rules regardless.',
+    answer: 'Verify current SMS availability, destinations, integration ownership and plan terms separately for each proposed stack. Email consent does not authorize SMS. Record current channel permission and suppression, name each sender and queue owner, and test withdrawal and purchase cancellation across every active sender. A vendor choice does not establish compliance or collision safety.',
   },
   {
     question: 'Which is easier for solo operators?',
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: 'What buyer test settles Klaviyo vs Drip?',
-    answer: 'Configure welcome by source, cart with variants, browse follow-up for one collection, replenishment with gift exclusion, VIP early access excluding recent buyers. Score time-to-live and edit safety during drop week. If browse and predictive jobs fail on Drip without exports, Klaviyo timing is here.',
+    answer: 'Configure welcome by source, variant-aware cart recovery, one-collection browse follow-up, replenishment with gift exclusions, and VIP early access excluding recent buyers as proposed tests. Measure setup time, edit safety and failure recovery without claiming observed results. At dispatch check current permission, suppression, purchase and inventory state. Test queued cancellation and duplicate event replay across owners; compare matched annual all-in costs. If a required job fails, document the cause before choosing a platform.',
   },
 ];
 ---
@@ -60,7 +60,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Klaviyo vs Drip for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Shopify data platform versus visual ecommerce canvas — two mid-market retention answers that diverge when catalogs get complex. We evaluated both through a mechanical keyboard vendor running three concurrent group buys, a climbing gear shop where browse education beats early discounts, and an artisan coffee roaster comparing predicted reorder against tag-based delays. The fork is whether Shopify event depth or workflow visibility is the bottleneck.
+          Shopify data platform versus visual ecommerce canvas — two mid-market retention answers that diverge when catalogs get complex. Use proposed evaluation scenarios involving a mechanical keyboard vendor running three concurrent group buys, a climbing gear shop testing browse education against early discounts, and an artisan coffee roaster comparing predicted reorder against tag-based delays. These are illustrative scenarios, not observed merchant results. The question is whether demonstrated event coverage or workflow visibility resolves the actual bottleneck.
         </p>
       </header>
 
@@ -93,6 +93,7 @@ const faqs = [
 
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
+        <p>All order and revenue figures below are illustrative planning inputs, not merchant evidence. Current supplier features, integrations and prices require verification before publication. Operational updates must stay limited to their permitted purpose; marketing needs its own channel-specific permission. A historical signup or a priority rule does not authorize a send.</p>
         <p>
           Klaviyo and Drip sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Drip is optimized when an operator will maintain canvas logic every month. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
         </p>
@@ -102,67 +103,67 @@ const faqs = [
           The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          For the coffee scenario, keep per-SKU roast and reorder clocks separate from wholesale sample follow-ups. In a proposed thirty-day reorder test, pause a subscription after queueing, then verify that the responsible sender removes its reminder before dispatch. Keep the holiday blend campaign separate from pause confirmations. Test late pause events and restart behavior; do not infer that either platform already handles the sequence.
         </p>
         <h2>How climbing gear store emails through spring rack refresh</h2>
         <p>
           The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For the climbing scenario, compare a seven-to-fourteen-day education branch for harness fit with a separate rope-information branch. Use product information approved for the intended audience rather than treating a browse event as proof of expertise or permission. A purchase should cancel the appropriate queued recovery messages. Measure clicks and orders using stated attribution windows; a difference between branches alone does not prove a causal lift.
         </p>
         <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
         <p>
           The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For the camping scenario, route tent-capacity quiz answers into family camping or other relevant welcome branches only for the disclosed purpose and current permission. Test an edited quiz answer, an unknown answer and a later tent purchase before the Memorial Day campaign. Confirm which queue loses stale messages after each change. No coffee reorder logic belongs in this proposed camping test.
         </p>
         <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
         <p>
           The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For the pottery scenario, keep class waitlist information and glaze-kit marketing distinct. Test signup source, a later class booking, gift status and withdrawal before the holiday starter-set campaign. Route studio policies and approved kiln-care instructions to the appropriate purpose; a waitlist request is not blanket promotional consent. Record any misrouting as a test finding rather than claiming branching already prevented it.
         </p>
         <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
         <p>
           The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          For the vinyl scenario, use a proposed 300-unit pressing and two-hour send window within the illustrative 200–400-unit range. Sell out a variant while messages are queued, then check inventory latency, destination availability and cancellation ownership. Exclude recent full-price buyers from discount audiences using current purchase state. These are test inputs, not a report that live inventory prevented complaints.
         </p>
         <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
         <p>
           The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week test: reserve permitted operational updates for their purpose, then prioritize eligible recovery, education and promotional sends. At dispatch recheck channel-specific permission, withdrawal and suppression, purchase and inventory state. Name the owner of each sender and its queued messages. Exercise purchase and withdrawal cancellation across all senders, delayed events, duplicate replay deduplication and rollback. Compare inspection time and failure logs; no reduction in preview errors has been observed here.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          For the outdoor scenario, compare ultralight and family car-camping hero tents using declared interests and permitted collection behavior. Propose a ten-day education window before the Memorial Day offer and check inventory again at dispatch. Record actual maintenance time if a trial is run; no six-hour saving or education-versus-discount revenue win is established here. Use a holdout suited to the decision and disclose causal uncertainty.
         </p>
         <h2>Drip workflow reality: strengths, friction, and billing</h2>
         <p>
           Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Klaviyo (active profiles plus SMS credits) rewards send discipline or punishes broadcast volume depending on your calendar. Drip (people in account) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model the same twelve-month workload for both platforms. Reconcile billable profiles or people, suppressed records, seasonal imports, send volume, SMS destination rates and overages against current written terms. Add migration, implementation, support and operator time. An imported waitlist or a high-send month changes the inputs, but does not prove which bill will be higher. Keep dated quotes and compare matched all-in costs.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -172,12 +173,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Drip punish partial adoption.
+          Use 12,000–18,000 contacts as an illustrative sensitivity range, not a claim that plans converge. Distinguish storage, eligibility and actual sends; preserve suppression records when managing inactive profiles. Add only the SMS, push, reviews or loyalty services required by the proposed stack, with current availability and separate charges verified. Compare peak months, annual terms and maintenance, not an assumed modular-suite penalty.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Klaviyo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed stack could separate capture, lifecycle email and SMS if the current integrations support the required data and permissions. Assign a primary lifecycle owner and name every sender and queue. Disable overlapping recovery, propagate purchase and withdrawal cancellation, and deduplicate replayed events before enabling another sender. Test a rollback without restarting stale messages. Compliance depends on purpose, permission and operation across the stack, not a particular SMS brand.
         </p>
         
         <h2>Who should choose which</h2>
@@ -195,11 +196,11 @@ const faqs = [
           <li>You will use visual workflow canvas with behavior-based branching weekly</li>
           <li>People in account fits your calendar</li>
           <li>Your team can maintain Drip without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Drip migration</li>
+          <li>A suitable holdout and matched costs support the migration decision, with attribution uncertainty disclosed</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Drip is the better Shopify email tool when an operator will maintain canvas logic every month. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose Klaviyo if its configured events and reports demonstrate the required merchandising jobs; choose Drip if its configured canvas demonstrates safer maintenance of the required branches. Neither conclusion is an observed result here. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
