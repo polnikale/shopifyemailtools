@@ -7,7 +7,7 @@ import { site } from '../../content';
 
 const path = '/compare/privy-vs-mailchimp';
 const title = 'Privy vs Mailchimp: Capture vs Marketing Hub for Shopify';
-const desc = 'Privy vs Mailchimp for Shopify email tools — popup capture and light sends vs legacy hub breadth, graduation paths to lifecycle platforms, and when each owns funnel top.';
+const desc = 'Privy vs Mailchimp for Shopify email tools — capture and email workspace ownership, audience handoffs, editorial work and migration tradeoffs.';
 
 const faqs = [
   {
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: 'Can Privy replace Mailchimp entirely?',
-    answer: 'Only for tiny stores sending simple campaigns from Privy email. Mailchimp journey depth and hub features exceed Privy for anything beyond basic welcome and cart. Privy plus Sequenzy or Omnisend replaces Mailchimp more cleanly than Privy alone.',
+    answer: 'It is a candidate for consolidation, not a guaranteed replacement. Inventory the Mailchimp templates, audience rules, integrations and reporting the team actually uses. Rebuild one complete recurring campaign and one event-driven workflow in the proposed Privy plan before estimating the migration work.',
   },
   {
     question: 'How does Privy vs Mailchimp pricing compare at 8,000 contacts?',
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: 'When do you outgrow both?',
-    answer: 'When cart recovery, replenishment, and segmentation need exceed Privy sends and Mailchimp journeys — typically 500–800 monthly orders. Migrate capture to Justuno if advanced quizzes needed; migrate sends to Sequenzy, Omnisend, or Klaviyo.',
+    answer: 'Reconsider the stack when a required event, audience rule, approval process or data handoff cannot be maintained reliably. Record that requirement and the cost of the workaround. Monthly order volume alone does not establish a need to migrate.',
   },
   {
     question: 'Does Mailchimp beat Privy on automations?',
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: 'What test decides Privy vs Mailchimp for your stack?',
-    answer: 'If primary pain is conversion rate on product pages, Privy. If primary pain is newsletter editor familiarity and landing pages, Mailchimp. If primary pain is lifecycle revenue, neither — evaluate Sequenzy or Klaviyo.',
+    answer: 'Use a closed group-buy offer and a gift-buyer exclusion as acceptance tasks. Check signup preference transfer, the resulting audience, scheduled-message cancellation and the effort required to change the campaign. Keep existing sending assets when replacing them produces no useful operational benefit.',
   },
 ];
 ---
@@ -60,20 +60,16 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Privy vs Mailchimp for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Funnel top versus marketing hub — often confused as the same purchase. Consider hypothetical briefs for a vinyl record shop testing PDP capture, a specialty tea merchant comparing familiar sending workflows with popup requirements, and a mechanical keyboard store evaluating separate capture and sending ownership. These are proposed evaluation scenarios, not observed merchants or results. The comparison is which layer of the email catalog each tool should own today.
+          For a Shopify team choosing where to maintain capture and ongoing email, migration work matters as much as a feature checklist. Consider hypothetical briefs for a vinyl record shop testing PDP capture, a specialty tea merchant comparing familiar sending workflows with popup requirements, and a mechanical keyboard store evaluating separate capture and sending ownership. These are proposed evaluation scenarios, not observed merchants or results. The comparison is which layer of the email catalog each tool should own today.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Onsite capture', tool: 'Privy', reason: 'Popups, wheels, banners with Shopify targeting.' },
-            { label: 'Marketing hub', tool: 'Mailchimp', reason: 'Editor, journeys, landing pages, surveys.' },
-            { label: 'Lean capture stack', tool: 'Privy', reason: 'Purpose-built for list growth on PDPs.' },
-            { label: 'Familiar sends', tool: 'Mailchimp', reason: 'Teams trained on legacy workflows.' },
-            { label: 'Lifecycle ceiling', tool: 'Both', reason: 'Graduate sends to Sequenzy, Omnisend, Klaviyo.' },
-          ]}
-        />
+        <TldrBox picks={[
+          { label: 'Existing email team', tool: 'Mailchimp', reason: 'Cost preservation of templates, audiences and approval habits.' },
+          { label: 'Consolidation candidate', tool: 'Privy', reason: 'Test forms and email together against the actual brief.' },
+          { label: 'Decision test', tool: 'Workflow fit', reason: 'Use group-buy closing and gift-buyer exclusions, not an order-count threshold.' },
+        ]} />
       </div>
 
       <div class="mt-12 card overflow-x-auto">
@@ -81,11 +77,10 @@ const faqs = [
         <table class="data-table">
           <thead><tr><th>Dimension</th><th>Privy</th><th>Mailchimp</th></tr></thead>
           <tbody>
-            <tr><td>Primary job</td><td>Capture + light email</td><td>Email hub + extras</td></tr>
-            <tr><td>Popups</td><td>Core strength</td><td>Available, less depth</td></tr>
-            <tr><td>Journeys</td><td>Basic</td><td>Customer Journeys</td></tr>
-            <tr><td>Shopify depth</td><td>Capture-first</td><td>Integration</td></tr>
-            <tr><td>Scale ceiling</td><td>Early-mid stage</td><td>Mid before specialists</td></tr>
+            <tr><td>Published scope</td><td>Popups, email and SMS flows</td><td>Shopify customer, order and product syncing</td></tr>
+            <tr><td>Primary evaluation</td><td>Can one workspace cover the signup-to-email brief?</td><td>Can established audiences and editorial work remain here?</td></tr>
+            <tr><td>Handoff risk</td><td>Preference and suppression transfer if another sender remains</td><td>Commerce fields and audience rules used by scheduled sends</td></tr>
+            <tr><td>Migration cost</td><td>Recreate assets moving into the workspace</td><td>Preserve or rebuild existing templates and segments</td></tr>
           </tbody>
         </table>
       </div>
@@ -93,72 +88,36 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Privy and Mailchimp sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Privy is optimized when capture and basic campaigns are the bottleneck. Mailchimp is optimized when broadcast muscle memory outweighs Shopify trigger depth. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Privy currently describes popups, an email editor and email/SMS flows on its <a class="link" href="https://www.privy.com/">product site</a>. Mailchimp documents customer, order and product syncing in its <a class="link" href="https://mailchimp.com/help/mailchimp-shopify-syncing/">Shopify integration guide</a>. The decision is therefore not capture versus a sender with no commerce data. It is where the team should maintain audiences, campaigns and the handoff from signup to ongoing email. The proposed catalog tasks below test those boundaries; they are not merchant observations.
         </p>
         
-        <h2>Outdoor Gear Retailer ($112k/mo) — merchandise ultralight versus family car-camping with different hero tents</h2>
+        <h2>Proposed task: two camping audiences, one editorial brief</h2>
         <p>
-          Assume a hypothetical outdoor gear retailer with 2,400 orders/mo at roughly $112k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For the outdoor catalog, test ultralight and family-camping audiences with distinct hero tents and current variant availability. Keep product education tied to the actual tent catalog rather than borrowing climbing-safety claims. Recheck stock and purchase state before dispatch. Any SMS follow-up needs its own permission and suppression checks; a fixed delay cannot establish safe cross-channel behavior.
+          For this proposed tent campaign, compare how an editor builds two audience versions from one merchandising brief. The capture form should collect the declared camping preference; the email workspace should make that preference usable without a manual spreadsheet join. Record how many edits are required when the family tent sells out, including scheduled versions. This tests merchandising work rather than claiming either editor converts better.
         </p>
         <h2>Before GB close deadlines: mechanical keyboard vendor retention choices</h2>
         <p>
-          Assume a hypothetical mechanical keyboard vendor with 940 orders/mo at roughly $58k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For keyboard group buys, test an open preorder becoming closed while cart recovery is queued. Use keyboard kit and switch education, with explicit expected fulfillment timing. Cancel stale recovery and prevent a replayed checkout event from reopening it. A proposed support benefit is a hypothesis to measure, not a reported outcome.
+          Use the group-buy close as a boundary test between capture and sending. A new lead arriving after close should receive interest-list content for a future run, not the expired preorder offer. Inspect the exact tag or field received by the sender and the handling of an existing subscriber who signs up again. Replaying the signup must not restart an obsolete offer.
         </p>
         <h2>Board Game Store: pre-order allocation anxiety on hot titles</h2>
         <p>
-          Assume a hypothetical board game store with 1,050 orders/mo at roughly $67k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For board game allocations, test an allocation closing and a preorder shipping. Pause winback while the order is unfulfilled and recheck current availability before a promotional send. Keep messages specific to the allocated game; no vinyl pressing result is evidence for this workflow.
+          Allocation status belongs to the order workflow, while a general newsletter audience may include customers with several different preorder states. Build a draft allocation update and a separate merchandising campaign. Compare whether the operator can exclude unfulfilled buyers using current order data without overwriting a manually maintained preference. Treat missing allocation fields as an integration requirement, not as proof that either tool is incapable.
         </p>
         <h2>How specialty tea merchant emails through Q4 gift-box peak</h2>
         <p>
-          Assume a hypothetical specialty tea merchant with 720 orders/mo at roughly $44k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          Use the gift season to test audience semantics: the buyer of a gift box is not necessarily the drinker who will replenish it. Capture a voluntary preference separately from order history. Ask the email operator to prepare a gift deadline campaign without enrolling those buyers into personal replenishment. Compare the review process for the segment and the handling of a subsequent subscription skip.
         </p>
+        <h2>Proposed task: consumer and wholesale coffee audiences</h2>
         <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For tea replenishment, distinguish gift buyers, one-time buyers and subscribers whose next delivery is paused or skipped. Test blend-specific replenishment windows against current subscription state, and cancel queued reminders when that state changes. Do not infer a customer wants promotional email merely from an order or subscription operation.
-        </p>
-        <h2>Artisan Coffee Roaster ($52k/mo) — suppress subscribers on pause from roast-date replenishment nudges</h2>
-        <p>
-          Assume a hypothetical artisan coffee roaster with 860 orders/mo at roughly $52k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For coffee, test roast-date reminders separately from wholesale sample follow-ups and paused-subscription notices. A pause confirmation has a different purpose from a promotional reorder nudge. Carry that distinction through dispatch, cancellation and replay handling; pottery-class welcome behavior is not evidence for a coffee workflow.
+          For the roaster, compare maintaining a consumer newsletter with maintaining wholesale sample follow-ups. These need different copy, reply ownership and audience definitions even when one person appears in both groups. A form-source label should not overwrite an existing wholesale classification. Inspect how a correction to that classification reaches saved segments and already scheduled drafts.
         </p>
         <h2>Before spring rack refresh: climbing gear store retention choices</h2>
         <p>
-          Assume a hypothetical climbing gear store with 1,100 orders/mo at roughly $89k/mo; these are planning inputs, not reported merchant figures. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
-        </p>
-        <p>
-          Propose separate queues for operational order updates, cart recovery, welcome education and promotional broadcasts. A priority order does not establish permission: verify the purpose and channel for each message. At dispatch, recheck current purchase, subscription and suppression state. Assign a single sender and cancellation owner for each job, and test that retries and event replays cannot create duplicate sends. Record failures and operator time in both proposed stacks; no comparative preview test has been observed here.
-        </p>
-        <p>
-          For climbing gear, use manufacturer-approved product information and appropriate fit education, with current product and order state. Do not infer safety suitability from browsing or a marketing segment. Test the relevant harness and rope journeys directly rather than borrowing board game support anecdotes. Channel permission and suppression remain separate from sequencing delays.
+          For the climbing store, ask an editor to update a manufacturer product-information link across a multi-message educational sequence. Compare the work needed to find old links, preview the revised sequence and exclude customers who have already purchased. A browse segment signals interest only; it cannot establish fit or equipment suitability. Keep any product-safety claim tied to approved manufacturer material.
         </p>
         <h2>Tool friction where Privy and Mailchimp diverge on Shopify</h2>
         <p>
-          Privy shines when capture and basic campaigns are the bottleneck. Its friction shows when replenishment timing and browse depth are core KPIs. Mailchimp shines when broadcast muscle memory outweighs Shopify trigger depth. Its friction shows when cart and browse revenue attribution is load-bearing. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          The practical friction is the boundary between form data and an established email workspace. A team with saved Mailchimp audiences, templates and reporting conventions should cost the work of recreating those assets before moving sends. A team starting fresh should instead compare the maintenance burden of one workspace with a capture-plus-sender arrangement. Test a returning subscriber changing preferences: creating a second contact or losing a suppression is a more useful failure signal than an abstract automation ranking.
         </p>
         <p>
           Compare dated annual quotes against the same contact history, traffic and sending calendar. Include both capture and sender charges, overages, integration maintenance, support and operator time. The hypothetical vinyl waitlist and seasonal outdoor campaign are different workload inputs, not observed billing outcomes. Do not assume a billing unit or that the two vendors respond oppositely without current plan evidence.
@@ -166,7 +125,7 @@ const faqs = [
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Privy and Mailchimp both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Use one real editorial brief to compare the sending workspaces: two camping audiences, one sold-out product substitution and a correction after approval. Record whether the team can reuse its layout, review each audience version and identify scheduled drafts affected by the change. Existing Mailchimp familiarity has value only if it saves repeatable production work; it does not establish better Shopify event handling.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
@@ -179,26 +138,9 @@ const faqs = [
           A proposed hybrid separates capture, lifecycle email and SMS only where integrations and channel-specific permission are verified. A vendor choice does not establish compliance. Assign sender and queue ownership for each purpose, test purchase and suppression propagation, cancel stale jobs, and replay events to verify deduplication. Attribution windows can label the same order twice; estimate causal lift with a randomized holdout and report uncertainty, margin and operator cost.
         </p>
         
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Privy if:</strong></p>
-        <ul>
-          <li>Capture and basic campaigns are the bottleneck</li>
-          <li>You will use popup capture and simple welcome or cart messages weekly</li>
-          <li>Contacts and pageviews fits your calendar</li>
-          <li>Your team can maintain Privy without external rescue</li>
-          <li>Switching cost favors Privy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Mailchimp if:</strong></p>
-        <ul>
-          <li>Broadcast muscle memory outweighs shopify trigger depth</li>
-          <li>You will use familiar editor and broad marketing features weekly</li>
-          <li>Contacts by tier fits your calendar</li>
-          <li>Your team can maintain Mailchimp without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Mailchimp migration</li>
-        </ul>
-        <h2>Verdict</h2>
+        <h2>Decision and migration boundary</h2>
         <p>
-          Privy is the better Shopify email tool when capture and basic campaigns are the bottleneck. Mailchimp is the better Shopify email tool when broadcast muscle memory outweighs Shopify trigger depth. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Keep Mailchimp as the sending workspace when preserving established audiences, approval habits and templates is worth more than consolidation. Consider moving the work into Privy when the proposed forms and email workflows cover the actual brief and remove a handoff the team struggles to maintain. Use the group-buy deadline and gift-buyer exclusions above as acceptance tasks; a monthly order threshold cannot make this decision.
         </p>
       </article>
 
