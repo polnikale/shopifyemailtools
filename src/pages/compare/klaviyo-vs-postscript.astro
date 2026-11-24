@@ -12,35 +12,35 @@ const desc = 'Klaviyo vs Postscript for Shopify email tools — unified email-SM
 const faqs = [
   {
     question: 'Is Klaviyo or Postscript better for Shopify retention?',
-    answer: 'Klaviyo is the full email and SMS retention platform with Shopify data depth. Postscript is SMS-native for cart recovery, drops, and replenishment on text. They are complementary — Klaviyo owns email lifecycle; Postscript owns SMS when text is load-bearing. False choice is picking one to do both jobs poorly.',
+    answer: 'Choose the channel architecture before choosing a vendor. Evaluate Klaviyo for email lifecycle and compare the SMS workflow with Postscript under your current plan and region. Assign one owner to each job; keeping both requires tested coordination rather than assuming Shopify events provide shared suppression.',
   },
   {
     question: 'Can Postscript replace Klaviyo for email?',
-    answer: 'No. Postscript is SMS-first — email capabilities exist but do not replace Klaviyo browse flows, predictive segments, or campaign depth. Stores needing email lifecycle keep Klaviyo or similar; Postscript adds SMS layer.',
+    answer: 'Confirm the currently available Postscript products and email capabilities before treating it as an email replacement. Test welcome, browse education, campaign editing, suppression and export against the same requirements in each candidate. An SMS workflow alone does not demonstrate email lifecycle coverage.',
   },
   {
     question: 'Should I run Klaviyo email and Postscript SMS together?',
-    answer: 'Common and rational — unified suppression via Shopify events if configured, collision doc mandatory: no cart email and cart SMS within forty-five minutes. Sync opt-out across platforms daily during integration month.',
+    answer: 'A combined stack needs a named sender for each journey and purpose-specific, channel-specific permission. Check current opt-out, purchase and suppression state before dispatch. A forty-five-minute gap is only an illustrative collision rule, not permission or a compliance guarantee; daily opt-out synchronization can leave unsafe gaps. Test cancellation and delayed event replay across both queues.',
   },
   {
     question: 'How does pricing compare?',
-    answer: 'Klaviyo profiles plus SMS credits scale with list and text volume. Postscript usage-based by messages — often $200–800/mo mid-market before Klaviyo SMS overlap. Combined cost exceeds Klaviyo-only if SMS volume modest — justify with incremental SMS-attributed GMV.',
+    answer: 'Obtain matched current quotes for the same region, currency, contact eligibility, monthly sends and SMS destinations. Include credits, carrier charges, minimums, overages, required modules, integration labor and overlap during migration across twelve months. SMS-attributed GMV alone cannot establish incremental profit or justify an additional platform.',
   },
   {
     question: 'Which handles vinyl drop SMS better?',
-    answer: 'Postscript — keyword opt-in allocation texts with compliance tooling. Klaviyo SMS can broadcast drops but Postscript Shopify specialization wins for collector urgency. Email allocation education stays Klaviyo.',
+    answer: 'Test a limited pressing with keyword signup evidence, separate allocation eligibility and current channel permission. Verify stock and recent-purchase state before dispatch and cancel queued reminders once allocation is complete. Compliance tooling and urgency do not establish permission or prove one vendor performs better.',
   },
   {
     question: 'What about climbing gear browse recovery?',
-    answer: 'Klaviyo email browse flows — Postscript does not replace. Postscript SMS for opted-in high-intent cart abandons after email window. Channel sequence: education email days one to seven, SMS cart nudge day two for opt-in only.',
+    answer: 'Use the seven-to-fourteen day harness research cycle as an illustrative education window. Evaluate email content and SMS separately, checking permission for each purpose and channel and stopping recovery after purchase. A day-two text is a proposed test, not a universal sequence; safety information should use verified manufacturer guidance.',
   },
   {
     question: 'Does Klaviyo unified SMS beat Postscript?',
-    answer: 'Klaviyo unified suppression is convenient at moderate SMS volume. Postscript wins compliance dashboards, two-way replies, and SMS-at-scale patterns past roughly twenty-five thousand promotional texts monthly for many operators.',
+    answer: 'Test whether the selected configuration coordinates suppression across email and SMS, including replies, opt-outs and delayed purchases. Compare operator workload and failure recovery at your actual volume. Twenty-five thousand texts is not an evidenced crossover point, and one interface does not guarantee one live suppression state.',
   },
   {
     question: 'What buyer test settles stack architecture?',
-    answer: 'Document five jobs: welcome email, browse education email, cart email, cart SMS for opt-in, drop SMS. If SMS jobs under twenty percent retention revenue, Klaviyo alone may suffice. If SMS exceeds thirty percent, Postscript or Attentive layer justified.',
+    answer: 'Document five jobs: welcome email, browse education email, cart email, permitted cart SMS and drop SMS. Give each one a sender, queue owner, cancellation rule and replay key. Compare completion, failure handling and matched annual cost. Twenty or thirty percent of attributed retention revenue is not a causal threshold for adding a vendor; use a suitable holdout when feasible and report uncertainty.',
   },
 ];
 ---
@@ -60,7 +60,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Klaviyo vs Postscript for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Full retention platform versus SMS-native specialist — compared as rivals they create duplicate cart touches; compared as architecture choices they clarify channel ownership. We mapped both across a vinyl record shop running Klaviyo email with Postscript allocation texts, a camping equipment brand consolidating on Klaviyo unified SMS at moderate volume, and a board game retailer whose Postscript keyword opt-ins outperformed email-only drop announcements.
+          Full retention platform versus SMS-native specialist — compared as rivals they create duplicate cart touches; compared as architecture choices they clarify channel ownership. The vinyl allocation, camping consolidation and board-game drop cases below are illustrative planning scenarios, not observed merchant evaluations or performance results. Current vendor capabilities, prices and plan availability require verification before publication.
         </p>
       </header>
 
@@ -93,7 +93,7 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Klaviyo and Postscript sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Compare email lifecycle coverage separately from SMS specialization. Operational order updates have a different purpose from marketing recovery; neither their priority nor an existing customer relationship supplies marketing permission. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
         </p>
         
         <h2>Before spring rack refresh: climbing gear store retention choices</h2>
@@ -101,67 +101,67 @@ const faqs = [
           The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For the climbing catalog, test fall-rating and harness-fit branches without inferring expertise or permission from a page view. Keep certification education distinct from a discount; use verified manufacturer safety information and check current purchase state before recovery. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>Camping Equipment Merchant: tent-capacity quizzes and family car-camping segments</h2>
         <p>
           The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For camping quizzes, retain tent capacity and family car-camping preferences with their signup purpose. Test mobile browse and cart events separately, including an already-purchased tent and a changed quiz answer. Neither a quiz response nor mobile browsing authorizes a promotional text. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>How pottery studio emails through holiday starter-set rush</h2>
         <p>
           The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For the pottery studio, separate class waitlists from glaze-kit promotions and kiln-care order information. Test a lead who later buys a gift, withdraws permission or joins a class; the next message must reflect current purpose and state rather than the original signup tag alone. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
         <p>
           The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          For the vinyl shop, use the 200–400 unit run to test allocation eligibility and recent full-price purchases. Simulate the last unit selling after scheduling; cancel stale promotional reminders and make the landing page reflect stock. Do not treat a drop click as evidence of incremental demand. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
         <p>
           The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          For outdoor gear, keep ultralight and family car-camping audiences distinct through Memorial Day. Test overlapping browse and cart entries, product substitutions and a purchaser arriving after scheduling. Compare education and promotional sequences without claiming a winner from attributed revenue alone. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
         <p>
           The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed dispatch test: assign an email and SMS sender and one queue owner per journey. Recheck current purpose/channel permission, suppression, purchase and inventory state before sending. Document priority and cancellation across platforms; a forty-five-minute spacing rule is only a test input. Replay delayed events with a stable customer, order and journey key so the second queue cannot recreate a canceled message. Exercise rollback without re-enabling old sends.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          For keyboards, test the six-week group-buy close with $180–$420 kits across five PDPs. A closed preorder must cancel pending recovery even if an older event is replayed. Preserve switch-type education while checking current eligibility and avoiding a false allocation promise. Record setup effort, exception handling and matched all-in cost; these are proposed tests, not merchant results.
         </p>
         <h2>Klaviyo workflow reality: strengths, friction, and billing</h2>
         <p>
           Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Klaviyo (active profiles plus SMS credits) rewards send discipline or punishes broadcast volume depending on your calendar. Postscript (message volume and plans) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model billing against the same twelve-month calendar. Use cold waitlist imports and a May broadcast spike as sensitivity cases, not observed merchant invoices. Verify billable profile definitions and message allowances for each current quote; include SMS destinations, credits, carrier charges, minimums, overages, implementation and parallel-running costs. List hygiene must preserve opt-outs and permission evidence, rather than deleting suppression records to improve a quote.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -171,12 +171,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Postscript punish partial adoption.
+          At an illustrative 12,000–18,000 contacts, compare the same eligible audience, annual send calendar and destinations. Do not assume price convergence. Include only the modules actually required and verify their availability; compare a complete email-plus-SMS stack with an equivalent stack, rather than a specialist SMS quote against a full lifecycle budget.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Postscript, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed hybrid uses a capture tool, an email lifecycle platform and an SMS sender. Confirm the selected products support those roles today. Assign one recovery owner per channel and journey, propagate current permission and suppression changes before dispatch, and test a purchase canceling both queues. Duplicate-event replay must not restart old recovery; a compliance feature does not transfer responsibility from the merchant.
         </p>
         
         <h2>Who should choose which</h2>
@@ -194,11 +194,11 @@ const faqs = [
           <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
           <li>Message volume and plans fits your calendar</li>
           <li>Your team can maintain Postscript without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Postscript migration</li>
+          <li>A controlled comparison supports incremental contribution after all costs and migration effort</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Postscript is the better Shopify email tool when SMS is a primary revenue channel with compliance discipline. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Evaluate Klaviyo for the email lifecycle jobs and Postscript for the SMS jobs your team actually needs, subject to current product verification. There is no demonstrated winner in these illustrative scenarios. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
