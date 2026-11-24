@@ -18,31 +18,31 @@ const faqs = [
   },
   {
     question: 'How does Postscript pricing work on Shopify?',
-    answer: 'Usage-based: plan fee plus per-message costs varying by region and message type. Model monthly SMS volume separately for sale weeks — a vinyl drop or keyboard launch can 3x normal send count. Budget $150–400/mo for mid-market DTC with active SMS program.',
+    answer: 'Compare a dated quote using eligible subscribers, destinations, message segments, carrier fees, minimum commitments and overages. Include reply labor, implementation and any paired email platform. Model the actual peak promotion separately from an ordinary month; no current merchant budget or supplier price is certified here.',
   },
   {
     question: 'Postscript vs Klaviyo SMS for Shopify?',
-    answer: 'Klaviyo wins unified email+SMS suppression in one flow builder. Postscript wins SMS-native compliance tooling, two-way conversations, and Shopify DTC specialization without Klaviyo profile pricing. Many stacks run Klaviyo email + Postscript SMS with tag coordination.',
+    answer: 'Compare both products using the same required email and SMS journeys, events, replies and permission checks. Test current suppression and purchase exits across queued messages, sender ownership and replay deduplication. Verify supported features and matched all-in quotes on the intended plans; a shared interface or coordination tag does not by itself prove correct suppression.',
   },
   {
     question: 'Does Postscript handle TCPA compliance for Shopify stores?',
-    answer: 'Yes — quiet hours, opt-in documentation, keyword opt-out, and compliance dashboards are core product. Still requires merchant discipline on consent language at checkout and popup. Compliance tooling catches mistakes; it does not replace legal review of capture copy.',
+    answer: 'Product tooling does not establish that a store complies with applicable requirements. Confirm the current capture, opt-out and scheduling controls for the intended plan and audience, and validate them with controlled records. Check the applicable requirements with appropriate guidance; no legal compliance assessment or prevented violation is claimed here.',
   },
   {
     question: 'When should a store choose Omnisend SMS over Postscript?',
-    answer: 'When email and SMS in one SMB platform matters more than Postscript compliance depth, under 500 orders/mo, and SMS is secondary channel. Postscript when SMS cart recovery exceeds 10% of mobile recovery revenue in testing.',
+    answer: 'Choose after testing the required journeys and comparing matched costs, staff effort and cross-channel controls. Validate each channel and purpose permission, current suppression and purchase exits before dispatch. Neither an order-count threshold nor a share of attributed recovery establishes which supplier fits the store.',
   },
   {
     question: 'Can Postscript recover abandoned carts on Shopify effectively?',
-    answer: 'Yes — SMS attributed 22% of cart recovery revenue in our limited-run vinyl test versus email-only baseline. Two-touch sequences with discount on message two only outperformed single-blast discount training.',
+    answer: 'Evaluate recovery with representative carts and valid SMS permission. Test current purchase exits, opt-outs, queue cancellation and event replay before activation. Use an appropriate comparable control to estimate incremental contribution separately from platform attribution. No vinyl merchant recovery test or winning discount sequence is documented here.',
   },
   {
     question: 'Postscript vs Attentive for mid-market Shopify?',
-    answer: 'Postscript fits self-serve DTC with transparent usage pricing. Attentive fits enterprise with custom contracts and concierge onboarding. Sub-$500k/mo revenue stores rarely justify Attentive minimums.',
+    answer: 'Compare current supported workflows, onboarding, support coverage and matched contract quotes using the same store requirements. Test reply handling and queue coordination before committing. Store revenue alone does not establish whether a supplier minimum or service model is justified; no current contract pricing is certified here.',
   },
   {
     question: 'What is the biggest Postscript mistake merchants make?',
-    answer: 'Duplicating email cart touches within 60 minutes on SMS without holdout testing — annoys customers and inflates attributed revenue without incremental lift. Coordinate channel timing and measure SMS incrementality explicitly.',
+    answer: 'A material risk is overlapping recovery from separate systems. Assign one owner per message, verify purpose and channel permission, and recheck purchase state and suppression at dispatch, including queued sends. Test replay deduplication and estimate incremental contribution with an appropriate control rather than treating SMS attribution as lift. No universal timing interval prevents collisions.',
   },
 ];
 ---
@@ -73,8 +73,8 @@ const faqs = [
       title="Verdict: Postscript for Shopify"
       picks={[
         { label: 'Channel', tool: 'SMS-first', reason: 'Cart recovery and flash urgency on mobile — pair with email ESP.' },
-        { label: 'Compliance', tool: 'Core product', reason: 'Quiet hours, opt-in docs, keyword opt-out — not bolt-on.' },
-        { label: 'Pricing', tool: 'Usage-based', reason: 'Plan + per-message; model drop weeks separately.' },
+        { label: 'Compliance', tool: 'Core product', reason: 'Validate current capture, opt-out and scheduling controls; tooling does not certify compliance.' },
+        { label: 'Pricing', tool: 'Usage-based', reason: 'Request a matched quote including message segments, destinations, fees and labor.' },
         { label: 'Tradeoff', tool: 'Not full email', reason: 'Requires Sequenzy/Klaviyo/Omnisend for lifecycle depth.' },
         { label: 'Best for', tool: 'Mobile-heavy DTC', reason: 'Instagram/TikTok traffic with SMS-opted audience.' },
       ]}
@@ -83,13 +83,13 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Why SMS deserves its own Shopify tool</h2>
       <p>
-        Email open rates decay; mobile texts get read. That is not permission to spam — TCPA violations destroy brands faster than bad subject lines. Postscript builds compliance into workflow defaults: quiet hours by timezone, documented opt-in sources, automatic keyword STOP handling, and pre-send checks that blocked three of our test sends before they violated merchant-configured rules.
+        Evaluate Postscript against a defined SMS use case rather than assuming texts outperform email. Test the intended account controls with permitted test records: capture source and purpose, opt-out propagation, quiet-hour settings and queued-message cancellation. No blocked sends or legal compliance outcome has been observed for this review. Current product behavior and applicable requirements need separate verification.
       </p>
       <p>
-        Cart recovery economics favor SMS for high-intent abandons. A $95 specialty tea gift set abandoned at checkout gets a text two hours later with product name and checkout link — conversion beats email three on mobile-first traffic. Vinyl drop restock notifications to SMS-opted VIP segment sold 40% of allocation in first hour without email list fatigue.
+        For a hypothetical $95 tea gift-set abandonment, test whether a permitted SMS adds useful information after the email journey. Recheck purchase state, suppression and stock before dispatch. A vinyl restock alert should correspond to the requested subscription and current inventory. Compare attributed revenue separately from contribution estimated with a suitable control; neither mobile traffic nor urgency guarantees a return.
       </p>
       <p>
-        Two-way reply handling matters for high-AOV and customization categories. Mechanical keyboard buyers asking switch compatibility via SMS reply need routing rules — Postscript handles conversational threads Klaviyo SMS treats as secondary feature.
+        A mechanical keyboard shop can evaluate reply handling with switch-compatibility questions, agent routing, response times and after-hours expectations. Confirm supported account features and integration behavior in each supplier under comparison. Include staff time and escalation work in the cost model rather than assuming one vendor handles conversations better.
       </p>
     </div>
 
@@ -97,28 +97,28 @@ const faqs = [
       <p class="catalog-kicker">Shopify integration depth</p>
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native SMS events and email handoff</h2>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Postscript registers Native with Solid automation. Shopify cart abandon, browse, order events trigger SMS journeys. Revenue tracking per automation. Keyword opt-in campaigns sync subscriber growth with compliance metadata.
+        Validate the installed Shopify integration with controlled cart, browse and order records. Check event availability, identification, permission and missing-field behavior before enrollment. Reconcile automation reporting with your own order records and attribution definitions; a synchronized growth tag does not establish permission for every SMS purpose.
       </p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Standout:</strong> TCPA compliance tools, cart abandonment SMS, segmented broadcasts, reply handling, revenue tracking, Shopify event triggers.
+        <strong>Standout:</strong> Evaluate the current plan for cart messaging, segmented broadcasts, replies, opt-out handling, reporting and Shopify event support. Document what is demonstrated in your account and what remains unverified; product controls alone are not a compliance determination.
       </p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps:</strong> SMS-first not email, cost discipline critical at scale, requires email pairing for full lifecycle.
+        <strong>Gaps:</strong> Check the full email and SMS requirements against current supported products and plans. Model usage, staff time, integrations and queue coordination before deciding whether a specialist or unified platform fits the store.
       </p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Cart recovery — vinyl drop</h3>
-      <p><strong>Scenario:</strong> $78 cart abandoned during limited pressing sale. <strong>Postscript setup:</strong> Two-touch sequence; no discount message one; 10% message two at hour six.</p>
-      <p><strong>Result:</strong> 14% SMS recovery; 22% of total cart recovery attributed to SMS on holdout test vs email-only week.</p>
+      <p><strong>Scenario:</strong> A hypothetical $78 vinyl cart during a limited pressing sale. <strong>Postscript setup:</strong> Test a recovery sequence with timing chosen for the buying cycle, valid SMS permission and current purchase exits. Evaluate any incentive against margin and a comparable non-incentive cohort.</p>
+      <p><strong>Proposed validation:</strong> Reconcile delivered messages and eligible carts with orders under a documented attribution window. Estimate incremental contribution with comparable randomized cohorts where feasible, accounting for stock constraints and overlapping email. No recovery rate or holdout result is claimed.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Flash sale broadcast — artisan chocolate</h3>
-      <p><strong>Scenario:</strong> 48-hour truffle flash sale to SMS list. <strong>Postscript setup:</strong> Single broadcast with quiet-hour guard; exclude purchased last 7 days.</p>
-      <p><strong>Result:</strong> $4.20 revenue per recipient; one quiet-hour block prevented 2am send error.</p>
+      <p><strong>Scenario:</strong> A proposed 48-hour artisan chocolate sale. <strong>Postscript setup:</strong> Validate the subscribed audience, intended purpose, quiet-hour behavior and frequency settings. Recheck current purchases and suppression before dispatch rather than relying on an arbitrary seven-day exclusion.</p>
+      <p><strong>Proposed validation:</strong> Test scheduled-message behavior with controlled records, including timezone uncertainty and opt-outs after enrollment. Measure contribution after discounts, fulfillment and message costs. No revenue per recipient or blocked send has been observed.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Coordinated stack — tea + Sequenzy email</h3>
       <p><strong>Scenario:</strong> Email cart at hour two; SMS at hour eight if still abandoned. <strong>Setup:</strong> Shopify tag suppresses SMS if email converted.</p>
       <p><strong>Result:</strong> Incremental 4.1% recovery from SMS layer without duplicate-fatigue complaints when timing respected.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Over-texting failure — keyboard launch</h3>
-      <p><strong>Scenario:</strong> Four promotional texts in one launch week. <strong>Result:</strong> Opt-out rate 3.2% vs 0.8% baseline; frequency cap enforced to two promos monthly thereafter.</p>
+      <p><strong>Scenario:</strong> A proposed keyboard launch with several promotional touches. <strong>Proposed validation:</strong> Monitor delivery, complaints and opt-outs as frequency changes, with appropriate comparison cohorts. Choose a cadence from permission and customer response; no baseline, failure rate or universal monthly cap is established here.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
@@ -139,7 +139,7 @@ const faqs = [
       <div class="ledger-card">
         <p class="catalog-kicker">Who should skip</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>SMS-only need under 200 orders/mo — Omnisend SMS</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Stores whose pilot does not support the added SMS cost and coordination work</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want unified email+SMS one builder — Klaviyo</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Enterprise scale with concierge — Attentive</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No email ESP and no lifecycle plan — fix email first</li>
@@ -150,10 +150,10 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Postscript operating discipline on Shopify</h2>
       <p>
-        SMS incrementality requires holdout discipline — one week per quarter email-only cart recovery versus email-plus-SMS with 10% holdout never receiving texts. Vinyl label measured true SMS lift 22% of recovery not 22% of all recovery; numbers differ and finance cares about difference.
+        Estimate SMS incrementality with a control design suited to audience size, stock availability and the buying cycle. Keep other channel exposure comparable and account for uncertainty, returns, discounts and total costs. Different calendar weeks can confound a comparison. Report platform attribution separately from the estimated effect of sending SMS; this review contains no measured lift.
       </p>
       <p>
-        Frequency caps documented by segment: VIP collectors max three promos monthly, general list max two. Two-way reply routing for mechanical keyboard compatibility questions needs owner — unanswered SMS replies erode premium channel positioning faster than ignored emails.
+        Document frequency controls by audience and purpose, including interaction with campaigns and automated recovery. Assign an owner to mechanical-keyboard compatibility replies and define response expectations and escalation. Include reply labor in the cost comparison; a fixed VIP or general-list cap is not evidence of the right cadence.
       </p>
       <p>
         Coordinate with Sequenzy or Klaviyo via Shopify tags: cart_recovered_sms suppresses email touch three; purchased_last_7d suppresses all promotional SMS regardless of abandoned browse. Tag sprawl beats notification pile-up every time.
@@ -166,7 +166,7 @@ const faqs = [
         <strong>Vinyl drop brand:</strong> Sequenzy email lifecycle plus Postscript VIP SMS early access; shared suppression during drop week via Shopify tags updated hourly during launch.
       </p>
       <p>
-        <strong>Artisan chocolate flash sales:</strong> Postscript broadcast with quiet-hour compliance; email backup four hours later for non-SMS subscribers only.
+        <strong>Artisan chocolate flash sales:</strong> A proposed SMS broadcast and email fallback should each have valid channel and purpose permission. Choose timing for the sale, assign one sender per touch and cancel stale recovery after purchase. Non-SMS status alone does not authorize email.
       </p>
       <p>
         <strong>Specialty tea replenishment:</strong> Sequenzy owns email reorder timing; Postscript only for cart abandon under $120 AOV mobile traffic — channel scope discipline prevents over-texting replenishment customers.
@@ -188,7 +188,7 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Postscript in a three-layer Shopify stack</h2>
-      <p>Postscript belongs in the stack when checkout recovery and flash-sale urgency need SMS, not email alone.</p>
+      <p>Evaluate Postscript where a separately permitted SMS journey could improve the customer experience. Establish current channel support, operational effort and incremental contribution before treating checkout urgency as a reason to add a platform.</p>
       <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Postscript may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Postscript fits where sms-native recovery and campaigns for shopify dtc. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
       
     </div>
@@ -201,7 +201,7 @@ const faqs = [
         
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can your team maintain flows monthly without agency dependency?</li>
         
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Will finance trust revenue attribution without custom BI?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can finance reconcile attribution separately from estimated incremental contribution?</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does SMS/email/push suppression integrate or require manual tags?</li>
       </ul>
     </div>
@@ -213,8 +213,8 @@ const faqs = [
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Postscript migration and co-existence</h2>
       <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A board game publisher left Postscript for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a home fragrance maker stayed on Postscript because predictive segments daily justified profile pricing.</p>
-      <p>Parallel-send migration minimum two weeks for cart and welcome. indie vinyl label ran dual cart flows with 10% holdout on old ESP — attribution within 5% before cutover. Never migrate Black Friday week.</p>
-      <p>When Postscript pairs with specialists — Postscript SMS, Privy capture, AfterShip transactional — document channel priority in wiki. Subscribers experience one brand, not vendor architecture.</p>
+      <p>Use controlled records or mutually exclusive live cohorts to validate migration. Assign a single owner to each message and reconcile old enrollment and queued sends before cutover. Verify current suppression, purchase exits and stable replay deduplication keys. A fixed parallel-send period or attribution agreement is not a readiness test.</p>
+      <p>When combining SMS, capture and shipping tools, document which system owns events, enrollment, queues and dispatch. Confirm each installed product capability rather than inferring it from a vendor name. Test permission scope, opt-outs, current purchase exits and replay behavior across system boundaries.</p>
     </div>
   </section>
 
@@ -223,8 +223,8 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Two-way SMS for high-consideration carts</h2>
-      <p>Climbing harness shop enabled Postscript reply handling — sizing questions resolved in SMS thread converted 23% of support-style cart abandonments versus 4% email-only recovery on same SKU category. Labor cost real: staff monitored replies business hours only; after-hours auto-reply set expectations.</p>
-      <p>TCPA quiet hours and state-specific rules enforced in Postscript prevented $15k potential fine scenario when intern scheduled 9pm promo blast to East Coast list. Compliance tooling is not checkbox — it is insurance on SMS channel merchants treat casually until legal email arrives.</p>
+      <p>A hypothetical climbing-harness shop could test reply routing for sizing questions with staff trained to escalate product-safety questions appropriately. Record actual response times, labor and customer outcomes; a conversation conversion comparison needs comparable cohorts. No merchant experiment or conversion rate is documented here.</p>
+      <p>Check the requirements applicable to the audience and message purpose with appropriate guidance, then validate supported scheduling and opt-out controls in the intended account. Test timezone uncertainty and queued sends using controlled records. No avoided fine or prevented violation has been demonstrated, and product tooling is not insurance or a legal conclusion.</p>
     </div>
   </section>
 
@@ -235,7 +235,7 @@ const faqs = [
         Postscript ranks first for standalone Shopify SMS because compliance tooling, two-way replies, and cart attribution stand alone without suite bundling. Email tools on this site — Sequenzy, Klaviyo, Omnisend — own lifecycle narrative; Postscript owns pocket urgency when mobile intent converts faster than inbox competition. A vinyl label recovered limited-pressing carts with SMS at four hours when email touch one went unopened — incremental recovery justified message fees on carts over $65 only. Sub-threshold carts lost margin after per-message cost; minimum cart value rule documented in ops wiki prevented finance surprises.
       </p>
       <p>
-        Two-way SMS separates Postscript from SMSBump and Omnisend SMS for support-heavy catalogs. Climbing harness shop resolved sizing questions in SMS thread — 23% of support-style abandonments converted versus 4% email-only on same SKU category. Labor cost real: replies monitored business hours; after-hours auto-reply set expectations. TCPA quiet hours prevented intern-scheduled 9pm East Coast blast that would have triggered complaint spike — compliance is insurance, not checkbox.
+        Compare reply handling with the same climbing-harness support scenario across suppliers. Test routing, staff coverage, escalation and after-hours expectations, and include labor alongside message costs. Confirm current controls and applicable requirements separately; no conversion result or prevented complaint is established here.
       </p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant stacks with Postscript</h2>
@@ -243,40 +243,40 @@ const faqs = [
         <strong>Stack A — Sequenzy email plus Postscript SMS.</strong> Artisan coffee roaster: email owns education and subscribe-and-save pitch; SMS branch at four hours unopened for flash roast alerts to keyword-opted VIP segment only. Channel priority written: never duplicate same offer on both channels within two hours without holdout measurement.
       </p>
       <p>
-        <strong>Stack B — Klaviyo unified SMS.</strong> High-volume outdoor gear at 1,400 orders/mo consolidated SMS into Klaviyo for single suppression canvas — Postscript graduated when dual-platform QA exceeded savings. Migration driver was ops hours, not Postscript capability failure.
+        <strong>Stack B — Klaviyo unified SMS.</strong> A hypothetical outdoor-gear store should compare a unified workflow with a separate SMS integration using the same events and suppression tests. Record staff effort, quote scope and failure recovery before choosing; an order-count threshold does not establish the better architecture.
       </p>
       <p>
-        <strong>Stack C — Postscript-only SMS layer on Shopify Email.</strong> Micro board game publisher under 200 orders/mo — email too thin for automation, Postscript handled allocation-anxiety cart recovery on mobile-first traffic. Economically viable only with strict frequency caps and minimum cart thresholds.
+        <strong>Stack C — Postscript-only SMS layer on Shopify Email.</strong> A small board game publisher could evaluate SMS alongside native Shopify Messaging, formerly Shopify Email, including its automations. Check current account capabilities, separate purpose and channel permission, stock and purchase exits. Compare matched all-in costs without assuming a minimum order count or cart value guarantees viability.
       </p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist before Postscript annual commit</h2>
       <ul>
-        <li>SMS-opted list above 5% of customer base with documented TCPA consent?</li>
-        <li>Minimum cart value and frequency caps written before first promotional send?</li>
+        <li>Is permission documented for the intended SMS purpose and audience?</li>
+        <li>Are frequency and economic rules justified by customer response and contribution?</li>
         <li>Email lifecycle owned elsewhere with explicit channel-priority rules?</li>
         <li>Quiet hours and state-specific compliance configured — not default UTC?</li>
         <li>Peak-week SMS budgeted separately from baseline month in finance model?</li>
-        <li>Holdout test planned quarterly for incremental recovery, not platform headline?</li>
+        <li>Is a suitable control planned for incremental contribution with uncertainty disclosed?</li>
       </ul>
       <p>
-        Postscript is SMS specialist — not Klaviyo replacement. Pair with ranked ESP from this catalog; document collision rules in shared wiki. See <a class="link" href="/use-cases/abandoned-cart">abandoned cart guide</a> for email-SMS ladder architecture.
+        Choose a platform only after checking its current product scope against the required email and SMS work. Document sender ownership, queue cancellation and collision rules across the stack. See the <a class="link" href="/use-cases/abandoned-cart">abandoned cart guide</a> for planning a coordinated recovery sequence.
       </p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Peak-week SMS budgeting for finance</h2>
-      <p>Model BFCM and drop-week SMS separately from P and L averages — vinyl label peak month 9,000 messages plus 1,200 MMS landed $180–280 while baseline $95–140. Finance approving SMS stack without peak line item disables channel entirely after first bill shock. Holdout quarterly: 5% cohort no SMS promotional week answers incrementality question board actually asks.</p>
-      <p>Artisan coffee flash roast SMS to keyword-opted VIP only — general list email-only preserved margin during limited harvest sellout. Postscript keyword campaigns concentrate intent; broad SMS blasts train opt-out faster than email unsubscribes in enthusiast categories.</p>
+      <p>Model peak SMS usage separately from an ordinary month using eligible recipients, message segments, destinations, carrier charges, minimum commitments, overages and staff time. Request dated matched quotes; no peak or baseline merchant bill is documented here. Use a suitable randomized control to estimate contribution, with uncertainty and inventory constraints disclosed.</p>
+      <p>A hypothetical coffee flash-roast alert could target subscribers who requested that purpose. Coordinate email separately using its own permission and current suppression. Monitor sellout, complaints and opt-outs, and compare contribution after discounts and all-in costs; no audience-margin benefit has been observed.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Two-way SMS labor model</h2>
-      <p>Harness sizing replies converted 23% support-style abandonments — staff monitored business hours only; after-hours auto-reply set expectations. Labor cost is real line item; finance must model reply hours plus message fees.</p>
-      <p>Quiet hours and state rules prevented 9pm East Coast promo blast — compliance tooling is insurance on channel merchants treat casually until legal email arrives.</p>
+      <p>For a harness-sizing reply workflow, define staff coverage, escalation and after-hours expectations. Record actual reply hours and message fees alongside any outcomes. No conversion rate is documented; include labor and uncertainty in any proposed ROI comparison.</p>
+      <p>Validate the current scheduling controls and applicable audience requirements before a promotional send. Test uncertain timezones, opt-outs and queued-message cancellation with controlled records. No prevented violation or complaint spike is documented; operational controls do not establish legal compliance.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Channel priority wiki template</h2>
       <p>Email touch one at ninety minutes; SMS at four hours if unopened; minimum cart $180 for keyboard shop; VIP keyword segment only for flash roasts; never duplicate offer within two hours without holdout. Postscript ranks first standalone SMS — pair with Sequenzy or Klaviyo from this catalog.</p>
-      <p>Harness sizing two-way SMS converted support-style abandonments — business hours monitoring with after-hours auto-reply. Peak-week SMS budget line separate from baseline — finance approves channel when incrementality documented quarterly.</p>
+      <p>For a proposed sizing conversation, document staff coverage and escalation. Keep peak message and reply-labor budgets separate from the ordinary month, and use a suitable control to estimate contribution. No merchant recovery or quarterly incrementality result is claimed.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Postscript buyer desk: SMS incrementality proof</h2>
-      <p>Postscript buyers should run quarterly holdout weeks — five percent of opted-in subscribers receive no promotional SMS while email ladder continues. If revenue flatlines, SMS budget is vanity; if revenue drops measurably, finance can fund peak weeks confidently. Week one: keyword compliance and quiet-hour audit across states you ship to. Week two: minimum cart and frequency caps written before promotional sends. Week three: channel priority wiki shared with ESP owner — vinyl drops, coffee flash roasts, and keyboard restocks each need documented sequencing. Week four through twelve: compare cost per recovered cart SMS versus email-only holdout on same SKU sets.</p>
-      <p>Climbing harness abandonment with two-way sizing SMS converted support-style carts — labor hours belong in ROI model beside message fees. Board game allocation anxiety recovers on SMS; rules-heavy SKUs need email FAQ follow-up within six hours or returns spike.</p>
+      <p>Plan an incrementality study before making an annual commitment. Choose cohort size and duration for the buying cycle and expected uncertainty; hold email exposure comparable where feasible and account for stock limits and spillovers. Validate capture purpose, channel permission, current suppression, purchase exits, queue ownership and replay deduplication before activation. Compare contribution after discounts, returns, labor and matched message costs. A flat result or a short-term revenue decline alone does not settle platform value.</p>
+      <p>A proposed harness-sizing workflow needs appropriately trained reply staff and clear escalation. A board game restock workflow needs current inventory checks and coordinated recovery ownership. Test email follow-up with its own permission and timing suited to customer needs; no recovery benefit or six-hour returns threshold has been observed.</p>
     </div>
   </section>
 
