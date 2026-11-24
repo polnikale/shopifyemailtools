@@ -13,19 +13,19 @@ const desc = 'Privy vs Drip for Shopify stores — popup capture and basic autom
 const faqs = [
   {
     question: 'Is Privy or Drip better for a Shopify store doing $45k/mo?',
-    answer: 'Drip wins when you have 800+ subscribers, need cart recovery with custom branching, and an operator who maintains visual workflows monthly. Privy wins when capture rate is under 2% and you need popups plus adequate welcome and cart in one app today. At $45k/mo, most merchants need Drip for lifecycle — or Privy plus Drip with clear ownership boundaries.',
+    answer: 'Revenue alone does not decide this. For a proposed $45k/mo store, inventory the capture, welcome, cart, post-purchase and winback jobs, then test both candidates against those jobs. A proposed 800-subscriber list and 2% capture rate are planning inputs, not vendor selection thresholds. Choose based on safe audience edits, current eligibility checks, staffing and matched annual costs.',
   },
   {
     question: 'Can Privy replace Drip for email automation?',
-    answer: 'No past ~400 orders/month for most catalogs. Privy handles basic welcome and cart saver campaigns. Drip offers visual canvas logic, tag-driven branches, workflow A/B tests, and revenue attribution operators expect at $45k+ monthly revenue. Stores outgrow Privy email when post-purchase, winback, and cross-journey suppression become strategic.',
+    answer: 'There is no universal 400-order cutoff. List the exact branches you require, including purchase cancellation, subscription pauses and cross-journey exclusions, and demonstrate them in each current plan. Privy may cover a simpler program; a more complex workflow may justify evaluating Drip. Verify current capabilities rather than inferring them from monthly revenue.',
   },
   {
     question: 'How does Privy vs Drip pricing compare at 10,000 contacts?',
-    answer: 'Privy scales on sessions plus email sends — often $50–90/mo at moderate traffic with 10k profiles. Drip at 10k people typically lands $100–170/mo. Privy looks cheaper until traffic spikes; Drip looks expensive until you value operator time saved on custom logic. Combined Privy capture plus Drip lifecycle is common — model TCO together.',
+    answer: 'Obtain current quotes for the same 10,000 billable contacts, traffic, send volume and peak calendar. Include capture, email, SMS usage and carrier charges where relevant, integrations, migration and operator hours. If using both tools, include both subscriptions and integration maintenance. No quoted price or billing basis here is verified; compare twelve-month all-in costs on identical assumptions.',
   },
   {
     question: 'Should I use Privy and Drip together?',
-    answer: 'Yes, often. Privy owns onsite capture; Drip owns welcome-through-winback with visual workflow control. Pass signup source metadata so Drip welcome branches correctly. Disable Privy email automations once Drip journeys go live — duplicate sends destroy deliverability. Capture solved is not retention solved.',
+    answer: 'They are candidates for a capture-plus-lifecycle stack if the integration transfers source and purpose-specific permission correctly. Assign one sender to each journey and disable the previous queued automation before cutover. Test current suppression, purchase and subscription state at execution time, plus cancellation, delayed events and replay deduplication. An email signup does not establish SMS permission.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Privy or Drip?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Which has the better workflow builder?',
-    answer: 'Drip decisively for post-capture lifecycle. Visual canvas with explicit nodes for cart value splits, tag exclusions, and A/B path tests. Privy\'s automation UI is template-driven with low branching visibility — fine for welcome and cart, inadequate for winback with discount-sensitive splits.',
+    answer: 'For a workflow-led evaluation, build the same cart-value split, purchase cancellation, tag exclusion and randomized path assignment in both current plans. Inspect queued-message behavior after an audience edit, delayed order event and replayed event. Compare auditability and monthly maintenance time. Builder appearance alone does not establish safe execution or incremental revenue.',
   },
   {
     question: 'Which has better popup tools?',
-    answer: 'Privy decisively. Exit intent, gamification, cart saver bars, and popup tests are Privy\'s core. Drip offers signup forms but they are secondary — not competitive for session-to-subscriber optimization. If popup conversion is a KPI, Privy belongs in the stack regardless of Drip.',
+    answer: 'For a capture-led evaluation, test the required storefront forms, mobile behavior, accessibility, targeting and purpose-specific consent in each current plan. Use the same traffic mix and offer when comparing qualified signup rates. Verify that source metadata and suppression state reach the lifecycle sender; more signups do not by themselves establish better retention.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Measure session-to-subscriber rate first. Under 2%: Privy. Above 2% with weak cart recovery: Drip. Build welcome, cart, post-purchase, and winback in Drip — Privy only wins if capture remains the binding constraint. Score cross-journey suppression edit safety during sale week.',
+    answer: 'Propose a controlled fixture covering capture, welcome, cart, post-purchase and winback. Include a purchase just before send, an unsubscribe, a paused subscription and a duplicate webhook; verify cancellation and one eligible send per event. Track attributed orders separately from a randomized holdout estimate of incremental contribution, reporting sample size and uncertainty. Compare operating effort and matched annual costs before choosing.',
   },
 ];
 ---
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Privy vs Drip for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Capture infrastructure versus workflow canvas control. Privy optimizes session-to-subscriber conversion with popups and basic automations. Drip optimizes post-opt-in revenue with visual behavior-based journeys operators can audit and edit. We evaluated both through a $45k/mo specialty coffee roaster with irregular reorder timing, a $58k/mo outdoor gear brand pairing Privy capture with Drip lifecycle, and a $31k/mo vitamin DTC that stayed Privy-only six months too long.
+          Capture infrastructure versus workflow canvas control. Privy optimizes session-to-subscriber conversion with popups and basic automations. Drip optimizes post-opt-in revenue with visual behavior-based journeys operators can audit and edit. Use proposed fixtures: a $45k/mo coffee roaster with irregular reorder timing, a $58k/mo outdoor gear brand evaluating capture plus lifecycle, and a $31k/mo vitamin brand testing a simpler program. These are planning scenarios, not observed merchant results or completed vendor tests.
         </p>
       </header>
 
@@ -85,8 +85,8 @@ const faqs = [
           </thead>
           <tbody>
             <tr><td>Best for</td><td>Capture + basic email</td><td>Visual workflow operators</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$30/mo</td><td>From ~$39/mo</td></tr>
-            <tr><td>Billing model</td><td>Sessions + email sends</td><td>People in account</td></tr>
+            <tr><td>Starting price</td><td>Current quote required</td><td>Current quote required</td></tr>
+            <tr><td>Billing model</td><td>Verify current billable units</td><td>Verify current billable units</td></tr>
             <tr><td>Popups & capture</td><td>Core strength</td><td>Basic forms</td></tr>
             <tr><td>Automation depth</td><td>Basic welcome, cart</td><td>Full lifecycle canvas</td></tr>
             <tr><td>Workflow UI</td><td>Template presets</td><td>Visual canvas</td></tr>
@@ -104,70 +104,70 @@ const faqs = [
         
         <h2>How board game store emails through Essen release week</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          In a proposed fixture, the board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Privy reduced preview-time surprises because popup capture and simple welcome or cart messages. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          For board game pre-orders, propose a ten-day education branch covering allocation, language edition and fulfillment timing. Cancel recovery after purchase; pause winback until the actual fulfillment state permits it. Compare qualified engagement and contribution against a randomized holdout with uncertainty, rather than claiming a six-hour weekly saving or borrowing keyboard-shopping results. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise Essen release week becomes a complaint magnet regardless of ESP.
         </p>
         
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          In a proposed fixture, the specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          For tea, propose separate branches for blend, tin size, gift purchase and subscription status across a 28–35 day planning window. A gift buyer should not automatically receive personal replenishment messages. Verify current blend availability before a recommendation and test a paused subscription before any reminder; do not infer an observed CTR lift from unrelated camping segments. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          In a proposed fixture, the artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Privy reduced preview-time surprises because popup capture and simple welcome or cart messages. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          For coffee, propose origin and brew-method education before a reorder offer. Check roast availability and pack size, distinguish wholesale sample requests from consumer purchases, and suppress paused subscribers. Measure contribution and unsubscribe changes against a randomized holdout; no recovered margin or observed shopper preference is established by this fixture. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          In a proposed fixture, the climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Privy reduced preview-time surprises because popup capture and simple welcome or cart messages. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For climbing gear, propose separate harness-fit and rope-care education branches using manufacturer guidance appropriate to the exact product. Do not infer safety certification or replacement advice from marketing tags. Check the specific size and model inventory, cancel recovery after purchase, and keep promotional permission distinct from necessary order updates. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
         </p>
         <h2>How camping equipment merchant emails through Memorial Day camping spike</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          In a proposed fixture, the camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For camping equipment, propose a mobile browse fixture that distinguishes tent capacity, season rating and family-trip requirements. Verify availability of the selected tent variant before recommendation. Compare eligible email and separately permitted SMS audiences; neither a channel advantage nor a conversion lift has been observed here. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          In a proposed fixture, the pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Privy reduced preview-time surprises because popup capture and simple welcome or cart messages. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order updates first, eligible recovery second, welcome and education third, promotional broadcasts last. Operational purpose does not authorize promotional content. In each candidate, verify current purpose/channel permission, suppression, purchase and subscription state immediately before execution. Assign queue ownership, cancel obsolete messages and deduplicate replayed events; record the result rather than assuming either tool passes.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For pottery, propose distinct class-waitlist, glaze-kit buyer and gift-buyer branches. Check class-seat availability separately from kit stock and preserve signup source through the integration. Test that a class lead does not receive a kit replenishment message and a gift recipient is not assumed to have marketing permission. These are proposed checks, not observed unsubscribe results. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. If testing a proposed forty-five-minute cross-channel delay, require separate SMS permission and shared current suppression checks; that interval is not a universal safety rule. Assign one recovery owner and cancel conflicting queued sends before pairing email with SMS — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Privy workflow reality: strengths, friction, and billing</h2>
         <p>
           Privy shines when capture and basic campaigns are the bottleneck. Its friction shows when replenishment timing and browse depth are core KPIs. Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Privy (contacts and pageviews) rewards send discipline or punishes broadcast volume depending on your calendar. Drip (people in account) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Billing depends on the current contract. Model a proposed waitlist import with flat orders and a separate seasonal broadcast peak, using identical traffic, billable contacts and sends for both quotes. Include onboarding, integration support and monthly operator time. Neither scenario establishes that a vendor uses a particular billing basis; confirm exclusions, overages and renewal terms before modeling the full year.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -177,12 +177,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Drip punish partial adoption.
+          For a proposed 12,000–18,000-contact range, quote the same eligible list and seasonal sends for both tools. Preserve required suppression records when applying retention rules to inactive imports. Add only the SMS, push, reviews or loyalty services actually needed, including external providers and operator hours. Compare annual all-in cost; no plan convergence or modular-suite pricing is established here.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Drip, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          Common pattern: capture in Privy or Justuno, lifecycle in Drip, separately permitted SMS in a verified integration. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
         </p>
         
         <h2>Who should choose which</h2>
@@ -190,7 +190,7 @@ const faqs = [
         <ul>
           <li>Capture and basic campaigns are the bottleneck</li>
           <li>You will use popup capture and simple welcome or cart messages weekly</li>
-          <li>Contacts and pageviews fits your calendar</li>
+          <li>A verified quote fits your annual usage</li>
           <li>Your team can maintain Privy without external rescue</li>
           <li>Switching cost favors Privy for the next twelve months</li>
         </ul>
@@ -198,9 +198,9 @@ const faqs = [
         <ul>
           <li>An operator will maintain canvas logic every month</li>
           <li>You will use visual workflow canvas with behavior-based branching weekly</li>
-          <li>People in account fits your calendar</li>
+          <li>The verified billing basis fits your annual usage</li>
           <li>Your team can maintain Drip without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Drip migration</li>
+          <li>A randomized holdout estimate of incremental contribution, with uncertainty, supports migration costs</li>
         </ul>
         <h2>Verdict</h2>
         <p>
