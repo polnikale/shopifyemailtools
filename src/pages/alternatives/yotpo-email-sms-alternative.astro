@@ -10,7 +10,7 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('yotpo-email-sms')!;
 const path = '/alternatives/yotpo-email-sms-alternative';
 const title = 'Best Yotpo Email & SMS Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Yotpo Email & SMS — suite complexity, modular bill creep, email depth gaps — plus eight ranked lifecycle alternatives with migration checklist.';
+const desc = 'Yotpo Email and SMS sunset: evaluate replacement journeys, retained Reviews and Loyalty integrations, migration ownership, and matched operating costs.';
 
 const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'marsello', 'sendlane', 'postscript', 'smsbump', 'drip'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
@@ -19,11 +19,11 @@ const faqs = [
   { question: 'Why do Shopify merchants leave Yotpo Email & SMS?', answer: 'Yotpo Email and SMS fits stores actively using reviews and loyalty modules — merchants leave when suite bill exceeds modules operated, when email lifecycle depth trails Klaviyo or Sequenzy, or when SMS credits spike without attributed lift while reviews run fine standalone.' },
   { question: 'Should I keep Yotpo Reviews and leave Email & SMS?', answer: 'Common path — retain Yotpo Reviews integration with Klaviyo or Sequenzy lifecycle. Leave Email and SMS module when lifecycle specialist delivers better journeys at lower TCO without forcing full suite exit.' },
   { question: 'What is the best Yotpo Email & SMS replacement?', answer: 'Sequenzy for strategy-first lifecycle with pay-per-email; Klaviyo for data depth with reviews integration; Omnisend for multichannel consolidation without Yotpo modular pricing.' },
-  { question: 'Yotpo vs Marsello?', answer: 'Both consolidate retention — Yotpo stronger reviews and UGC; Marsello stronger POS loyalty hybrid. Choose based on modules actually driving revenue.' },
-  { question: 'How does Yotpo Email & SMS migration work?', answer: 'Export consent; document loyalty and review-triggered campaigns; decide reviews module fate; rebuild lifecycle on new ESP; port SMS with TCPA audit; keep reviews integration via Klaviyo or native Yotpo if retaining reviews.' },
-  { question: 'When should I stay on Yotpo Email & SMS?', answer: 'Stay when reviews, loyalty, and email campaigns actively integrate — loyalty points triggering email, UGC blocks in campaigns, SMS review requests driving submission rate. Documented module synergy justifies suite.' },
-  { question: 'Is SMSBump separate from Yotpo Email & SMS?', answer: 'SMSBump is Yotpo SMS module — consolidation to Email and SMS unified module or exit to Postscript are common rationalization paths.' },
-  { question: 'Will I lose reviews integration leaving Yotpo email?', answer: 'Klaviyo and others integrate Yotpo Reviews — email module exit does not require reviews exit. Separate reviews value from email module value in audit.' },
+  { question: 'Yotpo vs Marsello?', answer: 'Compare currently offered products and required integrations, rather than treating former Yotpo Email and SMS as an active retention suite. Yotpo announced full Email and SMS deprecation for December 31, 2025; Reviews and Loyalty are separate. Verify current POS, loyalty, reviews, and messaging requirements and matched total costs before choosing a stack.' },
+  { question: 'How does Yotpo Email & SMS migration work?', answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.' },
+  { question: 'When should I stay on Yotpo Email & SMS?', answer: 'Do not treat Email and SMS as an active stay option: Yotpo announced full deprecation for December 31, 2025. This does not imply a Reviews or Loyalty sunset. Verify replacement integrations and available account records separately; historical module synergy does not establish ongoing messaging availability.' },
+  { question: 'Is SMSBump separate from Yotpo Email & SMS?', answer: 'Treat the SMSBump name as historical in this migration context. Yotpo announced Email and SMS deprecation for December 31, 2025. A current replacement should be evaluated separately from any continuing Reviews or Loyalty product; verify account-specific records, permissions, and transfer arrangements.' },
+  { question: 'Will I lose reviews integration leaving Yotpo email?', answer: 'The Email and SMS sunset does not imply a Reviews or Loyalty sunset. Verify the replacement account and integration route against required review events, fields and templates; do not assume that every provider or plan supports them. Evaluate retained-module obligations and costs separately from messaging.' },
 ];
 ---
 
@@ -57,42 +57,42 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Yotpo Email & SMS</h2>
         <p>Modular bill creep. Reviews, Loyalty, Email, SMS — each defensible alone, combined expensive when email and SMS modules underutilized. Board-game store keeps Yotpo Reviews, moves lifecycle to Sequenzy, cuts suite cost forty percent.</p>
-        <p>Email depth gaps. Browse abandonment, predictive winback, agent-first replenishment — Yotpo Email handles campaigns and basic automation; specialists productize lifecycle operations Yotpo modules approximate with configuration tax.</p>
-        <p>SMS economics. Credits spike during promotional weeks — finance compares to Postscript or Omnisend unified SMS; Yotpo SMS convenient inside suite but not always cheapest or deepest for TCPA-heavy growth.</p>
-        <p>Yotpo Email and SMS wins integrated stack — loyalty email when points balance hits threshold, review request SMS post-delivery, UGC in campaign blocks. Stay with quarterly module ROI audit proving synergy, not convenience.</p>
+        <p>Yotpo announced full Email and SMS deprecation for December 31, 2025. Treat this as a historical messaging product rather than a current option to renew. Reviews and Loyalty are separate products; the messaging sunset does not imply that they ended. Verify available account records and replacement integrations before planning recovery work.</p>
+        <p>Compare replacement SMS economics using matched destinations, message lengths, traffic and required support. Include platform fees, carrier charges, overages, integration work and transition costs. An attributed order after a text does not establish that the text caused the purchase or that one provider costs less.</p>
+        <p>Historical suite integration does not make deprecated Email and SMS a current stay option. Inventory any surviving Reviews or Loyalty dependencies separately, and test the replacement sender against the events and eligibility rules those journeys require.</p>
 
         <h2>Suite audit before exit</h2>
-        <p>Separate reviews value from email module value. Klaviyo integrates Yotpo Reviews — email exit does not force reviews exit. Loyalty module: keep if redemption drives repeat purchase; cancel if points program failed. SMS: port to Postscript or consolidate Omnisend with TCPA discipline.</p>
-        <p>Document loyalty-triggered and review-triggered flows before migration — rebuild triggers on new ESP or retire with cancelled loyalty.</p>
+        <p>Evaluate Reviews and Loyalty independently from the retired messaging product. Verify current integration support, customer obligations, points balances and available exports before retaining or replacing either. Low redemption alone is insufficient grounds to cancel a points program; review outstanding commitments and transition options.</p>
+        <p>Document review and loyalty event dependencies, message purpose, permission requirements, exclusions and queued work. Verify which records remain accessible rather than assuming the former Email and SMS account can still export data. Retire or rebuild each dependency deliberately.</p>
 
         <h2>Newsletters, lifecycle, and suite email limits</h2>
         <p>Yotpo Email handles campaigns with UGC blocks — lifecycle depth for browse abandonment and predictive winback trails specialists. Merchants leaving email module keep reviews-driven newsletter content via integration on Klaviyo or Sequenzy while gaining flow sophistication.</p>
-        <p>SMS in suite often served review requests and loyalty alerts — not cart recovery. Rebuild cart on lifecycle ESP; do not assume Yotpo SMS module was recovery platform.</p>
+        <p>Inventory historical SMS journeys from available records rather than assuming they served only review requests or only cart recovery. Separate transactional purposes from marketing, preserve channel-specific permission and withdrawal evidence, and confirm the replacement can enforce the intended eligibility rules.</p>
 
         <h2>Yotpo Email & SMS migration checklist</h2>
         <ol>
           <li><strong>Audit each Yotpo module ROI</strong> — reviews, loyalty, email, SMS separately.</li>
-          <li><strong>Export marketing consent and SMS audit trail</strong>.</li>
+          <li><strong>Verify available exports with purpose/channel permissions, withdrawals and suppression history</strong>.</li>
           <li><strong>Document points-triggered and review-triggered automations</strong>.</li>
           <li><strong>Decide reviews and loyalty fate</strong> — keep, replace, or cancel independent of email exit.</li>
           <li><strong>Connect replacement lifecycle ESP to Shopify</strong> — configure Yotpo reviews integration if keeping reviews.</li>
-          <li><strong>Rebuild welcome and cart on new ESP</strong> — pause Yotpo email equivalents after QA.</li>
-          <li><strong>Fourteen-day parallel suppression</strong>.</li>
-          <li><strong>Port SMS with TCPA review</strong> — hard cutover, align email suppression.</li>
+          <li><strong>Rebuild welcome and cart on the replacement</strong> — test purchases, exclusions and replayed events; confirm historical sender and queue status with providers.</li>
+          <li><strong>Assign one sender and queue owner per journey; recheck current suppression at dispatch</strong>.</li>
+          <li><strong>Verify SMS transfer arrangements</strong> — preserve purpose/channel permission and withdrawal evidence; test current eligibility and ownership before activation.</li>
           <li><strong>Migrate post-purchase and winback</strong> — retain UGC blocks via reviews integration not Yotpo email module.</li>
           <li><strong>Redirect popup integrations to new ESP</strong>.</li>
-          <li><strong>Recalculate modular bill post-exit</strong> — finance confirms savings.</li>
-          <li><strong>Archive Yotpo email templates ninety days</strong>.</li>
+          <li><strong>Recalculate matched all-in costs</strong> — include carrier charges, overages, retained modules, extra apps, labor and transition costs without presuming savings.</li>
+          <li><strong>Verify available template records and appropriate retention before account closure</strong>.</li>
         </ol>
 
         <h2>Three merchant scenarios</h2>
-        <p><strong>Artisan coffee — kept Reviews, left Email & SMS.</strong> Klaviyo lifecycle with Yotpo reviews integration; SMS to Postscript. Loyalty cancelled — redemption under four percent. Suite bill dropped, lifecycle depth improved.</p>
+        <p><strong>Artisan coffee — proposed replacement test.</strong> Verify whether a replacement can consume the required review and loyalty events, route a replenishment reminder, and exit after a purchase. Compare retained-module and replacement costs under matched usage; no savings or lifecycle improvement has been observed here.</p>
         <p><strong>Vinyl shop — full exit to Sequenzy plus Postscript.</strong> Reviews moved to Judge.me; loyalty never launched. Yotpo suite overbought for catalog — Sequenzy drop lifecycle plus Postscript SMS at lower TCO.</p>
-        <p><strong>Pottery studio — stayed on Yotpo suite.</strong> Loyalty workshop credits, review SMS, and email campaigns integrate — points balance emails drive class bookings. Module synergy documented quarterly.</p>
+        <p><strong>Pottery studio — proposed retained-module test.</strong> Reviews or Loyalty may remain useful if current account requirements pass. Test workshop-credit balances and review requests independently from replacement marketing journeys. Deprecated Email and SMS is not a current stay option.</p>
 
         <h2>Module synergy vs modular convenience</h2>
         <p>Yotpo Email and SMS value is integration lift — loyalty points email when balance crosses threshold, review request SMS after delivery, UGC product blocks in campaigns. If modules operate independently without cross-triggers, you are paying suite premium for logo consolidation only. Quarterly audit: count automations using two or more Yotpo modules; if under three, unbundle email to Sequenzy while keeping reviews.</p>
-        <p>SMS credit spikes during sale weeks require channel mix analysis — email holdout versus SMS blast on same segment reveals true incrementality. Vinyl drop alerts may justify SMS; workshop reminder emails may not need SMS duplicate.</p>
+        <p>Use a suitable controlled comparison to estimate incremental channel contribution. Where feasible compare email only, SMS only, combined messaging and a holdout with comparable eligible cohorts. Account for discounts, returns, delivery and sample uncertainty; a simple email-versus-SMS attributed-revenue comparison cannot establish causal lift.</p>
 
         <h2>Due diligence before Yotpo email exit</h2>
         <p>Negotiate module downgrade with account rep — reviews retention may improve pricing. Export loyalty ledger before cancel if points program ends. Map review request flows — ensure Judge.me or retained Yotpo reviews still functions. TCPA audit before SMS port. Test Klaviyo or Sequenzy Yotpo reviews integration in staging before production cutover. Finance spreadsheet: modular bill before and after with realistic send volumes not list size alone.</p>
@@ -109,21 +109,21 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Klaviyo data depth plus Yotpo reviews integration — browse abandonment, predictive winback, unified SMS optional. Upgrade path when Yotpo email segmentation ceiling hit.',
-          'Profile pricing — hygiene lists. Reviews UGC blocks via integration not Yotpo email module.',
-          'Pick Klaviyo when catalog complexity drives margin — outdoor gear, board-game expansions.',
+          'Evaluate Klaviyo with the required Shopify and retained review events. Confirm current plan support, field mappings, purchase exits and channel eligibility in the intended account.',
+          'Compare actual billable profile and send rules. Preserve withdrawals and suppression history rather than removing records solely to lower a bill.',
+          'Use outdoor-gear variants and board-game expansion purchases as proposed fixtures; no margin improvement is established.',
         ]} />
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Omnisend consolidate email and SMS without Yotpo modular pricing — prebuilt journeys, shared suppression. Exit both Yotpo email and SMS modules while reviews stay or migrate.',
-          'SMB pricing predictable. Faster than configuring Yotpo email automations piecemeal.',
-          'Choose when multichannel consolidation beats suite convenience.',
+          'Evaluate Omnisend as a replacement candidate for required messaging journeys. Test retained Reviews dependencies independently from the retired Yotpo Email and SMS product.',
+          'Verify current usage limits, charges and setup effort under matched traffic; no predictable saving or faster migration is established.',
+          'Choose only after required channel permissions, purchase exits, queue ownership and integration tests pass.',
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Marsello alternative suite if POS loyalty was Yotpo gap — hybrid retail pottery studio workshop credits. Compare suite bills — may trade one modular complexity for another.',
-          'Choose only with active POS and loyalty synergy — not pure DTC ecommerce exit.',
-          'Evaluate Marsello versus keeping Yotpo loyalty only.',
+          'Evaluate Marsello against required POS and loyalty events, such as pottery workshop credits. Compare outstanding program obligations and matched operating costs.',
+          'Do not impose a POS-only or pure-DTC exclusion; test the actual requirements and current plan.',
+          'Compare with retained Yotpo Loyalty separately from deprecated Email and SMS.',
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
@@ -134,20 +134,20 @@ const faqs = [
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
           'Postscript SMS specialist when exiting Yotpo SMS module only — keep reviews, move email to Sequenzy. TCPA depth for growing SMS list.',
-          'Pair architecture common after Yotpo unbundle.',
-          'Choose for SMS exit while reviews remain on Yotpo.',
+          'Verify the required replacement integration, support scope and cost; no common merchant architecture is established.',
+          'Test SMS eligibility and review dependencies independently if retaining Yotpo Reviews.',
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'SMSBump same ecosystem — lateral move within Yotpo if rationalizing modules not exiting. Compare unified Email and SMS versus separate SMSBump line item.',
-          'Not escape from Yotpo — internal consolidation only.',
-          'Evaluate before leaving ecosystem entirely.',
+          'SMSBump is historical in this migration context. Yotpo announced full Email and SMS deprecation for December 31, 2025.',
+          'Do not treat SMSBump as a current internal consolidation alternative or infer a Reviews or Loyalty sunset.',
+          'Verify available records, permission evidence and provider transfer arrangements before relying on a replacement.',
         ]} />
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Drip visual workflows for operators wanting builder control post-Yotpo — tag-based branching, per-contact pricing. Reviews integration external.',
-          'Choose if builder preference remains after suite fatigue.',
-          'Sunset lists before migrating from Yotpo popup captures.',
+          'Evaluate Drip with the required branch conditions, review-event fields and purchase exits in the intended account. Confirm current integration route and billing rules.',
+          'Measure builder maintenance effort with the team that will operate the journeys.',
+          'Preserve purpose/channel permissions, withdrawals and suppression history; do not equate imported popup records with eligibility.',
         ]} />
       </section>
 
@@ -172,30 +172,30 @@ const faqs = [
 
   <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Four-week Yotpo email module exit timeline</h2>
-    <p><strong>Week 1 — Module ROI spreadsheet.</strong> Reviews, loyalty, email, SMS attributed separately. Negotiate downgrade options. TCPA export for SMS port.</p>
+    <p><strong>Inventory gate — records and obligations.</strong> Separate Reviews, Loyalty and historical messaging records. Verify available exports, outstanding balances, sender identities, purpose/channel permissions, withdrawals and suppression history. Do not assume a deprecated account or number remains accessible.</p>
     <p><strong>Week 2 — Lifecycle rebuild.</strong> Sequenzy or Klaviyo core flows. Yotpo reviews integration tested in staging. Loyalty-triggered emails paused or rebuilt.</p>
-    <p><strong>Week 3 — SMS alignment.</strong> Postscript or Omnisend SMS live with suppression matching email. Points SMS retired or migrated. UGC blocks in campaigns via reviews integration not email module.</p>
-    <p><strong>Week 4 — Suite bill validation.</strong> Cancel email module. Finance confirms savings. Quarterly module synergy review scheduled if reviews retained.</p>
+    <p><strong>Dispatch gate — ownership and eligibility.</strong> Assign one sender and queue owner per journey. Drain or cancel old queued work where access permits, and explicitly handle inaccessible queues with providers. Recheck current purchase, permission and suppression state before dispatch; deduplicate replayed events using stable identifiers.</p>
+    <p><strong>Reconciliation gate — costs and retained modules.</strong> Confirm actual invoices and provider terms rather than promising savings. Validate retained Reviews and Loyalty dependencies and outstanding obligations before closing any account. Readiness, rather than a fixed week, controls the transition.</p>
 
     <h2>Buyer desk: module-level ROI</h2>
     <p>Yotpo Email and SMS exit requires module audit — paying for loyalty nobody redeems while moving email is correct unbundle. Reviews integration can survive on Klaviyo or Sequenzy without email module.</p>
-    <p>SMS porting and email suppression alignment day one — points-triggered texts and cart recovery emails must not collide on discount policy.</p>
-    <p>Success at ninety days: lifecycle depth improved, suite bill reduced or justified by kept modules, reviews flow still drives UGC if retained, finance sees clear attribution per channel. Partial unbundle beats chaotic full exit when reviews module clearly wins.</p>
+    <p>Verify number-transfer availability and provider responsibilities before scheduling SMS cutover. Email permission does not establish SMS permission. Define channel and purpose eligibility, a single queue owner, purchase exits and cross-channel incentive rules, then test them with delayed and replayed events.</p>
+    <p>Define success through correct journeys, intact retained-module dependencies and explainable costs. Distinguish attributed revenue from causal contribution, using a suitable holdout where feasible and reporting uncertainty. No fixed date guarantees savings, improved lifecycle depth or more reviews.</p>
 
     <h2>Unbundle versus full exit matrix</h2>
     <p>Keep Yotpo Reviews, exit Yotpo Email → Sequenzy or Klaviyo lifecycle. Keep loyalty, move SMS → Postscript with points-trigger suppression documented. Full exit only when no module clears standalone ROI — rare for established UGC-heavy beauty and outdoor brands with active community content.</p>
-    <p><strong>Scenario — camping gear reviews-heavy.</strong> Yotpo Email depth insufficient for collection browse abandonment; migrated lifecycle to Klaviyo, kept reviews module — suite bill dropped 28% with stronger automation.</p>
+    <p><strong>Scenario — proposed camping-gear test.</strong> Keep a review dependency in the test stack while evaluating collection-browse and purchase events in the replacement. Exercise exclusion and replay cases, measure maintenance effort, and compare matched invoices. No migration result or percentage saving is asserted.</p>
     <h2>Collision rules on partial exit</h2>
-    <p>Loyalty points-triggered SMS and ESP cart recovery must share discount policy wiki — points redemption plus cart code same week trains margin leak. Module audit quarterly: paying for loyalty nobody redeems is correct unbundle signal.</p>
+    <p>Document how loyalty redemptions interact with cart and winback incentives. Test a redemption arriving after a message is queued and recheck eligibility before dispatch. Review program obligations and actual operating costs; low redemption does not by itself justify cancellation.</p>
     <h2>Reviews-only retention path</h2>
-    <p>Keep Yotpo Reviews on Klaviyo lifecycle when UGC velocity high but email module shallow — partial unbundle common for outdoor gear with collection browse abandonment needs.</p>
+    <p>If retaining Yotpo Reviews, verify the chosen replacement integration and required fields in the actual account. Test request completion, fulfillment events and permission separately from promotional collection-browse journeys. Do not assume integration support or better segmentation from a vendor name.</p>
 
     <h2>SMS module rationalization</h2>
-    <p>SMSBump exit should trigger full Yotpo stack audit — paying loyalty nobody operates mirrors SMS credits without attribution. TCPA port plus email ESP suppression day one; points texts and cart recovery share discount policy wiki.</p>
+    <p>Treat SMSBump as historical in this context, consistent with the Email and SMS sunset. Audit surviving Reviews and Loyalty dependencies separately. Confirm current provider transfer terms, purpose/channel eligibility, suppression handling and message ownership before relying on any replacement.</p>
     <p>Beauty brand kept reviews plus loyalty, moved lifecycle Sequenzy — suite bill down, replenishment by usage window up. Camping gear kept reviews only, Klaviyo browse depth — 28% bill drop.</p>
 
     <h2>90-day unbundle proof plan</h2>
-    <p>Week 1: module audit spreadsheet — reviews, loyalty, email, SMS revenue attributed per line. Week 2: migrate highest-revenue lifecycle flow to replacement ESP. Week 3: align points-trigger SMS with cart suppression. Week 4–8: remaining flows with collision doc. Week 9–12: holdout on loyalty-email versus email-only path. Day 90: suite bill down or justified by kept modules with redemption evidence.</p>
+    <p>Sequence the work by readiness: inventory available records, map retained-module dependencies, test replacement flows, resolve queue ownership and replay deduplication, then reconcile delivery and costs. A controlled evaluation may compare loyalty-related and other journeys where feasible; report attribution separately from incremental contribution and disclose sample limits.</p>
     <p>Mechanical keyboard merchant paid email module without reviews velocity — unbundled to Sequenzy, kept no Yotpo modules, saved 31% annual. Vinyl label full stack with keyword SMS and UGC blocks — stayed Yotpo, justified on drop-week incrementality.</p>
     <p>Points-triggered SMS same week as ESP cart discount trains margin leak — discount policy wiki shared across modules before partial exit. Reviews-only path: keep Yotpo Reviews, migrate lifecycle Klaviyo or Sequenzy when browse abandonment by collection becomes daily ops requirement.</p>
 
@@ -204,9 +204,9 @@ const faqs = [
   </article>
 
     <h2>Yotpo decouple: what stays versus what moves</h2>
-    <p>Default split: keep Yotpo for on-site reviews and loyalty ledger; move browse, cart, winback, and broadcast to ESP when campaign segmentation feels manual. Exception: keep Yotpo email if review-request timing is your highest revenue per send and ESP rebuild would miss fragile-product windows. Pottery and vinyl need delivery-confirmed review asks — migrate those triggers last. Outdoor gear needs photo reviews in email widgets — can stay Yotpo-powered while journeys move. Loyalty point expiration emails must sync promo calendar in new ESP or customers stack discounts. Run thirty-day parallel on post-purchase only before cutting Yotpo campaign sends.</p>
+    <p>Decide separately which Reviews and Loyalty functions to retain and which messaging journeys to rebuild. Yotpo announced full Email and SMS deprecation for December 31, 2025; keeping that product is not a current exception. For pottery and vinyl, test fulfillment and delivery events before requesting reviews. For outdoor gear, verify required review content fields and destination templates. Reconcile points balances, offer conflicts, queued work and purchase exits before dispatch. Replace a fixed parallel-run period with a readiness gate and one sender owner per journey.</p>
 
-    <p>Yotpo decoupling succeeds when loyalty and reviews stay synchronized — campaign moves to ESP should not break points balance in templates.</p>
+    <p>If retaining loyalty or reviews, test synchronization explicitly: points balances, review identifiers, permission records and current customer state must map to the intended template fields. Record failures and rollback actions rather than claiming that decoupling has succeeded.</p>
 
   <FaqSection faqs={faqs} title="Yotpo Email & SMS alternatives FAQ" />
 </BaseLayout>
