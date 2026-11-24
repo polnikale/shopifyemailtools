@@ -48,7 +48,7 @@ const lifecycle: Tool[] = [
   { name: 'Sequenzy', url: 'https://sequenzy.com', best: 'operator-led lifecycle sequences', pros: 'Focused sequence operation and control', cons: 'Validate Shopify event coverage for the use case', price: 'Verify current plan, contact, and integration terms' },
   { name: 'Klaviyo', url: 'https://www.klaviyo.com', best: 'deep Shopify event and catalog segmentation', pros: 'Rich product, customer, and flow conditions', cons: 'More setup and profile-based cost', price: 'Verify current profile, send, and SMS pricing' },
   { name: 'Omnisend', url: 'https://www.omnisend.com', best: 'multichannel ecommerce journeys', pros: 'Fast email and SMS store workflows', cons: 'Channel cost and collision governance', price: 'Verify current contacts, sends, and SMS pricing' },
-  { name: 'Shopify Email', url: 'https://www.shopify.com/email', best: 'simple broadcasts inside Shopify Admin', pros: 'Low-friction native store operation', cons: 'Less behavioral depth than specialist suites', price: 'Verify current send and Shopify plan limits' },
+  { name: 'Shopify Email', url: 'https://www.shopify.com/email', best: 'native campaigns and supported marketing automations', pros: 'Shopify Messaging, formerly Shopify Email, operates inside Shopify', cons: 'Verify the required triggers, segments and plan coverage in the actual account', price: 'Verify current send and Shopify plan limits' },
   { name: 'Privy', url: 'https://www.privy.com', best: 'onsite capture plus simple campaigns', pros: 'Capture and basic messaging in one workflow', cons: 'Advanced lifecycle logic may need another tool', price: 'Verify current contacts, sends, and feature limits' },
 ];
 
@@ -87,8 +87,8 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
     pilot: 'Launch one flow and log every competing message, purchase, opt-out, and support event for the pilot cohort.',
   },
   'Shopify Email': {
-    one: 'Shopify Email fits merchants that mainly need campaigns and straightforward segments inside Shopify Admin. Native operation reduces integration surface area and makes ownership easy to explain when the store has one marketer and a modest lifecycle.',
-    two: 'The limitation appears when the store needs intricate event branching, catalog logic, or coordinated SMS. Treat simplicity as a deliberate operating choice, not proof that the tool handles specialist use cases.',
+    one: 'Shopify Messaging, formerly Shopify Email, includes native campaigns and marketing automations. Test the required triggers, segments, purchase exits and account permissions before adding a separate sender; native operation does not establish that every lifecycle requirement is covered.',
+    two: 'Verify required event branching, catalog logic and channel coordination in the actual configuration rather than assuming that native automation is absent or that a specialist is always required. Assign ownership for queued messages and cancellation when customer state changes.',
     pilot: 'Use one campaign and one simple lifecycle message; inspect data access, suppression, and reporting before adding another app.',
   },
   Privy: {
@@ -102,8 +102,8 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
     pilot: 'Rebuild one welcome, cart, or post-purchase sequence with explicit entry, exit, suppression, and rollback tests.',
   },
   Yotpo: {
-    one: 'Yotpo belongs in the conversation when reviews, loyalty, and customer messaging are part of one retention program. A review or loyalty state can change the next message in ways a standalone sender may not understand.',
-    two: 'Suite breadth can also create module overlap and cost complexity. List which modules are active, identify the system of record, and prevent a second email or SMS platform from sending competing requests.',
+    one: 'Yotpo announced Email and SMS deprecation for December 31, 2025. Treat the former sending products as historical, separately from Reviews and Loyalty. Inventory review and points events that a replacement sender would need rather than assuming the old suite still executes those messages.',
+    two: 'Verify current retained-module contracts, supported destinations, identity mapping and data access. A Reviews or Loyalty subscription does not prove that a former Email or SMS trigger remains available; assign one current sender and queue owner for each job.',
     pilot: 'Use delivery or usage state to request a review, then test support routing and suppression after a complaint.',
   },
   Drip: {
@@ -172,7 +172,7 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <p class="section-description">The right Shopify email app depends on catalog events, fulfillment state, consent, message frequency, and the team operating the flows. This guide focuses on {topic.goal} for {topic.audience}.</p>
       <div class="my-8 p-6 rounded-xl bg-accent/10 border border-accent/20">
         <h2 class="text-2xl font-bold text-white mb-3">Decision summary</h2>
-        <p class="text-neutral-300">{insight} For {topic.goal}, {rule} Confirm current app pricing, Shopify permissions, consent handling, and integration behavior on official sources.</p>
+        <p class="text-neutral-300">{insight} For {topic.goal}, {rule} Confirm current app pricing, Shopify permissions, consent handling, and integration behavior on official sources. Vendor descriptions here are evaluation hypotheses, not certified current features or observed merchant tests. Record purpose and channel permission separately, recheck current suppression and purchase state at dispatch, and test stale-job cancellation and replay deduplication with stable identifiers.</p>
       </div>
       <h2>Shortlist by Shopify operating fit</h2>
       <p>These apps cover different jobs: commerce segmentation, native campaigns, capture, CRM, support-aware messaging, subscription state, and developer-owned delivery. The right shortlist depends on the message owner and the signal needed to stop or redirect it.</p>
@@ -201,16 +201,16 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <table>
         <thead><tr><th>Shopify signal</th><th>Message job</th><th>Control</th><th>Outcome to inspect</th></tr></thead>
         <tbody>
-          <tr><td>Browse, cart, order, delivery, or catalog context</td><td>One useful, audience-relevant message</td><td>Suppress collisions, purchases, opt-outs, and support cases</td><td>Incremental order or qualified engagement</td></tr>
-          <tr><td>Inventory, variant, subscription, or fulfillment state</td><td>Education, replenishment, review, or service update</td><td>Confirm state freshness and message ownership</td><td>Support, refund, complaint, and repeat-purchase impact</td></tr>
-          <tr><td>Consent and channel preference</td><td>Email, SMS, or transactional delivery</td><td>Respect source, region, quiet hours, and unsubscribe</td><td>Delivery, opt-out, complaint, and preference-center health</td></tr>
+          <tr><td>Browse, cart, order, delivery, or catalog context</td><td>One useful, audience-relevant message</td><td>Recheck current purchase and suppression state at dispatch; cancel stale queued sends and deduplicate replayed events</td><td>Incremental order or qualified engagement</td></tr>
+          <tr><td>Inventory, variant, subscription, or fulfillment state</td><td>Education, replenishment, review, or service update</td><td>Confirm state freshness and one sender and queue owner per job, including retry and cancellation paths</td><td>Support, refund, complaint, and repeat-purchase impact</td></tr>
+          <tr><td>Consent and channel preference</td><td>Email, SMS, or transactional delivery</td><td>Verify purpose and channel permission separately from service-message purpose; respect current opt-outs and applicable quiet hours</td><td>Delivery, opt-out, complaint, and preference-center health</td></tr>
         </tbody>
       </table>
       <h2>FAQ</h2>
       <h3>How many Shopify email apps does a store need?</h3>
       <p>Usually fewer than the marketplace suggests. Start with the system that owns the message and add a specialist only when it receives a signal or provides a workflow the primary system cannot safely handle.</p>
       <h3>Should every app be tested with a discount?</h3>
-      <p>No. Use a holdout or matched comparison where possible and include discount cost, refunds, app fees, support load, and margin in the evaluation.</p>
+      <p>No. Use a randomized holdout or a justified matched comparison where possible. Vendor-attributed purchases do not establish causal incremental lift. Compare contribution after discounts and refunds with matched subscriptions, usage, integrations, migration, support and reply labor; do not assume an extra recovered cart pays for a platform.</p>
       <p class="text-neutral-400">Related reading: <a href="/use-cases/index">Shopify email use cases</a>, <a href="/guides/selection-framework">the app selection framework</a>, and <a href="/guides/flow-collision-prevention">flow collision prevention</a>.</p>
     </div>
   </article>
