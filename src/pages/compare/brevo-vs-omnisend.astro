@@ -6,29 +6,29 @@ import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/brevo-vs-omnisend';
-const title = 'Brevo vs Omnisend: Budget Sends vs Multichannel Presets';
-const desc = 'Brevo vs Omnisend for Shopify email tools — send-volume pricing vs contact-tier multichannel, transactional SMTP vs push-SMS journeys, and graduation paths for budget DTC.';
+const title = 'Brevo vs Omnisend: Shopify Workflow and Cost Tests';
+const desc = 'Compare Brevo and Omnisend through proposed Shopify workflow tests, channel eligibility, sender ownership, operational effort and matched annual costs.';
 
 const faqs = [
   {
     question: 'Is Brevo or Omnisend better for Shopify stores?',
-    answer: 'Omnisend wins ecommerce-native multichannel presets — email, SMS, push journeys live fast. Brevo wins send-volume economics and transactional SMTP separation for budget-conscious stores with selective sending. Neither matches Klaviyo browse depth at scale.',
+    answer: 'Choose from demonstrated coverage of the required Shopify message jobs. Test event fields, current exclusions, channel access and operator effort in the actual plans. No universal winner, preset speed advantage or comparison with a third platform is established here.',
   },
   {
     question: 'How does Brevo vs Omnisend pricing compare at 10,000 contacts?',
-    answer: 'Omnisend Standard near $90–150/mo by contacts. Brevo often lower when emailing engaged subsets at high monthly send volume. Omnisend punishes inactive contacts in tiers; Brevo punishes broadcast-everyone volume.',
+    answer: 'Obtain dated quotes for the same eligible contacts, retention rules, sends, channels and peak months. A 10,000-contact count alone does not establish either bill. Include integrations, migration, operations and reply labor; no current price range or saving is certified.',
   },
   {
     question: 'Which has better Shopify automation presets?',
-    answer: 'Omnisend — prebuilt welcome, cart, post-purchase with push step two. Brevo automation capable but generic — more configuration for ecommerce exclusions and gift logic.',
+    answer: 'Build the same welcome, cart and post-purchase paths in both accounts. Check supported triggers and fields, then test gift-buyer exclusions, current purchase exits, stale-job cancellation and replay deduplication. A preset name alone does not prove complete coverage or faster deployment.',
   },
   {
     question: 'Does Brevo transactional SMTP matter?',
-    answer: 'Yes for pottery studios and coffee merchants separating operational order updates from marketing on subdomain. Omnisend marketing-focused — pair transactional ESP or use Brevo SMTP for operational layer.',
+    answer: 'For a proposed pottery or coffee stack, verify the required service-message events, API or SMTP access and sender configuration. Separate service notices from promotional cross-sells by purpose and assign one queue owner per job. A subdomain alone does not establish permission, compliance or deliverability.',
   },
   {
     question: 'Can Brevo replace Omnisend?',
-    answer: 'For email-only selective sending yes. For unified SMS push recovery on mobile browse, Omnisend structural advantage. Camping mobile traffic often needs push Omnisend includes.',
+    answer: 'Inventory required email, SMS and push jobs and demonstrate each in the actual plans and integrations. Check purpose-specific channel permission and current suppression before dispatch. Mobile traffic alone does not establish a need for push, a vendor advantage or replacement coverage.',
   },
   {
     question: 'When do you outgrow both?',
@@ -36,11 +36,11 @@ const faqs = [
   },
   {
     question: 'Which handles artisan coffee replenishment?',
-    answer: 'Omnisend preset delays plus SMS backup faster to deploy. Brevo achieves similar with automation builder time. Speed favors Omnisend; cost favors Brevo at selective send volume.',
+    answer: 'For an illustrative coffee test, use authoritative SKU, pause, skip and renewal state. Queue replenishment, pause the subscription or record a purchase, and verify exits and replay handling. Measure setup effort and matched all-in cost rather than assuming a speed or price winner.',
   },
   {
     question: 'What workflow test decides Brevo vs Omnisend?',
-    answer: 'Build cart with SMS/push, post-purchase gift exclusion, replenishment, winback. Omnisend faster time-to-live. Brevo wins if send-model cost lower at your volume and you skip push. Score calendar and channel needs.',
+    answer: 'Build matched cart, gift-exclusion, replenishment and inactivity paths. Verify purpose and channel permission, current withdrawal, suppression and purchase state, queue ownership, stale-job cancellation and replay deduplication. Compare operator effort, matched all-in costs and causal incremental contribution using an eligible holdout; attributed revenue alone does not establish lift.',
   },
 ];
 ---
@@ -60,18 +60,18 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Brevo vs Omnisend for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Send-volume budget sender versus ecommerce multichannel presets — two mid-market on-ramps before Klaviyo depth. We evaluated both through an artisan coffee roaster optimizing selective send costs on Brevo, a camping equipment store needing Omnisend push browse recovery, and a pottery studio using Brevo transactional SMTP plus Omnisend marketing in hybrid split.
+          Compare the same Shopify message jobs in Brevo and Omnisend before selecting either plan. The coffee, camping and pottery scenarios below are illustrative test briefs, not observed merchant results. Demonstrate the required events, channel access, current exclusions and operator controls in each account; no cost, deployment-speed or revenue winner is established here.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'Send economics', tool: 'Brevo', reason: 'Volume pricing favors selective senders.' },
-            { label: 'Multichannel presets', tool: 'Omnisend', reason: 'Email, SMS, push journeys fast.' },
-            { label: 'Transactional SMTP', tool: 'Brevo', reason: 'Operational email separation.' },
-            { label: 'Mobile push recovery', tool: 'Omnisend', reason: 'Native push in automations.' },
-            { label: 'Ecommerce templates', tool: 'Omnisend', reason: 'Shopify-oriented out of box.' },
+            { label: 'Send economics', tool: 'Compare quotes', reason: 'Match contacts, sends, channels and peak months.' },
+            { label: 'Multichannel paths', tool: 'Test both', reason: 'Verify actual plan access and current permission.' },
+            { label: 'Service messages', tool: 'Assign ownership', reason: 'Demonstrate API or SMTP and purpose separation.' },
+            { label: 'Mobile recovery', tool: 'Test eligibility', reason: 'Mobile traffic alone does not authorize push.' },
+            { label: 'Shopify templates', tool: 'Inspect fields', reason: 'A preset name does not prove complete coverage.' },
           ]}
         />
       </div>
@@ -81,11 +81,11 @@ const faqs = [
         <table class="data-table">
           <thead><tr><th>Dimension</th><th>Brevo</th><th>Omnisend</th></tr></thead>
           <tbody>
-            <tr><td>Pricing</td><td>Send volume</td><td>Contact tiers</td></tr>
-            <tr><td>Channels</td><td>Email, SMS</td><td>Email, SMS, push</td></tr>
-            <tr><td>Shopify presets</td><td>Generic</td><td>Ecommerce-native</td></tr>
-            <tr><td>Transactional</td><td>SMTP strong</td><td>Marketing focus</td></tr>
-            <tr><td>Ceiling</td><td>Mid before specialists</td><td>Mid before Klaviyo</td></tr>
+            <tr><td>Pricing</td><td>Quote matched annual volume and features</td><td>Quote matched contacts, sends and channels</td></tr>
+            <tr><td>Channels</td><td>Verify required email, SMS or push access</td><td>Verify required email, SMS or push access</td></tr>
+            <tr><td>Shopify presets</td><td>Demonstrate triggers, fields and exits</td><td>Demonstrate triggers, fields and exits</td></tr>
+            <tr><td>Transactional</td><td>Verify service-event transport and owner</td><td>Verify service-event transport and owner</td></tr>
+            <tr><td>Fit limit</td><td>Document missing jobs and operator effort</td><td>Document missing jobs and operator effort</td></tr>
           </tbody>
         </table>
       </div>
@@ -93,112 +93,112 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Brevo and Omnisend sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Brevo is optimized when cost per send matters more than predictive merchandising. Omnisend is optimized when you need cart, welcome, and post-purchase live in days. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Use newsletters, lifecycle paths and service notices as separate acceptance tests. For each platform, record the exact plan, Shopify integration, available event fields and any connector dependency. Test cart, welcome and post-purchase jobs against the same requirements and record setup and maintenance effort. Platform labels do not establish deployment time, predictive coverage or suitability for a particular merchant.
         </p>
         
         <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          An illustrative artisan coffee roaster uses a planning assumption of 860 orders/mo at roughly $52k/mo. Its planning rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Coffee education should follow signup source and bean preference. Keep wholesale sample follow-ups separate from consumer replenishment. Queue a day-thirty reminder, then pause the subscription or record a fresh purchase before dispatch. The owner must cancel the stale reminder and ignore replayed order events; verify that a later resume does not duplicate the original job.
         </p>
         <h2>How climbing gear store emails through spring rack refresh</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          An illustrative climbing gear store uses a planning assumption of 1,100 orders/mo at roughly $89k/mo. Its planning rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Brevo reduced preview-time surprises because affordable email volume with SMS and transactional options. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Use harness-fit and fall-rating page events only when collection and the intended marketing use are permitted. Verify product guidance against manufacturer materials; education engagement does not prove safe equipment selection. Replay a browse event after purchase and confirm that recovery stops. Compare relevant education with a matched eligible holdout rather than reporting clicks as recovered margin.
         </p>
         <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          An illustrative camping equipment merchant uses a planning assumption of 1,350 orders/mo at roughly $78k/mo. Its planning rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          Use tent-capacity quiz answers to distinguish family camping from ultralight trips. A mobile product view does not grant browser-push or SMS permission. Test opt-out after queueing, a sold-out variant and a completed purchase before dispatch. Inspect destination inventory and cancel stale recovery rather than assuming a preset keeps every linked product available.
         </p>
         <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          An illustrative pottery studio uses a planning assumption of 480 orders/mo at roughly $31k/mo. Its planning rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Brevo reduced preview-time surprises because affordable email volume with SMS and transactional options. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Class waitlist leads need studio policies and relevant class availability, while glaze-kit buyers need product-specific care. Record signup purpose and exclude class-only leads from unrelated product promotion unless separately eligible. Test a gift buyer and class attendee with the same email address; a shared profile must not erase the purpose distinction or trigger duplicate education.
         </p>
         <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          An illustrative vinyl record shop uses a planning assumption of 1,800 orders/mo at roughly $72k/mo. Its planning rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          For an illustrative 200–400-unit pressing, check current variant availability before dispatch and again on the destination page. Grading education and VIP allocation need separate audience rules. Suppress recent full-price buyers from instant discount blasts and test an allocation change during a queue delay. A sold-out link or attributed order is not evidence of incremental margin.
         </p>
         <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Brevo contributes affordable email volume with SMS and transactional options; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          An illustrative outdoor gear retailer uses a planning assumption of 2,400 orders/mo at roughly $112k/mo. Its planning rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week. In both platforms, demonstrate the exact Shopify and subscription fields needed for this job. The weekly acceptance requirement is: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Brevo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          For this proposed peak-week test, prioritize service notices, eligible recovery, welcome education and promotional broadcasts according to the merchant’s needs. Assign one sender and queue owner to each job. Before dispatch, check purpose-specific channel permission, current withdrawal, suppression and purchase state. Test cancellation of queued messages after state changes and deduplication of replayed events. Record manual checks and connector work in both platforms; no observed speed or cost advantage is claimed.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          Merchandise ultralight and family-camping audiences with relevant hero tents and layering guides. Keep quiz answers, inferred browsing interest and explicit subscription preferences distinct. Test a shopper changing trip type after a message is queued and verify reevaluation or cancellation by its owner. Use eligible holdouts to assess incremental contribution; do not infer a CTR improvement from segmentation alone.
         </p>
         <h2>Omnisend workflow reality: strengths, friction, and billing</h2>
         <p>
-          Brevo shines when cost per send matters more than predictive merchandising. Its friction shows when browse abandonment and CLV segments steer weekly calls. Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          Compare actual workflow coverage rather than a presumed platform ceiling. Build the coffee pause, camping quiz, pottery gift and scarce-stock paths in both accounts. Record available fields, unsupported transitions, connector failures and manual intervention. A template should be judged by the complete state changes it handles; neither deployment within days nor a required migration at a particular order count is established.
         </p>
         <p>
-          Billing amplifies behavior. Brevo (email volume and features) rewards send discipline or punishes broadcast volume depending on your calendar. Omnisend (contacts plus message volume) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model twelve months with quiet and peak periods, acquisition spikes, retained inactive profiles and message frequency. Obtain dated quotes for identical eligible contacts, retention assumptions, email volume and destination-specific channels. Include required features, connector fees, implementation, maintenance, reply labor and migration costs. An imported waitlist or a large broadcast changes the inputs; neither alone establishes which bill is lower.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Brevo and Omnisend both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Proposed newsletters can pair coffee origin stories, vinyl staff picks, pottery care and climbing trip reports with relevant product blocks. Test catalog fields, variant availability and destination links in each platform before assigning merchandising ownership. Preview a campaign after inventory changes and check whether queued content updates, requires regeneration or should be cancelled. These are acceptance tests, not verified sync behavior.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Omnisend punish partial adoption.
+          A 12,000–18,000-contact scenario still needs explicit send, retention and channel assumptions. Distinguish marketing eligibility from lawful operational record retention when handling inactive profiles. Quote only the modules actually required and verify whether they are included, separate products or third-party integrations. No price convergence or reviews-and-loyalty bundle is established here.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Brevo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed hybrid could use a separate capture tool, lifecycle sender and SMS service, but additional vendors do not establish compliance. Map purpose and channel permission to each destination, propagate withdrawal and suppression, and designate one recovery owner. Cancel stale jobs in displaced senders and deduplicate replayed events during migration. Test service notices separately from promotional cross-sells before enabling any overlapping path.
         </p>
         
         <h2>Who should choose which</h2>
         <p><strong>Choose Brevo if:</strong></p>
         <ul>
-          <li>Cost per send matters more than predictive merchandising</li>
-          <li>You will use affordable email volume with SMS and transactional options weekly</li>
-          <li>Email volume and features fits your calendar</li>
-          <li>Your team can maintain Brevo without external rescue</li>
-          <li>Switching cost favors Brevo for the next twelve months</li>
+          <li>Its dated quote fits the matched annual workload</li>
+          <li>Required email and service-message jobs pass in your plan</li>
+          <li>Required Shopify fields and exclusions are demonstrated</li>
+          <li>Your team can maintain and audit the configured paths</li>
+          <li>Migration and ongoing labor are included in the comparison</li>
         </ul>
         <p><strong>Choose Omnisend if:</strong></p>
         <ul>
-          <li>You need cart, welcome, and post-purchase live in days</li>
-          <li>You will use prebuilt multichannel journeys with email, SMS, and push weekly</li>
-          <li>Contacts plus message volume fits your calendar</li>
-          <li>Your team can maintain Omnisend without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Omnisend migration</li>
+          <li>Required cart, welcome and post-purchase paths pass testing</li>
+          <li>Required channels have verified access and eligible audiences</li>
+          <li>Its dated quote fits peak contacts and message volumes</li>
+          <li>Your team can cancel stale jobs and manage replay safely</li>
+          <li>Measured incremental contribution can justify total migration cost</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Brevo is the better Shopify email tool when cost per send matters more than predictive merchandising. Omnisend is the better Shopify email tool when you need cart, welcome, and post-purchase live in days. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose the platform that demonstrates the required jobs with manageable operator effort and matched all-in annual cost. Use eligible holdouts and contribution after discounts, returns and message costs to assess causal incrementality; attributed revenue alone is insufficient. Verify plan scope and migration dependencies before contracting. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> for the evaluation structure.
         </p>
       </article>
 
