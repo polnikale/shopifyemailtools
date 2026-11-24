@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/sequenzy-vs-klaviyo';
-const title = 'Sequenzy vs Klaviyo for Shopify Email Tools: 2026 Comparison';
-const desc = 'Sequenzy vs Klaviyo for Shopify email tools — catalog breadth vs data depth, pay-per-send vs profile billing, agent playbooks vs predictive segmentation, and which fits your retention stack.';
+const title = 'Sequenzy vs Klaviyo: Shopify Drop Audiences and Send Costs';
+const desc = 'Compare Sequenzy and Klaviyo for limited-drop Shopify email: audience eligibility, inventory changes, safe cutover, channel coordination and matched costs.';
 
 const faqs = [
   {
-    question: 'When should a Shopify store pick Sequenzy over Klaviyo?',
-    answer: 'Choose Sequenzy when your constraint is operational — you need welcome, cart, post-purchase, replenishment, and winback live without a retention engineer, and you want send-based billing that does not punish popup list growth. Klaviyo is the better long-term home once browse segmentation, predictive CLV, and variant-level back-in-stock drive weekly merchandising decisions.',
+    "question": "When should a Shopify store pick Sequenzy over Klaviyo?",
+    "answer": "Consider Sequenzy when assisted sequence drafting and send-volume billing address your operating constraint. Consider retaining Klaviyo when existing audiences, integrations and channel workflows are valuable. Demonstrate a limited-drop journey before switching: eligibility must survive a purchase, a sold-out variant and a late event. Neither platform is declared a winner here."
   },
   {
-    question: 'How does billing differ at 18,000 contacts with selective sending?',
-    answer: 'Klaviyo bills active profiles regardless of whether you email them. A vinyl shop with 18k profiles but only 4,200 monthly engaged recipients still pays for the full count. Sequenzy charges per email sent — the same shop sending 35k lifecycle emails monthly often lands well below Klaviyo profile tiers. Broadcast-heavy stores that email most of the list monthly narrow the gap.',
+    "question": "How does billing differ at 18,000 contacts with selective sending?",
+    "answer": "Sequenzy publishes send-volume pricing with unlimited contacts; Klaviyo offers profile-based email plans and separately priced channel options. Treat 18,000 stored contacts as a planning input, not a billable count for both products. Obtain matched quotes for normal and peak sends, eligible profiles, channels, support and implementation. No savings figure is established here."
   },
   {
-    question: 'Which platform handles limited-edition drop email better?',
-    answer: 'Klaviyo wins when drops depend on browse history, collection affinity, and VIP decile targeting across hundreds of SKUs. Sequenzy wins when the team needs a waitlist-to-launch sequence drafted fast with suppression rules for recent purchasers — common for mechanical keyboard vendors running monthly group buys. Pair either with Postscript if SMS early access matters.',
+    "question": "Which platform handles limited-edition drop email better?",
+    "answer": "Use a proposed limited-pressing launch to compare audience qualification and stale inventory handling. Require the operator to explain why a recipient qualifies, what happens when a pressing sells out and how recent purchasers exit. Verify the exact events and fields in each account rather than assuming either has every collection or variant filter."
   },
   {
-    question: 'Can Sequenzy replace Klaviyo for browse abandonment?',
-    answer: 'Partially. Klaviyo fires browse abandonment from native Shopify pixel events with collection and price-band filters. Sequenzy covers core cart and order triggers and is maturing on browse-level logic. For climbing-gear catalogs where customers research harness fit across five product pages before buying, Klaviyo\'s browse depth usually justifies the bill.',
+    "question": "Can Sequenzy replace Klaviyo for browse abandonment?",
+    "answer": "Inventory the browse events, identity matching, permission requirements, filters and purchase exits your existing flow uses. Sequenzy documents Shopify store-event automation, but that does not prove parity with a particular Klaviyo browse workflow. Reproduce its critical branches with permitted test identities before retiring it."
   },
   {
-    question: 'What does migration from Klaviyo to Sequenzy look like?',
-    answer: 'Export consent timestamps and suppression lists, rebuild welcome and cart in Sequenzy first, run two weeks of parallel monitoring, then migrate post-purchase and winback. Predictive segments do not port — recreate VIP and at-risk cohorts with recency, order count, and AOV proxies. Pause Klaviyo flows before enabling Sequenzy equivalents to avoid duplicate cart recovery.',
+    "question": "What does migration from Klaviyo to Sequenzy look like?",
+    "answer": "Inventory forms, consent provenance, suppressions, active journeys, queued messages and sender authentication. Rebuild required behavior without enabling duplicate recovery. Transfer ownership trigger by trigger, cancel old queues and reconcile late events before enabling the destination. A fixed two-week overlap is not a migration requirement."
   },
   {
-    question: 'Does Sequenzy include SMS like Klaviyo?',
-    answer: 'No. Sequenzy is email-first. Klaviyo unifies SMS and email with shared suppression — valuable when cart recovery spans both channels. Most Sequenzy merchants pair Postscript or Omnisend SMS and document collision rules: no cart email and cart text within the same 45-minute window.',
+    "question": "Does Sequenzy include SMS like Klaviyo?",
+    "answer": "Sequenzy advertises an SMS and MMS beta add-on; Klaviyo offers SMS alongside email. Verify account access, destination coverage, sender registration and current pricing. Channel permission and opt-outs need separate checks. A shared account does not prove that every queued message observes a changed preference."
   },
   {
-    question: 'Which tool is easier for a solo operator on Shopify?',
-    answer: 'Sequenzy\'s agent-first playbooks reduce blank-canvas paralysis — describe the outcome, get a draft sequence, edit delays and exclusions. Klaviyo expects you to design flow logic and segment definitions yourself, though its template library is vast. Solo operators who know what to send but hate flow builders favor Sequenzy; data-heavy merchandisers favor Klaviyo.',
+    "question": "Which tool is easier for a solo operator on Shopify?",
+    "answer": "Have the actual operator build and explain a launch audience, preview exclusions and correct a stale product link. Sequenzy advertises AI-assisted drafting, and Klaviyo also markets an AI agent. Measure review and maintenance effort in the required account rather than assuming an assisted-versus-manual divide."
   },
   {
-    question: 'What buyer test should settle the decision?',
-    answer: 'Run five jobs on paper in both tools: welcome by signup source, abandoned checkout with inventory check, post-purchase education by SKU category, replenishment with subscription suppression, and winback split by discount sensitivity. Score time-to-live, exclusion visibility, and whether you can edit safely during a drop week. Pick whichever passes without CSV exports.',
-  },
+    "question": "What buyer test should settle the decision?",
+    "answer": "Run a proposed limited-drop rehearsal with a waitlist subscriber, a purchaser, a withdrawn subscriber and a recipient whose chosen variant sells out while waiting. Inspect audience records and queues, then replay an event. Compare failures, operator effort and matched costs; no observed merchant scores are claimed."
+  }
 ];
 ---
 
@@ -60,164 +59,63 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sequenzy vs Klaviyo for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two legitimate answers to the same Shopify retention question — just optimized for different bottlenecks. We stress-tested both against a $72k/mo vinyl record shop juggling rare pressings and pre-orders, a mechanical keyboard store running group-buy drops every six weeks, and a specialty tea merchant with subscription refills and gift-box seasonality. The goal was not feature checklists; it was whether each tool covers newsletters, lifecycle automation, and transactional-style customer moments without turning email into a second full-time job.
+          For a Shopify store selling limited pressings, the decision is whether the team can explain and maintain a launch audience as stock, purchases and permission change. Sequenzy offers assisted sequence drafting and send-volume pricing; Klaviyo offers an established email and SMS platform with profile-based email plans. Keep a working Klaviyo setup unless a demonstrated operating or cost benefit justifies replacing it. The drop scenarios below are proposed evaluations, not merchant case studies.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Send economics', tool: 'Sequenzy', reason: 'Pay per email sent — large lists with selective lifecycle sending stay affordable.' },
-            { label: 'Shopify data layer', tool: 'Klaviyo', reason: 'Browse events, predictive metrics, and catalog granularity for complex merchandising.' },
-            { label: 'Speed to live flows', tool: 'Sequenzy', reason: 'Agent-first playbooks for welcome, cart, post-purchase, replenishment, winback.' },
-            { label: 'Unified SMS + email', tool: 'Klaviyo', reason: 'One suppression model across channels when SMS recovery matters.' },
-            { label: 'Drop orchestration', tool: 'Klaviyo', reason: 'VIP deciles and browse-based early access at scale — if you will use them weekly.' },
-          ]}
-        />
-      </div>
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Start with the audience you cannot afford to get wrong</h2>
+        <p>A limited pressing can attract a large waitlist even when only a small subset wants the next release. The useful question is whether each platform can identify that subset from the data you actually collect. A saved segment name such as VIP is insufficient: record its inputs, refresh behavior and exclusions. Distinguish a subscriber who asked about one artist from a customer eligible for all launch announcements.</p>
+        <p>Use a hypothetical record shop preparing one pressing launch. Its required audience is subscribers interested in that release who remain eligible for promotional email and have not already bought it. An order-service notice about an existing preorder has a different purpose and owner. Do not add everyone receiving fulfillment updates to the launch marketing audience.</p>
 
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <h2>What the products establish, and what the account must demonstrate</h2>
+        <p>Sequenzy describes Shopify customer, order and product synchronization, store-event flows and AI-assisted sequence creation. These are useful reasons to evaluate an assisted launch workflow. They do not establish every browse event, variant filter or exclusion default needed by this shop. Ask to see the required event payload and the resulting recipient record.</p>
+        <p>Klaviyo offers email and SMS products and also advertises an AI marketing agent. The old assumption that Klaviyo always requires a blank canvas while Sequenzy alone provides assistance is unreliable. Existing Klaviyo audiences and operational knowledge may be valuable assets. Document which of them a replacement must reproduce, including fields that only exist because another installed app supplies them.</p>
         <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Sequenzy</th><th>Klaviyo</th></tr>
-          </thead>
+          <thead><tr><th>Decision input</th><th>Sequenzy evaluation</th><th>Klaviyo evaluation</th></tr></thead>
           <tbody>
-            <tr><td>Catalog fit</td><td>Lifecycle + campaigns without enterprise overhead</td><td>Full retention data platform for Shopify</td></tr>
-            <tr><td>Starting price</td><td>From ~$19/mo; 2,500 emails free</td><td>Free tier; paid from ~$20/mo</td></tr>
-            <tr><td>Billing</td><td>Per email sent, unlimited contacts</td><td>Active profiles + SMS credits</td></tr>
-            <tr><td>Newsletters</td><td>Campaign editor with product blocks</td><td>Broadcasts + segment targeting</td></tr>
-            <tr><td>Lifecycle depth</td><td>Guided playbooks, fast iteration</td><td>Visual flows, deep branching</td></tr>
-            <tr><td>Transactional-style</td><td>Order-triggered education and updates</td><td>Flows + optional transactional API pairing</td></tr>
-            <tr><td>SMS</td><td>Pair with Postscript, Omnisend, etc.</td><td>Native, shared with email</td></tr>
-            <tr><td>Reporting</td><td>Revenue by sequence and campaign</td><td>Flow, cohort, segment, CLV views</td></tr>
+            <tr><td>Drafting and edits</td><td>Inspect an assisted draft against the launch rules</td><td>Inspect the configured or assisted workflow against the same rules</td></tr>
+            <tr><td>Audience data</td><td>Demonstrate required Shopify fields and event freshness</td><td>Inventory existing segment dependencies and demonstrate refresh behavior</td></tr>
+            <tr><td>Email billing</td><td>Published send-volume model with unlimited contacts</td><td>Quote the eligible profile tier and required send capacity</td></tr>
+            <tr><td>Text messages</td><td>Confirm beta availability and destination support</td><td>Confirm SMS plan, destination and sender requirements</td></tr>
+            <tr><td>Switching burden</td><td>Prove replacement behavior before enabling sends</td><td>Price maintenance of the current stack against migration</td></tr>
           </tbody>
         </table>
-      </div>
 
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Shopify email tools are not interchangeable senders. The useful stack spans three jobs: broadcast newsletters that merchandise the catalog, lifecycle automation that reacts to browse and purchase behavior, and transactional-style moments — shipping updates, pre-order confirmations, subscription skip notices — that must not collide with promos. Klaviyo was built assuming you want maximum Shopify event history to steer all three. Sequenzy assumes many merchants under $2M annual GMV need the sequences decided and deployed before they hire someone to babysit segment logic.
-        </p>
-        <p>
-          The vinyl shop illustrates the fork cleanly. They run 40% of revenue through limited pressings with 200–400 unit runs. Email must announce drops to VIPs, suppress recent full-price buyers from instant discount blasts, and educate new subscribers on grading and shipping policies before pitching collectibles. Klaviyo's browse and order history made VIP early access precise. Sequenzy got a three-email welcome and a post-purchase care guide live in a single afternoon — work that had sat in a Klaviyo backlog for two months because nobody owned flow architecture.
-        </p>
+        <h2>A drop rehearsal with inspectable outcomes</h2>
+        <p>This is a proposed test using permitted test identities. Create a waitlist subscriber, an already-purchased subscriber, a withdrawn subscriber and a subscriber interested in a variant that will become unavailable. Record the expected outcome before building the flow. The waitlist subscriber may qualify; the purchaser must not receive another sales reminder for that purchase; withdrawal must prevent promotional sending; an unavailable variant must not be advertised as purchasable.</p>
+        <p>Change stock after a reminder has entered a waiting step. Inspect whether the message is cancelled, refreshed, redirected to an appropriate waitlist or stopped for manual review. A correct audience at entry is insufficient if the content becomes stale before delivery. Check both the selected product and the landing page: substituting a different pressing without explanation can also mislead a buyer.</p>
+        <p>Then submit a purchase event while that reminder is queued and replay the same event. Check the resulting exits and duplicate records. Record event time, receipt time and queue changes so an operator can distinguish delayed synchronization from a missing rule. A preview with static sample data does not answer this question. No pass rate or setup-time result is asserted for either platform.</p>
 
-        <h2>Vinyl catalog: scarcity, education, and list economics</h2>
-        <p>
-          Rare pressings create ugly list math. The vinyl shop's popup and Discogs-adjacent traffic added 2,100 contacts in one quarter while monthly orders stayed flat at 1,800. Klaviyo profile billing climbed to $241/mo while fewer than 30% of profiles received any email. Sequenzy's send-based model let them keep the full list for drop announcements without paying as if every imported lead were an active profile.
-        </p>
-        <p>
-          Drop day still needed discipline. Both platforms can over-message if welcome, cart, and blast campaigns lack priority rules. The shop documented a simple stack order: transactional-style pre-order confirmations first, active cart recovery second, welcome third, promotional broadcasts last. Klaviyo enforced exclusions in flow filters; Sequenzy required the operator to verify playbook suppression flags before each major send. Neither tool removes the need for a one-page collision doc taped to the monitor before Record Store Day.
-        </p>
+        <h2>Browse interest is a data dependency, not a product label</h2>
+        <p>If the current Klaviyo launch uses browsing history, list the exact fields: product or collection identifier, identified visitor, event timestamp and any app-supplied properties. Test the permitted capture path on the actual storefront. A generic Shopify integration claim does not prove a collection-affinity segment or a historical browse audience will transfer.</p>
+        <p>For Sequenzy, demonstrate the same required behavior or explicitly price the missing integration and maintenance work. If browse history is unavailable, a release-specific signup preference may still satisfy the launch requirement, but that changes the audience definition. Obtain the merchandising owner's agreement rather than calling a different segment equivalent. Retain Klaviyo if a necessary, working audience cannot be safely reproduced.</p>
 
-        <h2>Mechanical keyboards: group buys and consideration cycles</h2>
-        <p>
-          The keyboard store sells $180–$420 kits with 10–14 day consideration windows. Shoppers open five tabs comparing switch types, plate materials, and fulfillment timelines. Browse abandonment matters more than cart abandonment for the first 72 hours. Klaviyo captured collection-level interest — "viewed GMK profile caps three times" — and fed a education sequence before any discount. Sequenzy shipped a solid cart series and post-purchase build-guide emails quickly, but browse-triggered journeys needed lighter segmentation than Klaviyo offered out of the box.
-        </p>
-        <p>
-          Group buys add another layer. When a GB closes, the store must stop cart recovery for that SKU, shift to fulfillment updates, and suppress winback promos until units ship. Klaviyo's custom metrics around preorder tags handled the state change. Sequenzy's playbooks covered post-purchase education well; GB-specific suppression took manual tagging discipline from Shopify. For merchants where pre-orders dominate, Klaviyo's data model earns its keep. For merchants running fewer concurrent GBs, Sequenzy's speed often wins the quarter.
-        </p>
+        <h2>Editorial campaigns and order service need different rules</h2>
+        <p>A staff-picks newsletter, a pressing launch and a preorder delay notice are distinct jobs. A newsletter may include several releases; a launch has an inventory deadline; a delay notice serves people who already ordered. Record the sender and purpose for each. Keep Shopify or the current order-service system responsible for essential notices until its replacement is separately verified.</p>
+        <p>For the newsletter, preview the rendered product link and availability near send time. For the launch, test the purchase exclusion and closure condition. For the delay notice, ensure the audience comes from affected orders rather than a marketing segment. Adding an upsell can change the permission analysis; domain separation alone does not determine whether a message is promotional.</p>
 
-        <h2>Specialty tea: replenishment, gifts, and subscription overlap</h2>
-        <p>
-          Tea repeat purchase is consumption-driven — a 100g tin lasts roughly 28–35 days depending on blend. The tea merchant runs a small subscription line plus one-off gift boxes in Q4. Replenishment reminders must suppress active subscribers, exclude gift purchasers from "reorder your favorite oolong" emails, and avoid stacking with holiday gift promos. Sequenzy's replenishment playbook accepted per-SKU day windows in plain language. Klaviyo added predicted reorder dates when customers bought bundles with different steeping rates.
-        </p>
-        <p>
-          Gift buyers are a classic collision trap. Post-purchase flows pitched subscription savings to recipients who never chose the brand — complaint spike every December. Both platforms can exclude gift orders if Shopify passes the right order properties; Klaviyo made the filter visible in flow analytics, Sequenzy baked gift exclusion into playbook defaults. Fix the data first; then pick the tool that surfaces mistakes before send, not after unsubscribes.
-        </p>
+        <h2>Model 18,000 contacts without inventing a bill</h2>
+        <p>Illustrative planning inputs: 18,000 stored contacts, 4,000 eligible recipients for a particular launch, two launch messages and 6,000 other lifecycle emails in a month. If every launch recipient receives both messages, that is 8,000 launch emails and 14,000 total emails. Purchases, withdrawals and stock exits may reduce the actual total. These are hypothetical counts, not observed store activity or supplier quotes.</p>
+        <p>Sequenzy's published model makes send volume a relevant input. For Klaviyo, establish which profiles are billable under the chosen plan and the included send capacity; 4,000 recipients for one campaign does not mean only 4,000 billable profiles. Request current normal-month and peak-month quotes from both using the same required channels, currency, billing period and features.</p>
+        <p>Add migration work, integration fees, SMS destination and credit costs, support and ongoing maintenance. Compare the annual total and the cost of maintaining the existing implementation. No dollar savings, revenue threshold or order-count cutoff follows from the list size alone. The <a class="link" href="/guides/pricing-models">pricing guide</a> can help organize the inputs.</p>
 
-        <h2>Newsletter layer: merchandising without training discount waits</h2>
-        <p>
-          Catalog email is not only automation. The tea shop sends monthly origin stories and brewing guides; the vinyl shop sends staff picks and in-store event recaps; the keyboard store sends switch comparison notes before GB announcements. Sequenzy and Klaviyo both handle product-block campaigns. Klaviyo pulls collection merchandising with dynamic variant availability — critical when a pressing sells out mid-send. Sequenzy's campaign editor is faster for solo operators drafting a Tuesday send, with less configuration overhead.
-        </p>
-        <p>
-          The buyer's guide question: how often do you change hero products mid-week? If catalog churn is high, Klaviyo's live product feeds reduce embarrassing "add to cart" links to dead SKUs. If your newsletter is editorial-led with occasional product callouts, Sequenzy's simplicity is an asset, not a gap.
-        </p>
+        <h2>Cut over one owner at a time</h2>
+        <p>Before migration, export consent provenance, suppressions, audience definitions, active journeys and queued recipients. Map identifiers and permissions without converting an order contact into a marketing subscriber. Reconcile records that changed after the initial export. Authentication, forms and integration credentials require their own checks; copying message templates does not migrate a working journey.</p>
+        <p>For cart or launch reminders, keep one live sender per trigger. Prepare the destination with external sending disabled, demonstrate behavior, stop the old trigger, cancel or resolve its outstanding queue, reconcile late events and then enable the new owner. Keep an audit trail and a rollback procedure that also prevents duplicate sends. Running two live cart flows for an arbitrary number of weeks creates a collision risk rather than proving parity.</p>
+        <p>Completion depends on those checks, not a fixed calendar hold. Schedule away from a critical drop if the team cannot safely investigate failures during launch. The <a class="link" href="/guides/implementation-plan">implementation plan</a> provides related preparation work.</p>
 
-        <h2>Transactional-style moments in a marketing platform</h2>
-        <p>
-          Neither tool replaces a dedicated transactional provider for password resets, but both cover order-adjacent email: shipment delay notices, pre-order timeline updates, subscription skip confirmations. The tea merchant routes hard transactional through their ESP's transactional API and uses Sequenzy for marketing-adjacent post-purchase education — keeping complaint rates lower than blending promos on the same domain without subdomain separation.
-        </p>
-        <p>
-          Klaviyo can blur the line when post-purchase flows include cross-sells too aggressively. Document which messages are operational versus promotional. Your deliverability on Black Friday depends on it. See <a class="link" href="/guides/deliverability">deliverability guide</a> for domain and reputation splitting.
-        </p>
+        <h2>SMS coordination and measurement</h2>
+        <p>Sequenzy currently advertises an SMS and MMS beta add-on, so describing it as having no SMS is inaccurate. Klaviyo offers SMS alongside email. Establish account access, destinations, sender registration, channel permissions and withdrawal handling before choosing a combined or split stack. Email permission does not authorize a text message.</p>
+        <p>Define which channel owns each launch reminder and how a purchase cancels outstanding messages across senders. Test an opt-out and a purchase while messages are waiting. A universal forty-five-minute gap cannot resolve permission or stale-queue problems. If a second platform cannot receive the necessary changes reliably, simplify ownership instead of assuming a timing rule will prevent collisions.</p>
+        <p>Compare reporting on the same orders, refunds and attribution window. Dashboard-attributed sales can overlap channels and do not establish incremental sales. If measuring additional launch sales matters, design a suitable randomized evaluation with a stated decision, adequate sample and contribution after costs. A fixed five-percent holdout is not justified by this hypothetical shop; essential order-service messages should not be withheld to test promotional lift.</p>
 
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          Profile billing punishes list growth ahead of monetization — common when TikTok traffic dumps cold emails into a popup. Send billing punishes broadcast habits — emailing 40k contacts weekly "just because." Model your real calendar: automations per month, sale blasts, seasonal spikes, SMS if applicable. The keyboard store's Klaviyo bill hurt because GB waitlists imported thousands of profiles who only wanted one SKU; Sequenzy would have charged for the three emails they actually needed pre-launch.
-        </p>
-        <p>
-          Klaviyo free tier works for early experimentation. Sequenzy's free send allotment covers the first lifecycle flows. Do not choose on sticker price — project 12 months with your actual sends and profile hygiene assumptions. <a class="link" href="/guides/pricing-models">Pricing models</a> walks through the spreadsheet.
-        </p>
+        <h2>Make the decision from the rehearsal</h2>
+        <p>Favor a Sequenzy trial when assisted drafting and its billing model address a documented constraint, and the required launch rules pass inspection. Favor keeping Klaviyo when its existing audiences, integrations or channel operations satisfy requirements that would be costly or unsafe to replace. Neither attributed revenue nor a fast first draft alone justifies migration.</p>
+        <p>Keep an evaluation record with the audience specification, event samples, queue outcomes, unresolved dependencies, operator effort and matched quotes. Decide which failures block a launch and which can be maintained acceptably. This produces a useful purchasing decision without invented scores or a universal winner.</p>
 
-        <h2>Implementation workload and team shape</h2>
-        <p>
-          Klaviyo rewards a retention owner who audits segments weekly — even a part-time operator. Sequenzy rewards a founder or marketer who can describe outcomes in sentences, not flowcharts. Agency availability tilts toward Klaviyo today; Sequenzy's agent layer reduces billable hours for routine sequence changes but does not replace strategic merchandising judgment.
-        </p>
-        <p>
-          Migration timing: never cut over the week before a major drop. Rebuild DNS, forms, and suppression first. Run welcome and cart in the new tool while keeping legacy broadcasts on read-only until open rates stabilize. Budget two to four weeks for a store with four active journeys — see <a class="link" href="/guides/implementation-plan">implementation plan</a>.
-        </p>
-
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sequenzy if:</strong></p>
-        <ul>
-          <li>You need newsletters plus lifecycle flows live this month without a retention engineer</li>
-          <li>List size outpaces engagement and profile billing feels misaligned with revenue</li>
-          <li>Agent-first playbooks beat blank-canvas flow builders for your team</li>
-          <li>SMS can live in a paired tool with documented suppression rules</li>
-          <li>Catalog complexity is moderate — replenishment and education drive repeat purchase</li>
-        </ul>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>Browse segmentation and predictive metrics change weekly merchandising calls</li>
-          <li>You run high-SKU catalogs with variant back-in-stock and collection-level targeting</li>
-          <li>Native SMS and email in one stack is non-negotiable</li>
-          <li>You have 1,000+ monthly orders and someone owns retention KPIs</li>
-          <li>Agency or in-house Klaviyo expertise already exists — migration cost is real</li>
-        </ul>
-
-        <h2>Five-job buyer test with scoring rubric</h2>
-        <p>
-          Score each job zero to two: zero means cannot do without exports; one means workaround or manual weekly maintenance; two means native and editable before a drop. Jobs: welcome by signup source; abandoned checkout with inventory check; post-purchase education excluding gifts; replenishment with subscription suppression; winback split by discount sensitivity. The specialty tea merchant scored Sequenzy nine of ten and Klaviyo ten of ten after setup — but Sequenzy reached eight of ten in one afternoon versus Klaviyo ten of ten after twelve hours spread across two weeks. Time-to-live mattered more than theoretical maximum when no retention engineer existed.
-        </p>
-        <p>
-          The mechanical keyboard store scored browse-heavy jobs higher on Klaviyo — collection-level interest across five PDPs before GB close was a two for Klaviyo, zero for Sequenzy at the time of evaluation. That single job justified Klaviyo for them; tea shop browse depth was lighter, Sequenzy sufficient.
-        </p>
-
-        <h2>Pricing scenario: 18,000 contacts, selective sending</h2>
-        <p>
-          Vinyl shop at 18,000 contacts, 1,900 monthly orders, 34,000 emails sent monthly, no native SMS on Sequenzy (Postscript billed separately). Klaviyo profile bill near $241/mo. Sequenzy send bill near $89/mo at same send volume. Gap is $152/mo — until Black Friday when vinyl shop emailed 52,000 times and Sequenzy bill rose to $164 while Klaviyo stayed profile-flat at $241. Profile billing punished list size from popup imports; send billing punished broadcast frequency. Match model to mistake you are more likely to make.
-        </p>
-
-        <h2>Migration sequencing Sequenzy to Klaviyo or reverse</h2>
-        <p>
-          Sequenzy to Klaviyo: common when browse depth becomes load-bearing. Export consent and suppressions; rebuild predictive VIP and at-risk with recency, frequency, monetary proxies; run parallel cart two weeks. Klaviyo to Sequenzy: common when send economics hurt and catalog complexity moderates. Predictive segments do not port — recreate with playbook defaults; accept browse precision tradeoff. Never migrate either direction the week before Record Store Day, GB close, or holiday gift-box peak.
-        </p>
-
-        <h2>Measurement guardrails</h2>
-        <p>
-          Attribute replenishment separately from winback — tea shop conflated them and over-credited winback discounts for natural reorder. Hold out 5% of new subscribers when testing welcome length. Compare incremental GMV from flow holdout tests, not platform dashboard defaults. During hybrid stacks (Sequenzy education plus Klaviyo VIP SMS), document primary owner per trigger in a shared spreadsheet ops checks before every major send — see <a class="link" href="/guides/flow-collision-prevention">flow collision prevention</a>.
-        </p>
-
-        <h2>Hybrid pattern that works on Shopify</h2>
-        <p>
-          Split jobs intentionally: Sequenzy for education, replenishment, and winback sequences; Klaviyo retained for predictive VIP targeting and SMS; Privy or Justuno feeding both with capture intent tags. The failure mode is three senders firing cart recovery without a priority doc. Pick a primary lifecycle owner and treat the other as supplemental — not parallel blast engines.
-        </p>
-
-        <h2>Climbing gear: high-AOV research paths</h2>
-        <p>
-          Harness and rope purchases run seven-to-fourteen day research cycles — shoppers compare certification labels, fall ratings, and retailer return policies across multiple PDPs before adding to cart. Klaviyo browse sequences fed education on fit and retirement timelines before any percentage-off nudge. Sequenzy covered cart abandonment and post-purchase care guides for rope inspection intervals quickly; browse-level branching needed lighter filters than the climbing merchant ultimately wanted at nine hundred monthly orders.
-        </p>
-        <p>
-          The lesson: high-AOV outdoor catalogs with safety education requirements still benefit from Sequenzy speed on post-purchase and replenishment — carabiner retirement reminders, rope age warnings — while Klaviyo earns its profile bill when browse history steers weekly merchandising calls. Do not pay for predictive CLV if nobody opens segment reports on Monday mornings.
-        </p>
-
-        <h2>Verdict</h2>
-        <p>
-          Sequenzy is the better email tool when sequencing and send economics are the constraint — you know retention matters but lack time to engineer flows. Klaviyo is the better email tool when Shopify data depth changes revenue weekly and profile pricing is justified by attributed lifecycle GMV. Run the five-job buyer test on both before annual contracts. The winner is whichever platform lets you edit audiences safely on a Thursday before a drop, and whichever billing model matches how you actually send — not how large your list could become after the next giveaway.
-        </p>
+        <h2>Primary evidence and limits</h2>
+        <p>Reviewed November 24, 2026: <a class="link" href="https://www.sequenzy.com/about">Sequenzy product description</a> supports assisted drafting and the stated Shopify synchronization scope; <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a> supports its billing model and advertised SMS beta; <a class="link" href="https://www.klaviyo.com/pricing">Klaviyo pricing and product options</a> supports the profile-plan and channel comparison. These supplier descriptions do not certify account-level event parity, implementation time or merchant outcomes. All rehearsal steps remain proposals.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
