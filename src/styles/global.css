@@ -30,3 +30,9 @@ html{scroll-behavior:smooth} body{font-family:'Inter',system-ui,-apple-system,Bl
 .rank-pill{@apply inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-sm font-black text-white}
 .ledger-card{@apply rounded-2xl border bg-white p-6 shadow-sm; border-color:#4f46e522}
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .card:hover { transform: none; }
+}
