@@ -10,7 +10,7 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('smsbump')!;
 const path = '/alternatives/smsbump-alternative';
 const title = 'Best SMSBump Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave SMSBump — Yotpo bundle complexity, SMS cost spikes, email depth gaps — plus eight ranked SMS and lifecycle alternatives with migration checklist.';
+const desc = 'Evaluate SMSBump migration after the announced Yotpo Email and SMS deprecation, with replacement workflow tests, permission continuity, and matched operating costs.';
 
 const altSlugs = ['postscript', 'sequenzy', 'omnisend', 'klaviyo', 'attentive', 'recart', 'yotpo-email-sms', 'sendlane'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
@@ -18,11 +18,11 @@ const alternatives = altSlugs.map((s) => appBySlug(s)!);
 const faqs = [
   { question: 'Why do Shopify merchants leave SMSBump?', answer: 'SMSBump fits Yotpo ecosystem consolidation — merchants leave when modular Yotpo bills exceed value, when SMS credits spike during sale weeks without attributed lift, or when email lifecycle needs exceed SMSBump marketing depth and Klaviyo or Sequenzy become clearer homes.' },
   { question: 'What is the best SMSBump replacement for SMS?', answer: 'Postscript for dedicated Shopify SMS at SMB scale; Omnisend or Klaviyo for email plus SMS consolidation. Sequenzy for email lifecycle if SMS moves to Postscript — evaluate total stack, not SMS line item.' },
-  { question: 'Should I stay in Yotpo ecosystem?', answer: 'Stay if reviews, loyalty, and SMSBump actively drive revenue with documented attribution — vinyl shops using loyalty drop access, pottery studios with workshop points. Leave when paying for modules you do not operate.' },
-  { question: 'SMSBump vs Postscript?', answer: 'Postscript deeper Shopify SMS ops and two-way conversations; SMSBump better when Yotpo reviews and loyalty triggers SMS. Choose Postscript when leaving Yotpo stack entirely.' },
-  { question: 'How does SMSBump migration work?', answer: 'Export TCPA consent with timestamps; document SMS journeys and Yotpo loyalty triggers feeding messages. Port numbers with compliance review; align email ESP suppression before cutover.' },
-  { question: 'Is Klaviyo enough to leave SMSBump?', answer: 'Klaviyo unified email plus SMS covers many use cases — especially when SMSBump was chosen for convenience inside Yotpo, not SMS specialization depth.' },
-  { question: 'When should I keep SMSBump?', answer: 'Keep with active Yotpo Reviews and Loyalty modules where SMS triggered by points balance and review requests drives measurable repeat purchase — not when SMSBump is isolated SMS line item on bloated suite bill.' },
+  { question: 'Should I stay in Yotpo ecosystem?', answer: 'Evaluate Reviews and Loyalty separately from the former Email and SMS products. Yotpo announced full Email and SMS deprecation for December 31, 2025; that announcement does not sunset Reviews or Loyalty. Retaining those products depends on their current requirements, integration options, and costs, not on treating SMSBump as an active consolidation choice.' },
+  { question: 'SMSBump vs Postscript?', answer: 'Treat SMSBump as a historical migration source in this comparison. Yotpo announced Email and SMS deprecation for December 31, 2025. Evaluate a current replacement against permissions, destinations, two-way support, queue ownership, transfer terms, and matched costs; verify those capabilities in the actual offered plan rather than assuming a product ranking.' },
+  { question: 'How does SMSBump migration work?', answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.' },
+  { question: 'Is Klaviyo enough to leave SMSBump?', answer: 'Evaluate Klaviyo against the actual required email and SMS journeys, destinations, integration fields, and current plan scope. Verify purpose and channel permissions, purchase exits, suppressions, queue ownership, and replay handling before relying on consolidation. No universal capability or cost advantage is established.' },
+  { question: 'When should I keep SMSBump?', answer: 'Do not recommend keeping SMSBump as an active messaging option on the basis of Reviews or Loyalty integrations. Yotpo announced full Email and SMS deprecation for December 31, 2025. Review the actual replacement account and any recoverable exports with the providers; retaining Reviews and Loyalty is a separate decision.' },
   { question: 'What about SMSBump email?', answer: 'Marketing email depth trails lifecycle specialists — common exit pattern moves email to Sequenzy or Klaviyo while SMS consolidates or downgrades to Postscript.' },
 ];
 ---
@@ -36,9 +36,7 @@ const faqs = [
       <header class="max-w-4xl">
         <p class="catalog-kicker">Yotpo SMS exit</p>
         <h1 class="hero-title mt-5">Best SMSBump alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          SMSBump is Yotpo's SMS layer — loyalty triggers, review prompts, campaign blasts inside a modular retention suite. Merchants leave when they pay for Yotpo breadth but only send cart texts, when SMS credits during climbing-gear flash sales exceed incremental revenue, or when email lifecycle needs a platform SMSBump was never built to lead.
-        </p>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">SMSBump belongs to the historical Yotpo messaging stack. Yotpo announced full Email and SMS deprecation for December 31, 2025, separately from Reviews and Loyalty. Treat this as a migration-source guide, not an active messaging recommendation. For a climbing-gear sale, evaluate a replacement using current permissions, eligible audiences, purchase exits, and matched operating costs; no merchant result is established here.</p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
           Eight ranked alternatives for stores exiting or unbundling SMSBump — SMS specialists, consolidators, and lifecycle email platforms. Evaluate whether you are leaving SMS only or rationalizing entire Yotpo stack before comparing Postscript unit economics to bundled Omnisend SMS.
         </p>
@@ -59,42 +57,42 @@ const faqs = [
         <p>Modular bill creep. Reviews, Loyalty, SMSBump, Email — each module reasonable alone, combined expensive when only SMS and basic campaigns run. A board-game store audits Yotpo spend and realizes Postscript plus Sequenzy costs less with clearer job separation.</p>
         <p>SMS economics during peaks. Drop-week credits spike for vinyl and outdoor-gear flash sales — finance compares SMS CPA to email CPA; SMSBump loses when email Sequenzy or Klaviyo always drove stronger recovery attribution.</p>
         <p>Email lifecycle gap. SMSBump marketing email trails Sequenzy, Omnisend, Klaviyo for welcome-through-winback. Stores keep Yotpo reviews but move lifecycle elsewhere — SMSBump stuck in awkward middle.</p>
-        <p>SMSBump wins inside active Yotpo stack — loyalty points triggering SMS, review requests post-purchase. Leaving without reviewing whether reviews and loyalty should move too creates partial sprawl.</p>
+        <p>Evaluate Reviews and Loyalty independently from the deprecated messaging products. Inventory their integrations, required events, and ongoing obligations before changing them; retaining a review service does not establish that its former messaging service remains available.</p>
 
         <h2>SMS inside Yotpo suite vs standalone stack</h2>
-        <p>Map which Yotpo modules drive revenue before SMS-only exit. If loyalty drop access and review SMS convert, consider Yotpo Email and SMS suite rationalization instead of leaving ecosystem entirely. If SMSBump is isolated line item, Postscript or Omnisend consolidation is cleaner.</p>
-        <p>TCPA and suppression must align across email and SMS after exit — loyalty-triggered texts and cart recovery emails cannot double-discount same customer during sale week.</p>
+        <p>Map required review and loyalty events to the proposed replacement rather than recommending the deprecated Email and SMS suite. Verify current integration routes, export availability, transfer terms, and account access with the providers. Review costs on the same contact population, destinations, and send volume before choosing a consolidation path.</p>
+        <p>Preserve permission evidence separately by purpose and channel, including withdrawal history and current suppression state. An email permission or loyalty membership does not establish SMS eligibility. Review applicable messaging requirements for the destinations involved; discount collision rules are a separate merchant policy and do not establish permission.</p>
 
         <h2>Newsletters, lifecycle, and Yotpo-triggered SMS</h2>
         <p>SMSBump often fired loyalty and review prompts while welcome and winback lived elsewhere or nowhere. Email lifecycle on Sequenzy should own replenishment; SMS on Postscript should own high-urgency drops — not duplicate slow-cycle education both channels could send.</p>
 
         <h2>SMSBump migration checklist</h2>
         <ol>
-          <li><strong>Audit Yotpo module usage and revenue attribution</strong> — reviews, loyalty, SMS, email.</li>
-          <li><strong>Export SMS consent audit trail</strong> — timestamp, source, keyword opt-in.</li>
-          <li><strong>Document loyalty and review triggers feeding SMS</strong> — rebuild or replace on new stack.</li>
-          <li><strong>Calculate ninety-day SMS ROI by journey</strong> — justify exit with finance numbers.</li>
-          <li><strong>Choose SMS-only exit vs full Yotpo rationalization</strong>.</li>
-          <li><strong>Port numbers or provision new with TCPA review</strong>.</li>
+          <li>Inventory module usage, contractual obligations, journey triggers, and attribution definitions separately from causal incremental margin.</li>
+          <li>Confirm recoverable permission evidence by purpose and channel, including source, timestamp, withdrawal, and suppression history; verify export availability.</li>
+          <li>Document review and loyalty events and confirm replacement mappings before enabling their messages.</li>
+          <li>Compare matched all-in costs and suitably designed incremental contribution evidence; a fixed ninety-day attribution total is not ROI.</li>
+          <li>Decide Reviews and Loyalty retention independently from replacing deprecated messaging.</li>
+          <li>Confirm number transfer or new sender terms and applicable destination requirements with the providers before relying on them.</li>
           <li><strong>Align email ESP suppression</strong> — Sequenzy, Klaviyo, or Omnisend before SMS cutover.</li>
-          <li><strong>Rebuild cart and campaign SMS on new platform</strong> — QA test flows.</li>
-          <li><strong>Hard cutover — no dual promotional texting</strong>.</li>
-          <li><strong>Update opt-in flows and popups</strong> — feed replacement SMS platform.</li>
-          <li><strong>Weekly SMS spend review first month</strong>.</li>
-          <li><strong>Archive SMSBump consent records ninety days</strong>.</li>
+          <li>Test replacement checkout and campaign journeys with eligible and ineligible profiles, purchases during delays, and repeated events.</li>
+          <li>Assign one sender and queue owner per journey; drain or cancel old queued messages and test deduplicated replay and rollback.</li>
+          <li>Update forms and integrations only after purpose and channel permission mapping, suppression propagation, and retry handling pass.</li>
+          <li>Reconcile sending, attribution, and matched costs on a cadence suited to volume and risk.</li>
+          <li>Retain available permission and suppression evidence under the applicable retention policy and obligations; ninety days is not a universal rule.</li>
         </ol>
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Artisan coffee — left SMSBump, kept Yotpo Reviews.</strong> SMS moved to Postscript; email lifecycle to Sequenzy. Loyalty module cancelled — points program never drove repeat purchase. Stack simplified with aligned suppression.</p>
-        <p><strong>Vinyl shop — consolidated to Yotpo Email and SMS.</strong> Reviews and loyalty active for drop access tiers — suite rationalization beat leaving ecosystem entirely. SMSBump replaced by unified Yotpo email plus SMS module.</p>
-        <p><strong>Outdoor gear — moved to Klaviyo.</strong> Full email plus SMS consolidation; Yotpo reviews kept via integration. SMSBump redundant with Klaviyo unified suppression and predictive winback.</p>
+        <p><strong>Vinyl shop — proposed migration evaluation.</strong> Test loyalty-tier access and review events in the replacement integration. Keeping Reviews or Loyalty is a separate decision from replacing deprecated messaging; no suite consolidation result or supported event mapping is established here.</p>
+        <p><strong>Outdoor gear — proposed Klaviyo evaluation.</strong> Check email and SMS eligibility separately, confirm the required review integration, and test purchase exits and current suppressions at dispatch. A shared profile does not prove a shared permission model or predictive workflow availability.</p>
 
         <h2>Yotpo stack rationalization paths</h2>
         <p>SMSBump exit sits inside broader Yotpo bill conversation — leaving SMS module while keeping reviews is most common path for pure DTC. Full suite exit to Sequenzy plus Postscript happens when loyalty redemption failed and reviews move to Judge.me. Partial rationalization to Yotpo Email and SMS unified module is lateral consolidation, not capability upgrade — evaluate honestly.</p>
-        <p>Loyalty-triggered SMS without email lifecycle depth is incomplete stack — points text without replenishment email leaves margin on table. Migration should pair SMS destination with email destination simultaneously or sequence email first, SMS second with suppression aligned.</p>
+        <p>Choose the email and SMS transition order from dependencies and readiness. Assign one sender and queue owner per journey, including review and loyalty triggers, then test suppression propagation, purchases during delays, and duplicate-event retries. Adding email is justified by a documented requirement, not a universal assumption that SMS alone leaves margin unused.</p>
 
         <h2>Due diligence before SMSBump exit</h2>
-        <p>Export SMS consent separately from email if modules split. Document loyalty point thresholds firing SMS — rebuild or retire with loyalty decision. Compare Postscript TCPA tooling against SMSBump if compliance was concern. Review Yotpo contract bundling — canceling SMS module may not reduce bill if annual commit covers suite. Test replacement SMS with five percent list before full port.</p>
+        <p>Inventory recoverable permission evidence by purpose and channel, sender identities, scheduled messages, review and loyalty triggers, and contract commitments. Confirm export fields and number-transfer terms with the providers before relying on them. Test mappings and dispatch eligibility in a controlled setup; a five-percent send sample does not establish migration safety.</p>
       </article>
 
       <section class="container space-y-12 py-16">
@@ -102,9 +100,9 @@ const faqs = [
         <h2 class="font-serif text-4xl font-black text-slate-950">Eight SMSBump alternatives for Shopify stores</h2>
 
         <ToolReview app={alternatives[0]} rank={1} badge="SMS pick" paragraphs={[
-          'Postscript dedicated Shopify SMS when leaving SMSBump without abandoning SMS specialization — TCPA tooling, two-way conversations, cart recovery depth Yotpo module approximated.',
+          'Evaluate Postscript against required SMS journeys, destination coverage, two-way handling, current plan access, purchase exits, and operator maintenance; historical SMSBump comparisons do not establish superiority.',
           'Pair Sequenzy for email lifecycle — architecture replaces SMSBump plus weak email with best-in-class SMS plus strategy-first email.',
-          'Choose Postscript when Yotpo stack rationalization means SMS-only exit from modular suite.',
+          'Choose a dedicated SMS replacement only after its integration, channel permissions, queue ownership, transfer terms, and matched all-in costs pass the documented requirements.',
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
@@ -114,39 +112,39 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Omnisend consolidation — email, SMS, push, one suppression model. Exit SMSBump and Yotpo email module together when modular bill hurt without reviews or loyalty justification.',
-          'Prebuilt cart and post-purchase reduce rebuild tax. SMB pricing without suite negotiation.',
-          'Choose when one dashboard beats Yotpo modular complexity.',
+          'Evaluate Omnisend for the required channel mix and integration. Keep purpose and channel eligibility separate even where profiles share a dashboard; verify suppression propagation and purchase exits at dispatch.',
+          'Test checkout and post-purchase mappings, exclusions, repeated events, and ordinary operator edits. No implementation saving or pricing advantage is established here.',
+          'Choose consolidation when tested reliability and operating costs justify it, including setup, overlap, messaging, and operator time.',
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Klaviyo unified email plus SMS — deepest Shopify data when SMSBump exit is part of broader lifecycle upgrade. Predictive winback, browse abandonment, variant back-in-stock.',
-          'Profile pricing — hygiene lists before migrating from Yotpo popup captures. Reviews integration available if keeping Yotpo reviews module.',
-          'Assign retention owner weekly — Klaviyo scale needs discipline.',
+          'Evaluate Klaviyo for required email and SMS data, events, and workflows. Confirm current integration fields and plan scope rather than assuming deepest data or predictive features.',
+          'Compare the same billable audience and sending workload, and verify any retained Reviews integration. Preserve permission and suppression history without assuming all profiles are eligible to send.',
+          'Assign an accountable operator to maintain mappings, exclusions, and queue ownership; choose review cadence from actual risk and changes.',
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Attentive enterprise upgrade — if SMSBump was SMB ceiling and volume justifies custom contract. Managed services and acquisition flows beyond Postscript.',
-          'Not downgrade path — upgrade when traffic economics support enterprise SMS.',
-          'Budget quarters for implementation — not weeks.',
+          'Evaluate Attentive against the required acquisition and messaging workflows, destinations, service scope, and contract terms. Business size alone does not establish suitability.',
+          'Compare matched all-in costs and required operator effort before selecting a service model; no enterprise cost or performance advantage is established.',
+          'Choose implementation milestones from verified access, mappings, sender setup, eligibility tests, and rollback readiness rather than a universal quarter-long timeline.',
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Recart recovery specialist — if SMSBump usage was ninety percent cart texts. Narrower and cheaper when marketing SMS unused.',
+          'Evaluate Recart against actual recovery events, purchase exits, current channel availability, and operating costs. A cart-text usage share alone does not establish a cheaper or narrower replacement.',
           'Pair Sequenzy or Klaviyo for email lifecycle. Messenger channel declining — evaluate actual channel mix.',
-          'Downgrade when recovery-only fit matches usage.',
+          'Select a recovery-focused setup only if it covers documented requirements and reliable dispatch eligibility; verify current scope before publication.',
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Yotpo Email and SMS suite — stay inside ecosystem with unified module instead of SMSBump isolation. Best when reviews and loyalty active and rationalization beats exit.',
-          'Compare modular bill before and after — suite can still grow. Email depth trails Klaviyo for complex segmentation.',
-          'Choose for Yotpo consolidation, not escape from Yotpo entirely.',
+          'Historical listing: Yotpo announced full Email and SMS deprecation for December 31, 2025. This entry is not an active replacement recommendation; Reviews and Loyalty are separate products.',
+          'Confirm actual account access, recoverable records, integration dependencies, and obligations with the providers. Do not infer that retained Reviews or Loyalty makes former messaging available.',
+          'Evaluate current replacement options against documented journeys, permissions, queue ownership, transfer terms, and matched operating costs.',
         ]} />
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Sendlane guided email plus SMS — migration support when SMSBump exit stalled on self-serve rebuild. White-glove for mid-growth brands leaving Yotpo complexity.',
-          'Higher entry price — justified when team lacks bandwidth for multichannel cutover.',
-          'Choose when guided retention beats DIY Omnisend migration.',
+          'Evaluate Sendlane against required email and SMS workflows, current migration assistance, integration behavior, and contractual service scope; no support level is promised here.',
+          'Compare current quoted costs at the same audience, sends, destinations, setup, overlap, and operator effort before treating guided service as justified.',
+          'Choose assistance based on verified migration responsibilities, readiness tests, and ongoing maintenance needs rather than an assumed advantage over another provider.',
         ]} />
       </section>
 
@@ -171,28 +169,28 @@ const faqs = [
 
   <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Four-week SMSBump exit timeline</h2>
-    <p><strong>Week 1 — Yotpo stack audit.</strong> Which modules stay. SMS consent export. Loyalty SMS triggers inventory. Postscript or Klaviyo target selected.</p>
+    <p><strong>Phase 1 — Yotpo stack audit.</strong> Inventory retained modules, recoverable permission evidence, journeys, integrations, and queue owners. Confirm actual replacement access and export availability; the heading is a planning framework, not a four-week promise.</p>
     <p><strong>Week 2 — Email destination live.</strong> Sequenzy lifecycle if email was gap. Reviews integration preserved. Parallel suppression begins.</p>
-    <p><strong>Week 3 — SMS port.</strong> Hard cutover promotional SMS. Email discount caps aligned. Five percent send test on new SMS platform.</p>
-    <p><strong>Week 4 — Bill reconciliation.</strong> Modular Yotpo invoice compared to new stack TCO. Loyalty fate finalized. Support scripts updated for SMS sender change.</p>
+    <p><strong>Phase 3 — SMS transition readiness.</strong> Verify sender transfer or provisioning terms, channel eligibility, purchase exits, suppressions, repeated events, and rollback. Drain or cancel old queued messages deliberately; a fixed sample size or week number cannot prove readiness.</p>
+    <p><strong>Phase 4 — Reconciliation.</strong> Compare matched all-in stack costs, including messaging destinations, segments, carrier charges where applicable, setup, overlap, and operator time. Resolve retained loyalty obligations and update support instructions from the actual sender transition.</p>
 
     <h2>Buyer desk: Yotpo module rationalization</h2>
-    <p>SMSBump exit should trigger Yotpo stack audit — paying for loyalty nobody operates is same problem as SMSBump credits without attribution. Module-level ROI before replacement choice.</p>
-    <p>TCPA porting and hard SMS cutover non-negotiable. Align email ESP suppression day one — loyalty points texts and cart recovery emails must not collide on discount policy.</p>
-    <p>Success at ninety days: SMS ROI stable at lower TCO or improved attribution, email lifecycle live if that was gap, finance sees clear module or stack bill without Yotpo creep. Reviews retention negotiation may fund SMS migration consulting — ask account rep before porting. Module audit spreadsheet updated quarterly.</p>
+    <p>Audit the retained Yotpo stack separately from the messaging replacement. Assess documented usage, obligations, and operating effort rather than inferring value from module count or attributed revenue alone. Review the same workload and cost scope for each candidate.</p>
+    <p>Check current provider transfer terms and applicable destination requirements before relying on number portability. Preserve purpose and channel permissions, current suppressions, and purchase exits at dispatch; assign one sender and queue owner per journey and deduplicate replayed events. Discount coordination does not substitute for sending eligibility.</p>
+    <p>Predeclare success criteria based on permission continuity, reliable queue cutover, purchase exits, reporting reconciliation, and matched all-in costs. Separate attributed orders from causal incremental contribution after discounts, refunds, messaging, and operator effort. No ninety-day deadline, cost reduction, or provider-funded consulting is promised.</p>
 
     <h2>Replacement ranking when not on full Yotpo suite</h2>
-    <p><strong>Postscript:</strong> default for standalone SMS when Yotpo reviews module absent. <strong>Klaviyo SMS:</strong> unified flows when email already Klaviyo. <strong>Omnisend:</strong> SMB consolidate. <strong>Stay SMSBump:</strong> only when reviews or loyalty module actively used and MMS holdout won on visual SKUs.</p>
-    <p><strong>Scenario — dual-category vinyl plus tea.</strong> MMS default disabled for tea SKUs after holdout; Postscript comparison ran for non-Yotpo keyboard line — specialization beat bundle inertia.</p>
+    <p><strong>Postscript:</strong> test required standalone SMS workflows. <strong>Klaviyo SMS:</strong> test the current email and SMS integration when evaluating consolidation. <strong>Omnisend:</strong> evaluate required channels and operating effort. <strong>Stay SMSBump:</strong> not an active messaging recommendation after the announced Email and SMS deprecation; Reviews and Loyalty remain separate decisions.</p>
+    <p><strong>Scenario — dual-category vinyl plus tea, hypothetical.</strong> Plan a category-specific comparison of plain SMS and MMS with comparable eligible audiences, delivery conditions, offers, and cost scope. Verify actual channel availability and permission first; no observed outcome or platform winner is reported.</p>
     <h2>Yotpo account rep negotiation</h2>
-    <p>Ask account rep about SMS migration consulting before porting — reviews retention negotiation sometimes funds transition support when module audit shows partial suite use.</p>
+    <p>Ask the provider to confirm actual account access, available exports, transfer support, and contractual obligations. Do not budget a consulting subsidy or cancellation saving without written terms; retaining Reviews is a separate decision from messaging migration.</p>
 
     <h2>MMS holdout before store-wide default</h2>
-    <p>Vinyl visual SKUs justified MMS; tea tins tied plain SMS on 600-send sample — disable MMS default per category not per merchant habit. Postscript comparison mandatory when not on Yotpo reviews module.</p>
+    <p>For vinyl and tea categories, propose a suitably designed SMS-versus-MMS evaluation using eligible comparable audiences. Include message segmentation, destinations, delivery, discounts, refunds, and operator effort in cost comparisons. An attributed order count is not causal incremental margin; no 600-send result or universal category default is established.</p>
 
     <h2>90-day SMSBump rationalization</h2>
-    <p>Week 1: Yotpo module audit spreadsheet. Week 2: MMS holdout by SKU category. Week 3: Postscript thirty-day test if partial suite. Week 4–12: unified send calendar across reviews, loyalty, SMS. Day 90: SMS ROI at lower TCO or justified full suite with redemption evidence.</p>
-    <p>Dual-category vinyl plus tea: MMS disabled for tea after holdout; keyboard line Postscript comparison when not on Yotpo reviews. TCPA port and email ESP suppression day one — loyalty points texts and cart recovery share discount wiki.</p>
+    <p>Use readiness phases: inventory modules and obligations; verify recoverable records and mappings; test replacement journeys, dispatch eligibility, purchase exits, and repeated events; reconcile queues and reporting before retirement. Review results on a window suited to purchase cycles and study design rather than a fixed ninety-day schedule.</p>
+    <p>For a proposed vinyl-and-tea migration, document category policy, purpose and channel permission, current suppression, and recent-purchase exclusions separately. Assign one sender and queue owner to each journey and test replay deduplication. No category experiment, provider comparison, or universal cutover deadline is reported.</p>
 
     <h2>SMSBump exit desk: Shopify SMS consolidation</h2>
     <p>Merchants leave SMSBump when SMS billing surprises meet limited journey logic — board game launch day needs timed email plus text with one suppression brain, not two apps guessing. Week one: export all SMS segments and revenue tags; camping merchants often discover half of text revenue came from one abandoned-cart keyword. Week two: pair replacement SMS with email winback; pottery studios remind class enrollees on text, glaze tutorials on email. Week three: test compliance on new carrier routes before peak season; outdoor gear Black Friday stacks fail when SMS and email discounts compound. Week four through twelve: compare SMS cost per recovered cart against email-only holdout — sometimes SMSBump left because email attribution was never built. Vinyl: text for minute-zero drops, email for press and variants. Sequenzy for unified strategy; Postscript for SMS depth; Klaviyo when CLV segmentation drives both channels. Day ninety: single collision priority doc, compliant opt-in audit, blended channel revenue documented with holdout on email incrementality.</p>
@@ -200,12 +198,12 @@ const faqs = [
 
   <div class="prose-shopify container max-w-4xl pb-8">
     <h2>SMSBump replacement: billing and governance audit</h2>
-    <p>Export last six months SMS invoices and match to recovered-cart revenue per message — if cost per recovery rose while email was never built, your replacement stack must include ESP abandonment day one. Map every SMSBump automation against Shopify Flow or ESP triggers to find duplicates. Climbing gear and camping merchants often run flash SMS without quiet-hour rules — fix in migration, not after complaint spike. Specialty tea flash restocks need inventory check before send; SMSBump rarely gates on stock. Vinyl drop culture: preserve keyword segments exactly; botched opt-in metadata kills text channel permanently. Target unified suppression within fourteen days of switchover.</p>
+    <p>Reconcile available messaging invoices with consistent attribution definitions and measurement windows, but do not equate recovered-cart attribution with incremental profit. Map journeys across the actual replacement integration and Shopify workflows to find duplicates. For climbing gear, test applicable quiet-hour rules; for tea restocks, test inventory and purchase exits at dispatch. Preserve keyword context and permission evidence without assuming export portability. Choose cutover by tested suppression propagation, queue ownership, deduplicated retries, and rollback readiness rather than fourteen days.</p>
   </div>
 
   <div class="prose-shopify container max-w-4xl pb-8">
-    <p>SMSBump replacements should budget ESP abandonment on day one — SMS-only recovery without email depth caps LTV in enthusiast Shopify catalogs.</p>
-    <p>Treat that budget line as a hard rule: an SMS replacement without a parallel email abandonment flow should not pass a pilot, regardless of per-message savings.</p>
+    <p>Budget any additional email journey against a documented customer need and the same all-in cost scope. For an enthusiast catalog, test whether proposed email and SMS journeys improve incremental contribution rather than assuming both channels are always required.</p>
+    <p>Approve a pilot against declared workflow, permission, reliability, and economic criteria. A parallel email abandonment flow is not a universal prerequisite; ensure each enabled journey has an accountable sender and queue owner, current dispatch checks, and deduplicated events.</p>
   </div>
 
   <FaqSection faqs={faqs} title="SMSBump alternatives FAQ" />
