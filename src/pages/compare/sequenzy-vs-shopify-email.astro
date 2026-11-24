@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/sequenzy-vs-shopify-email';
-const title = 'Sequenzy vs Shopify Email: When to Graduate Native Sending';
-const desc = 'Sequenzy vs Shopify Email for Shopify email tools — lifecycle playbooks vs Admin-native campaigns, pay-per-send vs usage pricing, cart recovery gap, and graduation timing for growing catalogs.';
+const title = 'Sequenzy vs Shopify Email: Native Automation or a Separate Sender';
+const desc = 'Compare Sequenzy with Shopify Email, now documented under Shopify Messaging, for native recovery, pottery class audiences, migration ownership and matched sending costs.';
 
 const faqs = [
   {
-    question: 'When should a Shopify store replace Shopify Email with Sequenzy?',
-    answer: 'Graduate when cart recovery, post-purchase education, replenishment, or winback drive revenue goals Shopify Email cannot express — typically after 300–500 monthly orders or when automations matter more than occasional Admin blasts. Shopify Email remains fine for quick sale announcements during parallel evaluation.',
+    "question": "When should a Shopify store replace Shopify Email with Sequenzy?",
+    "answer": "Replace it when a necessary journey fails in the current native tools and a Sequenzy rehearsal resolves that failure at an acceptable cost. Monthly order count is not a migration trigger. Native Shopify Messaging includes marketing automations, not just newsletters."
   },
   {
-    question: 'Is Shopify Email cheaper than Sequenzy?',
-    answer: 'Shopify Email offers 10,000 free sends monthly then roughly $1 per 1,000 — cheap for broadcasts alone. Sequenzy bills per email sent with unlimited contacts and full playbooks. Shopify Email looks cheaper until you factor lost GMV from missing cart recovery and replenishment that Sequenzy ships in days.',
+    "question": "Is Shopify Email cheaper than Sequenzy?",
+    "answer": "Compare the same billable workload. Shopify publishes a monthly email allowance and usage pricing, with abandoned checkout emails excluded from that count. Sequenzy prices by email volume with unlimited contacts. Include required Shopify plan costs, add-ons and migration work; there is no demonstrated revenue uplift here."
   },
   {
-    question: 'Can Shopify Email and Sequenzy run together?',
-    answer: 'Yes during transition — Shopify Email for Admin sale blasts, Sequenzy for lifecycle automations. Risk is duplicate messaging without suppression docs. Pause overlapping sends; document which tool owns welcome, cart, and post-purchase before enabling both.',
+    "question": "Can Shopify Email and Sequenzy run together?",
+    "answer": "They can coexist with explicit ownership. Assign each campaign and automation to one sender, inspect existing native queues and disable overlapping enrollment before switching. A purchase or unsubscribe visible in Shopify is not by itself proof that another platform has cancelled a waiting message."
   },
   {
-    question: 'Does Shopify Email handle abandoned cart recovery?',
-    answer: 'Minimal automation depth — not comparable to Sequenzy cart playbooks with timing, discount caps, gift exclusions, and cross-flow suppression. Stores where cart recovery is load-bearing should graduate. Shopify Email fits manual campaigns, not lifecycle orchestration.',
+    "question": "Does Shopify Email handle abandoned cart recovery?",
+    "answer": "Yes. Shopify documents abandoned checkout, cart and product-browse recovery templates in Shopify Messaging. Their triggers and eligibility differ. Inspect the actual template, recipient settings and purchase exits rather than treating native recovery as absent or assuming parity with every Sequenzy flow."
   },
   {
-    question: 'How long does migration from Shopify Email to Sequenzy take?',
-    answer: 'One to two weeks for most stores — fewer legacy flows than Klaviyo migrations. Export consent from Shopify Admin, connect Sequenzy, deploy welcome and cart playbooks first, then post-purchase and winback. Run one parallel campaign cycle before disabling Admin automations.',
+    "question": "How long does migration from Shopify Email to Sequenzy take?",
+    "answer": "This page establishes no migration duration. Inventory live journeys, permission fields, templates, integration work and queued messages. Rehearse import and exits with test records, then schedule cutover around the store workload. Do not infer completion from connecting the app."
   },
   {
-    question: 'Which fits a pottery studio under 250 orders/month?',
-    answer: 'Shopify Email suffices for class announcements and glaze sale blasts inside Admin. Sequenzy pays off once cart recovery and post-purchase kiln-care education run unattended — often true by 180 orders/month. If retention is not prioritized, stay native until 500 orders.',
+    "question": "Which fits a pottery studio under 250 orders/month?",
+    "answer": "For a proposed pottery studio, separate class announcements, class waitlists and glaze-kit education. First test these audiences in the native tools. Evaluate Sequenzy if a particular branch or data requirement fails; 250 orders per month does not establish which tool is sufficient."
   },
   {
-    question: 'Does Sequenzy work inside Shopify Admin?',
-    answer: 'No — separate app dashboard. Shopify Email wins on zero context-switching. Sequenzy wins when retention depth justifies an extra login. Monthly senders prefer Admin; operators living in flows accept the switch.',
+    "question": "Does Sequenzy work inside Shopify Admin?",
+    "answer": "Compare where the operator actually edits, previews and checks sends in the current installed apps. Shopify documents native campaigns and automations within its own environment. Sequenzy provides its own tooling and Shopify integration, but this page has not verified its current embedded Admin experience."
   },
   {
-    question: 'What workflow test proves graduation time?',
-    answer: 'Attempt in Shopify Email: cart at 45 minutes with product blocks, post-purchase excluding gifts, replenishment at SKU-specific windows, winback with education before discount. If the platform cannot express two or more jobs, graduate. Sequenzy should pass all four within a week.',
-  },
+    "question": "What workflow test proves graduation time?",
+    "answer": "Propose a class-waitlist journey and a glaze-kit purchase journey in both systems. Change permission, class availability and purchase state while messages wait. Compare audience correctness, queue exits, operator effort and costs. No fixed delay, number of failed jobs or promised one-week success determines the decision."
+  }
 ];
 ---
 
@@ -60,150 +59,39 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sequenzy vs Shopify Email for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Native Admin convenience versus lifecycle depth — the first real fork most merchants hit after turning on Shopify Email. We evaluated both on a pottery studio sending class promos from Admin, a vinyl record shop outgrowing manual drop blasts, and a specialty tea merchant whose replenishment timing cannot live in a broadcast-only tool. Shopify Email covers newsletters; Sequenzy covers the full catalog of lifecycle automation and transactional-style education moments Shopify Email was never built to own.
+          A pottery studio deciding whether to keep native Shopify email needs to distinguish class announcements from class waitlists and glaze-kit aftercare. Those jobs do not become different at a particular order count. Shopify now documents its email and marketing automations under Shopify Messaging. This page retains the familiar Shopify Email comparison name and uses proposed studio workflows; it reports no firsthand merchant tests or performance results.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Admin convenience', tool: 'Shopify Email', reason: 'Send from Shopify without a second login.' },
-            { label: 'Lifecycle playbooks', tool: 'Sequenzy', reason: 'Cart, replenishment, winback with suppression defaults.' },
-            { label: 'Send economics', tool: 'Sequenzy', reason: 'Pay per send — large lists with selective automation.' },
-            { label: 'Starter broadcasts', tool: 'Shopify Email', reason: '10k free sends for early sale announcements.' },
-            { label: 'Retention revenue', tool: 'Sequenzy', reason: 'Recovery and repeat purchase flows Shopify Email lacks.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead><tr><th>Dimension</th><th>Sequenzy</th><th>Shopify Email</th></tr></thead>
-          <tbody>
-            <tr><td>Catalog fit</td><td>Lifecycle strategy layer</td><td>Native campaign sender</td></tr>
-            <tr><td>Pricing</td><td>Per email sent; unlimited contacts</td><td>10k free/mo; then usage-based</td></tr>
-            <tr><td>Newsletters</td><td>Campaign editor + product blocks</td><td>Admin-native templates</td></tr>
-            <tr><td>Automation</td><td>Agent-first playbooks</td><td>Minimal</td></tr>
-            <tr><td>Cart recovery</td><td>Full playbook</td><td>Not meaningful</td></tr>
-            <tr><td>Shopify UX</td><td>Separate app</td><td>Inside Admin</td></tr>
-            <tr><td>Graduation trigger</td><td>300–500+ orders/mo</td><td>Pre-retention stage</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Sequenzy and Shopify Email sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Sequenzy is optimized when you need sequences live this month without a retention engineer. Shopify Email is optimized when newsletters and simple drops from admin are the whole job. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
-        <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Shopify Email reduced preview-time surprises because native admin sending with zero integration friction. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
-        <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How board game store emails through Essen release week</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Shopify Email reduced preview-time surprises because native admin sending with zero integration friction. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        
-        <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
-        <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
-        <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Shopify Email contributes native admin sending with zero integration friction. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Shopify Email remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Tool friction where Sequenzy and Shopify Email diverge on Shopify</h2>
-        <p>
-          Sequenzy shines when you need sequences live this month without a retention engineer. Its friction shows when browse-by-collection targeting steers weekly merchandising. Shopify Email shines when newsletters and simple drops from admin are the whole job. Its friction shows when cart recovery and replenishment drive repeat revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Sequenzy (per email sent, unlimited contacts) rewards send discipline or punishes broadcast volume depending on your calendar. Shopify Email (included Shopify emails then usage-based) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        <p>
-          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
-        </p>
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Sequenzy and Shopify Email both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Shopify Email punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Shopify Email, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sequenzy if:</strong></p>
-        <ul>
-          <li>You need sequences live this month without a retention engineer</li>
-          <li>You will use agent-first lifecycle playbooks with pay-per-send billing weekly</li>
-          <li>Per email sent, unlimited contacts fits your calendar</li>
-          <li>Your team can maintain Sequenzy without external rescue</li>
-          <li>Switching cost favors Sequenzy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Shopify Email if:</strong></p>
-        <ul>
-          <li>Newsletters and simple drops from admin are the whole job</li>
-          <li>You will use native admin sending with zero integration friction weekly</li>
-          <li>Included shopify emails then usage-based fits your calendar</li>
-          <li>Your team can maintain Shopify Email without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Shopify Email migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Sequenzy is the better Shopify email tool when you need sequences live this month without a retention engineer. Shopify Email is the better Shopify email tool when newsletters and simple drops from admin are the whole job. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
+        <h2>The native option includes automation</h2>
+        <p>Shopify documents abandoned checkout, cart and product-browse recovery, alongside welcome marketing automations. Custom workflows can use Shopify Flow. See the <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">Shopify Messaging automation overview</a> and <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create">template setup guidance</a>. The useful question is whether those tools express your required conditions, not whether native email can automate at all.</p>
+        <p>Sequenzy advertises assisted drafting, visual workflows, Shopify customer/order sync and email-volume billing with unlimited contacts. It also lists push and a paid SMS/MMS beta, so evaluate channel requirements individually rather than calling it email-only. Its <a class="link" href="https://www.sequenzy.com/pricing">current feature and pricing page</a> is supplier evidence of scope, not proof of a successful studio implementation.</p>
+        <h2>A class announcement is not a product welcome</h2>
+        <p>In a proposed studio, the same customer might buy glaze supplies and join a class waitlist. Store those interests separately. A waitlist signup should not silently enroll someone in every kit promotion, and a kit order should not remove an existing class request. For each audience, record the message purpose, relevant permission and the source field used to select recipients.</p>
+        <p>Ask the operator to build a class announcement in the native editor first. Preview the audience for a current student, a waitlist-only contact, a kit buyer and someone who withdrew promotional permission. Check that the call to action leads to the right class and accurately describes availability. Repeat in Sequenzy using the same records; compare actual field access and review effort rather than the number of workflow templates.</p>
+        <p>If class booking is managed outside Shopify, identify how booking status reaches either sender. A general Shopify integration does not prove access to the booking provider's waitlist position or cancellation fields. Missing class data may require a data integration rather than a new email platform. Resolve that dependency before crediting either product with a complete journey.</p>
+        <h2>Test aftercare without mixing service and promotion</h2>
+        <p>For a glaze-kit purchase, propose educational content matched to the purchased kit. Determine which messages are necessary service communications and which contain marketing, then apply the appropriate audience and permission rules. Keep order notifications under their existing owner during evaluation; do not replace them merely because an automation editor can draft similar text.</p>
+        <p>Queue the proposed aftercare, then cancel the order before the message sends. Repeat with a refund, a second kit purchase and a changed email preference. Inspect whether the message exits, changes branch or remains appropriate. Record the actual required fields and update delays. A supplier's post-purchase template is a starting point, not evidence that cancellation and duplicate enrollment behave correctly.</p>
+        <p>For a class waitlist, make a seat unavailable after enrollment but before the offer is sent. The message must not promise a seat that no longer exists. This differs from ordinary product cart recovery: the seat may be allocated by a separate booking system. Define where the final availability check happens and whether the offer reserves anything before writing urgency copy.</p>
+        <h2>Use the correct recovery event</h2>
+        <p>Browse, cart and checkout are different stages. Demonstrate the native template appropriate to the problem before proposing migration. A visitor who viewed a kit is not necessarily eligible for the same communication as a customer who entered checkout details. Review the actual recipient setting, not just the template name.</p>
+        <p>Shopify documents marketing-subscriber defaults and a configurable recipient setting for abandoned checkout recovery. Preserve the intended setting during any migration and review its suitability for the message purpose. Do not broaden recipients just to reproduce a larger recovery audience. For each system, place a test purchase while a recovery message waits and inspect the queue rather than assuming the order event cancels it.</p>
+        <h2>Calculate comparable costs</h2>
+        <p>Shopify currently publishes 10,000 included emails per calendar month, with usage pricing above the allowance; abandoned checkout emails are excluded. Other marketing automation emails count. Consult <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/email/pricing">Shopify email pricing</a> for the current tiers rather than applying a single rate at every volume.</p>
+        <p>An explicitly hypothetical studio month has two class announcements to 2,000 subscribers, 500 welcome emails and 800 kit aftercare emails: 2,000 × 2 + 500 + 800 = 5,300 counted emails. Another 200 native abandoned checkout emails would be tracked separately under the documented exclusion. This illustrates counting rules, not a quote, measured sending history or forecast of sales.</p>
+        <p>For a migration quote, count the full workload that would move to Sequenzy rather than carrying the native checkout exclusion into a different supplier's plan. Keep genuinely retained native messages separate. Include the required Shopify subscription, email plan, SMS usage if needed, integration maintenance and operator migration time. A low incremental native email bill does not prove a complex workflow is easy to maintain; a new subscription does not prove it will increase revenue.</p>
+        <h2>Move ownership, not merely templates</h2>
+        <p>Make an inventory of active native automations, scheduled campaigns, recovery settings and any other sender. For each journey, name the current owner, new owner and cutover action. Connecting Sequenzy does not disable the native journey. Copying a template does not move the waiting recipients or preserve their progress.</p>
+        <p>Rehearse a customer who is already waiting in a welcome sequence. Decide whether that customer finishes in the old tool or enters a specific continuation in the new one; do not restart every imported subscriber at the first discount. Turn off competing enrollment and inspect pending queues before switching traffic. Define a rollback that will not replay completed messages.</p>
+        <p>Preserve the most recent permission and suppression state through import. Replay an old signup update after a newer unsubscribe to check that it cannot reactivate marketing. Repeated customer/order updates must not cause repeated enrollment. These are proposed acceptance tests for the actual integration; no result is asserted here.</p>
+        <h2>Keep reporting comparable through the switch</h2>
+        <p>Record the cutover date and which sender owned each journey. Match purchases by order identifier and use a consistent attribution rule when comparing reports. Different windows can make the new sender appear to outperform without changing buying behavior. Account for overlapping campaigns, discount costs and class capacity when interpreting results.</p>
+        <p>If measuring a new class promotion, define eligible customers and a comparison group before sending. Choose an observation window that fits the booking cycle, and report uncertainty instead of declaring a winner from a handful of bookings. Source inspection here does not establish incremental sales, deliverability, migration duration or runtime behavior.</p>
+        <h2>Stay native or move for a demonstrated reason</h2>
+        <p>Stay with Shopify Messaging when its current campaigns and automations meet the studio's audience, data and operating needs. Evaluate Sequenzy when its drafting tools or workflow approach resolve a specific failing requirement and the operator can demonstrate that resolution. Neither 180 nor 500 monthly orders is a defensible universal switch point.</p>
+        <p>Before an annual commitment, retain a written record of the failed native requirement, the corresponding Sequenzy rehearsal, full costs and migration ownership. If the problem is missing booking data, resolve the data path first. The <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing guide</a> can support that decision without assuming native email is broadcast-only.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
