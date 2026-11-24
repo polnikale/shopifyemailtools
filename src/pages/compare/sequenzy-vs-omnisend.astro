@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/sequenzy-vs-omnisend';
 const title = 'Sequenzy vs Omnisend: Shopify Email Automation Compared';
-const desc = 'Sequenzy vs Omnisend for Shopify email tools — agent playbooks vs multichannel presets, pay-per-send vs contact tiers, push recovery, and which fits lean lifecycle teams.';
+const desc = 'Compare Sequenzy and Omnisend for Shopify tea replenishment, channel permission, recovery queues, workflow presets and matched sending costs.';
 
 const faqs = [
   {
-    question: 'When should a Shopify store pick Sequenzy over Omnisend?',
-    answer: 'Choose Sequenzy when lifecycle strategy speed and send-based billing matter more than native SMS and web push in one canvas. Omnisend wins when you want email, SMS, and push presets live in days with contact-tier pricing you can model easily. Sequenzy fits operators who describe outcomes in sentences; Omnisend fits operators who want a visual journey builder with multichannel steps.',
+    "question": "When should a Shopify store pick Sequenzy over Omnisend?",
+    "answer": "Consider Sequenzy when assisted drafting and send-volume billing fit your workload. Consider Omnisend when its ecommerce workflow presets and channel controls fit an existing multichannel program. Compare a real replenishment and recovery job in each account; neither channel availability nor a template establishes a winner."
   },
   {
-    question: 'How does Sequenzy vs Omnisend pricing compare at 15,000 contacts?',
-    answer: 'Omnisend Standard at 15k often runs $130–200/mo before SMS. Sequenzy bills per email sent — stores emailing 30k lifecycle messages monthly with 15k contacts frequently pay less than Omnisend tiers. Omnisend punishes inactive profiles in tier jumps; Sequenzy punishes broadcast-heavy calendars. Model sends, not imports.',
+    "question": "How does Sequenzy vs Omnisend pricing compare at 15,000 contacts?",
+    "answer": "Use 15,000 contacts as an inventory input, not a complete quote. Sequenzy publishes email-volume billing with unlimited contacts. Omnisend pricing considers billable contacts and message allowances. Include peak email volume, destination-specific SMS costs, required plan access and migration effort in matched quotes."
   },
   {
-    question: 'Does Omnisend web push matter vs Sequenzy?',
-    answer: 'Yes for mobile-heavy catalogs — climbing gear shoppers researching harness fit on phone browsers may recover via push without SMS opt-in. Sequenzy is email-first; pair push via Firepush or accept email-only recovery. If push is load-bearing, Omnisend has structural advantage.',
+    "question": "Does Omnisend web push matter vs Sequenzy?",
+    "answer": "Web push can reach people who separately grant browser permission. Omnisend documents push workflow steps, but Sequenzy also advertises push. Compare enrollment, device reach, opt-out handling and purchase exits in your storefront rather than treating push as exclusive to Omnisend."
   },
   {
-    question: 'Which handles specialty tea replenishment better?',
-    answer: 'Sequenzy — replenishment playbooks with per-SKU day windows and gift exclusion defaults ship faster than Omnisend workflow tuning for consumption-based repeat. Omnisend catches up if you invest canvas time; Sequenzy wins time-to-live for education-first replenishment without discount training.',
+    "question": "Which handles specialty tea replenishment better?",
+    "answer": "Neither wins by default. In a proposed tea program, separate one-off tins, gifts and subscriptions, then ask each integration to expose the fields needed for refill eligibility. A subscription pause or replacement order must change the next reminder before it sends."
   },
   {
-    question: 'Can Sequenzy replace Omnisend SMS?',
-    answer: 'No natively. Sequenzy is email-first; Omnisend unifies SMS in journeys. Sequenzy merchants pair Postscript or Omnisend SMS with documented suppression — no cart email and cart text within 45 minutes. If unified multichannel in one login is non-negotiable, Omnisend leads.',
+    "question": "Can Sequenzy replace Omnisend SMS?",
+    "answer": "Sequenzy currently advertises an SMS and MMS beta add-on on paid plans. That is not proof of parity with an existing Omnisend program. Check destination coverage, sender registration, permission history, STOP processing and queued-message behavior before replacing SMS."
   },
   {
-    question: 'Which is faster for mechanical keyboard group-buy email?',
-    answer: 'Sequenzy for waitlist-to-launch sequences with suppression when GB closes. Omnisend for cart plus push recovery during long consideration before purchase. Many keyboard stores use Sequenzy for education and winback, Omnisend for browse-heavy recovery — hybrid with collision docs.',
+    "question": "Which is faster for mechanical keyboard group-buy email?",
+    "answer": "For a proposed keyboard group buy, demonstrate what happens when enrollment closes while a recovery message is waiting. Compare implementation and review effort rather than promising a faster platform. Order updates and promotional recovery need separate owners and eligibility rules."
   },
   {
-    question: 'What about Omnisend prebuilt ecommerce templates?',
-    answer: 'Omnisend ships welcome, cart, and post-purchase faster out of the box than blank-canvas tools. Sequenzy playbooks match that speed with agent-assisted drafting and different billing. Choose Omnisend when presets plus push/SMS matter; Sequenzy when playbook language and send economics matter.',
+    "question": "What about Omnisend prebuilt ecommerce templates?",
+    "answer": "Omnisend documents prebuilt welcome, cart and post-purchase workflows. These provide useful starting structures, but the operator still needs to inspect enrollment, channel permission, exits and content. Compare the actual preset against a reviewed Sequenzy draft using the same store requirements."
   },
   {
-    question: 'What buyer test settles Sequenzy vs Omnisend?',
-    answer: 'Build welcome, cart at 60 minutes, post-purchase excluding gifts, replenishment at 28 days, winback at 90 days. Score time-to-live, multichannel needs, and 12-month cost at your send volume. If push or native SMS is required, Omnisend. If email lifecycle speed and per-send billing win, Sequenzy.',
-  },
+    "question": "What buyer test settles Sequenzy vs Omnisend?",
+    "answer": "Propose two rehearsals: a tea refill with a subscription pause and a cart recovery with different email, SMS and push permissions. Change purchase and permission state while messages wait. Inspect queues and replay an event; compare failures, operator effort and matched costs. These tests have not been performed here."
+  }
 ];
 ---
 
@@ -60,153 +59,42 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sequenzy vs Omnisend for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Agent-first lifecycle playbooks versus multichannel journey presets with push at step two. We evaluated both through a specialty tea merchant with gift-box seasonality and subscription overlap, a mechanical keyboard vendor running six-week group buys, and a climbing gear shop where mobile browse recovery matters as much as cart email. Both cover newsletters and lifecycle automation; the split is billing model, channel mix, and how your team prefers to ship sequences.
+          For a Shopify store coordinating email, SMS and browser push, the useful comparison is how each platform handles eligibility across channels. This page uses proposed tea replenishment and cart-recovery scenarios, not merchant case studies. Sequenzy offers assisted drafting and email-volume billing; Omnisend offers ecommerce workflow presets and multichannel automation. Both now advertise push and SMS options, so an email-only versus multichannel split would mislead buyers.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Send economics', tool: 'Sequenzy', reason: 'Pay per email — large lists with selective lifecycle sending.' },
-            { label: 'Multichannel presets', tool: 'Omnisend', reason: 'Email, SMS, and web push in one journey builder.' },
-            { label: 'Playbook speed', tool: 'Sequenzy', reason: 'Describe outcomes; get draft sequences with suppression defaults.' },
-            { label: 'Mobile push recovery', tool: 'Omnisend', reason: 'Native push steps without SMS spend.' },
-            { label: 'Visual workflow control', tool: 'Omnisend', reason: 'Canvas branching for hands-on journey designers.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Sequenzy</th><th>Omnisend</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Catalog fit</td><td>Lifecycle strategy layer</td><td>Multichannel ecommerce automation</td></tr>
-            <tr><td>Starting price</td><td>From ~$19/mo; 2,500 emails free</td><td>Free tier; paid by contacts</td></tr>
-            <tr><td>Billing</td><td>Per email sent, unlimited contacts</td><td>Contact tiers plus SMS credits</td></tr>
-            <tr><td>Newsletters</td><td>Campaign editor with product blocks</td><td>Campaign editor with presets</td></tr>
-            <tr><td>Lifecycle depth</td><td>Agent-first playbooks</td><td>Visual workflows, prebuilt flows</td></tr>
-            <tr><td>Transactional-style</td><td>Order-triggered education</td><td>Order and shipment triggers</td></tr>
-            <tr><td>SMS</td><td>Pair with dedicated provider</td><td>Native in journeys</td></tr>
-            <tr><td>Push</td><td>Not native</td><td>Web push included</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Sequenzy and Omnisend sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Sequenzy is optimized when you need sequences live this month without a retention engineer. Omnisend is optimized when you need cart, welcome, and post-purchase live in days. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Before Record Store Day: vinyl record shop retention choices</h2>
-        <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Outdoor Gear Retailer: layering guides and ultralight segment tags</h2>
-        <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How mechanical keyboard vendor emails through GB close deadlines</h2>
-        <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
-        <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
-        <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Sequenzy workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Sequenzy shines when you need sequences live this month without a retention engineer. Its friction shows when browse-by-collection targeting steers weekly merchandising. Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Sequenzy (per email sent, unlimited contacts) rewards send discipline or punishes broadcast volume depending on your calendar. Omnisend (contacts plus message volume) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        <p>
-          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
-        </p>
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Sequenzy and Omnisend both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Omnisend punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Omnisend, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sequenzy if:</strong></p>
-        <ul>
-          <li>You need sequences live this month without a retention engineer</li>
-          <li>You will use agent-first lifecycle playbooks with pay-per-send billing weekly</li>
-          <li>Per email sent, unlimited contacts fits your calendar</li>
-          <li>Your team can maintain Sequenzy without external rescue</li>
-          <li>Switching cost favors Sequenzy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Omnisend if:</strong></p>
-        <ul>
-          <li>You need cart, welcome, and post-purchase live in days</li>
-          <li>You will use prebuilt multichannel journeys with email, SMS, and push weekly</li>
-          <li>Contacts plus message volume fits your calendar</li>
-          <li>Your team can maintain Omnisend without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Omnisend migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Sequenzy is the better Shopify email tool when you need sequences live this month without a retention engineer. Omnisend is the better Shopify email tool when you need cart, welcome, and post-purchase live in days. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
+        <h2>Start with a refill journey, not a channel count</h2>
+        <p>A tea merchant might sell loose-leaf tins, seasonal gifts and recurring subscriptions through the same storefront. A completed order alone cannot establish that its buyer needs a refill. The gift purchaser may never consume the tea; a subscription customer may already have the next shipment scheduled. The practical job is to make the next message appropriate to the purchase and current subscription state.</p>
+        <p>Define the required input before selecting a builder: product or variant purchased, quantity, gift status where known, subscription relationship, latest order and channel permissions. Record which system supplies each field and whether it arrives as an order property, customer field or separate subscription event. Neither a product listing nor a workflow screenshot proves that your installed subscription integration supplies those fields.</p>
+        <h2>What the documented products contribute</h2>
+        <p>Sequenzy publishes email-volume pricing with unlimited contacts, assisted sequence drafting, Shopify integration and visual automation. Omnisend publishes prebuilt ecommerce workflows and combined email, SMS and web-push automation. These are vendor-described capabilities, not measured delivery, conversion or setup results.</p>
+        <p>The operational distinction is worth demonstrating: use an Omnisend preset to examine how much of your required journey is already represented, and use Sequenzy drafting to examine how much review and configuration its suggested sequence requires. A generated message may help with tea preparation education while still missing the subscription exclusion. A preset may establish the basic order sequence while still needing a gift branch. Score the missing work rather than assigning either product automatic setup-speed superiority.</p>
+        <h2>A proposed tea replenishment rehearsal</h2>
+        <p>Create permitted test records representing a one-off tin buyer, a gift purchaser, an active subscriber and a paused subscriber. Use a reorder estimate grounded in pack size and the customer's stated preference where available; a universal day-28 reminder is not evidence of consumption. Ask the operator to show why each record enters or stays out of the refill audience.</p>
+        <p>While a reminder waits, introduce a replacement order for the one-off buyer and a subscription pause for the recurring buyer. A pause must not silently become permission for an aggressive refill promotion. The merchant should define the intended treatment, such as suppressing refill marketing while retaining necessary subscription communication through its existing owner. Inspect whether the relevant update reaches the automation and removes or changes the queued reminder.</p>
+        <p>Replay the same order event and check that it does not create a second reminder. Then send a later, distinct order event to establish whether the clock resets. Keep an audit of event identifiers, timestamps and resulting queue entries. This is a proposed acceptance test; no merchant results, time savings or improved click rates are claimed.</p>
+        <h2>Channel eligibility changes the recovery path</h2>
+        <p>A cart visitor might allow email but decline SMS, or allow browser push without supplying a phone number. Define the permitted path for each combination. Omnisend's SMS automation guidance specifically describes letting a contact continue past a message block for a channel to which they are not subscribed. Inspect that setting in the intended workflow; a skipped SMS must not accidentally strand an otherwise eligible email recipient.</p>
+        <p>Sequenzy's current pricing page advertises push and an SMS/MMS beta add-on, including a US/Canada toll-free sender. This corrects the older premise that it is email-only. It does not establish coverage for every destination or equivalence to a merchant's current Omnisend implementation. Check sender availability and channel access before designing around them.</p>
+        <p>For both products, grant and withdraw permission separately for each channel in the rehearsal. Place an order while a follow-up waits, then inspect every queued channel step. A fixed forty-five-minute gap cannot resolve a stale purchase state or missing permission. Choose timing from the customer's task and the merchant's contact policy, and require a current eligibility check before the relevant message.</p>
+        <h2>Newsletter content and scarce products</h2>
+        <p>Tea brewing guides and blend comparisons can support a refill program without attaching a discount to every message. Keep gift education separate from self-consumption advice. Have the operator preview a customer with a gift-only purchase history and explain which content they receive and why.</p>
+        <p>A seasonal blend can sell out after a campaign is prepared. Rehearse a stale product link and an unavailable variant, and decide whether to replace the recommendation, pause the campaign or show a useful landing page. Do not assume a product block always resolves current availability at the instant a recipient clicks. Apply the same requirement to both candidates.</p>
+        <h2>Group buys need a different stopping rule</h2>
+        <p>A mechanical keyboard group buy is a useful contrasting test because its close date governs recovery eligibility. When enrollment closes, pending promotional reminders should not promise that the kit can still be ordered. Buyers who already paid may still need production or shipping updates. Keep those communications with their designated order-update sender rather than turning all order-related messages off together.</p>
+        <p>Demonstrate the close-state update, cancellation and duplicate event behavior in the chosen integration. If a custom event or maintained mapping is necessary, include that work in the selection decision. This is a separate practical constraint from tea consumption timing; no keyboard merchant has been observed using either workflow here.</p>
+        <h2>Compare costs for the same calendar</h2>
+        <p>Sequenzy's published model uses email volume with unlimited contacts. Omnisend's pricing includes billable-contact definitions and email allowances; SMS adds destination and volume considerations. A contact-only estimate cannot tell you which total is lower. Obtain quotes for the same eligible population, ordinary month, seasonal peak, required channels and plan features.</p>
+        <p>For an explicitly hypothetical tea calendar, two editorial sends to 4,000 eligible recipients use 8,000 emails. Add 1,200 welcome emails and 800 refill emails and the total is 10,000 emails. This illustrates message counting, not a supplier quote or expected sales. Count SMS and push separately and include credits, sender charges where applicable, support, subscription integration work and migration labor. Do not include reviews or loyalty as required Omnisend modules merely because other commerce suites sell them.</p>
+        <h2>Switch ownership without duplicate recovery</h2>
+        <p>If Shopify or another app already owns a recovery job, identify its trigger, active enrollments and pending messages before enabling a replacement. Stop old enrollment and resolve its queue, then verify destination behavior with permitted test identities. Preserve permission provenance and suppressions; a contact import is not permission to message on every channel.</p>
+        <p>Keep a rollback record of which system owns each job and how late events will be reconciled. Running both recovery senders live is not a useful comparison: it changes customer contact frequency and makes attribution harder to interpret. Platform-attributed revenue can help diagnose a journey, but it is not proof that every attributed order was caused by it. A separately designed holdout would be needed to estimate incremental effect.</p>
+        <h2>Make the choice on demonstrated work</h2>
+        <p>Shortlist Sequenzy when assisted drafting and its send-based commercial model solve a real constraint; shortlist Omnisend when its documented ecommerce presets and channel workflow controls reduce the work your operator must maintain. Retaining a working implementation can be preferable to rebuilding it without a demonstrated benefit. Require the operator to explain the refill exclusions and permission paths before comparing setup effort and full costs.</p>
+        <p>The decision should follow the two rehearsals, not an invented winner or a promised go-live deadline. See the <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> for the wider buying process.</p>
+        <h2>Primary sources and limits</h2>
+        <p>Checked November 24, 2026: <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing and feature list</a>, <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing and workflows</a>, and <a class="link" href="https://support.omnisend.com/en/articles/1740886-add-sms-to-your-omnisend-automations">Omnisend SMS automation guidance</a>. These support the scoped product and billing descriptions above. Subscription-field availability, storefront behavior, destination eligibility and actual account costs remain implementation checks; neither platform was run or tested for this article.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
