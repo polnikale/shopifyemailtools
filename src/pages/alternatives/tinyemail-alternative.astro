@@ -3,74 +3,79 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('tinyemail')!;
 const path = '/alternatives/tinyemail-alternative';
 const title = 'Best tinyEmail Alternatives for Shopify (2026)';
-const desc = 'How to evaluate tinyEmail alternatives for Shopify: workflow acceptance tests, migration ownership, suppression handoff, and matched operating costs.';
-
-const altSlugs = ['sequenzy', 'omnisend', 'shopify-email', 'brevo', 'mailchimp', 'privy', 'klaviyo', 'drip'];
-const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
+const desc = 'Compare tinyEmail alternatives through campaign-to-lifecycle requirements and capture handoff, practical workflow checks and matched operating costs.';
 const faqs = [
-  { question: 'Why leave tinyEmail for Shopify?', answer: 'Consider leaving when a required workflow demonstrably fails in the current account or matched operating costs favor another setup. Test segmentation, cart recovery, replenishment, purchase exits, and group-buy exclusions before asserting limitations or unreliability. Vinyl and tea examples are proposed acceptance tests, not observed merchant failures.' },
-  { question: 'What is the best tinyEmail upgrade?', answer: 'Sequenzy for lifecycle strategy with pay-per-email; Omnisend for prebuilt cart and welcome in days. Both beat tinyEmail for Shopify lifecycle within the first month — avoid sideways moves through Mailchimp or Shopify Email.' },
-  { question: 'Is tinyEmail only a stepping stone?', answer: 'It can remain suitable as long as the current account meets required workflows, reliability, reporting, and operating costs. There is no established six-to-twelve-month graduation rule. Test repeat-purchase and cart requirements directly rather than assuming that campaign drafting excludes lifecycle automation.' },
-  { question: 'Does Shopify Email replace tinyEmail?', answer: 'Lateral move only — both lack lifecycle depth. Graduate up to Sequenzy or Omnisend, not sideways to native Admin email that cannot run real cart recovery.' },
-  { question: 'When should I stay on tinyEmail?', answer: 'Stay when current requirements pass QA within the budget and the team can maintain the setup. An artisan-pottery store can test class-list permissions, newsletters, and any required purchase journeys without using order count or holiday timing as an automatic exit rule.' },
-  { question: 'How hard is tinyEmail migration?', answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.' },
-  { question: 'Do I lose AI copy after graduating?', answer: 'No — Sequenzy and Klaviyo offer AI assistance with deeper automation. You trade draft-without-journeys for journeys that recover margin, not intelligence for manual sends.' },
-  { question: 'How do I model tinyEmail upgrade cost?', answer: 'Use matched contacts, send volume, capture traffic, SMS destinations, and workflow requirements. Include platform and extra-app fees, overages, rebuild and maintenance labor, overlapping subscriptions, discounts, and transition costs. Compare net contribution margin and report uncertainty; AOV and one attributed recovered cart per week do not establish causal benefit or payback.' },
+  {
+    "question": "Why consider leaving tinyEmail?",
+    "answer": "Investigate a required workflow that fails in the current plan or an unfavorable matched operating-cost comparison. Record the event payload, configuration and failed condition before asserting a product limitation."
+  },
+  {
+    "question": "Is tinyEmail only a campaign drafter?",
+    "answer": "No. Its supplier FAQ advertises automation, custom segments and Shopify connectivity. Campaign drafting does not establish the full workflow scope. Test the precise cart, purchase, replenishment and exclusion logic rather than assuming it is absent."
+  },
+  {
+    "question": "Does tinyEmail charge by contact count?",
+    "answer": "The current supplier FAQ advertises a free Shopify offer with unlimited contacts and up to one million emails monthly, and paid send-volume plans for other users. Confirm store eligibility, feature access and add-on charges. Historical contact-tier estimates should not drive a migration decision."
+  },
+  {
+    "question": "Would Shopify Messaging be a sideways move?",
+    "answer": "That depends on the required workflow. Native Shopify Messaging has marketing automations, including abandonment journeys, and supports custom workflow work through Shopify Flow. Test the same fixtures before deciding that either platform requires replacement."
+  },
+  {
+    "question": "Can the old and new platforms coexist?",
+    "answer": "Yes, with a written division of journeys. Assign one sender and queue owner to each journey. Preserve permission evidence by purpose and channel, withdrawals, suppressions and current purchase state. Stop old entry, drain or cancel pending messages, deduplicate replayed events and test rollback before enabling replacement sends. A fixed overlap period cannot establish readiness."
+  },
+  {
+    "question": "How should I compare migration cost?",
+    "answer": "Compare the same contacts, sends, channels and required workflows. Include platform fees, add-ons, overages, implementation, support, maintenance and overlapping subscriptions. Separate attributed orders from incremental contribution after discounts and returns; one recovered cart does not establish payback."
+  },
+  {
+    "question": "What should transfer with subscribers?",
+    "answer": "Export field definitions, permission sources and timestamps, withdrawal history, suppressions, journey membership and relevant order state. Verify the actual export and import fields. Quarantine records whose eligibility is unresolved; an importable email address is not evidence of permission for every purpose or channel."
+  },
+  {
+    "question": "When can the old account be closed?",
+    "answer": "After event mapping, current eligibility checks, purchase exits, queue reconciliation, sender authentication and rollback have passed. Export needed documentation under applicable access and retention terms. Choose an observation period appropriate to the product buying cycle rather than imposing a universal deadline."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
-  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">tinyEmail alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Graduation guide</p>
-        <h1 class="hero-title mt-5">Best tinyEmail alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">          Evaluate tinyEmail against the workflows your store actually needs. A mechanical-keyboard group buy can test whether retail winback excludes preorder participants; a specialty-tea shop can test replenishment by blend and purchase date. These are proposed acceptance tests, not merchant results or evidence that tinyEmail lacks those capabilities.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked tools for stores outgrowing AI-assisted campaigns into lifecycle operations — newsletters, automation, and post-purchase education. Sequenzy leads when strategy beats speed; Omnisend when cart recovery must ship this week. tinyEmail was chapter one; these are chapter two.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top tinyEmail upgrades" picks={[
-          { label: 'Best overall graduation', tool: 'Sequenzy', reason: 'Lifecycle playbooks with pay-per-email — the real step from campaign tool to retention platform.' },
-          { label: 'Best fast setup', tool: 'Omnisend', reason: 'Cart and welcome live before the next vinyl pressing drop.' },
-          { label: 'Best native step', tool: 'Shopify Email', reason: 'Lateral move only — not a recommended graduation path.' },
-          { label: 'Best budget', tool: 'Brevo', reason: 'Volume pricing with more automation rules than tinyEmail runs.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'Skip double migration if segmentation needs are already obvious.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave tinyEmail</h2>
-        <p>A demonstrated workflow gap can justify migration. For a climbing-gear store, test whether harness-care subscribers receive the right education, whether purchases exit recovery, and whether a sold-out variant stops its offer. Record the current plan, integration route, event payload and failed condition before concluding that a replacement is necessary. Catalog size alone does not establish a limitation.</p>
-        <p>Test segmentation using explicit customer states. Mechanical-keyboard group-buy participants should follow the intended preorder rules rather than receive an unrelated retail discount. For vinyl collectors and giveaway entrants, check permission evidence and eligibility independently; a tag or imported address does not establish permission for every purpose or channel.</p>
-        <p>Revenue math flips before calendar guilt does. One Omnisend or Sequenzy cart flow recovering eight hundred dollars monthly makes tinyEmail subscription savings irrelevant. AI copy speed exists in Sequenzy and Klaviyo post-graduation — you are not trading intelligence for automation, you are trading drafts without journeys for journeys that recover margin.</p>
-        <p>Double-migration tax punishes sideways moves. tinyEmail → Mailchimp → Omnisend chains waste quarters. Graduate once to Sequenzy or Omnisend if cart recovery is a visible need within six months — signals include abandonment exceeding fifteen percent of sessions, list past three thousand with popup growth, or repeat purchase becoming a stated growth goal on your planning doc.</p>
-
-        <h2>Campaigns, lifecycle, and what tinyEmail never was</h2>
-        <p>Evaluate campaign drafting and retention operations as separate requirements. Compare editorial newsletters, welcome journeys, replenishment and cart recovery using the same test fixtures in each candidate account. Shipping notices and marketing review requests can have different purposes and eligibility rules; do not assume that an order authorizes every follow-up.</p>
-        <p>Before picking a replacement, inventory what tinyEmail actually produced last quarter — manual campaign count, any basic automation revenue, list growth source. If popup captures outpace purchases and nobody runs cart recovery, the problem is platform fit, not copy quality. Graduate on math: one weekly recovered cart at your AOV funds a year of Sequenzy.</p>
-
-        <h2>tinyEmail graduation checklist</h2>
-        <p>Migration effort depends on the actual configuration. Inventory forms, campaigns, journeys, integrations and queued messages before estimating the work; a simple visible campaign schedule does not prove that no background automation exists.</p>
-        <ol>
+<ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+<div class="container py-14 max-w-4xl">
+<nav><a class="link" href="/alternatives">Alternatives</a></nav>
+<h1 class="hero-title mt-5">{title}</h1>
+<TldrBox title="Decision checks" picks={[
+{ label: 'Workflow', tool: 'Current setup first', reason: 'Reproduce the unmet requirement before selecting a replacement.' },
+{ label: 'Migration', tool: 'One queue owner', reason: 'Preserve eligibility, purchase exits and replay deduplication.' },
+{ label: 'Economics', tool: 'Matched workload', reason: 'Compare actual invoices and quotes; measure contribution separately.' },
+]} />
+<section class="prose-shopify mt-12"><h2>Start with the workflow that needs to change</h2><p>Evaluate tinyEmail against the requirements of the current store rather than a graduation clock. AI campaign drafting and reliable lifecycle operations are separate acceptance questions. A tea shop needs to check consumption timing and subscription skips; a keyboard group buy needs explicit preorder exclusions.</p><p>This guide proposes acceptance exercises, not performed merchant tests. Supplier documentation establishes advertised scope; it does not establish launch speed, comparative performance, payback or legal permission for a particular recipient. Alternatives appear as a shortlist, without a score or universal winner.</p></section>
+<section class="prose-shopify mt-12"><h2>Documented scope before comparison</h2><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify Messaging documentation</a> covers native campaigns and automations. Its <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">automation guide</a> distinguishes channel eligibility and directs custom or third-party workflows to Shopify Flow. Default marketing subscription checks and configurable checkout behavior need account review, not assumptions about universal permission.</p><p><a class="link" href="https://www.tinyemail.com/faqs">tinyEmail’s current FAQ</a> advertises Shopify connectivity, automation, unlimited contacts and a Shopify-specific free send allowance. Check eligibility and add-ons rather than carrying forward an old contact-tier estimate or a campaign-only label.</p><p><a class="link" href="https://www.sequenzy.com/features/shopify-integration">Sequenzy’s Shopify page</a> documents customer, order and product sync and cart, post-purchase and winback sequences. Its <a class="link" href="https://www.sequenzy.com/pricing">pricing page</a> describes send-volume billing, unlimited contacts, AI drafting and a visual builder. Test custom consumption data, gift and subscription exclusions; these documents do not prove that a natural-language request produces a validated merchant policy.</p><p><a class="link" href="https://www.drip.com/sms">Drip’s SMS page</a> describes staged access for existing paid US customers with Support All People enabled. It requires an email with a phone record and lists one-way toll-free sending at launch. Check actual access, number arrangements and separate SMS charges before replacing or retaining an SMS specialist.</p></section>
+<section class="prose-shopify mt-12"><h2>Choose a candidate for the missing job</h2><p>Each brief below is a proposed evaluation, not a report of a completed trial. First show the same requirement in the current tinyEmail account; a failed configuration and an absent capability call for different remedies.</p></section>
+<section class="prose-shopify mt-12"><h2>Sequenzy</h2><p>Move from drafting a weekly promotion to maintaining a reviewed lifecycle library. Give Sequenzy the tea shop’s current tinyEmail campaign, then specify a replenishment journey with purchase dates, gifts and subscription skips. Its documented sync and builder provide a starting point; require the operator to show where each exception is represented and change one safely.</p><p>The benefit to establish is less repeated audience assembly and drafting work. A fluent draft is insufficient if consumption dates need an external source. Compare the reviewed journey and its maintenance hours with improving the existing tinyEmail automation, then quote both the routine newsletter and peak lifecycle sends.</p></section>
+<section class="prose-shopify mt-12"><h2>Omnisend</h2><p>Consider Omnisend when the reason for leaving is a planned email and SMS program, rather than dissatisfaction with newsletter copy. Ask for a demonstration of a vinyl release announcement followed by an eligible reminder, with a purchase between the two and distinct channel permissions.</p><p>The potential benefit is one operating process for the release. Establish which templates, channels and stop conditions the offered plan actually covers, and who owns failed updates. Include destination charges and capture tools in the quote; a shared customer record cannot replace channel eligibility.</p></section>
+<section class="prose-shopify mt-12"><h2>Shopify Messaging</h2><p>Use the native setup as a serious stay-within-Shopify option for a pottery store sending studio updates and workshop reminders. Inventory the tinyEmail campaigns and automations first, then reproduce their audience rules with the documented native automations and any required Flow work. Keep workshop-only signups separate from product buyers.</p><p>The benefit to establish is fewer tools to operate. The limit is the exact retained workflow: inspect editing, reporting and exception handling before retiring tinyEmail. Compare send allowances and implementation work using the same campaign calendar; a free allowance alone does not decide the move.</p></section>
+<section class="prose-shopify mt-12"><h2>Brevo</h2><p>Evaluate Brevo when the problem is the cost or administration of a particular newsletter schedule. Bring the actual tinyEmail invoice, current Shopify-offer eligibility and a quiet-month versus release-week sending plan. Request a quote for the required audiences, sends and connector, including any external capture app.</p><p>The useful outcome is a bill and operating process that fit that schedule. Demonstrate product fields and late purchase exclusions if campaigns will become automations. A contact-count comparison is especially misleading when the current offer includes unlimited contacts; do not discard useful workflows merely to obtain a smaller quote.</p></section>
+<section class="prose-shopify mt-12"><h2>Mailchimp</h2><p>Make Mailchimp the operator-continuity candidate when the incoming marketer already knows it. Have that person rebuild one tinyEmail newsletter with its collection links, footer, segment and suppression rules, then document what must be manually recreated rather than assuming a template import preserves it.</p><p>Familiarity can reduce training work, but the proposed exercise must also cover the next lifecycle requirement. Use the same board-game waitlist and purchase exclusion in both accounts. Quote the retained audience and peak sends, and count template rebuilding and ongoing Shopify data maintenance alongside the platform bill.</p></section>
+<section class="prose-shopify mt-12"><h2>Privy</h2><p>Evaluate Privy first at the capture boundary when the real complaint is list growth or popup handoff. Trace a board-game waitlist signup from form to tinyEmail, including source, product interest, permission timestamp and a later withdrawal. Identify whether the failure is in the form, mapping, retry or sending workflow before choosing a replacement.</p><p>The benefit to establish is reliable capture and follow-through. Ask which messaging jobs the chosen plan will own and which remain elsewhere; retaining tinyEmail downstream may solve the problem with less rebuilding. Compare form traffic and messaging costs together, and test a failed sync followed by a retry without creating a second welcome message.</p></section>
+<section class="prose-shopify mt-12"><h2>Klaviyo</h2><p>Evaluate Klaviyo for a concrete audience question that the current tinyEmail configuration has not resolved: for example, interest in one limited pressing that must not include buyers of another variant. Bring real variant identifiers and event samples, then ask where interest, availability and purchase state are stored and updated.</p><p>The benefit to establish is an audience the merchant can explain and maintain. The limit is integration ownership: stale inventory or ambiguous variants can undermine a richer setup too. Require an editable segment and a late-purchase exercise, then quote profiles, sends, channels and connector work without assuming a revenue uplift.</p></section>
+<section class="prose-shopify mt-12"><h2>Drip</h2><p>Evaluate Drip when tinyEmail campaigns have accumulated manual audience edits that should become an explicit workflow. Translate the coffee shop’s roast-date reminders into triggers, fields, tags and exits; ask the primary and backup operator to explain what happens after a repeat order or subscription skip.</p><p>The benefit to establish is less manual list preparation with clear branch ownership. The cost is building and maintaining that specification. Compare the necessary workflow with repairing tinyEmail in place, and obtain the actual billing definition and any required SMS access before combining channel budgets.</p></section>
+<section class="prose-shopify mt-12"><h2>Pair-specific trial scenarios</h2></section>
+<section class="prose-shopify mt-12"><h2>Coffee: roast date and consumption cycle</h2><p>Proposed exercise: queue a replenishment reminder using actual roast and purchase dates. Add a repeat purchase and subscription skip while it waits. Check that the intended exclusions apply at dispatch. Compare current tinyEmail and a candidate without claiming twelve-day payback.</p></section>
+<section class="prose-shopify mt-12"><h2>Vinyl: limited pressing</h2><p>Before a drop, replay a checkout event, change variant availability and add a preorder exclusion. A correct run sends the intended eligible message once and identifies the system responsible for dispatch. Record review and editing work rather than promising a launch date.</p></section>
+<section class="prose-shopify mt-12"><h2>Pottery: a stay decision</h2><p>Test newsletters, class-list permissions and product-care instructions in the existing account. Separate workshop attendees from product purchasers. Staying can be reasonable when the required journeys pass within budget; neither holiday timing nor monthly order count is an automatic exit rule.</p></section>
+<section class="prose-shopify mt-12"><h2>Tea: contribution rather than cart value</h2><p>An illustrative $85 order is gross revenue, not available profit. Deduct fulfillment, incentives, returns and operating costs before considering an incremental contribution estimate. A weekly attributed order cannot fund a hypothetical annual subscription without a valid causal comparison.</p></section>
+<section class="prose-shopify mt-12"><h2>Board games: capture and allocation</h2><p>Preserve waitlist source and permission when repointing forms. Separate preorder allocations from retail recovery, replay failed syncs and inspect duplicate profiles. Test purchases arriving after a message is queued so acquisition work does not create conflicting discounts.</p></section>
+<section class="prose-shopify mt-12"><h2>Migration checklist and queue ownership</h2><p>The original migration jobs remain relevant. Adapt their order to dependencies and risk; a fixed launch calendar cannot replace readiness checks.</p></section>
+<ol>
           <li><strong>Export records with purpose/channel permission evidence, withdrawals and suppressions</strong>.</li>
           <li><strong>Document every configured automation</strong> — record triggers, exits, delays, exclusions and queued work for the rebuild specification.</li>
           <li><strong>Review eligibility and engagement</strong> using actual permission, suppression and delivery history; do not apply an arbitrary age rule.</li>
-          <li><strong>Connect Sequenzy or Omnisend to Shopify</strong> — verify order history for winback segments.</li>
-          <li><strong>Build cart recovery first if abandonment is urgent</strong> — welcome second for launch-phase stores.</li>
+          <li><strong>Connect the chosen candidate to Shopify</strong> — verify order history for winback segments.</li>
+          <li><strong>Prioritize recovery if the documented need warrants it</strong> — validate welcome separately.</li>
           <li><strong>Transfer journey ownership deliberately</strong> — stop old entry, drain or cancel its queues, then activate the replacement with replay deduplication.</li>
           <li><strong>Reconnect popup integrations</strong> — test mappings, permission records, withdrawals and event deduplication before relying on live capture.</li>
           <li><strong>Add replenishment if consumables</strong> — tea, coffee, specialty food with consumption cycles.</li>
@@ -78,131 +83,11 @@ const faqs = [
           <li><strong>Warm sending domain if infrastructure changes</strong>.</li>
           <li><strong>First segmented newsletter only after eligibility, sender and delivery checks pass</strong>.</li>
           <li><strong>Plan archive access and retention</strong> — verify provider terms, export availability and applicable retention requirements before closing the account.</li>
-        </ol>
+        </ol><section class="prose-shopify mt-12"><h2>From campaign audiences to live capture</h2><p>Record how each tinyEmail campaign audience is assembled today: saved segment, imported file, form tag or manual selection. For every input, name its writer and update frequency. A one-time import can preserve yesterday’s audience while missing today’s withdrawal or purchase. Decide which fields need continuous updates before rebuilding journeys.</p><p>For the board-game waitlist, keep a ledger of signups received during the handoff, their product interest, permission record and destination acknowledgement. Reconcile the ledger against both systems before switching the form. Retry failed records with stable identifiers and check that the retry does not enqueue another welcome. Leave one named system responsible for the first message.</p><p>For coffee and tea, distinguish the purchase date from a merchant-selected consumption date. Specify how gifts, mixed baskets, refunds and subscription skips change the next reminder. Recompute eligibility when those inputs change and again before dispatch. Keep order confirmations and shipping notifications with their assigned operational sender; product-care promotions require their own audience treatment.</p></section>
+<section class="prose-shopify mt-12"><h2>Matched billing worksheet</h2><p>Build two quote workloads: a quiet period and a representative peak. Record retained contacts, billable contacts under each supplier’s definition, total sends, capture traffic, destinations and required features. Add SMS segments, extra apps, support, overages, migration labor and overlapping subscriptions.</p><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/email/pricing/">Shopify email pricing</a> documents 10,000 monthly free emails on supported plans, with ordinary automations counting and abandoned-checkout emails excluded. Treat the native allowance and tinyEmail’s Shopify offer as real comparison inputs rather than assuming every captured profile adds cost.</p><p>Use current written quotes for all other suppliers. A price indexed only by contact count cannot establish a send-volume platform’s total. Avoid numeric automation ratings; attach a pass, failure or unresolved requirement to each tested workflow instead.</p></section>
+<table class="data-table"><thead><tr><th>Cost line</th><th>Current setup</th><th>Candidate</th><th>Evidence needed</th></tr></thead><tbody><tr><td>Platform and channels</td><td>Actual invoice</td><td>Matched quote</td><td>Billing definition, sends and destinations</td></tr><tr><td>Implementation</td><td>Maintenance baseline</td><td>Rebuild and review</td><td>Named tasks and recorded operator hours</td></tr><tr><td>Overlap</td><td>Old queues and access</td><td>Activation and rollback</td><td>One sender per journey</td></tr><tr><td>Contribution</td><td>Comparable baseline</td><td>Incremental estimate</td><td>Discounts, returns and uncertainty</td></tr></tbody></table><section class="prose-shopify mt-12"><h2>Decide whether the rebuild earned the switch</h2><p>Compare the routine work of preparing the next tinyEmail newsletter with the proposed replacement: audience assembly, draft review, approval and exception repair. Record actual operator time only if the exercise is performed; these are evaluation tasks. Predeclare success: correct eligibility and purchase exits, no duplicate sends, reconciled reporting, acceptable delivery signals and maintainable edits. Record authentication and infrastructure changes before choosing a sending transition. A test order passing QA establishes behavior for that fixture, not production revenue.</p><p>Use comparable cohorts and a suitable holdout where feasible to estimate incremental contribution after discounts, returns and operating costs. Reconcile attribution windows across platforms to avoid double-counting an order. Low sample size or inconclusive lift should remain visible in the decision.</p><p>Close the old account only after queue, suppression and rollback checks pass. Archive field maps, screenshots, cost assumptions and policy decisions with a date and owner. Keep a backup operator able to explain why the cart delay or replenishment interval was chosen.</p></section>
+<section class="prose-shopify mt-12"><h2>Related guides</h2><p><a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail versus Mailchimp</a> · <a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail versus Shopify Messaging</a> · <a class="link" href="/apps/tinyemail">tinyEmail review</a> · <a class="link" href="/alternatives">All alternatives</a> · <a class="link" href="/use-cases/deliverability">Deliverability planning</a></p></section>
 
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Artisan coffee launch — tinyEmail four months.</strong> AI drafts accelerated first newsletters; subscription replenishment by roast date needed real automation. Graduated to Sequenzy for consumption-cycle reminders and pay-per-email — AI assistance still available, cart recovery paid migration in twelve days.</p>
-        <p><strong>Vinyl shop — proposed evaluation.</strong> Before a limited pressing drop, test variant availability, purchase exits, preorder exclusions and a replayed checkout event. A candidate passes only if the intended recipient receives the intended message once, and the team can explain which system owned dispatch. No launch speed or revenue outcome is asserted.</p>
-        <p><strong>Pottery studio — proposed stay decision.</strong> Test newsletters, class-list permissions and care instructions in the current account. Staying can be reasonable when requirements pass and maintenance fits the budget. Order volume and the holiday calendar do not create an automatic migration deadline.</p>
-      </article>
-
-      <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight tinyEmail alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy is the graduation path tinyEmail users need — not another campaign drafter, a lifecycle operating system. Agent-first setup replaces "write me a sale email" with "winback mug buyers before clearance, suppress workshop attendees" — outcomes described in plain language, sequences built without canvas maintenance.',
-          'Pay-per-email with unlimited contacts fixes list growth without purchase lag — common on popup-heavy hobby shops. Strategy defaults mean the founder editing copy Thursday night before a limited batch drop does not need flow-builder training.',
-          'Read <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> if debating intermediate steps — graduate once, not twice.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Evaluate Omnisend with a climbing-gear welcome and cart test. Record setup work, event delay and purchase exits rather than assuming a completion deadline.',
-          'For each required channel, verify current plan availability and permission handling. Test tea blends and subscription variants explicitly; SKU count alone does not establish fit.',
-          'Choose based on demonstrated workflow coverage, support needs and maintenance effort, with reassessment triggered by requirements rather than an invented merchant timeline.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Shopify Messaging, formerly Shopify Email, includes native marketing automations. Test the required journey and integration details instead of assuming a campaign-only limitation.',
-          'Native abandoned-checkout automation is part of the evaluation. Check current account availability, purchase exits and exclusions; this review does not certify current pricing.',
-          'Treat as pause button only — sale blasts while planning Sequenzy or Omnisend.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Compare Brevo using matched contacts, send volumes and required automation rules. Verify current metering and limits before treating it as a budget improvement.',
-          'Lifecycle templates thinner than Sequenzy; strategy guidance lighter. Wins when cost discipline is primary graduation driver.',
-          'Plan second move to Sequenzy when replenishment timing becomes bottleneck — common for tea and coffee.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Test Mailchimp against the same Shopify events, purchase exits and permission fixtures as the current setup. Include actual billable contact rules and send volume in the cost comparison.',
-          'Lateral move delays real lifecycle. Shopify DTC typically skips to Omnisend or Sequenzy.',
-          'Include existing team familiarity in measured rebuild and maintenance effort; no merchant regret or comparative outcome is established here.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Privy adds capture tinyEmail never owned — exit intent, spin wheels, list growth feeding a real ESP. Architecture: Privy capture plus Sequenzy lifecycle.',
-          'Verify the current Privy plan against both capture and messaging requirements. Compare acquisition costs with suitable controls rather than assuming every captured purchaser was caused by a form.',
-          'Test capture delivery and field mappings before switching destinations, including withdrawals and duplicate events. Assign ownership for any queued messages.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Evaluate Klaviyo against documented needs such as variant availability and collection browsing. Verify current plan and event support rather than assuming that every feature is available.',
-          'Model current billable profile rules alongside send volume and permitted retention. Assign an owner to review segment correctness and suppressions according to operational risk.',
-          'Compare the work required for cart and welcome journeys with the capacity of the team that will maintain them.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Evaluate Drip with keyboard-kit tier events, branching fixtures and purchase exits. Verify current builder and reporting behavior in the intended account.',
-          'Compare actual billable contacts, sends and extra services under matched usage; do not infer cost or automation scope from the product category.',
-          'Pick Drip if someone enjoys canvas work; pick Sequenzy if they want outcomes without nodes.',
-        ]} />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Cost vs tinyEmail</h2>
-        <p class="px-5 pb-4 text-slate-600">Model opportunity cost — one recovered cart weekly often exceeds annual platform delta.</p>
-        <table class="data-table">
-          <thead><tr><th>Platform</th><th>~3k contacts</th><th>Automation</th><th>Graduation fit</th></tr></thead>
-          <tbody>
-            <tr><td>tinyEmail (leaving)</td><td>$15–40/mo</td><td>Basic</td><td>Launch campaigns</td></tr>
-            <tr><td>Sequenzy</td><td>$19–79/mo</td><td>Advanced</td><td>Lifecycle strategy</td></tr>
-            <tr><td>Omnisend</td><td>$16–60/mo</td><td>Solid</td><td>Fast cart recovery</td></tr>
-            <tr><td>Klaviyo</td><td>Free–$150/mo</td><td>Advanced</td><td>Data depth early</td></tr>
-            <tr><td>Brevo</td><td>$25–65/mo</td><td>Solid</td><td>Budget automation</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/apps/tinyemail">tinyEmail review</a> · <a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail vs Shopify Email</a> · <a class="link" href="/alternatives/shopify-email-alternative">Shopify Email alternatives</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
-    </div>
-  </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Buyer desk: graduation timing and math</h2>
-    <p>tinyEmail graduation is a revenue milestone, not a calendar date. Signals: cart abandonment visible in Shopify reports, list past three thousand, repeat purchase strategic, more than four manual campaigns monthly. When one weekly recovered cart at AOV funds Sequenzy annual subscription, move — comfort is not a metric.</p>
-    <p>Avoid unnecessary repeated migrations by testing required workflows before choosing a destination. Connect forms with verified field mappings and retain withdrawal history. Assign one sender and queue owner to each journey; pause entry and drain or cancel old queued messages before enabling the replacement. Check current permission, suppression and purchase state again at dispatch, and deduplicate replayed events across systems.</p>
-    <p>Measure readiness through working journeys, explainable exclusions, acceptable delivery signals and maintainable operations. Report attributed revenue separately from causal incremental contribution: use a suitable holdout when feasible, account for discounts and returns, and disclose sample limits and uncertainty rather than promising a lift by a fixed date.</p>
-
-    <h2>Graduation targets ranked</h2>
-    <p><strong>Sequenzy:</strong> first exit when strategy and pay-per-email fit lean team. <strong>Omnisend:</strong> when speed to cart plus SMS beats canvas learning curve. <strong>Skip sideways:</strong> tinyEmail to Shopify Email lateral moves delay real investment without teaching suppression discipline.</p>
-    <p><strong>Scenario — tea startup 95 orders/mo.</strong> One recovered $85 cart weekly exceeded annual tinyEmail savings — five-day Sequenzy cutover during non-peak week; popup capture connected same week as cart flow.</p>
-    <h2>Owner assignment on graduation</h2>
-    <p>Assign an owner and backup for flow review before migration. Document permission sources, suppressions, inventory gates, support escalations and rollback decisions. Choose review frequency from send volume and risk; low volume does not remove the need for ownership.</p>
-    <h2>Avoid sideways migration</h2>
-    <p>tinyEmail to Shopify Email lateral move delays lifecycle investment without teaching suppression — target Sequenzy or Omnisend directly when cart abandonment material.</p>
-
-    <h2>Graduation math</h2>
-    <p>Compare matched operating costs with contribution after incentives, returns and maintenance. List size and a weekly attributed cart do not establish payback. Assign a flow owner and document eligibility and suppression rules before enabling the replacement.</p>
-    <p>Advance cutover through readiness gates: validate exports and field mappings, authenticate senders, exercise test events, reconcile suppressions and queued work, and then activate one journey at a time. Keep a rollback path and choose a representative observation period rather than imposing a five-day schedule.</p>
-
-    <h2>Micro-merchant graduation signals</h2>
-    <p>Signals: cart abandonment visible in Shopify reports, list past three thousand, repeat purchase strategic, more than four manual campaigns monthly. One weekly recovered cart at AOV funds annual Sequenzy subscription — move. AI copy not moat; lifecycle collision rules are.</p>
-    <p>For a proposed board-game test, separate preorder participants from retail purchasers and replay an event to confirm deduplication. For a tea shop, test a purchase arriving after a reminder is queued. These are QA cases, not observed failures or proof of a particular order-count threshold.</p>
-
-    <h2>TinyEmail exit desk: when simplicity stops scaling</h2>
-    <p>Merchants outgrow TinyEmail when broadcast scheduling cannot express inventory gates — artisan coffee roasters need to suppress promos when a single-origin lot sells out mid-send. Week one: inventory every flow TinyEmail could not branch on and tag each with revenue last quarter. Week two: migrate highest-margin abandonment first; specialty tea shops often see more lift from restock alerts than welcome discounts. Week three: test gift-order and pre-order splits on staff accounts; board game publishers launch SKUs on Tuesday drops that collide with weekly newsletters unless suppression rules exist. Week four through twelve: compare cost per send against incremental flow revenue, not list size vanity. Outdoor gear brands hitting TinyEmail contact caps mid-holiday need migration before Black Friday, not after deliverability damage. Camping merchants with seasonal list churn should segment by last purchase quarter before blasting spring gear. Sequenzy fits strategy-heavy catalogs; Omnisend fits fast Shopify sync; Klaviyo fits deep product feeds. Day-ninety pass: team runs standup without vendor tickets, collision doc lives in wiki, holdout shows measurable lift on at least two flows.</p>
-  </article>
-
-  <div class="prose-shopify container max-w-4xl pb-8">
-    <h2>TinyEmail graduation: catalog complexity triggers</h2>
-    <p>Investigate recurring manual exports, unavailable variant fields, unmet back-in-stock requirements, gift-order splits and cross-app SMS collisions. Reproduce each problem in the current account and compare a candidate with identical fixtures. Vinyl pressings, keyboard group buys and board-game allocations provide useful test cases; no fixed number of triggers proves that migration is required.</p>
-    <h2>Consent and suppression handoff from tinyEmail</h2>
-    <p>Preserve permission evidence by purpose and channel, including source, timestamp, withdrawals and suppression history. Quarantine records whose eligibility cannot be established rather than treating importability as permission. Reconcile current purchases, refunds, support exclusions and journey membership before dispatch. Assign a sender and queue owner, handle old queued work explicitly, and use stable event identifiers to prevent duplicate sends after replay.</p>
-    <h2>Margin after incentives during the tinyEmail exit</h2>
-    <p>Audit the actual offer rules before cutover. Document welcome incentives, cart eligibility, winback caps, expiry, inventory gates and a no-discount control where appropriate. Test stacked offers and purchases arriving between scheduling and dispatch. Compare contribution after discounts, returns and operating costs; neither a short cutover nor an attributed order proves incremental margin.</p>
-    <h2>App-cost lines to model before leaving tinyEmail</h2>
-    <ul>
-      <li><strong>Subscriber tiers</strong> — matched eligible contact counts and send volumes under the current billing rules of each candidate.</li>
-      <li><strong>Automation limits</strong> inside each tier — what counts toward the cap and what gets metered separately.</li>
-      <li><strong>Parallel-run window</strong> — overlapping subscription costs, with one sender and queue owner per journey to prevent duplicate live sends.</li>
-      <li><strong>Campaign rebuild hours</strong> — verify which templates and saved blocks transfer; include rebuilding and mobile QA for those that do not.</li>
-    </ul>
-    <p>Model a representative period including quiet and peak demand. Use matched contacts, sends, capture traffic, destinations and workflow scope; include platform fees, extra apps, overages, rebuild and maintenance labor, overlapping subscriptions and transition costs. Record current quotes and assumptions rather than certifying the historical price estimates above.</p>
-  </div>
-
-  <FaqSection faqs={faqs} title="tinyEmail alternatives FAQ" />
+<FaqSection faqs={faqs} title="tinyEmail alternatives FAQ" />
+</div>
 </BaseLayout>
