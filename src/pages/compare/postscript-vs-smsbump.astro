@@ -13,19 +13,19 @@ const desc = 'Postscript vs SMSBump (Yotpo SMS) for Shopify — dedicated SMS in
 const faqs = [
   {
     question: 'Is Postscript or SMSBump better for Shopify SMS?',
-    answer: 'Postscript is SMS-native with deeper TCPA tooling, two-way conversations, and DTC campaign patterns refined over years. SMSBump (Yotpo SMS) bundles SMS with Yotpo reviews and loyalty — strong when you already pay Yotpo and want one vendor for post-purchase touchpoints. Choose Postscript when SMS is a primary revenue channel. Choose SMSBump when Yotpo stack consolidation and moderate SMS volume matter more than specialization.',
+    answer: 'Compare both against your Shopify SMS workload: opt-in evidence, reply routing, quiet hours, suppression and queue ownership. Treat dedicated SMS operations and Yotpo stack consolidation as evaluation hypotheses, not a verified capability ranking. Confirm current plans and integrations before choosing.',
   },
   {
     question: 'Can SMSBump replace Postscript entirely?',
-    answer: 'For moderate SMS volume on brands already running Yotpo reviews and loyalty, yes — SMSBump covers broadcasts, automations, and cart recovery adequately. Postscript wins when SMS exceeds ~25% of retention revenue, two-way reply volume is high, or compliance scrutiny demands SMS-first guardrails SMSBump treats as one feature among many.',
+    answer: 'A replacement must pass the same operational tests at your peak volume. No fixed share of retention revenue establishes suitability. Verify audience eligibility, reply handling, event latency, cancellation after purchase and opt-out propagation before migrating a sender or queue.',
   },
   {
     question: 'How does Postscript vs SMSBump pricing compare?',
-    answer: 'Postscript uses plan plus per-message usage with transparent spike costs during drops. SMSBump pricing often bundles into Yotpo contracts or tiered SMS credits — can look cheaper on paper when reviews and loyalty are already line items. Unbundle SMS message fees from Yotpo platform costs before comparing; bundled discounts hide true SMS economics.',
+    answer: 'Request current written quotes for the same countries, message segments, carrier fees, peak sends and annual commitment. Include platform fees, minimums, overages, loyalty and reviews modules, integration work, support and migration. Allocate bundle discounts explicitly rather than treating an existing contract as free SMS.',
   },
   {
     question: 'Does Yotpo loyalty integration favor SMSBump over Postscript?',
-    answer: 'SMSBump triggers on loyalty tier changes, review requests, and points expiry natively within Yotpo. Postscript requires integration work or middleware for the same events — doable but not zero-config. A jewelry brand on Yotpo VIP tiers sent tier-upgrade SMS via SMSBump in one click; Postscript needed a Zapier bridge until they prioritized engineering time.',
+    answer: 'Test a proposed jewelry VIP-tier fixture in both stacks. Verify the current event payload, tier-change latency, channel permission, suppression and replay deduplication. Record any connector or middleware work and its owner; no merchant deployment or one-click result is established here.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Postscript or SMSBump?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Which has better TCPA compliance tooling?',
-    answer: 'Postscript leads — keyword management, opt-out dashboards, and pre-send compliance reviews are built for SMS operators. SMSBump compliance is adequate for moderate volume but Yotpo-native teams sometimes treat SMS like email with shorter copy. High SMS revenue or list-import history favors Postscript guardrails.',
+    answer: 'Compare documented current controls and test keyword opt-in, opt-out, quiet hours, imports and evidence export. Volume alone does not establish legal compliance or superior controls. Record who owns consent review and verify requirements for each destination and message purpose before launch.',
   },
   {
     question: 'Which handles cart abandonment SMS better?',
-    answer: 'Both recover carts via Shopify events. Postscript wins on timing flexibility, two-way sizing replies, and conversational polish for vinyl and board game. SMSBump wins when cart SMS should also reference loyalty points balance or review incentives in the same Yotpo ecosystem — one data model, fewer sync failures.',
+    answer: 'Use a proposed vinyl or board-game cart fixture to test event timing, replies and purchase suppression. For loyalty content, verify points freshness and integration behavior. Recheck eligibility at send time, cancel obsolete queued recovery and deduplicate event replays; shared vendor branding does not prove these behaviors.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Run keyword opt-in from popup, cart abandonment SMS with reply handling, loyalty-tier promotional broadcast, and BFCM flash send with quiet hours. If Yotpo loyalty and reviews are core stack, SMSBump integration tests matter. If SMS is standalone revenue with compliance rigor, Postscript should win operational tests regardless of Yotpo bundling.',
+    answer: 'Propose keyword signup, cart recovery with replies, a loyalty-tier promotion and a peak-period quiet-hours test. Keep email and SMS permission separate, verify current suppression and purchase state, assign one queue owner and test cancellation and replay deduplication. Log outcomes before deciding; neither platform has a predetermined win.',
   },
 ];
 ---
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Postscript vs SMSBump for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          SMSBump lives inside Yotpo's reviews-and-loyalty orbit; Postscript lives and breathes Shopify SMS alone. We evaluated both through a vinyl record shop consolidating onto Yotpo SMSBump to reduce vendors, a pottery studio staying on Postscript after SMSBump compliance gaps during a list import, and a board game publisher running Yotpo loyalty but outsourcing high-volume allocation texts to Postscript anyway.
+          This comparison proposes operational tests for a vinyl record shop considering vendor consolidation, a pottery studio checking list-import controls, and a board-game publisher evaluating allocation messages. These are illustrative workloads, not observed merchant evaluations. Current product names, availability, integration behavior and prices require confirmation before publication.
         </p>
       </header>
 
@@ -99,90 +99,90 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Postscript and SMSBump sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. SMSBump is optimized when you already pay for Yotpo modules and want native SMS. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Postscript and SMSBump are evaluated here as SMS candidates within a broader retention stack. Email newsletters require a separately verified email sender; operational notices and marketing require purpose-specific eligibility checks. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. SMSBump is optimized when you already pay for Yotpo modules and want native SMS. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
         </p>
         
         <h2>How board game store emails through Essen release week</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          The proposed board game fixture models 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. SMSBump remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          Use allocation-state and shipment fixtures for board-game pre-orders. A delayed allocation update must not trigger a discount recovery message after purchase. Verify fulfillment events and support routing; measure support contacts rather than claiming saved service hours. For this fixture, pause winback until fulfillment tags show shipped for pre-orders. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          The proposed specialty tea fixture models 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, SMSBump reduced preview-time surprises because Shopify SMS in the Yotpo ecosystem. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          Use blend-specific consumption windows for tea tins and separate gift buyers from recurring purchasers. Test skipped or paused subscriptions and purchase suppression. A 28–35 day interval is an illustrative starting fixture, not an observed optimum. For this fixture, split replenishment windows by blend and steeping rate. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          The proposed artisan coffee fixture models 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. SMSBump remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Use roast dates and bean SKUs for coffee replenishment. Separate wholesale samples from retail orders and suppress paused subscriptions. Compare education and promotional variants through a planned randomized test; no margin lift is established. For this fixture, suppress subscribers on pause from roast-date replenishment nudges. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          The proposed climbing gear fixture models 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, SMSBump reduced preview-time surprises because Shopify SMS in the Yotpo ecosystem. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Use harness-fit and manufacturer-documentation fixtures for climbing gear. Browse interest does not establish suitability or certification. Keep safety information traceable to the product documentation and test whether an order cancels obsolete browse messages. For this fixture, branch browse sequences by fall-rating and harness fit pages. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         <h2>How camping equipment merchant emails through Memorial Day camping spike</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          The proposed camping fixture models 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Postscript reduced preview-time surprises because Shopify-native SMS with compliance guardrails. SMSBump remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          Use tent-capacity quiz fixtures for camping, keeping family trip preferences separate from permission to market. Test mobile browse-to-cart transitions, inventory changes and recent purchases before scheduling a tent promotion. For this fixture, route quiz outcomes into different welcome branches before tent promos. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          The proposed pottery fixture models 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Postscript contributes Shopify-native SMS with compliance guardrails; SMSBump contributes Shopify SMS in the Yotpo ecosystem. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, SMSBump reduced preview-time surprises because Shopify SMS in the Yotpo ecosystem. Postscript remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority test: eligible operational notices first, then cart recovery, welcome education and promotional broadcasts. Priority does not grant permission. Verify the current purpose and channel permission, opt-out state and purchase or subscription status before enqueueing and again before sending. Assign one sender and queue owner per message; cancel obsolete work after purchase or withdrawal and deduplicate replays. Record latency and operator effort rather than assuming either candidate wins.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Use class-waitlist and glaze-kit signup fixtures for pottery. A class notification request is not permission for product promotions. Test separate audiences, current purchase state and exclusion rules; record actual operator time rather than claiming six hours saved. For this fixture, exclude class waitlist leads from glaze-kit promos after signup source tagging. If evaluating a forty-five-minute cross-channel exclusion window, label it a proposed fixture rather than a universal safe delay. Recheck suppression immediately before sending and test late purchase events and queue cancellation.
         </p>
         <h2>Postscript workflow reality: strengths, friction, and billing</h2>
         <p>
           Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. SMSBump shines when you already pay for Yotpo modules and want native SMS. Its friction shows when you are evaluating SMS outside the Yotpo stack. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Postscript (message volume and plans) rewards send discipline or punishes broadcast volume depending on your calendar. SMSBump (SMS usage and plans) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model the same twelve-month calendar in both quotes, including peak SMS segments, destination fees, minimums, support, integration maintenance and migration. Imported email addresses do not establish SMS eligibility or billable message volume. Treat profile-based and send-based charges as separate quote inputs rather than invented invoice anecdotes.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Postscript and SMSBump both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Verify SMS product-campaign support and the separate email sender; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like SMSBump punish partial adoption.
+          Use 12,000–18,000 contacts as a proposed quoting fixture, with channel-eligible recipients and forecast message segments specified separately. Do not assume price convergence or import permission. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like SMSBump punish partial adoption.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in SMSBump, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed hybrid uses a capture tool, a verified email lifecycle sender and one SMS owner. Confirm current connectors and event semantics before choosing vendors. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
         </p>
         
         <h2>Who should choose which</h2>
@@ -200,11 +200,11 @@ const faqs = [
           <li>You will use Shopify SMS in the Yotpo ecosystem weekly</li>
           <li>Sms usage and plans fits your calendar</li>
           <li>Your team can maintain SMSBump without external rescue</li>
-          <li>Incremental lifecycle GMV justifies SMSBump migration</li>
+          <li>A randomized holdout estimates incremental contribution with uncertainty sufficient to assess migration cost</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Postscript is the better Shopify email tool when SMS is a primary revenue channel with compliance discipline. SMSBump is the better Shopify email tool when you already pay for Yotpo modules and want native SMS. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Postscript is the candidate SMS tool when SMS is a primary revenue channel with compliance discipline. SMSBump is the candidate SMS tool when you already pay for Yotpo modules and want native SMS. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
