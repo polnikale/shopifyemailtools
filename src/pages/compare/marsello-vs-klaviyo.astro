@@ -13,19 +13,19 @@ const desc = 'Marsello vs Klaviyo for Shopify — loyalty-led retention vs custo
 const faqs = [
   {
     question: 'Is Marsello or Klaviyo better for a Shopify store with retail POS?',
-    answer: 'Marsello wins when loyalty points, in-store earn-and-burn, and unified online-offline customer profiles are central — Marsello was built for retail-first retention. Klaviyo wins when pure DTC email segmentation, predictive CLV, and browse abandonment depth drive revenue. Hybrid merchants often use Marsello for loyalty and Klaviyo for email until consolidation pressure forces a choice.',
+    answer: "For retail POS, test online/offline identity merges, points earn-and-burn and associate workflows alongside email segmentation and browse requirements. Verify current POS connectors and plan eligibility. A hybrid is an option if ownership and synchronization are safe; consolidation pressure does not require a forced choice.",
   },
   {
     question: 'How does Marsello vs Klaviyo pricing compare at 12,000 contacts?',
-    answer: 'Marsello at 12k often runs $150–300/mo depending on loyalty features and order volume. Klaviyo at 12k profiles typically lands $200–350/mo with SMS extra. Marsello bundles loyalty plus email — value collapses if you only need email without points program. Klaviyo email-only can undercut Marsello for DTC-only stores without POS.',
+    answer: "At 12,000 contacts, request current quotes for the same contacts, locations, orders, sends and SMS destinations. Include loyalty modules, integration maintenance, migration and labor over twelve months. Neither bundling nor a DTC-only label establishes which costs less; price only the requirements actually operated.",
   },
   {
     question: 'Which has better loyalty-triggered email?',
-    answer: 'Marsello natively — point balances, tier upgrades, referral milestones, and birthday rewards trigger email without tag sync maintenance. Klaviyo segments by loyalty tags from third-party apps but requires integration upkeep. For coffee shops, boutiques, and brands where loyalty is the retention engine, Marsello\'s native loop saves hours weekly.',
+    answer: "Test point balances, tier changes, referrals and birthday rewards from event to dispatch in each installed stack. Check balance freshness, reversal handling and third-party sync retries. Native integration does not establish hours saved; measure maintenance time with coffee-shop or boutique fixtures before claiming a labor benefit.",
   },
   {
     question: 'Can I migrate from Marsello to Klaviyo or vice versa?',
-    answer: 'Yes, with complexity. Export contacts with point balances and tier status — Klaviyo needs loyalty data mapped to custom properties. Rebuild welcome and cart first; run parallel two weeks. POS-linked customer merges require careful deduplication. Budget 3–4 weeks for retail brands with active loyalty programs.',
+    answer: "Migration depends on export rights, identity mapping, permission records and support for points and tier data. Validate a reconciliation sample before bulk import. Assign each welcome and cart job one sender, cancel old queues and deduplicate replayed POS events. Use readiness gates rather than promising a two-week overlap or a three-to-four-week completion.",
   },
   {
     question: 'Should I also consider Sequenzy instead of Marsello or Klaviyo?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Does Klaviyo POS integration match Marsello?',
-    answer: 'Marsello\'s Shopify POS integration is core — in-store purchases earn points, trigger email, and sync to online profile in one system. Klaviyo integrates with Shopify POS for event sync but loyalty logic lives in separate apps. For brands opening retail locations, Marsello reduces integration fragility.',
+    answer: "Run a POS purchase, return and identity-merge fixture through the current connectors. Verify points adjustments, event latency, permission mapping and online profile reconciliation. Check which loyalty app owns the ledger. A core connector can still fail; reduced integration fragility requires measured evidence.",
   },
   {
     question: 'Which platform handles replenishment and winback better?',
-    answer: 'Klaviyo offers deeper replenishment by SKU, predicted reorder dates, and winback splits by CLV decile. Marsello handles standard winback with loyalty point incentives — effective for repeat-purchase brands where points drive return visits. For irregular consumption catalogs, Klaviyo\'s flow filters are safer.',
+    answer: "Test SKU replenishment, bundles, subscriptions and winback in both current plans, including purchase and suppression changes before dispatch. Treat predicted reorder dates as estimates. For irregular consumption, compare exclusion safety and maintenance rather than assuming one platform is safer or that point incentives cause repeat purchases.",
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Build loyalty tier upgrade email, post-purchase review plus points earn, abandoned cart with points reminder, winback with double-points offer, and POS purchase follow-up. If loyalty is live and driving repeat visits, score Marsello holistically. If email segmentation without points program is the job, Klaviyo usually wins outright.',
+    answer: "Build tier upgrade, review plus points earn, cart points reminder, double-points winback and POS follow-up. Test returns, merged identities, permission scope, current balances, cancellation and replay safety. Score the actual loyalty and segmentation requirements plus matched all-in cost; neither an active loyalty program nor its absence predetermines the winner.",
   },
 ];
 ---
@@ -61,7 +61,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Marsello vs Klaviyo for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Marsello treats retention as a loyalty problem first — points, tiers, referrals, and email triggered by earn-and-burn behavior across online and POS. Klaviyo treats retention as a data platform problem — every browse and order feeds segmentation for the next campaign. We evaluated both through an artisan coffee roaster with three retail locations and Shopify POS, a pure DTC climbing gear brand with no stores, and a board game boutique chain where in-store staff manually looked up customer points at checkout.
+          Marsello treats retention as a loyalty problem first — points, tiers, referrals, and email triggered by earn-and-burn behavior across online and POS. Klaviyo treats retention as a data platform problem — every browse and order feeds segmentation for the next campaign. Consider hypothetical evaluation scenarios involving an artisan coffee roaster with three retail locations and Shopify POS, a pure DTC climbing gear brand with no stores, and a board game boutique chain where in-store staff manually looked up customer points at checkout.
         </p>
       </header>
 
@@ -104,70 +104,70 @@ const faqs = [
         
         <h2>How specialty tea merchant emails through Q4 gift-box peak</h2>
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          In this hypothetical fixture, the specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Marsello remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          For the tea fixture, test December gift-box purchasers separately from buyers replenishing their own tins on the 28–35 day schedule. Validate gift-order properties, subscription skips and current recipient permission before dispatch. Record classification errors; filters alone do not guarantee deliverability or fewer unsubscribes. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. For Q4 gift-box peak, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>Artisan Coffee Roaster ($52k/mo) — suppress subscribers on pause from roast-date replenishment nudges</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          In this hypothetical fixture, the artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Marsello remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Test roast-date reminders against subscription pauses and wholesale sample follow-ups. Compare permitted channels with the same audience rules; no channel advantage has been observed. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. For holiday blend drop, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>Before spring rack refresh: climbing gear store retention choices</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          In this hypothetical fixture, the climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Marsello reduced preview-time surprises because loyalty plus email and SMS for omnichannel retail. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Test harness-fit education and rope research as separate intent branches. Validate product-page signals against current permission and purchase state; browsing does not establish marketing permission or an observed conversion lift. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. For spring rack refresh, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>Camping Equipment Merchant: tent-capacity quizzes and family car-camping segments</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          In this hypothetical fixture, the camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Marsello reduced preview-time surprises because loyalty plus email and SMS for omnichannel retail. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          Test tent-capacity quiz outcomes separately from mobile product browsing. Verify household and trip-intent branches with purpose-specific permission; neither a quiz completion nor a channel priority establishes a measured recovery benefit. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. For Memorial Day camping spike, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>How pottery studio emails through holiday starter-set rush</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          In this hypothetical fixture, the pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Marsello remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Test class waitlist and glaze-kit audiences separately, including a class registration arriving after a campaign is queued. Signup source is an intent signal, not permission for every purpose. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. For holiday starter-set rush, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          In this hypothetical fixture, the vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Marsello reduced preview-time surprises because loyalty plus email and SMS for omnichannel retail. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Test limited-pressing allocations against current inventory and recent full-price purchases. Reconcile VIP reservations before dispatch; a stale segment must not authorize an unavailable offer. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. For Record Store Day, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
         </p>
         <h2>Tool friction where Marsello and Klaviyo diverge on Shopify</h2>
         <p>
           Marsello shines when POS and Shopify loyalty points steer repeat purchase. Its friction shows when email depth matters more than points programs. Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Marsello (contacts and features) rewards send discipline or punishes broadcast volume depending on your calendar. Klaviyo (active profiles plus SMS credits) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Compare billing against the same twelve-month workload, including imported and active profiles, messages, SMS destinations and credits, required modules, support, integration, migration, QA and operator labor. A waitlist import with flat orders and a seasonal broadcast peak are proposed cost stress tests, not observed billing penalties. Use current written quotes and the same retention and suppression assumptions; neither billing basis is inherently the opposite of the other.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -177,12 +177,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Klaviyo punish partial adoption.
+          At 12,000–18,000 contacts, compare current written quotes on matched usage; contact count alone does not establish price convergence. Review cold imports for permission and retention policy before quoting; do not delete records merely to manipulate the comparison. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Klaviyo need an all-in cost comparison when only some modules will be used.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Klaviyo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A proposed hybrid uses Privy or Justuno for capture, one lifecycle platform for email, and a separately evaluated SMS sender. A vendor does not take over the merchant's compliance responsibility. Assign one owner for each lifecycle job and channel, disable overlapping native and app recovery queues, propagate current permission and purchase state, cancel stale work in each sender, and deduplicate event replays before dispatch. Validate failure and reconnect behavior; a priority order alone does not prevent duplicate sends.
         </p>
         
         <h2>Who should choose which</h2>
@@ -200,7 +200,7 @@ const faqs = [
           <li>You will use Shopify browse events, predictive CLV, and unified SMS weekly</li>
           <li>Active profiles plus sms credits fits your calendar</li>
           <li>Your team can maintain Klaviyo without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Klaviyo migration</li>
+          <li>A randomized holdout, with uncertainty reported, supports incremental contribution after matched all-in costs sufficient to justify migration; dashboard attribution alone does not establish causality</li>
         </ul>
         <h2>Verdict</h2>
         <p>
