@@ -8,7 +8,7 @@ const { site } = Astro.props as { site: SiteProfile };
       <span class="grid h-10 w-10 place-items-center rounded-lg bg-indigo-600 text-lg font-black text-white shadow-lg shadow-indigo-600/25">E</span>
       <span class="leading-tight"><span class="block text-xs uppercase tracking-wide text-indigo-600">Shopify</span><span>{site.shortName}</span></span>
     </a>
-    <nav class="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
+    <nav aria-label="Main navigation" class="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
       <a href="/apps" class="hover:text-indigo-700">Tools</a>
       <a href="/compare" class="hover:text-indigo-700">Compare</a>
       <a href="/use-cases" class="hover:text-indigo-700">Use cases</a>
