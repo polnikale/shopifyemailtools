@@ -8,24 +8,24 @@ import { site } from '../../content';
 
 const path = '/compare/firepush-vs-omnisend';
 const title = 'Firepush vs Omnisend for Shopify: 2026 Comparison';
-const desc = 'Firepush vs Omnisend for Shopify — web push and lightweight multichannel vs full email-SMS-push automation platform, pricing, recovery focus, and team fit.';
+const desc = 'Firepush vs Omnisend for Shopify: compare permission, browser eligibility, lifecycle workflows, queue ownership and matched total costs using hypothetical catalog scenarios.';
 
 const faqs = [
   {
     question: 'Is Firepush or Omnisend better for a Shopify store doing $45k/mo?',
-    answer: 'Firepush wins when web push recovery drives meaningful mobile revenue and you want push plus basic SMS/email without full ESP complexity. Omnisend wins when email automations, SMS campaigns, and push need unified lifecycle orchestration with prebuilt ecommerce journeys. At $45k/mo with push-first mobile traffic, Firepush competes. With email as primary retention channel, Omnisend leads.',
+    answer: 'Use $45k/mo as a planning input, not a vendor threshold. Compare the actual push, email and SMS requirements in both current quoted setups. Verify browser and device eligibility, channel-specific permission, purchase exits, current withdrawal and queue cancellation before deciding whether either setup covers the required lifecycle.',
   },
   {
     question: 'How does Firepush vs Omnisend pricing compare at 10,000 subscribers?',
-    answer: 'Firepush bills on subscriber tiers with push and SMS volume — often $49–129/mo at 10k depending on message mix. Omnisend at 10k contacts with moderate SMS runs $80–160/mo on Standard/Pro. Firepush can undercut Omnisend when push dominates and email volume stays low. Omnisend value rises when email automations drive equal or greater revenue than push.',
+    answer: 'Obtain dated quotes for the same 10,000-contact definition, eligible push subscriptions, email sends, SMS destinations, segments and contract period. Include overages, integration, migration, overlap, reply labor and weekly operations. Neither a subscriber count nor a headline price establishes the lower all-in cost.',
   },
   {
     question: 'Which has better web push notifications?',
-    answer: 'Firepush was built around web push — cart abandonment push, price drop alerts, back-in-stock, and flash sale broadcasts are core. Omnisend includes push as one channel among email and SMS — solid but not push-specialist depth. For mobile-heavy fashion and flash-sale catalogs, Firepush push UX and opt-in flows are typically sharper.',
+    answer: 'Reproduce the required push opt-in, cart, stock and broadcast jobs in each current account. Verify browser and device support, subscription expiry, withdrawal handling, delivery diagnostics and purchase exits. Mobile traffic alone does not establish push reach, and no comparative UX or recovery result is established here.',
   },
   {
     question: 'Can I use Firepush for push and Omnisend for email?',
-    answer: 'Yes, common hybrid pattern — Firepush owns push recovery, Omnisend owns email and SMS automations. Requires suppression coordination so cart push and cart email do not fire within minutes of each other. Document channel priority rules. Consolidating on Omnisend alone reduces stack complexity if push volume does not justify specialist tool.',
+    answer: 'A split stack is a candidate to test. Assign one sender and queue owner per job, preserve permission by purpose and channel, and recheck current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale jobs in both senders and deduplicate replayed events; spacing messages alone cannot enforce these controls.',
   },
   {
     question: 'Should I also consider Sequenzy instead of Firepush or Omnisend?',
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: 'Does Omnisend email depth beat Firepush email?',
-    answer: 'Yes, meaningfully. Firepush email is functional for basic campaigns and simple automations — not a Klaviyo competitor. Omnisend offers full ecommerce journey builder, segmentation, and SMS integration. Choose Firepush when push is 60%+ of attributed recovery. Choose Omnisend when email automations need equal investment.',
+    answer: 'Test the same welcome, cart, replenishment and preorder branches in both quoted plans, with actual event fields and current-state exits. Record editing effort, failure visibility and ongoing maintenance. A fixed share of attributed recovery does not prove email capability or causal contribution and is not a replacement threshold.',
   },
   {
     question: 'Which platform handles flash sales better?',
-    answer: 'Firepush excels at broadcast push for time-limited drops — high open rates on mobile without SMS per-message cost. Omnisend can broadcast across email, SMS, and push simultaneously with segment control — better for coordinated multichannel launches. Flash-sale fashion brands often start Firepush-only; scale into Omnisend when email segmentation matures.',
+    answer: 'For a proposed flash sale, verify current stock and allocation, eligible channel audiences, expiry, queue cancellation and reply ownership before dispatch. Test browser reach separately from email and SMS permission. Compare attributed results with a defined holdout and uncertainty; high mobile open rates or a growth path are not established here.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Measure push opt-in rate, cart recovery via push versus email, and flash broadcast performance. Build cart abandonment across channels with suppression rules. If push alone recovers 8%+ of eligible mobile carts, Firepush earns its place. If email automations drive equal revenue and you want one UI, Omnisend wins consolidation.',
+    answer: 'Test push opt-in eligibility, a cart purchase while recovery is queued, a withdrawn subscription and a sold-out flash broadcast. Assign sender ownership, cancel stale jobs and deduplicate retries. Compare matched all-in costs and incremental contribution with a defined holdout; an 8% recovery threshold is not evidence of a winner.',
   },
 ];
 ---
@@ -61,17 +61,17 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Firepush vs Omnisend for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Firepush leads with web push — recover mobile carts without SMS cost, blast flash drops to opted-in browsers. Omnisend leads with email — prebuilt ecommerce journeys that happen to include push and SMS. We evaluated both through a camping equipment brand where seventy-one percent of traffic was mobile Safari, a specialty tea shop consolidating three apps into Omnisend, and a flash-sale climbing gear store where push alone recovered more carts than email for six months.
+          Compare push, email and SMS jobs against current quoted plan coverage. The pottery, vinyl, outdoor, keyboard, board-game and tea catalogs below are hypothetical planning fixtures, not evaluated merchants. Verify browser eligibility, purpose-specific channel permission and queue ownership before deciding whether to consolidate or split the stack.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'Web push recovery', tool: 'Firepush', reason: 'Push-first opt-in flows and cart alerts without SMS cost.' },
-            { label: 'Full email automations', tool: 'Omnisend', reason: 'Prebuilt welcome, cart, post-purchase journeys at depth.' },
-            { label: 'Flash sale broadcasts', tool: 'Firepush', reason: 'High mobile open rates on time-limited drops.' },
-            { label: 'Multichannel one UI', tool: 'Omnisend', reason: 'Email, SMS, and push orchestrated together.' },
+            { label: 'Web push recovery', tool: 'Firepush', reason: 'Verify browser eligibility, opt-in evidence and purchase exits.' },
+            { label: 'Full email automations', tool: 'Omnisend', reason: 'Reproduce welcome, cart and replenishment branches in the quoted plan.' },
+            { label: 'Flash sale broadcasts', tool: 'Firepush', reason: 'Recheck stock and message expiry before dispatch.' },
+            { label: 'Multichannel one UI', tool: 'Omnisend', reason: 'Assign each sender owner and test cross-channel cancellation.' },
             { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle playbooks to pair with push-first stack.' },
           ]}
         />
@@ -84,14 +84,14 @@ const faqs = [
             <tr><th>Dimension</th><th>Firepush</th><th>Omnisend</th></tr>
           </thead>
           <tbody>
-            <tr><td>Best for</td><td>Push-first mobile recovery</td><td>SMB multichannel email hub</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$19/mo</td><td>Free tier; Standard ~$16/mo</td></tr>
-            <tr><td>Billing model</td><td>Subscribers + message volume</td><td>Contacts + message volume</td></tr>
-            <tr><td>Shopify depth</td><td>Native — cart, browse events</td><td>Native — core ecommerce events</td></tr>
-            <tr><td>Web push</td><td>Core product</td><td>Included channel</td></tr>
-            <tr><td>Email automations</td><td>Basic</td><td>Strong prebuilt journeys</td></tr>
-            <tr><td>SMS</td><td>Included</td><td>Built-in, mature</td></tr>
-            <tr><td>Learning curve</td><td>Low for push</td><td>Moderate</td></tr>
+            <tr><td>Best for</td><td>Test push eligibility and recovery jobs</td><td>Test full lifecycle and channel handoffs</td></tr>
+            <tr><td>Starting price</td><td>Request dated matched workload quote</td><td>Request dated matched workload quote</td></tr>
+            <tr><td>Billing model</td><td>Confirm subscriber, send and feature definitions</td><td>Confirm contact, send and feature definitions</td></tr>
+            <tr><td>Shopify depth</td><td>Verify events, fields and latency</td><td>Verify events, fields and latency</td></tr>
+            <tr><td>Web push</td><td>Verify supported browsers and subscription state</td><td>Verify supported browsers and subscription state</td></tr>
+            <tr><td>Email automations</td><td>Reproduce required branches and exits</td><td>Reproduce required branches and exits</td></tr>
+            <tr><td>SMS</td><td>Verify regions, permission and replies</td><td>Verify regions, permission and replies</td></tr>
+            <tr><td>Learning curve</td><td>Time setup and weekly operations</td><td>Time setup and weekly operations</td></tr>
           </tbody>
         </table>
       </div>
@@ -99,112 +99,112 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Firepush and Omnisend sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Firepush is optimized when web push is part of your recovery mix. Omnisend is optimized when you need cart, welcome, and post-purchase live in days. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          This comparison uses hypothetical Shopify planning cases, not observed merchant tests. Evaluate the same required events, eligible audiences and workflow jobs in both quoted plans. Keep order notices distinct from marketing; an imported tag or a purchase does not authorize every purpose or channel. Record field mappings and a named integration owner.
         </p>
         
         <h2>Pottery Studio: class waitlists and glaze-kit starter sets</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          For this illustrative scenario, assume the pottery studio processes 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Firepush remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For the pottery studio, separate class waitlist permission and studio policies from glaze-kit merchandising. Withdraw a subscription while a holiday starter-set reminder is queued; verify cancellation and keep necessary class notices with the designated service sender.
         </p>
         <h2>How vinyl record shop emails through Record Store Day</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          For this illustrative scenario, assume the vinyl record shop processes 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Firepush reduced preview-time surprises because web push alongside email and SMS recovery. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          For the vinyl shop, model a 200–400-unit pressing selling out during queue processing. Recheck allocation and stock, suppress recent full-price buyers from immediate discounts and provide a safe sold-out destination. Do not infer incremental sales from attributed clicks.
         </p>
         <h2>Outdoor Gear Retailer ($112k/mo) — merchandise ultralight versus family car-camping with different hero tents</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          For this illustrative scenario, assume the outdoor gear retailer processes 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Firepush remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          For outdoor gear, keep ultralight and family car-camping product branches distinct before Memorial Day. Verify the segment and hero tent at preview and dispatch, including an inventory change after scheduling. Compare eligible browser reach with email reach rather than assuming mobile visits imply push subscriptions.
         </p>
         <h2>Before GB close deadlines: mechanical keyboard vendor retention choices</h2>
         <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+          For this illustrative scenario, assume the mechanical keyboard vendor processes 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Firepush reduced preview-time surprises because web push alongside email and SMS recovery. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          For keyboards, close a six-week group buy on a $180–$420 kit while recovery is queued. Verify stale-job cancellation after a delayed or replayed closed-state event. Keep switch-type education mapped to the five product pages without treating education interest as SMS permission.
         </p>
         <h2>Board Game Store: pre-order allocation anxiety on hot titles</h2>
         <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
+          For this illustrative scenario, assume the board game store processes 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Firepush remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          For board games, keep allocation, preorder and shipped states distinct. Pause winback until fulfillment is confirmed, test a state change during queue processing and cancel obsolete recovery jobs. Necessary allocation notices retain their own sender and purpose.
         </p>
         <h2>How specialty tea merchant emails through Q4 gift-box peak</h2>
         <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Firepush contributes web push alongside email and SMS recovery; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          For this illustrative scenario, assume the specialty tea merchant processes 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Verify required channel scope, event fields and branch behavior in both current quoted setups. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Firepush reduced preview-time surprises because web push alongside email and SMS recovery. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed peak-week priority: necessary order notices, eligible recovery, welcome and education, then promotions. Assign one sender and queue owner per job. Recheck purpose-specific channel permission, current withdrawal, suppression, purchase and inventory state at dispatch. Cancel stale queued jobs in all senders and deduplicate replayed events. A forty-five-minute gap is only a test input, not permission or a guarantee against collisions.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          For tea, test a 28–35-day replenishment window against blend, quantity and subscription state. Reset the clock after purchase, cancel while paused and separate gift buyers from routine drinkers during December. Measure the result rather than claiming lower support load.
         </p>
         <h2>Omnisend workflow reality: strengths, friction, and billing</h2>
         <p>
-          Firepush shines when web push is part of your recovery mix. Its friction shows when push would annoy your editorial-heavy subscribers. Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          Verify push, email and SMS coverage and supported regions in the actual plans. Test browser eligibility, workflow editing, failure visibility and current-state exits. Record onboarding and support responsibilities in writing; no fixed implementation time or vendor capability ceiling is established here.
         </p>
         <p>
-          Billing amplifies behavior. Firepush (impressions and messages) rewards send discipline or punishes broadcast volume depending on your calendar. Omnisend (contacts plus message volume) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Compare the same twelve-month workload, including peak broadcasts, dormant contacts, eligible push subscriptions, SMS destinations and required features. Include staffing, integration, migration and overlap. Preserve suppression and permission evidence during cleanup; a different billing unit does not by itself prove a cost advantage.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Firepush and Omnisend both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Newsletters can carry vinyl staff picks, keyboard switch education and tea brewing notes alongside products. Test the actual editor, catalog fields and sold-out destinations in both accounts. Verify that a SKU or inventory change after scheduling cannot leave stale merchandise in a queued campaign.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Omnisend punish partial adoption.
+          At 12,000–18,000 contacts, request dated matched quotes rather than assuming plans converge. Count eligible channel audiences, sends, required modules, fees, reply labor and maintenance over the same period. List cleanup must retain opt-outs and suppression history. No current price or comparative saving is certified.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Firepush, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A split stack is a candidate architecture. Inventory capture, lifecycle, SMS and service-message senders before adding a tool. Define one owner per job, permission provenance, current-state checks, stale-job cancellation, replay deduplication and rollback. A vendor choice alone does not establish compliance.
         </p>
         
         <h2>Who should choose which</h2>
         <p><strong>Choose Firepush if:</strong></p>
         <ul>
-          <li>Web push is part of your recovery mix</li>
-          <li>You will use web push alongside email and SMS recovery weekly</li>
-          <li>Impressions and messages fits your calendar</li>
-          <li>Your team can maintain Firepush without external rescue</li>
-          <li>Switching cost favors Firepush for the next twelve months</li>
+          <li>Your tested push eligibility and recovery jobs meet the required browser coverage</li>
+          <li>Current permission, withdrawal and purchase exits pass the proposed fixtures</li>
+          <li>The matched annual quote includes every required channel and operating cost</li>
+          <li>Your named operator can inspect failures and cancel stale jobs</li>
+          <li>Migration, overlap and rollback costs fit the twelve-month plan</li>
         </ul>
         <p><strong>Choose Omnisend if:</strong></p>
         <ul>
-          <li>You need cart, welcome, and post-purchase live in days</li>
-          <li>You will use prebuilt multichannel journeys with email, SMS, and push weekly</li>
-          <li>Contacts plus message volume fits your calendar</li>
-          <li>Your team can maintain Omnisend without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Omnisend migration</li>
+          <li>Your tested email, SMS and push jobs meet the required scope</li>
+          <li>Replenishment, preorder and sold-out branches pass the same fixtures</li>
+          <li>The matched annual quote includes required features and channel usage</li>
+          <li>Your team can maintain mappings, replies and suppressions</li>
+          <li>Incremental contribution is evaluated with a holdout and stated uncertainty</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Firepush is the better Shopify email tool when web push is part of your recovery mix. Omnisend is the better Shopify email tool when you need cart, welcome, and post-purchase live in days. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose only after demonstrating the required workflows, browser eligibility, purpose-specific permission, current-state exits and queue controls. Compare matched twelve-month costs and operator effort. Attributed recovery is not causal lift; evaluate incremental contribution with a defined holdout and uncertainty before expanding traffic. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
