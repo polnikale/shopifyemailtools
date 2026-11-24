@@ -1,46 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/sequenzy-vs-drip';
-const title = 'Sequenzy vs Drip: Playbooks vs Visual Workflow Canvas';
-const desc = 'Sequenzy vs Drip for Shopify email tools — agent-first lifecycle playbooks vs visual ecommerce canvas, send billing vs people pricing, speed versus control, and team-shape fit.';
+const title = 'Sequenzy vs Drip: Reviewing Drafts and Maintaining Workflows';
+const desc = 'Sequenzy vs Drip for Shopify: compare automation draft review, branch maintenance, campaign operations and matched costs before choosing a lifecycle email workflow.';
 
 const faqs = [
   {
     question: 'Is Sequenzy or Drip better for Shopify lifecycle email?',
-    answer: 'Sequenzy wins operators who describe outcomes in sentences and want playbooks live fast with send-based billing. Drip wins teams who enjoy visual canvas control, tag-heavy branching, and hands-on workflow design. Both beat Mailchimp for ecommerce lifecycle; neither matches Klaviyo browse depth at scale.',
+    answer: 'Choose by how your operator reviews and maintains a real workflow. Sequenzy offers AI-assisted sequence creation; Drip offers ecommerce workflows and prebuilt playbooks. A generated draft and a visual canvas both need review. Demonstrate trigger mapping, exclusions, queued-message cancellation and a later rule change before deciding.',
   },
   {
     question: 'How does Sequenzy vs Drip pricing compare at 14,000 contacts?',
-    answer: 'Drip bills by people in account — often $180–250/mo at 14k. Sequenzy bills per send — selective senders with 14k contacts emailing 30k monthly often pay less. Drip punishes large lists; Sequenzy punishes broadcast-heavy calendars.',
+    answer: 'A list of 14,000 contacts is not a price comparison. Sequenzy publishes send-volume pricing with unlimited contacts. Request current quotes for the same eligible audience, normal and peak sends, required features, integrations, migration and maintenance. Do not assume either is cheaper without the resulting annual total.',
   },
   {
     question: 'Which handles mechanical keyboard GB state changes?',
-    answer: 'Drip — tag-triggered canvas branches are visible when pre-order closes. Sequenzy playbooks accept suppression language in plain text — faster to deploy, less canvas visibility for complex concurrent GBs. Heavy GB operators often prefer Drip; lighter GB cadence favors Sequenzy speed.',
+    answer: 'For a proposed keyboard group-buy workflow, write the required behavior before asking either product to build it. Separate a closed sale from fulfillment status, and distinguish promotional reminders from order-service messages. Inspect the generated or manually configured conditions against that specification, including a late update while a message is queued.',
   },
   {
     question: 'Can Drip replace Sequenzy playbooks?',
-    answer: 'Yes if team has workflow ops bandwidth. Drip requires building logic; Sequenzy provides draft sequences. Migration Sequenzy to Drip takes two to three weeks rebuilding canvas. Reverse migration common when send economics and speed beat canvas control.',
+    answer: 'A migration replaces configured behavior, not just message copy. Export the trigger rules, waits, exclusions, consent records and current queue state. Rebuild and demonstrate those behaviors in the destination. Estimate effort from that inventory; no fixed migration duration or common direction of migration is established here.',
   },
   {
     question: 'Does Sequenzy match Drip revenue reporting?',
-    answer: 'Both attribute campaign and automation revenue. Drip workflow-level reporting is mature for canvas lovers. Sequenzy sequence reporting suffices for most mid-market operators. Neither replaces finance-grade incrementality without holdout tests.',
+    answer: 'Compare how each configured account links a message to an order, handles refunds and exposes exportable records. Use the same attribution window and order sample. Attributed revenue can overlap other channels and does not establish additional sales caused by email; that requires a suitable experiment.',
   },
   {
     question: 'Which fits solo founder on Shopify?',
-    answer: 'Sequenzy — agent playbooks reduce blank-canvas paralysis. Drip rewards someone who will maintain canvas weekly. Solo founders describing outcomes favor Sequenzy; solo technical founders may prefer Drip visibility.',
+    answer: 'Ask the person who will operate the account to review a draft, explain why a recipient is eligible, change an exclusion and recover from an incorrect rule. Record assistance needed and review effort. AI assistance can help draft a sequence, but neither that feature nor a visual editor removes the need for a responsible operator.',
   },
   {
     question: 'What about SMS on either platform?',
-    answer: 'Drip SMS add-on exists; Sequenzy email-first — pair Postscript or Omnisend SMS with documented suppression. Neither is SMS-primary like Postscript.',
+    answer: 'Sequenzy currently advertises an SMS and MMS beta add-on. Verify destinations, credits and availability for the account. Establish current Drip or connected-provider SMS support separately. Email permission is not SMS permission; document separate senders, withdrawals and purchase exits before combining channels.',
   },
   {
     question: 'What workflow test settles Sequenzy vs Drip?',
-    answer: 'Build welcome, cart, post-purchase gift exclusion, replenishment, winback. Score time-to-live and edit safety during drop week. If team needs canvas visibility for complex tags, Drip. If speed and send economics win, Sequenzy.',
+    answer: 'Run a draft-to-maintenance exercise: specify a preorder journey, inspect the resulting rules, request a change after people have entered, and explain which queued messages will be cancelled or retained. Compare evidence, operator effort and full cost. This is a proposed evaluation, not a report of testing or merchant outcomes.',
   },
 ];
 ---
@@ -60,148 +59,40 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sequenzy vs Drip for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Agent-first playbooks versus visual workflow canvas — two legitimate mid-market lifecycle platforms with opposite operator ergonomics. We evaluated both through a mechanical keyboard vendor managing concurrent group buys, a specialty tea merchant prioritizing replenishment speed, and a climbing gear shop whose technical co-founder wanted every branch visible on canvas. Speed versus control is the real decision, not feature checkbox wars.
+          The useful distinction is how a team turns a written lifecycle requirement into a workflow it can explain and maintain. Sequenzy advertises AI-assisted sequence creation; Drip provides ecommerce workflows and prebuilt playbooks too. Compare the review and editing process rather than assuming one product is fast and the other starts from a blank canvas. The exercise below is hypothetical; no merchant results or measured setup times are claimed.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Time to live flows', tool: 'Sequenzy', reason: 'Agent playbooks deploy in hours.' },
-            { label: 'Canvas control', tool: 'Drip', reason: 'Visual branching for tag-heavy catalogs.' },
-            { label: 'Send economics', tool: 'Sequenzy', reason: 'Pay per email on large selective lists.' },
-            { label: 'Workflow visibility', tool: 'Drip', reason: 'Every branch on one canvas.' },
-            { label: 'Solo operator speed', tool: 'Sequenzy', reason: 'Describe outcomes, not flowcharts.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead><tr><th>Dimension</th><th>Sequenzy</th><th>Drip</th></tr></thead>
-          <tbody>
-            <tr><td>Workflow style</td><td>Agent playbooks</td><td>Visual canvas</td></tr>
-            <tr><td>Billing</td><td>Per send</td><td>Per people</td></tr>
-            <tr><td>Setup speed</td><td>Hours</td><td>Days–weeks</td></tr>
-            <tr><td>Tag complexity</td><td>Moderate</td><td>High tolerance</td></tr>
-            <tr><td>Team fit</td><td>Founder/marketer</td><td>Ops-minded builder</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Sequenzy and Drip sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Sequenzy is optimized when you need sequences live this month without a retention engineer. Drip is optimized when an operator will maintain canvas logic every month. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>How board game store emails through Essen release week</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        
-        <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
-        <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Drip remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
-        <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How camping equipment merchant emails through Memorial Day camping spike</h2>
-        <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
-        <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Drip contributes visual workflow canvas with behavior-based branching. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Drip reduced preview-time surprises because visual workflow canvas with behavior-based branching. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Sequenzy workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Sequenzy shines when you need sequences live this month without a retention engineer. Its friction shows when browse-by-collection targeting steers weekly merchandising. Drip shines when an operator will maintain canvas logic every month. Its friction shows when nobody owns workflow architecture after onboarding. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Sequenzy (per email sent, unlimited contacts) rewards send discipline or punishes broadcast volume depending on your calendar. Drip (people in account) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        <p>
-          Reporting expectations differ. If your team opens lifecycle revenue reports every Monday, buy the tool that makes those reports trustworthy out of the box. If nobody reviews reports, buy for time-to-live and edit safety — not predictive metrics that become dashboard wallpaper.
-        </p>
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Sequenzy and Drip both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Drip punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Drip, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sequenzy if:</strong></p>
-        <ul>
-          <li>You need sequences live this month without a retention engineer</li>
-          <li>You will use agent-first lifecycle playbooks with pay-per-send billing weekly</li>
-          <li>Per email sent, unlimited contacts fits your calendar</li>
-          <li>Your team can maintain Sequenzy without external rescue</li>
-          <li>Switching cost favors Sequenzy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Drip if:</strong></p>
-        <ul>
-          <li>An operator will maintain canvas logic every month</li>
-          <li>You will use visual workflow canvas with behavior-based branching weekly</li>
-          <li>People in account fits your calendar</li>
-          <li>Your team can maintain Drip without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Drip migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Sequenzy is the better Shopify email tool when you need sequences live this month without a retention engineer. Drip is the better Shopify email tool when an operator will maintain canvas logic every month. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
+        <h2>Start with a specification a reviewer can reject</h2>
+        <p>For a proposed limited-run preorder launch, write a short behavior contract before opening either editor. A shopper who requested launch news may receive the promised announcement if still eligible. A purchaser should leave promotional cart recovery. Closing the preorder should stop offers for that run, while shipment notices continue through the assigned order-service sender. A refund should not silently restart the acquisition sequence.</p>
+        <p>This separates the decision from the writing style of a generated email. A persuasive draft can still select the wrong recipients. Require the reviewer to identify the source event, customer identity, run identifier, current permission and exit condition for every promotional step. Where the integration cannot supply a required field, document the mapping or custom work before approving the design.</p>
+
+        <h2>Compare assistance with assistance, then inspect the result</h2>
+        <p>Do not compare an assisted Sequenzy setup with a deliberately empty Drip account. Drip advertises ready-made welcome, cart and winback playbooks as well as AI access. Sequenzy advertises AI-generated sequences and agent tools. Start from the closest available template or assisted draft in each, with the same written requirements and account data.</p>
+        <p>Keep the original request beside the resulting configuration. Check whether an instruction such as “exclude existing preorder customers” became an actual audience condition or merely a sentence in the message. Ask the operator to explain a sample recipient who qualifies and another who does not. If an agent proposes changes, inspect the affected rules before activation; a successful tool response alone does not prove that the journey is correct.</p>
+        <p>Record drafting, review and repair effort separately. Fast copy generation may be useful even if event mapping takes longer. Conversely, an existing workflow template may need little work. No universal hours-versus-weeks claim follows from the interface style.</p>
+
+        <h2>The decisive exercise is the second edit</h2>
+        <p>After preparing the draft, introduce a hypothetical change: a supplier delay moves fulfillment for one preorder run, but the next launch remains scheduled. Ask the operator to pause promotional reminders for affected purchasers without changing launch-news subscribers or other orders. Identify which records represent the run, which represent a customer, and which queue owns messages already scheduled.</p>
+        <p>Inspect what happens to people already waiting in a step. Does changing a condition affect them, only new entrants, or neither until a separate cancellation is made? Recheck current purchase, withdrawal and suppression state at dispatch. Replay the same delay event and confirm that it does not create duplicate entries. These are acceptance requirements to demonstrate in the installed setup, not claims that either vendor provides a particular cancellation mechanism.</p>
+        <p>Save an explanation of the change, the affected audience and a rollback procedure. Choose the editing method your actual operator can audit after the original builder leaves. A visible canvas is valuable when it clarifies branches; a generated draft is valuable when it reduces authoring effort while leaving the resulting behavior reviewable.</p>
+
+        <h2>Campaign work still needs a separate review</h2>
+        <p>For the launch newsletter, confirm the product link, availability wording and audience immediately before scheduling. A closed preorder must not be promoted from an old product block. Keep order-service notices under their documented owner rather than assuming that marketing eligibility governs every customer communication.</p>
+        <p>If an SMS provider or another email app also handles reminders, list the sender and queue for each job. Test purchase and withdrawal updates across that stack. There is no universally safe forty-five-minute suppression interval: the required timing follows the journey and the actual update and dispatch behavior. A second sender should not be enabled while cancellation ownership is unresolved.</p>
+
+        <h2>Model cost around the approved workflow</h2>
+        <p>Sequenzy publishes email-volume pricing with unlimited contacts; that makes expected sends an important input. Obtain Drip’s current quote using its current billable population and sending terms. Use the same audience and calendar for both, including peak campaigns, automation messages and required channel add-ons. Include implementation, custom event work, support, migration and the operator effort revealed by the second-edit exercise.</p>
+        <p>Do not delete consent history or suppressions merely to make a quote smaller. Reconcile the vendor’s billable population with your permitted marketing audience, then price an ordinary month and the busiest planned month. No current dollar quote or saving is established here. See the <a class="link" href="/guides/pricing-models">pricing guide</a> for the cost worksheet.</p>
+
+        <h2>Reporting and the decision to switch</h2>
+        <p>Inspect the message-to-order trail for the preorder journey, including cancellation and refund cases. Record attribution windows and exports before comparing revenue dashboards. Attribution describes credited orders; it does not show what would have happened without the email. Do not justify a migration with invented recovered margin or support savings.</p>
+        <p>Favor Sequenzy when its assisted drafting and resulting configuration satisfy the behavior contract with review effort your team can sustain. Favor Drip when its workflow inspection and ongoing edits better fit that operator, with equivalent data and exclusions demonstrated. If both pass, compare matched annual cost and switching work. If neither passes, resolve the missing event or ownership rule before selecting a winner.</p>
+        <p>Before cutover, preserve consent and suppression records, name one active owner for each journey, cancel obsolete jobs and test duplicate-event handling. Keep a rollback plan that does not reactivate the old and new sender together. Use the <a class="link" href="/guides/selection-framework">selection framework</a> to document the decision and the evidence still missing.</p>
+
+        <h2>Sources and scope</h2>
+        <p>Product positioning and billing inputs were checked against <a class="link" href="https://www.sequenzy.com/about">Sequenzy’s overview</a>, <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a> and <a class="link" href="https://www.drip.com/pricing">Drip’s product and pricing page</a>. These supplier descriptions do not certify your account’s integration, results or legal compliance. The proposed exercise supplies the account-specific evidence needed for a choice.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
