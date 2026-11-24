@@ -13,31 +13,31 @@ const desc = 'Privy vs ActiveCampaign for Shopify stores — popup capture and b
 const faqs = [
   {
     question: 'Is Privy or ActiveCampaign better for a Shopify store doing $40k/mo?',
-    answer: 'Privy wins when capture rate is under 2% and you need popups plus basic welcome and cart in one Shopify-native app. ActiveCampaign wins when CRM pipelines, lead scoring, and automations spanning Shopify plus blog plus wholesale inquiries matter. At $40k/mo pure DTC, Privy first then graduate. With B2B or content-site leads, ActiveCampaign competes for lifecycle ownership.',
+    answer: 'Revenue alone cannot select the platform. For a proposed $40k/mo store, compare a capture-focused workflow with one requiring wholesale inquiry stages and sales follow-up. Verify current plan access and Shopify event support; a capture-rate threshold does not establish which tool will work better.',
   },
   {
     question: 'Can ActiveCampaign replace Privy for popup capture?',
-    answer: 'No for onsite conversion optimization. ActiveCampaign offers embedded forms and site tracking — competent for footer signups and blog lead capture, not competitive with Privy exit intent, spin wheels, and popup A/B tests. Merchants choose ActiveCampaign for CRM automation breadth, not session-to-subscriber optimization on Shopify storefront.',
+    answer: 'Test the actual capture requirements in each current plan: display rules, mobile dismissal, accessibility, experiment assignment, signup-source transfer, and channel-specific permission records. Embedded forms and popups are different jobs; do not assume either product replaces the other without checking the required behaviors.',
   },
   {
     question: 'How does Privy vs ActiveCampaign pricing compare at 8,000 contacts?',
-    answer: 'Privy scales on sessions plus email sends — often $45–75/mo at moderate traffic. ActiveCampaign Plus at 8k often runs $130–190/mo depending on feature tier. ActiveCampaign costs more but includes CRM pipelines Privy lacks. Combined Privy capture plus ActiveCampaign CRM is common for hybrid DTC-plus-B2B merchants.',
+    answer: 'Request current quotes for the same 8,000 billable contacts, traffic, monthly sends, CRM seats, automation features, support, and contract term. Include integration and implementation labor, overages, and any separate capture subscription. The historical price ranges on this page are unverified and should not be used as a quote.',
   },
   {
     question: 'Should I use Privy and ActiveCampaign together?',
-    answer: 'Yes, for hybrid merchants. Privy owns Shopify storefront capture; ActiveCampaign owns CRM pipelines for wholesale inquiries, blog leads, and post-purchase nurture with deal stages. Disable Privy email once ActiveCampaign automations go live. Pass tags and signup source metadata so welcome paths branch correctly.',
+    answer: 'A split stack is a candidate when capture and wholesale follow-up need different owners. Verify the integration transfers source, purpose, permission, suppression, and customer state. Assign one sender per journey; cancel pending messages in the previous owner and test duplicate events and retries before activating the replacement.',
   },
   {
     question: 'Which handles B2B wholesale better?',
-    answer: 'ActiveCampaign leads — deal pipelines, sales automation, and lead scoring map naturally to wholesale inquiry follow-up from Shopify tagged customers. Privy can capture wholesale landing page signups but lacks pipeline UI sales teams expect. The stationery wholesaler chose ActiveCampaign; the hobby retailer chose Privy-only.',
+    answer: 'Use a proposed wholesale inquiry to test assignment, deal stages, follow-up tasks, and the transition from lead to customer. Verify current CRM packaging and Shopify data access for ActiveCampaign and the capture workflow in Privy. No merchant selection or measured outcome is established here.',
   },
   {
     question: 'Which integrates with Shopify more natively for capture?',
-    answer: 'Privy — built for Shopify storefront conversion with popups, bars, and gamification. ActiveCampaign\'s Shopify integration is solid for order-triggered automation but capture tooling feels like one connector among many — stronger when you also track WordPress blog engagement or non-Shopify lead sources.',
+    answer: 'Compare installation, storefront display rules, source tagging, permission transfer, event latency, and error recovery on the current Shopify integration. A native positioning claim does not establish that every required workflow or event is supported in your plan.',
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Measure session-to-subscriber rate first. Under 2%: Privy. If CRM pipelines or blog lead scoring matter: ActiveCampaign. Build welcome, cart, and one CRM-triggered follow-up if applicable. Pure DTC lean Privy then graduate. Hybrid DTC-plus-B2B lean Privy capture plus ActiveCampaign lifecycle.',
+    answer: 'Build proposed welcome, cart, and wholesale follow-up fixtures. Check current purpose and channel permission, suppression, purchases, subscription pauses, queue cancellation, and replay deduplication immediately before dispatch. Compare matched annual costs. Attributed revenue is descriptive; estimate causal lift with randomized eligible holdouts and report uncertainty, refunds, discounts, and margin.',
   },
 ];
 ---
@@ -57,7 +57,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Privy vs ActiveCampaign for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Shopify storefront capture versus CRM automation powerhouse. Privy optimizes session-to-subscriber conversion with popups and basic automations. ActiveCampaign optimizes contact graphs spanning Shopify orders, blog engagement, deal pipelines, and sales follow-up. We evaluated both through a $40k/mo wholesale stationery brand with B2B inquiry volume, a $36k/mo online course bundle shop driving signups from landing pages plus Shopify, and a $29k/mo hobby retailer that chose Privy-only because CRM complexity was premature.
+          Shopify storefront capture versus CRM automation powerhouse. Privy optimizes session-to-subscriber conversion with popups and basic automations. ActiveCampaign optimizes contact graphs spanning Shopify orders, blog engagement, deal pipelines, and sales follow-up. Proposed fixtures include a $40k/mo wholesale stationery brand with B2B inquiries, a $36k/mo online course bundle shop, and a $29k/mo hobby retailer. These are illustrative test inputs, not evaluated merchants or observed platform choices. Current capabilities and prices require verification before purchase.
         </p>
       </header>
 
@@ -81,8 +81,8 @@ const faqs = [
           </thead>
           <tbody>
             <tr><td>Best for</td><td>Capture + basic email</td><td>CRM + marketing automation</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$30/mo</td><td>From ~$29/mo</td></tr>
-            <tr><td>Billing model</td><td>Sessions + email sends</td><td>Contacts + feature tier</td></tr>
+            <tr><td>Starting price</td><td>Current quote required</td><td>Current quote required</td></tr>
+            <tr><td>Billing model</td><td>Verify billable units and allowances</td><td>Contacts + feature tier</td></tr>
             <tr><td>Popups & capture</td><td>Core strength</td><td>Forms + site tracking</td></tr>
             <tr><td>Shopify automation</td><td>Basic welcome, cart</td><td>Good — manual build</td></tr>
             <tr><td>CRM pipelines</td><td>Not available</td><td>Core strength</td></tr>
@@ -100,70 +100,70 @@ const faqs = [
         
         <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
         <p>
-          The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
+          In a proposed numeric fixture, the artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. For holiday blend drop, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>How climbing gear store emails through spring rack refresh</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          In a proposed numeric fixture, the climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For the climbing fixture, compare harness-fit education with cart recovery using eligible test profiles. Do not infer a channel winner from browsing behavior alone. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. For spring rack refresh, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          In a proposed numeric fixture, the camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For the camping fixture, keep tent-capacity quiz answers and trip timing distinct from purchase intent. Verify source properties reach the intended welcome branch; a quiz response alone does not grant permission for every channel. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. For Memorial Day camping spike, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          In a proposed numeric fixture, the pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For the pottery fixture, keep class waitlist permission separate from glaze-kit marketing and distinguish gift buyers from recipients. Test suppression after purchase and waitlist conversion. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. For holiday starter-set rush, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          In a proposed numeric fixture, the vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Privy reduced preview-time surprises because popup capture and simple welcome or cart messages. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Use a proposed 300-unit pressing and two-hour send window to test inventory changes mid-queue. Verify what is refreshed at dispatch and click time, and route sold-out clicks appropriately; no prevented complaints or live-sync result has been measured. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. For Record Store Day, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          In a proposed numeric fixture, the outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Privy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Proposed priority: required operational updates, eligible cart recovery, welcome education, then promotions. Treat message purpose and channel permission separately; an order update must not silently become marketing. For both tools, verify current suppression, purchases, subscription pauses, and journey ownership before dispatch. Cancel stale queued messages and replay duplicate events to check deduplication. This is a test specification, not an observed vendor advantage.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          For the outdoor fixture, propose a ten-day layering and tent research window. Compare education and promotional sequences with randomized eligible holdouts, report uncertainty and net contribution, and measure operator time rather than assuming exports save six hours a week. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. For Memorial Day sale week, test a proposed forty-five-minute collision window, current channel permission, sender ownership, cancellation, and replay behavior; that duration is a fixture, not a universal safe interval.
         </p>
         <h2>ActiveCampaign workflow reality: strengths, friction, and billing</h2>
         <p>
           Privy shines when capture and basic campaigns are the bottleneck. Its friction shows when replenishment timing and browse depth are core KPIs. ActiveCampaign shines when wholesale pipelines and site tracking share one automation brain. Its friction shows when pure DTC Shopify retention is the only job. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Privy (contacts and pageviews) rewards send discipline or punishes broadcast volume depending on your calendar. ActiveCampaign (contacts plus feature tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Model a matched twelve-month workload: billable contacts, traffic, email and SMS volume, CRM seats, required features, integration maintenance, implementation, support, overages, and contract terms. Test seasonal waitlist growth and peak sending as separate scenarios. Verify each vendor’s current billable units; no merchant invoice outcome is established here.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -173,12 +173,12 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like ActiveCampaign punish partial adoption.
+          Use proposed 12,000- and 18,000-contact scenarios with identical eligibility and sending assumptions. Apply retention and suppression rules without deleting necessary consent evidence. Add only required modules and integration labor; price convergence and savings remain unverified.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Privy, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A candidate stack separates capture, lifecycle email, and SMS. Verify current connectors and purpose/channel eligibility. Assign one owner to each journey, document cross-channel priority, cancel old queues on migration, and test duplicate delivery and purchase events. Selecting an SMS vendor does not itself establish compliance.
         </p>
         
         <h2>Who should choose which</h2>
@@ -186,7 +186,7 @@ const faqs = [
         <ul>
           <li>Capture and basic campaigns are the bottleneck</li>
           <li>You will use popup capture and simple welcome or cart messages weekly</li>
-          <li>Contacts and pageviews fits your calendar</li>
+          <li>A verified current quote fits your annual workload</li>
           <li>Your team can maintain Privy without external rescue</li>
           <li>Switching cost favors Privy for the next twelve months</li>
         </ul>
@@ -196,7 +196,7 @@ const faqs = [
           <li>You will use CRM pipelines, lead scoring, and automation logic weekly</li>
           <li>Contacts plus feature tier fits your calendar</li>
           <li>Your team can maintain ActiveCampaign without external rescue</li>
-          <li>Incremental lifecycle GMV justifies ActiveCampaign migration</li>
+          <li>A measured contribution-margin case supports migration</li>
         </ul>
         <h2>Verdict</h2>
         <p>
