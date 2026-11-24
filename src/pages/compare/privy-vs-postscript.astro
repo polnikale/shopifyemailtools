@@ -8,7 +8,7 @@ import { site } from '../../content';
 
 const path = '/compare/privy-vs-postscript';
 const title = 'Privy vs Postscript for Shopify: 2026 Comparison';
-const desc = 'Privy vs Postscript for Shopify stores — popup capture and basic email vs SMS-native specialization, stack pairing, compliance, and channel economics.';
+const desc = 'Privy vs Postscript for Shopify stores — capture, email and SMS scope, channel ownership, reply handling and messaging economics.';
 
 const faqs = [
   {
@@ -57,20 +57,16 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Privy vs Postscript for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Another comparison framed wrong by search intent. Privy is capture infrastructure with basic email — popups, spin wheels, session-to-subscriber optimization. Postscript is SMS-native retention — compliance, two-way text, cart recovery via mobile. We evaluated both through a vinyl record shop running Privy capture plus Postscript SMS plus Sequenzy email, a specialty tea merchant that tried Postscript as its only marketing tool, and a camping equipment store deciding when SMS specialization earns its place in the stack.
+          A Shopify team comparing Privy and Postscript should decide what belongs in its text program and what belongs in long-form email. Both vendors now advertise more than the narrow roles often assigned to them. The scenarios below are proposed tasks for a tea merchant, a roaster, a climbing shop, a camping store, a studio and a record shop; no merchant evaluation or observed result is claimed.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Popup capture', tool: 'Privy', reason: 'Exit intent, gamification, and email list growth on storefront.' },
-            { label: 'SMS specialization', tool: 'Postscript', reason: 'Compliance, two-way SMS, and cart recovery via text.' },
-            { label: 'Early-stage email', tool: 'Privy', reason: 'Basic welcome and cart before ESP graduation.' },
-            { label: 'SMS revenue focus', tool: 'Postscript', reason: 'Built for operators who treat text as a channel, not an add-on.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle playbooks paired with Postscript for SMS depth.' },
-          ]}
-        />
+        <TldrBox picks={[
+          { label: 'Consolidation candidate', tool: 'Privy', reason: 'Evaluate capture, email and SMS together against the actual brief.' },
+          { label: 'Text program candidate', tool: 'Postscript', reason: 'Evaluate acquisition, campaigns and reply handling with a named owner.' },
+          { label: 'Channel boundary', tool: 'Audience need', reason: 'A requested alert and a long-form newsletter need different briefs.' },
+        ]} />
       </div>
 
       <div class="mt-12 card overflow-x-auto">
@@ -80,14 +76,10 @@ const faqs = [
             <tr><th>Dimension</th><th>Privy</th><th>Postscript</th></tr>
           </thead>
           <tbody>
-            <tr><td>Best for</td><td>Capture + basic email</td><td>SMS-native Shopify marketing</td></tr>
-            <tr><td>Starting price</td><td>Obtain current matched quote</td><td>Obtain current matched quote</td></tr>
-            <tr><td>Billing model</td><td>Sessions + email sends</td><td>Plan + per-message</td></tr>
-            <tr><td>Popups & capture</td><td>Core strength</td><td>Not primary — pair required</td></tr>
-            <tr><td>Email automation</td><td>Basic welcome, cart</td><td>Not primary — pair required</td></tr>
-            <tr><td>SMS depth</td><td>Capture-tied basics</td><td>Best-in-class for Shopify SMS</td></tr>
-            <tr><td>Compliance</td><td>Capture-oriented</td><td>SMS-first guardrails</td></tr>
-            <tr><td>Typical role</td><td>Top-of-funnel capture</td><td>SMS layer in combined stack</td></tr>
+            <tr><td>Published scope</td><td>Popups, email and SMS flows</td><td>SMS, email and onsite opt-in</td></tr>
+            <tr><td>Primary evaluation</td><td>Consolidated capture and messaging brief</td><td>Text acquisition, campaign and conversation brief</td></tr>
+            <tr><td>Operating cost</td><td>Campaign production and handoffs</td><td>Messaging workload plus reply handling</td></tr>
+            <tr><td>Decision boundary</td><td>Keep together if consolidation removes real work</td><td>Separate only if channel-specific requirements justify it</td></tr>
           </tbody>
         </table>
       </div>
@@ -95,72 +87,36 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Privy and Postscript sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Privy is optimized when capture and basic campaigns are the bottleneck. Postscript is optimized when SMS is a primary revenue channel with compliance discipline. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Privy currently describes popups, an email editor and email/SMS flows on its <a class="link" href="https://www.privy.com/">product site</a>. Postscript currently lists SMS, email and onsite opt-in on its <a class="link" href="https://postscript.io/">platform site</a>. Neither should be reduced to one channel or assumed to require a capture partner. The decision below is whether a dedicated text program solves a specific audience need and how it will coexist with email. Feature availability and commercial terms still need a dated proposal; vendor marketing does not establish comparative performance.
         </p>
         
-        <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
+        <h2>Proposed task: a tea restock alert versus a blend guide</h2>
         <p>
-          Assume a hypothetical specialty tea merchant with 720 orders/mo at roughly $44k/mo; these are planning inputs, not reported results. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
+          For this proposed tea program, decide whether a short text has a useful job distinct from the longer email. A requested restock alert might justify immediacy; a blend guide generally needs room for detail. Separate those purposes at signup and measure opt-outs alongside incremental margin. Do not turn a gift purchase into inferred permission for recurring SMS replenishment.
         </p>
+        <h2>Proposed task: roast alerts, replies and paused deliveries</h2>
         <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For tea, propose blend-specific replenishment windows and separate gift buyers from active subscribers. Test a subscription skip while a reminder is queued, with cancellation before dispatch. Tea reorder behavior must be measured directly; a tent-campaign click result is not evidence for it.
-        </p>
-        <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
-        <p>
-          Assume a hypothetical artisan coffee roaster with 860 orders/mo at roughly $52k/mo; these are planning inputs, not reported results. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For coffee, separate roast-date education, wholesale sample follow-ups and paused-subscription confirmations. Check the current subscription state before any promotional reorder message. Test cancellation and retries after a pause; camping browse behavior does not establish which channel works for coffee.
+          For coffee, compare a timely roast-release alert with a routine reorder nudge. Ask who answers a reply about grind size or a paused delivery and how that reply changes subsequent sends. Include staffing in the channel decision: a text program that invites conversation needs a response process, not only a campaign calendar. Test a pause arriving while a promotional text is pending.
         </p>
         <h2>How climbing gear store emails through spring rack refresh</h2>
         <p>
-          Assume a hypothetical climbing gear store with 1,100 orders/mo at roughly $89k/mo; these are planning inputs, not reported results. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          For climbing equipment, use SMS only for a clearly defined communication need rather than compressing a fit guide into a sales text. A link should lead to approved, current product information. Compare the review path for a changed product claim and how an operator stops the campaign if the destination becomes unsuitable. Neither a click nor a reply establishes safety suitability.
         </p>
+        <h2>Proposed task: quiz preferences versus phone permission</h2>
         <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For climbing gear, use manufacturer-approved product information and fit guidance. A proposed education-first test must not imply that browsing establishes safety suitability. Measure relevant outcomes without claiming recovered margin, and verify permission and suppression separately for email and SMS.
-        </p>
-        <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
-        <p>
-          Assume a hypothetical camping equipment merchant with 1,350 orders/mo at roughly $78k/mo; these are planning inputs, not reported results. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
-        </p>
-        <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For camping, route declared tent-capacity and trip-type preferences into matching welcome content. Test a purchase or stock change between quiz completion and dispatch. Keep family-camping and ultralight hero products distinct; board game allocation anecdotes do not establish support savings for this catalog.
+          For the camping quiz, distinguish declared trip preferences from permission to contact a phone number. Prototype an email-first branch containing the tent comparison and an optional, separately requested stock alert. Compare completion and subsequent engagement for each signup path. The relevant SMS decision is whether the alert adds value beyond email, not whether every quiz lead can be reached twice.
         </p>
         <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
         <p>
-          Assume a hypothetical pottery studio with 480 orders/mo at roughly $31k/mo; these are planning inputs, not reported results. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For pottery, distinguish class waitlist permission from permission for glaze-kit promotions. Test a class registration while a waitlist message is queued and exclude unrelated product offers where permission does not cover them. Use studio-approved safety content; no observed welcome or revenue result is claimed.
+          For the studio, distinguish a requested class-opening alert from starter-kit merchandising. A short-notice class vacancy has a different urgency and audience from a holiday product newsletter. Test a registration arriving before the alert leaves the queue and route replies about class availability to a named operator. Do not reuse class-waitlist permission for unrelated kit campaigns.
         </p>
         <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
         <p>
-          Assume a hypothetical vinyl record shop with 1,800 orders/mo at roughly $72k/mo; these are planning inputs, not reported results. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Privy contributes popup capture and simple welcome or cart messages; Postscript contributes Shopify-native SMS with compliance guardrails. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Propose separate operational, recovery, welcome and broadcast queues. A queue priority is not permission to send: check the purpose and channel independently. Recheck current purchase, subscription and suppression state at dispatch, assign sender and cancellation ownership, and deduplicate event replays. Test both candidate setups and record failures and operator effort; no observed preview comparison is claimed here.
-        </p>
-        <p>
-          For vinyl, propose current stock and recent full-price purchase checks before a scarce-pressing promotion. Cancel recovery after purchase and prevent replayed checkout events from restarting it. Test grading education and drop timing directly; a keyboard comparison cannot establish six hours of weekly savings for a record shop.
+          For the record drop, compare a requested release alert with broad promotional texts. Model the audience that can realistically buy the available pressing, not the entire phone list. Prepare the sold-out destination before scheduling, stop stale recovery after purchase, and assign someone to handle grading or availability replies. Measure margin after messaging and handling costs rather than treating a rapid sellout as proof of SMS lift.
         </p>
         <h2>Tool friction where Privy and Postscript diverge on Shopify</h2>
         <p>
-          Privy shines when capture and basic campaigns are the bottleneck. Its friction shows when replenishment timing and browse depth are core KPIs. Postscript shines when SMS is a primary revenue channel with compliance discipline. Its friction shows when email newsletters and lifecycle are the main stack. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          The practical friction is whether the SMS program merits its own operating process. Someone must review short copy, monitor replies, manage the destination after stock changes and reconcile phone-level suppression with the rest of the stack. If those jobs lack an owner, adding a specialized channel creates unfinished work. If SMS already has an operator, compare the actual acquisition, conversation and campaign tools against the current Privy proposal rather than assuming capture and SMS are separate products.
         </p>
         <p>
           Compare matched annual workloads and dated quotes rather than assuming opposite billing incentives. Include capture, email and SMS sender charges, usage, carrier fees where applicable, implementation and operator time. Seasonal sends and waitlist growth are planning inputs, not observed billing results. Verify each current billing unit and avoid charging the same workload twice in the model.
@@ -168,7 +124,7 @@ const faqs = [
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Privy and Postscript both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          A long-form email and a text alert should have different briefs. For a record release, email can explain grading, editions and staff picks; a requested SMS alert can point to the release at the relevant moment. Postscript now advertises email as well as SMS, so an automatic requirement for a second email vendor is unsupported. Evaluate its offered email scope and migration terms directly before deciding how many workspaces to retain.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
@@ -181,26 +137,9 @@ const faqs = [
           A proposed stack assigns capture, email and SMS responsibilities only after verifying current capabilities and integrations. A vendor does not confer permission or compliance. Assign a single owner for each recovery step, test cancellation across queues after purchase or opt-out, and deduplicate retries. Use randomized holdouts with uncertainty to distinguish causal incremental margin from channel attribution.
         </p>
         
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Privy if:</strong></p>
-        <ul>
-          <li>Capture and basic campaigns are the bottleneck</li>
-          <li>You will use popup capture and simple welcome or cart messages weekly</li>
-          <li>Contacts and pageviews fits your calendar</li>
-          <li>Your team can maintain Privy without external rescue</li>
-          <li>Switching cost favors Privy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Postscript if:</strong></p>
-        <ul>
-          <li>Sms is a primary revenue channel with compliance discipline</li>
-          <li>You will use Shopify-native SMS with compliance guardrails weekly</li>
-          <li>Message volume and plans fits your calendar</li>
-          <li>Your team can maintain Postscript without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Postscript migration</li>
-        </ul>
-        <h2>Verdict</h2>
+        <h2>Decision and migration boundary</h2>
         <p>
-          Privy is the better Shopify email tool when capture and basic campaigns are the bottleneck. Postscript is the better Shopify email tool when SMS is a primary revenue channel with compliance discipline. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Choose the operating model before the vendor: a consolidated capture/email/SMS workspace, or a separately staffed text program with explicit handoffs. Evaluate Privy against that consolidated brief and Postscript against the text acquisition and conversation brief, including its current email offering where relevant. A record-drop alert and a class-vacancy alert need different audiences and reply owners; neither establishes a universal winner.
         </p>
       </article>
 
@@ -210,7 +149,7 @@ const faqs = [
           <a class="link" href="/compare/klaviyo-vs-postscript">Klaviyo vs Postscript</a> ·
           <a class="link" href="/compare/omnisend-vs-postscript">Omnisend vs Postscript</a> ·
           <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
-          <a class="link" href="/for/camping">Email tools for camping stores</a> ·
+          <a class="link" href="/for/food-and-beverage">Email tools for food and beverage stores</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
         </p>
       </div>
