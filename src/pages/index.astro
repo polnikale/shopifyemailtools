@@ -1,210 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { APPS, SEGMENTS, USE_CASES, description, pageTitle, site } from '../content';
-
-const path = '';
-const title = pageTitle(site, path);
-const desc = description(site, path);
-const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.channels.includes('marketing')).slice(0,10);
+import { site } from '../content';
+const title = 'Shopify email tools: choose by the work your store needs';
+const desc = 'Find a route through Shopify email tools, workflow guides, store contexts and comparisons. Start with the job, data needs and operating constraints.';
 ---
 <BaseLayout title={title} description={desc} site={site} path="/">
-  <section class="relative overflow-hidden bg-[#0b1028] py-20 text-white md:py-28">
-    <div class="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_10%_20%,#6366f1_0,transparent_28%),radial-gradient(circle_at_85%_15%,#c084fc_0,transparent_24%),linear-gradient(135deg,#0b1028,#111827_55%,#312e81)]"></div>
-    <div class="container relative grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
-      <div>
-        <span class="badge badge-dark">Calm catalog · broad Shopify email stack</span>
-        <h1 class="hero-title mt-6 text-white">Shopify email tools for campaigns, flows, updates, and customer education</h1>
-        <p class="mt-6 max-w-3xl text-xl text-indigo-100">{site.heroPromise} This rebuilt site is deliberately broader than a retention-only directory: it covers practical email tools for newsletters, lifecycle automation, product education, customer updates, segmentation, deliverability, and the daily work of keeping a Shopify customer file useful.</p>
-        <div class="mt-8 flex flex-wrap gap-3"><a class="btn btn-primary" href="/apps">Browse tools</a><a class="btn btn-secondary" href="/use-cases">Explore use cases</a></div>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="card dark-card"><div class="text-sm font-black text-indigo-200">Catalog rule</div><p class="mt-3 text-white">A Shopify email tool should reduce operational friction: faster sends, cleaner lists, clearer content blocks, and fewer manual exports.</p></div>
-        <div class="card dark-card"><div class="text-sm font-black text-indigo-200">Buyer rule</div><p class="mt-3 text-white">{site.bestOverallReason}</p></div>
-        <div class="card dark-card sm:col-span-2"><div class="text-sm font-black text-indigo-200">Scope</div><p class="mt-3 text-white">The pages below separate tool reviews, alternatives, pairwise comparisons, store-type guides, and email jobs so merchants can choose tools by practical fit instead of copying another store's stack.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container py-16"><div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between"><div><span class="badge">Tool shelf</span><h2 class="mt-3 text-4xl font-black tracking-tight">Email tools worth opening first</h2></div><a class="link" href="/apps">See all tool profiles →</a></div><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-5">{recommended.map((app, i) => <a class="card compact-card" href={`/apps/${app.slug}`}><div class="text-xs font-black uppercase tracking-wide text-indigo-700">Shelf {i+1}</div><h3 class="mt-3 text-xl font-black text-slate-950">{app.name}</h3><p class="mt-3 text-sm text-slate-600">{app.bestFor}</p></a>)}</div></section>
-
-  <section class="bg-white py-16"><div class="container"><div class="max-w-3xl"><span class="badge">Long-form map</span><h2 class="mt-3 text-4xl font-black tracking-tight">Built for merchants who need the right email job, not just the biggest suite.</h2><p class="mt-4 text-slate-600">A general Shopify email tool decision is different from a narrow email marketing platform decision. Some stores need a fast newsletter workflow. Others need product-triggered education, simple customer updates, lightweight automations, or a bridge toward a larger retention program. The content map treats these as separate jobs with separate evaluation criteria.</p></div><div class="mt-8 grid gap-4 md:grid-cols-3">{USE_CASES.slice(0,12).map(u=><a class="card" href={`/use-cases/${u.slug}`}><h3 class="font-black text-slate-950">{u.name}</h3><p class="mt-2 text-sm text-slate-600">A practical guide to {u.job}.</p></a>)}</div></div></section>
-
-  <section class="container py-16"><div class="mb-8"><span class="badge">Store contexts</span><h2 class="mt-3 text-4xl font-black tracking-tight">Email tooling changes by catalog and customer behavior</h2></div><div class="grid gap-4 md:grid-cols-4">{SEGMENTS.map(s=><a class="card" href={`/for/${s.slug}`}><h3 class="font-black">{s.name}</h3><p class="mt-2 text-sm text-slate-600">Plan around {s.pain}.</p></a>)}</div></section>
-
-  <section class="bg-indigo-50/70 py-16">
-    <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-      <div>
-        <span class="badge">Practical buying rubric</span>
-        <h2 class="mt-3 text-4xl font-black tracking-tight">Score email tools by the jobs your Shopify team repeats every week.</h2>
-        <p class="mt-4 text-slate-700">A useful shortlist should be scored with the same concrete work the team will run after implementation. Give every app a one-to-five score for data access, audience building, message production, automation control, measurement, deliverability, governance, and cost predictability. Then weight the scores by the next ninety days of work instead of by the longest feature list.</p>
-        <p class="mt-4 text-slate-700">This approach keeps a merchant from confusing “powerful” with “useful.” A brand that sends two launches a month may need reusable product blocks, fast approvals, exclusion rules, and clean campaign reporting more than it needs a complex branching canvas. A retention team managing welcome, abandon, replenishment, winback, loyalty, and post-purchase education may need event depth, reusable segments, QA controls, and holdout measurement before it worries about template variety.</p>
-      </div>
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="card"><h3 class="font-black text-slate-950">1. Shopify data depth</h3><p class="mt-2 text-sm text-slate-600">Check whether the app can use order count, products purchased, variant, collection, discount use, checkout status, fulfillment, tags, location, subscription status, loyalty tier, and customer lifetime value without exports.</p></div>
-        <div class="card"><h3 class="font-black text-slate-950">2. Audience and suppression control</h3><p class="mt-2 text-sm text-slate-600">The app should make it easy to include the right buyers and exclude recent purchasers, refund risk, support cases, unengaged subscribers, and customers already receiving a conflicting flow.</p></div>
-        <div class="card"><h3 class="font-black text-slate-950">3. Production workflow</h3><p class="mt-2 text-sm text-slate-600">Look for reusable sections, product-aware blocks, mobile previews, approval notes, naming conventions, preview data, and a way to update common content without rebuilding every email.</p></div>
-        <div class="card"><h3 class="font-black text-slate-950">4. Reporting quality</h3><p class="mt-2 text-sm text-slate-600">Prefer reporting that separates campaign revenue from flow revenue, full-price orders from discounted orders, new buyers from repeat buyers, and attributed clicks from incremental lift.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section class="container py-16">
-    <div class="grid gap-8 lg:grid-cols-3">
-      <article class="card lg:col-span-2 prose-shopify">
-        <h2>Implementation plan: a 30-day Shopify email stack build</h2>
-        <p><strong>Days 1–3: audit the current customer file.</strong> Export nothing unless you must; instead inspect how the tool reads Shopify customers, orders, products, consent, discounts, and checkout events. Identify duplicates, inactive subscribers, customers with missing consent, and high-value segments that need special treatment. Decide which tags and metafields are trustworthy enough to drive messages.</p>
-        <p><strong>Days 4–7: rebuild the essential journeys.</strong> Start with welcome, abandoned checkout, post-purchase education, replenishment or cross-sell, and winback. Each journey needs an entry event, delay logic, exit rule, message purpose, product logic, and suppression list. If the app cannot express those decisions cleanly, it will become harder to operate as the store grows.</p>
-        <p><strong>Days 8–14: create a campaign operating system.</strong> Build reusable layouts for product launches, editorial newsletters, sale announcements, back-in-stock messages, and customer education. Add a pre-send checklist for audience size, exclusions, preview data, UTM naming, discount code rules, inventory availability, and mobile rendering. The best email tool makes this checklist shorter, not longer.</p>
-        <p><strong>Days 15–21: protect deliverability and consent.</strong> Warm new sending domains carefully, suppress chronically unengaged subscribers, avoid sudden volume spikes, and separate transactional-style notices from promotional campaigns. A broad Shopify email tool should help the team send more relevant messages, not simply send more messages.</p>
-        <p><strong>Days 22–30: measure and decide what stays.</strong> Review placed order rate, revenue per recipient, unsubscribe rate, complaint rate, discount dependency, repeat purchase, and the qualitative reasons customers reply. Keep flows that help customers make better decisions. Rewrite or pause anything that creates sales only by adding pressure or coupons.</p>
-      </article>
-      <aside class="card h-fit">
-        <h3 class="text-2xl font-black text-slate-950">Common mistakes to avoid</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-700">
-          <li><strong>Buying for the agency demo.</strong> A beautiful demo can hide a workflow that is too slow for a small merchant.</li>
-          <li><strong>Letting attribution decide everything.</strong> Email can claim revenue it did not create; use holdouts and customer-stage reporting where possible.</li>
-          <li><strong>Ignoring exclusions.</strong> Recent buyers, support cases, wholesale accounts, and customers in another promotion often need to be suppressed.</li>
-          <li><strong>Discounting by default.</strong> Many email jobs need clarity, proof, or timing before they need a coupon.</li>
-          <li><strong>Forgetting migration risk.</strong> Moving tools can break forms, flows, tags, DNS, templates, analytics, and historical segments if nobody owns the checklist.</li>
-        </ul>
-      </aside>
-    </div>
+    <p class="catalog-kicker">Shopify email tools</p>
+    <h1 class="hero-title mt-5">Choose email tools around the work your store needs</h1>
+    <p class="mt-6 text-xl">A campaign editor, a customer journey builder and a stock-alert service solve different problems. Start with the task that is failing today, then decide which capabilities belong in your sender and which need another layer.</p>
+    <div class="mt-8 flex flex-wrap gap-4"><a class="btn btn-primary" href="/apps">Browse the app catalog</a><a class="btn btn-secondary" href="/use-cases">Find your email job</a></div>
   </section>
-
-  <section class="bg-white py-16">
-    <div class="container">
-      <div class="max-w-4xl"><span class="badge">Category advice</span><h2 class="mt-3 text-4xl font-black tracking-tight">The right email setup changes by store type.</h2><p class="mt-4 text-slate-600">Use store context to decide which capabilities matter first. The same app can be excellent for one catalog and frustrating for another if its segmentation model does not match customer behavior.</p></div>
-      <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <div class="card"><h3 class="font-black">Fashion and drops</h3><p class="mt-2 text-sm text-slate-600">Prioritize size and variant availability, waitlists, drop calendars, VIP early access, back-in-stock coordination, and suppression for customers who bought the promoted item recently.</p></div>
-        <div class="card"><h3 class="font-black">Beauty, supplements, and food</h3><p class="mt-2 text-sm text-slate-600">Prioritize replenishment timing, subscription context, routine education, claims-safe copy review, bundles, and segments based on usage cycle rather than only last purchase date.</p></div>
-        <div class="card"><h3 class="font-black">High-AOV and jewelry</h3><p class="mt-2 text-sm text-slate-600">Prioritize trust proof, financing education, consultation prompts, reviews, warranty details, gift timing, and slower nurture sequences that do not rush consideration.</p></div>
-        <div class="card"><h3 class="font-black">Home goods and considered catalogs</h3><p class="mt-2 text-sm text-slate-600">Prioritize browse behavior, style preference collection, buying guides, room inspiration, delayed decision windows, and segmentation around categories viewed rather than only carts started.</p></div>
-        <div class="card"><h3 class="font-black">Subscription boxes</h3><p class="mt-2 text-sm text-slate-600">Prioritize upcoming-box previews, skip and pause education, churn signals, loyalty moments, gift subscriptions, and winback logic that recognizes former subscribers differently from one-time buyers.</p></div>
-        <div class="card"><h3 class="font-black">B2B and wholesale</h3><p class="mt-2 text-sm text-slate-600">Prioritize account approval state, rep handoff, bulk reorder reminders, quote or invoice workflows, and suppression rules that keep wholesale terms separate from direct-to-consumer promotions.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-[#0b1028] py-16 text-white">
-    <div class="container grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
-      <div>
-        <span class="badge badge-dark">Operating guide</span>
-        <h2 class="mt-4 text-4xl font-black tracking-tight">How to choose a Shopify email tool without buying the wrong category of software.</h2>
-        <p class="mt-5 text-indigo-100">The mistake with broad Shopify email tooling is treating every product as if it is trying to solve the same job. A newsletter tool, a lifecycle automation platform, a template builder, a deliverability helper, and a retention operating system can all touch email, but they change the merchant’s day in very different ways. The best choice starts with the work your team needs to repeat every week.</p>
-      </div>
-      <div class="space-y-5 text-indigo-100">
-        <p>If the team mostly sends product launches, editorial updates, and simple promotions, the key buying criteria are speed, reusable blocks, clean product insertion, list hygiene, and a reporting view that makes the next campaign obvious. A huge automation suite may look impressive but slow down a small team that only needs dependable campaign production.</p>
-        <p>If the store is trying to build retention, the criteria change. The tool needs to understand first purchase timing, order count, product categories, replenishment windows, loyalty status, discount history, and the difference between a subscriber who browsed once and a customer who bought three times. Without that context, email becomes a broadcast channel instead of a customer system.</p>
-        <p>For Shopify, the most useful email stack usually grows in layers: capture subscribers, welcome them, recover immediate intent, educate after purchase, time the second order, reactivate lapsing customers, and protect deliverability as volume increases. The right tool should make the current layer easier while not blocking the next one.</p>
-        <p>Use this site as a working catalog rather than a logo directory. Open the tool reviews for product fit, the comparison pages for tradeoffs, the use-case pages for workflow depth, and the store-type pages for category-specific pressure. A good tool should survive all four views before it earns a place in the stack.</p>
-      </div>
-    </div>
-  </section>
-
-  {/* HERMES_HOME_DEEP_PASS_JULY5 */}
   <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>How this email tools buyer desk separates serious tools from thin directories</h2>
-      <p>The homepage is meant to be a working buyer map, not a listicle with swapped logos. Every recommendation starts from the same question: can a Shopify merchant use the tool to improve capture, broadcast editing, lifecycle automation, product blocks, segmentation, authentication, reporting, and weekly QA without creating more weekly cleanup? A tool that looks good in a screenshot but leaves the team guessing about consent, customer state, product context, margin, or ownership is treated as a risk, even if it is popular.</p>
-      <p>The scoring favors operational evidence. A lean Shopify team should be able to name the first workflow to launch, the audience that deserves it, the customers to suppress, the product fields that change the message, the metric that proves quality, and the person who will review it next week. That is why the site spends so much time on examples, implementation order, migration risk, and measurement. Those are the details that separate a useful email tool from another app subscription.</p>
-      <p>The biggest failure mode is buying a sender when the real need is a Shopify-aware operating system. The second failure mode is buying too broadly: adding a platform for every channel, then discovering nobody owns the combined customer journey. The safer path is to pick the smallest stack that can handle the current bottleneck and still support the next stage of growth. For some stores that means Sequenzy as a lean lifecycle layer. For others it means a mature platform with deeper data controls. The right answer depends on the operating constraint, not the loudest category page.</p>
-      <p>Use the site like a due-diligence checklist. Read an tool review, run the comparison page for the nearest alternative, then open the relevant use-case guide and build one real scenario on paper. If the tool cannot pass that scenario, the ranking should not matter. If it passes and the economics work against time to launch, segment quality, revenue per recipient, repeat purchase behavior, deliverability, and support tickets caused by bad targeting, it belongs on the shortlist.</p>
+    <article class="card prose-shopify">
+      <h2>Choose a starting route</h2>
+      <ul>
+        <li><a href="/apps">App profiles</a>: investigate a named product, including Sequenzy, Shopify's email offering or a candidate already in your stack. Use current supplier documentation and a written quote to confirm capabilities and costs before buying.</li>
+        <li><a href="/use-cases">Use-case guides</a>: define a workflow before shopping. Start with <a href="/use-cases/abandoned-cart">checkout recovery</a>, <a href="/use-cases/back-in-stock">restock alerts</a> or <a href="/use-cases/analytics">email analytics</a> when that is the bottleneck.</li>
+        <li><a href="/for">Store contexts</a>: identify catalog constraints such as variants, replenishment, long consideration or wholesale terms.</li>
+        <li><a href="/compare">Pairwise comparisons</a> and <a href="/alternatives">alternatives</a>: explore candidates when a renewal, missing workflow or migration makes a change worth considering.</li>
+        <li><a href="/guides">Implementation guides</a>: plan data, consent, measurement and cutover responsibilities.</li>
+      </ul>
+      <p>These routes help organize investigation; a listing or its position is not proof that an app meets your requirements. Product plans, connectors and features need confirmation for the configuration you intend to use.</p>
+      <h2>Separate the layers before adding another subscription</h2>
+      <p><strong>Capture</strong> collects an address and a stated interest. <strong>Sending</strong> handles content, audience and delivery. <strong>Automation</strong> reacts to customer events and rechecks eligibility. <strong>Measurement</strong> connects exposure to orders and costs. A single platform may cover several layers, but draw the boundaries before assuming a missing feature requires replacing everything.</p>
+      <p>For a founder producing occasional newsletters, draft a product launch, update a price and remove an unavailable variant in a demonstration. Measure the editing and approval work. For a retention operator, trace one customer from checkout through purchase and a delayed reminder; inspect exits and competing journeys. A polished campaign demo does not answer that second question.</p>
+      <h2>Let catalog behavior change the requirements</h2>
+      <ul>
+        <li><strong>Fashion and limited editions:</strong> distinguish product from variant interest. A size-specific waitlist should not become a promise that every size has returned.</li>
+        <li><strong>Consumables:</strong> distinguish an estimated usage cycle from a subscription renewal. A reorder promotion should not contradict an active recurring order.</li>
+        <li><strong>Jewelry and considered purchases:</strong> make room for sizing, materials, delivery deadlines and consultation. More urgency cannot resolve an unanswered product question.</li>
+        <li><strong>Home goods:</strong> collect useful category or style preferences without treating a single page view as a durable preference.</li>
+        <li><strong>Wholesale:</strong> keep account terms, rep ownership and reorder communications separate from consumer sale offers.</li>
+      </ul>
+      <h2>A shortlist record your team can use</h2>
+      <p>Write the current problem, required fields, unacceptable failure and responsible owner. Classify requirements as mandatory or optional before scoring candidates. A missing mandatory exit rule should not be averaged away by attractive templates. The <a href="/guides/selection-framework">selection framework</a> expands this buying record.</p>
+      <p>Ask each finalist to demonstrate the same proposed scenario in its supported Shopify integration. Include a changed order, unavailable item and withdrawn marketing permission. Record which behavior is native, configured, custom or unsupported. These are proposed acceptance checks, not tests performed by this catalog.</p>
+      <p>Request costs for the same workload: stored and billable profiles, email volume, additional channels, required modules, support, implementation and overages. Include seasonal peaks and the cost of keeping an old sender during migration. Avoid comparing a starter tier against a quote with different features.</p>
+      <h2>Sequence implementation by dependencies</h2>
+      <p>First inventory forms, senders, live journeys and identity rules. Next define ownership of consent and suppression. Then rebuild one workflow and verify its entry, content, exits and reporting before adding others. At cutover, assign one active sender per journey and retain a rollback record. Use the <a href="/guides/migration">migration guide</a> rather than treating DNS, templates and customer history as independent switches.</p>
+      <p>After launch, review customer problems alongside delivery and commercial metrics. Reconcile revenue definitions before calling a new tool successful: attributed sales and incremental sales answer different questions. The <a href="/guides/revenue-attribution">revenue attribution guide</a> covers that distinction. A tool earns its place through reliable operation and useful decisions, not through a larger dashboard total alone.</p>
+      <h2>Where Shopify's native tools fit</h2>
+      <p>Do not assume you need another platform for checkout recovery. Shopify documents an <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/migrate-abandoned-checkout">abandoned-checkout automation in Shopify Messaging</a>. Compare the supported workflow with your actual requirements before deciding to keep it, extend it or replace it. That documentation does not establish equivalent functionality in every catalog app.</p>
     </article>
   </section>
-
-  <section class="bg-white py-16">
-    <div class="container grid gap-8 lg:grid-cols-2">
-      <article class="prose-shopify card">
-        <h2>Newsletters, lifecycle, and transactional-style moments — one catalog</h2>
-        <p>
-          Shopify merchants rarely need "an email app." They need dependable campaign production, product-aware automations, customer education after purchase, and clear order-adjacent updates without breaking consent. This site maps those jobs separately because the buying criteria change: a founder sending two launches a month cares about speed and reusable blocks; a retention lead cares about event depth, holdout measurement, and collision rules during Black Friday.
-        </p>
-        <p>
-          The tools here span native Shopify Email for zero-friction broadcasts, Sequenzy for lean lifecycle strategy, Klaviyo for data-heavy retention, Omnisend for fast multichannel setup, Postscript for SMS-native recovery, and specialized capture, loyalty, and deliverability helpers. None of them wins every job. The catalog helps you stack the smallest set that covers capture, send, automate, measure, and protect deliverability as volume grows.
-        </p>
-      </article>
-      <article class="prose-shopify card">
-        <h2>90-day proof plan before you switch tools</h2>
-        <p><strong>Weeks 1–2:</strong> Audit live flows, consent sources, and duplicate discounts. Export nothing until you know which segments are trustworthy.</p>
-        <p><strong>Weeks 3–6:</strong> Rebuild welcome, cart, post-purchase, and one revenue-critical automation. Document suppression any time two journeys could fire together.</p>
-        <p><strong>Weeks 7–10:</strong> Ship two campaigns with shared product blocks and a pre-send QA checklist — audience size, exclusions, mobile preview, UTM naming, inventory accuracy.</p>
-        <p><strong>Weeks 11–13:</strong> Review revenue per recipient, unsubscribe and complaint rates, repeat purchase by cohort, and whether the team can edit flows without agency help. Keep the tool only if operations got simpler, not just if attributed revenue looks higher.</p>
-      </article>
-    </div>
-  </section>
-
-
-  <section class="bg-indigo-50/70 py-16">
-    <div class="container">
-      <article class="prose-shopify max-w-4xl">
-        <h2>What "broad email tools" means on Shopify</h2>
-        <p>
-          Newsletters and product launches need fast campaign production, reusable blocks, and clean product insertion. Lifecycle automation needs event triggers, delays, exits, and suppression when customers enter competing journeys. Transactional-style moments — shipping updates, back-in-stock, account notices — need timing accuracy and reputation separation from promotional blasts. Retention analytics need revenue per recipient, not vanity clicks. This catalog sorts tools by which of those jobs they actually simplify.
-        </p>
-        <p>
-          Start with your bottleneck: capture, broadcast, automation, SMS recovery, loyalty, or deliverability. Open the matching use-case page, then the tool review, then the comparison if two finalists remain. That sequence prevents buying a lifecycle platform when you only needed a newsletter editor — or buying a newsletter editor when replenishment revenue was leaking every month.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="container py-16">
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card"><h3 class="font-black text-slate-950">Newsletters & launches</h3><p class="mt-2 text-sm text-slate-600">Shopify Email, tinyEmail, and lighter ESPs when the team needs dependable broadcasts, product blocks, and sale announcements without building a full retention operating system.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Lifecycle automation</h3><p class="mt-2 text-sm text-slate-600">Sequenzy, Klaviyo, Drip, Omnisend for welcome, cart, post-purchase, replenishment, and winback with real suppression rules.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">SMS recovery</h3><p class="mt-2 text-sm text-slate-600">Postscript, Attentive, SMSBump when checkout recovery and drop urgency need a mobile-native channel with compliance guardrails.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Capture & quizzes</h3><p class="mt-2 text-sm text-slate-600">Privy and Justuno feed better intent data into your sender — shade quizzes, exit intent, and offer testing before lifecycle work begins.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Loyalty & reviews</h3><p class="mt-2 text-sm text-slate-600">Yotpo and Marsello when UGC, points, and repeat purchase automations are central — not bolted on after the fact.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Deliverability & ops</h3><p class="mt-2 text-sm text-slate-600">Guides on consent, sunset rules, DNS, and collision prevention — because the best tool fails if the list is unhealthy.</p></div>
-    </div>
-    <article class="prose-shopify mt-12 max-w-4xl">
-      <h2>Who this catalog is for</h2>
-      <p>Shopify founders choosing their first sender. Retention leads auditing a bloated stack. Agencies documenting client migrations. Operators who need pairwise comparisons before contract renewals. Every page assumes you will send real email to real customers — not run a one-time setup and forget it.</p>
-      <p>The site does not treat email as one category. It separates jobs so you buy the right layer: capture, send, automate, measure, protect reputation. That is how you avoid paying for Klaviyo when Shopify Email would suffice — or staying on Mailchimp when replenishment revenue needs lifecycle depth.</p>
-      <p>Browse <a class="link" href="/apps">22 tool reviews</a>, <a class="link" href="/compare">65+ comparisons</a>, <a class="link" href="/use-cases">18 use-case playbooks</a>, <a class="link" href="/for">12 store-type guides</a>, and <a class="link" href="/guides">10 implementation guides</a> — each page 200+ lines of operator-focused prose, no generated filler.</p>
-    </article>
-  </section>
-
-
-  <section class="bg-[#0b1028] py-16 text-white">
-    <div class="container max-w-4xl space-y-5 text-indigo-100">
-      <h2 class="text-3xl font-black text-white">Catalog principles we apply on every page</h2>
-      <p><strong>Job-first routing.</strong> Recommendations start from the work — newsletter production, lifecycle automation, SMS recovery, loyalty triggers, deliverability hygiene — not from whichever tool has the biggest affiliate commission.</p>
-      <p><strong>Shopify-native evidence.</strong> Product blocks, order events, subscription status, and variant inventory matter more than generic marketing automation features.</p>
-      <p><strong>Collision awareness.</strong> Welcome, cart, post-purchase, replenishment, and sale campaigns must exclude each other predictably. Tools that cannot express priority rules create support debt.</p>
-      <p><strong>Economics over demos.</strong> Profile pricing, pay-per-email, SMS credits, and suite modules are modeled against real list growth — not vendor list-size examples.</p>
-      <p><strong>Migration honesty.</strong> Switching tools breaks forms, DNS, tags, and segments when rushed. Guides cover implementation order so the rebuild improves operations instead of pausing revenue.</p>
-    </div>
-  </section>
-
-  <section class="bg-[#0b1028] py-16 text-white">
-    <div class="container max-w-4xl space-y-5 text-indigo-100">
-      <h2 class="text-3xl font-black text-white">Catalog principles on every page</h2>
-      <p><strong>Job-first routing.</strong> Start from newsletter production, lifecycle automation, SMS recovery, or deliverability — not logo popularity.</p>
-      <p><strong>Shopify-native evidence.</strong> Product blocks, order events, subscription status, and variant inventory beat generic automation features.</p>
-      <p><strong>Collision awareness.</strong> Welcome, cart, post-purchase, and sale campaigns need predictable exclusions.</p>
-      <p><strong>Economics over demos.</strong> Model profile pricing, pay-per-email, and SMS credits against your real list growth.</p>
-      <p><strong>Migration honesty.</strong> Switching tools breaks forms, DNS, and tags when rushed — use the guides before cutover.</p>
-    </div>
-  </section>
-
-
-      <p class="mt-8 max-w-4xl text-sm text-slate-600">Updated July 2026 · <a class="link" href="/guides/migration">Migration guide</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p>
-
-  <section class="container py-12">
-    <article class="prose-shopify card">
-      <h2>Site map at a glance</h2>
-      <p>152 static pages: homepage, 22 tool reviews, 65+ comparisons, 21 alternatives, 19 use cases, 12 store-type guides, 11 implementation guides. All hand-written catalog prose for Shopify email tooling — newsletters, lifecycle automation, and transactional-style customer moments.</p>
-      <p>Start navigation with the <a class="link" href="/apps">tool reviews</a>, route by job through the <a class="link" href="/use-cases">use-case playbooks</a>, narrow by catalog behavior in the <a class="link" href="/for">store-type guides</a>, and finish shortlists with the <a class="link" href="/compare">pairwise comparisons</a> and <a class="link" href="/alternatives">alternatives hubs</a>.</p>
-      <p>Before you bookmark a stack, walk the <a class="link" href="/guides/selection-framework">selection framework</a> and the <a class="link" href="/guides/migration">migration playbook</a> — the first scores tools on jobs your team repeats weekly; the second keeps consent, flows, DNS, and suppression intact when the chosen tool changes.</p>
-    </article>
-  </section>
-
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>How to leave this homepage with a shortlist</h2>
-      <p>Write down the two tools you pay for today and the three jobs you need next week. Scan the tools for each job, then sanity-check pairings in the comparison hub. If the same app name wins two different jobs, read its full review before deciding — the reviews name the integration fields, suppression quirks, and pricing triggers the cards leave out.</p>
-    </article>
-  </section>
-
 </BaseLayout>
