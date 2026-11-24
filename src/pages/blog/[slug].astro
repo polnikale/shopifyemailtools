@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+import { getBlogPaths } from '../../data/blog-topics';
+
 export function getStaticPaths() {
-  const audiences = ['small Shopify stores','DTC brands','fashion stores','beauty stores','food and beverage stores','subscription brands','Shopify Plus merchants','international merchants','new Shopify stores','high-volume stores','B2B Shopify stores','wholesale merchants','home goods stores','pet brands','sports brands','health and wellness brands','electronics stores','apparel stores','gift stores','creator-led stores'];
-  const goals = ['welcome email apps','abandoned cart apps','post-purchase email apps','win-back email apps','product launch email apps','back-in-stock email apps','review request apps','VIP customer email apps','replenishment email apps','email and SMS marketing apps'];
-  return audiences.flatMap(audience => goals.map(goal => ({ params: { slug: `best-shopify-${goal}-for-${audience}`.toLowerCase().replace(/\s+/g, '-') }, props: { topic: { audience, goal } } }))).slice(0, 100);
+  return getBlogPaths();
 }
 
 const { topic } = Astro.props;
@@ -211,7 +211,7 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <p>Usually fewer than the marketplace suggests. Start with the system that owns the message and add a specialist only when it receives a signal or provides a workflow the primary system cannot safely handle.</p>
       <h3>Should every app be tested with a discount?</h3>
       <p>No. Use a randomized holdout or a justified matched comparison where possible. Vendor-attributed purchases do not establish causal incremental lift. Compare contribution after discounts and refunds with matched subscriptions, usage, integrations, migration, support and reply labor; do not assume an extra recovered cart pays for a platform.</p>
-      <p class="text-neutral-400">Related reading: <a href="/use-cases/index">Shopify email use cases</a>, <a href="/guides/selection-framework">the app selection framework</a>, and <a href="/guides/flow-collision-prevention">flow collision prevention</a>.</p>
+      <p class="text-neutral-400">Related reading: <a href="/use-cases">Shopify email use cases</a>, <a href="/guides/selection-framework">the app selection framework</a>, and <a href="/guides/flow-collision-prevention">flow collision prevention</a>.</p>
     </div>
   </article>
 </BaseLayout>
