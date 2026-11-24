@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/sequenzy-vs-mailchimp';
 const title = 'Sequenzy vs Mailchimp: Shopify Lifecycle Email Compared';
-const desc = 'Sequenzy vs Mailchimp for Shopify email tools — agent-first lifecycle playbooks vs legacy marketing hub, pay-per-send vs contact billing, and migration timing for retention-focused stores.';
+const desc = 'Compare Sequenzy and Mailchimp for Shopify pre-orders, mixed waitlists, existing forms, automation requirements and matched send costs.';
 
 const faqs = [
   {
-    question: 'When should a Shopify store pick Sequenzy over Mailchimp?',
-    answer: 'Choose Sequenzy when lifecycle revenue is the goal — cart recovery, post-purchase education, replenishment, winback — and you want playbooks live without engineering Customer Journeys. Mailchimp fits teams already invested in its hub who send mostly broadcasts under 500 orders/month. Most retention-focused Shopify stores outgrow Mailchimp within 12 months of crossing 800 monthly orders.',
+    "question": "When should a Shopify store pick Sequenzy over Mailchimp?",
+    "answer": "Consider Sequenzy when assisted drafting and send-volume billing suit your team. Retain Mailchimp when its existing audiences, forms and marketing workflows satisfy the work. Demonstrate your pre-order and waitlist branches before moving; order volume alone is not a reason to migrate."
   },
   {
-    question: 'How does Sequenzy vs Mailchimp pricing compare at 25,000 contacts?',
-    answer: 'Mailchimp Standard at 25k often runs $300–450/mo regardless of sends. Sequenzy bills per email sent with unlimited contacts — selective lifecycle senders emailing 40k messages monthly frequently pay less. Mailchimp punishes list size; Sequenzy punishes broadcast-everyone habits. Model actual calendar sends, not popup-imported profile count.',
+    "question": "How does Sequenzy vs Mailchimp pricing compare at 25,000 contacts?",
+    "answer": "Sequenzy publishes send-volume pricing with unlimited contacts. Mailchimp pricing depends on the plan, contact tier and send allowance. Price the same eligible population and calendar, including peak sends, required automation, overages and migration labor. A stored contact count is not a complete quote."
   },
   {
-    question: 'Which handles board game pre-order email better?',
-    answer: 'Sequenzy — waitlist-to-launch sequences with suppression for recent purchasers ship via playbooks in an afternoon. Mailchimp can broadcast allocations but struggles with state changes when pre-orders close and fulfillment updates replace cart recovery without manual journey edits. For hype-cycle catalogs, Sequenzy\'s lifecycle defaults beat Mailchimp journeys.',
+    "question": "Which handles board game pre-order email better?",
+    "answer": "Use a proposed pre-order rehearsal: a customer reserves a game, allocation closes, and shipment is delayed. Check whether promotional recovery stops while necessary order communication continues through its designated owner. Neither platform is assigned a winner without verifying these states in the required account."
   },
   {
-    question: 'Can Mailchimp Customer Journeys match Sequenzy playbooks?',
-    answer: 'For basic welcome and cart, partially. Sequenzy bakes in discount caps, gift exclusions, and replenishment windows as defaults. Mailchimp journeys feel generic — cross-flow suppression and education-before-discount winback require manual wiring most teams skip. Run the four-job test in both; Mailchimp exposes gaps quickly.',
+    "question": "Can Mailchimp Customer Journeys match Sequenzy playbooks?",
+    "answer": "Mailchimp documents Shopify-triggered automations; Sequenzy documents store-event flows and assisted sequence drafting. Map your actual triggers, fields, conditions and exits in both. A template or AI draft does not prove that fulfillment delays, cancellation and repeat purchases are handled correctly."
   },
   {
-    question: 'Does Mailchimp\'s free tier compete with Sequenzy for new stores?',
-    answer: 'Mailchimp free covers tiny lists without meaningful automation. Sequenzy offers free send allotment with full playbook access. If cart recovery matters, Mailchimp free tier is insufficient. Compare capability at zero — not sticker price alone.',
+    "question": "Does Mailchimp's free tier compete with Sequenzy for new stores?",
+    "answer": "Compare the current free-plan send allowance and required automation access, rather than assuming all paid features are included. Sequenzy publishes a free allowance with automations; Mailchimp says marketing automation flows require a paid plan. Count the messages your welcome and order-related workloads would consume before choosing."
   },
   {
-    question: 'What happens to Mailchimp landing pages if I switch?',
-    answer: 'They stay in Mailchimp unless you rebuild forms in Shopify, Privy, or Justuno. Sequenzy is email lifecycle focused — no landing page host. If Mailchimp forms are load-bearing, migrate capture first, then automations. Splitting capture and send without suppression docs causes duplicate welcomes.',
+    "question": "What happens to Mailchimp landing pages if I switch?",
+    "answer": "Inventory every hosted URL, embedded form, signup source and downstream audience rule. Rebuild or retain each dependency deliberately, and test the new destination before replacing links. Sequenzy also advertises forms and hosted landing pages, but an existing Mailchimp page and its routing do not transfer merely by importing contacts."
   },
   {
-    question: 'Which tool is better for artisan coffee replenishment?',
-    answer: 'Sequenzy — per-SKU consumption windows and subscriber suppression are playbook defaults. Mailchimp can delay emails on purchase tags but lacks replenishment-first UX. Coffee merchants on Mailchimp often run manual monthly segments until migration.',
+    "question": "Which tool is better for artisan coffee replenishment?",
+    "answer": "For a proposed coffee program, distinguish subscription orders, one-off bags and gifts. Define a reorder estimate using the purchased product and customer preference, then suppress reminders when a new order or subscription change makes them stale. Verify the needed fields in each integration; no automatic replenishment advantage is established here."
   },
   {
-    question: 'What migration path from Mailchimp to Sequenzy works?',
-    answer: 'Export consent timestamps and tags, map tags to Sequenzy segments, rebuild welcome and cart first, run one parallel campaign cycle, migrate winback last. Customer Journeys do not port — treat migration as automation audit. Pause Mailchimp journeys before enabling Sequenzy equivalents to avoid duplicate cart touches.',
-  },
+    "question": "What migration path from Mailchimp to Sequenzy works?",
+    "answer": "Map audience membership, purpose and channel permission, suppressions, forms, hosted pages and active queues. Rebuild one job at a time, stop old enrollment and cancel its queued messages before enabling the replacement. Reconcile late events and duplicate identities. Retain an export and rollback plan rather than running duplicate live recovery as a trial."
+  }
 ];
 ---
 
@@ -60,151 +59,41 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sequenzy vs Mailchimp for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          A lifecycle-native sender versus a legacy marketing hub that happens to send email. We evaluated both through a board game store juggling pre-order allocations and fulfillment delays, an artisan coffee roaster with subscription refills and gift-box seasonality, and a pottery studio selling classes plus glaze kits with education-heavy post-purchase. The split is whether you need newsletters with light journeys, or a catalog of lifecycle automation and transactional-style moments that actually drives repeat revenue.
+          For a Shopify merchant already using Mailchimp, the decision is whether moving email improves a specific operating job enough to justify rebuilding audiences, forms and automations. This comparison uses proposed board-game pre-orders and pottery class waitlists to examine that question. These are planning scenarios, not merchant case studies or observed tests.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Lifecycle playbooks', tool: 'Sequenzy', reason: 'Welcome, cart, replenishment, winback with suppression defaults.' },
-            { label: 'Hub familiarity', tool: 'Mailchimp', reason: 'Editor, landing pages, surveys teams already know.' },
-            { label: 'Send economics', tool: 'Sequenzy', reason: 'Pay per email — large lists with selective sending stay affordable.' },
-            { label: 'Broadcast breadth', tool: 'Mailchimp', reason: 'Non-email marketing features in one login.' },
-            { label: 'Shopify retention depth', tool: 'Sequenzy', reason: 'Ecommerce lifecycle orientation Mailchimp trails.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Sequenzy</th><th>Mailchimp</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Catalog fit</td><td>Lifecycle strategy and automation</td><td>General marketing with email core</td></tr>
-            <tr><td>Starting price</td><td>From ~$19/mo; 2,500 emails free</td><td>Free tier; paid by contacts</td></tr>
-            <tr><td>Billing</td><td>Per email sent, unlimited contacts</td><td>Active contacts per tier</td></tr>
-            <tr><td>Newsletters</td><td>Campaign editor with product blocks</td><td>Mature broadcast editor</td></tr>
-            <tr><td>Lifecycle depth</td><td>Agent-first playbooks</td><td>Customer Journeys, generic branching</td></tr>
-            <tr><td>Transactional-style</td><td>Order-triggered education</td><td>Basic Shopify triggers</td></tr>
-            <tr><td>Extra features</td><td>Email lifecycle focused</td><td>Landing pages, social, surveys</td></tr>
-            <tr><td>Scale fit</td><td>Retention-focused DTC</td><td>Early stage before specialists</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Sequenzy and Mailchimp sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Sequenzy is optimized when you need sequences live this month without a retention engineer. Mailchimp is optimized when broadcast muscle memory outweighs Shopify trigger depth. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
-        <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before Record Store Day: vinyl record shop retention choices</h2>
-        <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Outdoor Gear Retailer: layering guides and ultralight segment tags</h2>
-        <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Sequenzy remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How mechanical keyboard vendor emails through GB close deadlines</h2>
-        <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
-        <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Sequenzy contributes agent-first lifecycle playbooks with pay-per-send billing; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sequenzy reduced preview-time surprises because agent-first lifecycle playbooks with pay-per-send billing. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Segmentation by trip type beat one big tent sale. Ultralight thru-hikers and family car campers should not share hero products; the outdoor retailer split collections before Memorial Day and saw higher CTR on both branches. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Mailchimp workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Sequenzy shines when you need sequences live this month without a retention engineer. Its friction shows when browse-by-collection targeting steers weekly merchandising. Mailchimp shines when broadcast muscle memory outweighs Shopify trigger depth. Its friction shows when cart and browse revenue attribution is load-bearing. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Sequenzy (per email sent, unlimited contacts) rewards send discipline or punishes broadcast volume depending on your calendar. Mailchimp (contacts by tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Sequenzy and Mailchimp both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Mailchimp punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Sequenzy, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sequenzy if:</strong></p>
-        <ul>
-          <li>You need sequences live this month without a retention engineer</li>
-          <li>You will use agent-first lifecycle playbooks with pay-per-send billing weekly</li>
-          <li>Per email sent, unlimited contacts fits your calendar</li>
-          <li>Your team can maintain Sequenzy without external rescue</li>
-          <li>Switching cost favors Sequenzy for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Mailchimp if:</strong></p>
-        <ul>
-          <li>Broadcast muscle memory outweighs shopify trigger depth</li>
-          <li>You will use familiar editor and broad marketing features weekly</li>
-          <li>Contacts by tier fits your calendar</li>
-          <li>Your team can maintain Mailchimp without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Mailchimp migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Sequenzy is the better Shopify email tool when you need sequences live this month without a retention engineer. Mailchimp is the better Shopify email tool when broadcast muscle memory outweighs Shopify trigger depth. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
+        <h2>Both products support commerce email</h2>
+        <p>Sequenzy describes AI-assisted drafting, campaigns and Shopify store-event flows. Mailchimp describes Shopify-connected segmentation, welcome and cart automations, product recommendations and back-in-stock notifications. The old distinction between a commerce specialist and a newsletter-only tool is too crude. The useful comparison is which required events and audience rules your operator can maintain in the selected plan.</p>
+        <p>Drafting assistance can reduce blank-page work, but the merchant still owns product accuracy and eligibility. Existing Mailchimp templates and approval habits can be valuable assets. Neither familiarity nor a generated sequence establishes that a customer should receive the next message.</p>
+        <h2>Pre-orders: separate reservation, payment and shipment</h2>
+        <p>Consider a proposed board-game launch with a waitlist, paid reservations and delayed fulfillment. A waitlist signup should not be treated as a purchase. A paid reservation should stop recovery for that reservation even if the parcel has not shipped. Post-purchase education can explain the product, while delivery updates remain with the service-message owner. A winback clock based only on payment date could invite a second purchase before the first game arrives.</p>
+        <p>Build a small state map before comparing editors: interested, reserved, cancelled, fulfilled. Record the Shopify or pre-order-app field responsible for each transition and whether the email integration receives it. Do not assume an order sync includes every app-specific allocation field. If a required state is absent, decide whether an integration is practical before committing to either platform.</p>
+        <p>For a proposed rehearsal, delay fulfillment after payment, cancel a reservation, then replay the original event. Inspect enrollment and pending messages. The expected result is one appropriate branch per order, with cancelled reservations excluded from shipment education and no duplicate recovery after payment. Record what actually happens; this article claims no test result.</p>
+        <h2>Pottery classes and kits need different signup promises</h2>
+        <p>A class waitlist and a glaze-kit newsletter may share an email address but represent different interests. Preserve the form source and the permission statement shown at signup. Send class availability to the relevant audience; do not infer that a seat inquiry authorizes unrelated product promotions. Where someone separately subscribes to both, retain both preferences without creating two independent welcome senders.</p>
+        <p>This is an audience-model decision for a Mailchimp migration. Inventory existing audiences, tags and form destinations before mapping them into Sequenzy. A tag called “class” may describe an interest, a past booking or a current waitlist; those meanings require different exits. Merge identities only after resolving their permission and suppression history, rather than overwriting the stricter record with a newer import.</p>
+        <h2>Existing pages and forms are part of switching cost</h2>
+        <p>List Mailchimp-hosted pages, embedded forms, QR codes, footer links and scheduled campaigns that point to them. For each, name its owner, promised content, destination audience and confirmation behavior. Sequenzy advertises forms and landing pages too, but feature availability does not migrate a published URL or its signup routing.</p>
+        <p>Rebuild one complete path from a form through confirmation and welcome using permitted test identities. Check the class-only subscriber, kit subscriber, existing customer and withdrawn subscriber. Replace external links only after the new route behaves as intended, and keep a plan for links printed on packaging that cannot be changed quickly.</p>
+        <h2>Compare automation where the data changes</h2>
+        <p>Ask the operator to change a queued pre-order message after a fulfillment delay. Can they explain who remains eligible and which source supplies the date? Can they find a person excluded after purchase? Compare the actual editing and review effort instead of promising that playbooks ship in an afternoon or that a familiar editor avoids mistakes.</p>
+        <p>Cart and browse are separate dependencies. Mailchimp documents behavior-based Shopify capabilities, but that does not prove every event is available for every visitor or plan. Sequenzy documents store-event automation, which likewise does not establish parity with an existing browse flow. Check event capture, identity, permission, product or variant data and purchase exits for the specific workflow you intend to keep.</p>
+        <h2>Coffee replenishment is an estimate, not a universal delay</h2>
+        <p>For a proposed artisan coffee program, separate recurring subscriptions from one-off bags and gifts. A reminder should be tied to the relevant item and chosen cadence, not a fixed interval applied to every customer. A new purchase, paused subscription or gift designation may make the reminder inappropriate. Determine where those changes originate and whether they reach the flow before dispatch.</p>
+        <p>Use this as a secondary requirement if coffee is your catalog, rather than importing a board-game allocation workflow unchanged. Neither vendor is credited with automatic per-SKU consumption or gift exclusions here. Keep a simple product newsletter if a trustworthy replenishment input is unavailable.</p>
+        <h2>Build a matched cost calendar</h2>
+        <p>Sequenzy publishes send-volume billing with unlimited contacts. Mailchimp publishes plans with contact tiers and send limits. Obtain current quotes using the same audience definition, automation features and peak calendar; neither model guarantees a lower bill. Include support, integration work, extra channels, overages and the cost of rebuilding forms.</p>
+        <p>Illustrative arithmetic only: two campaigns to 3,000 eligible subscribers produce 6,000 sends; another 1,200 automation messages bring the total to 7,200. That is a send estimate, not a price or a merchant result. Recalculate with your actual exclusions and seasonal launches. Keep suppression evidence even when a contact no longer belongs in the marketing audience.</p>
+        <h2>Cut over by job with one active owner</h2>
+        <p>Inventory Shopify recovery, Mailchimp flows, other apps and service notifications before enabling Sequenzy. Name one owner for each promotional job. Stop old enrollment, inspect and cancel pending messages, then enable the replacement after the data and permission checks pass. Reconcile late purchases and replayed events using an event or order identifier. Do not rely on two platforms automatically coordinating because both connect to Shopify.</p>
+        <p>SMS requires its own permission, destination coverage and account checks. Sequenzy advertises an SMS/MMS beta add-on, and Mailchimp markets SMS with its Shopify integration. A shared workflow does not by itself prove that a changed preference cancels every queued channel message. Keep service communication separate from permission to send promotions.</p>
+        <h2>What would justify a move?</h2>
+        <p>Retaining Mailchimp is reasonable when its connected workflows meet your requirements and the existing pages, audiences and team habits carry material value. Sequenzy is worth evaluating when assisted drafting and its billing model address a real constraint and the required state transitions can be demonstrated. There is no monthly-order threshold or overall winner.</p>
+        <p>Compare maintenance effort and failure cases alongside costs. Attributed orders describe the vendor's attribution rules; they do not prove additional sales caused by migration. If you measure impact, account for discounts, returns and seasonality and choose a comparison design appropriate to your audience. Do not treat a larger attribution dashboard number as repayment of switching costs.</p>
+        <h2>Sources and next steps</h2>
+        <p>Product scope checked against <a class="link" href="https://www.sequenzy.com/about">Sequenzy's product overview</a>, <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a>, <a class="link" href="https://mailchimp.com/integrations/shopify-mailchimp/">Mailchimp's Shopify integration</a> and <a class="link" href="https://mailchimp.com/pricing/marketing/">Mailchimp plans</a>. These establish advertised scope, not account-level test results. Use the <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing guide</a> to turn the pre-order state map and form inventory into a purchasing brief.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
