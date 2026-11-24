@@ -1,222 +1,53 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-
-const path = '/compare/yotpo-email-sms-vs-omnisend';
-const title = 'Yotpo Email & SMS vs Omnisend: Shopify Retention Compared';
-const desc = 'Yotpo Email & SMS vs Omnisend for Shopify email tools — reviews-loyalty suite messaging vs standalone multichannel automation, push recovery, and bundle renewal economics.';
-
+const path = "/compare/yotpo-email-sms-vs-omnisend";
+const title = "Yotpo Email & SMS to Omnisend: Shopify migration decisions";
+const desc = "Assess the Omnisend migration route after Yotpo messaging retirement, with destination-specific acceptance checks.";
 const faqs = [
   {
-    question: 'When should a Shopify store pick Omnisend over Yotpo Email & SMS?',
-    answer: 'Choose Omnisend when you want email, SMS, and web push in one journey without Yotpo Reviews or Loyalty already live. Omnisend ships welcome, cart, and post-purchase presets faster for merchants who treat retention as messaging-first. Yotpo wins when review velocity, loyalty points, and UGC loops are central KPIs and you will operate the full Yotpo stack.',
+    "question": "Can I keep sending through Yotpo during this migration?",
+    "answer": "Do not plan on it. The messaging login reports decommissioned dashboard and background services. Confirm available records with support; do not promise a retired-sender rollback."
   },
   {
-    question: 'Is Yotpo Email & SMS worth it without Yotpo Reviews?',
-    answer: 'Rarely. Without Reviews or Loyalty, you pay suite complexity for integrations you are not using. A pottery studio sending kiln-care education and class promos gets more from Omnisend unless points on glaze refills drive measurable repeat. Evaluate bundle renewal holistically, not email module sticker price.',
+    "question": "What is the key Omnisend acceptance decision?",
+    "answer": "Verify file-based channel status and rebuilt workflow enrollment before activating the combined journeys."
   },
   {
-    question: 'How does Omnisend push compare to Yotpo channels?',
-    answer: 'Omnisend includes web push in automations — useful for board game mobile browsers abandoning pre-order carts. Yotpo Email & SMS focuses on email and SMS tied to reviews and loyalty triggers. If push recovery matters, Omnisend has structural advantage Yotpo does not replicate natively.',
+    "question": "Do Reviews and Loyalty move with messaging?",
+    "answer": "Treat them as separate services and data dependencies. Name the owner of review requests and points messages, and verify any required destination integration."
   },
   {
-    question: 'Which handles artisan coffee loyalty earn reminders better?',
-    answer: 'Yotpo when Loyalty is live — points earn emails after bag purchases integrate cleanly with redemption campaigns. Omnisend handles replenishment and SMS nudges without points complexity. Coffee merchants without loyalty should default Omnisend; subscription-plus-points programs lean Yotpo.',
-  },
-  {
-    question: 'Can Omnisend replace Yotpo post-purchase review requests?',
-    answer: 'With integrations, partially — but not as natively as Yotpo when Reviews is installed. Yotpo sequences photo prompts, star ratings, and loyalty earn in one post-delivery window. Omnisend treats reviews as third-party unless you wire apps manually. If UGC is 15%+ of acquisition flywheel, Yotpo integration wins.',
-  },
-  {
-    question: 'What does pricing look like at 10,000 contacts?',
-    answer: 'Omnisend Standard at 10k often runs $90–160/mo before SMS. Yotpo Email & SMS pricing frequently bundles with Reviews and Loyalty — attractive at renewal, opaque standalone. Model SMS volume and whether unused modules inflate minimum spend.',
-  },
-  {
-    question: 'Which is faster for climbing gear browse recovery?',
-    answer: 'Omnisend — push and SMS steps recover mobile research sessions comparing harness certifications. Yotpo post-purchase review photos help after first purchase, not during 9-day consideration. Pre-first-order journeys favor Omnisend presets.',
-  },
-  {
-    question: 'What workflow test decides Yotpo vs Omnisend?',
-    answer: 'Build welcome, cart, post-purchase review request, loyalty earn reminder, winback. Score time-to-live, review submission lift, and push needs. If Yotpo Reviews or Loyalty is installed and load-bearing, Yotpo. If vendor independence and multichannel presets matter, Omnisend.',
-  },
+    "question": "Were the migration checks on this page performed?",
+    "answer": "No. They are proposed checks for a receiving account. Production delivery, permissions, recovery and account-specific costs require separate validation."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Yotpo Email & SMS vs Omnisend</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Yotpo Email & SMS vs Omnisend for Shopify email tools</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Suite extension versus standalone multichannel automation — same Shopify retention problem, different center of gravity. We evaluated both through an artisan coffee roaster with Yotpo Loyalty on bean refills, a climbing gear shop with no UGC stack and heavy mobile browse, and a board game store weighing suite renewal against push-enabled cart recovery. The decision hinges on whether reviews and points already steer repeat revenue or whether messaging speed and channel independence matter more.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Standalone multichannel', tool: 'Omnisend', reason: 'Email, SMS, push without suite lock-in.' },
-            { label: 'Reviews + loyalty loops', tool: 'Yotpo Email & SMS', reason: 'UGC and points wired into post-purchase journeys.' },
-            { label: 'Web push recovery', tool: 'Omnisend', reason: 'Native push for mobile browse abandonment.' },
-            { label: 'Trust-driven repeat', tool: 'Yotpo Email & SMS', reason: 'Review prompts when social proof moves PDP conversion.' },
-            { label: 'Preset speed', tool: 'Omnisend', reason: 'Ecommerce automations live in days without suite config.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Yotpo Email & SMS</th><th>Omnisend</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Catalog fit</td><td>Retention suite extension</td><td>Multichannel ecommerce automation</td></tr>
-            <tr><td>Starting price</td><td>Module/bundle pricing</td><td>Free tier; paid by contacts</td></tr>
-            <tr><td>Newsletters</td><td>Loyalty-aware campaigns</td><td>Standard campaign editor</td></tr>
-            <tr><td>Lifecycle depth</td><td>Review and points anchors</td><td>Visual workflows with presets</td></tr>
-            <tr><td>Transactional-style</td><td>Shipment plus review timing</td><td>Order triggers</td></tr>
-            <tr><td>Push</td><td>Not core</td><td>Web push included</td></tr>
-            <tr><td>Best when</td><td>Yotpo modules already live</td><td>No suite footprint</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Yotpo Email & SMS and Omnisend sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Yotpo Email & SMS is optimized when reviews and loyalty already anchor your retention stack. Omnisend is optimized when you need cart, welcome, and post-purchase live in days. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
-        <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Yotpo Email & SMS reduced preview-time surprises because reviews. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
-        <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
-        <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
-        <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Mechanical Keyboard Vendor ($58k/mo) — halt cart recovery when preorder tags flip to closed</h2>
-        <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before Essen release week: board game store retention choices</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite; Omnisend contributes prebuilt multichannel journeys with email, SMS, and push. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Yotpo Email & SMS remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Tool friction where Yotpo Email & SMS and Omnisend diverge on Shopify</h2>
-        <p>
-          Yotpo Email & SMS shines when reviews and loyalty already anchor your retention stack. Its friction shows when you only need email without UGC or points. Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Yotpo Email & SMS (modular plans by product) rewards send discipline or punishes broadcast volume depending on your calendar. Omnisend (contacts plus message volume) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Yotpo Email & SMS and Omnisend both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Yotpo Email & SMS punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Yotpo Email & SMS, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Reviews and loyalty already anchor your retention stack</li>
-          <li>You will use reviews, loyalty, email, and SMS in one retention suite weekly</li>
-          <li>Modular plans by product fits your calendar</li>
-          <li>Your team can maintain Yotpo Email & SMS without external rescue</li>
-          <li>Switching cost favors Yotpo Email & SMS for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Omnisend if:</strong></p>
-        <ul>
-          <li>You need cart, welcome, and post-purchase live in days</li>
-          <li>You will use prebuilt multichannel journeys with email, SMS, and push weekly</li>
-          <li>Contacts plus message volume fits your calendar</li>
-          <li>Your team can maintain Omnisend without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Omnisend migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Yotpo Email & SMS is the better Shopify email tool when reviews and loyalty already anchor your retention stack. Omnisend is the better Shopify email tool when you need cart, welcome, and post-purchase live in days. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
-      </article>
-
-      <div class="mt-10 max-w-4xl text-sm">
-        <p class="font-black text-[#24170f]">Related comparisons</p>
-        <p class="mt-2">
-          <a class="link" href="/compare/omnisend-vs-yotpo-email-sms">Omnisend vs Yotpo</a> ·
-          <a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a> ·
-          <a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> ·
-          <a class="link" href="/use-cases/reviews-and-ugc">Reviews and UGC</a>
-        </p>
-      </div>
-    </div>
+  <section class="container py-16">
+    <nav><a class="link" href="/apps">Tool catalog</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></nav>
+    <header class="max-w-4xl"><h1 class="hero-title mt-5">{title}</h1><p class="mt-7 text-xl leading-9">Yotpo Email &amp; SMS is a migration question now. Its messaging login reports that the application and background services are decommissioned. Reviews and Loyalty are separate decisions. An old export or implementation guide does not prove that a retired dashboard can still be opened. For Omnisend, the central task is rebuilding channel permissions and automation enrollment from saved data, rather than choosing which live Yotpo suite to renew.</p></header>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>Start with the files you actually possess</h2>
+      <p>The <a class="link" href="https://support.omnisend.com/en/articles/12048785-migrate-from-yotpo-to-omnisend">current Omnisend migration guide</a> says automated Yotpo contact sync is no longer available. It describes file import and manual workflow rebuilding. Treat its old Yotpo export steps as historical if your account is inaccessible; ask support about available records before planning a recovery date.</p>
+      <p>Create a manifest for each saved file: store, export date, channel, consent source and suppression coverage. A phone field is not SMS permission. Separate contacts with documented email permission, documented SMS permission, both, and neither. Keep uncertain records out of promotional enrollment while their status is resolved.</p>
+      <h2>Prevent import from behaving like a new signup</h2>
+      <p>Proposed acceptance case: import staff-controlled records representing email-only, SMS-only, both-channel and unsubscribed customers into an isolated destination setup. Inspect each channel status and every welcome queue before enabling delivery. An existing customer imported for continuity should not automatically receive an acquisition discount.</p>
+      <p>Check mapping updates against an existing unsubscribed destination contact as well as a new contact. Record whether the import overwrites properties or status, and reconcile accepted and rejected rows. A matching total cannot show that the right people remained suppressed.</p>
+      <h2>Rebuild journeys by eligibility, not by copied delays</h2>
+      <p>Inventory the saved welcome, cart and post-purchase definitions. For each, write the original entry event, exclusions, exit event and intended recipient. Recreate these rules before recreating message styling. Use current Shopify orders to exclude completed purchases from cart recovery; historical imports should not restart purchase-triggered messages.</p>
+      <p>Proposed mixed-channel check: a customer buys after entering cart recovery and unsubscribes from SMS while still subscribed to email. Inspect all remaining steps. Purchase completion should remove obsolete recovery, and channel changes should affect the relevant channel without granting permission elsewhere. Do not carry over a universal cross-channel delay from an old template.</p>
+      <h2>Treat the sending number as a separate workstream</h2>
+      <p>Omnisend documents a transfer route for an existing verified toll-free number. Confirm ownership, eligibility and the actual port status with support before updating forms. Do not promise a transfer deadline from this page. Preserve opt-in disclosures and identify the sender customers will recognize.</p>
+      <p>Email domain authentication, SMS readiness and browser push permission are separate acceptance items. Do not interpret an imported email address as a push subscriber. Enable only the channels whose permission and destination setup have been checked.</p>
+      <h2>Release checklist, costs and evidence limits</h2>
+      <p>Keep destination sends paused until eligible counts, suppressions, capture routes and representative queues reconcile. Name one owner for every automated message across Shopify, retained Yotpo modules and the receiving stack. If a destination check fails, pause that destination queue and repair it; the retired Yotpo sender is not a rollback option.</p>
+      <p>Compare the receiving subscription, messaging usage, implementation work and retained Reviews or Loyalty costs. Sequenzy or another email service belongs in that budget only if its required integration and operating role are demonstrated. There is no evidenced universal winner or fixed price here.</p>
+      <p>Checked against primary supplier material on 24 November 2026 and the <a class="link" href="https://email-and-sms.yotpo.com/">Yotpo decommission notice</a>. These are proposed acceptance cases, not performed merchant tests. Historical data recovery, legal sufficiency, account entitlements and production delivery remain unverified. Related migration assessments: <a class="link" href="/compare/yotpo-email-sms-vs-omnisend">Omnisend</a>, <a class="link" href="/compare/yotpo-email-sms-vs-postscript">Postscript</a>, <a class="link" href="/compare/yotpo-email-sms-vs-privy">Privy</a>.</p>
+    </article>
   </section>
-
-  <FaqSection faqs={faqs} title="Yotpo Email & SMS vs Omnisend FAQ" />
+  <FaqSection faqs={faqs} />
 </BaseLayout>
