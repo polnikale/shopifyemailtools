@@ -20,10 +20,10 @@ const faqs = [
   { question: 'What is the best Sendlane alternative for SMB?', answer: 'Sequenzy for strategy-first lifecycle with pay-per-email; Omnisend for prebuilt multichannel without Sendlane entry price. Both fit SMB order volume Sendlane pricing may overshoot.' },
   { question: 'Will I lose migration support leaving Sendlane?', answer: 'Sendlane support was value — budget onboarding time on new platform or choose Sequenzy agent-first setup reducing rebuild complexity. Document Sendlane journeys before cancel.' },
   { question: 'Sendlane vs Klaviyo when leaving?', answer: 'Klaviyo deeper data, larger ecosystem, often similar price tier — upgrade path when Sendlane segmentation ceiling hit. Sequenzy when Sendlane was overbought for team size.' },
-  { question: 'How does Sendlane migration work?', answer: 'Export contacts and journey documentation from Sendlane account manager; rebuild welcome and cart first; fourteen-day suppression overlap. Sendlane flows do not transfer natively.' },
-  { question: 'When should I stay on Sendlane?', answer: 'Stay with order volume justifying premium, active use of onboarding and deliverability support, and email plus SMS coordination driving documented ROI — mid-market outdoor gear and vinyl labels often fit.' },
+  { question: 'How does Sendlane migration work?', answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.' },
+  { question: 'When should I stay on Sendlane?', answer: 'Stay when the current account meets required journeys, reporting, support, reliability, and total operating cost. Test email and SMS permissions separately, current suppressions and purchase exits, and queue ownership across channels. Compare attributed revenue consistently and distinguish it from incremental margin; order volume or a merchant category alone does not establish fit.' },
   { question: 'Is Rejoiner like Sendlane?', answer: 'Rejoiner more managed service; Sendlane platform with support. Leaving Sendlane for Rejoiner is lateral to more outsourcing — opposite direction most exits take toward Sequenzy self-serve.' },
-  { question: 'What Sendlane features matter most on exit?', answer: 'Document which you used — guided onboarding, SMS coordination, A/B testing, revenue attribution. Rebuild must-haves first on replacement; do not pay for unused Sendlane breadth on new platform.' },
+  { question: 'What Sendlane features matter most on exit?', answer: 'Document the functions and service commitments actually used: onboarding, channel coordination, testing, segmentation, reporting, and integration maintenance. Verify those requirements in the destination plan and Shopify integration. Rebuild must-haves first, retain permission and suppression evidence, and include operator time and transition costs in the comparison.' },
 ];
 ---
 
@@ -58,44 +58,44 @@ const faqs = [
         <h2>Why Shopify merchants leave Sendlane</h2>
         <p>Premium without volume. Sendlane assumes order scale justifying investment — a pottery studio at four hundred monthly orders pays entry tier for support features used heavily month one then ignored. Sequenzy or Omnisend deliver comparable journeys at SMB-appropriate cost.</p>
         <p>Post-onboarding cliff. Guided migration and deliverability review deliver value early — then account feels like self-serve platform at premium price. Teams graduate to Klaviyo for data depth or Sequenzy for economics once support honeymoon ends.</p>
-        <p>Feature overlap at price. Sendlane email plus SMS matches Omnisend or Klaviyo capabilities team uses — paying for Sendlane brand without utilizing support differential. Stack audit pushes consolidation to platform with clearer fit.</p>
+        <p>Compare the features actually used, rather than assuming two platforms have equivalent capabilities. For example, document the event fields, exclusions, reporting windows, and support commitments behind a cart journey. Check each requirement in the destination plan before calling overlapping feature labels a reason to switch.</p>
         <p>Sendlane wins mid-market brands using onboarding seriously — climbing gear with assigned retention lead, vinyl label with SMS coordination weekly. Stay when premium justified by documented flow revenue and support tickets still valuable. Annual contract renewal is natural moment to compare Sequenzy TCO — do not auto-renew premium tier out of momentum.</p>
 
         <h2>Newsletters, lifecycle, and transactional moments</h2>
-        <p>Sendlane covers newsletters, lifecycle automation, and coordinated SMS when onboarded well — vinyl drop broadcasts, cart recovery, post-purchase education. Merchants leave one job at a time: bill outpaces sends, SMS coordination unused, or segmentation needs exceed package without buying more support hours.</p>
+        <p>Inventory newsletters, lifecycle automation, and SMS coordination separately. A vinyl shop might need release broadcasts, cart reminders, and post-purchase education, each with different eligibility rules. Record what the current account implements and what the replacement must reproduce; do not infer missing segmentation or additional support fees from a workflow that has not been tested.</p>
         <p>Evaluate replacements on whether you need continued hand-holding or operational ownership. Sendlane exit to Sequenzy assumes strategy defaults replace account manager recommendations; exit to Klaviyo assumes data depth replaces Sendlane templates with predictive tooling.</p>
 
         <h2>Support, strategy, and self-serve transition</h2>
         <p>Leaving Sendlane means replacing support with ownership or agent-first defaults. Sequenzy strategy guidance reduces need for Sendlane-style hand-holding; Klaviyo requires more internal discipline. Budget thirty minutes weekly owner time before cancel.</p>
-        <p>Export Sendlane journey documentation from account team — migration spec. Rebuild top revenue flows first; do not assume premium platform transfer means premium portability.</p>
+        <p>Request available journey documentation and exports from the account team and record any gaps. Rebuild the flows selected by business priority and operational risk; platform changes do not guarantee portable templates, event history, consent records, or queue state.</p>
 
         <h2>Sendlane migration checklist</h2>
         <ol>
           <li><strong>Request journey documentation and performance reports from Sendlane</strong>.</li>
-          <li><strong>Export contacts with SMS and email consent</strong>.</li>
+          <li><strong>Export permission evidence by purpose and channel</strong> — include source, timestamps, withdrawals, and current suppression state; confirm export availability.</li>
           <li><strong>Identify Sendlane features actually used</strong> — support, SMS, A/B, attribution.</li>
           <li><strong>Assign internal owner before cancel</strong> if moving self-serve.</li>
           <li><strong>Connect replacement to Shopify</strong> — verify sync parity.</li>
-          <li><strong>Rebuild welcome and cart first</strong> — pause Sendlane after QA.</li>
-          <li><strong>Fourteen-day parallel suppression</strong>.</li>
+          <li><strong>Rebuild and test priority journeys</strong> — verify current purchase exits, designate one sender and queue owner, drain or cancel old queued sends, and deduplicate replays before enabling replacements.</li>
+          <li><strong>Synchronize current suppressions and withdrawals</strong> — verify before dispatch and prevent duplicate ownership during cutover.</li>
           <li><strong>Migrate SMS if consolidating</strong> — TCPA audit and hard cutover.</li>
           <li><strong>Migrate post-purchase and winback</strong>.</li>
           <li><strong>Redirect popup integrations</strong>.</li>
           <li><strong>Warm domain if infrastructure changes</strong>.</li>
-          <li><strong>Archive Sendlane ninety days</strong> — benchmark post-exit.</li>
+          <li><strong>Retain permitted evidence under an explicit retention policy</strong> — verify export and post-cancellation access before relying on them.</li>
         </ol>
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Artisan coffee — downgraded to Sequenzy.</strong> Sendlane onboarding complete; support unused six months. Pay-per-email and agent-first sequences; retention lead edits replenishment same day. Forty percent cost reduction, performance stable.</p>
-        <p><strong>Outdoor gear — upgraded to Klaviyo.</strong> Sendlane segmentation ceiling on collection browse abandonment; similar monthly investment buys predictive depth. Owner assigned during Sendlane tenure continued on Klaviyo.</p>
-        <p><strong>Board games — stayed on Sendlane.</strong> Mid-market order volume, SMS plus email coordinated, quarterly deliverability reviews with support still valuable. Premium justified by attributed recovery revenue.</p>
+        <p><strong>Outdoor gear — proposed segmentation evaluation.</strong> Build a collection-browse scenario with variant preferences and purchase exclusions in both accounts. Compare data availability, update latency, branch behavior, and operator effort. A requirement that the current setup cannot meet may justify a move, but this example is not evidence of a Sendlane limitation or a merchant result.</p>
+        <p><strong>Board games — proposed stay decision.</strong> Review a coordinated email and SMS release journey against the team’s support needs, current channel permissions, suppression updates, and queue controls. Staying can be reasonable when requirements and total costs are met. Attributed recovery revenue alone does not establish incremental value or justify a premium.</p>
 
         <h2>Sendlane exit economics and stack patterns</h2>
         <p>Premium platform TCO includes subscription plus support utilization rate. A climbing-gear brand paying Sendlane $140 monthly while using support tickets quarterly — not weekly — effectively pays consultant hourly rate higher than hiring part-time retention lead plus Sequenzy. Model twelve months: Sendlane premium minus Omnisend or Sequenzy replacement plus thirty minutes weekly owner time. If replacement stack costs less with comparable flow revenue, exit is math not sentiment.</p>
         <p>Common Sendlane exit patterns: downgrade to Sequenzy when post-onboarding support unused; upgrade to Klaviyo when data depth was ceiling at same spend; lateral to Omnisend when multichannel prebuilt journeys beat maintained Sendlane custom flows. Rarely correct: downgrade to Mailchimp or Shopify Email — capability collapse after premium investment wastes migration effort.</p>
 
         <h2>Due diligence before canceling Sendlane</h2>
-        <p>Request export of journey performance by flow before notice period — your rebuild priority list. Confirm SMS number porting timeline if consolidating channels. Document discount codes embedded in Sendlane automations; they break silently after migration. Schedule cutover outside BFCM and major vinyl drop windows. Run five percent holdout on first replacement broadcast to validate attribution continuity finance expects.</p>
+        <p>Request available journey reports and verify contractual notice and export access before cancellation. Confirm sender-number transfer requirements and provider responsibilities. Test embedded discount codes, product links, and purchase exits. Choose a cutover around operational readiness and the store calendar. Reconcile attribution definitions separately from a randomized incrementality test, whose allocation and duration should follow sample size and business risk rather than a fixed percentage.</p>
       </article>
 
       <section class="container space-y-12 py-16">
@@ -109,45 +109,45 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Klaviyo upgrade when Sendlane segmentation was ceiling at similar price — predictive CLV, variant back-in-stock, larger agency ecosystem. Investment level familiar from Sendlane premium positioning.',
-          'Profile pricing with hygiene. Requires weekly audits — Sendlane owner should continue on Klaviyo.',
-          'Pick Klaviyo when data depth drives margin beyond Sendlane comfortable scale.',
+          'Evaluate Klaviyo against a documented segmentation requirement, such as variant interest with a purchase exit. Verify required data, feature eligibility, integration behavior, and plan terms in the current account.',
+          'Compare equivalent billable audiences and channel usage, including operator time and integration work. Assign an owner for profile hygiene and monitoring at a cadence suited to risk.',
+          'Choose only when the tested requirement and total operating cost justify the transition; platform depth alone does not establish incremental margin.',
         ]} />
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Omnisend SMB alternative — prebuilt cart, welcome, SMS at lower entry than Sendlane. Multichannel without premium package when support was unused.',
-          'Faster self-serve relaunch if Sendlane exit timeline tight. Credible permanent home for growing DTC.',
-          'Choose Omnisend when Sendlane felt expensive for features actually used.',
+          'Evaluate Omnisend for the required cart, welcome, and channel coordination journeys. Verify available templates, channel eligibility, and plan inclusions rather than assuming a lower entry price produces a lower matched bill.',
+          'Test rebuild effort with representative Shopify events and eligible test accounts. Migration speed depends on mappings, permissions, integrations, and operator readiness.',
+          'Choose when required workflows and support needs pass testing at an acceptable all-in cost.',
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Drip visual builder for operators who liked Sendlane automation UX — hands-on branching without Sendlane price tier. Per-contact pricing — sunset lists.',
-          'Revenue dashboards for weekly optimization. Native Shopify product triggers.',
-          'Choose if builder preference remains after premium exit.',
+          'Evaluate Drip with a branching workflow the operator actually maintains. Verify current plan terms and required event data before making a price or capability comparison.',
+          'Test the Shopify integration with the required product events and purchase exits. Reconcile reporting windows and refund handling; a dashboard total is not proof of incremental revenue.',
+          'Choose if workflow usability, operational controls, and matched total cost meet the documented requirements.',
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Rejoiner lateral to more managed service — opposite most Sendlane exits. Only if team decided self-serve failed and wants full outsourcing back.',
-          'Higher retainer than Sendlane typically. Rare correct direction.',
-          'Consider only when zero internal ownership viable long term.',
+          'Evaluate Rejoiner against the exact software and service scope offered. Document who owns strategy, implementation, ongoing changes, and incidents rather than treating every engagement as full outsourcing.',
+          'Obtain comparable current quotes covering software, channels, implementation, services, and internal operator time; no universal retainer ranking is established here.',
+          'Keep an accountable internal owner even when execution is delegated, and verify the support and response commitments in the agreement.',
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'ActiveCampaign CRM overlap — if Sendlane coordinated with sales pipelines. Wholesale pottery plus DTC. Overbuilt for pure ecommerce Sendlane clients.',
-          'Choose only with active CRM revenue justification.',
-          'Shopify depth trails Klaviyo.',
+          'Evaluate ActiveCampaign when a documented requirement connects wholesale sales work and DTC messaging. Test customer identity, purchase events, and channel-specific permission mappings in the proposed integration.',
+          'Compare the required CRM and messaging workflow with its implementation and maintenance costs.',
+          'Verify specific Shopify event and action requirements in each candidate; a general depth ranking does not establish fit.',
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Brevo cost downshift when Sendlane premium was primary pain — pay-per-email without package. Lighter lifecycle — may underdeliver versus Sendlane rigor.',
+          'Evaluate Brevo against the actual lifecycle requirements and current billing terms. Test event coverage, exclusions, support, and operator effort before assuming a cheaper or less capable replacement.',
           'Accept strategy gap or plan Sequenzy upgrade.',
-          'Choose for deliberate cost collapse with owner still assigned.',
+          'Choose when verified workflow coverage and matched total costs meet the budget, with a named operational owner.',
         ]} />
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Yotpo Email and SMS suite if Sendlane coordinated with reviews and loyalty — consolidation when UGC triggers mattered. Modular bill comparison required.',
-          'Email depth trails Klaviyo. Choose for ecosystem rationalization.',
-          'Compare total Yotpo cost before suite migration from Sendlane.',
+          'Historical listing: Yotpo scheduled full deprecation of its Email and SMS products for December 31, 2025. Do not treat this entry as a current migration destination.',
+          'The Email and SMS notice is separate from continuing Yotpo Reviews and Loyalty products; retaining those products requires a separate messaging integration decision.',
+          'Verify the current destination, event mappings, permission records, and matched all-in costs before transferring any messaging workflow.',
         ]} />
       </section>
 
@@ -174,38 +174,38 @@ const faqs = [
 
   <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Four-week Sendlane exit timeline</h2>
-    <p><strong>Week 1 — Premium audit.</strong> Pull Sendlane performance exports with account manager. List features used in last ninety days versus premium line items. Assign internal owner; schedule Shopify webhook verification on replacement platform. Sunset dead contacts Sendlane never emailed.</p>
+    <p><strong>Week 1 — Premium audit.</strong> This is an illustrative planning sequence, not a required duration. Inventory the functions and services actually used, available exports, current permissions by purpose and channel, suppressions, and source-of-truth purchase state. Assign an accountable operator and identify records that cannot be migrated safely.</p>
     <p><strong>Week 2 — Core flow rebuild.</strong> Welcome and cart on Sequenzy or Omnisend with test orders. Document Sendlane SMS timing if consolidating channels. Begin parallel suppression tagging.</p>
-    <p><strong>Week 3 — Expand and align.</strong> Post-purchase for pottery care or keyboard setup guides. Winback with VIP exclusions copied from Sendlane docs. First broadcast holdout five percent.</p>
-    <p><strong>Week 4 — Cancel premium tier.</strong> Pause Sendlane automations after QA pass. Finance compares week-four flow revenue to Sendlane baseline. Archive account for benchmark reference.</p>
+    <p><strong>Week 3 — Expand and align.</strong> Test post-purchase care or setup guides using test orders and accounts. Preserve relevant VIP exclusions and verify that a later purchase exits recovery queues before dispatch. Plan any randomized holdout around detectable effects and adequate sample size; reporting continuity and causal lift are separate questions.</p>
+    <p><strong>Week 4 — Cancel premium tier.</strong> Proceed only after readiness checks, regardless of the calendar label. Assign a sender and queue owner per journey, drain or cancel legacy queued messages, and deduplicate replayed events. Check fresh permission, suppression, and purchase state at dispatch. Retain a rollback route and permitted evidence under a documented retention policy.</p>
 
     <h2>Buyer desk: premium utilization audit</h2>
     <p>Sendlane exit should audit which premium features you used post-onboarding — unused support is wasted premium. Sequenzy or Omnisend fit when volume is SMB; Klaviyo fits when data depth was ceiling at same spend.</p>
-    <p>Replace Sendlane support with named owner plus agent-first defaults — not with nothing. Thirty minutes weekly minimum on self-serve stack.</p>
-    <p>Success at ninety days: flow revenue within ten percent of Sendlane baseline range, platform TCO lower or Klaviyo depth higher per exit goal, team edits journeys without account manager tickets. Replacement should feel lighter in weekly standup — if not, you traded premium support for premium complexity on wrong platform.</p>
+    <p>Assign a named owner for eligibility rules, integrations, deliverability monitoring, and incident response. Estimate operator time from the actual workload and service commitments; there is no universal weekly minimum that makes a self-serve stack safe.</p>
+    <p>Define success before migrating: required journeys function correctly, no duplicate sends or suppression gaps occur, reporting reconciles, and operator effort and total cost fit the budget. Observe a period suited to the buying cycle and seasonal variation. A fixed revenue tolerance or deadline cannot establish equivalent performance, and platform attribution does not measure causal margin.</p>
 
     <h2>Premium exit alternatives ranked</h2>
     <p><strong>Sequenzy:</strong> when Sendlane premium bought strategy clarity not account manager time. <strong>Klaviyo:</strong> when data depth was ceiling at same spend tier. <strong>Omnisend:</strong> when SMB volume never utilized Sendlane onboarding value. Replace support with named internal owner plus thirty-minute weekly flow audit — not with nothing.</p>
     <p><strong>Scenario — snack box DTC.</strong> Sendlane guided migration valuable year one; year two internal hire plus Sequenzy agent playbooks matched revenue at 40% lower TCO.</p>
     <h2>Premium feature utilization audit</h2>
-    <p>List Sendlane features used in last ninety days — unused onboarding support is wasted premium. Replacement should feel lighter in weekly standup within thirty days or wrong platform chosen.</p>
+    <p>List features and service commitments used across a representative business cycle, including rare but critical support incidents. Judge the replacement against those requirements and measured operator effort. A quiet month or an unused onboarding service alone does not prove that the ongoing plan is wasteful.</p>
 
     <h2>Internal owner replaces account manager</h2>
     <p>Snack box year two: hire plus Sequenzy agent playbooks matched Sendlane revenue at 40% lower TCO — premium made sense year one migration only. Thirty-minute weekly flow audit minimum on self-serve stack; calendar it before cancel.</p>
 
     <h2>Premium-to-self-serve transition</h2>
-    <p>Document which Sendlane onboarding deliverables actually used — unused white-glove is exit signal. Named internal owner before cancel; thirty minutes weekly flow audit on calendar. Replacement lighter in standup within thirty days or wrong platform.</p>
+    <p>Document which onboarding deliverables and ongoing services the team depends on. Assign responsibility for data mappings, eligibility checks, monitoring, and rollback before cancellation. Estimate the workload from those tasks and test the new operating process rather than imposing a fixed weekly audit time or a thirty-day success rule.</p>
     <p>Compare Sequenzy agent playbooks versus Klaviyo data depth at same TCO target — Sendlane exit rarely means downgrade capability; it means matching revenue with documented internal process.</p>
-    <p>Premium utilization audit: list features used in ninety days — unused onboarding is wasted premium. Internal owner replaces account manager; standup should feel lighter within thirty days post-exit or wrong replacement chosen.</p>
+    <p>Audit subscriptions, send usage, channel charges, support, integration work, migration, and operator time over the same period. Compare equivalent eligible audiences and required workflows. Include overlap and contractual commitments, and report attributed revenue separately from any controlled estimate of incremental contribution margin.</p>
 
     <h2>Sendlane exit desk: deliverability-first migrations</h2>
     <p>Teams leave Sendlane when SMS and email governance split across tools or when Shopify-native segmentation lags catalog complexity — outdoor gear brands with variant-heavy jackets need collection triggers Sendlane lists struggle to express without custom fields. Week one: export engagement tiers and sunset rules before DNS moves; camping merchants lose inbox placement when warm domains jump without gradual ramp. Week two: rebuild highest-revenue flow with identical send windows to isolate platform lift. Week three: board game shops test pre-order and back-in-stock in parallel; artisan coffee roasters segment by grind preference and subscription status. Week four through twelve: monitor complaint rate and revenue per thousand sends weekly — Sendlane veterans often over-mail during migration excitement. Vinyl shops should preserve RFM tags through import mapping. Collision doc: cart over welcome over winback over broadcast. Sequenzy for strategy-led replatforms; Klaviyo for unified SMS-email-data; Postscript if SMS was eighty percent of Sendlane value. Day ninety: dual-channel journeys documented, no suppression holes, finance signs off on contribution margin not open rate.</p>
   </article>
 
     <h2>Sendlane migration: deliverability ramp calendar</h2>
-    <p>Week zero: clone engagement tiers and pause all Sendlane promotional sends forty-eight hours before DNS cutover. Week one: send only transactional parity and one low-risk post-purchase flow to engaged ninety-day openers — camping merchants ramp too fast and spike complaints. Week two: add cart abandonment to fifty percent of eligible volume. Week three: welcome series live with sunset on non-openers after email three. Week four: winback and broadcasts only after inbox placement stable on Gmail and Yahoo seed accounts. Vinyl and outdoor gear brands with aged domains need four-week ramp minimum; do not import cold lists from Sendlane without re-permission when consent metadata is messy.</p>
+    <p>Use a readiness-based deliverability plan. Inventory authentication, sender identity, reputation, engagement evidence, and provider guidance before changing infrastructure. Test transactional and promotional eligibility separately: permission for one purpose or channel does not authorize another. Start any controlled ramp with an eligible audience selected from reliable engagement and permission records, monitor delivery and complaints, and expand only as evidence supports it. Open events alone are not reliable eligibility or consent evidence. Carry current withdrawals, suppressions, and purchase exits into the destination, assign one queue owner per journey, cancel or drain old sends, and deduplicate replayed events. Pause when evidence is incomplete; importing records does not create permission.</p>
 
-    <p>Sendlane migrations need four-week deliverability ramps on aged domains — rushing promotional volume poisons the inbox you are trying to save.</p>
+    <p>Set ramp duration from the sender change, provider guidance, audience quality, and monitored delivery signals. An aged domain does not establish a universal four-week minimum, and a fixed waiting period cannot guarantee inbox placement.</p>
 
   <FaqSection faqs={faqs} title="Sendlane alternatives FAQ" />
 </BaseLayout>
