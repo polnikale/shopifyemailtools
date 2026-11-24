@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 
 const path = '/compare/sendlane-vs-klaviyo';
 const title = 'Sendlane vs Klaviyo for Shopify Email: 2026 Comparison';
-const desc = 'Sendlane vs Klaviyo for Shopify stores — guided ecommerce retention with migration support vs Shopify-native data maximums, pricing, and team fit for DTC operators.';
+const desc = 'Compare Sendlane and Klaviyo for Shopify: existing flow dependencies, migration scope, segmentation, channel coordination and operating cost.';
 
 const faqs = [
   {
     question: 'Is Sendlane or Klaviyo better for a Shopify store doing $150k/mo?',
-    answer: 'Klaviyo wins when your team can maintain ecommerce-native flows — browse abandonment, predictive CLV, and segment-level revenue reporting are load-bearing. Sendlane wins when order volume justifies guided migration, hands-on onboarding, and ecommerce-first templates because internal bandwidth cannot support Klaviyo complexity alone. At $150k/mo with a skilled retention operator, Klaviyo competes on data depth. At $150k/mo exiting Klaviyo because nobody maintained flows for nine months, Sendlane\'s migration support can justify consideration.',
+    answer: "Revenue is not a sufficient selection rule. Start with the flows, reports and custom data your store uses today. Staying with Klaviyo can preserve working dependencies; Sendlane deserves consideration when its proposed operating model resolves a documented problem. Compare the work required to maintain each option rather than assuming either has a revenue threshold.",
   },
   {
     question: 'How does Sendlane vs Klaviyo pricing compare at 20,000 contacts?',
-    answer: 'Klaviyo at 20k active profiles typically lands $250–400/mo depending on SMS. Sendlane packages at similar list sizes often run $200–450/mo depending on support tier and SMS volume — premium priced for guided retention. Klaviyo\'s self-serve billing is transparent; Sendlane\'s value includes human onboarding that may prevent $8k–15k agency rebuilds during cutover.',
+    answer: "Get current quotes using the same audience definitions, email volume, SMS destinations and service requirements. Add migration and ongoing operator work separately. An estimate based only on 20,000 contacts cannot establish total cost, and an assumed agency saving should not be treated as money already saved.",
   },
   {
     question: 'Which has better Shopify ecommerce automation?',
-    answer: 'Klaviyo by a margin on data maximums — real-time browse events, predictive CLV, catalog segmentation, and flow revenue attribution are native and mature. Sendlane covers cart, welcome, post-purchase, and winback with ecommerce-first templates and strong migration recreation — sufficient for most DTC catalogs but less depth on browse-by-collection and predictive segments.',
+    answer: "Klaviyo describes Shopify data powering segmentation and email automation. Sendlane presents email and SMS together with forms. Compare the specific event fields and branching rules you rely on; neither a feature list nor a claim of maximum depth establishes which platform meets a particular custom flow.",
   },
   {
     question: 'Can Sendlane help with migration from Klaviyo?',
-    answer: 'Yes — Sendlane positions guided migration for DTC brands leaving Klaviyo when complexity exceeded team capacity, not when features failed. Flow recreation, deliverability warm-up coaching, and quarterly performance reviews are core value props. Budget 2–4 weeks with guided support vs self-maintaining Klaviyo if the team has operator bandwidth.',
+    answer: "Ask Sendlane for a written migration scope covering your actual Klaviyo flows, content, integrations and suppression history. Identify what is transferred, rebuilt or excluded, who validates it and what remains your responsibility. Do not assume guided onboarding includes every custom journey or ongoing production task.",
   },
   {
     question: 'Should I also consider Sequenzy instead of Sendlane or Klaviyo?',
-    answer: 'Sequenzy fits when Klaviyo complexity and Sendlane package pricing both feel heavy — guided lifecycle playbooks with pay-per-email pricing and unlimited contacts. Klaviyo still wins on Shopify-native data maximums. Sendlane still wins when migration complexity and maintenance neglect justify hands-on support. Sequenzy helps teams between self-serve maximums and guided platform premiums.',
+    answer: "Sequenzy can be another candidate when its workflow fits the team. Establish the required Shopify events, custom flow logic, channel coverage and support scope before replacing either incumbent. A different editing approach does not prove lower cost or equivalent integration coverage.",
   },
   {
     question: 'Does Klaviyo SMS matter vs Sendlane SMS?',
-    answer: 'Both offer SMS automations. Klaviyo bundles SMS with unified segments and email suppression — one platform for multichannel lifecycle. Sendlane includes SMS in visual automations with guided setup during onboarding. Choose Klaviyo when unified email-plus-SMS reporting matters. Choose Sendlane when migration support and human review matter more than browse depth.',
+    answer: "Both vendors market email and SMS. Compare destination availability, channel permission, usage charges, shared customer state and the handling of a purchase between messages. Unified reporting and an agreed suppression policy are separate requirements. Select against the channels and markets you actually operate.",
   },
   {
     question: 'Which platform handles Black Friday better?',
-    answer: 'Klaviyo offers segment-level VIP early access, recent purchaser suppression, holdout testing, and sunset tools refined over years of BFCM scale — critical when volume spikes 5x. Sendlane handles BFCM with ecommerce templates and onboarding support for suppression audits — competent with external eyes catching gaps internal teams normalize. Klaviyo wins edit safety for experienced operators; Sendlane wins when the team needs guided sale-week review.',
+    answer: "Compare the sale-week changes your team must make: exclude recent purchasers, alter a sold-out product, pause recovery and protect fulfillment messages. Assign an operator and approval owner. Neither vendor name establishes sale readiness, and onboarding support should not be assumed to include a campaign audit.",
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Build welcome (branch by signup source), browse abandonment, three-step cart (winback suppression), post-purchase cross-sell, winback (VIP vs one-time buyer). Score time-to-live, browse depth needs, and whether your team will self-maintain Klaviyo or needs Sendlane guided support. If operator bandwidth exists and browse/predictive matter, lean Klaviyo. If migration complexity and maintenance neglect are constraints, lean Sendlane.',
+    answer: "Choose an existing flow that depends on a custom event or property. Rebuild its audience and branching logic in a proposed Sendlane evaluation, then compare with the current Klaviyo flow. Include a late event, a purchase and an unsubscribed recipient. Record missing inputs and maintenance work; these are proposed tests, not reported outcomes.",
   },
 ];
 ---
@@ -61,151 +60,37 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Sendlane vs Klaviyo for Shopify email</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Guided ecommerce retention platform versus Shopify-native data maximums. Sendlane serves DTC brands with enough order volume to justify migration support, deliverability consultation, and human onboarding. Klaviyo serves operators who want browse abandonment, predictive CLV, and unified email-plus-SMS reporting at the ceiling of Shopify integration depth. We evaluated both through a $142k/mo outdoor gear store leaving Klaviyo with Sendlane guidance, a $95k/mo climbing gear brand staying on Klaviyo for browse recovery ROI, and a specialty tea merchant evaluating both during BFCM prep when Klaviyo bills spiked without proportional revenue lift.
+          For a Shopify team already using Klaviyo, this is a decision about the value of changing a working system. Sendlane presents email, SMS and forms in one platform; Klaviyo describes Shopify data powering email segmentation and automation. Compare a concrete operating problem with the cost of rebuilding the dependencies you already have. The exercises below are proposals, not merchant case studies.
         </p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Shopify data depth', tool: 'Klaviyo', reason: 'Browse, predictive CLV, and flow revenue attribution maximums.' },
-            { label: 'Guided migration', tool: 'Sendlane', reason: 'White-glove onboarding and flow recreation for complex cutovers.' },
-            { label: 'Self-serve operators', tool: 'Klaviyo', reason: 'Transparent billing and ecosystem depth for skilled teams.' },
-            { label: 'Retention investment', tool: 'Sendlane', reason: 'Human support when team bandwidth is the constraint.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Guided playbooks if Klaviyo complexity and Sendlane pricing both feel heavy.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Sendlane</th><th>Klaviyo</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Guided DTC retention platform</td><td>Shopify-native retention maximums</td></tr>
-            <tr><td>Starting price</td><td>From ~$83+/mo packages</td><td>Free tier; paid from ~$20/mo</td></tr>
-            <tr><td>Billing model</td><td>Custom packages + support tier</td><td>Active profiles + SMS credits</td></tr>
-            <tr><td>Shopify depth</td><td>Native — core ecommerce events</td><td>Native — browse, predictive, catalog</td></tr>
-            <tr><td>Browse abandonment</td><td>Supported, less maximum</td><td>Core strength</td></tr>
-            <tr><td>Migration support</td><td>White-glove onboarding</td><td>Self-serve + partner ecosystem</td></tr>
-            <tr><td>SMS</td><td>Built into automations</td><td>Unified with email segments</td></tr>
-            <tr><td>Learning curve</td><td>Moderate with guided help</td><td>Moderate–steep self-serve</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Sendlane and Klaviyo sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Sendlane is optimized when migration bandwidth is the constraint leaving Klaviyo. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>How pottery studio emails through holiday starter-set rush</h2>
-        <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Sendlane remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Vinyl Record Shop ($72k/mo) — suppress recent full-price buyers from instant discount blasts on scarce pressings</h2>
-        <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
-        <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
-        <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>How board game store emails through Essen release week</h2>
-        <p>
-          The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Sendlane reduced preview-time surprises because guided ecommerce retention with migration support. Klaviyo remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
-        </p>
-        
-        <p>
-          The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Sendlane contributes guided ecommerce retention with migration support; Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Klaviyo reduced preview-time surprises because Shopify browse events. Sendlane remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
-        </p>
-        <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
-        </p>
-        <h2>Klaviyo workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Sendlane shines when migration bandwidth is the constraint leaving Klaviyo. Its friction shows when you enjoy self-serve canvas or agent-first iteration. Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Billing amplifies behavior. Sendlane (custom packages with support tier) rewards send discipline or punishes broadcast volume depending on your calendar. Klaviyo (active profiles plus SMS credits) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Sendlane and Klaviyo both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Klaviyo punish partial adoption.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Klaviyo, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Sendlane if:</strong></p>
-        <ul>
-          <li>Migration bandwidth is the constraint leaving klaviyo</li>
-          <li>You will use guided ecommerce retention with migration support weekly</li>
-          <li>Custom packages with support tier fits your calendar</li>
-          <li>Your team can maintain Sendlane without external rescue</li>
-          <li>Switching cost favors Sendlane for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>Segment reports and browse depth change monday merchandising calls</li>
-          <li>You will use Shopify browse events, predictive CLV, and unified SMS weekly</li>
-          <li>Active profiles plus sms credits fits your calendar</li>
-          <li>Your team can maintain Klaviyo without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Klaviyo migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Sendlane is the better Shopify email tool when migration bandwidth is the constraint leaving Klaviyo. Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
+        <h2>Define the reason for changing platforms</h2>
+        <p><a class="link" href="https://www.sendlane.com/">Sendlane</a> presents a unified email, SMS and forms offering. <a class="link" href="https://www.klaviyo.com/integrate/shopify/email-marketing">Klaviyo's Shopify email page</a> describes using store data for segmentation and automation. Those roles overlap. The decision should identify an operational improvement your team can explain: fewer manual audience steps, clearer production ownership, a different channel workflow or a cost structure that fits the program.</p>
+        <p>Separate a platform limitation from an unattended implementation. If nobody updates the current flows, importing them elsewhere does not create a maintenance owner. Conversely, a custom integration that cannot supply the required state is a concrete limitation worth investigating. Write down the problem and its owner before accepting migration as the remedy.</p>
+        <h2>Inventory the Klaviyo dependencies you would leave</h2>
+        <p>List live flows and their event names, property types, profile fields, filters, content blocks and downstream reporting. Include signup forms, discount generation, any external app events and links from other systems. For each dependency, identify the equivalent input and behavior in the proposed Sendlane implementation. Similar labels in two interfaces do not guarantee the same semantics.</p>
+        <p>Separate historical information from new events. A migration might bring over a profile field while leaving historical event detail behind. Decide which history is necessary for eligibility and which can remain in an archive. Avoid silently replacing an unavailable historical condition with a broader audience: that changes the campaign, even if the new flow looks familiar.</p>
+        <h2>A proposed limited-release evaluation</h2>
+        <p>Consider a store selling limited product releases. A subscriber requests release news, views a product, starts checkout and later purchases. Propose a journey that keeps release announcements distinct from recovery. Define which signup source supplies eligibility, how an identified browse event differs from a cart event and what stops promotion once the order is recorded.</p>
+        <p>Now close the release while a recovery message is waiting. Ask the operator to show where availability is checked and what the customer sees if the original destination is unavailable. Distinguish the product data used when preparing a message from the stock state when someone clicks it. This proposed exercise is more useful than an unsupported claim that one platform always has deeper browse recovery.</p>
+        <p>Add a late event and replay an existing event identity in the evaluation plan. Document whether either could re-enter the customer into recovery and which system prevents duplicate work. These are acceptance questions for your implementation, not claims that a vendor has passed or failed a benchmark.</p>
+        <h2>Ask what migration support actually includes</h2>
+        <p>Request a scoped list of recreated flows, migrated templates, audience mappings and integration work. Ask whether custom logic is included, whether your team must supply approved copy and who signs off each flow. Contacts imported successfully are only one deliverable; a customer already waiting in a sequence needs an explicit cutover decision.</p>
+        <p>Choose an owner for each live flow during transition. Preserve suppression records and channel-specific permissions, and decide how to retire the original signup forms and scheduled campaigns. Keep a rollback plan that identifies which platform is allowed to send. Running both systems without flow ownership can duplicate messages rather than reduce migration risk.</p>
+        <p>Agree on the handover after onboarding. Record who maintains segments, diagnoses stale events, reviews new campaign audiences and handles an urgent product change. Treat promised assistance as a contract question until the proposal names the work; do not turn the phrase migration support into an assumed permanent managed service.</p>
+        <h2>Compare segments by membership, not screenshots</h2>
+        <p>Take a segment your merchandising team uses and write its definition in plain language. For example, distinguish people interested in a release from people who bought it, and decide whether a later refund changes the intended audience. Compare sample membership and the underlying event records before comparing the appearance of the builders.</p>
+        <p>If a predictive field is essential to a Klaviyo workflow, document its meaning and eligibility requirements before seeking an equivalent. Do not equate a custom field carrying a score with the model that produced it. Either demonstrate an adequate replacement, change the strategy deliberately or retain the existing dependency; an unsupported promise of equivalent depth is not a migration plan.</p>
+        <h2>Email and SMS need separate eligibility decisions</h2>
+        <p>Map which channel each recipient may receive and how a purchase or opt-out changes pending messages. A customer eligible for email is not automatically eligible for a text. Compare the markets, sending requirements, reply handling and usage terms in the actual packages.</p>
+        <p>Use the proposed release exercise to decide whether an SMS should supplement an email or replace a later reminder. Assign the decision to the program owner and implement it where both channels can see the required state. A common reporting interface does not by itself establish causal lift or prevent every collision.</p>
+        <h2>Evaluate the financial case without invented savings</h2>
+        <p>Use current quotes for the same expected audience and message calendar, including peak campaigns and automated messages. Separate email, SMS, support, migration and outside production charges. Include the work needed to rebuild custom integrations and maintain the resulting program. Avoid assuming the quote includes a module or service simply because the vendor offers it.</p>
+        <p>Keep attributed revenue definitions stable when comparing the old and new systems. A different attribution window can alter a dashboard without changing customer purchasing. Treat operator-time reductions as estimates until measured, and distinguish incremental contribution from gross platform-attributed sales. There is no universal contact count or store revenue at which migration becomes worthwhile.</p>
+        <h2>Stay, repair or switch</h2>
+        <p>Retain Klaviyo when the current dependencies serve the program and the problems can be addressed with an accountable operator and targeted repairs. Consider Sendlane when a scoped evaluation shows that its workflow and commercial offer solve the documented problem while covering the dependencies you need. Compare the cost of repair with the cost of migration rather than assuming staying is free or switching is an improvement.</p>
+        <p>Sequenzy is another possible shortlist candidate if its approach matches the team's work, subject to the same data and channel requirements. Use the <a class="link" href="/guides/migration">migration guide</a> for cutover planning and the <a class="link" href="/guides/pricing-models">pricing guide</a> for comparable cost inputs. The final choice needs an operating owner and a reviewable implementation scope.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
@@ -214,7 +99,7 @@ const faqs = [
           <a class="link" href="/compare/drip-vs-sendlane">Drip vs Sendlane</a> ·
           <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> ·
           <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
-          <a class="link" href="/for/outdoor-gear">Email tools for outdoor gear stores</a> ·
+          <a class="link" href="/guides/selection-framework">Selection framework</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
         </p>
       </div>
