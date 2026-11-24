@@ -12,35 +12,35 @@ const desc = 'Attentive vs ActiveCampaign for Shopify email tools — enterprise
 const faqs = [
   {
     question: 'Is Attentive or ActiveCampaign better for Shopify SMS revenue?',
-    answer: 'Attentive is SMS-native at enterprise scale — keyword journeys, drop alerts, compliance dashboards, and conversational recovery built for text-first DTC. ActiveCampaign adds SMS to its automation and CRM platform — workable for low-volume text tied to deal stages and email nurture. Choose Attentive when SMS is a primary revenue channel. Choose ActiveCampaign when CRM pipelines and email logic matter more than flash-sale text infrastructure.',
+    answer: 'Compare the actual SMS and email jobs, CRM handoffs, supported regions and plan coverage in both accounts. Test channel-specific permission, current suppression and purchase exits, reply handling and queue ownership. Revenue attributed to a vendor does not establish causal lift or a universal winner for high-volume stores.',
   },
   {
     question: 'Can ActiveCampaign replace Attentive for outdoor gear drops?',
-    answer: 'Not at SMS-heavy volume. ActiveCampaign lacks Attentive depth on compliance review workflows, two-way reply routing at scale, and Shopify drop-campaign patterns tuned for six-figure send days. ActiveCampaign replaces Attentive when your business is automation-first — courses, wholesale, membership — with SMS as a thin layer on nurture, not midnight allocation alerts.',
+    answer: 'For an outdoor-gear drop, test the required opt-in evidence, regional controls, inventory state, reply routing and peak queue behavior in both actual plans. Do not assume a categorical capability gap or that send volume alone establishes compliance or replacement suitability.',
   },
   {
     question: 'Should I run ActiveCampaign email and Attentive SMS together?',
-    answer: 'Common for hybrid merchants — wholesale inquiry follow-up and lead scoring in ActiveCampaign; promotional and recovery text in Attentive for DTC. Sync suppressions and purchase events bidirectionally. Failure mode: duplicate cart touches because email automation and SMS flows fire on different timers without a collision doc.',
+    answer: 'A split stack is a candidate architecture. Verify wholesale inquiry and DTC event mappings, assign one sender and queue owner per job, and preserve purpose-specific channel permission. Recheck withdrawal, suppression and purchase state at dispatch, cancel stale jobs in every sender and deduplicate replayed events; a timing document alone cannot enforce these controls.',
   },
   {
     question: 'How does pricing compare for a 20,000-contact store?',
-    answer: 'ActiveCampaign scales by contacts plus CRM tier — meaningful base cost before SMS credits. Attentive uses enterprise contracts keyed to list size and message volume — often $1,500+/mo minimum. Combined stack cost can exceed Klaviyo for equivalent ecommerce retention unless CRM automation is genuinely load-bearing for revenue.',
+    answer: 'Obtain dated quotes for the same 20,000-contact definition, eligible channel audiences, sends, seats, features and contract period. Include integration, migration, overlap, reply labor and ongoing operations. No minimum contract price or comparative saving is certified here.',
   },
   {
     question: 'Which handles climbing gear high-AOV consideration better?',
-    answer: 'ActiveCampaign — longer email nurture with tag-based education sequences across harness research paths. Attentive compresses consideration with timed SMS nudges and drop alerts once shoppers opt in. Pair both only with documented channel priority: education email first, SMS for opted-in high-intent segments, not parallel blasts.',
+    answer: 'Use a hypothetical seven-to-fourteen-day harness research path to test education, purchase exits and eligible SMS reminders in both current plans. Verify supported content and segmentation rather than assuming a channel reputation proves suitability. Compare reply labor and matched all-in costs; attributed revenue alone does not establish causal improvement.',
   },
   {
     question: 'Does Attentive do email well enough to drop ActiveCampaign?',
-    answer: 'Attentive added email capabilities but remains SMS-centered. Stores with complex CRM deals, B2B account stages, and sales-assigned follow-up still need ActiveCampaign or similar. Attentive email can work for promotional parity when SMS is 70%+ of retention spend and CRM is thin.',
+    answer: 'Test required email workflows and CRM dependencies in the current accounts rather than assuming a permanent SMS-only identity or a retention-spend threshold. Trace an inquiry, sales reply, purchase and opt-out through the proposed replacement before removing any current owner.',
   },
   {
     question: 'What compliance differences matter on Shopify?',
-    answer: 'Attentive invests heavily in opt-in capture, quiet hours, and legal review tooling for TCPA-heavy programs. ActiveCampaign SMS compliance exists but expects operators to configure journeys carefully. Camping equipment flash sales to mixed consent lists are safer on Attentive\'s compliance UX — not risk-free, but more guardrailed.',
+    answer: 'Verify purpose and channel permission, opt-out propagation, regional controls, applicable quiet hours and review ownership in the actual setup. Vendor positioning does not establish legal compliance or make a mixed-permission list eligible. Pause a failed workflow until current dispatch controls are verified.',
   },
   {
     question: 'What buyer test settles Attentive vs ActiveCampaign?',
-    answer: 'Document five flows: keyword opt-in from popup, cart at 30 minutes on SMS, post-purchase education on email, wholesale inquiry nurture with deal stages, winback split by channel consent. Score which platform owns each job without duplicate touches. If three or more jobs are SMS-primary at volume, Attentive leads. If CRM stages drive revenue, ActiveCampaign leads.',
+    answer: 'Test five proposed jobs: popup keyword permission, a 30-minute cart reminder, post-purchase education, dealer inquiry stages and winback by channel permission. Treat the delay as a planning input. Require current withdrawal and purchase exits, named queue ownership, stale-job cancellation and replay deduplication. Compare measured effort and matched costs; a count of SMS jobs is not a winner threshold.',
   },
 ];
 ---
@@ -60,18 +60,18 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Attentive vs ActiveCampaign for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Enterprise SMS infrastructure versus CRM-grade marketing automation — overlapping on paper, opposite in practice. We evaluated both against an outdoor gear brand running flash drops on text, a climbing shop with wholesale dealer inquiries alongside DTC, and a camping equipment merchant whose email nurture spans 14-day consideration cycles. Shopify email tools include SMS and transactional-style moments; this comparison is about which platform should own which channel when retention is not email-only.
+          Compare an opted-in SMS drop program with email nurture and dealer inquiry follow-up in the current quoted plans. The outdoor, climbing and camping catalogs are hypothetical planning fixtures, not evaluated merchants. Demonstrate current channel scope, event mappings and ownership before choosing a single platform or a split stack; an SMS or CRM reputation alone does not establish fit.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'SMS revenue channel', tool: 'Attentive', reason: 'Compliance, keywords, drops, and conversational recovery at scale.' },
-            { label: 'CRM + email automation', tool: 'ActiveCampaign', reason: 'Deal stages, lead scoring, and complex nurture paths.' },
-            { label: 'Hybrid wholesale + DTC', tool: 'Both', reason: 'ActiveCampaign for B2B pipeline; Attentive for consumer text — with sync.' },
-            { label: 'Enterprise support', tool: 'Attentive', reason: 'Managed growth positioning for high-volume SMS programs.' },
-            { label: 'Automation logic depth', tool: 'ActiveCampaign', reason: 'Branching, goals, and CRM actions beyond ecommerce presets.' },
+            { label: 'SMS revenue channel', tool: 'Attentive', reason: 'Candidate: demonstrate keyword, drop, permission and reply workflows in the quoted plan.' },
+            { label: 'CRM + email automation', tool: 'ActiveCampaign', reason: 'Candidate: verify required dealer stages, scoring and nurture mappings.' },
+            { label: 'Hybrid wholesale + DTC', tool: 'Both', reason: 'Proposed split: verify integrations, permission mapping and one sender per job.' },
+            { label: 'Enterprise support', tool: 'Attentive', reason: 'Confirm actual onboarding, support scope and incident ownership in the quote.' },
+            { label: 'Automation logic depth', tool: 'ActiveCampaign', reason: 'Demonstrate required branches, goals and CRM actions in the current plan.' },
           ]}
         />
       </div>
@@ -98,7 +98,7 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>What this comparison is actually about</h2>
         <p>
-          Attentive and ActiveCampaign sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Attentive is optimized when you run high-volume SMS with dedicated program ownership. ActiveCampaign is optimized when wholesale pipelines and site tracking share one automation brain. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
+          Evaluate newsletters, lifecycle automation and operational messages as separate jobs. Use Attentive as a candidate for a dedicated SMS program and ActiveCampaign as a candidate for dealer inquiry and email automation; demonstrate each required capability in the quoted plan. The following catalogs are hypothetical planning fixtures with illustrative orders and revenue, not merchants we evaluated. A ninety-day review can check unused scope and maintenance effort, but no performance outcome is established here.
         </p>
         
         <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
@@ -106,104 +106,104 @@ const faqs = [
           The board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Attentive remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Essen release week becomes a complaint magnet regardless of ESP.
+          For the board game fixture, compare a ten-day consideration path with pre-order allocation and shipped-state branches. Test whether education and discount variants reach comparable eligible audiences without treating attributed orders as incremental lift. Measure manual export and repair time rather than claiming six hours saved during GB season. A proposed forty-five-minute cross-channel interval is a scheduling input, not proof of suppression: a purchase or withdrawal must block a queued promotional job immediately before dispatch during Essen release week.
         </p>
         <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
         <p>
           The specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Attentive remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Q4 gift-box peak becomes a complaint magnet regardless of ESP.
+          For tea, use blend-specific consumption and steeping assumptions within the proposed 28–35 day window; exclude gift recipients and paused subscriptions according to the actual purpose and permission recorded. Compare natural reorders and discounted reorders with an appropriate holdout if feasible, stating uncertainty. A forty-five-minute channel interval does not make stale gift-box or replenishment jobs safe: check current state at dispatch and cancel in every sender before Q4 gift-box peak.
         </p>
         <h2>Artisan Coffee Roaster: roast-date replenishment and wholesale sample follow-ups</h2>
         <p>
           The artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Attentive reduced preview-time surprises because enterprise SMS acquisition and managed growth. ActiveCampaign remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday blend drop becomes a complaint magnet regardless of ESP.
+          For the coffee fixture, separate wholesale sample follow-ups from retail bean education and paused-subscription confirmations. Use roast date and the proposed day-thirty reorder as explicit test inputs. A sample request does not confer general SMS marketing permission. Test pause, resume, purchase and replay events with a named queue owner in both candidates. The proposed forty-five-minute interval cannot replace current suppression checks before the holiday blend drop; measure support effort rather than claiming an observed reduction.
         </p>
         <h2>How climbing gear store emails through spring rack refresh</h2>
         <p>
           The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Attentive remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          For climbing gear, preview product availability and harness-fit branches with seven-to-fourteen-day research paths. A proposed 300-unit limited stock fixture and two-hour send window can test a mid-send sellout; these inputs do not describe an observed vinyl merchant result. Verify the source and freshness of variant availability, route sold-out links safely and retain purchase exits. A forty-five-minute channel interval is only a planning input. Product certification claims require authoritative product evidence and cannot be inferred from email behavior.
         </p>
         <h2>Camping Equipment Merchant ($78k/mo) — route quiz outcomes into different welcome branches before tent promos</h2>
         <p>
           The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Attentive remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Roast-date math is per-SKU, not per-customer average. Coffee subscribers on pause and wholesale sample recipients needed different clocks than retail tin buyers. Per-product replenishment logic separated natural reorder from discount-trained reorder. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For camping equipment, map tent-capacity quiz answers to proposed family and trip-season branches, with a fallback when answers or mobile browse events are absent. Quiz completion does not by itself authorize marketing on another channel. Compare the same eligible audience and inventory snapshots in each account before Memorial Day. A forty-five-minute channel interval cannot enforce suppression: cancel stale quiz, browse and cart jobs after a purchase, withdrawal or conflicting state change, and measure repair labor without claiming a vendor outcome.
         </p>
         <h2>Before holiday starter-set rush: pottery studio retention choices</h2>
         <p>
           The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Attentive contributes enterprise SMS acquisition and managed growth; ActiveCampaign contributes CRM pipelines, lead scoring, and automation logic. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, ActiveCampaign reduced preview-time surprises because CRM pipelines. Attentive remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose this peak-week priority: operational order updates first, eligible cart recovery second, welcome and education third, promotional broadcasts last. In each candidate, preview the same state transitions and record missing fields, operator effort and queue delays. CRM or managed-growth positioning does not prove fewer preview errors. Give every job one sender and queue owner; recheck channel and purpose permission, withdrawal, suppression and purchase state at dispatch, cancel stale jobs across senders and deduplicate replayed events.
         </p>
         <p>
-          Allocation fear creates support tickets, not only unsubscribes. Board game pre-orders needed clear fulfillment-state emails; ambiguous cart recovery during allocation windows duplicated support load. State-aware automation paid for itself in Zendesk hours. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          For pottery, keep class waitlist policies, kiln-care education and glaze-kit offers in distinct purpose branches. A class lead should not enter a product promotion solely because a generic signup tag exists. Test signup-source loss, waitlist closure, a later kit purchase and withdrawal before the holiday starter-set rush. Keep forty-five minutes as an illustrative channel interval, with current dispatch checks and stale-job cancellation independent of that delay. Record support contacts and uncertainty rather than claiming automation paid for itself in Zendesk hours.
         </p>
         <h2>Attentive workflow reality: strengths, friction, and billing</h2>
         <p>
-          Attentive shines when you run high-volume SMS with dedicated program ownership. Its friction shows when you are under 800 orders monthly with thin SMS ROI. ActiveCampaign shines when wholesale pipelines and site tracking share one automation brain. Its friction shows when pure DTC Shopify retention is the only job. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
+          For an illustrative store under 800 orders monthly, test whether SMS contribution, reply workload and implementation costs justify the proposed scope; order count alone is not a suitability threshold. For wholesale and DTC, demonstrate inquiry stages and Shopify event mappings in both quoted setups. Assign owners for missing data and failed dispatch checks. Neither brand positioning nor a revenue dashboard proves incremental ROI.
         </p>
         <p>
-          Billing amplifies behavior. Attentive (custom enterprise packages) rewards send discipline or punishes broadcast volume depending on your calendar. ActiveCampaign (contacts plus feature tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Quote the same eligible contacts, ordinary and peak sends, feature requirements and sender workload for both candidates. Count message and carrier fees, integrations, onboarding, continuing support and operator maintenance separately. A contact-priced plan does not necessarily charge more per broadcast; a usage-priced quote may still have minimums or contact limits. No merchant billing outcome is established here.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
         <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Attentive and ActiveCampaign both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
+          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Demonstrate the required product campaign, mid-week hero-SKU changes and inventory freshness in both current accounts; do not infer those capabilities or their relative reliability from this comparison.
         </p>
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like ActiveCampaign punish partial adoption.
+          For a planning range of 12,000–18,000 contacts, obtain dated quotes using the same eligibility rules and seasonal calendar. Preserve withdrawal and suppression evidence during cleanup. Include only the modules actually required and compare matched annual totals; neither price convergence nor a penalty for partial adoption is established here.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Attentive, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          A candidate split stack could use a capture tool such as Privy or Justuno alongside Attentive and ActiveCampaign, subject to verified current integrations. No named vendor makes the architecture compliant. Assign one sender and queue owner to each cart, education and dealer job. Demonstrate purpose-specific permission mapping, dispatch-time withdrawal and purchase exits, cancellation in every sender and replay deduplication before enabling parallel jobs. Include integration maintenance, reply labor and overlap in matched annual costs; a priority document alone does not enforce suppression.
         </p>
         
         <h2>Who should choose which</h2>
         <p><strong>Choose Attentive if:</strong></p>
         <ul>
-          <li>You run high-volume sms with dedicated program ownership</li>
-          <li>You will use enterprise SMS acquisition and managed growth weekly</li>
-          <li>Custom enterprise packages fits your calendar</li>
-          <li>Your team can maintain Attentive without external rescue</li>
-          <li>Switching cost favors Attentive for the next twelve months</li>
+          <li>The proposed SMS audience has documented channel and purpose permission</li>
+          <li>The quoted acquisition, sender and support scope meets demonstrated requirements</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <p><strong>Choose ActiveCampaign if:</strong></p>
         <ul>
-          <li>Wholesale pipelines and site tracking share one automation brain</li>
-          <li>You will use CRM pipelines, lead scoring, and automation logic weekly</li>
-          <li>Contacts plus feature tier fits your calendar</li>
-          <li>Your team can maintain ActiveCampaign without external rescue</li>
-          <li>Incremental lifecycle GMV justifies ActiveCampaign migration</li>
+          <li>Required wholesale and retail data mappings are demonstrated in the quoted plan</li>
+          <li>The team can maintain the proposed cross-system workflow and incident handling</li>
+          <li>The dated quote includes required contacts, peak sends, integrations, support and operator time</li>
+          <li>Cutover ownership includes stale-job cancellation, replay deduplication and rollback</li>
+          <li>The migration case states cost uncertainty and does not equate attributed sales with causal lift</li>
         </ul>
         <h2>Verdict</h2>
         <p>
-          Attentive is the better Shopify email tool when you run high-volume SMS with dedicated program ownership. ActiveCampaign is the better Shopify email tool when wholesale pipelines and site tracking share one automation brain. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
+          Treat Attentive for an SMS-led program and ActiveCampaign for dealer and email workflows as candidates, not established winners. Run the five-job buyer test in both actual quoted plans, record current-state dispatch failures and operator effort, and model matched twelve-month costs with real eligible audiences and peak sends. Choose only after required mappings, permissions, queue ownership, cancellation and replay controls pass; report causal uncertainty separately from attributed revenue. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
         </p>
       </article>
 
