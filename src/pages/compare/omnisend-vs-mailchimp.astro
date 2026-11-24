@@ -16,31 +16,31 @@ const faqs = [
   },
   {
     question: 'How does Omnisend vs Mailchimp pricing compare at 12,000 contacts?',
-    answer: 'Mailchimp Standard near $180–230/mo. Omnisend Standard near $110–160/mo before SMS. Omnisend often undercuts at similar contacts with more automation included. Add SMS volume to both models before comparing.',
+    answer: 'Request current quotes for the same 12,000 eligible contacts, monthly sends, SMS destinations and term. Compare twelve-month base fees, overages, SMS and carrier charges, required add-ons, migration overlap and operator time. The prior dollar estimates are not verified current prices.',
   },
   {
     question: 'Which handles camping gear mobile recovery better?',
-    answer: 'Omnisend — web push and SMS in same journey recover mobile tent shoppers without email open. Mailchimp lacks native push; SMS is add-on with lighter ecommerce triggers.',
+    answer: 'Test mobile quiz, browse and cart events against the actual integrations. Check current push and SMS availability, separate channel permission, purchase suppression and queued cancellation. Record eligible delivery and operator effort rather than assuming either channel causes more recoveries.',
   },
   {
     question: 'Can Mailchimp Customer Journeys match Omnisend presets?',
-    answer: 'Partially for welcome and cart. Omnisend ships push at step two and SMS at step three out of box. Mailchimp requires more configuration for equivalent multichannel sequence — if team will not maintain canvas, Omnisend faster.',
+    answer: 'Build the same welcome and cart fixtures in both tools, using only currently verified triggers and channels. Check event freshness, branching, permission and suppression at dispatch, and replay deduplication. Compare maintenance effort rather than assuming preset steps or setup speed.',
   },
   {
     question: 'Should I migrate Mailchimp to Omnisend?',
-    answer: 'Migrate when lifecycle and multichannel matter more than landing pages — export consent, rebuild journeys, two to three weeks parallel. Keep Mailchimp landing pages temporarily if SEO-dependent.',
+    answer: 'Migrate only after a workflow pilot and matched cost model justify the work. Preserve purpose, channel permission, suppressions and timestamps; reconcile purchases and subscriptions. During overlap keep one active sender and queue owner per workflow, cancel old queued sends and test replay before enabling replacements.',
   },
   {
     question: 'When do you outgrow Omnisend for Klaviyo?',
-    answer: 'When browse segmentation and predictive VIP targeting need CSV workarounds — often 800–1,200 orders/month on complex catalogs.',
+    answer: 'Order volume alone is not a reliable threshold. Test the required browse segments, preorder states and VIP rules against verified capabilities. Record workarounds, operator time, event freshness and total cost before deciding whether another platform solves the constraint.',
   },
   {
     question: 'What about Mailchimp non-email features?',
-    answer: 'Surveys, social posting, CRM-lite — Omnisend does not replace. Audit 90-day feature usage before switching.',
+    answer: 'Audit which surveys, landing pages and other workflows you actually use, then verify their current plan availability and replacement costs. Preserve URLs, audience permissions and data dependencies where relevant; do not assume a lifecycle migration replaces every marketing function.',
   },
   {
     question: 'What workflow test decides Omnisend vs Mailchimp?',
-    answer: 'Build cart with SMS backup, push browse nudge, post-purchase gift exclusion, winback. Omnisend should pass faster. Mailchimp passes if you accept setup time and skip push.',
+    answer: 'Propose cart recovery with eligible SMS backup, an eligible push browse reminder, post-purchase gift exclusion and winback. Test withdrawal and purchase while queued, subscription changes, cancellation and duplicate event replay. Compare operator time and matched all-in costs; attribution alone does not establish causal lift.',
   },
 ];
 ---
@@ -60,7 +60,7 @@ const faqs = [
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Omnisend vs Mailchimp for Shopify email tools</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Ecommerce-native multichannel presets versus the marketing hub everyone already knows. We evaluated both through a camping equipment store replacing Mailchimp with Omnisend for push recovery, a vinyl shop keeping Mailchimp surveys while evaluating Omnisend cart, and an artisan coffee roaster needing replenishment SMS without journey engineering paralysis.
+          Ecommerce-native multichannel presets versus the marketing hub everyone already knows. Use the proposed fixtures below to evaluate a camping equipment store considering mobile recovery, a vinyl shop retaining survey workflows, and catalogs with replenishment or preorder needs. All merchant names, volumes and revenue figures here are illustrative inputs, not observed tests or measured outcomes. Verify current vendor features, plans and channel availability before choosing.
         </p>
       </header>
 
@@ -98,70 +98,70 @@ const faqs = [
         
         <h2>Climbing Gear Store ($89k/mo) — branch browse sequences by fall-rating and harness fit pages</h2>
         <p>
-          The climbing gear store does 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
+          Model a climbing gear store with 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          Waitlist psychology is not welcome psychology. Pottery class leads needed studio policies and kiln safety; glaze-kit promos on day one felt like bait-and-switch. Branching welcome by signup source prevented the mismatch. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
+          Test a climbing guide signup separately from a harness product alert. Keep safety education tied to manufacturer instructions and current product certification; measure whether each branch delivers the requested content without an unrelated rope discount. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise spring rack refresh becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before Memorial Day camping spike: camping equipment merchant retention choices</h2>
         <p>
-          The camping equipment merchant does 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
+          Model a camping equipment merchant with 1,350 orders/mo at roughly $78k/mo. Revenue rhythm follows tent-capacity quizzes and family car-camping segments, which means email must handle trip-season browse recovery on mobile PDPs before cart before Memorial Day camping spike — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: route quiz outcomes into different welcome branches before tent promos.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          Mobile browse recovery front-runs cart on camping gear. Shoppers configured tents on phones during commute browsing; push or SMS reminders sometimes beat email when paired with disciplined suppression. Multichannel only helps with a collision doc. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
+          For mobile tent browsing, propose separate quiz, browse and cart fixtures. Push permission does not grant SMS or email permission. Test a shopper who declines SMS, buys before the reminder, or withdraws permission while queued; eligible dispatches must respect that latest state. Compare channel outcomes without assuming that a delivered reminder caused an order. For camping equipment merchant specifically, route quiz outcomes into different welcome branches before tent promos. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise Memorial Day camping spike becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Pottery Studio: class waitlists and glaze-kit starter sets</h2>
         <p>
-          The pottery studio does 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
+          Model a pottery studio with 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Omnisend reduced preview-time surprises because prebuilt multichannel journeys with email. Mailchimp remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          Consideration length changed channel choice. Keyboard shoppers compared switches for ten days before carting; email education outperformed early discount codes. The platform that surfaced browse depth without manual list exports saved roughly six hours a week during GB season. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
+          Separate pottery class waitlists from glaze-kit interest. A class signup should receive the requested studio information, while kit education depends on its own eligible audience. Record operator minutes needed to build and update those branches; do not assume a time saving or revenue lift before testing. For pottery studio specifically, exclude class waitlist leads from glaze-kit promos after signup source tagging. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise holiday starter-set rush becomes a complaint magnet regardless of ESP.
         </p>
         <h2>How vinyl record shop emails through Record Store Day</h2>
         <p>
-          The vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
+          Model a vinyl record shop with 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          Gift confusion is a December tax. Tea gift boxes and pottery starter sets both saw recipients hit unsubscribe when reorder emails assumed they were loyal drinkers or makers. Order property filters are not optional — they are deliverability insurance. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
+          Test a vinyl gift purchaser, a gift recipient and a collector as distinct records. A shipping address does not make the recipient a marketing subscriber. Suppress discount recovery after a pressing purchase, and keep grading education appropriate to the requested content; inspect each queued message after the customer state changes. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise Record Store Day becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Outdoor Gear Retailer ($112k/mo) — merchandise ultralight versus family car-camping with different hero tents</h2>
         <p>
-          The outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
+          Model an outdoor gear retailer with 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          Inventory truth mattered as much as copy. When a limited run sold out mid-send, the tool that pulled live variant availability prevented angry clicks — the vinyl shop learned that on a 300-unit pressing that died during a two-hour send window. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
+          Use a proposed 300-unit tent allocation that sells out during a two-hour campaign window. Check inventory freshness at message preparation, dispatch and landing-page arrival. Record stale recommendations and fallback behavior; neither platform should receive credit for preventing oversells without evidence from the actual integration. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise Memorial Day sale week becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Before GB close deadlines: mechanical keyboard vendor retention choices</h2>
         <p>
-          The mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
+          Model a mechanical keyboard vendor with 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Mailchimp contributes familiar editor and broad marketing features. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
         </p>
         <p>
-          Peak-week send priority was non-negotiable: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this catalog, Mailchimp reduced preview-time surprises because familiar editor and broad marketing features. Omnisend remained viable but needed explicit Shopify tag checks before every major send — fine with an operator, expensive without one.
+          Propose a peak-week priority: operational order updates, eligible cart recovery, welcome education, then promotions. An order update must keep its service purpose; purchase alone does not grant promotional permission. Before each marketing dispatch, recheck purpose and channel permission, current suppression, purchase and subscription state. Assign one sender and queue owner per workflow across Shopify and all apps. Test cancellation of queued reminders after purchase or withdrawal, and replay the event to verify idempotent deduplication; a shared tag alone does not prove those controls work.
         </p>
         <p>
-          High-AOV safety content beats coupons. Climbing shoppers wanted retirement timelines and certification context; a 10% off rope email on day two would have trained worst practices. Education-first sequencing recovered more margin than blanket promos. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Pair email with SMS only if forty-five-minute cross-channel suppression is documented — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
+          For a keyboard group buy, propose switch education before the close deadline and a closed-preorder event while recovery is queued. Verify that a closed kit cannot trigger another discount reminder, and replay the event to confirm no duplicate send. Record contribution margin and support effort without presenting education as a proven causal improvement. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. Use forty-five-minute cross-channel suppression as a proposed test interval, then choose the production interval from customer expectations and applicable requirements; pair email with SMS only with separate eligibility and tested cancellation — otherwise GB close deadlines becomes a complaint magnet regardless of ESP.
         </p>
         <h2>Omnisend workflow reality: strengths, friction, and billing</h2>
         <p>
           Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Mailchimp shines when broadcast muscle memory outweighs Shopify trigger depth. Its friction shows when cart and browse revenue attribution is load-bearing. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
         </p>
         <p>
-          Billing amplifies behavior. Omnisend (contacts plus message volume) rewards send discipline or punishes broadcast volume depending on your calendar. Mailchimp (contacts by tier) does the opposite in many stores. The vinyl shop imported thousands of waitlist emails while orders stayed flat; profile-style billing hurt. The outdoor retailer blasted engaged segments every May; send-weighted billing hurt. Model your real year, not a calm month.
+          Billing amplifies behavior. Omnisend (contacts plus message volume) rewards send discipline or punishes broadcast volume depending on your calendar. Mailchimp (contacts by tier) does the opposite in many stores. Model a vinyl waitlist growing by thousands of profiles while orders stay flat, and an outdoor catalog with a May send spike. Obtain current quotes at the same eligible contact counts, sends, destinations and contract term. Include base plans, SMS segments and carrier fees, push or other required modules, overages, capture tools, migration overlap, implementation and recurring operator time over twelve months; these are cost scenarios, not merchant invoices.
         </p>
         
         <h2>Newsletter layer: editorial merchandising without discount training</h2>
@@ -171,14 +171,16 @@ const faqs = [
         
         <h2>Pricing models that punish different mistakes</h2>
         <p>
-          At 12,000–18,000 contacts, plans converge until they do not. Sunset cold imports before quoting either tool. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Mailchimp punish partial adoption.
+          At 12,000–18,000 contacts, plans converge until they do not. Preserve suppression and consent evidence while excluding ineligible imports from marketing. Compare matched all-in costs rather than deleting records solely to reduce a quote. Treat current plan prices, module availability and limits as unverified publication holds until checked against current official terms.
         </p>
         
         <h2>Hybrid stack patterns on Shopify</h2>
         <p>
-          Common pattern: capture in Privy or Justuno, lifecycle in Omnisend, SMS in Postscript when compliance matters. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
+          Common pattern: capture in Privy or Justuno, lifecycle in Omnisend, SMS in Postscript when its verified workflow fits the requirement. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner, disable overlapping recoveries, and test queued cancellation across every sender; vendor choice alone does not establish compliance.
         </p>
         
+        <h2>Attribution and uncertainty</h2>
+        <p>Report platform-attributed orders separately from causal lift. Attribution windows, identity matching and overlapping channels can credit the same purchase twice. For a causal estimate, propose a randomized eligible holdout with a predefined window and customer-level deduplication; report sample size, uncertainty, discounts, refunds and contribution margin. Low-volume results can remain inconclusive, and no attributed revenue figure here is an observed experiment.</p>
         <h2>Who should choose which</h2>
         <p><strong>Choose Omnisend if:</strong></p>
         <ul>
@@ -194,7 +196,7 @@ const faqs = [
           <li>You will use familiar editor and broad marketing features weekly</li>
           <li>Contacts by tier fits your calendar</li>
           <li>Your team can maintain Mailchimp without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Mailchimp migration</li>
+          <li>A measured lifecycle benefit justifies migration and operator costs</li>
         </ul>
         <h2>Verdict</h2>
         <p>
