@@ -14,7 +14,7 @@ const desc = description(site, 'apps/privy');
 const faqs = [
   {
     question: 'Is Privy a full Shopify email marketing platform?',
-    answer: 'No — Privy is capture-first. Exit intent, spin-to-win, cart saver bars, and basic email/SMS campaigns solve top-of-funnel list growth. Lifecycle depth for welcome, replenishment, and winback belongs in Sequenzy, Omnisend, or Klaviyo. Most stacks pair Privy capture with a lifecycle ESP.',
+    answer: 'Privy markets email, SMS and on-site conversion together. Evaluate the journeys available in your actual account; capture-oriented use does not mean email automation is absent. The Shopify listing currently says unavailable, so new installation and existing-account support need separate confirmation.',
   },
   {
     question: 'Privy vs Justuno for Shopify list capture?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'How much does Privy cost on Shopify?',
-    answer: 'Obtain a current quote for the products and usage you need; the catalog figures on this page are not a verified current offer. Model a typical month and a vinyl-drop traffic peak using the actual billing units, included sends, overages and contract terms. Include setup, integration maintenance and reply-handling labor.',
+    answer: 'Obtain a current quote for the products and usage you need; this review does not establish a current plan total. Model a typical month and a vinyl-drop traffic peak using the actual billing units, included sends, overages and contract terms. Include setup, integration maintenance and reply-handling labor.',
   },
   {
     question: 'Can Privy replace Klaviyo for automations?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'Does Privy integrate with Sequenzy or Klaviyo?',
-    answer: 'Yes — sync subscribers with tags indicating capture source (exit intent, spin wheel, footer). Lifecycle ESP owns welcome branching; Privy owns conversion of cold traffic. Tag discipline at handoff prevents generic welcome to high-intent quiz completers.',
+    answer: 'Confirm the supported connector or API route for your account and destination. Map form source, preferences and channel permission separately, then test a signup, update and revocation. Decide whether Privy or the destination owns the welcome message before activating the connection.',
   },
   {
     question: 'When should a Shopify store outgrow Privy?',
@@ -53,13 +53,11 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Capture-first · Rank #6</p>
+      <p class="catalog-kicker mt-6">Capture, offers and account continuity</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Privy wins the top-of-funnel lane on Shopify. Vinyl collectors arriving from Discogs links, tea enthusiasts from podcast codes, and keyboard fans from YouTube reviews land with intent but no subscriber relationship. Privy's exit intent, spin-to-win, and cart saver bars convert that traffic into owned audience with minimal dev work. It is not a lifecycle platform — plan to pair with Sequenzy or Klaviyo once capture stops being the bottleneck.
-      </p>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Privy combines on-site capture with email and SMS marketing. For vinyl referrals, tea podcast offers and keyboard launch traffic, evaluate the full path from a displayed offer to its promised follow-up. The Shopify listing currently says unavailable; this is an installation limitation, not evidence that Privy has closed. Existing merchants should confirm account access and supported integration changes before uninstalling anything.</p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        The vintage vinyl, specialty tea and climbing gear examples below are proposed evaluation scenarios, not documented merchant tests or measured outcomes. Rating: ★ {app.rating}. Automation: {app.automationDepth}.
+        The vintage vinyl, specialty tea and climbing gear examples below are proposed evaluation scenarios, not documented merchant tests or measured outcomes.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a>
@@ -74,34 +72,28 @@ const faqs = [
       picks={[
         { label: 'Role', tool: 'List capture', reason: 'Evaluate capture alongside the follow-up workflows you require.' },
         { label: 'Speed', tool: 'Test setup effort', reason: 'Check mobile forms, offer delivery and downstream status before launch.' },
-        { label: 'Pair with', tool: 'Sequenzy / Klaviyo', reason: 'Capture feeds tags; lifecycle ESP owns revenue automations.' },
+        { label: 'Pair with', tool: 'Assign the sender', reason: 'Use Privy email or a verified destination workflow with one welcome owner.' },
         { label: 'Tradeoff', tool: 'Workflow fit', reason: 'Demonstrate required branching, exits and replenishment before choosing.' },
         { label: 'Best for', tool: 'Traffic-rich, list-poor', reason: 'Stores where conversion to subscriber is the constraint.' },
       ]}
     />
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why capture still beats clever lifecycle on day one</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Find the capture and follow-up constraint</h2>
       <p>
         A keyboard shop could compare visits from Instagram reels with valid, permissioned signups to locate a possible capture problem. Low signup volume alone does not diagnose the cause: offer relevance, mobile usability and traffic intent also matter. Propose tests of a product-page offer, a shipping-threshold bar and a mobile incentive, measuring qualified signups and later margin rather than assuming a conversion rate.
       </p>
       <p>
         Have the person who will operate the forms build and maintain a sample mobile campaign. Verify which targeting and experiment controls are included in the selected product. If collecting email and SMS permission, retain the disclosure, timestamp and channel-specific status; an email signup cannot stand in for SMS authorization.
       </p>
-      <p>
-        The ceiling is automation depth. Privy welcome series cannot branch by collection browse from quiz data the way Justuno plus Sequenzy can. Cart recovery lacks sophisticated suppression for recent purchasers across multi-SKU orders. Revenue attribution trails lifecycle ESPs. Graduate capture strategy to lifecycle strategy within 6–12 months of consistent traffic.
-      </p>
+      <p>For a harness-size welcome branch, demonstrate the field, trigger and purchase exit in the actual account. Compare retaining Privy email with a separate sender only after that exercise. A capture-only installation and a broader Privy account can have different capabilities; neither list size nor elapsed time establishes a migration deadline.</p>
     </div>
 
     <div class="ledger-card mb-12">
       <p class="catalog-kicker">Shopify integration depth</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native popups, basic sends, handoff tags</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Privy registers Native with Basic automation. Shopify customer sync, product-aware cart bars, and order count targeting for returning visitors. Integrations push subscribers to Klaviyo, Sequenzy, Omnisend with source tags critical for welcome branching.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Standout capabilities:</strong> Exit-intent popups, spin wheels, cart saver bars, coupon delivery, SMS opt-in, A/B popup tests, mobile-optimized templates, browse and cart triggers.
-      </p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Installed displays, messages and data mapping</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Inventory the installed Shopify connection, active displays, email workflows and SMS sending configuration. For each form, record the destination, source identifier and promised incentive. Test updates to an existing customer as well as new records; a successful new signup does not prove preference updates or revocations propagate.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Evaluate the capture tools enabled in your account: mobile displays, incentive delivery, targeting and experiments. Try an exit offer and a static preference form on the actual theme. Verify eligibility, dismissal behavior and accessible completion before exposing the campaign to launch traffic.</p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
         <strong>Gaps to test:</strong> Required branching, purchase exits, suppression propagation and reporting in your installed configuration. Order volume alone does not establish that another system is necessary.
       </p>
@@ -109,30 +101,30 @@ const faqs = [
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>Privy pricing: {app.priceDetail}. {app.pricing}.</p>
+      <p>Request current product and usage terms for the installed account or proposed purchase. Capture, email, SMS, services and any destination ESP belong in the same cost model.</p>
       <p><strong>Scenario A — 25k pageviews/mo, 2,200 contacts.</strong> For this illustrative tea shop, request a quote for footer and exit-intent forms plus intended messages. Verify billing units and included usage rather than assigning an unverified plan total.</p>
       <p><strong>Scenario B — 180k pageviews during vinyl drop week.</strong> Ask how that hypothetical peak affects the actual contract, including overages and upgrade or downgrade rules. Do not assume pageviews determine charges or that hiding a form reduces the bill.</p>
-      <p><strong>Scenario C — Privy + Sequenzy stack.</strong> Capture $40/mo + lifecycle $55/mo = $95/mo total vs Omnisend all-in $75/mo — stack wins when Privy capture rates beat Omnisend forms in A/B test.</p>
+      <p><strong>Scenario C — capture plus separate email.</strong> Add both subscriptions, usage, integration upkeep and offer costs. Compare that total with a single-platform configuration on the same eligible audience. More signups do not justify the stack unless purchaser quality and contribution support the extra cost.</p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Exit intent — vinyl PDP</h3>
       <p><strong>Scenario:</strong> Collector browsing rare pressing, cursor exits viewport. <strong>Privy setup:</strong> 10% off first order, email required, tagged source exit-vinyl.</p>
-      <p><strong>Result:</strong> 3.8% conversion of exit sessions to subscriber; Sequenzy welcome branch on tag lifted first purchase 16%.</p>
+      <p><strong>Proposed acceptance:</strong> Complete the vinyl offer as a new visitor and an existing subscriber. Verify one usable coupon arrives, the pressing exclusion is honored, and a completed purchase prevents an inappropriate reminder. A randomized comparison can measure contribution; no merchant conversion or lift result is asserted.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Cart saver bar — tea free shipping</h3>
       <p><strong>Scenario:</strong> $42 cart, threshold $50. <strong>Privy setup:</strong> Dynamic bar showing dollars to free shipping.</p>
       <p><strong>Evaluation:</strong> Compare a shipping-bar variant with a suitable control. Measure completed orders, shipping subsidy, returns and contribution margin; a higher cart value alone does not prove incremental profit.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Spin-to-win — keyboard launch</h3>
       <p><strong>Scenario:</strong> YouTube traffic spike on launch day. <strong>Privy setup:</strong> Spin wheel 5–15% off, SMS optional second step.</p>
-      <p><strong>Result:</strong> 2,400 new contacts in 72 hours; 31% discount-only never opened email three — sunset tag applied in Sequenzy.</p>
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Basic Privy welcome — outgrown</h3>
+      <p><strong>Proposed acceptance:</strong> For an illustrative 72-hour wheel campaign, document the offered discount range and expiry. Verify email and optional SMS permission separately, including a visitor who declines SMS. Measure purchases, margin and later opt-outs; an unopened message alone is not a reliable quality classification.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Welcome branching — demonstrate fit</h3>
       <p><strong>Scenario:</strong> A climbing gear store wants a harness-size branch and appropriate post-purchase safety content. <strong>Requirement:</strong> Demonstrate field availability and event-driven branching rather than assuming either feature is absent.</p>
       <p><strong>Evaluation:</strong> Compare maintaining the workflow in the existing setup with a separately owned welcome sender. Before switching, test current purchase exits and suppression, cancel or drain old queues and prevent duplicate processing of replayed events.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
-      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{['On-site capture and email/SMS are marketed together.', 'Existing offer context can guide the acceptance test.'].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{['Shopify listing currently unavailable; confirm onboarding directly.', 'Account-specific automation and integration scope needs demonstration.'].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
@@ -140,21 +132,19 @@ const faqs = [
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>High traffic, low subscriber rate</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Influencer and paid traffic needing offer delivery</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Pairing with Sequenzy/Klaviyo for lifecycle</li>
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Founders who need popups live today</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Operators able to rehearse the mobile offer</li>
       </ul></div>
       <div class="ledger-card"><p class="catalog-kicker">Who should skip</p><ul class="mt-4 space-y-3 text-[#4a2d17]">
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Lifecycle already bottleneck — invest in ESP first</li>
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need quiz segmentation — Justuno</li>
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want capture + lifecycle one platform — Omnisend</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need quiz fields — demonstrate capture and mapping</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want consolidation — compare complete current workflows</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Low traffic — compare a footer form with the actual capture need</li>
       </ul></div>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Privy operating discipline on Shopify</h2>
-      <p>
-        Capture source tags must sync to lifecycle ESP within minutes not days — vinyl exit-intent subscribers receiving generic welcome three days later waste intent heat. Test Privy-to-Sequenzy integration on staging with single fake signup before launch week traffic.
-      </p>
+      <p>Define the required signup-to-offer delay from the promise shown on the form. Test it with an authorized staff profile before launch, including a delayed connector. If a coupon arrives after its offer window, assign a recovery owner rather than silently sending a replacement promotion.</p>
       <p>
         Record the incentive source without assuming those subscribers are poor prospects. For a limited keyboard restock, base eligibility on the stated offer, current permission and purchase state. Confirmation may verify address control, but evaluate its effects on qualified signups and complaints rather than promising lower costs or better delivery.
       </p>
@@ -164,16 +154,14 @@ const faqs = [
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Privy</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Proposed merchant stack patterns with Privy</h2>
       <p>
         <strong>Vintage vinyl:</strong> Exit intent on PDP plus Discogs referral landing pages; Sequenzy welcome branches jazz versus electronic from referrer tag when available.
       </p>
       <p>
         <strong>Specialty tea influencer codes:</strong> Proposed test: preserve the offer source through the form and follow-up mapping, if supported. A code or referral attribution can describe a reported path, but does not establish that the influencer caused an incremental purchase.
       </p>
-      <p>
-        <strong>Mechanical keyboard YouTube launch:</strong> Spin wheel 72-hour only; 31% never-open segment sunset in Sequenzy day 30; capture volume without engagement discipline wastes ESP bill downstream.
-      </p>
+      <p><strong>Proposed keyboard launch:</strong> End the campaign at its advertised time and check cached landing pages and embedded forms. Retain the source and offer version in the follow-up record so late arrivals receive an accurate explanation rather than an expired incentive.</p>
     </div>
 
     <div class="card mb-12">
@@ -194,7 +182,7 @@ const faqs = [
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Privy in a three-layer Shopify stack</h2>
       <p>Evaluate Privy against the capture and follow-up work the store actually needs; capture and lifecycle requirements may develop together.</p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Privy may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Privy fits where capture-first tooling for stores still building their list. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Map Privy capture, email and SMS as separate operational responsibilities even when one account provides them. If another ESP remains, document which system sends each offer and records each revocation. Keep Shopify order notifications separate from promotional eligibility; a capture tag should not redirect a transactional message.</p>
       
     </div>
   </section>
@@ -217,21 +205,19 @@ const faqs = [
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Capture layer economics and ESP handoff</h2>
       <p>
         Evaluate capture economics with a proposed vinyl-label comparison of a spin wheel, static footer and preference form. Use equivalent eligibility and observation windows, then compare qualified signups, purchases and contribution margin. Obtain the actual billing basis for each setup; do not assume pageview pricing or report a winning variant without evidence.</p>
-      <p>
-        ESP handoff SLA matters: specialty tea merchant lost nine percent welcome open rate when Justuno-to-Sequenzy sync lagged twelve minutes — same-session abandoners missed collision rules. Privy-to-ESP integration tested weekly with staff mobile PDP opt-in. Tag capture source at ingestion: Kickstarter waitlist contacts need different welcome path than checkout buyers; mixing sources trains discount expectations across entire list.
-      </p>
+      <p>For a proposed tea handoff, submit the same address through a waitlist and a discount form. Check whether the second submission updates preferences, restarts welcome or creates a duplicate. Preserve the original permission evidence and the new offer context; source tags must not overwrite revocations.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Three capture scenarios</h2>
       <p><strong>Board game pre-order waitlist.</strong> Proposed test: map waitlist source and permission to the intended follow-up system. Before a retail blast, reconcile current preorder and backer status; a historical capture tag alone cannot prevent a conflicting message.</p>
-      <p><strong>Camping gear exit intent.</strong> Cart saver overlay recovered 4% exits before ESP cart flow — incremental, not replacement. Privy plus Sequenzy stack documented channel priority.</p>
+      <p><strong>Camping gear exit intent.</strong> Test a form coupon against a cart-recovery discount for the same basket. Define whether offers can combine and who cancels the recovery message after purchase. This is a proposed collision test, not a recovered-sales result.</p>
       <p><strong>Artisan coffee footer only.</strong> Compare a native footer and Shopify Messaging (formerly Shopify Email) with the required capture and automation workflow. Decide from demonstrated requirements and operating cost rather than a fixed monthly-order cutoff.</p>
 
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Graduation trigger and buyer checklist</h2>
-      <p>Graduate lifecycle to Sequenzy or Omnisend when list passes three thousand without cart automation, or when Privy email automations cap against replenishment logic. Keep Privy capture if cost per subscriber justifies — lifecycle must live elsewhere within fourteen days of threshold. See <a class="link" href="/alternatives/privy-alternative">Privy alternatives</a> for ranked ESP exits.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Review trigger and buyer checklist</h2>
+      <p>Review a failed required journey before choosing an exit. The <a class="link" href="/alternatives/privy-alternative">alternatives page</a> offers a replacement comparison; this review focuses on retaining capture and fulfilling existing promises while deciding which sender should own follow-up.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pre-drop and waitlist capture patterns</h2>
       <p>For a proposed vinyl or board-game preorder campaign, test whether the required waitlist fields reach the intended sender. Check current purchase and preorder status immediately before sending, and designate one owner for each message. Report attributed recovery separately from incremental lift measured with a suitable control.</p>
-      <p>Outdoor gear SEO blog traffic: pageview pricing hurt; retained exit intent only on high-intent PDPs, cut Privy bill 38% while Sequenzy lifecycle carried revenue. Capture variant kill switch quarterly — spin wheel vanity opt-in loses to quiz cost-per-purchaser.</p>
+      <p>For an outdoor-gear content campaign, compare relevance and margin across blog and product-page forms. Restricting placement may improve visitor experience but does not establish lower charges. Confirm the billing basis before forecasting savings and preserve the offers already issued when disabling a display.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Capture without lifecycle is list rot</h2>
       <p>Review missing workflows when the operational need arises, without a list-size threshold or fixed migration deadline. A vinyl preference form can be compared with an incentive form using matched cohorts and contribution margin, including the cost of maintaining the follow-up workflow.</p>
@@ -250,10 +236,11 @@ const faqs = [
     </div>
   </section>
 
-    <h2>Privy buyer desk: capture-first, automate second</h2>
-    <p>Privy buyers win when popups feed an ESP strategy within hours — ninety-day failure mode is ten thousand emails captured and three automations live. Week one: audit popup-to-welcome latency; vinyl collectors unsubscribe when first mail is unrelated promo. Week two: rank forms by margin per signup; outdoor gear quiz leads need trail-specific welcome, not generic ten-percent. Week three: collision test between popup coupon and cart abandonment; board game launch captures must suppress preorder automations for same SKU. Week four through twelve: reduce popup sprawl as segments mature; pottery class waitlist popup should route to class nurture not storewide newsletter. Artisan coffee: capture grind preference in hidden fields mapped to Klaviyo or Sequenzy segments. Pair Privy with full ESP for everything after opt-in. Day ninety: median signup-to-first-mail under twenty-four hours, welcome holdout shows lift, popup count cut twenty percent without signup drop.</p>
+    <h2>Privy buyer desk: fulfill the captured promise</h2>
+    <p>Use a proposed launch rehearsal: a vinyl preference signup must reach the intended genre message; a board-game backer must avoid a duplicate preorder pitch; a pottery waitlist must receive class information. Record the account and operator that own each step. A coffee grind preference should remain a preference, separate from permission to receive messages. Set acceptance around accurate fulfillment, observable handoff and reversible changes rather than a prescribed signup count or migration date.</p>
 
     <p>Privy operators can track signup-to-purchase time alongside cohort size, conversion, returns and margin. A rising median may reflect a different traffic mix or observation window, so investigate before assigning the cause to form design, welcome copy or offer logic.</p>
 
+<section class="container py-12"><div class="prose-shopify"><h2>Privy and Sendlane: preserve account and offer continuity</h2><p>Checked November 25, 2026: <a href="https://apps.shopify.com/privy">Shopify marks the Privy listing unavailable</a>, while <a href="https://www.privy.com/sendlane-acquisition">Privy describes its acquisition of Sendlane and email, SMS and on-site tools</a>. These sources do not establish a company shutdown, an automatic account migration or identical feature access for every merchant.</p><p>Ask support to identify the current account, login, billing party and integration route for your Privy or Sendlane contract. Confirm whether a proposed change is an account move, connector replacement or commercial renewal. Keep an inventory of active displays, coupon codes, audiences, scheduled messages and available exports before changing access.</p><p>Rehearse continuity with a tea offer issued before the change and redeemed after it. Check code validity, expiry, exclusion rules and which sender delivers the promised message. A vinyl waitlist signup during the transition should retain its release preference and permission record. Reconcile available record counts and identifiers, preserve suppressions, and investigate missing records rather than assuming a unified platform has already merged them.</p><p>Do not uninstall the working connector merely to test a new onboarding route. Agree the supported rollback path, account administrator and response owner first. Keep the old form disabled only after its replacement fulfills the same outstanding promises; retain merchant-held evidence where account access is uncertain.</p></div></section>
   <FaqSection faqs={faqs} title="Privy Shopify FAQ" />
 </BaseLayout>
