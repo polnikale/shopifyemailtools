@@ -17,13 +17,13 @@ const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
   { question: 'Why do Shopify merchants leave Privy?', answer: 'Consider changing tools when a documented requirement fails in your current account: for example, a vinyl shop may need drop-day VIP eligibility, restock events, and purchase exits working together. Test those requirements before concluding that Privy cannot support them. Compare segmentation, reporting, integration maintenance, and operator time as well as campaigns; list size alone does not establish a need to migrate.' },
-  { question: 'Should I keep Privy for popups only?', answer: 'Common stack pattern: Privy or Justuno for capture, Sequenzy or Klaviyo for lifecycle. Leave Privy entirely when you want capture plus email in one platform — Omnisend bundles both at moderate depth for stores tired of integration handoffs.' },
-  { question: 'What is the best Privy replacement for small stores?', answer: 'Sequenzy when capture works but lifecycle does not; Omnisend when you want email, SMS, and forms closer together. Keep Justuno if capture sophistication was Privy\'s only gap — neither Justuno nor Privy replaces lifecycle alone.' },
+  { question: 'Should I keep Privy for popups only?', answer: "Keep the existing capture implementation if it meets your form, identity, permission and cost requirements. Add or change a sender only for a documented downstream gap, and test the handoff before switching. Keeping the whole current account is also a valid outcome." },
+  { question: 'What is the best Privy replacement for small stores?', answer: "Use a testable requirement rather than store size: compare the existing Privy journey with candidates for the same event, exclusions, fields, dispatch behavior and operating budget. The smallest maintained setup that passes is a positive option." },
   { question: 'How does Privy to Klaviyo migration work?', answer: 'Export eligible subscribers with purpose and channel permissions, source, timestamp, and suppression history. Inventory forms, integrations, workflows, and queued sends, then test the destination mapping and rebuild the required journeys. Assign one sender and queue owner per journey, reconcile purchase exits and current suppressions at dispatch, and deduplicate replayed events. Switch each form only after its handoff passes QA, with a rollback route rather than a fixed deadline.' },
   { question: 'Is Privy a full email platform?', answer: 'Evaluate the email and SMS functions available in the current Privy plan and Shopify integration against your requirements. A specialty-tea store might test replenishment eligibility and purchase exits; a board-game store might test preorder exclusions. These are proposed acceptance tests, not observed merchant failures. Do not infer that capture-oriented positioning means lifecycle functions or revenue reporting are absent.' },
   { question: 'How does Privy pricing scale?', answer: 'Verify current billing units and allowances in the account and official terms before estimating costs. Model the same contact population, capture traffic, email and SMS volume, and destinations for each stack. Include overages, extra apps, implementation and ongoing labor, parallel billing, discounts, and migration costs. A climbing-gear content site can use its actual traffic and signup history as inputs without assuming pageviews are a billable unit.' },
   { question: 'When should I stay on Privy?', answer: 'Stay when the current account passes your required workflows, permission controls, reporting, reliability, and total-cost checks. A small or large list can fit either arrangement. If Privy remains the capture layer, test the integration handoff, suppression updates, and recovery from failed or repeated events, and name the person who owns each workflow and sending queue.' },
-  { question: 'Justuno vs Privy when leaving?', answer: 'Justuno for advanced quizzes and onsite targeting — tea preference finder, keyboard switch quiz. Privy for simpler spin-wheels. Both pair with Sequenzy or Omnisend for lifecycle; neither replaces lifecycle alone.' },
+  { question: 'Justuno vs Privy when leaving?', answer: "Compare the actual forms and targeting you need, such as a tea preference finder or keyboard quiz. Verify field mapping, accessibility, identity merging and permission handoff. Evaluate downstream journeys separately in each offered account; a capture comparison does not establish a lifecycle winner." },
 ];
 ---
 
@@ -34,42 +34,43 @@ const faqs = [
     <div class="container">
       <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Privy alternatives</span></nav>
       <header class="max-w-4xl">
-        <p class="catalog-kicker">Capture graduation</p>
+        <p class="catalog-kicker">Capture and journey acceptance</p>
         <h1 class="hero-title mt-5">Best Privy alternatives for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
           A capture workflow and a retention workflow need separate acceptance criteria even when one platform owns both. For a specialty-tea shop, test signup provenance, blend preferences, replenishment eligibility, and purchase exits in the current account before evaluating a replacement. A large subscriber count alone does not demonstrate a product limitation.
         </p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked tools for stores graduating off Privy-as-ESP into real email operations — newsletters, lifecycle automation, and post-purchase education. Sequenzy leads when strategy is the gap; Omnisend when you want bundled multichannel. Read <a class="link" href="/alternatives/justuno-alternative">Justuno alternatives</a> if capture sophistication was also the ceiling.
+          Eight candidate identities for a documented workflow gap. Keep Privy when it passes, retain capture if only a downstream journey needs replacement, or replace both after testing. Read <a class="link" href="/alternatives/justuno-alternative">Justuno alternatives</a> for a separate capture comparison.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Privy replacements" picks={[
-          { label: 'Best lifecycle upgrade', tool: 'Sequenzy', reason: 'Keep capture or replace it — lifecycle strategy Privy cannot provide.' },
-          { label: 'Best bundled upgrade', tool: 'Omnisend', reason: 'Forms, email, SMS, and automations closer together.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'When Privy list finally needs enterprise segmentation.' },
-          { label: 'Best capture peer', tool: 'Justuno', reason: 'Advanced quizzes and targeting if Privy capture was the weak point.' },
-          { label: 'Best budget', tool: 'tinyEmail', reason: 'Stepping stone — still not full lifecycle.' },
+        <TldrBox title="Requirements to test" picks={[
+          { label: 'Email candidate', tool: 'Sequenzy', reason: 'Test the required downstream journey alongside the current implementation.' },
+          { label: 'Consolidation candidate', tool: 'Omnisend', reason: 'Compare form-to-message ownership in one offered account.' },
+          { label: 'Event mapping candidate', tool: 'Klaviyo', reason: 'Test variant and preorder state across delayed journeys.' },
+          { label: 'Capture candidate', tool: 'Justuno', reason: 'Compare preference fields and downstream identity mapping.' },
+          { label: 'Campaign candidate', tool: 'tinyEmail', reason: 'Test required triggers and editing effort without an order-count threshold.' },
         ]} />
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Privy</h2>
-        <p>Privy optimizes top-of-funnel. Lifecycle depth — browse abandonment, multi-branch post-purchase, winback by discount sensitivity — trails Omnisend, Sequenzy, Klaviyo by design. Mechanical-keyboard stores capture switch enthusiasts beautifully; six months later nobody runs winback before the next group buy because Privy automations capped at basic welcome and cart templates.</p>
+        <p>Start with a failure you can reproduce in the current account, not a presumed ceiling on Privy lifecycle. For a keyboard group buy, test a completed preorder during a delayed welcome offer and a later allocation cancellation. Document expected entry, exit, and retry behavior before comparing another platform.</p>
+        <p>Privy describes connected onsite conversion and lifecycle email/SMS in its <a class="link" href="https://www.privy.com/blog/privy-acquires-sendlane">February 2, 2026 Sendlane acquisition announcement</a>, following its Emotive acquisition. Checked November 25, 2026. This supports evaluating Privy as more than capture; it does not prove feature parity, completed migrations, or access in a particular legacy account. Confirm the offered plan and account route.</p>
         <p>Inventory the reports available in the current account rather than assuming analytics stop at clicks. Finance can compare workflow-level attributed orders, net revenue, refunds, and margins using a consistent attribution window. Attributed recovery is not proof of incremental sales: use an eligible randomized holdout where feasible and report sample uncertainty before treating revenue as a migration benefit.</p>
         <p>For a climbing-gear content blog, model actual capture traffic and downstream purchasing alongside the current billing terms. Do not assume all visitors or pageviews are billable. Compare matched all-in costs, including capture, messaging, SMS destinations, extra apps, rebuild labor, maintenance, and parallel subscriptions; separate acquisition efficiency from attributed sales.</p>
         <p>Choose between a single platform and a capture-to-lifecycle handoff using tested requirements. Replenishment, VIP eligibility, and collisions between popup offers and cart recovery need explicit ownership in either design. Record which system owns eligibility and queues, how suppressions propagate, and how a failed handoff is recovered without duplicate messages.</p>
 
         <h2>Unbundle, consolidate, or upgrade capture</h2>
-        <p><strong>Path A — Keep Privy capture, add lifecycle ESP.</strong> Lowest disruption. Point Privy integrations to Sequenzy or Klaviyo within forty-eight hours of lifecycle going live. Document suppression when popup discount conflicts with cart recovery timing.</p>
+        <p><strong>Path A — Keep Privy capture, add lifecycle ESP.</strong> Preserve working forms while testing the proposed sender. Switch only when identity, preference fields, permitted purpose and channel, suppression updates, and failed-event recovery pass. The handoff may add maintenance even when forms stay unchanged.</p>
         <p><strong>Path B — Replace Privy entirely.</strong> Test candidate forms and automations against the existing capture requirements, including source tags, permission evidence, accessibility, and failure recovery. Consolidation is useful only if the replacement meets those requirements and reduces matched total operating cost.</p>
-        <p><strong>Path C — Upgrade capture to Justuno, lifecycle to Sequenzy.</strong> When Privy targeting was also the ceiling — product quizzes for tea preference, keyboard switch finder feeding segmented welcome series.</p>
+        <p><strong>Path C — Upgrade capture to Justuno, lifecycle to Sequenzy.</strong> Use this path only for a demonstrated capture gap. Test tea preference and keyboard switch fields in the destination before choosing a separate sender; the named pairing is one candidate architecture.</p>
 
         <h2>Privy migration checklist for Shopify</h2>
-        <p>Graduation is lifecycle migration — capture may stay. Run this sequence before duplicate marketing sends damage deliverability.</p>
+        <p>Replace only the journeys that fail a documented requirement; capture may stay. Run this sequence before duplicate marketing sends damage deliverability.</p>
         <ol>
-          <li><strong>Export subscriber list with consent source</strong> — preserve purpose and channel permissions, timestamps, withdrawal history, and suppressions; purchases and popup source do not alone establish marketing eligibility.</li>
+          <li><strong>Confirm available subscriber exports with consent source</strong> — preserve purpose and channel permissions, timestamps, withdrawal history, and suppressions; purchases and popup source do not alone establish marketing eligibility.</li>
           <li><strong>Document active Privy automations</strong> — record triggers, branches, purchase exits, delays, sender identities, queued messages, and collision rules for the rebuild specification.</li>
           <li><strong>Calculate cost per acquired purchaser by capture source</strong> — spin-wheel discount hunters vs checkout consent buyers need different lifecycle paths.</li>
           <li><strong>Install lifecycle platform and sync Shopify</strong> — verify order history before contact import.</li>
@@ -84,74 +85,74 @@ const faqs = [
         </ol>
 
         <h2>Three merchant scenarios</h2>
-        <p><strong>Pottery studio — kept Privy capture.</strong> Added Sequenzy for batch-drop lifecycle and glaze care post-purchase; Privy still handles exit intent. Stack cost $50–130 monthly beats Privy-as-ESP pretending to automate replenishment for consumable tools.</p>
+        <p><strong>Pottery studio — proposed keep-capture test.</strong> Preserve class waitlist forms while testing glaze-care email after delivery. Require the class/store distinction, product preference, and identity to survive the handoff. A cancelled class must exit the class queue without removing a separately permitted store newsletter. Compare this two-layer design with the current Privy journey; no saving or performed migration is reported.</p>
         <p><strong>Board games — proposed replacement test.</strong> Compare candidate forms and cart recovery against the current setup using the same traffic and permission-eligible audience. Verify preorder and Kickstarter exclusions, repeated-event handling, and completed-purchase exits. This is a planning scenario, not a reported migration or measured cost saving.</p>
         <p><strong>Artisan coffee — proposed stay-or-migrate test.</strong> Keep the current setup if newsletters and required subscription journeys pass QA within the budget. Test tasting-tour signup provenance and replenishment timing from actual buying patterns, with current purchase and suppression checks. Neither list size nor a calendar quarter determines when to move.</p>
       </article>
 
       <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
+        <p class="catalog-kicker">Candidate roles, not a performance ranking</p>
         <h2 class="font-serif text-4xl font-black text-slate-950">Eight Privy alternatives for Shopify stores</h2>
 
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy is the Privy graduation most stores need — not a popup replacement, a lifecycle layer. Agent-first welcome, cart, replenishment, winback with pay-per-email. Keep Privy for capture short term or migrate forms once sequences run.',
-          'Spin-wheel subscribers and checkout buyers deserve different paths — Sequenzy strategy defaults handle suppression Privy automations never expressed. Vinyl VIP and giveaway imports stop receiving identical winback discounts.',
-          'Architecture: Privy plus Sequenzy is common and correct — evaluate cost per acquired purchaser monthly, not Privy pageviews alone.',
+        <ToolReview app={alternatives[0]} rank={1} paragraphs={[
+          "Evaluate Sequenzy for the documented email journey while keeping working capture if useful. Test a vinyl waitlist handoff with a known customer and a new address.",
+          "Require one customer identity, preserved source and permission fields, and cancellation after purchase during delay. A strategy claim is not a substitute for this test.",
+          "Compare the current Privy account, this two-layer design, and a consolidated alternative using the same operator tasks and cost worksheet.",
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Omnisend consolidates capture, email, SMS, and prebuilt journeys — Privy replacement plus lifecycle in one install when integration fatigue was part of the exit trigger.',
-          'Forms and automations share suppression — popup offer and cart recovery collision rules in one builder. Multichannel optional for drop-week SMS on vinyl and outdoor-gear flash sales.',
-          'Choose Omnisend when bundled upgrade beats Privy plus separate ESP integration handoffs.',
+          "Evaluate Omnisend as a consolidation candidate by rebuilding one actual form and its downstream journey in the offered account.",
+          "Test popup-offer and cart-offer collision rules, including a suppression that arrives after queue entry. Shared UI alone does not prove shared dispatch controls.",
+          "Replace capture only if required fields, accessibility, event recovery, and ongoing maintenance meet the baseline.",
         ]} />
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
           'Klaviyo when Privy list grew into data-heavy segmentation needs — vinyl collector tiers, variant back-in-stock, collection browse abandonment across climbing-gear catalogs.',
           'Verify current Klaviyo billing treatment before importing contacts. Preserve suppressed records without reactivating them; assess giveaway contacts using permission evidence and engagement rather than deleting them by source alone. Name an owner for segment logic and synchronization failures.',
-          'Pick Klaviyo when data depth drives margin, not when you only needed basic welcome Privy almost ran.',
+          'For variant back-in-stock, change the requested size before dispatch and verify the intended variant and current purchase exclusion. Choose it only if the tested mapping solves the documented gap.',
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Justuno peer upgrade for capture — product quizzes for tea preference, keyboard switch finder, harness fit education. Pair with Sequenzy or Klaviyo lifecycle; Justuno does not replace ESP.',
-          'Advanced targeting and A/B testing exceed Privy spin-wheels when capture sophistication was half the problem. Evaluate total stack: Justuno plus Sequenzy versus Omnisend unified.',
-          'Choose a capture replacement only after testing the required personalization, source mapping, and downstream workflow handoff against the current account.',
+          "Evaluate Justuno for a specific capture requirement such as tea preference or keyboard switch selection; compare the existing Privy form directly.",
+          "Submit a returning customer with a changed preference and require the downstream sender to update the same identity without reviving a suppressed channel.",
+          "Choose a capture replacement only after personalization, source mapping, and the actual downstream handoff pass.",
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Mailchimp — lateral move, rarely correct upgrade from Privy for Shopify lifecycle. Customer Journeys trail Omnisend and Sequenzy for ecommerce events.',
-          'Model Mailchimp using the current billing terms and the same eligible contact population and send volume. A wholesale newsletter split is one proposed use case, not the only viable use; test DTC workflows and integration constraints directly.',
-          'Include team familiarity, required workflow QA, migration risk, and maintenance effort in the comparison; familiarity alone does not determine fit.',
+          "Evaluate Mailchimp for required newsletters and journeys in its current Shopify integration, including a wholesale audience that must remain separate from retail offers.",
+          "Model current billing terms using the same eligible contacts and sends; verify purchase exits and source mapping in the offered plan.",
+          "Include team familiarity, migration effort and workflow QA rather than declaring a lateral move from product names.",
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
           'Evaluate tinyEmail campaign creation and required lifecycle workflows in the current Shopify integration. Test triggers, branches, purchase exits, and suppression handling rather than assuming AI-assisted drafting establishes or excludes automation depth.',
-          'Brief bridge for stores under one hundred monthly orders. Avoid Privy → tinyEmail → Sequenzy chain; move to Sequenzy when lifecycle is the job.',
+          'Test a campaign edit, a delayed cart exit, and a replayed order in the actual account. Order count alone does not establish when another migration is needed.',
           'Compare drafting time, cart recovery requirements, operator effort, and matched costs without assuming a fixed time until another migration.',
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Brevo budget path — newsletters plus basic automation; lighter than Sequenzy on strategy. Pay-per-email without Privy contact tiers on bloated popup lists.',
-          'Browse abandonment and Shopify playbooks thinner than Omnisend. Wins when Privy bill was primary pain and sends target engaged subsets.',
-          'Plan Sequenzy upgrade when replenishment timing becomes bottleneck after cost fix.',
+          "Evaluate Brevo for the required sending workload and Shopify events using current account terms.",
+          "Test tea replenishment after a larger-pack purchase: the new purchase must reset timing and cancel an obsolete queued offer.",
+          "Compare billable units, integration maintenance and journey editing effort before claiming a budget advantage.",
         ]} />
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
           'Evaluate the native Shopify messaging option against required forms, segments, automations, and reporting. Do not assume native tooling is limited to manual broadcasts; verify current naming and plan-specific behavior before comparing.',
-          'Native Admin lacks automation Privy at least attempted. Useful ninety-day pause while planning Sequenzy or Omnisend.',
+          'For a native workflow, test the actual segment, delay and purchase exit available in the current account. Keeping native tooling is a valid outcome if it meets the requirement and budget.',
           'Test native workflows against the same retention requirements and operational costs as third-party candidates before deciding whether a replacement is needed.',
         ]} />
       </section>
 
       <div class="container mb-12 max-w-4xl card overflow-x-auto">
         <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Stack cost comparison</h2>
-        <p class="px-5 pb-4 text-slate-600">Privy plus nothing equals list growth without monetization.</p>
+        <p class="px-5 pb-4 text-slate-600">Compare dated quotes at the same contacts, capture traffic, sends, destinations and operating workload. Do not assume pageviews are billable.</p>
         <table class="data-table">
-          <thead><tr><th>Stack</th><th>Capture</th><th>Lifecycle</th><th>Typical SMB cost</th></tr></thead>
+          <thead><tr><th>Design</th><th>Capture</th><th>Journey owner</th><th>Inputs to quote</th></tr></thead>
           <tbody>
-            <tr><td>Privy only (leaving)</td><td>Privy</td><td>Basic</td><td>$30–80/mo</td></tr>
-            <tr><td>Privy + Sequenzy</td><td>Privy</td><td>Advanced</td><td>$50–130/mo</td></tr>
-            <tr><td>Omnisend unified</td><td>Omnisend</td><td>Solid</td><td>$60–120/mo</td></tr>
-            <tr><td>Justuno + Sequenzy</td><td>Justuno</td><td>Advanced</td><td>$60–140/mo</td></tr>
+            <tr><td>Keep current account</td><td>Privy</td><td>Privy if tests pass</td><td>Current plan, usage, maintenance</td></tr>
+            <tr><td>Retain capture</td><td>Privy</td><td>Tested separate sender</td><td>Both subscriptions, handoff labor, overlap</td></tr>
+            <tr><td>Consolidate</td><td>Candidate forms</td><td>Candidate account</td><td>Usage, rebuild, field parity, maintenance</td></tr>
+            <tr><td>Replace capture too</td><td>Tested capture candidate</td><td>Tested sender</td><td>Both contracts, identity sync, recovery labor</td></tr>
           </tbody>
         </table>
       </div>
@@ -164,33 +165,20 @@ const faqs = [
   </section>
 
   <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Buyer desk: Privy graduation economics</h2>
-    <p>Define a migration trigger as a demonstrated unmet requirement or an unfavorable matched operating cost. For outdoor-gear traffic, inspect actual capture costs and purchasing cohorts; for specialty tea, test replenishment logic in the current account. Neither example establishes a categorical limit on Privy automation.</p>
-    <p>Keep capture where it meets requirements and justified total cost, without a subscriber-count or fourteen-day migration rule. Tag capture source at ingestion and carry purpose-specific and channel-specific permission evidence. Kickstarter or giveaway participation and checkout purchases do not by themselves establish marketing eligibility.</p>
-    <p>Use the ninety-day review as an optional planning checkpoint. Assess correct welcome and cart entry, current suppression and purchase exits, reliable handoffs, and duplicate prevention. Finance should see consistently defined attributed revenue and margins alongside any valid holdout estimate; moving tools does not guarantee higher revenue.</p>
-
-    <h2>Replacement ranking by Privy failure mode</h2>
-    <p><strong>Lifecycle gap:</strong> Sequenzy for strategy speed and pay-per-email when list outgrows Privy automations. <strong>Multichannel speed:</strong> Omnisend when cart plus SMS needed within one week. <strong>Advanced capture:</strong> Justuno when quiz and traffic-source rules exceed Privy targeting. <strong>Data depth:</strong> Klaviyo when variant segmentation daily after capture hands off clean tags.</p>
-    <p><strong>Scenario — outdoor gear SEO traffic.</strong> Privy pageview bill hurt at low take rate; kept exit intent only, moved lifecycle to Sequenzy — bill dropped 38% while flow revenue rose.</p>
-    <p><strong>Scenario — vinyl waitlist, proposed evaluation.</strong> Test drop-countdown capture and downstream VIP eligibility with a single-platform design and a two-layer design. Compare permission handoffs, purchase exits, support burden, and total costs. No observed merchant result is claimed.</p>
-    <h2>90-day graduation proof plan</h2>
-    <p>Sequence the proposed proof plan by readiness: validate form mappings and permission evidence; test welcome and cart with purchase exits; then test post-purchase education and replenishment or winback. Assign one owner for each sender and queue, drain or cancel the old queue, and deduplicate event replays. Choose the observation period from purchase cycles and sample size, and compare matched costs and margins before changing capture variants.</p>
-    <h2>Capture source tagging</h2>
-    <p>Capture-source tags can support distinct welcome paths for Kickstarter, giveaway, and checkout audiences, but tags are not permission. Preserve the permitted purpose and channel, check current suppressions and purchase state before dispatch, and define priority between eligible journeys so a retail promotion does not collide with a backer update.</p>
-
-    <h2>Pageview pricing trap</h2>
-    <p>SEO outdoor gear traffic low take rate — evaluate cost per acquired purchaser not impressions. Keep Privy exit intent only, cut bill 38%, Sequenzy lifecycle carries revenue. Graduation is lifecycle failure not popup failure.</p>
-
-    <h2>90-day Privy-plus-ESP proof plan</h2>
-    <p>This second planning view starts with source tags and permission mapping, then validates welcome and cart before education and replenishment. Advance only after integration and queue checks pass. At the chosen review point, report actual cost per acquired purchaser, attributed revenue per cohort, and uncertainty; improvement is an evaluation question rather than an asserted result.</p>
-    <p>For a vinyl waitlist, compare a two-layer stack with the existing implementation using test contacts and orders. Verify that Kickstarter source tags, permitted purposes, current purchase state, and suppression rules reach the sending system. A source tag alone cannot prove that a collision was prevented.</p>
-
-    <h2>Privy exit desk: ninety-day proof for list-first merchants</h2>
-    <p>Week one after leaving Privy: export every popup variant with conversion rate and list source tag — vinyl shops often discover forty percent of emails came from one exit intent with no post-submit journey. Week two: rebuild welcome in the replacement ESP with holdout on the old Privy-only cohort still receiving nothing. Week three: cart abandonment must beat popup capture rate on margin; a mechanical keyboard store that captured three thousand emails but never mailed them loses more than a store with eight hundred engaged subscribers. Week four through twelve: finance tracks list growth cost per acquired email against first-purchase rate within thirty days. Climbing gear merchants need separate capture for fit guides versus checkout; pottery studios for class waitlists versus glaze restocks. Collision priority stays cart over welcome over winback over broadcast. Sequenzy ranks strategy-first when Privy list size outgrew automation; Klaviyo when SKU-level segmentation matters; Omnisend when speed beats depth. Success at day ninety: no orphan popup leads, deliverability stable, attributable revenue within ten percent of pre-migration baseline or documented holdout incrementality.</p>
+    <h2>Keep-capture acceptance ledger</h2>
+    <p>Record the current form ID, customer identity key, source, preference fields, permitted purpose and channel, permission timestamp, suppression state, destination field, and retry behavior. Treat missing identity or permission evidence as a failed handoff rather than importing it as an eligible subscriber. Compare the same fixture in the existing Privy account before changing senders.</p>
+    <p>For a vinyl waitlist, submit an existing customer twice, change the preference, then purchase during the welcome delay. Require one identity, the latest intended preference, no duplicate welcome, and cancellation of the obsolete offer. For a tea QR signup, retain the specific permitted purpose instead of treating every signup as permission for every channel.</p>
+    <h2>Queued-journey replacement</h2>
+    <p>Inventory active journeys and pending recipients before pausing anything. Assign one sender and queue owner to each journey. Drain or cancel old queued messages deliberately; reconstruct only eligible pending work in the replacement. Test purchase and withdrawal during delay, failure recovery, and repeated events. Keep capture active only if its handoff still passes, and retain a rollback route without reactivating an obsolete queue.</p>
+    <h2>Outdoor-gear cost worksheet, proposed comparison</h2>
+    <p>Compare the current account with retained capture plus a sender and with a consolidated replacement using the same actual traffic, eligible contacts and send workload. Record quote date, billing units, allowances, overages, SMS destinations, extra apps, setup hours, maintenance hours and parallel subscriptions. No 38-percent reduction or revenue increase is claimed.</p>
+    <p>Recurring operating cost equals platform fees plus usage and overages plus maintenance hours times the declared labor rate. Show one-time rebuild and overlap separately. Cost per acquired purchaser divides a consistently scoped acquisition/capture numerator by new purchasers in the same cohort and window; if the denominator is zero, report it as undefined. Attributed revenue is separate from a valid incremental contribution estimate after discounts, refunds, messages and labor.</p>
+    <h2>Decision checkpoint</h2>
+    <p>Stay when the current implementation passes. Retain capture and replace a journey when the handoff and ongoing ownership pass. Replace both when the new forms and sender pass and the complete operating case justifies rebuilding. Choose the observation window from buying cycles and sample uncertainty; no order threshold, forty-eight-hour promise, or day-ninety revenue target establishes success.</p>
   </article>
 
   <div class="prose-shopify container max-w-4xl pb-8">
-    <h2>Privy exit workflow: five merchant spot checks</h2>
+    <h2>Privy workflow: merchant spot checks</h2>
     <p>Before retiring a popup, run proposed checks using representative test orders and permission-eligible records. Vinyl: does welcome timing match the intended journey without duplicating cart recovery? Mechanical keyboards: do quiz preferences reach the destination? Specialty tea: do QR signups retain the permitted purpose and channel? Climbing gear: do fit-guide and harness offers respect discount collision rules? Pottery: are class waitlists separated from storewide promotions where permissions differ? Board games: do preorder tags and current order state exclude inappropriate offers? Artisan coffee: does the integration preserve permission evidence rather than treating a portal login as consent? Camping: does winback use actual buying patterns? Outdoor gear: does warranty registration remain separate from marketing permission? Record pass-fail, queue ownership, purchase exits, suppression propagation, and deduplication of replayed events. Resolve failures before the affected journey changes sender.</p>
     <h2>Cost per acquired purchaser, modeled honestly</h2>
     <p>Define the numerator and denominator before comparing stacks. Divide matched acquisition and capture costs by new purchasers in a specified cohort and observation window; separately disclose messaging, apps, discounts, migration labor, maintenance, and overlapping subscriptions. Email attribution assigns credit under a rule and cannot establish that an email caused a purchase. Use an eligible randomized holdout where feasible to estimate incremental contribution margin, with uncertainty and comparable traffic and audience inputs.</p>
@@ -201,10 +189,10 @@ const faqs = [
       <li><strong>Lifecycle rebuild hours</strong> — shifting welcome, cart, and winback off Privy automations onto operator time in the new tool.</li>
       <li><strong>Parallel-running cost</strong> if capture stays on Privy while lifecycle migrates: two vendors, one suppression wiki.</li>
     </ul>
-    <p>Name an owner for suppression propagation, sender configuration, queues, and failed-event replay in each system. A periodic review complements current suppression and purchase checks at dispatch. Export available source, timestamp, policy version, permitted purpose and channel, and withdrawal records before disconnecting forms; reconcile missing or ambiguous evidence rather than inferring permission from a signup or purchase. Applicable legal requirements still need account-specific review.</p>
+    <p>Name an owner for suppression propagation, sender configuration, queues, and failed-event replay in each system. A periodic review complements current suppression and purchase checks at dispatch. Confirm availability and preserve source, timestamp, policy version, permitted purpose and channel, and withdrawal records before disconnecting forms; reconcile missing or ambiguous evidence rather than inferring permission from a signup or purchase. Applicable legal requirements still need account-specific review.</p>
 
-    <h2>Retention economics after capture graduates</h2>
-    <p>Once lifecycle runs elsewhere, watch two numbers monthly: flow revenue per thousand delivered emails and the share of repeat orders from subscribers captured in the last ninety days. If capture quality degrades after leaving Privy's funnel — hotter spin-wheel offers driving lower second-purchase rates — the popup offer deserves review before another vendor change. Migration rewards stores that keep one metric sheet covering both sides of the handoff.</p>
+    <h2>Retention economics after a workflow change</h2>
+    <p>Whether lifecycle stays or moves, review cohort metrics on an appropriate cadence: flow revenue per thousand delivered emails and the share of repeat orders from subscribers captured in the last ninety days. If capture quality degrades after leaving Privy's funnel — hotter spin-wheel offers driving lower second-purchase rates — the popup offer deserves review before another vendor change. Keep one metric sheet covering capture and downstream journeys so changes remain comparable.</p>
   </div>
 
   <FaqSection faqs={faqs} title="Privy alternatives FAQ" />
