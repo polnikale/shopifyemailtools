@@ -13,16 +13,16 @@ const desc = description(site, 'apps/sendlane');
 
 const faqs = [
   {
-    question: 'Does Sendlane make sense for a Shopify store doing 500 orders per month?',
-    answer: 'Borderline. Sendlane entry pricing around $83/mo assumes lifecycle revenue is already material — typically 600–800+ orders/mo with email driving 12%+ of revenue. At 500 orders/mo, Omnisend or Sequenzy usually deliver better ROI unless you are mid-migration from a broken Klaviyo setup and need onboarding calls to avoid revenue gaps during the switch.',
+    question: 'Can a small Shopify store justify Sendlane?',
+    answer: 'Compare the actual send workload and support scope with your budget. Sendlane advertises send-based pricing with unlimited contacts; order count is not its pricing unit. A small program may value assisted onboarding, but request the deliverables and recurring commitment before deciding. No universal order threshold establishes value.',
   },
   {
     question: 'How does Sendlane migration from Klaviyo actually work on Shopify?',
     answer: 'Request a current migration scope covering event mapping, flow rebuilds, suppression history, asset rights and access. Validate with test recipients and a staged cutover: one sender per journey, old queued jobs cancelled, replayed events deduplicated. Set acceptance criteria from eligibility and reconciliation, not a fixed deadline or revenue tolerance.',
   },
   {
-    question: 'Sendlane vs Sequenzy for a DTC brand without a retention lead?',
-    answer: 'Sequenzy wins when you want agent-first playbooks, pay-per-email economics, and MCP/API for AI-assisted flow edits without sales calls. Sendlane wins when migration terror is the blocker — human onboarding rebuilds flows while your team focuses on fulfillment. Sendlane gets you live; neither platform replaces an internal owner after month three.',
+    question: 'Who owns the program after Sendlane onboarding?',
+    answer: 'The merchant should retain account administration, billing access, DNS control, creative rights and a named retention owner. Ask the onboarding team to demonstrate a flow change and rollback with your operator present. Support can help with implementation; it does not choose your offers or approve your audience.',
   },
   {
     question: 'What Shopify events does Sendlane sync for lifecycle automation?',
@@ -57,13 +57,13 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Guided ecommerce · Rank #13</p>
+      <p class="catalog-kicker mt-6">Guided ecommerce</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
         Evaluate Sendlane against the Shopify journeys and migration work your team actually needs. Request a current demonstration and a written onboarding scope, including approvals, flow rebuilds, eligibility and support. Do not assume a package includes human migration work, a particular entry price or protection against revenue loss.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        Illustrative evaluation cases, not observed tests: a specialty tea brand planning a Klaviyo exit, a vinyl shop evaluating cart SMS and a climbing retailer comparing onboarding costs. Use each to define a test workload rather than a success story. Catalog rating: {app.rating}. Shopify depth: {app.shopifyDepth}. Automation: {app.automationDepth}. These shared labels need separate validation.
+        Illustrative evaluation cases, not observed tests: a specialty tea brand planning a Klaviyo exit, a vinyl shop evaluating cart SMS and a climbing retailer comparing onboarding costs. Use each to define a test workload rather than a success story.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps/omnisend">Omnisend review</a>
@@ -86,13 +86,11 @@ const faqs = [
     />
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">The middle seat between Omnisend speed and Klaviyo depth</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Retention migration with a merchant-owned handoff</h2>
       <p>
         For a tea brand, compare replenishment event mapping and maintainable cohort rules. For vinyl, demonstrate variant-level eligibility and purchase exits; for climbing gear, test the exact fit attributes needed. Confirm each proposed provider route and plan rather than inferring capability, launch speed or suitability from order volume.
       </p>
-      <p>
-        The specialty tea brand we migrated saved roughly $180/mo on platform fees at 22k profiles versus their bloated Klaviyo plan — not life-changing money. Combined with onboarding rebuild of broken cart suppression and replenishment windows preserved across three tea types with different reorder cadences, payback hit within two months. Sendlane does not try to be agent-first like Sequenzy or predictive-first like Klaviyo. It tries to be the platform you choose when you are done paying for profiles you never segment and done tolerating Mailchimp automations that treat every Shopify store like a newsletter list.
-      </p>
+      <p>A tea migration can preserve useful replenishment logic without preserving obsolete audience assumptions. Record each SKU family, qualifying order, subscription pause and subsequent purchase exit. Have the merchant reproduce one rule change after handoff. That demonstrates maintainability; it does not establish fee savings or payback.</p>
       <p>
         Request an itemized quote and a sample onboarding deliverable before committing time or money. Compare the same software, messaging, implementation and review workload across proposals. Written availability, access and commercial terms matter more than an assumed premium for hand-holding.
       </p>
@@ -117,9 +115,7 @@ const faqs = [
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>
-        Shared catalog pricing: {app.priceDetail}; plan label: {app.pricing}. These are unverified catalog inputs, not a current quote. Request software, sends, SMS destinations, onboarding, overages, integration and exit charges in writing and include internal approval and reply labor.
-      </p>
+      <p>The <a class="link" href="https://www.sendlane.com/pricing">Sendlane pricing page</a> describes send-based pricing, unlimited contacts, forms, automation and Shopify integration. Its support tiers distinguish assisted onboarding from custom migration services, and dedicated services are tied to annual contracts. Obtain the applicable scope and peak-send overage terms in writing. SMS, implementation and internal review belong in the budget too. Reviewed November 25, 2026; no current dollar quote is asserted here.</p>
       <p>
         <strong>Scenario A — 720 orders/mo, 18k profiles, 42k emails/mo, 2,800 SMS/mo.</strong> Illustrative quote workload, not an observed sales call. Obtain comparable destination and message assumptions, software, onboarding and ongoing labor from each provider. Include reply staffing and implementation; no all-in vendor total or reporting advantage is established.
       </p>
@@ -187,10 +183,10 @@ const faqs = [
       <div class="ledger-card">
         <p class="catalog-kicker">Who should skip</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Under 400 orders/mo — Omnisend or Sequenzy first</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Quoted commitment exceeds the program budget or required work</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Greenfield scope does not justify the proposed onboarding work</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required predictive inputs or controls cannot be demonstrated</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want agent-first MCP workflows — Sequenzy</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required API or operator workflow cannot be demonstrated</li>
         </ul>
       </div>
     </div>
@@ -203,13 +199,11 @@ const faqs = [
       <p>
         Document suppression history, purpose/channel permission evidence and withdrawal state before migration. Verify what can be exported and retained, then test current recipient eligibility at dispatch. Assign sender and queue ownership across welcome, cart and winback, cancel stale jobs and deduplicate replayed events; a periodic audit alone does not prevent collisions.
       </p>
-      <p>
-        Compare Sendlane quote against Sequenzy plus part-time consultant before signing annual contract. Climbing gear shop at 480 orders/mo chose Omnisend honestly. Tea brand at 720 orders/mo chose Sendlane for migration anxiety relief. Same order band, different risk tolerance — price rejection is valid outcome when onboarding value does not clear premium.
-      </p>
+      <p>Compare a supported migration with a self-managed rebuild using the same acceptance cases. Include who reconnects capture forms, restores preferences, reviews creative and handles support after launch. A lower subscription can still require more internal work; neither a merchant category nor anxiety alone proves a support premium worthwhile.</p>
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Sendlane</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Proposed Sendlane stack acceptance cases</h2>
       <p>
         <strong>Specialty tea Klaviyo exit:</strong> Proposed stack test: validate subscription and purchase events, SKU-family reorder inputs and capture-source permission before welcome or replenishment. Verify any capture integration, current suppressions and shared queue ownership; no five-week delivery or revenue tolerance is established.
       </p>
@@ -229,16 +223,14 @@ const faqs = [
       <p>
         Evaluate welcome by signup source, post-purchase education, SKU-family replenishment and winback against actual inputs and consumption evidence. Confirm what onboarding rebuilds. Identify the sender of confirmations and shipping updates separately from promotional journeys, with current suppression propagation and cancellation rules; a tag alone does not establish coordination.
       </p>
-      <p>
-        For vinyl and limited-SKU catalogs, Sendlane back-in-stock and campaign coordination is solid though not Klaviyo-grade on variant waitlist priority. Tea and replenishment brands benefit most from Sendlane's guided rebuild of reorder logic. Climbing gear with complex metafield attributes may still need Klaviyo or Sequenzy if harness fit segmentation is central to retention — Sendlane covers standard ecommerce events without being a data warehouse.
-      </p>
+      <p>For limited pressings, test variant availability immediately before dispatch and remove sold-out offers from queued campaigns. For tea, check replenishment after a repeat purchase or subscription pause. For climbing gear, demonstrate the exact fit fields before promising tailored recommendations. These cases identify data requirements without asserting a segmentation winner.</p>
     </div>
 
     <div class="ledger-card mb-12">
       <p class="catalog-kicker">Migration checklist</p>
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Sendlane switch operating contract</h2>
       <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Export segment definitions and document boolean logic before cutover — onboarding rebuilds flows, not tribal knowledge in one person's head</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Export segment definitions and document boolean logic before cutover — agree which flows onboarding rebuilds and retain their definitions with merchant access</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Validate with test recipients, then cut over one sender per journey; cancel old queued jobs and reconcile eligibility and orders</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Validate permission by purpose and channel, withdrawals and current suppressions; confirm applicable obligations separately</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Assign an internal retention owner before kickoff; set change reviews from workload and journey risk</li>
@@ -251,7 +243,7 @@ const faqs = [
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Sendlane vs other Shopify email tools</h2>
       <ul class="mt-6 space-y-3 text-lg font-bold">
         <li><a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> — data depth vs SMB speed</li>
-        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a> — agent-first playbooks vs human migration</li>
+        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a> — compare operator workflows and implementation scope</li>
         <li><a class="link" href="/use-cases/abandoned-cart">Abandoned cart guide</a> — cart recovery execution detail</li>
         <li><a class="link" href="/use-cases/replenishment">Replenishment guide</a> — reorder window logic</li>
       </ul>
@@ -266,7 +258,7 @@ const faqs = [
       <p>
         Sendlane is a candidate when the verified platform and onboarding scope address an identified retention workload. Order volume alone does not establish value; compare matched all-in costs and operational requirements.
       </p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Sendlane may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Sendlane fits where ecommerce-first automation with migration support. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Capture continuity deserves its own acceptance case. Inventory every popup, footer form, checkout checkbox and external landing page, including its source identifier, offer and destination list. Test a new subscriber, a returning subscriber and a withdrawn subscriber through each active route. A successful import does not prove that tomorrow’s signups reach the right welcome path. Keep service notices assigned to their actual sender while changing promotional flows.</p>
       
     </div>
   </section>
@@ -276,10 +268,10 @@ const faqs = [
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score Sendlane on your Shopify store</h2>
       <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
         
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can your team maintain flows monthly without agency dependency?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can a new signup be traced from each live form to the correct welcome offer, including a resubscription?</li>
         
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Will finance trust revenue attribution without custom BI?</li>
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Does SMS/email/push suppression integrate or require manual tags?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can the merchant change, pause and restore a replenishment branch without the migration partner?</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Who can stop each sender if a withdrawn subscriber reappears through an old capture integration?</li>
       </ul>
     </div>
   </section>
@@ -289,7 +281,7 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Sendlane migration and co-existence</h2>
-      <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A specialty tea roaster left Sendlane for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a climbing gear outfitter stayed on Sendlane because predictive segments daily justified profile pricing.</p>
+      <p>Treat account continuity as a release dependency. Confirm merchant-controlled admin and billing access, sender-domain records, integration credentials and a contact for urgent support. Export the agreed flow definitions and audience rules before removing old access. Run a merchant-led edit, pause and rollback exercise; this is a proposed drill, not an observed reduction in operating time.</p>
       <p>
         Use a staged migration with test recipients and one live sender per journey. Cancel old queued jobs, deduplicate replayed events and reconcile audience eligibility and orders before expanding. Set timing from data readiness, staffing and rollback capacity rather than a two-week minimum, fixed holdout or attribution tolerance.
       </p>
