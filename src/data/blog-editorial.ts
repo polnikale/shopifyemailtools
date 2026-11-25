@@ -1,7 +1,7 @@
 /** Editorial acceptance fixtures, not performed merchant tests. */
 export type WelcomeAudience = 'small Shopify stores' | 'DTC brands' | 'fashion stores' | 'beauty stores' | 'food and beverage stores' | 'subscription brands' | 'Shopify Plus merchants' | 'international merchants' | 'new Shopify stores' | 'high-volume stores';
 /** Explicit editorial contracts; remaining goals retain their existing renderer. */
-export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps' | 'win-back email apps' | 'product launch email apps';
+export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps' | 'win-back email apps' | 'product launch email apps' | 'back-in-stock email apps';
 export type GoalEditorial = {
   audience: WelcomeAudience; goal: EditorialGoal; question: string; entry: string;
   fields: string; guard: string; purchaseExit: string; retry: string;
@@ -1022,5 +1022,108 @@ export const launchEditorial: Record<string, LaunchEditorial> = {
     "nativeRationale": "Shopify Messaging is a useful candidate when a finite approved announcement and selected audience fit the operator\u2019s demonstrated batch controls. Demonstrate the release-specific dispatch checks in the offered account.",
     "profileRationale": "Klaviyo is a useful candidate when maintained release and purchase properties support message conditions alongside an independently demonstrated reconciliation ledger. Demonstrate field mappings and refresh behavior in the offered account.",
     "acceptance": "Trace an accepted batch with a lost response and a cutoff-limited backlog; save per-identity dispositions, watermark evidence and purchase exits before approving restart. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  }
+};
+
+export const backInStockEditorial: Record<string, GoalEditorial> = {
+  "best-shopify-back-in-stock-email-apps-for-small-shopify-stores": {
+    "audience": "small Shopify stores",
+    "goal": "back-in-stock email apps",
+    "question": "Can one owner clear a small restock queue without turning a stock request into newsletter permission?",
+    "entry": "Confirmed email request for one sold-out variant, recorded separately from newsletter membership",
+    "fields": "store, subscription ID, stable customer identity, variant ID, requested purpose, permission timestamp, observation source/time, batch ID, copy version, expiry and queue disposition",
+    "guard": "Owner verifies the requested variant is published and purchasable in the destination, with a fresh available-to-sell observation; release only the approved stock notice to still-permitted requesters. Unknown state pauses the batch",
+    "purchaseExit": "A paid purchase containing the requested variant closes that request; an unrelated order does not. Withdrawal or expiry closes it without transferring the address to promotions",
+    "retry": "Reuse the subscription/variant/restock-episode key. Reconcile an uncertain provider acknowledgement before replay; pause the sole sender while the owner is absent and do not revive closed requests on the next stock update",
+    "nativeRationale": "Shopify Messaging offers branded admin templates and segment selection. For a small owner-reviewed restock batch, that familiar drafting surface can keep approved copy and dispatch review together. Select it only with a demonstrated external or account-native variant-request register and fresh availability check; a customer segment alone is insufficient.",
+    "profileRationale": "Klaviyo profile and action filtering can help an owner inspect requester eligibility in an existing account. This is useful when maintained variant-request fields already exist, but one profile field must not overwrite simultaneous requests. Require the subscription-level queue demonstration before choosing this design.",
+    "acceptance": "Propose one small batch with saved input snapshots, approved copy and a named cover owner. Accept only if duplicate events create one job, unrelated purchases retain the valid request and all held jobs have an owner. Compare ongoing register maintenance with the cost of adding a sender.",
+    "failure": "A newsletter segment sends a general promotion to people who asked only for one stock notice",
+    "edges": [
+      "Proposed fixture: the provider accepted the notice but the response was lost. Reconcile the original job receipt; expect no second notice, with an acknowledged disposition saved.",
+      "Proposed fixture: the requester buys another variant while the owner is absent. Preserve the requested variant subscription but hold its pending job until cover accepts ownership; do not infer purchase exit from any order."
+    ],
+    "denominator": "Unique permitted customer/variant requests actually sent in this restock episode; numerator is those same units with a paid matching-variant purchase within seven days of dispatch. Deduplicate replay and keep unrelated orders out",
+    "handover": "Owner and cover sign the variant register, observation freshness limit, approved template, batch count, held jobs and closure ledger before resuming"
+  },
+  "best-shopify-back-in-stock-email-apps-for-dtc-brands": {
+    "audience": "DTC brands",
+    "goal": "back-in-stock email apps",
+    "question": "Does a DTC restock preserve the acquisition promise without silently substituting a bundle?",
+    "entry": "Confirmed variant-specific stock request from an acquisition landing page, independent of campaign or newsletter enrollment",
+    "fields": "subscription and customer IDs, requested variant, acquisition promise version, bundle membership, approved landing destination, margin band, permission, observation time/source, episode and batch keys",
+    "guard": "Growth releases only the requested sellable variant with the approved price and landing promise after merchandising validates current availability; a changed bundle is a different offer requiring review, not an automatic substitution",
+    "purchaseExit": "Matching-variant purchase closes the stock request, including a bundle only when its line mapping proves that variant was acquired. Unrelated campaign conversion does not close it; withdrawal and the declared episode expiry do",
+    "retry": "Keep the original request and promise version across retries. Reconcile ambiguous acknowledgements, retire closed jobs and require explicit fresh permission for a new offer rather than restarting from an updated campaign tag",
+    "nativeRationale": "Shopify Messaging branded templates and customer-segment selection are useful for a merchandising-approved DTC batch with one landing promise. Keeping campaign approval in the admin can reduce copy handoffs, provided the team demonstrates a separate subscription ledger and variant-level dispatch refresh.",
+    "profileRationale": "Klaviyo filtering on maintained profile properties and past actions can help growth inspect acquisition cohorts. It is a positive option when those fields are already owned there; prove that customer-level cohorts do not erase separate variant requests or treat a generic order as matching purchase exit.",
+    "acceptance": "Propose a batch with full-price approved stock copy and finance-reviewed contribution assumptions. Accept only after tracing request to exact landing variant, preserving the original acquisition promise and reconciling every substituted or held item. No coupon or recovered-sale result is assumed.",
+    "failure": "A stock request becomes permission to send a higher-margin replacement bundle",
+    "edges": [
+      "Proposed fixture: a returned bundle SKU contains the requested variant under a different parent product. Resolve line identity before deciding closure; hold ambiguous mapping rather than send a second invitation.",
+      "Proposed fixture: the acquisition page changes to a discounted bundle while the queue waits. Hold the old destination and seek merchandising approval; do not rewrite the request or infer permission for the new offer."
+    ],
+    "denominator": "Unique customer/requested-variant units actually sent in the approved restock episode; count units with matching paid purchases within seven days, allocating bundle lines once and reporting subsequent refunds separately",
+    "handover": "Growth owns subscription purpose and campaign mapping; merchandising signs variant and copy approval; finance owns margin assumptions. Queue owner records held destination changes before sender transfer"
+  },
+  "best-shopify-back-in-stock-email-apps-for-fashion-stores": {
+    "audience": "fashion stores",
+    "goal": "back-in-stock email apps",
+    "question": "Can a size-and-color request survive a seasonal catalog change without becoming a different garment?",
+    "entry": "Confirmed email stock request for the exact size/color variant, not a product-wide waitlist",
+    "fields": "subscription, customer, immutable variant ID, size/color labels, season, replacement-SKU mapping, sales channel, current availability observation, permission, copy version and episode expiry",
+    "guard": "Merchandising checks exact size/color identity, current publication and sellable availability before each batch. A similar size, returned garment pending inspection or new-season replacement does not satisfy this request",
+    "purchaseExit": "Close on a paid order for that variant or explicit withdrawal/expiry. A later return does not automatically reopen permission; a new request must be explicit. Buying another size does not silently cancel the original request",
+    "retry": "Deduplicate by request/variant/episode, reconcile acknowledgements and stop on closure. When a catalog migration changes variant IDs, hold for reviewed identity mapping instead of replaying old requests against new IDs",
+    "nativeRationale": "Shopify Messaging templates and segment selection can keep a short seasonal restock batch close to merchandising approval. That is valuable when one team reviews size-specific copy, provided a demonstrated variant ledger prevents product-level segments from broadening the request.",
+    "profileRationale": "Klaviyo profile and message filters are useful checkpoints when a fashion team already maintains season and preference data there. Choose that workflow only if it preserves parallel size/color subscriptions and refreshes variant identity before dispatch; preference data alone is not a stock request.",
+    "acceptance": "Propose a size/color matrix with signed mappings and saved availability snapshots. Accept only if migration ambiguity holds, inspected stock alone becomes releasable and no approved copy claims a reservation. Review return-related contribution alongside sales.",
+    "failure": "A product-level restock segment advertises the wrong size or counts uninspected returns as sellable",
+    "edges": [
+      "Proposed fixture: a new-season garment reuses the old size label but has a new variant ID and changed fit. Hold the old request and ask for a fresh request rather than silently mapping by label.",
+      "Proposed fixture: one returned unit appears in warehouse stock but remains quarantined for inspection. Expect hold despite a positive physical quantity; save the sellable-source decision and later inspection event separately."
+    ],
+    "denominator": "Unique customer/size-color-variant requests actually sent in one restock episode; matching paid buyers per unit within seven days, deduplicated across batches. Report retained matching purchases after a separately declared return window as a second measure",
+    "handover": "Merchandising owns variant migration and seasonal expiry; warehouse owns sellable observations; lifecycle operator inventories held sizes, signed copy and acknowledged jobs before switching sender"
+  },
+  "best-shopify-back-in-stock-email-apps-for-beauty-stores": {
+    "audience": "beauty stores",
+    "goal": "back-in-stock email apps",
+    "question": "Can a beauty restock distinguish the requested formula and shade from an unapproved replacement?",
+    "entry": "Confirmed email request for one unavailable shade/formula variant; routine interest is not permission for all beauty promotions",
+    "fields": "subscription and customer IDs, variant, shade, formula/package revision, approved claims version, batch release state, permission, observation source/time, destination and queue expiry",
+    "guard": "Product owner confirms the exact shade/formula remains the requested product and that released stock is purchasable. Dispatch only approved factual stock copy; formula changes or withdrawn claims hold the batch for review, never infer suitability from browsing",
+    "purchaseExit": "Matching shade/formula purchase, withdrawal or expiry closes the request. A service complaint pauses relevant promotion for review; a replenishment schedule or another routine purchase does not reopen a closed stock request",
+    "retry": "Keep subscription/variant/episode and copy revision stable. Reconcile uncertain receipts before retry; stop all pending jobs when product approval is withdrawn, inventory each disposition and require fresh review rather than rerunning the whole queue",
+    "nativeRationale": "Shopify Messaging branded templates make centrally approved beauty copy reusable in an admin-reviewed batch. Segment selection is useful for selecting the intended cohort only after the operator proves a maintained shade/formula request ledger and current product-release guard.",
+    "profileRationale": "Klaviyo profile and action filters can help coordinate existing routine and service context with a stock request. This is useful when that context is maintained, but acceptance must prove that a routine preference neither grants stock-notice permission nor substitutes another formula.",
+    "acceptance": "Propose a shade/formula trace with the approved claims revision and release decision saved. Accept only if changed formula and withdrawn copy both hold the relevant work, while unrelated valid requests remain independently inspectable. No efficacy, safety or merchant sales outcome is claimed.",
+    "failure": "An old stock notice recommends a reformulated product using claims approved for its predecessor",
+    "edges": [
+      "Proposed fixture: the shade name is unchanged but the formula revision changes. Hold the request for product review and obtain a fresh request where identity has changed; do not equate the name with equivalence.",
+      "Proposed fixture: approved copy is withdrawn after batch creation but before dispatch. Pause the affected batch, enumerate pending versus acknowledged jobs and record review ownership; do not assume skipping one action cancels later jobs."
+    ],
+    "denominator": "Unique customer/shade-formula request units actually sent in the episode; numerator is matching paid purchases in seven days. Keep service holds and refunds visible separately and do not count unrelated routine items as stock conversions",
+    "handover": "Product owner signs formula identity and claims revision; inventory owner signs released-stock observations; lifecycle owner reconciles paused batches and service holds before reapproval"
+  },
+  "best-shopify-back-in-stock-email-apps-for-food-and-beverage-stores": {
+    "audience": "food and beverage stores",
+    "goal": "back-in-stock email apps",
+    "question": "Will a food restock still be deliverable within its shelf-life and destination constraints?",
+    "entry": "Confirmed email request for one unavailable food/beverage pack variant and destination context, separate from recurring delivery or newsletter permission",
+    "fields": "subscription, customer, variant/pack size, lot release, shelf-life threshold, destination eligibility, dispatch cutoff/timezone, current sellable observation, permission, approved copy revision and episode key",
+    "guard": "Fulfillment validates released sellable stock, remaining shelf life, destination and shipping cutoff before each batch; unknown cold-chain or delivery eligibility holds. Approved copy describes current availability without guaranteeing delivery from a stale observation",
+    "purchaseExit": "A matching paid pack purchase closes the request; fulfilled status is measured separately. Withdrawal, cutoff or lot expiry closes pending work. A recurring-plan renewal does not count unless its actual order lines satisfy the request",
+    "retry": "Reconcile original acknowledgement before replay using request/variant/episode identity. Revalidate lot and cutoff on every retry; expire late work rather than rolling it into the next lot or silently changing pack size",
+    "nativeRationale": "Shopify Messaging template approval and segment selection can support a bounded fulfillment-reviewed food batch. Keeping one approved availability message in the admin is useful when fulfillment owns the lot and destination checks outside the template and demonstrates them at dispatch.",
+    "profileRationale": "Klaviyo filters can use maintained destination and purchase context to narrow a batch in an existing account. That can reduce manual cohort assembly, provided integration owners demonstrate timely lot/cutoff fields and retain each pack-specific subscription; filtering itself does not establish shelf life or cold-chain eligibility.",
+    "acceptance": "Propose a pack/lot/destination batch with a declared final send time and fulfillment signoff. Accept only if late jobs expire, changed destinations hold and paid versus fulfilled outcomes remain separate. Include spoilage and variable cold-chain costs in contribution.",
+    "failure": "A positive stock count releases notices for a lot that cannot reach the requested destination within its approved window",
+    "edges": [
+      "Proposed fixture: a queue retry occurs after the local shipping cutoff despite stock remaining. Expect expiry, no rollover to another lot and a saved terminal disposition.",
+      "Proposed fixture: the requester changes destination to an unsupported cold-chain zone after enrollment. Hold dispatch for fulfillment review; do not treat the original destination or newsletter membership as authorization to send the offer."
+    ],
+    "denominator": "Unique customer/pack-variant/destination request units actually sent before cutoff; count matching paid purchases within seven days and fulfilled matching orders separately after the declared fulfillment window. Deduplicate lot batches and exclude unrelated plan renewals",
+    "handover": "Fulfillment owns lot release, shelf-life and destination rules; lifecycle owner signs cutoff timezone, copy and batch dispositions; finance records spoilage and shipping costs before transfer"
   }
 };
