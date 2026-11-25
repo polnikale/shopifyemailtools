@@ -6,42 +6,42 @@ import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 const path = '/compare/klaviyo-vs-yotpo-email-sms';
-const title = 'Klaviyo vs Yotpo Email & SMS: Data Platform vs Retention Suite';
-const desc = 'Klaviyo vs Yotpo Email & SMS for Shopify email tools — predictive Shopify depth vs reviews-loyalty suite messaging, standalone retention vs bundled trust loops, and renewal economics.';
+const title = "Klaviyo vs Yotpo Email & SMS: Migration and Module Continuity";
+const desc = "Klaviyo after Yotpo Email/SMS retirement: Shopify profile and event migration, Reviews and Loyalty integration, queue ownership and matched costs.";
 
 const faqs = [
   {
-    question: 'When should a Shopify store choose Klaviyo over Yotpo Email & SMS?',
-    answer: "Compare standalone segmentation requirements with the review and loyalty workflows already in use. Test browse events, predictive-field eligibility and module integration in current plans. Verify current product availability and support before considering a purchase or renewal; neither suite consolidation nor standalone depth guarantees repeat revenue.",
+    "question": "Is this still a choice between two active messaging products?",
+    "answer": "No. Yotpo Email/SMS is deprecated and SMS is decommissioned. Evaluate Klaviyo as an active replacement while deciding separately what to do with continuing Reviews and Loyalty."
   },
   {
-    question: 'Is Yotpo Email & SMS worth it without Yotpo Reviews?',
-    answer: "It may fit without Reviews if its current standalone offer meets tested requirements at an acceptable all-in cost. For a coffee fixture, compare points-on-refill workflows with a no-loyalty workflow rather than assuming suite value collapses. Confirm availability, contract scope and support before evaluating implementation.",
+    "question": "Should I remove Yotpo Reviews when moving email?",
+    "answer": "Not automatically. Preserve useful review content and product mappings if keeping Reviews meets requirements. Confirm the Klaviyo integration scope and choose one owner for review requests."
   },
   {
-    question: 'How does pricing compare at 20,000 contacts?',
-    answer: "At 20,000 contacts, obtain current matched quotes for billable profiles, sends, SMS destinations and required review or loyalty modules. Include minimums, overages, migration and twelve months of labor. Do not assume bundle discounts or standalone availability; those require current written verification.",
+    "question": "How should I quote 20,000 contacts?",
+    "answer": "Separate billable profiles, eligible sends and SMS usage. Include continuing modules, integration, migration and labor over the same calendar; historical Yotpo messaging pricing is not a current offer."
   },
   {
-    question: 'Which handles board game post-purchase reviews better?',
-    answer: "For a miniatures-heavy board-game fixture, test review eligibility, delivery-aware request timing, image permissions and suppression after returns in each current stack. Verify the required modules and integrations. A tighter workflow is a requirement to test, not proof of higher product-page conversion.",
+    "question": "Can Klaviyo and Yotpo coexist?",
+    "answer": "Klaviyo can provide messaging alongside continuing Reviews and Loyalty through supported integration scope. Define identifiers, freshness, permissions and queue ownership rather than assuming every old workflow transfers."
   },
   {
-    question: 'Can Klaviyo and Yotpo coexist?',
-    answer: "A split can work if each cart, review and loyalty job has one sender owner. Validate purpose/channel permission, current suppression and purchase state across systems. Stop enrollment and cancel stale queues before switching owners; deduplicate replayed events. Shared attribution does not establish incremental results.",
+    "question": "Will predictive CLV work immediately?",
+    "answer": "Do not assume it. Klaviyo has data requirements, and an individual profile can lack predictions. Test field availability and use a deterministic fallback where needed."
   },
   {
-    question: 'Which wins browse abandonment for climbing gear?',
-    answer: "For climbing gear, test one-collection browse education, identification, eligibility and purchase exclusions in both available plans. Record missing filters and maintenance effort. Do not predeclare a winner from a post-purchase versus pre-purchase label or assume a browse flow recovers incremental revenue.",
+    "question": "How should browse abandonment be accepted?",
+    "answer": "Verify tracking for an identified test profile, product mapping and purchase exits. Test anonymous and late-order cases separately; neither a Shopify tag nor imported profile proves Viewed Product tracking."
   },
   {
-    question: 'What about Sequenzy in this decision?',
-    answer: 'Sequenzy fits when lifecycle speed and send economics beat suite bundling — email-first with playbooks. Klaviyo wins data depth; Yotpo wins trust-loyalty integration; Sequenzy wins lean teams avoiding both enterprise shapes.',
+    "question": "Should Sequenzy be added during migration?",
+    "answer": "Only evaluate another sender against a documented unmet job and matched costs. Adding a sender creates another permission and queue boundary; no automatic winner is established here."
   },
   {
-    question: 'What workflow test settles Klaviyo vs Yotpo?',
-    answer: "Build welcome, cart, review request, loyalty earn reminder, browse follow-up and VIP suppression using the installed modules. Verify availability first, then measure setup, permission handling, current-state checks, queue cancellation and replay deduplication. Score actual results and all-in costs rather than assuming either vendor passes.",
-  },
+    "question": "What test settles readiness?",
+    "answer": "Reconcile identities and suppression, then test welcome, cart, review and loyalty jobs with late orders, returns and replayed events. Require traces and assigned incident owners before approving each flow."
+  }
 ];
 ---
 
@@ -59,148 +59,51 @@ const faqs = [
       <header class="max-w-4xl">
         <p class="catalog-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Klaviyo vs Yotpo Email & SMS for Shopify email tools</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Standalone Shopify retention data platform versus messaging module inside reviews-and-loyalty suite. Consider hypothetical evaluation scenarios involving an artisan coffee roaster running Yotpo Loyalty with bundled email, a climbing gear shop with no UGC stack needing browse depth, and a pottery studio debating Klaviyo migration versus Yotpo renewal when only Reviews was actively used.
-        </p>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Yotpo messaging has retired. The current decision is whether Klaviyo can take the required lifecycle jobs while useful Reviews and Loyalty data remain connected, with explicit identity, event and sender ownership.</p>
       </header>
 
       <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Shopify data depth', tool: 'Klaviyo', reason: 'Browse, predictive, VIP deciles.' },
-            { label: 'Reviews + loyalty loops', tool: 'Yotpo Email & SMS', reason: 'UGC and points in post-purchase canvas.' },
-            { label: 'Standalone retention', tool: 'Klaviyo', reason: 'No suite lock-in or bundle negotiation.' },
-            { label: 'Trust-driven repeat', tool: 'Yotpo Email & SMS', reason: 'When Reviews/Loyalty are load-bearing KPIs.' },
-            { label: 'Browse recovery', tool: 'Klaviyo', reason: 'Pre-purchase education paths.' },
-          ]}
-        />
+        <TldrBox picks={[{"label": "Active lifecycle candidate", "tool": "Klaviyo", "reason": "Validate Shopify events and required email/SMS jobs."}, {"label": "Retired messaging", "tool": "Yotpo Email & SMS", "reason": "Not a current purchase or renewal alternative."}, {"label": "Content continuity", "tool": "Reviews / Loyalty", "reason": "Confirm module-specific data and request ownership."}, {"label": "Predictive branches", "tool": "Data eligibility", "reason": "Use a deterministic fallback when fields are absent."}]} />
       </div>
 
       <div class="mt-12 card overflow-x-auto">
         <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
         <table class="data-table">
           <thead><tr><th>Dimension</th><th>Klaviyo</th><th>Yotpo Email & SMS</th></tr></thead>
-          <tbody>
-            <tr><td>Fit</td><td>Full retention platform</td><td>Suite extension</td></tr>
-            <tr><td>Browse</td><td>Native depth</td><td>Lighter</td></tr>
-            <tr><td>Reviews/loyalty</td><td>Via integrations</td><td>Native when modules live</td></tr>
-            <tr><td>Pricing</td><td>Profiles + SMS</td><td>Bundle/module</td></tr>
-            <tr><td>Best when</td><td>No Yotpo footprint</td><td>Reviews or Loyalty installed</td></tr>
-          </tbody>
+          <tbody><tr><td>Status</td><td>Active email/SMS automation</td><td>Email/SMS retired</td></tr><tr><td>Browse</td><td>Configure and verify identified tracking</td><td>Rebuild required flows in an active sender</td></tr><tr><td>Reviews / Loyalty</td><td>Supported integration scope must pass</td><td>Continuing products, separate from messaging</td></tr><tr><td>Historical data</td><td>Map identities, fields and event gaps</td><td>Use available saved records; no dashboard promise</td></tr><tr><td>Procurement</td><td>Matched active quote and workflow acceptance</td><td>Retained-module costs only, not messaging renewal</td></tr></tbody>
         </table>
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Klaviyo and Yotpo Email & SMS sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Klaviyo is optimized when segment reports and browse depth change Monday merchandising calls. Yotpo Email & SMS is optimized when reviews and loyalty already anchor your retention stack. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Before Memorial Day sale week: outdoor gear retailer retention choices</h2>
-        <p>
-          For this hypothetical outdoor gear retailer fixture, assume 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          For the outdoor fixture, separate ultralight tent research from family camping bundles using explicit product and order inputs. Test gift-order exclusions and current recipient permission before dispatch. Measure classification errors; neither a tag nor a filter guarantees deliverability or an unsubscribe reduction. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. For Memorial Day sale week, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Mechanical Keyboard Vendor: six-week group-buy cycles on $180–$420 kits</h2>
-        <p>
-          For this hypothetical mechanical keyboard vendor fixture, assume 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test whether consideration length should change channel choice. Use a ten-day comparison journey as a test case for education versus early discounts. Treat six hours a week as a proposed labor-saving target during the relevant catalog peak, not an observed result; measure exports, editing, QA and exception handling before claiming savings. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. For GB close deadlines, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>How board game store emails through Essen release week</h2>
-        <p>
-          For this hypothetical board game store fixture, assume 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test whether consideration length should change channel choice. Use a ten-day comparison journey as a test case for education versus early discounts. Treat six hours a week as a proposed labor-saving target during the relevant catalog peak, not an observed result; measure exports, editing, QA and exception handling before claiming savings. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. For Essen release week, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        
-        <p>
-          For this hypothetical specialty tea merchant fixture, assume 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test inventory state alongside copy. A hypothetical vinyl fixture with a 300-unit pressing selling out during a two-hour send window can test stock refresh, fallback links and queued-message cancellation. This is a separate catalog fixture, not evidence of prevented complaints or a result for the catalog below. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. For Q4 gift-box peak, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Before holiday blend drop: artisan coffee roaster retention choices</h2>
-        <p>
-          For this hypothetical artisan coffee roaster fixture, assume 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Use a separate board-game preorder fixture to test allocation and fulfillment-state messages. Measure support contacts and handling time rather than assuming ambiguous recovery doubled support load or that automation paid for itself. Apply the same current-state checks to this catalog without importing a board-game outcome. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. For holiday blend drop, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Climbing Gear Store: seven-to-fourteen day harness research cycles</h2>
-        <p>
-          For this hypothetical climbing gear store fixture, assume 1,100 orders/mo at roughly $89k/mo. Revenue rhythm follows seven-to-fourteen day harness research cycles, which means email must handle certification education before percentage-off nudges on ropes before spring rack refresh — not after support tickets spike. Klaviyo contributes Shopify browse events, predictive CLV, and unified SMS; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: branch browse sequences by fall-rating and harness fit pages.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Use pottery-class and glaze-kit signups as separate hypothetical intent fixtures: class leads may need studio policies and kiln safety before product offers. Test signup-source branching and purpose-specific permission; no prevented mismatch has been observed, and this fixture is separate from this catalog. For climbing gear store specifically, branch browse sequences by fall-rating and harness fit pages. For spring rack refresh, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Tool friction where Klaviyo and Yotpo Email & SMS diverge on Shopify</h2>
-        <p>
-          Klaviyo shines when segment reports and browse depth change Monday merchandising calls. Its friction shows when you only email a quarter of profiles monthly. Yotpo Email & SMS shines when reviews and loyalty already anchor your retention stack. Its friction shows when you only need email without UGC or points. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Compare billing against the same twelve-month workload, including imported and active profiles, messages, SMS destinations and credits, required modules, support, integration, migration, QA and operator labor. A waitlist import with flat orders and a seasonal broadcast peak are proposed cost stress tests, not observed billing penalties. Use current written quotes and the same retention and suppression assumptions; neither billing basis is inherently the opposite of the other.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Klaviyo and Yotpo Email & SMS both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, compare current written quotes on matched usage; contact count alone does not establish price convergence. Review cold imports for permission and retention policy before quoting; do not delete records merely to manipulate the comparison. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Yotpo Email & SMS need an all-in cost comparison when only some modules will be used.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          A proposed hybrid uses Privy or Justuno for capture, one lifecycle platform for email, and a separately evaluated SMS sender. A vendor does not take over the merchant's compliance responsibility. Assign one owner for each lifecycle job and channel, disable overlapping native and app recovery queues, propagate current permission and purchase state, cancel stale work in each sender, and deduplicate event replays before dispatch. Validate failure and reconnect behavior; a priority order alone does not prevent duplicate sends.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>Segment reports and browse depth change monday merchandising calls</li>
-          <li>You will use Shopify browse events, predictive CLV, and unified SMS weekly</li>
-          <li>Active profiles plus sms credits fits your calendar</li>
-          <li>Your team can maintain Klaviyo without external rescue</li>
-          <li>Switching cost favors Klaviyo for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Reviews and loyalty already anchor your retention stack</li>
-          <li>You will use reviews, loyalty, email, and SMS in one retention suite weekly</li>
-          <li>Modular plans by product fits your calendar</li>
-          <li>Your team can maintain Yotpo Email & SMS without external rescue</li>
-          <li>Causally measured lifecycle contribution after matched all-in costs justifies Yotpo Email & SMS migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Klaviyo is the better Shopify email tool when segment reports and browse depth change Monday merchandising calls. Yotpo Email & SMS is the better Shopify email tool when reviews and loyalty already anchor your retention stack. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
-      </article>
+<h2>Messaging retirement changes the decision</h2>
+<p>As checked November 25, 2026, Yotpo’s <a class="link" href="https://email-and-sms.yotpo.com/">decommission notice</a> says the SMS dashboard and background services are inactive. Its <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">migration announcement</a> scheduled full Email and SMS deprecation for December 31, 2025. SMSBump is historical naming here. Yotpo Email is not a separately available fallback. Reviews and Loyalty remain separate continuing products; keeping them does not restore messaging. These proposed exercises report no merchant deployment, measured lift or completed migration.</p><h2>What Klaviyo can contribute now</h2>
+<p><a class="link" href="https://www.klaviyo.com/solutions/marketing-automation">Klaviyo</a> offers email and SMS automation and segmentation. Shopify <a class="link" href="https://help.klaviyo.com/hc/en-us/articles/4425956184731">onsite tracking</a> supports identifiable-browser workflows once configured; a store integration alone is not proof that every browse event is arriving. Its <a class="link" href="https://help.klaviyo.com/hc/en-us/articles/360020919731">predictive analytics</a> require sufficient qualifying data. Do not make predictive CLV a mandatory branch until the account and profile fields are populated and understood.</p>
+<p>Yotpo documents a <a class="link" href="https://www.yotpo.com/integrations/klaviyo/">Klaviyo integration</a> for review and loyalty data. That offers a way to preserve useful content and reward context alongside a replacement sender. Confirm supported plans, credentials and field/event scope for each module. This is an integration architecture, not proof that all existing canvas logic or historical messaging events transfer automatically.</p>
+<h2>Profile reconciliation before flow recreation</h2>
+<p>Start with saved Yotpo exports, Shopify customer/order data and any existing Klaviyo profiles. Build a field map with source identifier, destination property type, timestamp, null behavior and conflict precedence. Include channel-specific permission evidence, exclusions, review identifiers, loyalty identifiers and subscription state. A profile merge must not promote an unsubscribed address or phone to subscribed.</p>
+<p>Test one customer with a changed email, two source identifiers and different SMS permission. Compare expected identity and suppression before and after import. Quarantine ambiguous merges. Track missing event history separately from missing customer fields; importing a total spend value cannot reconstruct a sequence of placed orders. Since the old messaging service is decommissioned, recovery plans must state which saved records exist rather than promising a fresh dashboard export.</p>
+<h2>Outdoor gear: 2,400 orders and $112k per month</h2>
+<p>Use this proposed baseline to distinguish ultralight research from family camping bundles. Enable the required Shopify tracking and inspect a staff-owned identified profile through Viewed Product, cart, checkout and order events. Test an anonymous visit separately; do not infer identity from a product tag. Compare payload product/variant IDs with the catalog used in the message.</p>
+<p>Acceptance is correct entry and exit for the two education branches, including a gift order and a tent becoming unavailable before send. Use a deterministic order/history branch where predictive fields are absent. Measure classification errors and manual fallback work; no deliverability, conversion or unsubscribe improvement is claimed.</p>
+<h2>Keyboard and board-game preorders: event order matters</h2>
+<p>For keyboards, retain the proposed 940 orders/$58k monthly baseline and six-week group-buy with $180–$420 kits. Test a ten-day education journey across switch-type pages, then close the preorder before its recovery timer expires. Record the event name and source timestamp used by the filter. A historical replay must not reopen the closed offer. Six hours weekly may be a labor-saving target to measure, not a reported result.</p>
+<p>For board games, use 1,050 orders/$67k monthly before Essen. Map allocation, partial fulfillment and shipment states explicitly; an order alone does not mean a preorder has arrived. Choose which state starts a review request and which releases winback. Replay an allocation update after a shipment and verify it cannot reverse the later state. Count support contacts in a planned comparison if clearer status messaging is a goal; no reduction has been observed here.</p>
+<h2>Tea and coffee: balances are not subscription permission</h2>
+<p>Tea’s proposed 720 orders/$44k monthly fixture uses 28–35 day consumption windows. Preserve blend preference and gift-buyer status independently of permission. Submit a subscription skip after replenishment enrollment and require the next promotion to exit. Include missing preference, null and changed-value cases so a default blend cannot silently overwrite known data.</p>
+<p>Coffee’s proposed 860 orders/$52k monthly fixture uses roast-date replenishment and wholesale samples. Retain Loyalty only if its balance and redemption history remain useful to the program. Test an earn event, redemption and correction before the next message; stale points should suppress the balance claim or use approved nonnumeric copy. Keep the Loyalty system authoritative and assign a connector failure owner instead of copying an unversioned balance into every template.</p>
+<h2>Climbing education and review-content continuity</h2>
+<p>Climbing’s proposed 1,100 orders/$89k monthly fixture covers seven-to-fourteen day harness research. Identify the fit and fall-rating pages without inferring certification or safe suitability. Keep product claims tied to manufacturer documentation. A late order must stop obsolete browse education; an unresolved safety question belongs with trained support.</p>
+<p>For existing Reviews, reconcile product/variant IDs, review IDs, image reuse rights and returned orders before enabling requests or email widgets. Keeping the existing review store can preserve familiar content and reduce remapping work. It does not authorize duplicate requests: choose whether Yotpo or Klaviyo owns each request job. Test a return before dispatch and a negative review routed to support without inventing a positive outcome.</p>
+<h2>Queue and credential ownership at cutover</h2>
+<p>Inventory welcome, cart, browse, review, loyalty and newsletter jobs across all active apps and Shopify. For each, record sender, trigger, permission purpose, purchase exit, replay key and incident owner. Disable overlapping enrollment and remove obsolete queued work before enabling replacement enrollment. A priority list cannot cancel a second sender’s queue. A forty-five-minute timer is only a proposed race-condition test.</p>
+<p>Use staff recipients for a queued cart, later purchase, opt-out and connector reconnect. Require logs showing final eligibility and cancellation, not just screenshots of an empty canvas. When a connector fails, hold dependent content or use an approved fallback; do not restart retired messaging. Restrict credentials by module, name the rotation owner and record how a failed integration is detected. Marketing, support and the integration maintainer need an explicit escalation handoff.</p>
+<h2>Matched economics with goods cost held fixed</h2>
+<p>Use 20,000 contacts as a proposed procurement fixture, with a separate 12,000–18,000-contact sensitivity case. Quote billable profiles, eligible email sends, SMS destinations/segments, required integrations, support and minimums on the same twelve-month calendar. Separate continuing Reviews/Loyalty costs from Klaviyo and migration labor. A historical bundle discount is not a current Yotpo messaging offer.</p>
+<p>For a hypothetical $1,000 gross sale, $100 discount and $400 fixed goods cost, contribution before other costs is $500. Subtracting $20 incremental messaging leaves $480 before other variable costs. The goods cost stays $400; do not multiply discounted sales by the original margin and call that fixed-cost accounting. A planned randomized holdout should estimate incremental orders and uncertainty before that contribution is used to justify migration expense.</p>
+<p>Newsletter acceptance deserves its own fixture: change the hero product after stock sells out, inspect catalog links and fallback content, and confirm exclusions for current purchasers. Compare editing, QA and exception labor before claiming savings. Capture tools or another email provider may be evaluated against a specific unmet requirement; this comparison supplies no automatic Sequenzy recommendation.</p>
+<h2>Procure the sender and retain modules independently</h2>
+<p>Accept Klaviyo for the demonstrated lifecycle scope when identity, permission, Shopify events, required module fields and queue exits pass and the matched quote is affordable. Hold flows relying on absent predictions or unmapped events until a defined fallback passes. Keep Yotpo Reviews/Loyalty where their content and program obligations remain valuable; replace them only through a separate migration decision. Renewing retired Email/SMS is not an alternative. Use the <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing guide</a> to record acceptance and unresolved requirements.</p>
+</article>
 
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
