@@ -22,19 +22,19 @@ const faqs = [
   },
   {
     question: 'What is the best Mailchimp alternative for beginners?',
-    answer: 'Omnisend for prebuilt cart and welcome live in days; Sequenzy if you want strategy guidance with pay-per-email pricing from the start. Both beat Mailchimp for Shopify lifecycle within the first month — neither requires rebuilding Customer Journeys from scratch.',
+    answer: 'Start with the workflows a new operator can maintain. Prototype welcome and cart messages in the current Mailchimp account and shortlisted tools; compare setup effort, permission handling and purchase exits. Prebuilt templates can help, but do not establish a universal winner or launch time.',
   },
   {
     question: 'How do I export Mailchimp to Klaviyo or Sequenzy?',
-    answer: 'Export audience with tags, merge fields, and consent timestamps; rebuild automations manually from screenshots. Map Mailchimp tags to Shopify customer properties where possible. Document Customer Journey logic before disconnecting — flows do not transfer natively.',
+    answer: 'Export supported audience fields and retain tags, merge fields and consent evidence, including source, purpose, channel and timestamps. Preserve suppression separately. Map identities and document journey triggers, delays and exits; verify destination import support and rebuild and test logic rather than assuming automations transfer.',
   },
   {
     question: 'Is Brevo like Mailchimp but cheaper?',
-    answer: 'Similar generalist positioning with pay-per-email — still lighter on Shopify lifecycle than Sequenzy or Omnisend. Good lateral move when cost is primary pain, but many Mailchimp exits should move up to ecommerce-native tools, not sideways to another generalist.',
+    answer: 'Both offer broader marketing tools. Brevo pricing uses sending tiers with contact storage limits and plan-specific features. A lower starting price does not establish a lower matched bill. Compare the workflow and cost requirements below before deciding.',
   },
   {
     question: 'What does Mailchimp cost at 20,000 contacts?',
-    answer: 'Often $200–350/month on Standard or Premium without ecommerce depth — at that price Klaviyo or Sequenzy usually deliver more retention ROI for active DTC stores sending lifecycle automations, not just monthly newsletters.',
+    answer: 'There is no single quote for that contact count. Mailchimp pricing depends on plan, contact tier, send limits and add-ons. Use its current calculator with the same requirements and usage as the alternatives; an illustrative price range cannot establish retention ROI.',
   },
   {
     question: 'Can I keep Mailchimp for newsletters only?',
@@ -63,29 +63,30 @@ const faqs = [
       </nav>
 
       <header class="max-w-4xl">
-        <p class="catalog-kicker">Ecommerce graduation</p>
+        <p class="catalog-kicker">Migration evaluation</p>
         <h1 class="hero-title mt-5">Best Mailchimp alternatives for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">A Shopify migration should start with a requirements audit. Products, variants, purchase events and audience permissions need explicit mappings between systems. Test the current integration before attributing a workflow problem to the platform: a missing event, unmaintained journey or unsuitable plan calls for a different remedy. Compare the cost of fixing that setup with the cost of moving it.</p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked replacements for Shopify merchants graduating off Mailchimp — covering newsletters, lifecycle automation, and transactional-style updates. Sequenzy leads when strategy and pay-per-email beat generic Customer Journeys. Compare <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> before you export.
+          Eight candidates for newsletters and lifecycle automation, with service-message ownership considered separately. The order is a reading sequence, not a performance ranking. Compare <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> before you export.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
-          title="Top Mailchimp replacements"
+          title="Mailchimp alternative shortlist"
           picks={[
-            { label: 'Best overall', tool: 'Sequenzy', reason: 'Shopify lifecycle playbooks with pay-per-email — the anti-generic-newsletter upgrade.' },
-            { label: 'Best data platform', tool: 'Klaviyo', reason: 'When Mailchimp segmentation failed at catalog scale for outdoor gear and vinyl.' },
-            { label: 'Best fast setup', tool: 'Omnisend', reason: 'Ecommerce-native automations live in days, not Customer Journey months.' },
-            { label: 'Best budget', tool: 'Brevo', reason: 'Volume pricing without Mailchimp contact tiers — lateral, not always optimal.' },
-            { label: 'Best workflow builder', tool: 'Drip', reason: 'Behavior automation Customer Journeys approximated poorly for Shopify events.' },
+            { label: 'AI-assisted workflows', tool: 'Sequenzy', reason: 'Consider if assisted drafting and the required Shopify event mappings suit the team.' },
+            { label: 'Catalog evaluation', tool: 'Klaviyo', reason: 'Test outdoor-gear and vinyl segments with actual product and variant fields.' },
+            { label: 'Channel coordination', tool: 'Omnisend', reason: 'Prototype welcome and cart branches with permission and purchase exits.' },
+            { label: 'Broader marketing', tool: 'Brevo', reason: 'Compare required journeys, storage limits and sending tiers.' },
+            { label: 'Branching workflows', tool: 'Drip', reason: 'Test board-game ownership and expansion branches before migrating.' },
           ]}
         />
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Mailchimp</h2>
+        <h2>When a Mailchimp migration is worth evaluating</h2>
+        <p>Mailchimp covers campaigns, marketing CRM and lifecycle automation, with SMS available subject to plan, approval and regional eligibility. Its Shopify integration syncs customer and order data for targeted campaigns and product recommendations. Check the <a class="link" href="https://mailchimp.com/help/mailchimp-shopify-syncing/">sync documentation</a>, <a class="link" href="https://mailchimp.com/features/crm/">CRM scope</a> and <a class="link" href="https://mailchimp.com/pricing/marketing/">current plan limits</a>. These supplier capabilities can justify staying; they do not prove every required event or workflow is configured.</p>
         <p>Inventory the Shopify events and fields your current Mailchimp setup actually receives. For a mechanical-keyboard store, test group-buy membership, switch preferences, purchase exits and competing journey suppression with sample profiles. Record missing mappings and configuration limits; do not infer universal capability exclusions from one account.</p>
         <p>Model the bill using the current vendor quote and its definition of billable contacts. Giveaway imports, popup captures and guest checkouts have different permission and engagement histories. For a specialty-tea brand, separate an eligible replenishment audience from the full list and compare equal send volumes, plan features and staff time across vendors. No universal purchase percentage applies.</p>
         <p>Define the reporting question before choosing an alternative. A climbing-gear store may need repeat orders by first product, journey exposure and gross margin. Verify the available event joins and attribution window with sample orders. Attributed revenue describes a reporting rule; a suitable holdout is needed to estimate causal lift.</p>
@@ -94,18 +95,18 @@ const faqs = [
         <h2>Newsletters, lifecycle, and transactional moments</h2>
         <p>Separate newsletters, marketing lifecycle and service notifications in the requirements list. A vinyl calendar or pottery invitation needs appropriate marketing permission; an order update needs an identified service sender and a defined purpose. Test current integration triggers and templates before deciding which system should own each message.</p>
         <p>
-          Before switching, inventory which jobs Mailchimp actually runs versus which jobs you pay for. If newsletters and one cart flow are ninety percent of revenue, a leaner tool with pay-per-email economics may outperform a data platform your team cannot maintain. If browse abandonment across two hundred outdoor-gear variants drives margin, document segment logic before migration — rebuilding chaos under a new logo wastes the switch.
+          Before switching, inventory which jobs Mailchimp actually runs versus which jobs you pay for. If newsletters and one cart flow cover the required jobs, a simpler maintained setup may reduce operator work. If browse abandonment across two hundred outdoor-gear variants drives margin, document segment logic before migration — rebuilding chaos under a new logo wastes the switch.
         </p>
 
         <h2>Mailchimp migration checklist for Shopify</h2>
-        <p>Run this sequence before disconnecting Mailchimp from Shopify. Skipping steps causes duplicate sends, consent gaps, and finance attribution black holes.</p>
+        <p>Run this sequence before disconnecting Mailchimp from Shopify. Use it to prevent duplicate sends, consent gaps and missing reporting evidence.</p>
         <ol>
-          <li><strong>Export all audiences</strong> with tags, merge fields, signup dates, and marketing consent.</li>
+          <li><strong>Export all audiences</strong> with stable customer identifiers, tags, merge fields, signup dates, and channel-specific consent evidence; reconcile guest checkout and duplicate identities without restoring opt-outs.</li>
           <li><strong>Document Customer Journeys</strong> — screenshot triggers, delays, exit conditions, and suppression rules.</li>
           <li><strong>Clean list before import</strong> — define an engagement policy for your purchase cycle; preserve opt-outs and suppression evidence independently of active imports.</li>
           <li><strong>Map integrations</strong> — list Shopify apps pushing purchase data into Mailchimp segments.</li>
           <li><strong>Connect new platform to Shopify</strong> — verify historical orders sync for winback segments.</li>
-          <li><strong>Rebuild welcome and cart first</strong> — test with sends disabled; assign one sender and queue owner per flow, then pause the old queue before activating its replacement.</li>
+          <li><strong>Rebuild welcome and cart first</strong> — test with sends disabled; assign one sender and queue owner per flow, then cancel or drain the old queue before activating its replacement; pausing new enrollment alone may leave queued sends active. Test rollback without replaying already-sent messages.</li>
           <li><strong>Update popup integrations</strong> — point Privy, Justuno, or native forms to new ESP.</li>
           <li><strong>Validate suppression before cutover</strong> — check current channel permission, suppression and purchase state at send time; test delayed events and replay deduplication.</li>
           <li><strong>Migrate post-purchase and winback</strong> — verify product mappings, purchase exits and suppression for consumables and hobby catalogs.</li>
@@ -116,7 +117,7 @@ const faqs = [
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Illustrative mechanical-keyboard evaluation — 8k contacts, hypothetical $120 monthly baseline.</strong> If existing journeys are unmaintained, compare repairing them with rebuilding in Omnisend. Test group-buy suppression and cart purchase exits, then estimate migration effort and incremental margin. This is a proposed evaluation, not an observed payback result.</p>
-        <p><strong>Artisan coffee — 22k contacts, bloated giveaway imports.</strong> Cleansed to 9k engaged buyers, migrated to Sequenzy for subscription replenishment and pay-per-email; bill dropped forty percent with stronger winback before warehouse sale weeks.</p>
+        <p><strong>Proposed artisan-coffee evaluation — hypothetical 22k records and 9k eligible engaged buyers.</strong> Reconcile giveaway consent and subscription status before using either count. Compare repairing Mailchimp with Sequenzy for subscription replenishment and winback before warehouse sale weeks. Acceptance requires current purchase exits, subscription-event mapping and suppression tests. Quote both systems for the same eligible audience and sends; no bill reduction or winback improvement has been measured.</p>
         <p><strong>Illustrative pottery studio — B2B wholesale plus DTC.</strong> A split between wholesale newsletters and DTC lifecycle may be useful if each has a clear owner and shared suppression controls. Test the required collection events in the proposed Klaviyo setup; separate domains do not establish consent or prevent overlap.</p>
       </article>
 
@@ -124,13 +125,13 @@ const faqs = [
   <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
 </section>
 <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
+        <p class="catalog-kicker">Candidates by evaluation focus</p>
         <h2 class="font-serif text-4xl font-black text-slate-950">Eight Mailchimp alternatives for Shopify stores</h2>
 
         <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy is the Mailchimp upgrade path built for Shopify lifecycle outcomes — not another drag-drop newsletter tool. Agent-first setup replaces blank Customer Journeys with welcome, cart, post-purchase, replenishment, and winback described in plain language. Pay-per-email pricing fixes Mailchimp\'s contact-tier trap on popup-heavy vinyl and board-game lists.',
-          'Sequenzy assumes you want strategy defaults: suppress recent buyers, educate before discount, winback before clearance. Mailchimp assumes you know what to build. That gap is why stores leave when the founder is also fulfillment lead and nobody maintains journeys.',
-          'See <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> for the full tradeoff map. Pair Postscript for SMS if Mailchimp SMS was underused.',
+          'Sequenzy describes AI-assisted campaigns, automation and Shopify customer, order and product sync. That may help a small team draft lifecycle messages, provided subscription and purchase events reach the required branches.',
+          'For vinyl drops and board-game lists, demonstrate recent-buyer suppression, education before discounts and winback eligibility. Assisted setup does not establish that these controls are configured or that migration improves retention.',
+          'See <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> for requirements to compare. If using Postscript or another SMS sender alongside email, verify current channel scope and assign ownership and shared suppression explicitly.',
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
@@ -146,9 +147,9 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Brevo lateral move from Mailchimp with pay-per-email — acceptable if budget is primary pain and lifecycle needs remain modest. Prebuilt Shopify lifecycle templates are thinner than Omnisend or Sequenzy.',
+          'Brevo may suit a team wanting broader marketing tools. Demonstrate the Shopify lifecycle templates and data mappings needed for the actual store; do not infer suitability from a generalist label.',
           'Compare required ecommerce segments and retention reports in both configured accounts. Include connector fees, staff work and equal send volume before concluding that a lower subscription quote reduces total cost.',
-          'Upgrade again to Sequenzy when strategy becomes bottleneck — common path for specialty-tea stores that left Mailchimp for price then hit replenishment ceiling.',
+          'For specialty tea, test replenishment timing by product and purchase cycle, recent-order exits and unsubscribes. Keep Brevo or Mailchimp if the maintained workflow meets those requirements.',
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
@@ -158,8 +159,8 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Shopify Email downgrade if Mailchimp was overkill and honest assessment is "sale blasts only" — temporary reset, not strategic for retention-focused DTC. Native Admin lacks automation Mailchimp at least attempted.',
-          'Useful ninety-day pause while rebuilding strategy in Sequenzy or Omnisend. Stores that left Mailchimp for capability reasons boomerang to dedicated platforms within two quarters if they land on Shopify Email alone.',
+          'Shopify Messaging, formerly Shopify Email, supports campaigns and marketing automations within Shopify. It may suit a team wanting to operate in the store admin; it is not limited to sale broadcasts.',
+          'Check template, channel and regional eligibility and demonstrate each required trigger and stop condition. Choose on sustained workflow fit rather than an assumed temporary stay or upgrade deadline.',
           'For vinyl drops or tea replenishment, test the required scheduling, product events and suppression in the proposed Shopify Email setup before deciding whether it can own those messages.',
         ]} />
 
@@ -171,26 +172,23 @@ const faqs = [
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
           'Evaluate tinyEmail with the actual campaign production and automation tasks your team needs. Order count alone does not establish suitability or a mandatory upgrade point.',
-          'Graduate again to Sequenzy or Omnisend when cart recovery matters — avoid Mailchimp → tinyEmail → Omnisend chains.',
+          'For cart recovery, demonstrate order matching, consent checks and cancellation of queued reminders after purchase. Choose tinyEmail if the verified workflow and operator effort meet the requirements.',
           'Compare copy review time, supported triggers and required integrations against your current setup. Select a platform on demonstrated requirements rather than an arbitrary two-quarter deadline.',
         ]} />
       </section>
 
       <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing comparison vs Mailchimp</h2>
-        <p class="px-5 pb-4 text-slate-600">Illustrative monthly costs — adjust for send frequency and SMS.</p>
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Supplier billing inputs</h2>
+        <p class="px-5 pb-4 text-slate-600">Supplier documentation checked 25 November 2026; obtain a current quote before committing. Contact count alone cannot price equal workloads.</p>
         <table class="data-table">
-          <thead>
-            <tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>Shopify lifecycle</th></tr>
-          </thead>
+          <thead><tr><th>Platform</th><th>Published basis to verify</th><th>Account-specific inputs</th></tr></thead>
           <tbody>
-            <tr><td>Mailchimp (leaving)</td><td>$80–135</td><td>$200–350</td><td>Basic</td></tr>
-            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>Advanced</td></tr>
-            <tr><td>Klaviyo</td><td>$150–200</td><td>$350–450</td><td>Advanced</td></tr>
-            <tr><td>Omnisend</td><td>$60–100</td><td>$120–180</td><td>Solid</td></tr>
-            <tr><td>Brevo</td><td>$25–65</td><td>$50–120</td><td>Solid</td></tr>
+            <tr><td>Mailchimp</td><td>Plan, contact tier and email limits</td><td>Billable audience status, overages, SMS eligibility and credits</td></tr>
+            <tr><td>Sequenzy</td><td>Email volume; supplier lists unlimited contacts</td><td>Actual sends, separate SMS or managed-service charges</td></tr>
+            <tr><td>Brevo</td><td>Sending tier with contact storage limits</td><td>Required feature tier, storage and add-ons</td></tr>
           </tbody>
         </table>
+        <p class="px-5 py-4">Sources: <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a>, <a class="link" href="https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans">Brevo plans</a>, and Mailchimp plans linked above. For every candidate, use one matched workload: the same eligible recipients, campaign frequency, lifecycle sends, season, currency, channels and required features. Include connector and service fees, overages, migration work and staff time over the same period. Separate recurring cost from one-time work. Compare incremental contribution after discounts, returns and all operating costs; attributed revenue is not causal lift.</p>
       </div>
 
       <div class="container max-w-4xl pb-8 text-sm">
@@ -207,11 +205,13 @@ const faqs = [
   </section>
 
   <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Buyer desk: Mailchimp graduation metrics</h2>
+    <h2>Buyer desk: migration acceptance metrics</h2>
     <p>Use a requirements matrix for browse events, variant availability and flow reporting. Verify each against the actual Mailchimp integration before declaring a gap. Review giveaway imports by permission and engagement; list size alone does not tell you how many people will purchase or which contacts are billable.</p>
-    <p>Holdout-test replacement cart recovery for fourteen days before annual Mailchimp cancel. Sideways to Brevo rarely corrects capability gaps — move up to Sequenzy or Omnisend when lifecycle is the job. Assign one owner for suppression rules; Mailchimp neglect becomes expensive neglect on any per-contact platform.</p>
+    <p>Size any holdout around traffic, purchase cycle and the effect being evaluated, rather than a fixed pilot duration. Define eligible recipients or orders, exposure, repeat-purchase window and margin denominator before comparing outcomes. Assign one owner for suppression rules and reconcile queued sends during cutover.</p>
     <p>Set a review date based on traffic and operational readiness. Measure delivery health, duplicate sends, staff maintenance time and matched all-in cost alongside order reporting. Use an appropriately designed holdout for incremental recovery and repeat purchase; attributed flow revenue alone does not establish improvement.</p>
   </article>
+
+  <p class="container max-w-4xl pb-8 text-sm">Shopify automation scope: <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">Shopify Messaging documentation</a>. Confirm current eligibility for the store and channel.</p>
 
   <FaqSection faqs={faqs} title="Mailchimp alternatives FAQ" />
 </BaseLayout>
