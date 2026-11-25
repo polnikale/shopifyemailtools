@@ -1,213 +1,155 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('firepush')!;
 const path = '/alternatives/firepush-alternative';
-const title = 'Best Firepush Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Firepush — push-only limits, multichannel gaps, attribution noise — plus eight ranked push, SMS, and lifecycle alternatives with migration checklist.';
-
-const altSlugs = ['omnisend', 'sequenzy', 'klaviyo', 'postscript', 'recart', 'privy', 'brevo', 'shopify-email'];
-const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
+const title = 'Firepush Alternatives for Shopify (2026)';
+const desc = 'Compare conditional Firepush alternatives by browser reach, lifecycle needs and consent, with subscription continuity and migration readiness checks.';
 const faqs = [
-  { question: 'Why do Shopify merchants leave Firepush?', answer: 'Firepush specializes in web push notifications — merchants leave when push ROI declines, when they need email and SMS lifecycle in one suppression model, or when paying for push-only while cart recovery and winback live on separate ESPs with fragmented QA.' },
-  { question: 'What is the best Firepush replacement?', answer: 'Omnisend for bundled email, SMS, and push; Sequenzy for email lifecycle with push deprioritized if attribution weak. Evaluate whether push revenue justifies dedicated tool versus Omnisend multichannel.' },
-  { question: 'Is web push still worth it for Shopify?', answer: 'Varies by catalog — flash drops for vinyl and outdoor gear may justify push; specialty tea replenishment often sufficient with email only. Audit push click-to-purchase rate before replacing Firepush with another push-first tool.' },
-  { question: 'Firepush vs Omnisend push?', answer: 'Omnisend bundles push with email and SMS — one suppression model. Firepush push-only depth may exceed Omnisend for push-specific features but stack fragmentation continues without email migration.' },
-  { question: 'Can I keep push and move email elsewhere?', answer: 'Possible but collision-prone — cart recovery push, SMS, and email need shared suppression. Most exits consolidate to Omnisend or drop push if attribution underperforms email and SMS.' },
-  { question: 'When should I stay on Firepush?', answer: 'Stay when push drives measurable drop conversion, email and SMS run elsewhere with aligned suppression, and push subscriber growth justifies standalone tool cost — common for limited-pressing vinyl shops.' },
-  { question: 'How does Firepush migration work?', answer: 'Export push subscriber tokens where exportable; document notification triggers and timing. Rebuild on Omnisend or sunset push if ROI weak — subscribers must re-opt-in on most platform changes.' },
-  { question: 'Does Recart replace Firepush?', answer: 'No — Recart SMS recovery focus. Firepush exit usually means Omnisend multichannel or abandoning push for email-plus-SMS stack on Sequenzy and Postscript.' },
+  {
+    "question": "Does Firepush still send email or SMS?",
+    "answer": "Its current vendor notice says it offers web push and no longer offers email or SMS campaigns. The article update date is not a documented shutdown effective date."
+  },
+  {
+    "question": "Which alternative should I choose?",
+    "answer": "Start with the job: preserve browser reach, build lifecycle email, support a mobile app, or evaluate separately consented SMS. Validate the required events and devices before selecting a platform."
+  },
+  {
+    "question": "Does Sequenzy support push?",
+    "answer": "Its current pricing lists web, iOS and Android push. Its paid SMS/MMS add-on is in beta with a US/Canada toll-free number. Confirm integration, coverage and operating requirements for your store."
+  },
+  {
+    "question": "Does Klaviyo replace browser push?",
+    "answer": "Klaviyo documents mobile-app push and says it does not support web push at this time. API-triggered web notifications require a separate implementation and are not automatic browser-subscription continuity."
+  },
+  {
+    "question": "Can browser subscribers transfer?",
+    "answer": "Do not assume so. Confirm export rights, endpoint and key availability, origin and service-worker ownership, destination import support and permission state with both providers. Otherwise plan a permission-respecting resubscription path."
+  },
+  {
+    "question": "Can SMS replace push permission?",
+    "answer": "Browser permission does not grant SMS or email marketing permission. Keep channel-specific evidence, purpose, opt-out history and current eligibility separate."
+  },
+  {
+    "question": "When should I keep Firepush?",
+    "answer": "Keeping it is a valid option if the supported browser audience and required journeys justify matched channel and operating costs, with reliable suppression and an accountable owner."
+  },
+  {
+    "question": "How long does migration take?",
+    "answer": "Use readiness gates instead of a fixed timetable. Subscription feasibility, event tests, send-time exclusions, queue ownership, rollback and support handover must pass before cancellation."
+  }
+];
+const options = [
+  {
+    "slug": "omnisend",
+    "name": "Omnisend",
+    "fit": "Evaluate for browser-push consolidation",
+    "detail": "Its push documentation describes web push. Test your actual browser and device mix: the current guide says mobile support is Android only. Consolidation is useful only if required journeys and eligibility work in the trial; shared tooling does not prove collision-free sending."
+  },
+  {
+    "slug": "sequenzy",
+    "name": "Sequenzy",
+    "fit": "Evaluate event-driven lifecycle plus push",
+    "detail": "Current pricing lists web, iOS and Android push; email sending volume sets the plan, and SMS/MMS is a paid-plan beta add-on. Validate Shopify event payloads, identity resolution, SDK ownership and consent propagation. A channel list alone does not establish Firepush migration parity."
+  },
+  {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "fit": "Evaluate when mobile-app engagement is required",
+    "detail": "Mobile-app push needs an app and the appropriate SDK configuration. It is a different project from preserving browser subscriptions. Test catalog and order-event use cases alongside email before choosing this route."
+  },
+  {
+    "slug": "postscript",
+    "name": "Postscript",
+    "fit": "Evaluate a separately consented SMS alert path",
+    "detail": "For a proposed drop-alert trial, verify destination coverage, sender setup, quiet hours, STOP handling and the required Shopify triggers. Require current vendor confirmation for every mandatory capability; do not import browser permissions as SMS consent."
+  },
+  {
+    "slug": "recart",
+    "name": "Recart",
+    "fit": "Evaluate a focused recovery trial",
+    "detail": "If abandonment is the only job being moved, test the required recovery workflow, purchase exit and cross-tool suppression in a limited pilot. Do not assume a recovery specialist preserves browser reach or replaces every lifecycle journey."
+  },
+  {
+    "slug": "privy",
+    "name": "Privy",
+    "fit": "Evaluate capture requirements first",
+    "detail": "If the unmet job is optional email capture, compare the required forms, targeting and downstream consent records. A capture decision can coexist with keeping push; it is not evidence that push should be retired."
+  },
+  {
+    "slug": "brevo",
+    "name": "Brevo",
+    "fit": "Evaluate newsletter and automation requirements",
+    "detail": "Use a requirements trial for campaigns, event ingestion and replenishment exclusions. Price the required channels and connectors explicitly. There is no automatic need to graduate to another named platform later."
+  },
+  {
+    "slug": "shopify-email",
+    "name": "Shopify Email / Messaging",
+    "fit": "Evaluate Shopify-native campaign needs",
+    "detail": "Check current Shopify Messaging templates and any required Flow workflows against the store’s actual branches, exits and reporting needs. This is a conditional email path, not a claim of browser-push continuity or a temporary downgrade."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Firepush alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Push channel exit</p>
-        <h1 class="hero-title mt-5">Best Firepush alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Firepush is web push for Shopify — abandonment nudges, sale alerts, back-in-stock pings in the browser. Merchants leave when push opt-in rates collapsed, when email and SMS on separate tools already cover urgency, or when Omnisend bundling push with lifecycle beats paying for a single-channel specialist nobody audits monthly.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores exiting or consolidating Firepush — multichannel platforms, lifecycle email tools, and SMS specialists. Audit push attribution before choosing another push-first replacement; desktop-only cohorts may need push, overlapping mobile audiences may not.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Firepush replacements" picks={[
-          { label: 'Best multichannel', tool: 'Omnisend', reason: 'Email, SMS, and push in one suppression model.' },
-          { label: 'Best email lifecycle', tool: 'Sequenzy', reason: 'Lifecycle strategy when push attribution weakened.' },
-          { label: 'Best data platform', tool: 'Klaviyo', reason: 'Unified channels with deepest Shopify sync.' },
-          { label: 'Best SMS urgency', tool: 'Postscript', reason: 'Replace push urgency with SMS for drop alerts.' },
-          { label: 'Best recovery narrow', tool: 'Recart', reason: 'SMS recovery if push was abandonment-only.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Firepush</h2>
-        <p>Push attribution noise. Browser push clicks inflate engagement without clear purchase incrementality — finance asks push ROI; Firepush reports notifications sent. A pottery studio realizes email winback and SMS drop alerts cover urgency without maintaining third channel.</p>
-        <p>Stack fragmentation. Firepush plus Klaviyo email plus Postscript SMS means three suppression systems for cart recovery — customers receive push, SMS, and email abandonment same day without collision rules. Consolidation to Omnisend tempts even when Firepush push metrics looked fine in isolation.</p>
-        <p>Opt-in decline. Web push permission rates dropped as browsers tightened prompts — subscriber growth stalled while email list and SMS list grew. Paying for push-only tool with flat subscriber curve questions fit.</p>
-        <p>Firepush wins for drop-heavy catalogs with loyal push audience — vinyl limited pressings, flash outdoor-gear sales. Stay with documented push purchase attribution quarterly; evaluate leaving when a suitable holdout shows insufficient incremental contribution margin after matched channel and operating costs.</p>
-
-        <h2>Push inside multichannel retention</h2>
-        <p>Evaluate whether push is channel or habit. Audience overlap alone does not establish redundancy: compare eligibility, reach and incremental contribution margin within comparable cohorts before consolidating or sunsetting push. If push reaches desktop shoppers SMS misses, Omnisend bundling may preserve channel without Firepush isolation.</p>
-        <p>Migration often requires re-opt-in — plan subscriber communication and accept list shrink. Do not migrate push expectations to SMS without TCPA compliance on new opt-ins.</p>
-
-        <h2>Newsletters, lifecycle, and push urgency</h2>
-        <p>Firepush handled drop urgency, not replenishment or winback — lifecycle lives on Sequenzy. Vinyl mobile audiences may differ from board-game desktop push cohorts; segment before sunsetting channel entirely.</p>
-
-        <h2>Firepush migration checklist</h2>
-        <ol>
-          <li><strong>Audit push attribution over a relevant buying cycle</strong> — reconcile clicks and purchases, then estimate incrementality separately with a suitable holdout against the email and SMS baseline.</li>
-          <li><strong>Document active push triggers</strong> — cart, back-in-stock, campaigns; screenshot timing.</li>
-          <li><strong>Decide consolidate, replace, or sunset push</strong> — Omnisend vs deprioritize channel.</li>
-          <li><strong>Align channel eligibility and suppression</strong> before any channel change — browser permission does not grant email or SMS marketing permission. Preserve purpose- and channel-specific evidence and current opt-out state.</li>
-          <li><strong>Export subscriber data where platform allows</strong> — plan re-opt-in on new push provider.</li>
-          <li><strong>Rebuild critical triggers on Omnisend if consolidating</strong> — QA test abandonment path.</li>
-          <li><strong>Pause Firepush after replacement QA</strong> — assign one sender per journey, cancel or drain queued notifications and deduplicate replayed events. Check current permission, unsubscribe and purchase state at send time, not just when the event entered a queue.</li>
-          <li><strong>Communicate push sunset to subscribers if deprioritizing</strong> — redirect to SMS or email opt-in.</li>
-          <li><strong>Update back-in-stock strategy</strong> — email or SMS may replace push for climbing-gear variants.</li>
-          <li><strong>Review monthly channel mix post-exit</strong> — finance sees recovery continuity.</li>
-          <li><strong>Retain historical trigger references</strong> — export documentation before cancellation under applicable access terms and retention requirements.</li>
-          <li><strong>Cancel Firepush billing after overlap ends</strong>.</li>
-        </ol>
-
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Proposed vinyl-shop consolidation.</strong> Inventory drop alerts across push, SMS and email; test candidate-platform eligibility and collision rules on the same journey before deciding whether consolidation reduces operating effort. No completed migration or measured saving is established here.</p>
-        <p><strong>Specialty tea — sunset push entirely.</strong> Push opt-in under two percent; replenishment email on Sequenzy attributes stronger. Firepush cancelled; SMS roast alerts via Postscript for true urgency only.</p>
-        <p><strong>Board games — stayed on Firepush.</strong> Flash sale push converts desktop browsers SMS misses; email on Sequenzy with documented three-channel suppression rules and weekly QA before drops.</p>
-
-        <h2>Push subscriber overlap analysis</h2>
-        <p>Before a Firepush exit, compare reachable push, SMS and email cohorts using permission-compatible records. Audience overlap does not prove push adds no value. Estimate incremental contribution margin with a suitable holdout, account for send and operating costs, and check unique desktop reach before deciding whether to keep, consolidate or sunset the channel.</p>
-        <p>Browser permission friction increased — new push subscriber growth flat while email and SMS lists grow signals channel sunset timing. Re-opt-in requirements on platform migration may shrink list further; model conservative recovery revenue post-migration.</p>
-
-        <h2>Due diligence before Firepush exit</h2>
-        <p>Inventory back-in-stock notifications tied to push — climbing-gear variant alerts may need email or SMS replacement before pause. Screenshot trigger timing relative to cart abandonment flows. Communicate channel change to engaged push audience if sunsetting. QA Omnisend push on staging with test subscription before production cutover. Measure thirty-day notification volume to forecast Omnisend or consolidated platform pricing.</p>
-      </article>
-
-      <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
-</section>
-<section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Firepush alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Omnisend natural Firepush consolidation — web push bundled with email, SMS, prebuilt cart and welcome. Shared tooling still needs explicit channel eligibility, current purchase-state checks and journey ownership to avoid duplicate abandonment.',
-          'Push depth may trail Firepush specialist but operability wins for SMB teams. Prebuilt journeys reduce rebuild when leaving push-only isolation.',
-          'Choose Omnisend when channel consolidation beats push feature checklist nobody maintained.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Sequenzy email lifecycle when push attribution weakened — welcome through winback with pay-per-email. Pair Postscript SMS for urgency Firepush provided without maintaining third channel.',
-          'Agent-first sequences for replenishment and winback — push was urgency; email lifecycle is retention operating system.',
-          'Choose Sequenzy when push exit reveals email strategy was always primary job.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Klaviyo unified email, SMS, push with deepest Shopify data — when Firepush exit part of broader platform upgrade. Browse abandonment and predictive winback exceed push-only value.',
-          'Profile pricing and complexity — assign owner. Push module inside Klaviyo with same suppression as email flows.',
-          'Pick Klaviyo when data depth drives margin beyond push notifications.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Postscript SMS urgency replacement — vinyl drop alerts and flash sale texts where push opt-in declined. TCPA compliance for SMS replaces browser permission friction.',
-          'Pair Sequenzy email — two-channel stack simpler than Firepush plus two ESPs. Document discount caps across SMS and email.',
-          'Choose when SMS urgency substitutes push with better mobile reach.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Recart SMS recovery — if Firepush was primarily abandonment nudges, SMS recovery may attribute clearer than push. Narrower than full multichannel.',
-          'Pair Sequenzy or Klaviyo for email lifecycle. Evaluate recovery channel mix before specialist swap.',
-          'Choose if push usage was recovery-only, not marketing alerts.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Privy capture — Firepush never owned list growth. Exit may coincide with capture plus lifecycle graduation: Privy feeding Sequenzy while push sunsets.',
-          'Not Firepush replacement — funnel architecture fix when push masked weak email lifecycle.',
-          'Choose when stack review reveals capture and email were gaps, not push depth.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Brevo budget email path when sunsetting push — newsletters plus basic automation without multichannel bundle. Push urgency sacrificed for cost simplicity.',
-          'Lighter than Omnisend — acceptable if push attribution already weak and email suffices.',
-          'Plan Sequenzy upgrade when lifecycle becomes priority after push sunset.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Shopify Email — if Firepush plus email overhead revealed you only need basic campaigns temporarily. Not push replacement — pause while planning Omnisend.',
-          'Shopify Messaging supports native marketing automations; map required triggers, branches and exits to available templates or custom Shopify Flow workflows. Verify the specific push delivery requirement separately.',
-          'Treat as backward step — rare correct Firepush exit alone.',
-        ]} />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Channel mix after Firepush</h2>
-        <table class="data-table">
-          <thead><tr><th>Path</th><th>Push</th><th>Email</th><th>SMS</th></tr></thead>
-          <tbody>
-            <tr><td>Omnisend consolidate</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Sequenzy + Postscript</td><td>No</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Push sunset</td><td>No</td><td>Sequenzy</td><td>Optional</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/compare/firepush-vs-omnisend">Firepush vs Omnisend</a> · <a class="link" href="/alternatives/omnisend-alternative">Omnisend alternatives</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
-    </div>
+  <section class="container py-14 md:py-20">
+    <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a> / Firepush alternatives</nav>
+    <header class="max-w-4xl">
+      <p class="catalog-kicker">Channel and continuity decisions</p>
+      <h1 class="hero-title mt-5">Firepush alternatives for Shopify</h1>
+      <p class="mt-7 text-xl leading-9">Choose around the audience and journeys you need to preserve. Keeping Firepush, replacing browser push, adding lifecycle email and retiring a channel are different decisions. None has a universal winner.</p>
+    </header>
+    <article class="prose-shopify mt-12 max-w-4xl">
+      <h2>Establish the current channel scope</h2>
+      <p>Checked November 25, 2026: <a class="link" href="https://getfirepush.com/blog/targeted-email-marketing/">Firepush’s current notice</a> identifies it as a web-push app without email or SMS campaigns. November 18 is the article update date; the notice does not establish the effective date of the channel change. Inventory any legacy email or SMS work separately before making assumptions about an existing account.</p>
+      <p><a class="link" href="https://www.sequenzy.com/pricing">Sequenzy’s pricing</a> lists browser and iOS/Android push, while its paid SMS/MMS add-on is a beta using a US/Canada toll-free number. <a class="link" href="https://help.klaviyo.com/hc/en-us/articles/22334048422683">Klaviyo distinguishes mobile-app push from web push</a> and does not currently support web push directly. These are not interchangeable forms of reach.</p>
+      <h2>Decide what must survive</h2>
+      <p>Inventory each live campaign and trigger, its purpose, owner, event source, SKU or variant, notification copy, timing, frequency cap and purchase exit. Include cart recovery, back-in-stock, preorder terms, replenishment and time-sensitive allocation drops. Record email and SMS senders already covering the same job, plus queued, scheduled and retrying messages.</p>
+      <p>Compare reachable browser/device cohorts and channel-specific permission records. Audience overlap and attributed clicks do not establish redundancy. For a representative buying cycle, compare incremental contribution margin with a suitable holdout while keeping other channel treatment comparable. Include send and operating costs; set store-specific decision criteria rather than universal opt-in or lift thresholds.</p>
+      <h2>Browser subscription continuity is a gate</h2>
+      <p>A contact export is not a transferable browser subscription. Ask both providers to document export/import support, required endpoints and keys, origin restrictions, service-worker scope and ownership, identity linkage and permission state. Prove continuity with controlled subscriptions on supported devices before promising preserved reach. Do not delete the old worker or cancel access before this is resolved.</p>
+      <p>If transfer is unsupported, model a conservative reachable audience and offer an optional resubscription experience. Test prompt timing, revocation and denied permission without repeatedly prompting. Email or SMS invitations require their own eligibility; browser permission grants neither. Preserve purpose-specific evidence and opt-out history, and never restore suppressed users through a fresh import.</p>
+    </article>
+    <section class="mt-12 space-y-8" aria-label="Conditional alternatives">
+      <h2 class="font-serif text-4xl font-black">Eight options by job</h2>
+      <p>The order is a reading sequence. Each option requires validation against your store; these are not scored rankings.</p>
+      {options.map((option) => <section class="card" id={option.slug}>
+        <h3 class="text-2xl font-black">{option.name}</h3>
+        <p class="mt-3 font-bold">{option.fit}</p><p class="mt-3">{option.detail}</p>
+        <p class="mt-4"><a class="link" href={`/apps/${option.slug}`}>Explore {option.name}</a></p>
+      </section>)}
+      <p>For Omnisend device and setup requirements, consult its <a class="link" href="https://support.omnisend.com/en/articles/2608314-get-started-with-push-notification-channel">current push-channel guide</a>.</p>
+    </section>
+    <article class="prose-shopify mt-12 max-w-4xl">
+      <h2>Proposed merchant exercises</h2>
+      <p>These are planning fixtures, not executed migrations or measured results.</p>
+      <ul>
+        <li><strong>Vinyl shop:</strong> rehearse a limited pressing across push, email and separately consented SMS. Verify stock at dispatch and one journey owner before the first major drop; email can carry press photos and variant detail.</li>
+        <li><strong>Specialty tea:</strong> compare a replenishment and education series with the existing push baseline. A low opt-in rate alone does not justify cancellation.</li>
+        <li><strong>Board games:</strong> test desktop research and restock cohorts separately from mobile shoppers. Compare first-session and later-session prompts, recording opt-in, product-page conversion, SDK loading and Core Web Vitals; no improvement is asserted.</li>
+        <li><strong>Camping and outdoor gear:</strong> test mobile reach and longer comparison content separately from desktop behavior. Do not infer channel value from device share alone.</li>
+        <li><strong>Climbing harnesses:</strong> rehearse variant-specific back-in-stock alerts and suppress messages after purchase or when inventory disappears.</li>
+        <li><strong>Mechanical keyboards:</strong> test a cart_recovered_push event and cancellation of a later email after recovery. Measure actual tag-maintenance work instead of imposing an hourly platform-switch threshold.</li>
+        <li><strong>Artisan coffee gear:</strong> compare considered-purchase education with urgency alerts, using matched cohorts and a relevant buying cycle.</li>
+        <li><strong>Pottery studio:</strong> test whether winback email and drop alerts leave any uniquely reachable browser audience. Do not presume consolidation reduces effort.</li>
+      </ul>
+      <h2>Readiness, failure and cutover checks</h2>
+      <ol>
+        <li>Assign one accountable owner per journey and record the dispatch ledger, deduplication key, event-to-profile mapping, SKU and purpose. Validate missing identity and anonymous-to-known transitions without guessing consent.</li>
+        <li>Rehearse duplicate, delayed and replayed events; purchase before dispatch; unsubscribe after queue entry; denied or revoked push permission; sold-out variants; timezone and quiet-hour boundaries; and provider outages. Fail closed for missing eligibility and route failures to an owner.</li>
+        <li>Check current permission, purchase and inventory state at send time. Cross-tool exclusions must be explicit. Shared platforms do not eliminate duplicate sends automatically.</li>
+        <li>Run a limited controlled pilot with one sender per journey. Cancel or drain old queued notifications and scheduled retries. Record what has already sent so replayed events cannot create duplicates.</li>
+        <li>Pause cutover if subscription reach, consent evidence, identity or suppression fails. Keep both systems from sending the same journey. Roll back only eligible unsent work using the dispatch ledger; do not blindly replay the old queue.</li>
+        <li>Hand over event mappings, channel eligibility, worker and SDK ownership, test records, alerts, support contacts and pause/rollback instructions. The receiving operator must demonstrate a purchase exit and an opt-out before accepting ownership.</li>
+        <li>Cancel billing only after access-dependent exports, representative drop tests, queue reconciliation, monitoring and rollback needs are resolved. Timing follows evidence, not a four-week or ninety-day promise.</li>
+      </ol>
+      <h2>Cost and outcome review</h2>
+      <p><strong>Cost comparison:</strong> Use the same contact eligibility, monthly send volumes, regions and required features for every quote. Include platform charges, channel credits, carrier fees, connectors and recurring operating hours at a stated rate. Separate one-time setup and overlap costs from monthly run costs. Compare incremental contribution margin over matched windows; attributed revenue and a conversion delta alone do not prove lift.</p>
+      <p>Review browser reach, failed deliveries, suppression errors, complaints, recovery continuity and operator effort over the relevant purchase cycle. Keep push if it serves a justified job; retire it only with a documented replacement or deliberate loss of that reach. Optional email capture on selected vinyl or camping pages is a separate proposed trial with its own permission and conversion checks.</p>
+      <h2>Related guides</h2>
+      <p><a class="link" href="/compare/firepush-vs-omnisend">Firepush vs Omnisend</a> · <a class="link" href="/alternatives/omnisend-alternative">Omnisend alternatives</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+    </article>
   </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Four-week Firepush consolidation timeline</h2>
-    <p><strong>Week 1 — Channel overlap study.</strong> Illustrative first phase, not a one-week deadline: compare channel-eligible cohorts over a relevant buying cycle, reconcile attribution and plan an incrementality test before choosing consolidation or sunset.</p>
-    <p><strong>Week 2 — Replacement push or SMS urgency.</strong> Omnisend push configured OR Postscript SMS drop alerts live. Cart recovery email unchanged on Sequenzy. Triple-send suppression written.</p>
-    <p><strong>Week 3 — Subscriber communication.</strong> Illustrative communication phase: verify whether push subscriptions can transfer and obtain separate email or SMS permission where needed. Move back-in-stock only after eligibility, event and queue checks; test the flash-sale sequence first.</p>
-    <p><strong>Week 4 — Firepush off.</strong> Illustrative cutover phase, not a four-week promise: cancel only after queue ownership, suppression, replay and rollback checks pass. Report matched all-in costs and monitor desktop cohorts; a conversion delta alone is not a causal estimate.</p>
-
-    <h2>Buyer desk: push attribution honesty</h2>
-    <p>Firepush exit should start with incrementality audit — push clicks are not purchases. If SMS and email cover urgency, sunset push without guilt. If push converts unique desktop cohort, Omnisend consolidate preserves channel with less fragmentation.</p>
-    <p>Triple abandonment is brand damage — push, SMS, email same afternoon means suppression failed. Consolidation or sunset, not adding fourth tool.</p>
-    <p>Choose a review window suited to the buying cycle: inspect recovery revenue, all-in costs, deliverability and QA effort. Cleaner attribution does not prove lift; estimate incremental contribution margin with a suitable holdout. The team should explain active notification rules. Vinyl and board-game drop weeks are stress test — run first major drop before declaring migration done. Document push sunset communication if channel retired.</p>
-
-    <h2>Consolidation versus sunset decision tree</h2>
-    <p><strong>Omnisend:</strong> when push increment justified and email-SMS-push unity reduces QA hours. <strong>Firepush sunset:</strong> when holdout shows sub-2% incremental recovery and SMS plus email cover urgency. <strong>Sequenzy plus Postscript:</strong> when push retired but email-SMS ladder still needed for drops.</p>
-    <p><strong>Proposed scenario — desktop board-game research traffic.</strong> Compare push-eligible desktop shoppers with a comparable holdout while keeping email and SMS treatment consistent. For a mobile-first camping cohort, run the same evaluation independently; opt-in rate alone cannot determine which channel creates incremental purchases.</p>
-    <h2>First major drop stress test</h2>
-    <p>Run vinyl or board-game drop week on replacement notification stack before declaring migration done — incrementality under pressure reveals suppression gaps calm weeks hide.</p>
-
-    <h2>Permission prompt UX on exit</h2>
-    <p>Proposed board-game prompt test: compare a first-session prompt with a later-session prompt, measuring opt-in, product-page conversion and performance on representative devices. Record SDK loading behavior and Core Web Vitals; no doubled opt-in or performance improvement has been observed here.</p>
-    <p>Triple abandonment — push, SMS, email same afternoon — means suppression failed. Consolidate or sunset channel; never add fourth tool.</p>
-
-    <h2>Workflow ranking for Firepush exits</h2>
-    <p><strong>Omnisend consolidate:</strong> push increment above 2% holdout and QA hours justify unity. <strong>Firepush sunset:</strong> mobile-first under 1% opt-in; SMS plus email cover urgency. <strong>Sequenzy plus Postscript:</strong> push retired, drop ladder remains. Board game desktop 4.1% opt-in kept push; camping mobile 0.8% sunset.</p>
-    <p>Stress test first major vinyl or allocation drop on replacement stack — calm-week migration hides collision gaps that drop week exposes. Document push sunset subscriber comms if channel retired.</p>
-    <p>Mechanical keyboard shop paired Sequenzy email with Firepush push — tagged cart_recovered_push separately; email touch two suppressed when push recovered hour six. Graduate to Omnisend when tag maintenance exceeds one hour weekly. Push permission delayed to second session doubled opt-in without PDP bounce spike on board game research traffic.</p>
-
-    <h2>Final buyer desk: push sunset criteria</h2>
-    <p>Set push sunset criteria from contribution margin, reachable audience and operating cost rather than universal opt-in or lift thresholds. Test the first representative drop after migration, verify current permission and purchase-state suppression, and measure SDK performance. A delay after first paint does not by itself establish that Core Web Vitals are protected.</p>
-
-    <h2>Firepush exit desk: push-first shops building email equity</h2>
-    <p>Firepush-heavy stores lean on web push for urgency but email still wins LTV for considered purchases — mechanical keyboards, climbing harnesses, artisan coffee gear. Week one: compare push-attributed revenue to reachable email profiles; push opt-in dies on iOS friction while email list compounds. Week two: migrate abandonment logic to email with longer copy depth; vinyl variant detail does not fit push character limits. Week three: use push as supplement with strict frequency caps, email as narrative — outdoor gear buying guides need inboxes. Week four through twelve: sunset push-only journeys that never captured email; board game restock can ping push but preorder terms live in email. Specialty tea education series is email-native. Sequenzy when building full lifecycle; Omnisend for quick push-plus-email bundles; Klaviyo for segmentation across channels. Day ninety: email list growth from former push-only visitors, deliverability stable, combined channel revenue beats Firepush-only quarter with documented holdout.</p>
-  </article>
-
-    <h2>Firepush sunset: push-to-email capture playbook</h2>
-    <p>For a proposed push-to-email capture trial, rank relevant URLs and test optional email capture on a small set before expanding. Browser push permission does not authorize email marketing: obtain and retain appropriate purpose-specific permission. Vinyl drops may use push for urgency while email carries press photos; camping comparison content may warrant longer email copy. Compare conversion, complaints and incremental contribution margin against a suitable baseline before changing capture rules or sunsetting journeys.</p>
-
   <FaqSection faqs={faqs} title="Firepush alternatives FAQ" />
 </BaseLayout>
