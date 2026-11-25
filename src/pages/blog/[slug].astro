@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import { welcomeEditorial, cartEditorial, postPurchaseEditorial, winBackEditorial, launchEditorial, backInStockEditorial } from '../../data/blog-editorial';
+import { reviewEditorial } from '../../data/blog-review-editorial';
 import { getBlogPaths } from '../../data/blog-topics';
 
 export function getStaticPaths() {
@@ -10,6 +11,7 @@ export function getStaticPaths() {
 
 const { topic } = Astro.props;
 const editorial = { ...welcomeEditorial, ...cartEditorial, ...postPurchaseEditorial, ...winBackEditorial, ...launchEditorial, ...backInStockEditorial }[Astro.params.slug ?? ''];
+const review = reviewEditorial[Astro.params.slug ?? ''];
 const isStock = editorial?.goal === 'back-in-stock email apps';
 const isLaunch = editorial?.goal === 'product launch email apps';
 const isCart = editorial?.goal === 'abandoned cart apps';
@@ -177,7 +179,31 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <a href="/" class="text-sm text-neutral-500 mb-5 inline-block">← Shopify email app guide</a>
       <h1 class="section-title">{title}</h1>
       <p class="section-description">The right Shopify email app depends on catalog events, fulfillment state, consent, message frequency, and the team operating the flows. This guide focuses on {topic.goal} for {topic.audience}.</p>
-      {editorial ? <>
+      {review ? <>
+        <h2>{review.question}</h2>
+        <p>These are proposed acceptance exercises for {review.audience}, not performed merchant tests or supplier rankings.</p>
+        <h2>Review request readiness and ownership contract</h2>
+        <dl>
+          <dt>Delivery and experience readiness</dt><dd>{review.entry}</dd>
+          <dt>Required field bindings</dt><dd>{review.fields}</dd>
+          <dt>Permission, purpose and unbiased eligibility</dt><dd>{review.guard}</dd>
+          <dt>Request closure and line-state holds</dt><dd>{review.purchaseExit}</dd>
+          <dt>Acknowledgements, retries and stop jobs</dt><dd>{review.retry}</dd>
+        </dl>
+        <h2>Two conditional supplier fits</h2>
+        <h3>Judge.me</h3><p>{review.nativeRationale}</p>
+        <h3>Klaviyo Reviews</h3><p>{review.profileRationale}</p>
+        <p>Primary documentation checked November 25, 2026: <a href="https://judge.me/help/en/articles/8379844-automatic-review-request-emails">Judge.me automatic review requests</a> describes delivery-based scheduling; missing delivery updates can leave requests waiting. <a href="https://help.klaviyo.com/hc/en-us/articles/16319809379611">Klaviyo Reviews flows</a> documents Ready to review entry and a review submission link. These are dedicated reviews products; a generic email subscription does not establish Reviews access. Verify current plan, integration, timing, verification-badge criteria and fees in the offered account. Neither reference guarantees these custom fields or queue controls.</p>
+        <h2>Proposed edge fixtures and selection gate</h2>
+        <ol>{review.edges.map(edge => <li>{edge}</li>)}</ol>
+        <p>{review.acceptance}</p><p>Failure to catch: {review.failure}</p>
+        <h2>Measurement and handover</h2><p>{review.denominator}</p><p>{review.handover}</p>
+        <p>These measures describe operations. A causal comparison requires assignment before dispatch, equivalent eligibility and observation windows, and disclosure of holdouts and attrition. Do not claim merchant results from these fixtures. Do not condition an incentive on rating; disclose any incentive and verify applicable requirements for the destination.</p>
+        <h2>Review request questions</h2>
+        <h3>Should an unhappy buyer lose the public review link?</h3><p>No. Offer help alongside the same public review opportunity. Sentiment is never an eligibility gate.</p>
+        <h3>Does another purchase close this request?</h3><p>No. Reconcile the original order line; only its documented closure or hold conditions apply.</p>
+        <h3>Where should the operator inspect pending requests?</h3><p>Use the <a href="https://judge.me/help/en/articles/8384973-review-requests-dashboard">Judge.me request dashboard</a> or <a href="https://help.klaviyo.com/hc/en-us/articles/34797085426331">Klaviyo review pipeline</a>, and reconcile those states with provider acknowledgements and the local request ledger.</p>
+      </> : editorial ? <>
         <h2>{editorial.question}</h2>
         <p>This is a proposed acceptance exercise for {editorial.audience}. No merchant result or supplier ranking is claimed. {isStock ? 'Bind each notice to an explicit variant request, a current sellable observation and approved copy. A restock event is neither permission for a new purpose nor a stock reservation.' : isLaunch ? 'Start with an approved release, a purchasable destination and a finite sale window; refresh availability before dispatch and close promotion on purchase or expiry.' : isWinBack ? 'Define lapse from the buying job and complete order history; offer a useful return or preference path with a finite end.' : isPost ? 'Start from the actual paid order, then match education to fulfillment and retained products before considering another offer.' : isCart ? 'Distinguish an identified cart from a started checkout; transfer ownership as intent advances and prove the purchase exit before releasing recovery.' : 'Keep the first message focused on the promise made at signup, then end acquisition selling when the customer buys.'}</p>
         <h2>{isStock ? 'Variant subscription and restock dispatch contract' : isLaunch ? 'Product-launch release and dispatch contract' : isWinBack ? 'Win-back lapse and closure contract' : isPost ? 'Post-purchase state and ownership contract' : isCart ? 'Cart and checkout state and ownership contract' : 'Welcome state and ownership contract'}</h2>
