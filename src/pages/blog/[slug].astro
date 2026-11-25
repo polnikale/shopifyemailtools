@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+import { welcomeEditorial } from '../../data/blog-editorial';
 import { getBlogPaths } from '../../data/blog-topics';
 
 export function getStaticPaths() {
@@ -8,6 +9,7 @@ export function getStaticPaths() {
 }
 
 const { topic } = Astro.props;
+const editorial = welcomeEditorial[Astro.params.slug ?? ''];
 const title = `Best Shopify ${topic.goal} for ${topic.audience}`;
 
 const insight = {
@@ -170,6 +172,42 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <a href="/" class="text-sm text-neutral-500 mb-5 inline-block">← Shopify email app guide</a>
       <h1 class="section-title">{title}</h1>
       <p class="section-description">The right Shopify email app depends on catalog events, fulfillment state, consent, message frequency, and the team operating the flows. This guide focuses on {topic.goal} for {topic.audience}.</p>
+      {editorial ? <>
+        <h2>{editorial.question}</h2>
+        <p>This is a proposed acceptance exercise for {editorial.audience}. No merchant result or supplier ranking is claimed. Keep the first message focused on the promise made at signup, then end acquisition selling when the customer buys.</p>
+        <h2>Welcome state and ownership contract</h2>
+        <dl>
+          <dt>Entry event</dt><dd>{editorial.entry}</dd>
+          <dt>Required audience fields</dt><dd>{editorial.fields}</dd>
+          <dt>Dispatch decision</dt><dd>{editorial.guard}</dd>
+          <dt>Purchase exit</dt><dd>{editorial.purchaseExit}</dd>
+          <dt>Retry and replay</dt><dd>{editorial.retry}</dd>
+          <dt>Failure to demonstrate</dt><dd>{editorial.failure}</dd>
+        </dl>
+        <h2>Two boundary exercises</h2>
+        <ul>{editorial.edges.map(edge => <li>{edge}</li>)}</ul>
+        <p>For each exercise, record the input event and current state, expected send or hold decision, actual queue disposition and responsible owner. An unexpected send fails acceptance; repair the mapping before increasing the audience. These are required demonstrations in the offered account, not claims that any supplier already passed.</p>
+        <h2>Conditional shortlist</h2>
+        <p>{editorial.nativeRationale}</p>
+        <p>{editorial.profileRationale}</p>
+        <p>These conditional selection rationales are our proposed designs. The documented building blocks are Shopify form-subscriber welcome automation and custom Flow workflows, and Klaviyo subscriber entry with profile filters checked at send time. They do not prove this account's field freshness, cancellation or operational acceptance.</p>
+        <p>Primary references checked November 25, 2026: <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create">Shopify automation documentation</a> and <a href="https://help.klaviyo.com/hc/en-us/articles/115002774932">Klaviyo flow documentation</a>. Compare subscription, usage and integration quotes for the same eligible audience.</p>
+        <h2>Acceptance decision record</h2>
+        <p>{editorial.acceptance}</p>
+        <p>Record candidate, account configuration, fixture inputs, expected versus actual disposition, owner and decision date. A pass here means the proposed exercise passed in that configuration; it is not a supplier-wide certification or an observed result reported by this guide.</p>
+        <h2>Shared baseline controls</h2>
+        <p>Record purpose and email permission separately. Recheck current permission, purchase and suppression state at dispatch. Use stable event and identity keys, cancel stale queued jobs and assign one sender per welcome purpose. Keep receipts and required service notices under their own ownership. Choose delays from the promise and operational constraints rather than a universal welcome cadence.</p>
+        <h2>Measurement and operator handover</h2>
+        <p>Denominator: {editorial.denominator}. Assign a randomized holdout before dispatch where feasible; retain assignment when a job later expires or a customer purchases. Compare paid orders per assigned eligible identity over the same declared observation window; report uncertainty when counts are sparse. Vendor-attributed revenue is a separate descriptive measure.</p>
+        <p>{editorial.handover}. Hand over the event schema, active template version, exception list, pause control and purchase-exit trace before unattended operation.</p>
+        <h2>Fixed-goods economics</h2>
+        <p>Compare contribution after product cost, discounts, refunds, payment fees and variable fulfillment with the same costs in the holdout. Deduct incremental platform, integration and operator costs once for the same period. Keep migration and overlap costs separate from recurring costs. A paid order is not all profit; no assumed recovered-order count establishes that an app pays for itself.</p>
+        <h2>FAQ</h2>
+        <h3>When should another app enter the shortlist?</h3>
+        <p>When the proposed account demonstration fails a required field, dispatch guard or purchase exit and another candidate can demonstrate that requirement with an owned integration. Keep a useful existing sender when it passes.</p>
+        <h3>Must the welcome contain a discount?</h3>
+        <p>No. Match the signup promise and compare contribution with a declared holdout. Education, preferences or a purchasable product path can be the first useful action.</p>
+      </> : <>
       <div class="my-8 p-6 rounded-xl bg-accent/10 border border-accent/20">
         <h2 class="text-2xl font-bold text-white mb-3">Decision summary</h2>
         <p class="text-neutral-300">{insight} For {topic.goal}, {rule} Confirm current app pricing, Shopify permissions, consent handling, and integration behavior on official sources. Vendor descriptions here are evaluation hypotheses, not certified current features or observed merchant tests. Record purpose and channel permission separately, recheck current suppression and purchase state at dispatch, and test stale-job cancellation and replay deduplication with stable identifiers.</p>
@@ -211,6 +249,7 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <p>Usually fewer than the marketplace suggests. Start with the system that owns the message and add a specialist only when it receives a signal or provides a workflow the primary system cannot safely handle.</p>
       <h3>Should every app be tested with a discount?</h3>
       <p>No. Use a randomized holdout or a justified matched comparison where possible. Vendor-attributed purchases do not establish causal incremental lift. Compare contribution after discounts and refunds with matched subscriptions, usage, integrations, migration, support and reply labor; do not assume an extra recovered cart pays for a platform.</p>
+      </>}
       <p class="text-neutral-400">Related reading: <a href="/use-cases">Shopify email use cases</a>, <a href="/guides/selection-framework">the app selection framework</a>, and <a href="/guides/flow-collision-prevention">flow collision prevention</a>.</p>
     </div>
   </article>
