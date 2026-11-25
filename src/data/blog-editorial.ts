@@ -922,5 +922,105 @@ export const launchEditorial: Record<string, LaunchEditorial> = {
     "nativeRationale": "Shopify Messaging is a useful candidate when a time-bounded release announcement can use a selected destination audience and approved template. Demonstrate the release-specific dispatch checks in the offered account.",
     "profileRationale": "Klaviyo is a useful candidate when maintained destination properties can condition a release flow when fulfillment supplies current window state. Demonstrate the required field mappings and refresh behavior before selection.",
     "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-subscription-brands": {
+    "audience": "subscription brands",
+    "goal": "product launch email apps",
+    "question": "Can a subscriber receive a launch offer without confusing billing status with access?",
+    "entry": "Release owner approves a new-product offer for members with separately verified launch entitlement",
+    "fields": "store/release/customer/subscription IDs, billing status timestamp, access entitlement and expiry, renewal date, skip state, variant availability, consent, cutoff and dispatch key",
+    "guard": "Refresh billing and access independently at dispatch; a paid invoice alone does not establish launch access. Hold unknown entitlement and route billing failures to the service owner",
+    "purchaseExit": "Launch-variant purchase closes its promotion; entitlement expiry or release close holds pending offers. A renewal payment or skipped renewal is not a launch purchase",
+    "retry": "Reconcile release/customer/message acknowledgements before replay; refresh access after a skip or renewal change and require an approved release version for any restart",
+    "failure": "A renewal receipt is treated as a launch conversion while an expired member receives an access promise",
+    "edges": [
+      "Renewal fails after audience selection but access remains valid: route billing service separately and require the release owner to decide promotional eligibility from current entitlement",
+      "Member skips the next shipment after selection: do not infer cancellation or a launch purchase; refresh launch entitlement and hold unknown access before dispatch"
+    ],
+    "denominator": "Unique entitled recipients actually sent before release close; numerator is unique launch-variant buyers within seven days of send, excluding renewal-only orders",
+    "handover": "Subscription operations owns billing and skip exceptions; release owner owns entitlement decisions and the promotion stop, with support receiving access disputes",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a separately approved member announcement needs a branded template and a selected audience distinct from renewal notices. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained entitlement and skip-state properties can separate release messages from renewal flows. Demonstrate field mappings and refresh behavior in the offered account.",
+    "acceptance": "Trace a failed renewal with retained access and a skipped shipment with unknown access; record separate service and promotion dispositions plus a launch-purchase exit. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-shopify-plus-merchants": {
+    "audience": "Shopify Plus merchants",
+    "goal": "product launch email apps",
+    "question": "Can each store approve its own release without inheriting another store\u2019s catalog promise?",
+    "entry": "Central release lead requests store- and region-specific sign-off on a versioned catalog release",
+    "fields": "store ID, region, release version, catalog/variant IDs, local approval owner and timestamp, publication, allocation, destination, consent, cutoff and store-scoped dispatch key",
+    "guard": "Require the destination store\u2019s catalog and regional copy approval before dispatch; central approval does not establish local publication or availability. Hold missing local sign-off",
+    "purchaseExit": "Launch purchase in the designated store closes that offer; approval withdrawal, catalog-version change or local cutoff holds pending jobs for that store",
+    "retry": "Reconcile by store/release/customer/message rather than customer alone; replay only after local owners reconcile acknowledgements and approve the current catalog version",
+    "failure": "A central template links one region to a different store\u2019s unreleased catalog",
+    "edges": [
+      "One region withdraws approval while another is ready: hold the withdrawn region without silently changing its destination to the approved store",
+      "The same customer belongs to two stores: inspect store-scoped keys and each permission record; a purchase in one store must not be counted twice as two launch buyers in a combined report"
+    ],
+    "denominator": "Unique eligible recipient identities actually sent per store during its release window; numerator is unique launch buyers in that store within seven days; deduplicate customer identity before any combined cross-store report",
+    "handover": "Central lead owns the release manifest; each store merchandiser signs catalog and copy approval and can stop local dispatch; analytics owns cross-store identity reconciliation",
+    "nativeRationale": "Shopify Messaging is a useful candidate when each store team can maintain a locally approved branded announcement and customer selection. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when store-scoped profile properties and message conditions are maintained with explicit catalog ownership. Demonstrate field mappings and refresh behavior in the offered account.",
+    "acceptance": "Trace a withdrawn regional approval and a shared customer across stores; save destination, local sign-off and store-scoped purchase-exit evidence. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-international-merchants": {
+    "audience": "international merchants",
+    "goal": "product launch email apps",
+    "question": "Does each recipient reach the approved market in the intended language and currency?",
+    "entry": "Market owner approves a localized release for consented recipients with a verified destination market",
+    "fields": "release/customer IDs, market and locale source/timestamp, currency, destination URL and shipping eligibility, translated-copy version, publication/allocation, local cutoff/timezone, permission and dispatch key",
+    "guard": "Refresh market eligibility and verify the locale, currency and destination together; language preference alone does not prove deliverability or currency. Hold unknown market or unapproved translation",
+    "purchaseExit": "Launch purchase closes the relevant market offer; destination withdrawal, translated-copy withdrawal or local cutoff holds queued jobs without automatic reassignment to another market",
+    "retry": "Reconcile market/release/customer/message acknowledgements; a market change requires fresh destination and copy approval before replay, not just a translated subject",
+    "failure": "A correctly translated email opens an unavailable market with a different checkout currency",
+    "edges": [
+      "Recipient changes destination country after selection: hold the old market offer until shipping eligibility, currency and approved URL are reconciled",
+      "Local launch cutoff passes during a timezone conversion error: expire that market job and record the corrected timezone before any new release"
+    ],
+    "denominator": "Unique eligible recipients actually sent per market before its local cutoff; numerator is unique launch buyers within seven days of send; report markets separately and convert contribution using one declared exchange-rate convention",
+    "handover": "Market owner approves destination and translated copy; commerce operations verifies currency and shipping, and local support receives destination exceptions",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a market owner needs a branded localized announcement with an explicitly selected audience. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained market and locale properties can condition messages when destination mappings have an accountable owner. Demonstrate field mappings and refresh behavior in the offered account.",
+    "acceptance": "Trace a country change and a cutoff crossing; save the actual destination locale/currency and queue hold, then demonstrate the market-specific purchase exit. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-new-shopify-stores": {
+    "audience": "new Shopify stores",
+    "goal": "product launch email apps",
+    "question": "Can a first launch distinguish live buying signals from rehearsal and sparse history?",
+    "entry": "Store owner approves the first live release after a separately labeled test dispatch and destination check",
+    "fields": "store/release/customer/variant IDs, live versus test mode, test-order marker, publication and stock timestamps, consent provenance, opening/cutoff, template approval and dispatch key",
+    "guard": "Exclude test identities and orders from the live cohort; verify publication and destination with a live-state check. Sparse history is not proof of intent, so use declared launch permission rather than inferred affinity",
+    "purchaseExit": "Live launch purchase closes promotion; a test purchase verifies the rehearsal branch only. Withdrawal or release expiry holds pending live messages",
+    "retry": "Reconcile live and rehearsal ledgers separately before replay; never import test acknowledgements as live delivery evidence or infer success from an empty event history",
+    "failure": "A test order suppresses a real subscriber while a tiny live sample is reported as reliable lift",
+    "edges": [
+      "A rehearsal order shares an email with the owner\u2019s live profile: retain mode/order markers and prove it cannot create a live launch conversion",
+      "No prior orders exist and the first cohort has zero sent recipients: record no rate, hold unverified publication and obtain an owned destination check before opening"
+    ],
+    "denominator": "Unique consented live recipients actually sent during the release window; numerator is unique live launch buyers within seven days; exclude rehearsal sends/orders and show raw counts with sparse-count uncertainty",
+    "handover": "Store owner signs live opening and pause; backup separates test records and reconciles pending jobs; support receives first-order destination failures",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a first release can be maintained as one approved branded announcement alongside the catalog. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when explicit live/test and declared-interest properties can organize a growing audience without inventing purchase history. Demonstrate field mappings and refresh behavior in the offered account.",
+    "acceptance": "Trace the shared rehearsal identity and an empty live cohort; save mode separation, zero-denominator treatment and a live purchase-exit trace. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-high-volume-stores": {
+    "audience": "high-volume stores",
+    "goal": "product launch email apps",
+    "question": "Can a large release resume without replaying recipients whose acknowledgements are uncertain?",
+    "entry": "Dispatch owner approves a versioned release with a finite audience snapshot, batch watermark and expiry",
+    "fields": "store/release/customer/message IDs, cohort snapshot, batch and watermark, selected/attempted/acknowledged timestamps, provider response ID, uncertain state, permission/purchase refresh, stock/publication, throughput budget and cutoff",
+    "guard": "Refresh eligibility before each batch; apply an operator-approved throughput budget and stop at cutoff. A watermark records processing progress, not proof of delivery or current eligibility",
+    "purchaseExit": "Launch purchase closes remaining promotional attempts for that identity; release expiry holds the backlog. Reconcile pending jobs explicitly because a skipped step does not prove cancellation",
+    "retry": "Join provider response IDs to the dispatch ledger before replay; isolate uncertain acknowledgements, deduplicate confirmed attempts and resume only reconciled identities within the valid window",
+    "failure": "A timeout advances the watermark, then a bulk restart duplicates accepted messages and outlives the release window",
+    "edges": [
+      "Provider accepts a batch but its response times out: mark acknowledgement uncertain, reconcile provider evidence and hold those identities rather than replaying the entire batch",
+      "Backlog throughput would cross the sale cutoff: stop expired jobs, record dispositions and require a newly approved release before any remaining recipients are reassigned"
+    ],
+    "denominator": "Unique eligible recipients actually sent across deduplicated batches before cutoff; numerator is unique launch buyers within seven days of send; report uncertain acknowledgements separately until reconciled and retain all originally assigned identities in any holdout comparison",
+    "handover": "Dispatch operator owns throughput and pause; on-call backup receives watermark, provider IDs and unresolved acknowledgements before restart; merchandising owns availability and expiry",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a finite approved announcement and selected audience fit the operator\u2019s demonstrated batch controls. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained release and purchase properties support message conditions alongside an independently demonstrated reconciliation ledger. Demonstrate field mappings and refresh behavior in the offered account.",
+    "acceptance": "Trace an accepted batch with a lost response and a cutoff-limited backlog; save per-identity dispositions, watermark evidence and purchase exits before approving restart. Compare both candidates against these proposed fixtures, recording expected and actual queue state, field timestamps, copy version and owner decisions. Unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
   }
 };
