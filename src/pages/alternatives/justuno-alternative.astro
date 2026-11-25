@@ -10,202 +10,95 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('justuno')!;
 const path = '/alternatives/justuno-alternative';
 const title = 'Best Justuno Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Justuno — capture without lifecycle, pricing at traffic scale, integration fatigue — plus eight ranked capture and email alternatives with migration checklist.';
+const desc = "Evaluate Justuno capture alternatives by quiz fields, identity handling, integration recovery, downstream journeys and matched costs, with proposed acceptance fixtures.";
 
 const altSlugs = ['privy', 'sequenzy', 'omnisend', 'klaviyo', 'mailchimp', 'tinyemail', 'brevo', 'shopify-email'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
-  { question: 'Why do Shopify merchants leave Justuno?', answer: 'Justuno excels at onsite personalization and quizzes — merchants leave when lifecycle automation and revenue-per-flow reporting become the job, when traffic-based pricing climbs on SEO visitors who rarely subscribe, or when integration handoffs to ESP feel brittle compared to Omnisend bundled forms.' },
-  { question: 'Should I keep Justuno for quizzes only?', answer: 'Common pattern: Justuno capture plus Sequenzy or Klaviyo lifecycle. Leave Justuno entirely when Omnisend forms plus automations suffice or when Privy simpler capture meets needs without quiz complexity maintenance.' },
-  { question: 'Justuno vs Privy when leaving?', answer: 'Privy simpler spin-wheels and exit intent; Justuno advanced quizzes and product finders for tea preference, keyboard switches. Both need separate lifecycle ESP — compare total stack cost and quiz maintenance hours.' },
-  { question: 'What is the best Justuno replacement for lifecycle?', answer: 'Sequenzy when capture works but retention fails; Omnisend when bundling forms, email, SMS, and automations. Justuno never was full lifecycle platform.' },
-  { question: 'How does Justuno migration work?', answer: 'Export subscribers with quiz answers and consent source; document onsite campaigns; connect lifecycle ESP; rebuild welcome and cart; point Justuno integrations to new ESP or replace with Omnisend forms.' },
-  { question: 'When should I stay on Justuno?', answer: 'Stay when product quizzes drive measurable conversion and segmentation data feeds downstream ESP effectively — specialty tea preference quiz feeding Sequenzy replenishment is common fit.' },
-  { question: 'Is Justuno pricing traffic-based?', answer: 'Pageview and impression tiers climb with SEO traffic — climbing-gear content hubs pay for visitors who never take quiz. Compare cost per acquired email subscriber, not headline platform fee.' },
-  { question: 'Can Omnisend replace Justuno entirely?', answer: 'Omnisend forms cover moderate capture needs — not deepest quiz logic. Replace Justuno when quiz complexity was overbought; keep Justuno when quiz segmentation is revenue-critical.' },
+  {
+    "question": "Why consider a Justuno alternative?",
+    "answer": "Start with a documented requirement: capture usability, field delivery, identity handling, operator effort or cost. A missing email branch can be an integration or sender configuration issue rather than a capture limitation. Identify the failing boundary before replacing the stack."
+  },
+  {
+    "question": "Can I keep Justuno and change the sender?",
+    "answer": "Consider that path if capture remains useful and the intended integration passes field, identity, permission and recovery checks. Verify the actual account and connection route. Do not assume a direct integration or that every answer maps to the same field type."
+  },
+  {
+    "question": "Will Privy lose quiz field depth?",
+    "answer": "No such limitation is established here. Give both candidates the same field contract and test required values, types, updates and downstream branches in the intended plans. Choose from observed fit rather than a general claim that one supplier is simpler."
+  },
+  {
+    "question": "Is Justuno currently available on Shopify?",
+    "answer": "The Shopify listing checked for this page says the app is not currently available on the App Store. Confirm installation and support options directly with Justuno for your account. This listing status does not prove that every existing account or service has ended."
+  },
+  {
+    "question": "How should quiz data migrate?",
+    "answer": "Preserve field definitions, response values, source, timestamps, purpose and channel permission evidence and current opt-outs. Test anonymous-to-known identity, updated answers, missing values and duplicate events. Recheck current eligibility and purchase state before sending."
+  },
+  {
+    "question": "How should pricing be compared?",
+    "answer": "Verify current billing units and allowances instead of assuming pageviews or impressions are charged. Model matched traffic, contacts, email and SMS volume, destinations, integrations, overages and operator time. Report recurring and transition costs separately."
+  },
+  {
+    "question": "When should I keep a quiz?",
+    "answer": "Keep it when its usable decision value and measured contribution justify its friction and operating cost. A preference finder can support relevant content without proving revenue lift. Compare with a simpler form under consistent downstream treatment and account for uncertainty."
+  },
+  {
+    "question": "How fast must answers reach email?",
+    "answer": "Set a latency target from the journey. Test late, missing and repeated events and define a fallback when no answer arrives. Neither five minutes nor twenty-four hours is a universal requirement, and profile delivery alone does not prove correct subscription or dispatch behavior."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Justuno alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Capture evolution</p>
-        <h1 class="hero-title mt-5">Best Justuno alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Justuno is onsite intelligence — quizzes, product finders, personalized offers. Merchants leave when quiz data sits unused in spreadsheets while fifteen thousand subscribers get generic blasts, when traffic pricing bills full SEO volume at two percent quiz completion, or when Omnisend bundling capture plus lifecycle beats Justuno plus ESP integration tax.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked tools for stores graduating off Justuno-as-ESP or simplifying capture stack — Privy peer, lifecycle platforms, bundled multichannel. Sequenzy leads when quiz answers must feed replenishment logic downstream. Map quiz fields to ESP segments before blaming Justuno for lifecycle gaps your integration never configured.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Justuno replacements" picks={[
-          { label: 'Best capture peer', tool: 'Privy', reason: 'Simpler popups when quiz complexity was overbought.' },
-          { label: 'Best lifecycle layer', tool: 'Sequenzy', reason: 'Monetize quiz segments with replenishment and winback.' },
-          { label: 'Best bundled upgrade', tool: 'Omnisend', reason: 'Forms plus email plus SMS without integration handoffs.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'When quiz segments need enterprise segmentation scale.' },
-          { label: 'Best budget', tool: 'tinyEmail', reason: 'Stepping stone only — not lifecycle solution.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Justuno</h2>
-        <p>Capture without lifecycle monetization. Justuno collects tea preference, switch type, harness experience level — brilliant data if Sequenzy or Klaviyo consumes it. Many stores never connect quiz answers to replenishment branches; Justuno becomes expensive popup with extra steps.</p>
-        <p>Traffic pricing on low-conversion SEO. Climbing-gear trail guides drive pageviews; quiz take rate under three percent. Justuno bills impressions while email list crawls — compare cost per acquired purchaser against Privy simplicity or Omnisend bundled forms.</p>
-        <p>Integration fatigue. Justuno feeding Klaviyo or Mailchimp breaks when API mappings neglected — quiz field stops updating segments silently. Omnisend consolidation tempts when integration maintenance exceeded quiz lift.</p>
-        <p>Justuno wins when quizzes change conversion — keyboard switch finder lifting AOV, tea blend quiz feeding subscription starter kit. Stay with documented quiz-to-purchase attribution and lifecycle ESP consuming answers within a documented latency target appropriate to the journey; twenty-four hours is not a universal threshold.</p>
-
-        <h2>Quizzes, capture, and lifecycle handoff</h2>
-        <p>Before exit, audit whether quiz data feeds active segments. If not, simplify to Privy or Omnisend forms — quiz complexity was overbought. If yes, keep Justuno capture short term while upgrading lifecycle to Sequenzy with explicit field mapping day one.</p>
-        <p>Architecture: Justuno quiz → tag or custom field → Sequenzy replenishment branch. Broken handoff is why merchants blame Justuno when lifecycle ESP was never configured.</p>
-
-        <h2>Newsletters, lifecycle, and quiz-driven segments</h2>
-        <p>Editorial newsletters should reference quiz-declared preferences — tea steeping guides by blend, keyboard content by switch type. Lifecycle replenishment must branch on same tags within twenty-four hours of signup or quiz data decays in relevance. Justuno without lifecycle is capture theater; Justuno with Sequenzy is preference-driven retention.</p>
-
-        <h2>Justuno migration checklist</h2>
-        <ol>
-          <li><strong>Export subscribers with quiz responses and consent source</strong> — preserve purpose- and channel-specific permission evidence, current opt-outs and field definitions. A quiz response is not marketing permission; recheck eligibility and purchase state at send time.</li>
-          <li><strong>Document active onsite campaigns</strong> — quizzes, bars, exit offers; screenshot logic.</li>
-          <li><strong>Audit quiz-to-purchase attribution</strong> — justify keep vs simplify capture.</li>
-          <li><strong>Map quiz fields to lifecycle ESP segments</strong> before disconnecting integrations.</li>
-          <li><strong>Install or upgrade lifecycle platform</strong> — Shopify sync first.</li>
-          <li><strong>Reconnect Justuno to new ESP or replace with Omnisend forms</strong> after field, permission, suppression and queue checks pass; assign one sender per journey and deduplicate replayed events.</li>
-          <li><strong>Rebuild welcome and cart on lifecycle ESP</strong> — quiz branch welcome if data available.</li>
-          <li><strong>Pause old email sends</strong> — first verify which tool owns each send and cancel or drain its pending queue. Capture may continue if the handoff preserves purpose- and channel-specific permission evidence and current suppressions.</li>
-          <li><strong>Migrate replenishment using quiz data</strong> — tea blend, coffee roast, switch preference.</li>
-          <li><strong>Set collision rules</strong> — quiz offer vs cart recovery timing.</li>
-          <li><strong>Calculate cost per acquired subscriber monthly</strong> — Privy or Omnisend comparison.</li>
-          <li><strong>Plan campaign-data retention</strong> under applicable access terms and retention requirements before cancellation.</li>
-        </ol>
-
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Specialty tea — kept Justuno quiz, upgraded lifecycle.</strong> Blend preference quiz feeds Sequenzy replenishment branches; Justuno capture stays, email moved off Justuno-as-ESP. Quiz data finally monetized.</p>
-        <p><strong>Mechanical keyboards — replaced Justuno with Privy plus Sequenzy.</strong> Switch finder quiz overbought — simple exit intent plus Sequenzy group-buy suppression sufficient. Traffic pricing dropped forty percent.</p>
-        <p><strong>Proposed outdoor-gear consolidation.</strong> Compare quiz completion, qualified signups and incremental contribution margin with simpler bundled forms before a seasonal rack launch. Account for implementation and operator time; no completed consolidation or measured saving is established.</p>
-
-        <h2>Quiz ROI and capture economics</h2>
-        <p>Justuno value equals quiz completion rate times downstream lifecycle monetization. Specialty tea at eight percent quiz completion feeding Sequenzy blend replenishment justifies impression pricing. Climbing-gear SEO hub at two percent completion paying traffic tiers without ESP segment mapping is capture theater. Calculate quarterly: Justuno cost divided by new purchasers attributed to quiz segment — if CPA exceeds paid acquisition, simplify capture.</p>
-        <p>Integration maintenance is hidden cost. API field mappings break when Shopify theme updates or ESP schema changes — assign owner to verify quiz-to-tag pipeline monthly or downgrade capture complexity. Privy plus Sequenzy often beats Justuno plus broken Klaviyo mapping nobody audits.</p>
-
-        <h2>Due diligence before changing Justuno</h2>
-        <p>Export quiz response distribution — empty segments signal wasted complexity. Screenshot every live campaign with targeting rules. Test ESP field sync with new subscriber before bulk migration. If replacing Justuno entirely, plan subscriber communication about capture experience change. Compare Omnisend form conversion against Justuno quiz completion in A/B before contract renewal.</p>
-      </article>
-
-      <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Justuno alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Capture peer" paragraphs={[
-          'Privy simpler capture alternative — exit intent, spin wheels, list growth without quiz maintenance overhead. When Justuno complexity exceeded lift for board-game and pottery stores.',
-          'Pair Sequenzy lifecycle — architecture replaces Justuno-as-ESP. Pageview pricing still applies — evaluate cost per subscriber versus Justuno.',
-          'Choose Privy when simplifying capture while upgrading lifecycle elsewhere.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} badge="Lifecycle pick" paragraphs={[
-          'Sequenzy lifecycle layer Justuno never was — welcome through winback consuming quiz tags if mapped correctly. Agent-first replenishment by tea blend or roast preference.',
-          'Keep Justuno quiz short term if attribution strong — point integration to Sequenzy day one of cart flow live. Pay-per-email without Justuno email contact tiers.',
-          'Choose Sequenzy when quiz data ready to monetize — not when capture was only problem.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Omnisend bundled replacement — forms, email, SMS, automations without Justuno integration handoffs. Moderate form sophistication — not deepest quiz logic.',
-          'Replace Justuno entirely when quiz was overbought and integration fatigue was exit trigger. Prebuilt cart and welcome immediate.',
-          'Choose Omnisend when consolidation beats quiz plus ESP architecture.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Klaviyo when Justuno list and quiz segments need enterprise scale — collection browse abandonment plus quiz custom properties. Profile pricing with hygiene.',
-          'Complex field mapping from Justuno — document before migration. Assign weekly segment owner.',
-          'Pick Klaviyo when data depth matches quiz sophistication invested.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Mailchimp lateral — wrong direction for Shopify lifecycle graduation from Justuno. Customer Journeys do not consume quiz logic well.',
-          'Rarely correct unless team refuses non-Mailchimp UI.',
-          'Skip to Omnisend or Sequenzy for ecommerce.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'tinyEmail stepping stone — AI campaigns without lifecycle or quiz sophistication. Brief bridge only.',
-          'Graduate to Sequenzy when cart recovery matters.',
-          'Avoid Justuno → tinyEmail → Sequenzy chain.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Brevo budget newsletters plus basic automation — lighter than Sequenzy. Quiz handoff still required if keeping Justuno capture.',
-          'Cost discipline path — plan lifecycle upgrade when replenishment critical.',
-          'Choose for tight budget interim only.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Shopify Messaging supports marketing automations; map welcome, cart and replenishment requirements to its templates or custom Shopify Flow workflows. Evaluate quiz capture separately.',
-          'Choose a trial length from event coverage, permission and suppression checks rather than a fixed ninety-day pause.',
-          'Compare the native workflow fit, required capture integration and matched all-in costs before choosing a destination.',
-        ]} />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Capture stack comparison</h2>
-        <table class="data-table">
-          <thead><tr><th>Stack</th><th>Capture depth</th><th>Lifecycle</th><th>Typical cost</th></tr></thead>
-          <tbody>
-            <tr><td>Justuno only (leaving)</td><td>Advanced quizzes</td><td>Basic</td><td>$50–150/mo</td></tr>
-            <tr><td>Justuno + Sequenzy</td><td>Advanced</td><td>Advanced</td><td>$70–180/mo</td></tr>
-            <tr><td>Privy + Sequenzy</td><td>Standard</td><td>Advanced</td><td>$60–140/mo</td></tr>
-            <tr><td>Omnisend unified</td><td>Moderate</td><td>Solid</td><td>$60–120/mo</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> · <a class="link" href="/alternatives/privy-alternative">Privy alternatives</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
+  <section class="container py-14 md:py-20">
+    <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a></nav>
+    <h1 class="hero-title">Justuno alternatives for Shopify</h1>
+    <p class="mt-7 max-w-4xl text-xl leading-9">Changing a capture tool and changing an email sender are different projects. Keep useful preference data if it drives a real customer journey; simplify collection when it adds no decision value. Compare the current account with a proposed replacement using the same field contract, traffic and downstream treatment.</p>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>Availability and documented field support</h2>
+      <p>The <a class="link" href="https://apps.shopify.com/justuno-pop-ups-email-conversion">current Shopify listing</a> says Pop-Ups &amp; Spotlight by Justuno is not currently available on the App Store. Confirm the installation and support route directly before planning a new deployment. Existing account operation needs its own check; the listing is not proof of a company-wide shutdown.</p>
+      <p>Justuno documents custom property mapping in its <a class="link" href="https://hub.justuno.com/article/570-syncing-braze-to-justuno">Braze integration guide</a>, including quiz responses and destination property setup. This is useful evidence of a field-handoff workflow, not proof that every sender has the same connector, types or subscription behavior. Use the documentation for your actual destination.</p>
+      <h2>Choose the boundary to replace</h2>
+      <p>If a quiz collects useful preferences but email ignores them, trace the data before migrating. Check the captured value, integration payload, destination property, segment condition and message template in order. Repairing a missing mapping may preserve valuable capture work with less disruption.</p>
+      <p>If the capture experience itself is the problem, compare completion friction, mobile layout, accessibility, targeting and field quality. A shorter form may reduce maintenance while discarding useful product guidance; a longer quiz may improve recommendations while losing visitors. Measure both consequences rather than naming a universal winner.</p>
+      <h2>Write the field and identity contract</h2>
+      <p>For every answer, document source field, allowed values, destination type, null handling, update precedence and downstream use. Distinguish an explicit unknown answer from a missing event. Preserve the version of the quiz so a renamed option does not silently move old customers into a different branch.</p>
+      <p>Use an anonymous visitor who later supplies an email, an existing subscriber who changes an answer, and two devices associated with one customer as proposed fixtures. Require predictable merging and prevent duplicate welcome entry. Check that an unsubscribe survives a later quiz submission; profile identity does not establish channel permission.</p>
+      <h2>Proposed skincare undertone fixture</h2>
+      <p>Create undertone and product-preference fields with known values, an unanswered case and an updated response. Send these through the current Justuno route and each proposed replacement, including Privy if shortlisted. Require the destination welcome branch and email-two content to match the latest valid answer, with a documented fallback for missing data.</p>
+      <p>Exercise withdrawal after capture, purchase before email two, delayed updates and event replay. Inspect field types and branch logs before evaluating clicks. This is a proposed acceptance fixture: no 22% click lift, Privy field-depth loss or completed decision to stay with Justuno plus Sequenzy is asserted.</p>
+      <h2>Tea and keyboard fixtures</h2>
+      <p><strong>Tea preference.</strong> Map caffeine tolerance and blend preference to editorial content. Use actual purchase history, rather than preference alone, to determine replenishment eligibility. Test a customer who changes blend after purchasing and one who declines marketing. Useful personalization is possible only if the destination can enforce the contract.</p>
+      <p><strong>Keyboard finder.</strong> Compare a switch-preference quiz with a shorter signup form. Keep group-buy and preorder state separate from preference data so a capture offer cannot restart an excluded cart journey. Compare qualified signups and operator work under matched traffic; no forty-percent pricing reduction or completed migration is claimed.</p>
+      <h2>Capture economics without invented tiers</h2>
+      <p>Calculate total capture and sender cost from current terms and actual usage. Include integration upkeep, creative changes, support, overages and transition work. Cost per qualified signup equals matched total cost divided by qualified signups; state the qualification rule and use no ratio when the denominator is zero.</p>
+      <p>Quiz completion alone cannot establish ROI. Compare a quiz, simpler form and bundled capture on comparable traffic while holding subsequent treatment consistent. Track purchaser quality and contribution after discounts and returns. Where a controlled test is feasible, report incremental contribution and uncertainty separately from attributed purchases.</p>
+      <h2>Handoff and recovery checklist</h2>
+      <p>Inventory live campaigns, targeting rules, field definitions, suppression state and available exports before disconnecting anything. Verify the destination sender and Shopify events first. Keep one sender and queue owner per journey; changing capture must not activate a second welcome series.</p>
+      <p>Test missing fields, delayed delivery, retries and out-of-order updates. Record event identifiers and expected final customer state. Define whether a journey waits, falls back to non-personalized content or stops when an answer is absent. Recheck current permission and purchase state at dispatch.</p>
+      <p>Exercise a theme change on representative mobile screens and confirm the capture still submits the expected payload. Test available access, deletion and export workflows against your requirements. Record the responsible operator and recovery steps rather than promising a universal fifteen-minute QA routine.</p>
+      <h2>Readiness and ongoing review</h2>
+      <p>Activate the replacement capture only after mappings, identity, eligibility and recovery checks pass. Retain an appropriate rollback route for the form and integration, with clear ownership of already queued messages. Reconcile captured submissions, accepted destination records and eligible journey entries before increasing traffic.</p>
+      <p>Review field-sync failures and campaign changes at a cadence suited to the store. Repeat affected fixtures after schema, integration or targeting changes. Remove duplicate popups when they serve no distinct purpose, but retain useful targeting and product guidance. A calendar milestone does not prove improved welcome revenue.</p>
+    </article>
+    <section class="space-y-8 py-12">
+      <h2 class="font-serif text-3xl font-black">Candidate checks by role</h2>
+      <p>Order is a reading sequence, not a performance ranking. These are proposed account checks, not completed merchant tests.</p>
+      <ToolReview app={alternatives[0]} rank={1} paragraphs={["Evaluate Privy as a capture candidate using the same skincare field and identity contract. No field-depth loss is established.", "Compare mobile completion, response updates and ongoing campaign work. If it also owns messaging in your plan, include those functions in the evaluation rather than presuming a separate sender is mandatory."]} />
+      <ToolReview app={alternatives[1]} rank={2} paragraphs={["Evaluate Sequenzy as a downstream journey candidate when captured preferences have a defined email use.", "Verify the available Justuno connection route, field types, branch conditions and purchase exits. Measure the operator effort of the tea fixture; no automatic monetization is promised."]} />
+      <ToolReview app={alternatives[2]} rank={3} paragraphs={["Evaluate Omnisend for consolidated capture and messaging against the same required fields and branch cases.", "Bundling can reduce connection boundaries if it passes the tests. Inspect remaining Shopify and identity dependencies; consolidation alone does not prove faster setup or sufficient quiz logic."]} />
+      <ToolReview app={alternatives[3]} rank={4} paragraphs={["Evaluate Klaviyo with custom-property updates and collection or purchase state where those inputs matter.", "Test an answer changing after journey entry. Document whether the message uses entry-time or current values and whether that meets the requirement."]} />
+      <ToolReview app={alternatives[4]} rank={5} paragraphs={["Evaluate Mailchimp with the same required field mappings, segment conditions and Shopify events.", "Have the operating team rebuild the intended welcome branch. No general inability to consume quiz data or categorical exclusion is established here."]} />
+      <ToolReview app={alternatives[5]} rank={6} paragraphs={["Evaluate tinyEmail against required campaigns and automation behavior in the intended account.", "Test missing-answer fallback and purchase suppression before deciding whether its scope fits. Do not choose or reject it based on an assumed need to migrate again."]} />
+      <ToolReview app={alternatives[6]} rank={7} paragraphs={["Evaluate Brevo against the required field types, updates and journey behavior.", "Price the actual contact and sending requirements, with integration and support work. Neither budget leadership nor insufficient lifecycle depth is established by this page."]} />
+      <ToolReview app={alternatives[7]} rank={8} paragraphs={["Evaluate Shopify Messaging and the available Shopify workflow route against the intended capture contract.", "Test whether required preference values and current purchase state reach the intended branch. Include capture and integration costs in the native-stack comparison."]} />
+    </section>
+    <div class="card overflow-x-auto">
+<table class="data-table"><thead><tr><th>Architecture</th><th>Potential benefit</th><th>Required proof</th></tr></thead><tbody><tr><td>Retain capture, change sender</td><td>Preserve useful quiz design</td><td>Supported route, fields and recovery</td></tr><tr><td>Change capture, retain sender</td><td>Simplify collection work</td><td>Equivalent required data and eligibility</td></tr><tr><td>Consolidate capture and messaging</td><td>Reduce handoff boundaries</td><td>Required quiz behavior and journey controls</td></tr></tbody></table>
     </div>
+    <p class="my-8"><a class="link" href="/alternatives">All alternatives</a> · <a class="link" href="/apps/justuno">Justuno review</a></p>
   </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Four-week Justuno handoff timeline</h2>
-    <p><strong>Week 1 — Quiz data audit.</strong> Verify ESP field mapping with live test subscriber. Export quiz segments with completion rates. Decide keep Justuno versus Privy or Omnisend forms.</p>
-    <p><strong>Week 2 — Lifecycle live.</strong> Sequenzy welcome branching on quiz answers if data quality passes. Cart recovery regardless — quiz was never abandonment tool. Reconnect integration within forty-eight hours.</p>
-    <p><strong>Week 3 — Monetize segments.</strong> Replenishment by tea blend or coffee roast from quiz tags. Suppress giveaway captures from winback. First newsletter segmented by quiz outcome.</p>
-    <p><strong>Week 4 — Cost review.</strong> Calculate cost per acquired purchaser. Downgrade Justuno impressions if quiz CPA high. Document monthly QA on field sync.</p>
-
-    <h2>Buyer desk: quiz data must flow</h2>
-    <p>Justuno exit is often lifecycle failure, not quiz failure — audit whether answers feed ESP segments before blaming capture tool. Broken field mapping wastes quiz investment.</p>
-    <p>Evaluate simpler capture when the quiz adds insufficient incremental contribution margin after matched platform and operating costs. A three-percent completion rate on SEO traffic is not a universal cutoff; compare qualified reach, purchase quality and maintenance effort for the same traffic cohorts.</p>
-    <p>Success at ninety days: quiz tags drive replenishment or welcome branches, cost per acquired subscriber justified, lifecycle ESP explains segment logic in standup. Monthly field-sync QA on calendar — broken mapping silently kills Justuno investment. Run quiz completion report monthly after exit. A/B test Privy versus Justuno only if quiz lift documented — otherwise simplify capture.</p>
-
-    <h2>Exit paths by failure mode</h2>
-    <p><strong>Privy:</strong> evaluate simpler capture against the current quiz on comparable traffic. <strong>Omnisend:</strong> evaluate bundling if it reduces measured integration effort. <strong>Keep Justuno:</strong> consider retaining quizzes when field mapping and downstream journeys pass acceptance checks. Completion rate and weekly attribution alone do not establish causal lift.</p>
-    <p><strong>Scenario — skincare undertone quiz.</strong> Sequenzy welcome branch from Justuno tags lifted email two clicks 22%; migration to Privy would have lost field depth — stayed Justuno plus Sequenzy.</p>
-    <h2>Monthly field-sync QA</h2>
-    <p>Broken quiz-to-ESP mapping silently kills capture ROI — calendar fifteen-minute monthly test: complete quiz on mobile, verify custom fields in ESP within five minutes, confirm welcome branch fires correct undertone path.</p>
-
-    <h2>Traffic-source capture economics</h2>
-    <p><strong>Proposed outdoor-gear capture trial.</strong> Compare a layering quiz with a site-wide spin wheel using comparable traffic and consistent downstream email treatment. Measure qualified signups, incremental purchasers and contribution margin after all-in costs; no three-week result or sixty-day merchant test has been observed.</p>
-    <p>Evaluate capture alternatives using incremental contribution margin and operator effort for matched traffic. A three-percent completion rate cannot decide the destination. Compare a simpler form, bundled capture and the existing quiz while holding downstream treatment consistent.</p>
-    <p>Set an ESP handoff latency target from the journey requirement and measure delayed, missing and replayed events. Test same-session abandonment and purchase suppression explicitly; no observed twelve-minute skincare failure or universal five-minute SLA is established.</p>
-
-    <h2>90-day capture-to-lifecycle proof plan</h2>
-    <p>Illustrative proof sequence, not a ninety-day promise: audit field mapping, then test traffic-source capture rules and welcome branches on comparable cohorts. Measure cost per qualified signup and incremental purchaser over a relevant buying cycle. Retire a capture variant only after checking uncertainty and all-in cost; spot checks alone do not establish a latency guarantee.</p>
-    <p>Proposed outdoor-gear evaluation: test a layering quiz against a wheel with comparable traffic, consistent eligibility and matched downstream treatment. Compare incremental contribution margin including capture, implementation and operator costs; no three-week win or payback has been observed.</p>
-    <p>Proposed resilience checks: test popup layering after theme updates, verify mobile rendering and confirm consent evidence exports include timestamps and policy versions where applicable. Test access and deletion workflows against the applicable requirements; no revenue dip or twenty-four-hour GDPR fulfillment result is established here.</p>
-
-    <h2>Justuno exit desk: popups without lifecycle backbone</h2>
-    <p>Justuno exits mirror Privy patterns: capture excellence, automation gap. Week one: rank popups by margin per signup, not conversion rate alone — outdoor gear quiz funnels may leak high-intent hikers into generic newsletters. Week two: wire every Justuno list to welcome within twenty-four hours; vinyl collectors unsub when first email is unrelated warehouse sale. Week three: test offer collision between popup coupon and cart flow; artisan coffee ten-percent welcome stacks with fifteen-percent abandonment without rules. Week four through twelve: reduce popup count as ESP segments mature; climbing gear fit-finder data should drive email creative, not sit in Justuno analytics only. Board game email capture during Kickstarter overlap needs suppression from preorder automations. Sequenzy when strategy owns capture plus journeys; Klaviyo for advanced segmentation from quiz fields; Privy if staying popup-native is cheaper short term. Day ninety: zero-day lag from signup to first on-brand mail, collision doc live, measurable welcome revenue on holdout.</p>
-  </article>
-
-    <h2>Justuno capture audit before ESP switch</h2>
-    <div class="prose-shopify mb-10">
-      <p>Export campaign definitions and compare signups, qualified purchases and contribution margin over a relevant buying cycle before retiring a popup. Map fields such as trail preference, tea caffeine tolerance and keyboard layout to ESP properties. Test capture on representative slow mobile connections and launch traffic. Check offer collisions against cart recovery; choose welcome latency from the journey need, with current permission and purchase-state suppression at send time.</p>
-    </div>
-
   <FaqSection faqs={faqs} title="Justuno alternatives FAQ" />
 </BaseLayout>
