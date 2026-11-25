@@ -1,7 +1,7 @@
 /** Editorial acceptance fixtures, not performed merchant tests. */
 export type WelcomeAudience = 'small Shopify stores' | 'DTC brands' | 'fashion stores' | 'beauty stores' | 'food and beverage stores' | 'subscription brands' | 'Shopify Plus merchants' | 'international merchants' | 'new Shopify stores' | 'high-volume stores';
 /** Explicit editorial contracts; remaining goals retain their existing renderer. */
-export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps' | 'win-back email apps';
+export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps' | 'win-back email apps' | 'product launch email apps';
 export type GoalEditorial = {
   audience: WelcomeAudience; goal: EditorialGoal; question: string; entry: string;
   fields: string; guard: string; purchaseExit: string; retry: string;
@@ -818,5 +818,109 @@ export const winBackEditorial: Record<string, WinBackEditorial> = {
     "nativeRationale": "Consider Shopify Messaging: a bounded native segment program remains useful if operations demonstrates freshness during representative bursts. This proposed design requires the configured-account exercise.",
     "profileRationale": "Consider Klaviyo: purchase profile filters provide documented action checkpoints alongside a maintained watermark contract. Supplied audience fields and queue behavior still require demonstration.",
     "acceptance": "Replay stale eligibility after purchase, lose an acknowledgement and change the lapse rule; accept no reopened episode, no blind resend and an inspectable pause trace."
+  }
+};
+
+export type LaunchEditorial = GoalEditorial & { goal: 'product launch email apps' };
+export const launchEditorial: Record<string, LaunchEditorial> = {
+  "best-shopify-product-launch-email-apps-for-small-shopify-stores": {
+    "audience": "small Shopify stores",
+    "goal": "product launch email apps",
+    "question": "Can one owner release a new SKU without sending an unavailable promise?",
+    "entry": "Owner approves a published release for a consented launch audience",
+    "fields": "launch ID, customer ID, variant ID, publication status, available-to-sell timestamp, opening and closing time, permission, sender owner, dispatch ledger",
+    "guard": "Refresh channel publication and variant stock after selection; hold unknown or zero stock and jobs outside the sale window",
+    "purchaseExit": "Paid purchase of the launch variant closes its promotion; sale close or withdrawal retires pending jobs",
+    "retry": "Reconcile the launch/customer/message ledger before replay; unknown acknowledgements require owner review, and reopening needs a new approved release version",
+    "failure": "A second sender repeats the launch after the first sender times out",
+    "edges": [
+      "Stock falls to zero after selection: expect hold, no substitution promise, and stock-owner review",
+      "Publication is delayed past opening: expect hold until publication is verified within the still-valid sale window"
+    ],
+    "denominator": "Unique eligible recipients actually sent during the approved release window; numerator is unique launch-variant paid buyers within seven days of send",
+    "handover": "Store owner owns the pause control; backup reconciles stock and dispatch exceptions before reopening",
+    "nativeRationale": "Shopify Messaging is a useful candidate when one approved SKU announcement can be drafted beside the store catalog. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when an existing launch-interest profile property can separate interested customers from the general list. Demonstrate the required field mappings and refresh behavior before selection.",
+    "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-dtc-brands": {
+    "audience": "DTC brands",
+    "goal": "product launch email apps",
+    "question": "Can early access remain distinct from the public release?",
+    "entry": "Release owner approves a versioned early-access cohort before public opening",
+    "fields": "release version, cohort assignment, entitlement source and expiry, access URL, allocation timestamp, public opening, consent, customer and dispatch keys",
+    "guard": "Refresh entitlement and allocated stock at dispatch; verify destination access separately because a segment does not enforce storefront access",
+    "purchaseExit": "Launch purchase closes promotion; entitlement expiry or release-version change holds queued early-access jobs and routes review to the release owner",
+    "retry": "Reconcile acknowledgements by release/customer/message key; never relabel a stale early-access job as public outreach",
+    "failure": "An expired entitlement receives a working early-access promise after a release delay",
+    "edges": [
+      "Entitlement is revoked during queue delay: expect hold even if original segment membership remains",
+      "Public opening shifts with VIP messages queued: expect version hold and explicit cohort reassignment before any new dispatch"
+    ],
+    "denominator": "Unique eligible early-access recipients actually sent; count unique launch buyers within seven days, reporting public recipients separately",
+    "handover": "Release owner approves cohort changes; merchandising owns allocation and destination access, and finance reviews contribution",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a separately approved early-access announcement needs a branded template and selected audience. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained entitlement properties can support a filtered early-access flow with an owned access integration. Demonstrate the required field mappings and refresh behavior before selection.",
+    "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-fashion-stores": {
+    "audience": "fashion stores",
+    "goal": "product launch email apps",
+    "question": "Is the advertised capsule available in the recipient\u2019s size and color?",
+    "entry": "Merchandiser approves a capsule announcement for declared variant interest",
+    "fields": "capsule/release ID, preference source and timestamp, size/color variant, available-to-sell timestamp, publication, season cutoff, consent, customer and dispatch keys",
+    "guard": "Refresh the requested variant at dispatch; product-wide stock cannot establish size availability, and unknown preference stays in a separate general-announcement cohort",
+    "purchaseExit": "Relevant variant purchase closes its promotion; sold-out interest moves only to an explicitly consented waitlist, and season close expires the release",
+    "retry": "Reconcile capsule/customer/variant/message acknowledgements; alternatives require new approved copy and eligibility rather than automatic substitution",
+    "failure": "A stocked product is advertised as available although the requested size is sold out",
+    "edges": [
+      "Preferred size sells out after selection: expect hold and separately consented waitlist option",
+      "Hero color is unavailable but another color is stocked: expect no automatic replacement promise; merchandiser approves an alternative branch"
+    ],
+    "denominator": "Unique sent recipients with a known eligible size/color preference; numerator is unique preferred-variant buyers within seven days; report unknown-preference sends separately",
+    "handover": "Merchandising owns variant freshness and seasonal stop; support owns size questions and returns feedback",
+    "nativeRationale": "Shopify Messaging is a useful candidate when the merchandiser needs a branded capsule announcement with a selected customer audience. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained size-interest profile properties can support separate message conditions rather than one capsule promise. Demonstrate the required field mappings and refresh behavior before selection.",
+    "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-beauty-stores": {
+    "audience": "beauty stores",
+    "goal": "product launch email apps",
+    "question": "Can a new routine step be introduced with current approved instructions?",
+    "entry": "Copy approver releases a new-product announcement for declared routine interest",
+    "fields": "release and SKU IDs, declared interest and timestamp, approved claims/instructions version, existing ownership, current stock, sale cutoff, consent and dispatch key",
+    "guard": "Refresh declared interest, ownership, stock and approved copy before dispatch; hold incompatible or unknown interest and never infer a diagnosis from browsing",
+    "purchaseExit": "Purchase of the new product exits selling into approved usage education; withdrawal, copy withdrawal or sale cutoff holds queued promotion",
+    "retry": "Reconcile release/customer/copy-version acknowledgements; a changed instruction requires fresh approval before replay",
+    "failure": "A delayed message sends superseded usage instructions to a customer who withdrew interest",
+    "edges": [
+      "Interest opt-out arrives after segment selection: expect hold and no inferred replacement routine",
+      "Approved instructions change before dispatch: expect stale-copy hold and approver sign-off on the replacement"
+    ],
+    "denominator": "Unique eligible recipients actually sent; numerator is unique new-product buyers within seven days, with usage-related support contacts reported separately",
+    "handover": "Claims/copy approver owns template release and stop; support receives usage questions and ownership exceptions",
+    "nativeRationale": "Shopify Messaging is a useful candidate when approved routine education can be maintained in a branded campaign template. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when declared routine-interest properties can condition messages when the team maintains approval and ownership mappings. Demonstrate the required field mappings and refresh behavior before selection.",
+    "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
+  },
+  "best-shopify-product-launch-email-apps-for-food-and-beverage-stores": {
+    "audience": "food and beverage stores",
+    "goal": "product launch email apps",
+    "question": "Can the recipient still order within a deliverable fresh-release window?",
+    "entry": "Fulfillment approves a perishable release for eligible buyer destinations",
+    "fields": "release ID, buyer versus gift-recipient identity, destination eligibility timestamp, available allocation, shelf-life promise, dispatch calendar and timezone, cutoff, consent and dispatch key",
+    "guard": "Refresh destination eligibility, allocation and fulfillment cutoff before dispatch; unknown destination or expired window holds the offer",
+    "purchaseExit": "Launch purchase closes promotion; fulfillment-window expiry or allocation exhaustion retires pending jobs, without converting gift recipients into subscribers",
+    "retry": "Reconcile release/customer/window/message acknowledgements; an expired batch needs a newly approved fulfillment window and dedupe review before restart",
+    "failure": "A failed batch replays after the final dispatch cutoff with an impossible freshness promise",
+    "edges": [
+      "Destination becomes unavailable after selection: expect hold and fulfillment-owner review",
+      "Cutoff passes while a failed batch awaits replay: expect expiry, no retry under the old window"
+    ],
+    "denominator": "Unique eligible recipients actually sent before cutoff; numerator is fulfilled launch orders within the declared fourteen-day fulfillment window, with cancellations and nonfulfillment reported separately",
+    "handover": "Fulfillment owns the cutoff and emergency stop; customer service handles gift identity and failed-delivery exceptions",
+    "nativeRationale": "Shopify Messaging is a useful candidate when a time-bounded release announcement can use a selected destination audience and approved template. Demonstrate the release-specific dispatch checks in the offered account.",
+    "profileRationale": "Klaviyo is a useful candidate when maintained destination properties can condition a release flow when fulfillment supplies current window state. Demonstrate the required field mappings and refresh behavior before selection.",
+    "acceptance": "Compare both candidates using these two proposed boundary fixtures and a purchase-exit trace. Save expected and actual queue dispositions, field timestamps, template version and owner decision. Choose the simpler maintained configuration that passes; unknown state or an unowned queue blocks selection. These exercises have not been performed for a merchant."
   }
 };
