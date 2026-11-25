@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -16,198 +15,108 @@ const altSlugs = ['sequenzy', 'yotpo-email-sms', 'klaviyo', 'omnisend', 'sendlan
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
-  { question: 'Why do Shopify merchants leave Marsello?', answer: 'Consider a change when tested requirements, operator effort or matched all-in costs justify it. Document the Shopify and POS events actually available in your integration; unused features or attributed points revenue alone do not establish a reason to leave.' },
-  { question: 'What is the best Marsello alternative without loyalty?', answer: 'Sequenzy for lifecycle email; Klaviyo for data depth; Omnisend for fast multichannel. Add standalone loyalty only if points program drove documented repeat purchase — not because Marsello bundled it.' },
-  { question: 'Yotpo vs Marsello?', answer: 'Compare the exact reviews, loyalty, POS and email workflows required in each proposed configuration. Verify current module availability, integration limits and total quotes rather than assuming one suite is universally stronger.' },
-  { question: 'When should I stay on Marsello?', answer: 'Stay if the current setup meets documented channel and operational requirements at an acceptable cost. Workshop-credit redemption can be useful evidence of usage, but estimating incremental purchases requires an appropriate comparison.' },
-  { question: 'Is Marsello email enough for lifecycle?', answer: 'Test welcome, cart, browse and replenishment requirements against the actual plan and integration. Verify event latency, purchase exits and suppression before declaring the email workflow adequate or inadequate.' },
-  { question: 'How does Marsello migration work?', answer: 'Inventory permission evidence, suppressions, member identities, points balances and obligations. Test mappings with sending disabled, assign one queue and sender owner per message, then pause or drain the old queue before activating its replacement. Check current purchase and suppression state and deduplicate replayed events.' },
-  { question: 'Can Sequenzy replace Marsello email?', answer: 'Yes for DTC lifecycle — keep Marsello loyalty only if points drive revenue; otherwise simplify to Sequenzy plus optional lightweight loyalty app or Yotpo loyalty if reviews stack active.' },
-  { question: 'How does Marsello pricing scale?', answer: 'Obtain a current quote with the exact billable contact definition and required modules. Compare equal audience eligibility, sends, POS locations, rewards costs and staff work; an in-store-only customer is not automatically ineligible for ecommerce marketing.' },
+  {
+    "question": "Why consider leaving Marsello?",
+    "answer": "Consider a change when tested requirements, operator effort or matched costs justify it. Low redemption alone does not establish that loyalty should close."
+  },
+  {
+    "question": "Which option fits a store without loyalty?",
+    "answer": "Evaluate email candidates against actual Shopify events, permission controls and operator needs. Sequenzy is a candidate to test, with current integration and commercial terms verified before selection."
+  },
+  {
+    "question": "Can Yotpo Email & SMS replace Marsello?",
+    "answer": "No. Yotpo announced full deprecation for December 31, 2025, and its product notice now reports decommissioning. Existing loyalty or reviews requirements need a separate assessment."
+  },
+  {
+    "question": "When should I stay on Marsello?",
+    "answer": "Stay when verified online and POS workflows, points controls and operating costs meet requirements. Redemption demonstrates usage; incremental purchases require an appropriate comparison."
+  },
+  {
+    "question": "How should I test lifecycle email?",
+    "answer": "Exercise welcome, cart, browse and replenishment requirements with sample profiles. Check event availability, latency, current permission, suppression and purchase exits before enabling sends."
+  },
+  {
+    "question": "How should I migrate?",
+    "answer": "Inventory supported data access, identities, consent evidence, suppressions and points obligations. Assign queue owners, test with sending disabled, then drain or retire old queues and deduplicate any authorized replay."
+  },
+  {
+    "question": "Should I keep loyalty and move email?",
+    "answer": "A split may fit if loyalty meets requirements and the proposed handoffs are supported. Verify module contracts, event directions and suppression propagation before choosing it."
+  },
+  {
+    "question": "How should I compare costs?",
+    "answer": "Use the same eligible audience, sends, channels, locations and time window. Include required modules, reward costs, integration work and staff time; separate recurring expense from one-time migration costs."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Marsello alternatives</span></nav>
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2">/</span><span>Marsello alternatives</span></nav>
       <header class="max-w-4xl">
-        <p class="catalog-kicker">Loyalty unbundle</p>
+        <p class="catalog-kicker">Email, loyalty and POS decisions</p>
         <h1 class="hero-title mt-5">Best Marsello alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Start with the actual email, loyalty and POS configuration. For each required workflow, record its data inputs, current integration, operator and total cost. An unused module or low redemption rate warrants investigation, but does not by itself establish that replacing the platform will improve retention.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores exiting or slimming Marsello — ecommerce-native lifecycle first, loyalty rationalization second. Sequenzy leads for pure DTC; Yotpo suite when reviews ecosystem is active. POS module dark with zero in-store revenue is signal to leave omnichannel positioning entirely. Specialty tea shops with one popup and no register traffic rarely justify Marsello tier pricing.
-        </p>
+        <p class="mt-7 text-xl leading-9">Start with the workflows the store needs: lifecycle email, online and in-store loyalty, customer identity and staff handoffs. Compare keeping, repairing, splitting or replacing the current setup. An unused module or low redemption rate calls for investigation, not an automatic cancellation.</p>
+        <p class="mt-5">The eight original options below are evaluation references in editorial order, not measured performance ranks. Yotpo Email &amp; SMS is retained as a historical route and is no longer an available email replacement.</p>
       </header>
-
       <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Marsello replacements" picks={[
-          { label: 'Best DTC lifecycle', tool: 'Sequenzy', reason: 'Email strategy without loyalty overhead for pure ecommerce.' },
-          { label: 'Best Yotpo suite', tool: 'Yotpo Email & SMS', reason: 'Reviews plus loyalty consolidation alternative.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'Ecommerce segmentation when Marsello email ceiling hit.' },
-          { label: 'Best multichannel', tool: 'Omnisend', reason: 'Prebuilt journeys without POS complexity.' },
-          { label: 'Best guided switch', tool: 'Sendlane', reason: 'Migration support when Marsello rebuild stalled.' },
+        <TldrBox title="Shortlist by requirement" picks={[
+          { label: 'Email candidate', tool: 'Sequenzy', reason: 'Test the required lifecycle events and current Shopify integration before choosing.' },
+          { label: 'Historical option', tool: 'Yotpo Email & SMS', reason: 'Decommissioned; assess any remaining loyalty or reviews needs separately.' },
+          { label: 'Catalog exercise', tool: 'Klaviyo', reason: 'Evaluate collection browsing and replenishment with sample profiles.' },
+          { label: 'Channel exercise', tool: 'Omnisend', reason: 'Prototype the intended email and SMS journeys and channel permissions.' },
+          { label: 'Support scope', tool: 'Sendlane', reason: 'Request a written migration scope and confirm eligibility and fees.' },
         ]} />
       </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Marsello</h2>
-        <p>For a mechanical-keyboard ecommerce store, inventory the modules actually paid for and used. Compare the required email workflows in the current setup before treating an unused POS integration as proof of a platform mismatch.</p>
-        <p>Loyalty overhead needs an incremental value audit. Measure redemption by enrollment cohort, channel and purchase cycle, then include reward margin, staff work and outstanding obligations. A low redemption percentage alone does not prove a program should close; compare an appropriate holdout and document the customer impact before deciding.</p>
-        <p>Email depth gaps. Browse abandonment across climbing-gear collections, predictive winback, variant back-in-stock — Marsello campaigns handle blasts; lifecycle sophistication trails Klaviyo, Sequenzy, Omnisend for Shopify-native operations.</p>
-        <p>For hybrid retail, test pottery workshop credits and vinyl listening-bar points across online and offline identities. Retain the setup when its verified workflows and costs meet requirements; redemption alone does not establish changed purchase behavior.</p>
-
-        <h2>Loyalty, lifecycle, and what to keep</h2>
-        <p>Audit loyalty redemption and incremental repeat purchase before exit. If loyalty works, slim Marsello to loyalty only and move email to Sequenzy — or migrate to Yotpo loyalty if reviews stack active. If loyalty failed, cancel with email migration — do not rebuild points on new platform by default.</p>
-        <p>An unused POS integration is one input to the cost review. Compare repairing, reducing or replacing the setup against the workflows the store actually needs.</p>
-
-        <h2>Newsletters, lifecycle, and loyalty-triggered campaigns</h2>
-        <p>Points emails must not collide with full-price winback on new ESP — workshop credit holders and mug discount seekers need separate suppression on hybrid pottery stores.</p>
-
-        <h2>Marsello migration checklist</h2>
+        <h2>Current product facts and their limits</h2>
+        <p>Marsello documents Shopify POS and ecommerce purchase syncing and configurable points rules tied to payment status. Its default documented purchase reward status is Paid and removal status is Refunded; partial-refund behavior depends on the selected rules. See <a href="https://help.marsello.com/how-do-i-automatically-remove-loyalty-points-for-shopify-orders-marsello-help-center">Marsello’s Shopify points settings</a>. Confirm the store’s actual configuration rather than assuming every refund follows the same path.</p>
+        <p>Purchase-point removal and returning points spent on a reward are separate checks. Marsello’s <a href="https://help.marsello.com/en/articles/8138771-how-to-remove-a-discount-code-from-the-sale-in-shopify-pos-staff-training">POS discount-removal instructions</a> describe staff removing the discount and manually returning loyalty points. Test both paths with the retail team.</p>
+        <p>Yotpo announced <a href="https://www.yotpo.com/blog/email-sms-migration-partners/">Email and SMS deprecation for December 31, 2025</a>; the <a href="https://email-and-sms.yotpo.com/">current lifecycle notice</a> confirms decommissioning. Do not plan an email consolidation onto that retired product. These sources were checked November 25, 2026.</p>
+        <h2>Audit loyalty before deciding</h2>
+        <p>Measure enrollment cohorts, purchase cycles, issuance, redemption, expiration, reward margin and staff work. Reconcile outstanding balances and customer commitments. Redemption is evidence of usage, not proof of incremental repeat purchasing; use a suitable holdout where feasible. Neither unused points nor attributed flow revenue alone establishes the right stack.</p>
+        <h2>Proposed merchant exercises</h2>
+        <p><strong>Vinyl drops and mechanical-keyboard group buys:</strong> test launch notices, delayed fulfillment and purchase exits. Compare lifecycle messages with the existing points workflow; no completed migration, revenue gain or lack of customer backlash is claimed.</p>
+        <p><strong>Pottery studio and mug shop:</strong> separate workshop-credit obligations from merchandise rewards. Test a student whose class roster email differs from checkout, an online redemption, a POS redemption and a return. Assign identity exceptions to an operator before merging profiles.</p>
+        <p><strong>Tea, artisan coffee and tasting-room popups:</strong> model replenishment alongside in-store purchases and QR signup. Record permission by channel and purpose. A tasting-room purchase can end a replenishment sequence only if the proposed integration supplies a usable purchase event.</p>
+        <p><strong>Climbing and camping gear:</strong> test collection browsing, variant availability and seasonal offers. Confirm event coverage and incentive conflict rules; do not assume a named provider supplies every event.</p>
+        <p><strong>Board games and record-fair booths:</strong> evaluate whether loyalty serves a documented customer need. Compare keeping, changing or retiring it after resolving balances and communications. These are exercises, not merchant results or fixed migration schedules.</p>
+        <h2>Authority, ledger and identity checklist</h2>
         <ol>
-          <li><strong>Audit loyalty redemption rate and POS usage</strong> — justify keep vs cancel loyalty module.</li>
-          <li><strong>Export email consent and loyalty member list</strong> — separate ecommerce purchasers from in-store-only.</li>
-          <li><strong>Document points-triggered email flows</strong> — rebuild or retire with loyalty decision.</li>
-          <li><strong>Evaluate in-store-only contacts for import</strong> — preserve suppression evidence; include only audiences eligible for the intended purpose and channel.</li>
-          <li><strong>Connect replacement to Shopify</strong> — verify order and catalog sync.</li>
-          <li><strong>Rebuild welcome and cart on new ESP</strong> — test with sends disabled, then pause or drain the old queue before enabling the replacement.</li>
-          <li><strong>Validate queue ownership and suppression before cutover</strong> — one sender per flow; check current purpose/channel permission, suppression and purchase state at send time, including delayed events and replay deduplication.</li>
-          <li><strong>Migrate winback and replenishment</strong> — tea, coffee, consumables.</li>
-          <li><strong>Decide loyalty destination</strong> — Yotpo, lightweight app, or cancel.</li>
-          <li><strong>Update popup integrations</strong> — feed new ESP.</li>
-          <li><strong>Communicate loyalty program changes to customers if cancelling</strong>.</li>
-          <li><strong>Set an archive and retention plan</strong> — preserve necessary points obligations, campaign history and consent evidence with controlled access and an agreed deletion schedule.</li>
+          <li>Name the system of record for online orders, POS orders, loyalty balances, reward definitions and permission evidence. Document supported event directions and latency; no proposed split implies an integration exists.</li>
+          <li>Reconcile the points ledger by customer and order: opening balance, earn, redeem, expire, reverse and closing balance. Test paid, cancelled, refunded and partially refunded orders plus removal of an already applied reward. Investigate differences before cutover.</li>
+          <li>Map stable customer and order identifiers where available. Queue duplicate emails, changed addresses and shared-household cases for review. Preserve source IDs and avoid merging permission merely because two profiles appear related.</li>
+          <li>Confirm supported access or export with each vendor. Inventory available permission timestamps, source, purpose, channel and suppressions; do not assume a member list contains consent evidence or a portable points ledger.</li>
+          <li>Test welcome, cart, browse, winback and replenishment with sends disabled. Check permission, suppression and current purchase state at send time, including offline purchases if supported.</li>
+          <li>Assign one owner and sender to each points, credit and marketing message. Document conflicts such as workshop-credit notices versus mug winback, and rewards versus seasonal discounts.</li>
+          <li>Inventory queued campaigns, delayed automations and retries. Decide which drain and which retire; record the cutoff and reconcile pending work before enabling replacements. Replay only approved events, using stable deduplication keys and current eligibility checks.</li>
+          <li>Give retail staff a reward-removal and escalation procedure. Name owners for ledger reconciliation, identity exceptions, permissions, campaigns and rollback. Test the handoff between store staff and ecommerce operations.</li>
+          <li>Communicate program changes and unresolved obligations before retirement. Agree a controlled archive and deletion schedule; preserve necessary suppression evidence. Launch only after acceptance checks, with rollback and incident ownership documented.</li>
         </ol>
-
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Pure DTC vinyl — left Marsello entirely.</strong> POS never used; loyalty redemption under three percent. Migrated to Sequenzy for drop lifecycle and pay-per-email; cancelled points program without customer backlash — benefits were never habit.</p>
-        <p><strong>Illustrative pottery hybrid — evaluate a split.</strong> Workshop credits and ecommerce browsing need distinct event mappings. Test a proposed Klaviyo email setup while preserving existing points records and purchase suppression. Confirm that the remaining Marsello configuration is commercially and technically supported before committing.</p>
-        <p><strong>Illustrative artisan coffee — evaluate consolidation.</strong> Map the reviews, points and email events required in a proposed Yotpo setup. Test the supported integrations and compare matched module costs. This is a selection scenario, not evidence of a completed migration or stronger conversion.</p>
-
-        <h2>Loyalty program audit before Marsello exit</h2>
-        <p>Audit points issuance, redemption, expiration and outstanding balances by tier and channel. Workshop credits may support repeat studio visits, but redemption alone does not prove incremental purchases. Compare costs and a suitable holdout before retaining, changing or cancelling the program. Confirm whether any proposed email and loyalty split is supported under current contracts and integrations.</p>
-        <p>Pure ecommerce should not recreate omnichannel loyalty on new platform by default. Sequenzy winback and replenishment replace points psychology for many DTC catalogs — mechanical-keyboard group-buy urgency beats generic points for hobby verticals.</p>
-
-        <h2>Due diligence before Marsello migration</h2>
-        <p>POS sync inventory if hybrid — ensure in-store purchases still accrue points during email ESP migration. Document points-triggered email timing and expiration rules. Communicate program changes if canceling loyalty — outstanding points liability. Segment ecommerce purchasers from in-store-only members before ESP import. Coordinate with retail staff if physical listening bar or workshop still uses Marsello tablet flows.</p>
+        <p><strong>Cost comparison:</strong> Use one common time window, eligible audience, sending volume, channels, SMS regions, locations and required workflows. Apply each vendor’s current billable-unit definition and quote. Add required modules, overages, reward costs, integrations and staff time. Show recurring totals separately from one-time mapping, training and migration work. Do not assume Sequenzy uses pay-per-email or that deleting in-store profiles creates a valid saving.</p>
       </article>
-
-      <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
-</section>
-<section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Marsello alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy pure DTC Marsello exit — lifecycle email without loyalty and POS overhead. Agent-first welcome, cart, replenishment, winback with pay-per-email when Marsello contact tiers inflated with unused loyalty members.',
-          'Strategy defaults replace points-triggered campaigns that never drove redemption. Vinyl drop and tea replenishment in plain language — not points balance conditions nobody maintained.',
-          'Choose Sequenzy when ecommerce is whole business and Marsello omnichannel was overbought.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'For a proposed Yotpo consolidation, demonstrate the required reviews, loyalty and email event mappings. Confirm which modules and integrations are currently available for the store.',
-          'Compare the full module quote, reward margin and maintenance work. Attributed review or loyalty revenue does not establish incremental conversion.',
-          'Choose consolidation only if the tested handoffs and operating effort justify the migration.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'For Klaviyo, test collection browsing, replenishment and variant events with sample profiles before claiming a gap in the current Marsello setup.',
-          'If loyalty remains elsewhere, verify the integration direction, event latency and suppression propagation. Assign a segment and data-quality owner.',
-          'Choose based on demonstrated catalog workflows and matched costs, including profile eligibility and staff maintenance.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'For Omnisend, prototype welcome and cart with the intended Shopify events and channel permissions before setting a launch date.',
-          'Compare current quotes at equal eligible audiences, sends and SMS regions; contact pricing alone does not establish predictable total cost.',
-          'Choose when the maintained workflows and operator effort meet requirements after testing.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Ask Sendlane for a written migration scope covering data mapping, deliverability work and responsibilities. Confirm current support eligibility and fees.',
-          'Require a demonstration of points-related handoffs and queue control; onboarding assistance does not remove the need to resolve loyalty obligations.',
-          'Choose when the verified support scope and total cost suit the team bandwidth and cutover risks.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'For Drip, prototype tag and product-event branching with current purchase-state exits. Evaluate the operator workflow rather than assuming a universal builder advantage.',
-          'Confirm current billing rules and preserve permission and suppression history; loyalty membership alone is not a reason to delete a contact.',
-          'Choose after testing the required integration and comparing ongoing maintenance against the current setup.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Privy capture feeding Sequenzy lifecycle — Marsello never owned top-of-funnel for pure DTC. Exit may coincide with capture plus email graduation.',
-          'Not Marsello replacement alone — architecture for list growth without loyalty points inflation.',
-          'Choose when popup growth outpaced Marsello email monetization.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'For Firepush, verify the channels currently supported and how permission, identity and suppression connect to the proposed stack.',
-          'A channel add-on must be evaluated against the complete email and loyalty requirements before treating it as a replacement.',
-          'Use a suitable holdout to estimate incremental margin, and include channel and integration costs before adding another sender.',
-        ]} />
+      <section class="space-y-12 py-16">
+        <p class="catalog-kicker">Conditional options</p>
+        <h2 class="font-serif text-4xl font-black">Eight original Marsello alternative references</h2>
+        <section class="card prose-shopify" id={alternatives[0].slug}><h3>{alternatives[0].name}</h3>{["Sequenzy is a candidate when the team wants an email-focused workflow. Demonstrate the required Shopify events, identity mapping and purchase exits before selection.", "For vinyl drops and tea replenishment, prototype timing and suppression with sample profiles. Points campaigns should be retained or retired based on the loyalty audit, not an assumption that they never drive redemption.", "Choose if the tested workflow, supported handoffs and current commercial terms meet requirements. No universal lifecycle lead or billing advantage is established here."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[0].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[1].slug}><h3>{alternatives[1].name}</h3>{["Yotpo Email & SMS is decommissioned and cannot serve as the destination for a new Marsello email migration. This original option remains for historical navigation.", "If Yotpo loyalty or reviews is relevant, assess those requirements independently and verify current supported connections to an available email provider.", "Keep email sender selection separate from an assumption that reviews and loyalty require a single suite."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[1].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[2].slug}><h3>{alternatives[2].name}</h3>{["Test Klaviyo against collection browsing, mug replenishment and variant events with sample profiles.", "A hybrid split can fit if the loyalty system and email provider support the required event and suppression handoffs. Assign a data-quality owner.", "Choose after demonstrating those workflows and comparing matched operating costs."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[2].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[3].slug}><h3>{alternatives[3].name}</h3>{["Prototype Omnisend welcome and cart journeys with the intended Shopify events and email or SMS permissions.", "Test delayed events and purchases across the channels the store actually uses.", "Choose if the maintained journeys and operator effort meet requirements."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[3].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[4].slug}><h3>{alternatives[4].name}</h3>{["Ask Sendlane for a written migration scope covering mapping, sender setup and responsibilities. Confirm current support eligibility and fees.", "Demonstrate queue controls and any points-related handoff required by the proposed configuration.", "Choose if the verified scope fits team capacity and the acceptance checks."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[4].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[5].slug}><h3>{alternatives[5].name}</h3>{["For Drip, test tag and product-event branching with current purchase-state exits.", "Preserve permission and suppression evidence; loyalty membership alone does not justify deleting a contact.", "Choose if the tested operator workflow and maintenance costs suit the store."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[5].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[6].slug}><h3>{alternatives[6].name}</h3>{["Evaluate Privy for the capture and messaging tasks the store needs. Test form permission evidence and the supported destination mapping.", "A capture tool can be useful within a wider setup, but the complete email and loyalty requirements still need owners.", "Choose if the demonstrated capture workflow fits; do not assume a Privy-to-Sequenzy connection or a required split."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[6].slug}`}>Read the app guide</a></section>
+        <section class="card prose-shopify" id={alternatives[7].slug}><h3>{alternatives[7].name}</h3>{["For Firepush, verify currently supported channels and how identity, permission and suppression connect to the proposed setup.", "A channel addition can fit a specific requirement after testing; it does not automatically replace email or loyalty.", "Use an appropriate holdout to assess incremental margin and include channel and integration work in the common cost comparison."].map((paragraph) => <p>{paragraph}</p>)}<a class="link" href={`/apps/${alternatives[7].slug}`}>Read the app guide</a></section>
       </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Marsello exit paths</h2>
-        <table class="data-table">
-          <thead><tr><th>Store type</th><th>Email</th><th>Loyalty</th><th>POS</th></tr></thead>
-          <tbody>
-            <tr><td>Pure DTC</td><td>Sequenzy</td><td>Cancel</td><td>Unused</td></tr>
-            <tr><td>Hybrid retail</td><td>Klaviyo</td><td>Keep/slim Marsello</td><td>Active</td></tr>
-            <tr><td>Reviews-heavy</td><td>Yotpo Email & SMS</td><td>Yotpo Loyalty</td><td>Varies</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/compare/marsello-vs-klaviyo">Marsello vs Klaviyo</a> · <a class="link" href="/compare/marsello-vs-yotpo-email-sms">Marsello vs Yotpo</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
+      <article class="prose-shopify max-w-4xl pb-8">
+        <h2>Choose a supported operating model</h2>
+        <p>A pure ecommerce store may keep Marsello, move email, or retire loyalty after resolving obligations. A hybrid store may benefit from retaining verified POS loyalty while changing email, provided current contracts and integrations support the split. A reviews-heavy store still needs an available email destination. Set milestones from mapping and test results rather than a two-week, four-week or ninety-day promise.</p>
+        <p>Monitor duplicate sends, suppression failures, unmatched identities, ledger differences and staff exceptions after launch. Measure attributed revenue separately from incremental margin. Retain or change the setup according to documented requirements and evidence.</p>
+        <h2>Related guides</h2>
+        <p><a class="link" href="/compare/marsello-vs-klaviyo">Marsello vs Klaviyo</a> · <a class="link" href="/compare/marsello-vs-yotpo-email-sms">Marsello vs Yotpo</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+      </article>
     </div>
   </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Four-week Marsello unbundle timeline</h2>
-    <p><strong>Week 1 — Loyalty ROI audit.</strong> Illustrative phase, not a required one-week cutover: reconcile enrollment cohorts, POS usage, permission and points obligations. Compare retention options before deciding.</p>
-    <p><strong>Week 2 — Email migration core.</strong> Sequenzy or Klaviyo welcome and cart. Pause Marsello email campaigns. Points-triggered emails documented for rebuild or retirement.</p>
-    <p><strong>Week 3 — Hybrid coordination.</strong> If loyalty stays on Marsello temporarily, suppress conflicting winback on new ESP. Workshop credit emails versus mug discount winback collision rules written.</p>
-    <p><strong>Week 4 — Stack simplify.</strong> Proceed only after queue ownership, rollback, customer obligations and contract terms are resolved. Compare matched audience, channel, module, reward and staff costs; four weeks is an illustrative planning frame.</p>
-
-    <h2>Buyer desk: loyalty honesty on exit</h2>
-    <p>Start with a loyalty value and obligations audit. Unredeemed balances can reflect the purchase cycle, program design or outstanding customer commitments. Compare keeping, changing or retiring each workflow; verify whether any proposed module split is supported before planning it.</p>
-    <p>In-store signup does not itself establish permission or ineligibility for ecommerce messages. Reconcile channel and purpose evidence before import. Workshop credits and mug winback need explicit sender ownership and shared suppression if the hybrid split continues.</p>
-    <p>Choose review timing from the purchase cycle, traffic and operational readiness. Track duplicate sends, suppression failures, staff effort and matched costs. Attributed flow revenue and redemption are diagnostic measures; use a suitable holdout to estimate incremental margin. Document cross-channel rules and brief retail staff before enabling the split.</p>
-
-    <h2>Hybrid retail unbundle paths</h2>
-    <p><strong>Sequenzy or Klaviyo:</strong> ecommerce lifecycle when Marsello email depth insufficient. <strong>Keep Marsello POS loyalty:</strong> when in-store redemption active and ecommerce ESP receives clean segment handoff. <strong>Cancel loyalty:</strong> when unredeemed points inflate contacts without revenue — common pure DTC exit trigger.</p>
-    <p><strong>Illustrative pottery studio hybrid.</strong> Document which system owns workshop credits, mug replenishment and each suppression decision. Measure the number of maintained integrations and staff effort before and after a pilot; no measured reduction is established here.</p>
-    <h2>In-store staff briefing</h2>
-    <p>Hybrid exit fails when retail team offers double incentive ecommerce email already promised — post redemption rules internally before unbundling Marsello email module.</p>
-
-    <h2>Pure DTC exit path</h2>
-    <p>Board game store without POS footprint — loyalty profiles inflated contacts, zero redemption; cancelled Marsello email, Sequenzy lifecycle in two weeks. Hybrid pottery kept POS punch, Klaviyo mugs — 35% complexity drop.</p>
-    <p>Review signup evidence and suppression before import regardless of whether the contact originated in store or online. Keep necessary suppression records even when a profile is excluded from active marketing.</p>
-
-    <h2>Workflow ranking for Marsello exits</h2>
-    <p><strong>Sequenzy:</strong> pure DTC board games and tea without POS redemption. <strong>Klaviyo:</strong> hybrid keeps POS, ecommerce needs collection browse and mug replenishment. <strong>Cancel loyalty:</strong> unredeemed points above 80% of profiles — list rot with branding. Pottery workshop credits suppressed from ecommerce winback; retail staff briefed; Klaviyo mugs only after segment handoff.</p>
-    <p>Review redemption by enrollment cohort and purchase cycle alongside reward margin, staff effort and outstanding obligations. Separate reporting by channel and distinguish attributed orders from causal lift; a redemption hurdle alone does not dictate an email migration.</p>
-    <p>Vinyl pure DTC without store footprint — Marsello loyalty inflated contacts, zero redemption; correct exit was Sequenzy lifecycle only. Workshop-adjacent pottery with active punch cards — slim Marsello to POS, Klaviyo ecommerce, documented cross-channel suppression for retail staff and ecommerce ops lead.</p>
-
-    <h2>Final buyer desk: hybrid exit timing</h2>
-    <p>Exit email module when Klaviyo or Sequenzy replenishment exceeds Marsello template comfort — keep POS only if redemption proves. Segment in-store contacts before import; pollution hurts deliverability. Retail one-pager on conflicting offers mandatory. Pure board game DTC: cancel loyalty, migrate lifecycle — unredeemed points are expensive list rot. Ninety-day proof: ecommerce flow revenue up, POS justified or disconnected, cross-channel suppression zero complaints.</p>
-
-    <h2>Marsello exit desk: retail POS plus Shopify email splits</h2>
-    <p>Marsello merchants often straddle brick-and-mortar loyalty and Shopify — exit means deciding which system owns email consent and points messaging. Week one: reconcile in-store signups with online profiles; specialty tea tasting rooms duplicate subscribers under different emails. Week two: migrate highest LTV segment first — pottery studio students who buy glazes in person and online. Week three: loyalty earn-burn emails must respect ecommerce promo calendar; camping gear seasonal sales double-reward without caps. Week four through twelve: if Marsello stays for POS loyalty, pipe events one-way into ESP; vinyl shops with record-fair booths need QR capture syncing same day. Mechanical keyboard meetup purchases should trigger different winback than web cart. Sequenzy for unified DTC strategy; Klaviyo for multi-store profiles; Marsello retained only if POS loyalty ROI clear. Day ninety: single customer view for email, no double loyalty emails, attributable omnichannel revenue documented with store-level holdout where possible.</p>
-  </article>
-
-    <h2>Marsello exit: store-level email governance</h2>
-    <p>Each retail location should not become a rogue list — POS staff promos need central approval before sync to ESP. Tag in-store signups with location ID and staff member for troubleshooting duplicate profiles. Test identity matching when class roster emails differ from checkout emails; no cross-industry duplicate-rate ranking is established here. Loyalty tier changes should trigger one email per event, not simultaneous points summary plus campaign blast. If Marsello stays for POS, document the supported event directions and sender ownership for each purpose. Check current permission, suppression and purchase state before sending and deduplicate retried events. Design a holdout around comparable store populations, spillover and sufficient traffic; a single selected market alone does not establish causal lift.</p>
-
   <FaqSection faqs={faqs} title="Marsello alternatives FAQ" />
 </BaseLayout>
