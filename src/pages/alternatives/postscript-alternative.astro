@@ -10,15 +10,15 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('postscript')!;
 const path = '/alternatives/postscript-alternative';
 const title = 'Best Postscript Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Postscript — SMS cost at scale, dual-stack fatigue, consolidation pressure — plus eight ranked SMS and lifecycle alternatives with TCPA migration checklist.';
+const desc = 'Why Shopify merchants leave Postscript — SMS cost at scale, dual-stack fatigue, consolidation pressure — plus eight SMS and lifecycle listings, including retired products, with migration checks.';
 
 const altSlugs = ['sequenzy', 'omnisend', 'attentive', 'smsbump', 'klaviyo', 'recart', 'sendlane', 'yotpo-email-sms'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
   { question: 'Why do Shopify merchants leave Postscript?', answer: 'Consider leaving when matched total costs, required workflows, or operator workload fail your requirements. Compare contribution margin and controlled channel tests; attributed revenue alone cannot establish SMS lift or a compliance guarantee.' },
-  { question: 'What is the best Postscript alternative for SMB?', answer: 'Omnisend or SMSBump for bundled SMS; Sequenzy for email lifecycle with Postscript retained short term. Evaluate total stack cost and ops hours, not SMS line item alone — consolidation savings must subtract dual-platform QA time.' },
-  { question: 'Can I keep Postscript for SMS only?', answer: 'Yes — common pattern: Sequenzy or Klaviyo email plus Postscript SMS. Leave Postscript when consolidation savings beat dual-platform QA overhead or when peak-week message bills exceed incremental SMS-attributed revenue.' },
+  { question: 'What is the best Postscript alternative for SMB?', answer: 'Evaluate Omnisend for combined email and SMS or Sequenzy for lifecycle email with an existing SMS service. Yotpo SMSBump is retired. Choose from verified workflows, supported markets and the matched cost method below; there is no universal SMB winner.' },
+  { question: 'Can I keep Postscript for SMS only?', answer: 'Yes, subject to your account terms. A separate email platform can remain useful when its workflows fit. Compare staying, pairing and consolidation using contribution margin and operator effort; attributed SMS revenue is not incremental lift.' },
   { question: 'How does Postscript to Attentive migration work?', answer: 'Inventory consent evidence, suppression state, sender ownership, number portability and every live journey. Confirm destination support and contract terms before scheduling cutover. Assign one sender per journey, drain or cancel old queues, and test retries, purchase exits and rollback; duration depends on the actual account.' },
   { question: 'What about SMS compliance during migration?', answer: 'Preserve the purpose and channel of permission, disclosure version, source, timestamps and opt-out history. A phone number or email opt-in alone is not SMS marketing permission. Reconcile current suppression before dispatch, confirm applicable local requirements, and keep ambiguous records inactive pending review.' },
   { question: 'Is Klaviyo SMS enough to leave Postscript?', answer: 'Evaluate the current account and supported markets against your actual flows, reply routing and sender requirements. Test purchase exits and channel-specific suppression rather than assuming a shared customer profile makes every message eligible. Compare costs on matched usage before deciding.' },
@@ -40,30 +40,32 @@ const faqs = [
           Evaluate Postscript against the SMS journeys your store actually runs. Peak-week bills, reply handling and coordination with email can motivate a review, but no platform guarantees compliance or incremental recovery. Compare a matched workload and observed operator effort before deciding.
         </p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores exiting or consolidating Postscript — SMS specialists, multichannel platforms, and lifecycle email tools that complete the stack. This catalog covers SMS as part of newsletters, lifecycle, and order-adjacent moments — not an isolated blast channel.
+          Eight listings, including two historical Yotpo entries, for stores exiting or consolidating Postscript — SMS specialists, multichannel platforms, and lifecycle email tools that complete the stack. This catalog covers SMS as part of newsletters, lifecycle, and order-adjacent moments — not an isolated blast channel.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox title="Top Postscript replacements" picks={[
-          { label: 'Best email + SMS stack', tool: 'Sequenzy', reason: 'Lifecycle email with pay-per-email; pair or replace SMS strategically.' },
-          { label: 'Best consolidation', tool: 'Omnisend', reason: 'Email, SMS, push in one suppression model — end dual-stack QA.' },
-          { label: 'Best enterprise SMS', tool: 'Attentive', reason: 'Scale and managed services when Postscript SMB ceiling hit.' },
-          { label: 'Best Yotpo ecosystem', tool: 'SMSBump', reason: 'SMS within Yotpo stack if consolidating reviews and loyalty modules.' },
-          { label: 'Best cart specialist', tool: 'Recart', reason: 'Narrower recovery focus if marketing SMS was unused beyond abandonment.' },
+          { label: 'Email lifecycle candidate', tool: 'Sequenzy', reason: 'Evaluate Shopify email workflows and optional paid-plan SMS beta scope.' },
+          { label: 'Consolidation candidate', tool: 'Omnisend', reason: 'Test required email and SMS journeys and channel-specific eligibility.' },
+          { label: 'Service candidate', tool: 'Attentive', reason: 'Confirm messaging, reply routing and contracted support for your markets.' },
+          { label: 'Historical dependency', tool: 'SMSBump', reason: 'Retired Yotpo product; inventory exports and integrations rather than install.' },
+          { label: 'SMS candidate', tool: 'Recart', reason: 'Evaluate campaigns, growth and recovery against your actual usage.' },
         ]} />
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Postscript</h2>
         <p>Illustrative cost model: a vinyl shop plans drop alerts to eight thousand eligible SMS subscribers. Estimate message segments, destination rates, carrier fees and likely frequency alongside an email-only plan. Attribution can help trace orders, but a randomized holdout with uncertainty is needed to estimate causal lift; no merchant result is asserted here.</p>
-        <p>Stack fragmentation exhausts operators. Postscript SMS plus Klaviyo email means two suppression systems, two QA processes, two billing surprises every promotional week. Omnisend or Klaviyo consolidation tempts even when Postscript SMS alone performed well — ops value is real money when the founder runs QA at midnight before a climbing-gear flash sale.</p>
-        <p>Email gap drives pairing fatigue. Postscript is SMS-first — stores without solid email elsewhere rebuild lifecycle twice. Sequenzy plus Postscript works long term with aligned suppression; Sequenzy plus Omnisend SMS may simplify further when email was always the primary recovery channel.</p>
+        <p>A split stack can add coordination work. Before a climbing-gear flash sale, record the time required to reconcile permissions, offers and queues across Postscript SMS and the email service. Consolidation may reduce that work if the candidate passes the same tests; one dashboard does not prove savings.</p>
+        <p>Postscript now advertises Email and combined SMS/email flows. Its Email access FAQ describes waitlist onboarding in cohorts, so confirm availability, required journeys and terms for your store before planning consolidation. Keeping separate email can still fit a working stack; lack of email is not a valid blanket reason to leave.</p>
         <p>Illustrative planning case: a pottery studio models two hundred monthly orders and a $400 SMS budget for holiday workshops. Those inputs are not measured results or recommended thresholds. Compare supported journeys, permission handling and matched total costs before choosing consolidation, a smaller scope or a different service arrangement.</p>
+
+        <p>Supplier scope checked November 25, 2026: <a class="link" href="https://postscript.io/email">Postscript Email and cohort access</a>, <a class="link" href="https://postscript.io/pricing">Postscript pricing</a>, <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy billing and SMS beta</a>, <a class="link" href="https://www.sequenzy.com/features/shopify-integration">Shopify integration</a>, <a class="link" href="https://recart.com/">Recart capabilities</a>, <a class="link" href="https://www.privy.com/blog/privy-acquires-sendlane">Privy/Sendlane continuity</a> and <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo retirement notice</a>. Supplier descriptions establish advertised scope, not tested account behavior or merchant outcomes.</p>
 
         <h2>SMS inside newsletters, lifecycle, and transactional moments</h2>
         <p>Separate promotional SMS such as drop alerts from genuine service messages such as delivery updates. Purpose and channel determine eligibility; an order or transactional permission does not automatically authorize marketing. For a mechanical-keyboard group buy or climbing-gear education series, test the appropriate channel and timing with eligible recipients rather than assuming SMS urgency adds value.</p>
-        <p>Before switching, calculate ninety-day SMS ROI by journey — cart, campaigns, browse triggers. If email Sequenzy or Klaviyo drives seventy percent attributed recovery, Postscript SMS should shrink to high-urgency moments only. Migration without channel mix analysis recreates the bill problem under a new logo.</p>
+        <p>Before switching, compare cart, campaign and browse journeys over a representative window. Record eligible recipients, delivered messages, orders and attribution windows as explicit denominators. Even a hypothetical seventy percent email share of attributed recovery would not establish that SMS should shrink: overlapping attribution and selection can distort the channel mix.</p>
 
         <h2>Postscript migration checklist for Shopify</h2>
         <p>Treat this as an operational checklist, with applicable legal requirements reviewed for the actual markets and message purposes. No subscriber-count threshold removes that need.</p>
@@ -84,21 +86,21 @@ const faqs = [
 
         <h2>Three merchant scenarios</h2>
         <p><strong>Artisan coffee — illustrative consolidation pilot.</strong> Compare roast-date email replenishment and eligible roast-day SMS in the candidate account. Measure QA time, matched total costs and contribution margin with refunds and discounts. A shared dashboard does not itself establish shared permission or prove savings.</p>
-        <p><strong>Outdoor gear — stayed on Postscript.</strong> Flash sale SMS drives twenty-two percent of weekly revenue; email on Sequenzy with documented cross-channel suppression. Leaving Postscript would sacrifice margin for consolidation convenience — intentional split with weekly ops review.</p>
-        <p><strong>Board games — downgraded to Recart.</strong> Only used Postscript for cart SMS; marketing blasts unused. Recart cheaper for narrow job; Sequenzy handles email lifecycle and Kickstarter suppression.</p>
+        <p><strong>Outdoor gear — proposed stay-or-switch test.</strong> Suppose reporting assigns twenty-two percent of weekly revenue to flash-sale SMS. This is a hypothetical attribution input, not a merchant result or proof of margin. Define total weekly net revenue as the denominator and reconcile overlap with Sequenzy email. Keep Postscript if verified workflow fit and incremental contribution justify the matched costs.</p>
+        <p><strong>Board games — proposed cart-focused evaluation.</strong> A store using only cart SMS could compare Recart with its current Postscript scope while testing Sequenzy email lifecycle and Kickstarter exclusions. Confirm campaign and recovery capabilities and quote the same workload; no cheaper price or successful downgrade is asserted.</p>
       </article>
 
       <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
+  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Use one matched workload: same eligible audience, countries, baseline and peak volumes, message segments, channels, features and observation window. Obtain current account quotes; include platform minimums, carrier fees, overages, onboarding, porting, overlap subscriptions and QA labour. Compare net contribution after discounts, refunds and product costs, with attributed orders reported separately from holdout-based incremental lift and uncertainty. Sequenzy advertises email-volume billing and a separate paid-plan SMS/MMS beta add-on; Postscript terms and Email access need account confirmation. Neither billing model establishes lower total cost.</p>
 </section>
 <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Postscript alternatives for Shopify stores</h2>
+        <p class="catalog-kicker">Options and historical entries</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Postscript options and legacy dependencies</h2>
 
         <ToolReview app={alternatives[0]} rank={1} badge="Email stack" paragraphs={[
-          'Sequenzy is the email lifecycle layer Postscript never was — welcome through winback with pay-per-email. Keep Postscript for SMS short term with aligned suppression, or migrate SMS to Omnisend when consolidation wins.',
-          'Agent-first sequences mean the team running SMS QA can describe email outcomes without learning a second complex builder. Specialty-tea replenishment and vinyl restock winback live in plain language.',
-          'Architecture: Sequenzy email + Postscript SMS is valid long term — document discount caps and VIP exclusions across both before any sale week.',
+          'Sequenzy advertises Shopify customer, order and product sync and email lifecycle workflows. Evaluate welcome through winback against the current Postscript Email offering rather than assuming Postscript has no email.',
+          'Test specialty-tea replenishment and vinyl restock winback with the operators who will maintain them. AI-assisted authoring may help if generated triggers, content and exclusions pass review; ease and results must be observed.',
+          'A Sequenzy email and Postscript SMS pairing can remain useful with explicit discount caps and VIP exclusions. Sequenzy also lists an optional paid-plan SMS/MMS beta with a dedicated US/Canada toll-free number; verify destination coverage, sender and Shopify event support before treating it as an SMS replacement.',
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
@@ -126,13 +128,13 @@ const faqs = [
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Recart cart recovery specialist — if Postscript usage was ninety percent abandonment texts, Recart may cost less for narrower job. Messenger channel declining for many DTC brands.',
-          'Not full SMS marketing replacement — pair with Sequenzy or Klaviyo for lifecycle email. Good downgrade when marketing blasts were never adopted.',
-          'Evaluate if recovery-only stack matches actual Postscript usage before paying for full marketing SMS platform.',
+          'Recart advertises SMS list growth, campaigns, automation and cart/browse recovery. A cart-heavy store should test that job without assuming Recart is confined to it or is cheaper.',
+          'Verify campaign, reply routing and lifecycle needs in the offered account. A separate email service can be retained where it meets the required workflows.',
+          'Compare actual recovery and campaign usage under the page cost method; a hypothetical ninety percent abandonment share is not a decision threshold.',
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Evaluate Sendlane against your email and SMS migration requirements. Confirm the current support scope and responsibility split in writing before relying on assisted cutover.',
+          'Privy has acquired Sendlane. Confirm current product access, contract continuity, support ownership and migration responsibility in writing before relying on a legacy Sendlane service description.',
           'Match onboarding, service, usage and peak-season costs against the same workload. Test templates, integrations and deliverability controls in the actual account rather than assuming another provider lacks them.',
           'Choose based on demonstrated workflow fit, operator effort and support commitments; a guided-service label does not establish value.',
         ]} />
@@ -146,15 +148,15 @@ const faqs = [
 
       <div class="container mb-12 max-w-4xl card overflow-x-auto">
         <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">SMS stack comparison</h2>
-        <p class="px-5 pb-4 text-slate-600">Match replacement to actual Postscript usage — recovery-only vs full marketing SMS.</p>
+        <p class="px-5 pb-4 text-slate-600">Use this as an evaluation map, not a scored ranking. Confirm every required channel and workflow in the offered account.</p>
         <table class="data-table">
-          <thead><tr><th>Platform</th><th>SMS focus</th><th>Email included</th><th>Typical exit trigger</th></tr></thead>
+          <thead><tr><th>Platform</th><th>Evaluation job</th><th>Scope to confirm</th></tr></thead>
           <tbody>
-            <tr><td>Postscript (leaving)</td><td>Primary</td><td>No</td><td>Cost at scale / dual-stack</td></tr>
-            <tr><td>Omnisend</td><td>Secondary</td><td>Yes</td><td>Consolidation</td></tr>
-            <tr><td>Attentive</td><td>Primary</td><td>Yes</td><td>Enterprise scale</td></tr>
-            <tr><td>Sequenzy + SMS pair</td><td>Via partner</td><td>Yes</td><td>Lifecycle first</td></tr>
-            <tr><td>Recart</td><td>Recovery</td><td>No</td><td>Narrow usage</td></tr>
+            <tr><td>Postscript</td><td>Stay or consolidate</td><td>SMS plus advertised Email; cohort access and account terms</td></tr>
+            <tr><td>Omnisend</td><td>Combined journeys</td><td>Required channels, markets and permissions</td></tr>
+            <tr><td>Attentive</td><td>Messaging and services</td><td>Reply routing, email scope and support agreement</td></tr>
+            <tr><td>Sequenzy</td><td>Email lifecycle or split stack</td><td>Shopify workflows; optional SMS beta eligibility and coverage</td></tr>
+            <tr><td>Recart</td><td>SMS growth, campaigns and recovery</td><td>Actual account fit and matched quote</td></tr>
           </tbody>
         </table>
       </div>
@@ -169,26 +171,26 @@ const faqs = [
   <article class="prose-shopify container max-w-4xl pb-8">
     <h2>Buyer desk: SMS economics and consolidation</h2>
     <p>For a vinyl drop model, compare baseline and peak-week volumes on the same eligible cohort. Record message segments, destinations, fees, discounts and operator time. Holdout design and sufficient observations, rather than a quarterly calendar alone, determine whether a channel adds incremental margin.</p>
-    <p>Sequenzy email plus Postscript SMS is valid long term with aligned suppression — not a failure to consolidate. Omnisend or Klaviyo unify when QA overhead hurts more than SMS specialization helps. TCPA handoff non-negotiable: export timestamps, hard cutover, no dual promotional texting.</p>
+    <p>A split email/SMS stack can remain appropriate when workflow fit and operator capacity support it. Export permission evidence, appoint one owner per journey and prevent duplicate promotional sends during cutover.</p>
     <p>Review progress when the pilot has enough eligible observations: verify permission evidence, suppression and purchase exits, one owner per live journey, and cost reconciliation. Report attributed orders separately from estimated incremental lift and its uncertainty.</p>
 
-    <h2>Replacement ranking by Postscript exit reason</h2>
+    <h2>Evaluation by Postscript exit reason</h2>
     <p><strong>Peak-week bill shock:</strong> model frequency, eligible audience and margin before switching. <strong>Consolidation desire:</strong> test the candidate account against your actual queue, consent and routing requirements. <strong>Two-way support need:</strong> validate reply routing with operators. <strong>Yotpo suite:</strong> Email/SMS was sunset separately from Reviews and Loyalty; check current integrations.</p>
     <p><strong>Scenario — vinyl flash drop.</strong> Proposed test: compare eligible keyword VIP recipients under a documented channel plan with a randomized holdout. Record delivery, opt-outs, contribution margin and uncertainty before deciding whether to consolidate. This is not a reported merchant result.</p>
     <h2>Parallel email stack requirements</h2>
-    <p>Sequenzy or Klaviyo must document SMS branch timing — email touch one, SMS four hours unopened, never duplicate offer within two hours without holdout. See <a class="link" href="/apps/postscript">Postscript review</a> for compliance checklist.</p>
+    <p>Document email-to-SMS branch timing from permission, customer expectations and test evidence, without universal four-hour or two-hour rules. An unopened email is not proof of non-engagement. See <a class="link" href="/apps/postscript">Postscript review</a> for further migration checks.</p>
     <h2>Consolidation false economy</h2>
-    <p>Klaviyo SMS unify saves QA hours only if team actually maintains unified suppression weekly — otherwise Sequenzy plus Postscript specialization wins on margin after message fees.</p>
+    <p>Consolidation can reduce coordination if current permissions, purchase exits and queues remain correct. Measure operator effort and margin rather than declaring either a unified or specialist stack the winner.</p>
 
     <h2>Peak-week budget line</h2>
     <p>Model BFCM and vinyl drop SMS separately from baseline using the same recipient eligibility, countries, message segments and observation window across quotes. Include carrier fees, minimums, overages, onboarding, porting, overlap subscriptions and QA labour. Lower spend alone does not establish better recovery.</p>
 
-    <h2>90-day SMS channel proof plan</h2>
+    <h2>SMS channel validation milestones</h2>
     <p>Use milestones rather than a promised ninety-day result: audit purpose/channel permission and suppression evidence; assign journey and sender owners; test purchase exits, queued-message cancellation and rollback; then run an adequately powered pilot. Use stable event IDs and a deduplication ledger so replayed events cannot trigger duplicate recovery sends.</p>
-    <p>Sequenzy plus Postscript valid long term with aligned suppression — consolidation false economy if unified Klaviyo SMS not maintained weekly. Vinyl keyword VIP outperformed consolidation test — channel mix spreadsheet updated quarterly.</p>
+    <p>The vinyl keyword VIP test is proposed, not a completed outperformance result. Reconcile attribution overlap and document the comparison design before interpreting the channel mix.</p>
 
     <h2>Postscript exit desk: SMS-native shops adding email depth</h2>
-    <p>Leaving Postscript rarely means abandoning SMS — it means pairing text with email journeys Postscript treated as secondary. Week one: list every keyword opt-in and compliance footnote; climbing gear flash sales via text need email browse abandonment as backup when carriers throttle. Week two: sync Shopify segments so SMS and email suppress each other during the same promo — mechanical keyboard drop day collides hard without collision rules. Week three: pottery class reminders on SMS plus educational email winback for lapsed students. Week four through twelve: attribute revenue by channel with shared UTM discipline; specialty tea subscription renewals often convert on email after SMS nudge. Vinyl merchants: reserve text for drop alerts, email for deep catalog storytelling. Sequenzy when you want one strategy brain; Klaviyo when Postscript data model must merge with email CLV; Attentive if enterprise SMS stays primary. Day ninety: compliant opt-in audit passed, at least one cross-channel journey live, SMS revenue share documented against email incrementality on holdout cohorts.</p>
+    <p>Use readiness milestones for SMS-native shops evaluating email depth. Inventory keyword opt-ins and test climbing-gear flash-sale fallback rules without assuming email is permitted when SMS fails. Test mechanical-keyboard drop collision rules, pottery service reminders separately from promotional winback, specialty-tea renewal eligibility and vinyl catalog storytelling. Validate Shopify event mappings and current suppression before enabling each journey. Report results only after the pilot; no day-ninety audit or revenue outcome is asserted.</p>
   </article>
 
   <div class="prose-shopify container max-w-4xl pb-8">
@@ -205,7 +207,7 @@ const faqs = [
       <li><strong>Purchase suppression map</strong> — which email or SMS journeys currently exit on order, refund, and cancellation events.</li>
       <li><strong>Discount dependency</strong> — SMS recoveries that only convert with a stacked coupon belong in a margin-reviewed ladder, not a clone.</li>
     </ul>
-    <p>Once the audit is clean, the replacement order rarely matters — speed comes from suppressing deliberately on day one, not from moving faster through the checklist.</p>
+    <p>Advance only when required journeys, sender access, queues and rollback pass acceptance checks. A clean permission audit alone does not establish replacement readiness.</p>
 
     <h2>Read the pilot before the renewal</h2>
     <p>Evaluate the replacement through a documented pilot of a cart and campaign journey on eligible segments. A randomized holdout can estimate causal lift; a matched observational comparison has confounding limits. Allow enough observations for uncertainty to be meaningful, and include contribution margin after all matched costs before renewal.</p>
