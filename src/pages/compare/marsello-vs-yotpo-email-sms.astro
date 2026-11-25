@@ -6,220 +6,82 @@ import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
 
-const path = '/compare/marsello-vs-yotpo-email-sms';
-const title = 'Marsello vs Yotpo Email & SMS for Shopify: 2026 Comparison';
-const desc = 'Marsello vs Yotpo Email & SMS for Shopify — retail loyalty focus vs reviews-loyalty suite consolidation, POS integration, and which platform fits boutique retail vs UGC-heavy DTC.';
-
+const path = "/compare/marsello-vs-yotpo-email-sms";
+const title = "Marsello after Yotpo Email & SMS: Shopify decisions";
+const desc = "Evaluate Marsello when retail loyalty and POS transactions must drive messaging after Yotpo messaging retirement. Decide separately whether to retain Yotpo Reviews or Loyalty, and which ledger owns points.";
 const faqs = [
   {
-    question: 'Is Marsello or Yotpo Email better for a Shopify store with POS?',
-    answer: "Test POS earn-and-burn and associate workflows against review-status and loyalty campaigns. Verify current product availability, module scope and connectors first. Existing Reviews or Loyalty spend is a cost input, not proof that consolidation fits; online versus in-store checkout alone does not decide the winner.",
+    "question": "Can I renew Yotpo Email & SMS instead?",
+    "answer": "The messaging service is retired. Do not budget for a renewed Yotpo sender or assume the old dashboard can supply an export. Reviews and Loyalty are separate continuing products."
   },
   {
-    question: 'How does Marsello vs Yotpo pricing compare?',
-    answer: "Obtain matched current quotes for contacts, orders, locations, sends, SMS destinations and the modules actually required. Include minimums, overages, integration labor and migration across twelve months. Do not assume billing units or that value collapses without POS or Reviews; test required workflows and price them.",
+    "question": "When is Marsello a useful candidate?",
+    "answer": "When your requirements include loyalty activity across supported POS and ecommerce connections alongside email or SMS. Demonstrate your exact connector, redemption and return workflow before committing."
   },
   {
-    question: 'Which has better loyalty-triggered email?',
-    answer: "Test points milestones, POS earn events and reviewer-status filters using the current modules and connectors. Verify delayed events, returns and balance reversals before dispatch. A board-game or camping fixture can expose integration gaps; checkout location alone does not establish which email workflow is better.",
+    "question": "Can I keep Yotpo Reviews?",
+    "answer": "Yes, evaluate Reviews separately from messaging and points. Identify its request sender and verify any review-status data needed in the receiving stack. Retaining Reviews does not establish that a Marsello connector supplies every field."
   },
   {
-    question: 'Can I use Marsello for loyalty and Yotpo for reviews only?',
-    answer: "A split is possible if each review, points and post-purchase job has one owner. Map purpose/channel permission, propagate suppressions, cancel stale queued messages and deduplicate replayed purchases. Keep the loyalty ledger authoritative in one system and measure maintenance; do not infer poor ROI from a split alone.",
+    "question": "Should both loyalty ledgers remain active?",
+    "answer": "Avoid treating two balances as equally authoritative. Either retain Yotpo Loyalty as the ledger with verified event delivery to messaging, or scope a separate loyalty move with opening balances, liabilities and reversal reconciliation."
   },
   {
-    question: 'Should I also consider Sequenzy instead of Marsello or Yotpo?',
-    answer: 'Sequenzy fits when lifecycle email strategy speed matters more than loyalty infrastructure or UGC suite bundling — pay-per-email playbooks. Keep Marsello for POS loyalty or Yotpo for reviews if already invested. Sequenzy layers strategy without replacing either platform\'s core modules.',
+    "question": "What settles the POS decision?",
+    "answer": "A staff-controlled purchase, online redemption, partial return and delayed replay must reconcile to one balance and one eligible message. Record connector behavior and the associate steps required to resolve a mismatch."
   },
   {
-    question: 'Which platform handles review request email better?',
-    answer: "For review requests, test delivery-aware timing, returns, review-status exclusions and permission to reuse visual content in campaigns. Verify current module availability and any external review connector. For loyalty-led retail, also test points accuracy; neither product focus proves a better request workflow without these checks.",
+    "question": "How should I compare cost?",
+    "answer": "Quote twelve months of contacts, sends, locations, orders and SMS destinations, plus retained modules, setup and staff reconciliation. Count outstanding rewards as liabilities separately from software fees."
   },
   {
-    question: 'Does Yotpo SMS match Marsello for retail?',
-    answer: "Check current SMS availability, supported destinations, sender requirements, consent records, opt-out propagation and reply routing for each offer. Checkout enrollment must capture permission for the relevant purpose and channel; email permission is insufficient. Evaluate associate workflows and matched costs before considering any additional SMS vendor.",
+    "question": "Can I recover old Yotpo messaging records?",
+    "answer": "Inventory saved files and ask support what remains accessible. Validate permission history and suppressions before any import; a promised automated export or retired-sender rollback is not a migration plan."
   },
   {
-    question: 'What workflow test should decide the winner?',
-    answer: "Build POS follow-up with points earn, tier upgrade, review request, social-proof cart and incentive winback. Verify current offer availability, permission scope, returns, balance changes, queue cancellation and replay deduplication. Score observed test behavior and maintenance against requirements; no merchant revenue results are claimed.",
-  },
+    "question": "Were these merchant exercises performed?",
+    "answer": "No. All merchant numbers and acceptance cases below are proposed fixtures. No supplier ranking, observed revenue lift or measured migration outcome is asserted."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Marsello vs Yotpo Email & SMS</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Marsello vs Yotpo Email & SMS for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two retention suites with different centers of gravity. Marsello optimizes for retail loyalty — points earned in-store, redeemed online, email reinforcing the loop. Yotpo optimizes for UGC-led retention — reviews collected post-purchase, loyalty points layered on, email and SMS in one modular ecosystem. Consider hypothetical evaluation scenarios involving a pottery studio on Yotpo Reviews weighing loyalty add-on, a multi-location specialty tea retailer on Marsello expanding email, and a mechanical keyboard DTC drowning in duplicate post-purchase messages.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Retail POS loyalty', tool: 'Marsello', reason: 'In-store earn-and-burn without suite module juggling.' },
-            { label: 'Reviews + UGC suite', tool: 'Yotpo', reason: 'Native review requests and visual UGC in campaigns.' },
-            { label: 'Boutique retail email', tool: 'Marsello', reason: 'Associate-facing loyalty integrated with email triggers.' },
-            { label: 'Modular DTC consolidation', tool: 'Yotpo', reason: 'Stack Reviews, Loyalty, Email when modules already live.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle playbooks if suite complexity exceeds team bandwidth.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Marsello</th><th>Yotpo Email & SMS</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Retail + DTC loyalty</td><td>Reviews/loyalty-led suites</td></tr>
-            <tr><td>Starting price</td><td>From ~$135/mo</td><td>Free and paid modular tiers</td></tr>
-            <tr><td>Billing model</td><td>Orders + contacts</td><td>Modular by product</td></tr>
-            <tr><td>Shopify depth</td><td>Native — POS, loyalty</td><td>Native — strong with modules</td></tr>
-            <tr><td>POS integration</td><td>Core strength</td><td>Online-first</td></tr>
-            <tr><td>Reviews & UGC</td><td>Via integration</td><td>Native core</td></tr>
-            <tr><td>Loyalty triggers</td><td>Built-in</td><td>Native with Loyalty module</td></tr>
-            <tr><td>Suite complexity</td><td>Unified retail stack</td><td>Multi-module coordination</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Marsello and Yotpo Email & SMS sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Marsello is optimized when POS and Shopify loyalty points steer repeat purchase. Yotpo Email & SMS is optimized when reviews and loyalty already anchor your retention stack. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Vinyl Record Shop: limited pressings with 200–400 unit runs</h2>
-        <p>
-          In this hypothetical fixture, the vinyl record shop does 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          For the vinyl fixture, compare grading education and VIP allocation notices with a 10% discount on day two. Check remaining pressing inventory and exclude recent full-price purchasers before dispatch. Use a suitable holdout to assess contribution after discounts and costs; no margin improvement has been observed. For vinyl record shop specifically, suppress recent full-price buyers from instant discount blasts on scarce pressings. For Record Store Day, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>How outdoor gear retailer emails through Memorial Day sale week</h2>
-        <p>
-          In this hypothetical fixture, the outdoor gear retailer does 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test ultralight and family car-camping collections with different hero tents. Use randomized assignment where feasible and report uncertainty in incremental margin after matched costs; a higher attributed CTR alone would not establish a causal benefit. For outdoor gear retailer specifically, merchandise ultralight versus family car-camping with different hero tents. For Memorial Day sale week, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Mechanical Keyboard Vendor ($58k/mo) — halt cart recovery when preorder tags flip to closed</h2>
-        <p>
-          In this hypothetical fixture, the mechanical keyboard vendor does 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test switch-type education separately from group-buy close reminders. Recheck the live preorder state immediately before dispatch, cancel stale cart jobs in all senders and deduplicate close-event replays; no recovery benefit has been measured. For mechanical keyboard vendor specifically, halt cart recovery when preorder tags flip to closed. For GB close deadlines, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Before Essen release week: board game store retention choices</h2>
-        <p>
-          In this hypothetical fixture, the board game store does 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Use this board-game preorder fixture to test allocation and fulfillment-state messages. Measure support contacts and handling time rather than assuming ambiguous recovery doubled support load or that automation paid for itself. Test partial allocations, cancellations and shipped-state updates without claiming an observed outcome. For board game store specifically, pause winback until fulfillment tags show shipped for pre-orders. For Essen release week, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Specialty Tea Merchant: 28–35 day tin replenishment with gift-box seasonality</h2>
-        <p>
-          In this hypothetical fixture, the specialty tea merchant does 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test gift-box purchasers separately from personal tin replenishment. Validate gift flags and subscription skips before dispatch; no unsubscribe or conversion improvement has been observed. For specialty tea merchant specifically, split replenishment windows by blend and steeping rate. For Q4 gift-box peak, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>How artisan coffee roaster emails through holiday blend drop</h2>
-        <p>
-          In this hypothetical fixture, the artisan coffee roaster does 860 orders/mo at roughly $52k/mo. Revenue rhythm follows roast-date replenishment and wholesale sample follow-ups, which means email must handle bean reorder at day thirty with subscription pause confirmations before holiday blend drop — not after support tickets spike. Marsello contributes loyalty plus email and SMS for omnichannel retail; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: suppress subscribers on pause from roast-date replenishment nudges.
-        </p>
-        <p>
-          Proposed peak-week routing priority: operational order updates first, active cart recovery second, welcome and education third, promotional broadcasts last. For this hypothetical catalog, preview both tools against the same Shopify tags, purchase states, and inventory changes. Record failures and operator time; no preview winner or merchant result has been measured here.
-        </p>
-        <p>
-          Test roast-date timing per SKU against a customer-level average. Give paused subscribers and wholesale sample recipients separate eligibility rules. Use a randomized holdout with uncertainty to assess incremental contribution after matched costs; a reorder attributed to email does not prove that the reminder caused it. For artisan coffee roaster specifically, suppress subscribers on pause from roast-date replenishment nudges. For holiday blend drop, a forty-five-minute delay is only a test input, not a permission or suppression guarantee. Check channel- and purpose-specific permission, current purchase, unsubscribe, pause and stock state immediately before dispatch. Assign one owner per message job; cancel stale queued messages in every sender and deduplicate replayed events.
-        </p>
-        <h2>Marsello workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Marsello shines when POS and Shopify loyalty points steer repeat purchase. Its friction shows when email depth matters more than points programs. Yotpo Email & SMS shines when reviews and loyalty already anchor your retention stack. Its friction shows when you only need email without UGC or points. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Compare billing against the same twelve-month workload, including imported and active profiles, messages, SMS destinations and credits, required modules, support, integration, migration, QA and operator labor. A waitlist import with flat orders and a seasonal broadcast peak are proposed cost stress tests, not observed billing penalties. Use current written quotes and the same retention and suppression assumptions; neither billing basis is inherently the opposite of the other.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Marsello and Yotpo Email & SMS both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          At 12,000–18,000 contacts, compare current written quotes on matched usage; contact count alone does not establish price convergence. Review cold imports for permission and retention policy before quoting; do not delete records merely to manipulate the comparison. Add SMS, push, reviews, or loyalty modules to the same spreadsheet — modular suites like Yotpo Email & SMS need an all-in cost comparison when only some modules will be used.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          A proposed hybrid uses Privy or Justuno for capture, one lifecycle platform for email, and a separately evaluated SMS sender. A vendor does not take over the merchant's compliance responsibility. Assign one owner for each lifecycle job and channel, disable overlapping native and app recovery queues, propagate current permission and purchase state, cancel stale work in each sender, and deduplicate event replays before dispatch. Validate failure and reconnect behavior; a priority order alone does not prevent duplicate sends.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Marsello if:</strong></p>
-        <ul>
-          <li>Pos and shopify loyalty points steer repeat purchase</li>
-          <li>You will use loyalty plus email and SMS for omnichannel retail weekly</li>
-          <li>Contacts and features fits your calendar</li>
-          <li>Your team can maintain Marsello without external rescue</li>
-          <li>Switching cost favors Marsello for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Reviews and loyalty already anchor your retention stack</li>
-          <li>You will use reviews, loyalty, email, and SMS in one retention suite weekly</li>
-          <li>Modular plans by product fits your calendar</li>
-          <li>Your team can maintain Yotpo Email & SMS without external rescue</li>
-          <li>Causally measured lifecycle contribution after matched all-in costs justifies Yotpo Email & SMS migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Marsello is the better Shopify email tool when POS and Shopify loyalty points steer repeat purchase. Yotpo Email & SMS is the better Shopify email tool when reviews and loyalty already anchor your retention stack. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
-      </article>
-
-      <div class="mt-10 max-w-4xl text-sm">
-        <p class="font-black text-[#24170f]">Related comparisons</p>
-        <p class="mt-2">
-          <a class="link" href="/compare/marsello-vs-klaviyo">Marsello vs Klaviyo</a> ·
-          <a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo Email & SMS</a> ·
-          <a class="link" href="/compare/sequenzy-vs-yotpo-email-sms">Sequenzy vs Yotpo Email & SMS</a> ·
-          <a class="link" href="/for">Browse store-type guides</a> ·
-          <a class="link" href="/use-cases/post-purchase">Post-purchase playbook</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <FaqSection faqs={faqs} title="Marsello vs Yotpo Email & SMS FAQ" />
+  <section class="py-14 md:py-20"><div class="container">
+    <nav><a class="link" href="/compare">Comparisons</a></nav>
+    <header class="max-w-4xl"><p class="catalog-kicker">Migration and buying decision</p><h1 class="hero-title mt-5">{title}</h1><p class="mt-7 text-xl leading-9">Evaluate Marsello when retail loyalty and POS transactions must drive messaging after Yotpo messaging retirement. Decide separately whether to retain Yotpo Reviews or Loyalty, and which ledger owns points.</p></header>
+    <div class="mt-12 max-w-4xl"><TldrBox picks={[{"label": "Retail loyalty candidate", "tool": "Marsello", "reason": "Demonstrate supported POS and ecommerce earn, redeem and reversal paths."}, {"label": "Existing review program", "tool": "Yotpo Reviews", "reason": "Retain if its separately evaluated collection and display jobs remain useful."}, {"label": "Points authority", "tool": "One ledger", "reason": "Decide ownership before enabling points-triggered marketing."}]} /></div>
+    <div class="mt-12 card overflow-x-auto"><table class="data-table">
+      <thead><tr><th>Decision</th><th>Marsello receiving stack</th><th>Existing Yotpo services</th></tr></thead><tbody>
+      <tr><td>Messaging</td><td>Evaluate current email/SMS offer and destination coverage</td><td>Email/SMS retired</td></tr>
+      <tr><td>Loyalty</td><td>Candidate ledger only after reconciliation</td><td>Loyalty retention is a separate decision</td></tr>
+      <tr><td>POS events</td><td>Prove exact connector and return handling</td><td>Existing balances do not prove receiving event compatibility</td></tr>
+      <tr><td>Annual scope</td><td>Quote locations, usage and implementation</td><td>Include only retained Reviews/Loyalty services</td></tr>
+    </tbody></table></div>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>Messaging retirement changes the purchase</h2>
+      <p>Yotpo announced full Email and SMS deprecation for December 31, 2025. Its messaging login now reports that the SMS dashboard and background services are decommissioned. Reviews and Loyalty continue as separate products; keeping them does not retain a messaging sender. See the <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo sunset announcement</a> and <a class="link" href="https://email-and-sms.yotpo.com/">decommission notice</a>. This page evaluates a receiving stack, not a new Yotpo messaging purchase.</p>
+      <h2>Choose the ledger before the sender</h2>
+      <p>The <a class="link" href="https://www.marsello.com/">Marsello product overview</a> describes loyalty, email/SMS campaigns and automation connected to POS and ecommerce. These are reasons to evaluate a retail workflow, not evidence of a particular connector passing your return rules. Ask for a demonstration using your POS version, locations and Shopify setup.</p>
+      <p>Write two possible designs. In one, Marsello owns loyalty and messaging while Yotpo Reviews keeps collection and display. In the other, Yotpo Loyalty remains authoritative and a receiving sender consumes only verified events. For the second design, require evidence of the actual field mapping, latency, retries and connector cost; do not infer interoperability from both products having points features.</p>
+      <p>If points move, reconcile opening balances and outstanding reward liability by customer and store before any earn rules activate. Keep an audit reference for adjustments and associate overrides. A messaging migration alone should not silently change redemption terms or award points twice.</p>
+      <h2>Retail acceptance: vinyl allocation and outdoor returns</h2>
+      <p>All six merchant baselines here are proposed inputs, not businesses we tested. For a vinyl shop at 1,800 orders and $72k monthly revenue, use 200–400-unit pressings around Record Store Day. Have an associate reserve a VIP copy, then redeem online. Accept the design only when the allocation and points reservation are visible to the responsible staff member and a later cancellation releases each exactly once. Education about grading can continue without a discount on scarce stock.</p>
+      <p>For outdoor retail at 2,400 orders and $112k monthly revenue, run separate ultralight and family-camping interests before Memorial Day. Complete a POS tent purchase, queue a loyalty follow-up, then partially return the basket online. Verify that the remaining qualifying spend determines the balance and audience; a return must not leave an obsolete tier-upgrade email waiting. Record event IDs and arrival times to distinguish a connector delay from a bad earning rule.</p>
+      <h2>Preorders: keyboard close and board-game fulfillment</h2>
+      <p>Use 940 keyboard orders and $58k monthly revenue with six-week group buys on $180–$420 kits and education across five product pages. The revenue/order baseline is about $61.70, so it cannot represent every order containing a full kit; model accessories and deposits separately. At group-buy close, disable recovery for closed kits while retaining permitted switch education. Replay a deposit event after the balance payment and confirm no second full-value points award.</p>
+      <p>For 1,050 board-game orders and $67k monthly revenue before Essen, allocate part of a preorder and ship only the available title. Decide whether points become spendable on payment or shipment and write that rule down. Verify the remaining unshipped line stays out of winback, while the fulfilled line can enter its own education path. Assign one sender for review requests so keeping Yotpo Reviews does not create a second request.</p>
+      <h2>Replenishment: tea gifts and coffee pauses</h2>
+      <p>For tea at 720 orders and $44k monthly revenue, use 28–35-day replenishment windows by blend. Before the Q4 gift-box peak, separate buyer, recipient and subscriber. A gift recipient must not inherit the buyer’s points identity or marketing permission. Test a subscription skip and a gift return, then check both the next reminder and the reward balance.</p>
+      <p>For coffee at 860 orders and $52k monthly revenue, start with day-thirty roast-date replenishment and separate wholesale samples. Pause a subscription after queueing a reminder, then merge a duplicate POS customer. Acceptance requires the pause to remain effective and the merge to preserve one ledger with traceable adjustments. Show associates how to find the surviving profile without enrolling the customer again.</p>
+      <h2>Cutover with accountable event ownership</h2>
+      <p>Inventory saved messaging definitions, permissions, suppressions and balances before importing. The retired sender is not a fallback. Resolve inaccessible records with support, and hold records with unknown permission out of promotional enrollment. Keep channel and purpose evidence separate from purchase history.</p>
+      <p>For each purchase, refund, points correction and review event, record its authority, stable identifier, effective time and receiving job. Demonstrate delayed delivery, a repeated event and an out-of-order correction. Accept only when stale points reminders cancel, marketing eligibility is checked before dispatch and operational receipts remain with their designated sender. Measure staff reconciliation minutes during the exercise.</p>
+      <h2>Price the program and make the decision</h2>
+      <p>At a proposed 12,000–18,000 contacts, obtain current written quotes for the same locations, orders, sends and SMS destinations. Add retained Yotpo modules, connector upkeep, onboarding, rewards accounting and associate training. Run a waitlist import at flat orders and a peak broadcast month as separate sensitivities. Do not assume a historical starting price still applies.</p>
+      <p>For fixed-goods economics, propose $1,000 list-price sales, $100 discounts and $400 unchanged goods cost: contribution before software and labor is $500. An additional $20 message cost leaves $480. Do not reduce goods cost because a discount reduced revenue; add reward redemption cost once under the agreed accounting rule. A holdout can estimate incremental contribution with uncertainty; attributed sales alone cannot.</p>
+      <p>Buy Marsello when the demonstrated retail ledger and messaging workflow meets your requirements at an acceptable annual cost. Retain Yotpo Reviews or Loyalty where its separate job remains useful, with a proven event boundary. If your points ledger is already settled and retail coordination is irrelevant, compare other active senders rather than buying another loyalty program for consolidation alone.</p>
+      <p>Use the <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing worksheet</a> to record acceptance evidence and contract scope.</p>
+    </article>
+  </div></section>
+  <FaqSection faqs={faqs} title="Marsello after Yotpo messaging FAQ" />
 </BaseLayout>

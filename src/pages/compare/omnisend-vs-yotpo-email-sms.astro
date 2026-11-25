@@ -5,224 +5,85 @@ import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
 
-const path = '/compare/omnisend-vs-yotpo-email-sms';
-const title = 'Omnisend vs Yotpo Email & SMS: Shopify Email Tools Compared';
-const desc = 'Omnisend vs Yotpo Email & SMS for Shopify email tools — standalone multichannel journeys vs reviews-loyalty bundling, push recovery, post-purchase trust loops, and renewal math.';
-
+const path = "/compare/omnisend-vs-yotpo-email-sms";
+const title = "Omnisend after Yotpo Email & SMS: Shopify decisions";
+const desc = "Evaluate Omnisend for capture and recovery after Yotpo messaging retirement. The buying decision is whether current channel identities, Shopify events and retained review or loyalty jobs can form a dependable receiving workflow.";
 const faqs = [
   {
-    question: 'When should a Shopify store choose Omnisend over Yotpo Email & SMS?',
-    answer: 'Test Omnisend for a messaging-first workflow and Yotpo for a workflow requiring review or loyalty events. Neither fit establishes current feature availability. Build the same welcome, cart, and post-purchase paths in both trials, record unsupported steps and operator time, and verify current integration scope before choosing.',
+    "question": "Is this a choice between two active messaging products?",
+    "answer": "No. Yotpo messaging is retired. Evaluate Omnisend as a receiving sender and Yotpo Reviews or Loyalty as separate continuing services."
   },
   {
-    question: 'Does Yotpo Email & SMS require Yotpo Reviews to be worth it?',
-    answer: 'Not necessarily. For a pottery studio, test kiln-care education and restock alerts independently from a points program for glaze refills. Request separate and bundled quotes, compare modules actually needed, and include implementation and renewal terms. An unused module is not evidence that the other product is cheaper.',
+    "question": "Why evaluate Omnisend?",
+    "answer": "Its current product catalog offers signup forms, ecommerce automation, email, SMS and web push. Demonstrate the capture sources, recovery exits and eligible channels you require rather than assuming presets establish launch speed."
   },
   {
-    question: 'How does Omnisend web push compare to Yotpo\'s channel mix?',
-    answer: 'Check current channel support in both candidates and the browsers your shoppers use. Proposed board-game fixture: abandon a pre-order cart with email permission but no SMS or browser-push permission. Verify that neither channel is inferred from email consent. Separately test an explicitly permissioned push profile, cancellation after purchase, and replay deduplication.',
+    "question": "Does email signup authorize SMS or push?",
+    "answer": "No. Treat email, phone and browser subscription as separate channel records. Test the actual account and browser permission state, including revocation; an email address does not establish another channel\u2019s eligibility."
   },
   {
-    question: 'Which platform handles artisan coffee replenishment better?',
-    answer: 'Use a proposed coffee fixture rather than a vendor winner: queue a day-21 reorder reminder, then add a new order, subscription renewal, skip, or cancellation. Verify current subscription and purchase state before dispatch. Test loyalty and review events separately where required; score event timing, obsolete-message cancellation, and the ability to explain every exclusion.',
+    "question": "Can Reviews and Loyalty stay with Yotpo?",
+    "answer": "Evaluate them independently. Assign their requests and reward notifications one owner, and prove the connector fields and timing needed by Omnisend. A retained module does not revive Yotpo messaging."
   },
   {
-    question: 'What does pricing look like at 12,000 contacts with moderate SMS?',
-    answer: 'Request current quotes for a proposed 12,000-contact audience with explicit monthly sends, SMS destinations and segment counts. Match a twelve-month workload including peak months, carrier charges, needed modules, onboarding, migration, staff QA, tax, and exit costs. A bundled quote and a standalone tier are comparable only after matching scope and renewal obligations.',
+    "question": "Will an automated migration recover everything?",
+    "answer": "Do not assume that. Start from files actually held and support-confirmed access, reconcile channel statuses and suppressions, and rebuild entry and exit rules. Historical instructions do not establish current dashboard access."
   },
   {
-    question: 'Can Omnisend and Yotpo coexist on one Shopify store?',
-    answer: 'Only with explicit ownership. If a reviews module stays while another tool owns lifecycle, disable overlapping marketing flows, cancel queued messages in their originating system, and document suppression propagation. Replay a cart event and verify one eligible delivery. A priority document alone cannot cancel a second sender or establish channel permission.',
+    "question": "What should a 12,000-contact quote include?",
+    "answer": "Match send volume, SMS destinations and segments, peak months, retained modules, implementation, staff QA and renewal terms across twelve months. Include a sensitivity up to 18,000 contacts without inventing a savings percentage."
   },
   {
-    question: 'Which tool is faster to go live for a climbing gear catalog?',
-    answer: 'Time the same proposed climbing-gear workflow in both trials: signup, browse across five product pages, cart, purchase, and a post-purchase education branch. Use manufacturer-approved product guidance; do not invent safety or certification advice. Record build time, supported events, inventory checks, and exclusions rather than assuming a winner from presets.',
+    "question": "What should stop recovery?",
+    "answer": "A qualifying purchase, closed preorder, exhausted stock or withdrawn permission should remove obsolete marketing work under the documented rules. Test the recipient and product state at dispatch as well as on entry."
   },
   {
-    question: 'What buyer workflow should settle Omnisend vs Yotpo?',
-    answer: 'Draft five jobs: welcome by signup source, cart at 60 minutes with inventory checks, education excluding gifts, review request at day 10, and winback at 90 days. These delays are proposed fixtures. Score operator time, event fidelity, current permission and suppression, queue cancellation, and export completeness. Separate attributed orders from randomized incremental-margin estimates with uncertainty; a short trial may be inconclusive.',
-  },
+    "question": "Are these measured merchant outcomes?",
+    "answer": "No. The merchant baselines and acceptance exercises are proposed inputs. Record your own pass/fail evidence, operator time and uncertain incremental contribution before choosing a plan."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Omnisend vs Yotpo Email & SMS</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Omnisend vs Yotpo Email & SMS for Shopify email tools</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two multichannel answers to Shopify retention — one built to stand alone, one built to complete a reviews-and-loyalty stack. Proposed fixtures, not observed merchant results: compare both using a $68k/mo artisan coffee roaster with a hypothetical existing reviews module, a climbing gear shop with no UGC program and heavy mobile browse, and a board game store where pre-order hype and loyalty redemption share the same post-purchase window. The question is not which sends more email; it is which catalog of newsletters, lifecycle automation, and transactional-style customer moments matches how your store actually earns repeat revenue.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Standalone multichannel', tool: 'Omnisend', reason: 'Email, SMS, and push in one journey without suite lock-in.' },
-            { label: 'Reviews + loyalty loops', tool: 'Yotpo Email & SMS', reason: 'Post-purchase UGC and points wired into the same retention canvas.' },
-            { label: 'Time to first flows', tool: 'Omnisend', reason: 'Prebuilt welcome, cart, and post-purchase presets ship in days.' },
-            { label: 'Trust-driven repeat', tool: 'Yotpo Email & SMS', reason: 'Review prompts and earn reminders when social proof moves revenue.' },
-            { label: 'Web push recovery', tool: 'Omnisend', reason: 'Native push steps for mobile browse without SMS spend.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Omnisend</th><th>Yotpo Email & SMS</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Catalog fit</td><td>Multichannel ecommerce automation</td><td>Retention suite extension for Reviews/Loyalty</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid scales by contacts</td><td>Module-based; often bundled with Yotpo stack</td></tr>
-            <tr><td>Newsletters</td><td>Campaign editor with product blocks</td><td>Campaigns plus loyalty-aware segments</td></tr>
-            <tr><td>Lifecycle depth</td><td>Visual workflows, push at step two</td><td>Review and points triggers as journey anchors</td></tr>
-            <tr><td>Transactional-style</td><td>Order and fulfillment-triggered messages</td><td>Shipment plus review request sequencing</td></tr>
-            <tr><td>SMS</td><td>Native in journeys</td><td>Native, tied to loyalty and campaigns</td></tr>
-            <tr><td>Push</td><td>Web push included</td><td>Not a core channel</td></tr>
-            <tr><td>Best when</td><td>No Yotpo footprint; speed matters</td><td>Reviews or Loyalty already live</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>What this comparison is actually about</h2>
-        <p>
-          Omnisend and Yotpo Email & SMS sit in the same Shopify email-tools category — newsletters, lifecycle automation, and transactional-style customer moments — but they punish different operational mistakes. Omnisend is optimized when you need cart, welcome, and post-purchase live in days. Yotpo Email & SMS is optimized when reviews and loyalty already anchor your retention stack. Buyers who choose on brand recognition alone often end up paying for depth they never open or speed they outgrow in ninety days.
-        </p>
-        
-        <h2>Pottery Studio ($31k/mo) — exclude class waitlist leads from glaze-kit promos after signup source tagging</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the pottery studio has 480 orders/mo at roughly $31k/mo. Revenue rhythm follows class waitlists and glaze-kit starter sets, which means email must handle kiln-care post-purchase and holiday gift exclusions before holiday starter-set rush — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: exclude class waitlist leads from glaze-kit promos after signup source tagging.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this pottery studio, test class waitlist versus glaze-kit interest. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Queue a glaze-kit offer, then change the signup-source tag to class waitlist. Verify the queued offer is canceled; a replay must not restore it. Keep kiln-care education tied to the purchased item, and test holiday gift exclusions separately. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-
-        <h2>Before Record Store Day: vinyl record shop retention choices</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the vinyl record shop has 1,800 orders/mo at roughly $72k/mo. Revenue rhythm follows limited pressings with 200–400 unit runs, which means email must handle VIP drop allocation and grading education before promos before Record Store Day — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: suppress recent full-price buyers from instant discount blasts on scarce pressings.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this vinyl record shop, test scarce pressing and recent full-price purchase. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Proposed inventory fixture: a 300-unit pressing sells out during a two-hour send window. Check stock again before dispatch and landing-page selection. Place a full-price test order while a discount is queued; verify cancellation instead of assuming that a segment refresh removes it. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-
-        <h2>Outdoor Gear Retailer: layering guides and ultralight segment tags</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the outdoor gear retailer has 2,400 orders/mo at roughly $112k/mo. Revenue rhythm follows layering guides and ultralight segment tags, which means email must handle Memorial Day tent promos only after education sends before Memorial Day sale week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: merchandise ultralight versus family car-camping with different hero tents.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this outdoor gear retailer, test ultralight versus family car-camping interest. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Assign different hero tents to ultralight and family profiles; then change a tag after queueing. Check the selected product and current inventory at dispatch. Place a test purchase and verify that Memorial Day promotions respect the defined purchaser exclusion without blocking necessary order updates. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-
-        <h2>How mechanical keyboard vendor emails through GB close deadlines</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the mechanical keyboard vendor has 940 orders/mo at roughly $58k/mo. Revenue rhythm follows six-week group-buy cycles on $180–$420 kits, which means email must handle GB close suppression and switch-type education across five PDPs before GB close deadlines — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: halt cart recovery when preorder tags flip to closed.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this mechanical keyboard vendor, test group-buy close and switch preference. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Queue recovery for an open group buy, flip its preorder tag to closed, and replay the event. Confirm obsolete recovery is canceled and closed kits cannot re-enter from stale browse activity. Keep switch education matched to the selected kit and distinguish allocation notices from marketing. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-
-        <h2>Board Game Store ($67k/mo) — pause winback until fulfillment tags show shipped for pre-orders</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the board game store has 1,050 orders/mo at roughly $67k/mo. Revenue rhythm follows pre-order allocation anxiety on hot titles, which means email must handle pre-order state machines and fulfillment pivots after allocation closes before Essen release week — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: pause winback until fulfillment tags show shipped for pre-orders.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this board game store, test pre-order allocation and fulfillment. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Queue a winback message for an unshipped preorder, then test allocated, shipped, canceled, and refunded states. Winback must wait for the documented eligibility rule. Check that fulfillment information uses the operational sender while promotional review or loyalty messages require their own permission. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-
-        <h2>Before Q4 gift-box peak: specialty tea merchant retention choices</h2>
-        <p>
-          Proposed numeric fixture, not an observed merchant: the specialty tea merchant has 720 orders/mo at roughly $44k/mo. Revenue rhythm follows 28–35 day tin replenishment with gift-box seasonality, which means email must handle subscription skip handling and gift-buyer exclusions in December before Q4 gift-box peak — not after support tickets spike. Omnisend contributes prebuilt multichannel journeys with email, SMS, and push; Yotpo Email & SMS contributes reviews, loyalty, email, and SMS in one retention suite. The useful question is which contribution matches the job you will run weekly: split replenishment windows by blend and steeping rate.
-        </p>
-        <p>
-          Proposed priority: necessary operational updates through their authorized sender, then eligible recovery, education, and promotions. For this specialty tea merchant, test blend, steeping rate, gifts and subscriptions. Record purpose and channel permission, current suppressions, and the system that owns each queue. A forty-five-minute cross-channel interval is a test setting, not a compliance rule or proof of cancellation.
-        </p>
-        <p>
-          Use the proposed 28–35 day window by blend, then introduce a new purchase, gift flag, subscription skip and cancellation. Re-evaluate current state at dispatch and cancel stale replenishment. Do not send a recipient the buyer's marketing merely because the order contains a gift. Record pass/fail and operator time in both candidates; no revenue, support-hour savings, or vendor winner has been measured here.
-        </p>
-        <h2>Yotpo Email & SMS workflow reality: strengths, friction, and billing</h2>
-        <p>
-          Omnisend shines when you need cart, welcome, and post-purchase live in days. Its friction shows when custom GB or preorder state machines dominate revenue. Yotpo Email & SMS shines when reviews and loyalty already anchor your retention stack. Its friction shows when you only need email without UGC or points. Merchants that ignore friction points buy the wrong ceiling — or the wrong floor.
-        </p>
-        <p>
-          Compare matched all-in costs using current quotes. Proposed sensitivity tests: import thousands of vinyl waitlist profiles while orders stay flat, then increase outdoor campaign volume during May. Record how each quote changes with billable contacts, sends, SMS destinations, required modules, migration, staff QA, tax, renewal and export work. These are cost-model fixtures, not observed bills.
-        </p>
-        
-        <h2>Newsletter layer: editorial merchandising without discount training</h2>
-        <p>
-          Newsletters still matter. Coffee origin stories, vinyl staff picks, keyboard switch explainers, and climbing trip reports build trust before product blocks. Omnisend and Yotpo Email & SMS both send product campaigns; the operational difference is how often you change hero SKUs mid-week and how live inventory syncs when a limited run sells out.
-        </p>
-        
-        <h2>Pricing models that punish different mistakes</h2>
-        <p>
-          Use a proposed 12,000–18,000-contact sensitivity range and match send volumes, destinations, and required modules. Preserve suppression records when cleaning a list. Add SMS, push, reviews, loyalty, migration and staff costs to the same twelve-month model; no price convergence or bundle saving is established here.
-        </p>
-        
-        <h2>Hybrid stack patterns on Shopify</h2>
-        <p>
-          Possible design to test: capture in Privy or Justuno, lifecycle in Omnisend, SMS in Postscript. Every sender still requires purpose and channel permission and current suppression checks. Failure mode: three cart recovery senders with no priority order. Pick a primary lifecycle owner.
-        </p>
-        
-        <h2>Who should choose which</h2>
-        <p><strong>Choose Omnisend if:</strong></p>
-        <ul>
-          <li>You need cart, welcome, and post-purchase live in days</li>
-          <li>You will use prebuilt multichannel journeys with email, SMS, and push weekly</li>
-          <li>Contacts plus message volume fits your calendar</li>
-          <li>Your team can maintain Omnisend without external rescue</li>
-          <li>Switching cost favors Omnisend for the next twelve months</li>
-        </ul>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Reviews and loyalty already anchor your retention stack</li>
-          <li>You will use reviews, loyalty, email, and SMS in one retention suite weekly</li>
-          <li>Modular plans by product fits your calendar</li>
-          <li>Your team can maintain Yotpo Email & SMS without external rescue</li>
-          <li>Incremental lifecycle GMV justifies Yotpo Email & SMS migration</li>
-        </ul>
-        <h2>Verdict</h2>
-        <p>
-          Omnisend is the better Shopify email tool when you need cart, welcome, and post-purchase live in days. Yotpo Email & SMS is the better Shopify email tool when reviews and loyalty already anchor your retention stack. Run the five-job buyer test in both UIs, model twelve-month billing with real sends and list hygiene, and pick whichever platform lets you edit audiences safely the Thursday before a drop — not whichever sales deck had the prettier logos. See <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing models</a> before annual contracts.
-        </p>
-      </article>
-
-      <div class="mt-10 max-w-4xl text-sm">
-        <p class="font-black text-[#24170f]">Related comparisons</p>
-        <p class="mt-2">
-          <a class="link" href="/compare/yotpo-email-sms-vs-omnisend">Yotpo vs Omnisend</a> ·
-          <a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a> ·
-          <a class="link" href="/use-cases/reviews-and-ugc">Reviews and UGC</a> ·
-          <a class="link" href="/guides/selection-framework">Selection framework</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <FaqSection faqs={faqs} title="Omnisend vs Yotpo Email & SMS FAQ" />
+  <section class="py-14 md:py-20"><div class="container">
+    <nav><a class="link" href="/compare">Comparisons</a></nav>
+    <header class="max-w-4xl"><p class="catalog-kicker">Migration and buying decision</p><h1 class="hero-title mt-5">{title}</h1><p class="mt-7 text-xl leading-9">Evaluate Omnisend for capture and recovery after Yotpo messaging retirement. The buying decision is whether current channel identities, Shopify events and retained review or loyalty jobs can form a dependable receiving workflow.</p></header>
+    <div class="mt-12 max-w-4xl"><TldrBox picks={[{"label": "Capture and recovery", "tool": "Omnisend candidate", "reason": "Demonstrate form-source routing and current purchase exits."}, {"label": "Continuing modules", "tool": "Yotpo Reviews/Loyalty", "reason": "Keep useful jobs with explicit sender and event ownership."}, {"label": "Channel expansion", "tool": "Separate eligibility", "reason": "Phone or email identity alone does not authorize every channel."}]} /></div>
+    <div class="mt-12 card overflow-x-auto"><table class="data-table">
+      <thead><tr><th>Decision</th><th>Omnisend receiving stack</th><th>Existing Yotpo services</th></tr></thead><tbody>
+      <tr><td>Messaging status</td><td>Current email/SMS/push catalog; verify account scope</td><td>Email/SMS retired</td></tr>
+      <tr><td>Capture</td><td>Test forms and channel-status mapping</td><td>Saved source records require reconciliation</td></tr>
+      <tr><td>Recovery</td><td>Prove cart, purchase and stock exits</td><td>Do not rely on an old messaging queue</td></tr>
+      <tr><td>Reviews and points</td><td>Verify required external events</td><td>Continuing products evaluated independently</td></tr>
+    </tbody></table></div>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>Messaging retirement changes the purchase</h2>
+      <p>Yotpo announced full Email and SMS deprecation for December 31, 2025. Its messaging login now reports that the SMS dashboard and background services are decommissioned. Reviews and Loyalty continue as separate products; keeping them does not retain a messaging sender. See the <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo sunset announcement</a> and <a class="link" href="https://email-and-sms.yotpo.com/">decommission notice</a>. This page evaluates a receiving stack, not a new Yotpo messaging purchase.</p>
+      <h2>What the receiving stack must prove</h2>
+      <p>The <a class="link" href="https://www.omnisend.com/features/">Omnisend feature catalog</a> lists signup forms, automation and email, SMS and web push. Evaluate those capabilities against your own identity and event path. Yotpo’s migration announcement names Omnisend as a partner; that relationship does not prove complete data recovery, launch time or account-specific compatibility.</p>
+      <p>Begin with one staff-controlled profile for each channel combination, plus an existing unsubscribed profile. Capture a form submission, inspect source and permission fields, then place an order on a second device. Record which identity receives the purchase exit and which browser endpoint remains eligible. Avoid merging profiles merely because a device was shared.</p>
+      <h2>Capture acceptance: pottery source changes</h2>
+      <p>All six merchant examples below are proposed numeric fixtures. For pottery at 480 orders and $31k monthly revenue, separate class waitlists from glaze-kit interest before the holiday starter-set rush. Submit both forms with one address, then change the preference after a kit offer is queued. Accept the design when the recorded intent determines future promotions and the obsolete offer is canceled without blocking the requested class notice.</p>
+      <p>Use kiln-care education only for the purchased item with manufacturer-approved instructions. A gift order should not enroll its recipient in buyer marketing. Ask an operator to explain each inclusion from the profile history; a form total alone cannot demonstrate correct routing.</p>
+      <h2>Scarce-stock recovery: vinyl and outdoor catalogs</h2>
+      <p>For vinyl at 1,800 orders and $72k monthly revenue, plan 200–400-unit pressings around Record Store Day. Let a proposed 300-unit pressing sell out inside a two-hour send window. Verify the queued message and its landing destination do not offer unavailable stock. Place a full-price order during discount recovery and confirm that all obsolete channel steps exit, including a browser notification tied to the same shopper.</p>
+      <p>For outdoor gear at 2,400 orders and $112k monthly revenue before Memorial Day, show different hero tents to ultralight and family-camping interests. Change the interest after enqueueing and verify the selected product at dispatch. Test an email-only profile alongside a separately permissioned push profile; record browser support and revocation behavior rather than promising mobile reach. Use approved product guidance without inventing safety advice.</p>
+      <h2>Close events and partial fulfillment</h2>
+      <p>For keyboards at 940 orders and $58k monthly revenue, use six-week group buys on $180–$420 kits and switch education across five product pages. This is a mixed basket/deposit fixture: $58k divided by 940 is about $61.70 per order, below the kit range. Do not model every order as a full kit. Close a group buy after recovery entry, then replay stale browse activity; accept only if closed stock cannot restart recovery while eligible education remains available.</p>
+      <p>For board games at 1,050 orders and $67k monthly revenue before Essen, split an order into shipped and unallocated lines. A purchase exit should stop cart recovery, but it must not imply every item has shipped. Keep operational allocation updates with their owner, and start review or winback timing only under the documented fulfillment rule. Verify that a retained Yotpo Reviews request does not overlap an Omnisend request.</p>
+      <h2>Tea replenishment and retained module events</h2>
+      <p>For tea at 720 orders and $44k monthly revenue, test 28–35-day blend-specific windows before the Q4 gift-box peak. Add a gift flag, subscription skip and new purchase after queueing. The receiving workflow should preserve the buyer/recipient distinction, cancel stale replenishment and explain why the next eligible reminder differs. Do not use one customer-level reorder date for every blend.</p>
+      <p>If Yotpo Loyalty remains, request an actual integration sample for tier, balance and correction events. Identify the authoritative value, event time and retry policy. Test a reward reversal arriving after a points promotion has queued. If the field cannot be delivered reliably, keep that job with a verified owner rather than displaying stale points in a recovery message.</p>
+      <h2>Rebuild without inventing missing history</h2>
+      <p>Inventory saved files with dates, source store and channel status coverage. Ask support what remains accessible; never assume a retired dashboard export can be regenerated. Preserve unsubscribes and unknown statuses during mapping. Reconcile rejected rows and a sample of individual identities, not just totals.</p>
+      <p>Import into a controlled setup with acquisition flows disabled. Existing customers must not become new signups simply because a file was loaded. Rebuild welcome, cart and post-purchase eligibility before styling templates, then test purchases, permission withdrawal and repeated events. Keep operational Shopify notices with their designated sender. Record when an integration needs manual intervention and who owns that work.</p>
+      <p>The <a class="link" href="/compare/yotpo-email-sms-vs-omnisend">reverse-direction migration guide</a> concentrates on file recovery and import enrollment. Use this page to decide whether the resulting capture and channel workflow is worth buying. Neither page supplies evidence that your account has already passed.</p>
+      <h2>Annual economics and acceptance decision</h2>
+      <p>Use a 12,000-contact base and 18,000-contact sensitivity, matching monthly messages, peak broadcasts, SMS destinations and segment lengths. Include retained Reviews/Loyalty, connector maintenance, domain setup, QA and exit work. Compare current written offers and renewal terms; do not count retired Yotpo messaging as an available renewal price.</p>
+      <p>Proposed fixed-goods calculation: $1,000 list-price sales minus $100 discounts minus $400 unchanged goods cost leaves $500 before messaging and labor. A $20 message charge leaves $480. Goods cost remains $400 when price is discounted. To assess a new workflow, compare incremental contribution against a suitable holdout with uncertainty rather than equating attributed recovery revenue with profit.</p>
+      <p>Choose Omnisend when its demonstrated source routing, purchase exits and required channel paths meet your acceptance criteria and annual budget. Keeping Yotpo Reviews or Loyalty can be sensible when those jobs remain valuable with verified event ownership. If the required identity joins or preorder states cannot be represented reliably, evaluate another active sender before expanding channels; there is no active Yotpo messaging option to fall back to.</p>
+      <p>Use the <a class="link" href="/guides/selection-framework">selection framework</a> and <a class="link" href="/guides/pricing-models">pricing worksheet</a> to record acceptance evidence and contract scope.</p>
+    </article>
+  </div></section>
+  <FaqSection faqs={faqs} title="Omnisend after Yotpo messaging FAQ" />
 </BaseLayout>
