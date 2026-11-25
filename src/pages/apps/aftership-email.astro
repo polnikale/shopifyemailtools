@@ -11,10 +11,13 @@ const path = '/apps/aftership-email';
 const title = pageTitle(site, 'apps/aftership-email');
 const desc = description(site, 'apps/aftership-email');
 
+const benefits = ["Marketing flows extend beyond shipment notifications", "Editable flow logic and timing for Shopify journeys", "Product recommendations and stock-related marketing use cases"];
+const checks = ["Marketing, Tracking and Returns entitlements checked separately", "Carrier event semantics and split shipments verified", "One sender and current eligibility per purpose"];
+
 const faqs = [
   {
     question: 'Is AfterShip Email a full Shopify retention platform?',
-    answer: 'No — AfterShip Email shines when messages depend on shipping, delivery, and returns timing. Post-purchase experience tied to tracking events is core strength. Welcome, browse abandonment, and sophisticated winback belong in Sequenzy or Klaviyo. Best when already in AfterShip tracking ecosystem.',
+    answer: "AfterShip Email supports marketing flows, including welcome and cart automation. Evaluate your required branches and reporting. Tracking and Returns are separate product and entitlement decisions.",
   },
   {
     question: 'When should a Shopify store add AfterShip Email?',
@@ -22,7 +25,7 @@ const faqs = [
   },
   {
     question: 'AfterShip Email vs Sequenzy for post-purchase?',
-    answer: 'Sequenzy owns full lifecycle including pre-shipment welcome and cart. AfterShip Email owns in-transit, delivered, and exception messaging with tracking context. Many stacks pair Sequenzy lifecycle plus AfterShip delivery layer.',
+    answer: "Both should be evaluated against your required lifecycle journeys. Delivery-related use cases additionally need verified event sources and one owner for each message; a second ESP is a configuration choice.",
   },
   {
     question: 'Does AfterShip Email handle returns messaging?',
@@ -30,7 +33,7 @@ const faqs = [
   },
   {
     question: 'Can AfterShip Email work standalone without Tracking?',
-    answer: 'Poor standalone value in our tests — merchants installed AfterShip Email without Tracking, saw limited ROI, uninstalled after 60 days. Sequenzy post-purchase sufficient for simple domestic shipping without tracking premium.',
+    answer: "Do not assume Tracking is required for marketing flows. Test welcome, cart and winback in the intended Email plan, then assess Tracking separately if carrier events or tracking pages are needed.",
   },
   {
     question: 'How much does AfterShip Email cost?',
@@ -42,7 +45,7 @@ const faqs = [
   },
   {
     question: 'What is the biggest AfterShip Email mistake?',
-    answer: 'Paying for email module while shipping notifications still come from generic Shopify defaults — configure delivery-triggered cross-sell and review asks or downgrade to Sequenzy-only post-purchase.',
+    answer: "Confusing Email, Tracking and Returns entitlements. Inventory each installed product, trigger and sender, and stop duplicate notifications before adding another flow.",
   },
 ];
 ---
@@ -53,12 +56,12 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Post-purchase timing · Rank #14</p>
+      <p class="catalog-kicker mt-6">Post-purchase timing</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        AfterShip Marketing supports lifecycle automation including welcome, browse and cart abandonment, back-in-stock, and winback. Delivery-related use cases require checking the connected Tracking or Returns events and product boundaries. The inherited rank does not establish comparative performance or standalone suitability.
+        AfterShip Marketing supports lifecycle automation including welcome, browse and cart abandonment, back-in-stock, and winback. Delivery-related use cases require checking the connected Tracking or Returns events and product boundaries.
       </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">The keyboard, vinyl, climbing gear, tea, home goods, and camping examples below are proposed evaluation scenarios, not observed merchant tests. No outcome percentages are established here. Rating: ★ {app.rating}. Automation: {app.automationDepth}. Shared ratings require separate review.</p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">The keyboard, vinyl, climbing gear, tea, home goods, and camping examples below are proposed evaluation scenarios, not observed merchant tests. No outcome percentages are established here.</p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-secondary" href="/apps/sequenzy">Sequenzy review</a>
         <a class="btn btn-secondary" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a>
@@ -70,20 +73,18 @@ const faqs = [
     <TldrBox
       title="Verdict: AfterShip Email for Shopify"
       picks={[
-        { label: 'Role', tool: 'Delivery-triggered', reason: 'Lifecycle marketing; verify connected delivery events.' },
-        { label: 'Best with', tool: 'AfterShip Tracking', reason: 'Evaluate connected events and separate product costs.' },
-        { label: 'Strength', tool: 'Tracking integration', reason: 'Messages tied to real parcel events.' },
-        { label: 'Pair with', tool: 'Sequenzy / Klaviyo', reason: 'Welcome, cart, winback elsewhere.' },
-        { label: 'Skip if', tool: 'Simple domestic', reason: '350 orders/mo domestic — Sequenzy post-purchase enough.' },
+        { label: 'Role', tool: 'Lifecycle marketing', reason: 'Lifecycle marketing; verify connected delivery events.' },
+        { label: 'Best with', tool: 'Verified event source', reason: 'Evaluate connected events and separate product costs.' },
+        { label: 'Strength', tool: 'Flow controls', reason: 'Test conditions, delays and supported trigger splits.' },
+        { label: 'Pair with', tool: 'Sequenzy / Klaviyo', reason: 'Optional; demonstrate a requirement before adding a second sender.' },
+        { label: 'Skip if', tool: 'Overlapping journeys', reason: 'Required journeys already covered at acceptable total cost.' },
       ]}
     />
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Retention moments that happen in transit</h2>
       <p>AfterShip Marketing documents welcome, browse and cart abandonment, back-in-stock, and winback automation as well as shipping-event use cases. Distinguish Marketing from Tracking and Returns: a fulfilled order does not establish delivery. For fragile vinyl and international keyboard switches, verify the actual carrier event, latency, and available integration before scheduling a delivery-based message.</p>
-      <p>
-        Returns messaging for climbing harness sizing — 18% return rate in our test — requires compassionate status updates and exchange suggestions, not immediate winback discount. AfterShip Returns integration routes that communication natively. Simple domestic tea shop at 350 orders/mo rejected AfterShip suite — Sequenzy post-purchase plus Shopify notifications sufficient without tracking premium.
-      </p>
+      <p>For a proposed harness-sizing return, provide factual status and an exchange route without assuming the return creates marketing permission. Verify the Returns event and responsible product. A domestic tea store can evaluate marketing flows without buying a tracking layer; shipping complexity and order count do not establish marketing suitability.</p>
     </div>
 
     <div class="ledger-card mb-12">
@@ -91,17 +92,15 @@ const faqs = [
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Delivery events, tracking pages, and suite dependency</h2>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Assess AfterShip Marketing separately from AfterShip Tracking and Returns. Welcome and recovery automation are broader than shipping notifications. For delivery-triggered review requests, SMS updates, branded tracking pages, and returns messages, verify the responsible product, plan, carrier coverage, and event payload instead of assuming one module provides the whole suite.</p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]"><strong>Capabilities to verify:</strong> Map in-transit, delivered, customs-exception, and returns events to the exact installed product. Test international keyboard shipments and fragile vinyl orders, including delayed and duplicate events. A marketing consent record must be evaluated separately from eligibility for a necessary shipping update.</p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps:</strong> Limited standalone lifecycle depth; welcome and winback belong in Sequenzy or Klaviyo; best value requires Tracking product; finance-grade journey attribution needs lifecycle ESP pairing.
-      </p>
+      <p><strong>Acceptance gaps to investigate:</strong> Which required trigger or filter is missing in the actual Email plan? Can the operator pause a queued promotion after return initiation? Document the failing case and available remedy before adding an ESP. Shipping pages and return labels require their own entitlement checks.</p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>AfterShip pricing: {app.priceDetail}. {app.pricing}. These shared inputs remain unverified. Obtain current Marketing, Tracking, Returns, email-volume and SMS-region quotes as applicable; include implementation, integration maintenance, and overlapping subscriptions in a matched all-in comparison.</p>
-      <p><strong>Scenario A — Tracking plus Email, 450 orders/mo international keyboards.</strong> Bundle ~$80–150/mo depending on shipment volume. Sequenzy post-purchase ~$55/mo misses delivery-triggered review timing — AfterShip premium bought 7 point review rate lift in our test.</p>
+      <p>Quote Email, Tracking and Returns separately for the products actually required. Include contact and send allowances, shipment and return workloads, SMS regions, integration maintenance and operator time. A suite total cannot be inferred from a catalog field.</p>
+      <p><strong>Scenario A — International keyboards:</strong> Model marketing recipients separately from tracked parcels. A split keyboard order may generate multiple shipments but should not produce duplicate review requests. Test the intended completion rule before evaluating review submissions and total costs.</p>
       <p><strong>Scenario B — Full suite with Returns, climbing gear.</strong> Compare returns-related fees and support effort with the existing stack. Measure exchange and refund rates using the same eligible returns denominator and record sizing reasons; a change in those rates alone does not establish incremental retention.</p>
-      <p><strong>Scenario C — Email only, domestic tea 350 orders/mo.</strong> Uninstalled day 60; Sequenzy $48/mo sufficient — never buy email without Tracking active.</p>
+      <p><strong>Scenario C — Domestic tea:</strong> Trial welcome, cart and repeat-purchase journeys within Email. Compare the required filters, purchase cancellation and operator effort with the existing system. Retain or remove Tracking based on its logistics value, not a claim that Email cannot operate without it.</p>
     </div>
 
     <div class="prose-shopify mb-12">
@@ -114,27 +113,27 @@ const faqs = [
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Returns — harness sizing</h3>
       <p><strong>Scenario:</strong> Return initiated in AfterShip Returns. <strong>Setup:</strong> Status email plus size guide exchange suggestion — no discount yet.</p>
       <p><strong>Proposed measurement:</strong> Track exchange versus refund decisions, repeat returns, support time and customer complaints. Confirm current return status before suggesting an exchange, and recheck marketing permission before any promotional follow-up.</p>
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Standalone misfit — tea domestic</h3>
-      <p><strong>Scenario:</strong> AfterShip Email without Tracking installed. <strong>Result:</strong> Uninstalled 60 days; Sequenzy post-purchase sufficient.</p>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Standalone marketing — tea domestic</h3>
+      <p><strong>Proposed standalone case:</strong> Demonstrate a tea welcome flow and a cart flow without relying on carrier events. Confirm a purchase cancels the pending recovery message. Failure of a particular branch is a concrete requirement to investigate, not proof of universal standalone misfit.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
-      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{benefits.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{checks.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">AfterShip operating discipline on Shopify</h2>
-      <p>Pair with lifecycle ESP explicitly — document which system owns pre-shipment versus in-transit versus delivered messaging. Sequenzy post-purchase education day 3 plus AfterShip delivered review ask day 9 works; duplicate thank-you emails day 1 from both systems does not.</p>
+      <p>Assign welcome, cart, delivery and review ownership explicitly. Email may own marketing flows itself. If another ESP is retained, disable overlapping journeys and verify actual queue cancellation, rather than relying on a diagram of vendor roles.</p>
       <p>For climbing gear and keyboards, propose a clear size guide and exchange route before testing a discount. Verify the available Returns integration and sender ownership; do not assume a return event automatically creates or authorizes a marketing sequence.</p>
       <p>For a customs delay affecting a rare vinyl pressing, test a factual status message with a support route. Measure tickets per delayed shipment and complaints; reduced chargebacks and later retention remain hypotheses requiring evidence.</p>
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with AfterShip</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Proposed stack patterns with AfterShip</h2>
       <p><strong>Keyboard international switches:</strong> AfterShip delivery-triggered review plus Sequenzy cross-sell only after delivery confirmed — prevents recommending accessories before product arrives.</p>
       <p><strong>Vinyl fragile shipping:</strong> Evaluate exception and delivered messages against tickets per affected shipment. Compare like carrier, destination, and season cohorts rather than reporting an unsupported reduction.</p>
-      <p><strong>Domestic tea simple shipping:</strong> Rejected AfterShip suite at 350 orders/mo — Sequenzy post-purchase sufficient.</p>
+      <p><strong>Domestic tea scenario:</strong> Compare Email marketing journeys with the existing sender using the same eligible audience. Keep Shopify service notifications where appropriate and confirm there is only one owner for each purpose.</p>
     </div>
 
     <div class="card mb-12">
@@ -150,7 +149,7 @@ const faqs = [
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">AfterShip Email in a three-layer Shopify stack</h2>
       <p>AfterShip Marketing covers lifecycle messaging as well as delivery-related use cases. Confirm which Tracking and Returns signals are actually connected before choosing the product boundary.</p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — AfterShip Email may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). AfterShip Email fits where post-purchase timing tied to shipping and delivery events. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Separate campaign and lifecycle requirements from carrier and return events. Email can own welcome and cart; Tracking can supply logistics functions where purchased and connected. Build an entitlement table from the actual accounts, and record which system remains responsible when an integration fails.</p>
       
     </div>
   </section>
@@ -173,7 +172,7 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">AfterShip Email migration and co-existence</h2>
-      <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A specialty tea roaster left AfterShip Email for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a climbing gear outfitter stayed on AfterShip Email because predictive segments daily justified profile pricing.</p>
+      <p>For a proposed tea-roaster migration, preserve welcome enrollments, replenishment schedules and suppression records. A climbing outfitter may keep Email if return-aware promotion pauses and its other required journeys pass. Compare measured work and total cost; neither case establishes a forty-percent labor saving.</p>
       <p>Plan a migration window around event latency, purchase cycles, and rollback needs. Assign one live sender per message purpose; use shadow evaluation or disjoint eligible cohorts rather than duplicate cart sends. Recheck purchase state and channel permission before sending, and deduplicate event replays across systems. Attribution agreement alone does not establish incremental revenue.</p>
       <p>When AfterShip Email pairs with specialists — Postscript SMS, Privy capture, AfterShip transactional — document channel priority in wiki. Subscribers experience one brand, not vendor architecture.</p>
     </div>
@@ -190,7 +189,7 @@ const faqs = [
   </section>
 
 <!-- TARGETED_EXPANSION_v5 -->
-  <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Standalone limit</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When to add lifecycle ESP</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">AfterShip Email alone insufficient when cart recovery and winback drive retention — add Sequenzy or Klaviyo at 400+ orders/mo while keeping delivery-triggered messages in AfterShip layer.</p></div></section>
+  <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Workflow fit</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When to add lifecycle ESP</h2><p>Add another ESP only for a demonstrated requirement. Test a welcome trigger split and a cart condition in the installed Email account, then record any missing branch, reporting field or permission control. There is no order-volume threshold requiring another marketing platform.</p></div></section>
 
 <!-- FINAL_EXPANSION_v6 -->
   <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">AfterShip plus Klaviyo coexistence pattern</h2><p>A proposed coexistence pattern assigns delivery and review requests to one system and cart or winback to another. Document delivered_plus_2d and review_requested as example workflow tags, verify synchronization, and add stable event IDs for replay deduplication. Test missing and stale tags before enabling a second sender.</p><p>For international delays, measure WISMO tickets per delayed shipment and support time alongside complaints. Compare carrier, destination, and season cohorts and subtract all-in costs. No support saving or revenue contribution is established by this scenario.</p></div></section>
@@ -198,7 +197,7 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Transactional layer versus lifecycle ESP</h2>
-      <p>AfterShip Email owns shipping-triggered and delivery-adjacent messages — not cart recovery, welcome branching, or winback. Rank context: operational email specialist paired with Sequenzy or Klaviyo marketing layer. Mixing promotional copy into shipping templates damages domain reputation and customer trust when delay anxiety already high.</p>
+      <p>AfterShip Email supports lifecycle marketing. Tracking and Returns address different logistics functions, whose events may be useful to a marketing workflow when actually connected. Classify each message by purpose and establish permission and sender ownership; a shipping template is not automatic permission for a cross-sell.</p>
       <p><strong>Workflow test:</strong> Run one order through shipment notification, delivery confirmation, review request, then marketing post-purchase — verify zero promotional codes in operational templates and marketing suppresses when support ticket open.</p>
       <p><strong>Scenario — camping gear international delays.</strong> Test delay templates and pause promotional winback while a current delay or support issue remains active. Audit tag latency and sender ownership; measure ticket rate without treating a before/after change as causal proof.</p>
       <h2>Buyer checklist</h2>
@@ -209,13 +208,13 @@ const faqs = [
       <p>Model potential support value using tickets per shipment and handling time, then subtract the full operating cost. A before/after fall in WISMO can reflect carrier service, seasonality, or shipment mix. Use a comparable cohort or suitable controlled test before attributing savings to email.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Coexistence with lifecycle ESP</h2>
-      <p>AfterShip owns shipping-triggered and delay education; Klaviyo or Sequenzy owns cart, winback, replenishment. Tag handoff via Shopify: delivered_plus_2d, review_requested, delay_active. Weekly drift audit after flow export — tag script dropped once on theme update, duplicate apology emails followed.</p>
+      <p>In a proposed split stack, use stable order, shipment and event identifiers alongside illustrative tags such as delay_active. Remove a stale tag and replay an older delivered event during testing. The receiver must not resume a promotion solely because an out-of-order update cleared the current state.</p>
       <p>For an international camping scenario, test locale selection and factual delay guidance. Pause promotional messages when the current support or delay state requires it. Keep necessary service content separate from promotional purposes and verify permission and suppression at send time.</p>
       <p>At renewal, compare required Marketing, Tracking, and Returns capabilities separately. Evaluate event reliability, support burden, lifecycle coverage, and matched all-in costs before retaining or cancelling a product.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day coexistence proof plan</h2>
       <p>Week 1: tag glossary and support macros. Week 2: test delay order operational path. Week 3: marketing ESP suppression on delay_active. Week 4–12: WISMO ticket trend. Day 90: operational plus marketing attribution documented separately in finance review.</p>
-      <p>Promotional copy in shipping templates when customer anxious about delay — brand damage faster than missed upsell. Cancel AfterShip email module when Sequenzy post-purchase depth sufficient; keep tracking when logistics complexity warrants standalone operational layer on subdomain.</p>
+      <p>At renewal, demonstrate that necessary service updates continue if the marketing product is paused. Rehearse cancellation on a non-live path, inspect queued work and preserve the event log. Keep or cancel each subscription from its actual responsibilities and costs.</p>
     </div>
   </section>
 
@@ -227,12 +226,14 @@ const faqs = [
   </section>
 
     <h2>AfterShip Email buyer desk: tracking plus marketing split</h2>
-    <p>AfterShip Email fits merchants who want shipment-triggered messages without building transactional templates in an ESP — but the ninety-day test is whether you have added pre-purchase revenue, not just prettier tracking pages. Week one: classify every template as transactional or promotional; camping merchants promoting accessories in shipping emails without consent headers invite complaints. Week two: benchmark open rates on out-for-delivery against industry — outdoor gear often spikes when customers are trip-planning. Week three: add parallel marketing flows in your ESP for browse and post-purchase cross-sell; artisan coffee brewing guides should not live only in tracking footers. Week four through twelve: if AfterShip stays shipping-only, measure incremental ESP revenue separately — board game shops need back-in-stock outside tracking. Vinyl fragile media: branded tracking reduces WISMO tickets, email strategy still owns drops. Pair with Sequenzy for journeys, Klaviyo if consolidating, keep AfterShip lean if stack simplicity wins. Day ninety: WISMO ticket rate down, at least one non-tracking flow attributing revenue, complaint rate flat month over month.</p>
+    <p>Run a buyer exercise covering two independent paths: a welcome or cart flow in Email, and a logistics-triggered message only where the required event connection exists. For camping gear, open a support issue while a promotion is queued; for vinyl, replay a late carrier scan. Compare support tickets per affected shipment and marketing contribution separately. An improved tracking page does not by itself prove revenue or support savings.</p>
 
     <h2>AfterShip Email: WISMO reduction scorecard</h2>
     <p>Track where-is-my-order tickets per thousand shipments, separating delays, damage, missing scans, and ordinary status questions. Segment outdoor gear and camping by season and carrier; test FAQ links for pottery and vinyl. No universal fifteen-percent target or sixty-day diagnosis follows from this scenario. Investigate data completeness, carrier performance, and message delivery before drawing a conclusion.</p>
 
     <p>Review support ticket rates, handling time, marketing outcomes, complaints, and all-in costs over a window matched to shipment volume. Flat WISMO volume alone cannot diagnose tracking quality or justify adding or cancelling a marketing module.</p>
+
+  <section class="container py-12"><div class="prose-shopify"><h2>Supplier scope and flow acceptance</h2><p><a class="link" href="https://support.aftership.com/en/email/articles/15440861-how-to-set-up-a-flow-with-aftership-email">AfterShip’s flow guide</a> documents Shopify flows, editable templates, delays, conditions and email/SMS actions. It limits trigger splits to welcome and abandoned-cart flow types. Test your intended branch in the actual flow type rather than assuming every block works everywhere.</p><p><a class="link" href="https://www.aftership.com/email/email-marketing-automation">AfterShip’s automation page</a> describes welcome, recovery, order follow-up, winback and stock-related marketing. This supports a broader Email scope; it does not establish Tracking, Returns, carrier coverage or every feature in your plan. Inspect installed products and billing, then demonstrate the precise trigger and action required.</p><p>For split shipments, define whether a review request waits for all parcels or a particular item. A partial delivery must not be treated as full order completion. For an exchange, correlate the replacement shipment with the original return so that stale delivery events cannot reopen a closed promotional branch. Keep an event log showing the chosen rule, actual payload and operator decision.</p></div></section>
 
   <FaqSection faqs={faqs} title="AfterShip Email Shopify FAQ" />
 </BaseLayout>
