@@ -10,19 +10,19 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('rejoiner')!;
 const path = '/alternatives/rejoiner-alternative';
 const title = 'Best Rejoiner Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave Rejoiner — managed service cost, agility limits, transparency gaps — plus eight ranked self-serve lifecycle alternatives with migration checklist.';
+const desc = 'Evaluate Rejoiner platform and optional services against Shopify workflow, staffing and handoff needs, with alternative options and a migration checklist.';
 
 const altSlugs = ['sequenzy', 'sendlane', 'klaviyo', 'omnisend', 'drip', 'activecampaign', 'brevo', 'yotpo-email-sms'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
 
 const faqs = [
   { question: 'Why do Shopify merchants leave Rejoiner?', answer: 'Reasons to evaluate a replacement include a mismatch between the actual software or service agreement and the store’s staffing, approval process, workflow needs, or total costs. Check the arrangement offered to your store rather than assuming every Rejoiner customer uses managed services. Attributed revenue alone does not establish incremental lift or justify a fee comparison.' },
-  { question: 'What is the best Rejoiner replacement for hands-off teams?', answer: 'Sequenzy for agent-first lifecycle with in-house control; Sendlane for guided migration with support — middle ground between Rejoiner managed service and blank-canvas Klaviyo.' },
+  { question: 'What is the best Rejoiner replacement for hands-off teams?', answer: 'A hands-off team should compare documented service deliverables and retained store responsibilities. Rejoiner offers optional services; replacement software alone does not supply an operator. Confirm current Sendlane/Privy support scope if evaluating it.' },
   { question: 'Will I lose performance leaving Rejoiner?', answer: 'Performance is uncertain and a migration can disrupt working journeys. Document the current baseline, required workflows, reporting definitions, and operating effort. Test the replacement with eligible cohorts, purchase exits, and suppression handling. Compare matched costs and margins; attributed revenue is not causal lift, so use a valid randomized holdout where feasible and report uncertainty.' },
   { question: 'Rejoiner vs Sendlane?', answer: 'Compare the current software and service options, contracts, onboarding scope, response commitments, and work retained by your team. Neither provider should be reduced to a service-only or platform-only category without checking the offered arrangement. Model matched platform, messaging, service, and internal labor costs rather than assuming a lower long-term price.' },
   { question: 'How does Rejoiner migration work?', answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.' },
   { question: 'When should I stay on Rejoiner?', answer: 'Consider staying when the actual agreement meets required workflows, service commitments, reporting needs, and matched total costs. Include the effort and disruption of switching. A managed arrangement may fit limited internal capacity, but any claim of incremental revenue requires a credible comparison rather than attributed reporting alone.' },
-  { question: 'Is Klaviyo too complex after Rejoiner?', answer: 'Klaviyo needs owner — Rejoiner refugees sometimes underestimate maintenance. Sequenzy or Sendlane bridge gap between managed service and Klaviyo complexity.' },
+  { question: 'Is Klaviyo too complex after Rejoiner?', answer: 'Have the intended operator reproduce required journeys and reporting in the proposed plan. Compare maintenance effort and available specialist help; complexity depends on the store’s requirements rather than its previous provider.' },
   { question: 'What flows to rebuild first post-Rejoiner?', answer: 'Prioritize the journeys your store needs most, using current eligibility, margin, and operational risk alongside attributed performance. Welcome and cart may be useful starting points; post-purchase or subscription messages may be more urgent elsewhere. Rebuild and test required paths and purchase exits before moving each sending queue, rather than copying the entire library at once.' },
 ];
 ---
@@ -34,39 +34,40 @@ const faqs = [
     <div class="container">
       <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Rejoiner alternatives</span></nav>
       <header class="max-w-4xl">
-        <p class="catalog-kicker">Managed service exit</p>
+        <p class="catalog-kicker">Platform and service review</p>
         <h1 class="hero-title mt-5">Best Rejoiner alternatives for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
           Evaluate the actual Rejoiner software and service arrangement before planning an exit. A store bringing retention in-house should document who edits journeys, who approves campaigns, what export access is available, and what ongoing support costs. This page does not establish a universal response time or a measured merchant outcome.
         </p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores bringing retention in-house — self-serve platforms with strategy defaults or guided migration. Sequenzy leads when agility and pay-per-email matter; Sendlane when you want support without full outsourcing. Assign the owner before cancel date, not the week after — managed service exits fail in ownership gaps.
+          Compare seven candidate platforms and one historical listing using your actual workflows. Rejoiner sells a platform with optional Strategy Partner and Creative Partner services; changing service scope may be sufficient. Assign the next operator before changing account access or canceling.
         </p>
       </header>
 
       <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Rejoiner replacements" picks={[
-          { label: 'Best in-house control', tool: 'Sequenzy', reason: 'Agent-first lifecycle without managed service fees or ticket queues.' },
-          { label: 'Best guided migration', tool: 'Sendlane', reason: 'Support-heavy transition from managed service to owned platform.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'When Rejoiner data rigor needs platform-native continuation.' },
-          { label: 'Best fast rebuild', tool: 'Omnisend', reason: 'Prebuilt journeys when managed library must relaunch quickly.' },
-          { label: 'Best workflow control', tool: 'Drip', reason: 'Visual builder for teams wanting hands-on after managed service.' },
+        <TldrBox title="Options to evaluate" picks={[
+          { label: 'Internal operator', tool: 'Sequenzy', reason: 'Test editable lifecycle workflows against your store requirements.' },
+          { label: 'Support scope', tool: 'Sendlane', reason: 'Confirm current Privy onboarding and account continuity.' },
+          { label: 'Catalog queries', tool: 'Klaviyo', reason: 'Validate required data and segment logic.' },
+          { label: 'Journey templates', tool: 'Omnisend', reason: 'Test templates with real events and purchase exits.' },
+          { label: 'Visual workflow', tool: 'Drip', reason: 'Have the assigned operator reproduce a required journey.' },
         ]} />
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Rejoiner</h2>
-        <p>Cost versus control. Rejoiner monthly retainer plus performance fees stack — a specialty-tea brand paying managed service $2k monthly realizes Sequenzy plus internal owner costs less with faster Thursday replenishment edits.</p>
+        <p>A specialty-tea brand planning Thursday replenishment edits should compare its current approval process with a proposed internal workflow. A hypothetical $2,000 service budget is a planning input, not a Rejoiner platform price or evidence that switching saves money.</p>
         <p>Agility depends on the agreed service scope and approval process. For a drop-day segment, Kickstarter exclusion, or mechanical-keyboard group buy, document who can make the change, who approves it, and how it is tested. Compare that process with the internal staffing a replacement would require; do not assume either model guarantees same-day edits.</p>
-        <p>Transparency gaps. Finance asks which Rejoiner journey drove incrementality — reporting packaged for account reviews, not internal standups. Self-serve attribution on Sequenzy or Klaviyo enables weekly optimization culture managed service discouraged.</p>
+        <p>Rejoiner advertises reporting and custom attribution as platform features. Ask finance to reconcile attribution windows, refunds and customer cohorts before comparing reports. Access to a dashboard does not establish incremental lift.</p>
         <p>A managed engagement may suit a team that lacks execution capacity, if its actual scope, reporting, and fees meet the store’s needs. A founder-only operation should compare the documented service with the staff time a self-serve platform would require. No merchant ROI result is established here.</p>
 
+        <p>As checked November 25, 2026, <a class="link" href="https://www.rejoiner.com/pricing">Rejoiner’s pricing page</a> distinguishes active-contact platform pricing from optional services and lists journey building, reporting, Shopify integration and data export. This does not establish portable workflow files, creative ownership or an approval SLA. Confirm asset rights, export fields and formats, approval authority, notice terms, queued-send behavior and post-cancellation account access in writing.</p>
         <h2>Managed service to owned lifecycle</h2>
         <p>Assign an accountable owner before transferring lifecycle work. Request journey documentation, event definitions, creative assets the store has rights to use, and any available holdout results. Agree on export access and handoff responsibilities in the actual contract rather than assuming every engagement has the same deliverables.</p>
         <p>Prioritize journeys by customer risk, event readiness, and business value. Attributed revenue can help inventory existing activity, but does not prove that a journey caused the purchases. Validate one journey at a time and keep a rollback path instead of using an arbitrary count of three as a release requirement.</p>
 
         <h2>Newsletters, lifecycle, and managed service gaps</h2>
-        <p>Rejoiner typically ran lifecycle and campaign calendar — newsletters for drops, automated recovery, winback before clearance. Managed service rarely differentiated editorial voice from automation; merchants leaving want in-house control of both. Sequenzy agent-first setup replaces strategist memos with editable outcomes; Klaviyo replaces them with data depth requiring owner discipline.</p>
+        <p>Separate editorial newsletters from event-driven lifecycle work. A drop announcement needs a merchandising brief and approval owner; cart recovery needs reliable events and purchase exits. Rejoiner offers software plus optional expert services: service expertise may help a team with limited execution capacity, while an internally staffed platform may fit a team wanting direct editing responsibility.</p>
         <p>Inventory shipping and order notifications separately from marketing journeys. Confirm which Shopify or shipping application owns each notification, its purpose, and applicable channel requirements. A transactional label does not authorize promotional content or transfer marketing permission to another channel.</p>
 
         <h2>Rejoiner migration checklist</h2>
@@ -78,73 +79,74 @@ const faqs = [
           <li><strong>Connect replacement to Shopify</strong> — verify sync depth Rejoiner relied on.</li>
           <li><strong>Rebuild welcome and cart</strong> — pause Rejoiner sends after QA.</li>
           <li><strong>Reconcile suppression and scheduled messages</strong> — establish one active sender per journey, cancel or drain old queues, and recheck current permission, purchase state, and exclusions before sending.</li>
-          <li><strong>Migrate post-purchase and winback from Rejoiner winners list</strong>.</li>
+          <li><strong>Migrate post-purchase and winback selected by risk and readiness</strong>.</li>
           <li><strong>Document suppression rules Rejoiner enforced</strong> — VIP, discount caps, subscription skips.</li>
           <li><strong>Redirect popup integrations</strong>.</li>
-          <li><strong>Weekly standup review first month</strong> — replace account manager rhythm.</li>
+          <li><strong>Assign operational reviews</strong> — agree on review frequency with the next operator.</li>
           <li><strong>Retain accessible Rejoiner reports under the store’s retention policy</strong> — preserve definitions and comparable reporting periods for post-exit analysis.</li>
         </ol>
 
+        <p>Map customer, order and event identities with stable source IDs; preserve purpose- and channel-specific permission evidence, withdrawals and suppression history. Verify current eligibility and purchase exits at dispatch. Before cutover, name one sender and queue owner per journey, cancel or drain old work and reconcile a send ledger. For rollback, stop replacement queues first, carry forward new purchases and withdrawals, then replay only unprocessed eligible events using deduplication keys. Never reactivate an old queue from a stale consent snapshot.</p>
         <h2>Three merchant scenarios</h2>
-        <p><strong>Vinyl label — moved to Sequenzy.</strong> Rejoiner fees $1,800 monthly; hired part-time retention lead. Sequenzy agent-first sequences plus pay-per-email; drop-day edits same afternoon. Performance matched Rejoiner within sixty days at forty percent cost.</p>
+        <p><strong>Vinyl label — proposed evaluation.</strong> Use a hypothetical $1,800 monthly service input and separately estimate a part-time retention lead. Test drop-day segments and edit approval on the same catalog; no sixty-day performance match or forty-percent cost result has been observed here.</p>
         <p><strong>Outdoor gear — proposed evaluation of Sendlane.</strong> A team seeking implementation help should request a written migration scope, export requirements, support responsibilities, and total fees. Test catalog and order-event handling with its own store data before choosing; this is an illustrative decision, not a reported migration.</p>
         <p><strong>Pottery studio — proposed service review.</strong> A founder-only store could compare an existing managed agreement with the staffing and maintenance needed in a replacement. Use actual invoices, documented service deliverables, and comparable customer cohorts; no savings or performance outcome is claimed.</p>
 
-        <h2>Managed service exit economics</h2>
+        <h2>Platform and service review economics</h2>
         <p>Compare the actual agreement with a replacement at matched contact counts, message volume, channels, and required service scope. Include subscriptions, usage, implementation, integrations, internal labor, and any contractual fees. Record approval and edit delays as operating constraints; do not invent lost margin or assume every agreement includes a retainer and performance fees. Attributed revenue and incremental contribution margin are separate measures.</p>
-        <p>Post-Rejoiner stacks cluster three ways: Sequenzy plus internal owner for agility; Sendlane plus owner for guided first ninety days; Klaviyo plus dedicated retention hire for data depth. Wrong pattern: Klaviyo without owner — trades managed neglect for expensive self-serve neglect.</p>
+        <p>Choose the operating model from the work inventory: internal staff, external specialists, or a combination. Retaining Rejoiner software while changing optional services may also deserve evaluation. No provider removes the need for an accountable store owner.</p>
 
         <h2>Due diligence before canceling Rejoiner</h2>
         <p>Review the actual contract notice period, export rights, and asset ownership before canceling. Inventory VIP, Kickstarter, and subscription exclusions explicitly. At each scheduled send, recheck purpose-specific channel permission, current suppression, and purchase state. Name the sender and queue owner for each journey, cancel or drain old queued work, and deduplicate replayed events with stable identifiers. Retain reports under the store’s access and retention rules; attribution alone cannot establish causal lift.</p>
       </article>
 
       <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
+  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Use one matched worksheet: same active contacts, monthly sends, channels, features and observation period. Sum platform, usage, carrier fees, services, implementation, integrations and internal hours at a stated rate; show one-time transition costs separately. Compare contribution after refunds, discounts and product costs separately from attributed revenue. Record the denominator and attribution window for every rate; holdout lift needs comparable randomized eligible customers and uncertainty. No savings result is claimed.</p>
 </section>
 <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Rejoiner alternatives for Shopify stores</h2>
+        <p class="catalog-kicker">Candidate options</p>
+        <h2 class="font-serif text-4xl font-black text-slate-950">Rejoiner options and a historical listing</h2>
 
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy Rejoiner exit for agility and economics — agent-first lifecycle replaces managed service strategists with plain-language outcomes your new internal owner can edit Thursday before drops.',
-          'Pay-per-email without retainer plus performance fee stack. Strategy defaults encode suppression Rejoiner enforced — recent buyers, subscription skippers, Kickstarter backers.',
-          'Choose Sequenzy when exit driver was speed and cost — assign owner before cancel.',
+        <ToolReview app={alternatives[0]} rank={1} paragraphs={[
+          "Sequenzy bills by email volume with unlimited contacts; separately verify optional paid-plan SMS/MMS beta coverage and credits. Its Shopify integration describes customer, order and product sync.",
+          "Evaluate an internal operator editing Thursday replenishment and drop campaigns. Rebuild recent-buyer, subscription-skip and Kickstarter exclusions explicitly; an agent draft does not inherit those rules.",
+          "Choose only after workflow, approval, event and staffing checks pass; no comparative savings or strategist replacement is established.",
         ]} />
 
         <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Sendlane guided migration from managed service — onboarding support, deliverability review, templates when Rejoiner documentation must become owned platform without cold-start failure.',
-          'Middle ground between Rejoiner outsourcing and Klaviyo self-serve alone. Higher entry price than Sequenzy — justified when team needs hand-holding first ninety days.',
-          'Choose Sendlane when support matters but Rejoiner retainer does not.',
+          "Privy has acquired Sendlane. Confirm the currently offered platform, support, onboarding, contract and migration responsibilities before selecting it.",
+          "An outdoor-gear team seeking implementation help should request a written scope and test catalog and order mappings. Support needs can justify specialist help when the actual deliverables fit.",
+          "Verify account access, export and service continuity with Privy; do not assume a fixed ninety-day support package.",
         ]} />
 
         <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Klaviyo when Rejoiner data rigor must continue in-house — predictive segmentation, browse abandonment, holdout testing native. Profile pricing with hygiene.',
-          'Requires dedicated owner — Rejoiner refugees underestimate maintenance. Agency ecosystem helps if Rejoiner was de facto agency.',
-          'Pick Klaviyo when data depth was Rejoiner value — not when team wanted less complexity.',
+          "Evaluate Klaviyo by reproducing the product queries, browse events and reporting definitions your store requires.",
+          "Assign an operator and backup; specialist assistance can be useful if the workflow inventory exceeds internal capacity.",
+          "Select on validated requirements and matched operating effort rather than assuming every Rejoiner customer is leaving an agency.",
         ]} />
 
         <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Omnisend fast relaunch when Rejoiner library must go live before next sale week — prebuilt cart, welcome, post-purchase. Speed replaces managed service execution temporarily while owner learns platform.',
-          'Multichannel SMS optional. Credible when Rejoiner exit timeline is short.',
-          'Choose Omnisend when deadline beats builder preference post-managed service.',
+          "Evaluate Omnisend templates using cart, welcome and post-purchase fixtures before scheduling a sale.",
+          "Verify required email and SMS scope, regional coverage and permissions separately.",
+          "A template is a starting point; no relaunch deadline or faster migration is guaranteed.",
         ]} />
 
         <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Drip visual builder for teams wanting hands-on control after years of Rejoiner black box — see every node, revenue dashboards weekly.',
-          'Per-contact pricing — sunset lists Rejoiner grew without purchase. Tag-based branching for board-game and keyboard catalogs.',
-          'Choose if new owner enjoys canvas work Rejoiner abstracted away.',
+          "Evaluate Drip by having the operator inspect and edit every branch of a required flow.",
+          "Use board-game and keyboard catalogs to test tags, variants, exclusions and order reconciliation.",
+          "Check current pricing and maintainable workflow fit rather than assuming existing lists were grown poorly.",
         ]} />
 
         <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'ActiveCampaign if Rejoiner overlapped CRM pipelines — wholesale plus DTC. Rare Rejoiner exit path unless CRM was bundled in managed scope.',
-          'Overbuilt for pure DTC Rejoiner clients. Choose only with active sales ops database.',
-          'Compare CRM necessity before adding complexity post-outsourcing.',
+          "Evaluate ActiveCampaign when wholesale CRM work and DTC journeys share data requirements.",
+          "Test role changes and purchase-driven exclusions; document which CRM workflows will remain.",
+          "Compare the actual plan and operator workload before adding or removing CRM responsibilities.",
         ]} />
 
         <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Brevo budget path when Rejoiner cost was primary pain — pay-per-email without retainer. Lighter lifecycle than Sequenzy — acceptable short-term if owner bandwidth limited.',
-          'May underdeliver versus Rejoiner rigor without owner investment.',
-          'Plan Sequenzy upgrade when strategy becomes bottleneck.',
+          "Evaluate Brevo against the required newsletters, transactional integrations and lifecycle logic.",
+          "Test the same replenishment and suppression fixtures used for other candidates.",
+          "Check current plan entitlements and staffing without assuming a capability ceiling or a future Sequenzy upgrade.",
         ]} />
 
         <ToolReview app={alternatives[7]} rank={8} paragraphs={[
@@ -155,14 +157,14 @@ const faqs = [
       </section>
 
       <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Managed vs owned economics</h2>
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Operating responsibilities</h2>
         <table class="data-table">
-          <thead><tr><th>Model</th><th>Monthly cost</th><th>Agility</th><th>Owner required</th></tr></thead>
+          <thead><tr><th>Arrangement</th><th>Store responsibility</th><th>Verify before handoff</th></tr></thead>
           <tbody>
-            <tr><td>Rejoiner (leaving)</td><td>$1k–3k+</td><td>Ticket queue</td><td>No</td></tr>
-            <tr><td>Sequenzy</td><td>$49–249</td><td>Same-day edits</td><td>Yes</td></tr>
-            <tr><td>Sendlane</td><td>$83+</td><td>Guided</td><td>Yes</td></tr>
-            <tr><td>Klaviyo</td><td>$150–450</td><td>Self-serve</td><td>Yes</td></tr>
+            <tr><td>Rejoiner platform</td><td>Named operator and approvals</td><td>Access, events and workflow requirements</td></tr>
+            <tr><td>Optional Rejoiner services</td><td>Briefs and accountable approver</td><td>Deliverables, creative rights and deployment authority</td></tr>
+            <tr><td>Replacement with internal staff</td><td>Build, QA and ongoing exceptions</td><td>Staff capacity and reproducible journeys</td></tr>
+            <tr><td>Replacement with specialists</td><td>Service oversight and access control</td><td>Written scope and continuity</td></tr>
           </tbody>
         </table>
       </div>
@@ -175,35 +177,35 @@ const faqs = [
   </section>
 
   <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Four-week Rejoiner exit timeline</h2>
-    <p><strong>Week 1 — Documentation harvest.</strong> This is an illustrative planning phase, not a guaranteed schedule. Request the journey map, event definitions, permission provenance, suppression records, and any available holdout results. Confirm the accountable owner and contractual export access before setting a cancellation date.</p>
-    <p><strong>Week 2 — Revenue flows first.</strong> Rebuild top three Rejoiner revenue automations on Sequenzy — usually cart, welcome, post-purchase. Test orders end-to-end. No big-bang migration of entire managed library.</p>
-    <p><strong>Week 3 — Operational rhythm.</strong> Use this phase only after data and send checks pass. Assign segment and exception reviews, test replenishment against actual product cycles, and document collision rules. Resolve current purchases and suppressions at send time; do not let a queued message rely only on eligibility recorded at enrollment.</p>
-    <p><strong>Week 4 — Managed cancel.</strong> Cut over only when the replacement passes agreed checks, regardless of calendar week. Give every trigger one active sender, reconcile scheduled messages, and test replay deduplication and rollback. Compare consistently defined attributed revenue separately from holdout-based incremental lift.</p>
+    <h2>Rejoiner transition planning phases</h2>
+    <p><strong>Phase 1 — Documentation harvest.</strong> This is an illustrative planning phase, not a guaranteed schedule. Request the journey map, event definitions, permission provenance, suppression records, and any available holdout results. Confirm the accountable owner and contractual export access before setting a cancellation date.</p>
+    <p><strong>Phase 2 — Required journeys.</strong> Rebuild the journeys selected by customer risk and data readiness. Test welcome, cart and post-purchase where relevant; neither three flows nor a calendar week is a universal release gate.</p>
+    <p><strong>Phase 3 — Operational rhythm.</strong> Use this phase only after data and send checks pass. Assign segment and exception reviews, test replenishment against actual product cycles, and document collision rules. Resolve current purchases and suppressions at send time; do not let a queued message rely only on eligibility recorded at enrollment.</p>
+    <p><strong>Phase 4 — Cutover.</strong> Cut over only when the replacement passes agreed checks, regardless of calendar week. Give every trigger one active sender, reconcile scheduled messages, and test replay deduplication and rollback. Compare consistently defined attributed revenue separately from holdout-based incremental lift.</p>
 
     <h2>Buyer desk: ownership after managed service</h2>
-    <p>Rejoiner exit fails without named internal owner — managed service masked vacuum. Sequenzy or Klaviyo need thirty minutes weekly minimum; budget that before cancel.</p>
+    <p>Name a store owner and backup for campaigns, event failures and approvals. Estimate capacity from the actual workload and include external specialists where needed; a fixed weekly time allowance cannot establish readiness.</p>
     <p>Request available performance documentation and review the definitions behind it. Prioritize journeys by customer impact and data readiness, with a staged rollback plan. A highly attributed flow may deserve investigation without being the best source of incremental profit.</p>
     <p>Define success before migration using the store’s own baseline and comparable periods. Track delivery, unsubscribe and complaint rates, order reconciliation, edit turnaround, and contribution margin. Compare matched subscription, usage, service, integration, and staff costs; do not assume a ten-percent tolerance or a fixed review cadence proves success.</p>
 
     <h2>Self-serve replacements after managed service</h2>
-    <p><strong>Sequenzy:</strong> agent playbooks replace services creative when founder needs outcomes in plain language. <strong>Klaviyo:</strong> when Rejoiner managed predictive segments you actually used. <strong>Sendlane:</strong> if you want guided migration again — question whether dependency was root problem.</p>
-    <p><strong>Scenario — fragrance DTC.</strong> Rejoiner services produced seasonal winback copy when founder maxed on fulfillment; internal hire month eight plus Sequenzy documentation enabled services step-down without revenue cliff.</p>
+    <p><strong>Sequenzy:</strong> evaluate editable workflow drafts with your internal operator. <strong>Klaviyo:</strong> evaluate the catalog and segment queries you need. <strong>Sendlane:</strong> confirm the current Privy agreement and support scope. Evaluate each against the same flow specification.</p>
+    <p><strong>Scenario — fragrance DTC, proposed.</strong> A founder handling fulfillment could request seasonal winback creative from a service partner, then evaluate an internal hire in month eight. Verify rights to reuse copy and designs, required approvals and operator capacity; no successful step-down or preserved revenue is reported.</p>
     <h2>Documentation handoff non-negotiable</h2>
     <p>Request a usable flow specification and segment glossary, subject to contractual access and creative rights. Include triggers, exclusions, source event identifiers, queue ownership, and rollback steps. Validate whether the replacement can express that logic rather than assuming a PDF alone makes the migration reproducible.</p>
     <h2>Named owner before cancel</h2>
     <p>Assign an internal owner and backup with enough time for the actual journey inventory, exception handling, and reporting. Confirm capacity before cancellation; a universal thirty-minute weekly allowance or sixty-day failure prediction is not evidence about this store.</p>
 
-    <h2>Migrate winners first</h2>
+    <h2>Select initial journeys</h2>
     <p>Request available performance documentation and event definitions. Choose the initial journeys by business risk, eligibility accuracy, and data readiness rather than a fixed top-three rule. Test each transition before expanding the migration.</p>
-    <p>Fragrance DTC services produced seasonal winback when founder maxed fulfillment — internal hire month eight plus Sequenzy docs enabled step-down without cliff.</p>
+    <p>The fragrance handoff should include source assets, approved versions and outstanding campaign work. Compare the new operator’s ability to reproduce the approved logic before changing who deploys it.</p>
 
     <h2>Services-to-platform handoff</h2>
     <p>Review whether exit terms provide flow specifications, a segment glossary, and any available holdout history. Document access limits and assign staff time based on the actual workload. Before enabling a replacement, verify ownership of every queued send and deduplicate replayed events.</p>
     <p>An illustrative snack-box evaluation could ask each provider for replenishment and churn-journey examples. Agree on deliverables and reporting definitions in writing, including contribution margin and a suitable retention observation period. Any incremental retention claim requires a credible comparison design; no vendor selection or merchant outcome is reported here.</p>
 
     <h2>Rejoiner exit desk: cart-only stacks need full lifecycle</h2>
-    <p>Rejoiner excels at browse and cart recovery but merchants leaving it usually need welcome, post-purchase, and winback in one bill — vinyl collectors expect new-arrival segments, not just abandoned-cart pings. Week one: map every Rejoiner trigger against Shopify events your replacement must mirror; climbing gear stores often have cart flows firing while welcome stays manual. Week two: launch post-purchase cross-sell with holdout; mechanical keyboard shops monetize switch samples after first board purchase. Week three: add inventory-aware winback for discontinued SKUs; pottery studios restock glazes on irregular cadence. Week four through twelve: finance compares Rejoiner cart recovery dollars against full-stack attributable revenue — if cart share stays above seventy percent, you under-built lifecycle. Specialty tea merchants should test tasting-note education flows before discount ladders. Collision priority: cart over welcome over winback over broadcast. Sequenzy when journey design was the Rejoiner gap; Klaviyo when product catalog depth matters; Omnisend when you need live flows in days. Day ninety: abandonment plus at least two non-cart flows live, deliverability clean, revenue baseline held or holdout-proven.</p>
+    <p>A vinyl label may need new-arrival segments alongside recovery; climbing gear may need accessory education; mechanical keyboard shops may test switch-sample follow-ups. Pottery studios can plan around irregular glaze restocks, and specialty tea stores can evaluate tasting-note education before discount ladders. These are proposed jobs, not evidence that Rejoiner lacks lifecycle tools. Map triggers and inventory dependencies, test purchase exits and decide collision priority per journey. A hypothetical seventy-percent cart share uses cart-attributed revenue divided by all email-attributed revenue for the same cohort, window and attribution rules; it neither proves underbuilding nor measures causal lift. There is no day-ninety success guarantee.</p>
   </article>
 
     <h2>Rejoiner stack ranking after cart recovery</h2>
@@ -211,5 +213,6 @@ const faqs = [
 
     <p>Add browse or post-purchase journeys only when they meet the needs of the store and their event, permission, exclusion, and queue checks pass. Set milestones by readiness; no universal thirty-day deadline or recoverable-revenue share is established here.</p>
 
+  <p class="container max-w-4xl pb-8 text-sm">Supplier scope checked November 25, 2026: <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a>, <a class="link" href="https://www.sequenzy.com/features/shopify-integration">Shopify integration</a>, <a class="link" href="https://www.privy.com/sendlane-acquisition">Privy/Sendlane announcement</a>, and <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo migration notice</a>. Supplier descriptions establish advertised scope, not comparative performance or this store’s entitlement.</p>
   <FaqSection faqs={faqs} title="Rejoiner alternatives FAQ" />
 </BaseLayout>
