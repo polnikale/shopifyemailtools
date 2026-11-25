@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import { welcomeEditorial, cartEditorial, postPurchaseEditorial, winBackEditorial, launchEditorial, backInStockEditorial } from '../../data/blog-editorial';
 import { vipEditorial } from '../../data/blog-vip-editorial';
+import { replenishmentEditorial } from '../../data/blog-replenishment-editorial';
 import { reviewEditorial } from '../../data/blog-review-editorial';
 import { getBlogPaths } from '../../data/blog-topics';
 
@@ -13,6 +14,7 @@ export function getStaticPaths() {
 const { topic } = Astro.props;
 const editorial = { ...welcomeEditorial, ...cartEditorial, ...postPurchaseEditorial, ...winBackEditorial, ...launchEditorial, ...backInStockEditorial }[Astro.params.slug ?? ''];
 const vip = vipEditorial[Astro.params.slug ?? ''];
+const replenishment = replenishmentEditorial[Astro.params.slug ?? ''];
 const review = reviewEditorial[Astro.params.slug ?? ''];
 const isStock = editorial?.goal === 'back-in-stock email apps';
 const isLaunch = editorial?.goal === 'product launch email apps';
@@ -181,7 +183,26 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <a href="/" class="text-sm text-neutral-500 mb-5 inline-block">← Shopify email app guide</a>
       <h1 class="section-title">{title}</h1>
       <p class="section-description">The right Shopify email app depends on catalog events, fulfillment state, consent, message frequency, and the team operating the flows. This guide focuses on {topic.goal} for {topic.audience}.</p>
-      {vip ? <>
+      {replenishment ? <>
+        <h2>{replenishment.question}</h2><p>Prospective acceptance exercises for {replenishment.audience}; no performed merchant tests, results or supplier rankings are claimed.</p>
+        <h2>Consumption estimate and dispatch contract</h2><dl>
+          <dt>Entry and uncertainty</dt><dd>{replenishment.entry}</dd>
+          <dt>Required field bindings</dt><dd>{replenishment.fields}</dd>
+          <dt>Permission, stock and subscription guard</dt><dd>{replenishment.guard}</dd>
+          <dt>Matching purchase and closure</dt><dd>{replenishment.purchaseExit}</dd>
+          <dt>Replay, failures and queue ownership</dt><dd>{replenishment.retry}</dd>
+        </dl>
+        <h2>Two conditional supplier fits</h2>
+        <h3>Shopify Messaging</h3><p>{replenishment.nativeRationale}</p>
+        <h3>Klaviyo</h3><p>{replenishment.profileRationale}</p>
+        <p>Primary scope checked November 25, 2026: <a href="https://help.shopify.com/en/manual/customers/customer-segmentation/manage-customer-segments">Shopify segment campaigns</a> documents sending to selected segments. <a href="https://help.klaviyo.com/hc/en-us/articles/360003195232">Klaviyo replenishment flows</a> documents product-order timing and a matching-order check. <a href="https://help.klaviyo.com/hc/en-us/articles/360020919731">Klaviyo predictive analytics</a> distinguishes expected next purchase from a product replenishment cycle. These building blocks do not guarantee the proposed custom fields or queue controls.</p>
+        <h2>Two prospective acceptance fixtures</h2><ol>{replenishment.edges.map(edge => <li>{edge}</li>)}</ol>
+        <p>{replenishment.acceptance}</p><p>Failure to catch: {replenishment.failure}</p>
+        <h2>Denominator and handover</h2><p>{replenishment.denominator}</p><p>{replenishment.handover}</p>
+        <h2>Replenishment questions</h2>
+        <h3>Does a purchase date prove the pack is empty?</h3><p>No. Receipt, retained quantity and declared use inform an uncertain estimate. Ask for preferences or hold unknown state instead of asserting depletion.</p>
+        <h3>Can a reminder change a subscription?</h3><p>No. Pause, cancel and skip actions require the authorized subscription system. A click does not change a plan; reconcile its current status before any competing reorder message.</p>
+      </> : vip ? <>
         <h2>{vip.question}</h2><p>Proposed acceptance exercises for {vip.audience}; no merchant tests, results or supplier rankings are claimed.</p>
         <h2>Membership, benefits and dispatch contract</h2>
         <dl>
