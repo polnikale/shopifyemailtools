@@ -14,7 +14,7 @@ const desc = description(site, 'apps/recart');
 const faqs = [
   {
     question: 'Is Recart a complete Shopify email marketing platform?',
-    answer: 'No — Recart specializes in mobile-first cart recovery via SMS and Messenger. Email lifecycle belongs in Sequenzy, Klaviyo, or Omnisend. Recart when abandoned cart recovery via mobile channels is primary problem and outperforms email alone.',
+    answer: 'Recart currently markets SMS campaigns, automation and email/SMS capture. It is broader than cart recovery, but capture of an email address is not a complete email sending platform. Map each required email journey to its actual sender.',
   },
   {
     question: 'Recart vs Postscript for Shopify SMS recovery?',
@@ -53,12 +53,11 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Mobile cart recovery · Rank #15</p>
+      <p class="catalog-kicker mt-6">SMS and list growth</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Evaluate Recart for the recovery workflow your Shopify store needs. Confirm present channels, eligible events, available capture methods and operating responsibilities before choosing it. Mobile traffic or a catalog rank does not establish superiority over email, nor prove which reminder caused a purchase.</p>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Recart currently offers Shopify SMS and list growth. Its <a class="link" href="https://recart.com/">product site</a> lists welcome, cart, browse, fulfillment, replenishment and review flows. Evaluate that current scope separately from legacy Messenger installations; this review does not establish a present Messenger offer.</p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        The tea, vinyl and climbing-gear examples are proposed tests, not documented merchant experiments. Current feature availability and commercial terms need primary verification. Rating: ★ {app.rating}. Shopify depth: {app.shopifyDepth}.</p>
+        The tea, vinyl and climbing-gear examples are proposed tests, not documented merchant experiments. Current feature availability and commercial terms need primary verification.</p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps/postscript">Postscript review</a>
         <a class="btn btn-secondary" href="/use-cases/abandoned-cart">Cart recovery guide</a>
@@ -70,36 +69,34 @@ const faqs = [
     <TldrBox
       title="Verdict: Recart for Shopify"
       picks={[
-        { label: 'Focus', tool: 'Cart recovery', reason: 'Verify the offered channels and required recovery workflow.' },
+        { label: 'Focus', tool: 'SMS + capture', reason: 'Campaigns and flows extend beyond abandoned carts.' },
         { label: 'Channel edge', tool: 'Verify availability', reason: 'Traffic source does not confer channel permission or prove incremental recovery.' },
         { label: 'Pair with', tool: 'Sequenzy email', reason: 'Coordinate suppression and timing across channels.' },
-        { label: 'Tradeoff', tool: 'Narrow stack', reason: 'Test required welcome, winback and replenishment workflows before choosing.' },
-        { label: 'Best for', tool: 'Mobile-heavy DTC', reason: 'Promo-driven catalogs with IG/TikTok traffic.' },
+        { label: 'Tradeoff', tool: 'Service ownership', reason: 'Agree who approves, pauses and answers customer replies.' },
+        { label: 'Best for', tool: 'SMS operators', reason: 'Evaluate capture and execution support against the required workload.' },
       ]}
     />
 
     <div class="ledger-card mb-12">
       <p class="catalog-kicker">Shopify integration depth</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native SMS, Messenger, and cart event triggers</h2>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">SMS flows, capture and operating service</h2>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
         Verify the Shopify events and data fields available in the installed configuration. Demonstrate delayed and replayed checkout events, identity matching and purchase exits before evaluating recovery. Automation-attributed revenue describes the reporting model; it is not by itself incremental profit.</p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
         <strong>Capabilities to verify:</strong> Ask for a demonstration of the currently offered capture and recovery channels, eligibility rules, offer controls and Shopify event mapping. An Instagram referral or a declining email open rate does not authorize messaging on another channel or establish its likely return.</p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps:</strong> Not a complete email suite — pair with Sequenzy, Klaviyo, or Omnisend; Meta policy changes require Messenger monitoring; channel collision without documented suppression map across ESP and Recart creates customer fatigue.
-      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]"><strong>Scope boundary:</strong> Email capture still needs a destination ESP and a welcome owner. Legacy Messenger records need their own channel history; exporting them does not create SMS permission. Keep any continuing legacy service separate from the SMS agreement.</p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>Recart catalog pricing: {app.priceDetail}. {app.pricing}. Verify the selected offer and billing units against a current quote; model peak and ordinary usage, then add setup, ongoing operations and reply labor.</p>
-      <p><strong>Scenario A — 2,800 SMS/mo, specialty tea IG traffic.</strong> ~$120–180/mo depending on plan tier. Incremental 5.1% cart recovery over Sequenzy email-only justified line item when mobile sessions exceed 60% of store traffic.</p>
+      <p>The <a class="link" href="https://recart.com/sms-marketing-pricing-ecommerce">current pricing page</a> separates List Growth and SMS offers. Match the selected service, commitment and verification charges to a dated quote rather than using catalog price fields. Include delivery, capture, migration, approvals and customer-reply labor.</p>
+      <p><strong>Scenario A — 2,800 SMS in a tea-store planning month.</strong> This is an illustrative workload. Specify recipient countries, encoding and billable segments before requesting a quote. Separate capture charges from delivery and service. No recovery percentage, traffic threshold or monthly bill is established.</p>
       <p><strong>Scenario B — Messenger plus SMS, vinyl mobile PDP.</strong> If those channels are currently available and permitted, compare equivalent eligible cohorts. Obtain matched quotes and include channel monitoring and reply labor; no dollar total or recovery rate is established by this hypothetical scenario.</p>
       <p><strong>Scenario C — Postscript comparison, keyboard YouTube traffic.</strong> Demonstrate the actual recovery workflow and operational controls for both candidates. Compare matched all-in costs and incremental margin. Traffic-source share is neither a permission record nor a decision threshold.</p>
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">When mobile recovery beats inbox recovery</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Comparing SMS and email recovery</h2>
       <p>
         Proposed tea test: a customer arrives from an Instagram ad and leaves a gift set in the cart. Compare eligible reminder strategies using a suitable control and a common observation window. Do not presume that an SMS sent after a fixed delay beats an email, or that ad traffic is reachable on Messenger.</p>
       <p>
@@ -107,26 +104,26 @@ const faqs = [
     </div>
 
     <div class="prose-shopify mb-12">
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Instagram tea — Messenger opt-in</h3>
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Instagram tea — capture handoff</h3>
       <p><strong>Scenario:</strong> A hypothetical tea store has substantial Instagram traffic. <strong>Evaluation:</strong> Verify whether a supported capture path can obtain the required purpose and channel permission; traffic source alone is insufficient.</p>
       <p><strong>Evaluation:</strong> Record current channel availability and eligibility, then compare incremental margin and operating effort with suitable controls. No Messenger recovery rate or channel-parity result has been observed here.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. SMS cart — climbing gear $240 harness</h3>
       <p><strong>Scenario:</strong> A shopper abandons a $240 climbing harness. <strong>Evaluation:</strong> Compare an educational reminder with an offer only for eligible shoppers, checking purchase exits and product safety information before dispatch.</p>
       <p><strong>Evaluation:</strong> Measure full-price purchases, discount expense, returns and contribution margin over equivalent windows. An educational touch is a proposed strategy, not a documented recovery result.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Stack with Sequenzy email</h3>
-      <p><strong>Scenario:</strong> Email cart hour two; Recart SMS hour five. <strong>Result:</strong> Incremental 5.1% lift vs email-only week with coordinated suppressions.</p>
+      <p><strong>Proposed coordination test:</strong> Schedule an email and SMS branch only for shoppers eligible for each. Simulate purchase between enrollment and dispatch, then inspect both queues. The later branch must cancel after purchase; test that behavior before comparing incremental margin with an email-only control.</p>
       <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Postscript comparison — keyboards</h3>
       <p><strong>Scenario:</strong> A keyboard store compares Recart and Postscript for YouTube-referred shoppers. <strong>Evaluation:</strong> Demonstrate supported channels and operational controls, then compare incremental margin and maintenance effort rather than declaring a platform winner.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
-      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{["SMS campaigns and lifecycle flows alongside list capture", "Managed execution available under the relevant service agreement"].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{["Email sending and cross-channel coordination still need explicit ownership", "Service scope, approvals and number continuity require account-specific confirmation"].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart operating discipline on Shopify</h2>
-      <p>Channel priority map required: Messenger versus SMS versus email for same abandon — never all three within 60 minutes unless measuring intentional overlap with holdout. Tea brand coordinated Sequenzy email hour two, Recart SMS hour five, Messenger hour eight for IG cohort only.</p>
+      <p>Write a recovery contract shared by the SMS operator and email owner: enrollment event, delay, dispatch eligibility, offer and cancellation mechanism. Exercise a shopper who buys after email but before SMS. Do not treat a fixed gap between channels as proof of safe coordination.</p>
       <p>Assign an owner to verify current channel requirements and respond to changes before relying on that channel. Review on relevant product or policy changes, not just a calendar interval. Keep a documented fallback for eligible shoppers without assuming a tea or keyboard merchant has validated one.</p>
       <p>For collectible vinyl, evaluate whether an offer is needed at all. If testing one, derive eligibility and limits from contribution margin, shipping subsidy, repeat purchases and returns. A fixed ten-percent cap or second-message rule is not a general operating standard.</p>
     </div>
@@ -134,7 +131,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing and stack economics</h2>
       <p>Compare recovery strategies with suitable contemporaneous controls and equivalent eligibility rather than assuming a two-week historical baseline controls for changing demand. The climbing-harness and tea-gift examples are proposed tests. Match observation windows and all-in costs, and separate attributed orders from causal incremental lift.</p>
-      <p>Pairing Recart with Sequenzy email typically adds $80–200/mo depending on message volume — model against recovered cart dollars explicitly. If incremental lift under 5% of abandoned cart value monthly, defer Recart until traffic or AOV grows.</p>
+      <p>Compare the complete existing and proposed stacks. A managed SMS agreement can move execution work to the supplier, while merchant approval, product accuracy and replies still consume internal time. Estimate those tasks separately; no universal lift percentage or traffic level determines whether the expense is justified.</p>
     </div>
 
     <div class="card mb-12">
@@ -150,7 +147,7 @@ const faqs = [
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart in a three-layer Shopify stack</h2>
       <p>Consider recovery specialization only after demonstrating a current requirement and evaluating its incremental margin and operating effort in your store.</p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Recart may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Recart fits where mobile-first cart recovery specialization. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Inventory current SMS campaigns and flows rather than assuming Recart is recovery-only. For a tea subscription, decide who owns replenishment timing and subscription skip events; for vinyl preorders, decide who revises release-date messages. Email and order notifications need explicit owners even when Recart runs SMS.</p>
       
     </div>
   </section>
@@ -173,7 +170,7 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Recart migration and co-existence</h2>
-      <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A pet nutrition DTC left Recart for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a specialty tea roaster stayed on Recart because predictive segments daily justified profile pricing.</p>
+      <p>Review remaining requirements before replacing Recart. Keep capture conversion, campaign execution, automation reliability and supplier service in separate decision rows. A proposed alternative must demonstrate the actual missing capability and account for migration labor; no pet-nutrition migration or forty-percent labor improvement is documented here.</p>
       <p>Before cutover, test old and new queues using non-sending fixtures where possible. Assign one production sender per message, drain or cancel pending jobs, propagate current suppression and purchase state, and test replay deduplication. Choose the cutover window from readiness and trading risk, not a universal duration or attribution tolerance.</p>
       <p>When multiple systems participate, document message and queue ownership, required permission, suppression propagation and purchase exits. Test delayed events, retries and customer replies. A channel-priority document alone cannot cancel another sender’s queued message.</p>
     </div>
@@ -183,9 +180,9 @@ const faqs = [
 
   <section class="container py-12">
     <div class="prose-shopify">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Messenger versus SMS recovery economics</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Legacy channel records and current SMS economics</h2>
       <p>For a proposed apparel comparison, use equivalent permissioned cohorts and a suitable control. Different source cohorts and reporting windows cannot establish that Messenger or SMS caused more purchases. Compare contribution margin after offers, returns and matched all-in costs before deciding on a channel mix.</p>
-      <p>Recart not complete ESP — pair with Sequenzy for email cart touches one and two. Reporting combined incrementality needs UTM discipline per channel; finance spreadsheet merges weekly not platform dashboard alone.</p>
+      <p>Use distinct order identifiers and consistent refund windows when reconciling SMS and email reports. Link tags identify paths; they do not establish causality. Keep historical Messenger reporting definitions with the archive so comparisons do not silently combine different attribution windows.</p>
     </div>
   </section>
 
@@ -197,24 +194,15 @@ const faqs = [
 
   <section class="container py-12">
     <div class="prose-shopify">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Messenger-era recovery to full lifecycle maturity</h2>
-      <p>Recart ranks for merchants still extracting value from messenger cart recovery — but iOS and platform shifts eroded messenger channel for many catalogs. Graduation path almost always includes full lifecycle ESP plus SMS specialist: Sequenzy or Klaviyo email with Postscript SMS replaces recovery-only stack within one quarter when welcome and winback gaps become obvious in revenue reports.</p>
-      <p><strong>Scenario — artisan coffee messenger decline.</strong> Messenger recovery fell below SMS branch economics; migrated to Postscript plus Sequenzy — cart recovery stable, welcome and replenishment added 14% email-attributed revenue previously zero.</p>
-      <h2>Buyer checklist</h2>
-      <ul><li>Messenger consent cleanup documented before migration?</li><li>Full lifecycle destination chosen — not recovery-only swap?</li><li>Discount escalation capped with margin holdout quarterly?</li><li>Minimum cart value enforced for SMS enrollment?</li></ul>
-      <p>See <a class="link" href="/alternatives/recart-alternative">Recart alternatives</a> for ranked exit paths.</p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Channel mix after messenger decline</h2>
-      <p>Holdout file results quarterly — finance signs attribution methodology before QBR compares Recart-era recovery to Postscript plus Sequenzy stack. Messenger consent archive export before cutover prevents month-two compliance surprises when old channel still holds dormant subscribers.</p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Recovery-only to lifecycle graduation</h2>
-      <p>A recovery-focused store can evaluate welcome and replenishment when relevant to its products and customer permissions. Define success with suitable controls, contribution margin and operational reliability. The coffee example is hypothetical; added attributed revenue would not itself establish incremental value.</p>
-      <p>Evaluate whether escalating discounts change purchase timing or margin using suitable controls and equivalent windows. Include shipping subsidies and repeat-order effects. No apparel result, percentage-point recovery change or margin gain is documented here.</p>
-      <p>Set any recovery eligibility threshold from product economics and measured incremental response. For a board-game add-on, include low cart margin, messaging and reply costs. Do not apply a fixed cart-value floor across products without evidence.</p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day Recart graduation plan</h2>
-      <p>Week 1: messenger archive export. Week 2: SMS cart with margin caps on Postscript. Week 3: Sequenzy welcome. Week 4–8: winback or replenishment live. Week 9–12: holdout discount ladder. Day 90: lifecycle revenue exceeds recovery-only era.</p>
-      <p>Recovery-only stack ages poorly — welcome and replenishment should land on Sequenzy or Klaviyo within thirty days of Recart exit. Minimum cart $45 for SMS prevented accessory margin loss on board game add-on carts.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Managed execution with merchant control</h2>
+      <p>Recart’s <a class="link" href="https://recart.com/fully-managed-sms">managed-service description</a> places the service in Scale or Enterprise plans and describes migration, popup design, campaigns, automation and reporting. Confirm the exact contracted work and approval process; a marketing promise is not an observed saving for your store.</p>
+      <p>For a vinyl release, send the operator the release date, stock constraints and approved offer. Name who drafts, approves, schedules and pauses the campaign, and who handles replies about delayed pressings. Agree on a change cutoff and escalation contact. Merchant staff must be able to inspect the final audience and stop a mistaken send without waiting for a strategy meeting.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Capture acceptance before campaign scale</h2>
+      <p>The <a class="link" href="https://recart.com/oneclick">OneClick description</a> explains saved contact details and identity verification. Test first-time and returning visitors, declined verification and an already unsubscribed number. Save the actual disclosure and permission decision for this brand; recognized identity alone is not a subscription.</p>
+      <p>Inventory mobile popup, desktop popup, quiz and checkout capture separately. Record offer, destination list, field mapping and welcome trigger. A tea quiz answer must reach the intended segment without starting two welcomes. Test an existing email subscriber adding SMS, and a shopper withdrawing only one channel. The email owner must confirm receipt and suppression mapping.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Record and number continuity</h2>
+      <p>Before changing providers, retain available consent and opt-out records, campaign definitions, reply history, reporting windows and final invoices. Identify the merchant account holder, sending number, registration owner and porting dependencies. Ask both providers to confirm number transfer eligibility and reply routing before scheduling a switch; do not promise downtime-free transfer.</p>
+      <p>Preserve legacy Messenger identifiers and permission records in their original channel context. Maintain a ledger of recovered orders and refunds rather than relabeling old subscribers as SMS leads. If an archive or number cannot transfer, document the limitation and resolve the reachable audience before launch.</p>
     </div>
   </section>
 
@@ -225,8 +213,8 @@ const faqs = [
     </div>
   </section>
 
-    <h2>Recart buyer desk: owned-channel recovery proof</h2>
-    <p>Recart buyers should treat messenger and SMS recovery as bridge tactics while email list equity compounds — the ninety-day scorecard is owned-channel recovery rate, not widget click-through alone. Week one: baseline cart recovery by channel before adding email capture on recovery pages. Week two: align offer caps across Recart and ESP abandonment; mechanical keyboard merchants lose margin when channels stack discounts. Week three: specialty tea sample carts convert on educational follow-up email, not repeated messenger nags. Week four through twelve: shift budget toward ESP as list grows; climbing gear considered purchases need spec-heavy email two and three. Board game publishers: messenger urgency for launch hour, email for stretch goals and restock. Vinyl drops: capture email at recovery even when messenger converts first session. Stack Recart with Sequenzy or Klaviyo for lifecycle depth. Day ninety: forty percent plus of recovery revenue on owned email or documented plan to get there, deliverability clean, no channel offer collisions in promo calendar.</p>
+    <h2>Recart buyer desk: account handover</h2>
+    <p>At handover, the merchant should own admin access, billing, capture assets, approved creative and the operating calendar. Request an editable flow inventory and an export sample before relying on ongoing service. The decision to stay should reflect demonstrated SMS and capture value plus service quality, rather than a deadline for moving revenue to email.</p>
 
     <h2>Recart operator: owned-list conversion targets</h2>
     <p>Set evaluation targets from the business objective, consented audience and product economics rather than fixed day-thirty or day-sixty channel shares. Track recovery by channel, valid new permission records, incremental margin and complaints. A flat email-capture count may reflect offer relevance or a different acquisition mix; it does not alone justify changing the recovery page or discount policy.</p>

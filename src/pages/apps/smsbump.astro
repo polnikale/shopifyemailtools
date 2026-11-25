@@ -14,7 +14,7 @@ const desc = description(site, 'apps/smsbump');
 const faqs = [
   {
     question: 'Is SMSBump a full Shopify email marketing platform?',
-    answer: 'No. SMSBump is SMS and MMS within Yotpo ecosystem. Cart recovery texts, popup opt-in, segmented campaigns. Email lifecycle belongs in Yotpo Email, Sequenzy, or Klaviyo. Choose SMSBump when Yotpo reviews or loyalty already active.',
+    answer: 'SMSBump is a historical Yotpo SMS product name. The SMS application is now decommissioned, with its dashboard and background services inactive. Retaining Reviews or Loyalty does not restore messaging availability.',
   },
   {
     question: 'SMSBump vs Postscript for Shopify SMS?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'Can SMSBump replace Yotpo Email?',
-    answer: 'No — complementary modules. SMSBump owns SMS; Yotpo Email owns email. Some merchants run SMSBump plus Sequenzy email when Yotpo Email depth insufficient.',
+    answer: 'Neither retired product is a replacement destination. Inventory former SMS and email jobs separately and select supported senders while keeping retained Reviews and Loyalty contracts distinct.',
   },
   {
     question: 'Does SMSBump include list growth popups?',
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: 'How coordinate SMSBump with Sequenzy email cart flows?',
-    answer: 'Document channel priority: email touches first, SMS branch when unopened after 4–6 hours if opted in. Suppress SMS when email cart touch sent within prior 2 hours unless testing with holdout.',
+    answer: 'For a supported replacement, assign one owner per reminder and test purchase exits, opt-out propagation and cancellation of queued jobs. An unopened email is not permission for SMS, and a fixed gap does not prove safe coordination.',
   },
   {
     question: 'What is the biggest SMSBump mistake?',
@@ -57,14 +57,10 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Yotpo ecosystem SMS · Rank #20</p>
+      <p class="catalog-kicker mt-6">Retired Yotpo SMS · migration record</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        SMSBump is the SMS module merchants reach for when Yotpo already owns reviews, loyalty, or both — cart recovery texts, MMS product images, keyword opt-in, and segmented broadcasts inside one vendor relationship instead of bolting Postscript onto a fragmented stack. It is not an email platform. Lifecycle newsletters, welcome branching, and replenishment orchestration live in Yotpo Email, Sequenzy, or Klaviyo while SMSBump handles the pocket channel where limited-run urgency actually converts.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        This historical review uses proposed vinyl, keyboard and tea scenarios; it does not report merchant experiments. Yotpo announced Email and SMS deprecation for December 31, 2025, separately from Reviews and Loyalty. Existing catalog ratings and price fields are historical, unverified metadata rather than current purchasing evidence. Confirm export access and replacement arrangements directly before planning a cutover.
-      </p>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">SMSBump is a historical product, not a current Shopify purchase option. The <a class="link" href="https://email-and-sms.yotpo.com/">current Yotpo SMS notice</a> says its dashboard and background services are inactive. This page helps former users reconcile messaging records and replacement responsibilities while retaining any separately useful Reviews or Loyalty products.</p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">Yotpo’s <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">September 2025 migration announcement</a> scheduled Email and SMS deprecation for December 31, 2025 and named Attentive and Omnisend as partners. That historical assistance offer does not establish export access today. Ask support about records that are still recoverable; do not plan on logging into the retired dashboard.</p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps/yotpo-email-sms">Yotpo Email review</a>
         <a class="btn btn-secondary" href="/apps/postscript">Postscript review</a>
@@ -77,11 +73,11 @@ const faqs = [
     <TldrBox
       title="Verdict: SMSBump for Shopify"
       picks={[
-        { label: 'Channel', tool: 'SMS + MMS', reason: 'Cart recovery and campaigns — email lives elsewhere.' },
-        { label: 'Ecosystem', tool: 'Yotpo suite', reason: 'Best when reviews or loyalty modules already active.' },
-        { label: 'Edge', tool: 'MMS recovery', reason: 'Album art and product renders in recovery texts.' },
-        { label: 'Tradeoff', tool: 'SMS economics', reason: 'MMS multiplies costs — holdout test before defaulting.' },
-        { label: 'Alternative', tool: 'Postscript', reason: 'When SMS-only without Yotpo modules on invoice.' },
+        { label: 'Status', tool: 'Decommissioned', reason: 'Dashboard and background services are inactive.' },
+        { label: 'Ecosystem', tool: 'Yotpo suite', reason: 'Retained Reviews and Loyalty have separate scope.' },
+        { label: 'Edge', tool: 'MMS recovery', reason: 'Carry actual visual-message requirements to a supported replacement.' },
+        { label: 'Tradeoff', tool: 'SMS economics', reason: 'Compare destination-specific SMS and MMS costs.' },
+        { label: 'Alternative', tool: 'Postscript', reason: 'Evaluate current coverage, consent mapping and reply ownership.' },
       ]}
     />
 
@@ -90,9 +86,7 @@ const faqs = [
       <p>
         For a historical SMS migration, compare replacement candidates on documented country coverage, reply assignment, consent evidence and reporting definitions. A vinyl label could test whether cover artwork changes purchases, using a randomized eligible audience and the same offer. No 12% versus 8% result is established here; an image click advantage would not itself establish causal revenue lift or justify higher total cost.
       </p>
-      <p>
-        The mechanical keyboard brand was not on Yotpo. They ran a thirty-day recovery test: Postscript won on compliance dashboard depth, reply handling for plate-compatibility questions, and cleaner attribution when paired with Sequenzy email. SMSBump lost honestly — ecosystem bundling does not beat specialization when you are paying for reviews module you do not use. Bundle inertia is a real merchant failure mode; evaluate net cost after subtracting modules you would buy anyway.
-      </p>
+      <p>For a proposed keyboard replacement exercise, route a plate-compatibility reply to the person who can answer it. Test after-hours assignment, opt-out detection and escalation without a live promotional send. A supplier demonstration must show the intended account and market; no thirty-day comparison or Postscript victory is documented here.</p>
       <p>
         A proposed vinyl-and-tea experiment should stratify the audience by category before random assignment. Keep message purpose and offer comparable, include recipients who do not purchase in the analysis, and measure contribution after delivery fees, discounts, refunds and reply labor. Do not claim savings or equivalent recovery from an unspecified sample; report the estimated difference and uncertainty.
       </p>
@@ -145,9 +139,7 @@ const faqs = [
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Newsletters, lifecycle email, and SMS coordination</h2>
-      <p>
-        SMSBump does not send editorial newsletters or post-purchase education sequences — coordinate with Yotpo Email, Sequenzy, or Klaviyo for those jobs. Channel priority document required: customer in Sequenzy cart email touch two should not receive SMSBump cart MMS one hour later unless explicit test with holdout measurement. Merchants running Sequenzy email plus SMSBump SMS during Yotpo migration period need weekly collision audit.
-      </p>
+      <p>Rebuild editorial newsletters, educational email and SMS reminders with supported senders. Retain the former campaign purpose and audience definition as migration inputs, then verify current permission and suppression. Treat Reviews requests and Loyalty communications as separate queues whose dispatch mechanisms must be checked independently.</p>
       <p>
         Map order updates, promotional recovery and subscription billing assistance as separate purposes with named system and queue owners. Confirm required permission and content for each purpose rather than borrowing promotional eligibility from a transactional relationship. Cancel stale jobs after a purchase or resolution and deduplicate retried subscription or order events.
       </p>
@@ -175,20 +167,20 @@ const faqs = [
       <div class="card">
         <p class="catalog-kicker">Pros</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+          {["Historical SMS/MMS campaigns and capture requirements can inform a replacement inventory", "Reviews and Loyalty can be evaluated separately from messaging retirement"].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
         </ul>
       </div>
       <div class="card">
         <p class="catalog-kicker">Cons</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+          {["Retired SMS dashboard and background services cannot support a new deployment", "Historic records and number transfer require confirmation; access is not assured"].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
         </ul>
       </div>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
       <div class="ledger-card">
-        <p class="catalog-kicker">Who should buy</p>
+        <p class="catalog-kicker">Who needs this migration review</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Existing Reviews or Loyalty users still need a supported messaging replacement</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Visual catalogs need controlled evidence of profitable MMS lift rather than assumed benefit</li>
@@ -237,10 +229,8 @@ const faqs = [
 
   <section class="container py-12">
     <div class="prose-shopify">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant stacks with SMSBump in production</h2>
-      <p>
-        <strong>Stack A — Vinyl label on full Yotpo suite.</strong> Reviews module collects jacket photos post-delivery; loyalty points accrue on repeat pressings; SMSBump handles cart MMS and keyword restock alerts. Sequenzy owns welcome and post-purchase education because Yotpo Email depth felt thin for pre-order branching. Weekly ops calendar maps all four modules — collision without calendar is how subscribers get review request, loyalty tier email, and cart SMS within ninety minutes. The label recovered 11% of abandoned cart revenue on MMS paths where cover art rendered; plain SMS held at 7% on same SKU holdout. Finance approved SMSBump retention on incremental MMS lift for visual SKUs only, not store-wide default.
-      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three replacement planning scenarios</h2>
+      <p><strong>Proposed stack A — vinyl label retaining Reviews and Loyalty.</strong> Preserve the review collection and points workflows that still serve the store. Replace former SMS cart and keyword jobs independently. Verify release-date changes, subscriber identity mapping and reply routing without assuming the new sender inherits historic suite connections. No eleven-versus-seven-percent MMS recovery result is documented.</p>
       <p>
         <strong>Stack B — Board game publisher, Yotpo reviews only.</strong> A proposed replacement evaluation can retain Reviews while testing launch alerts and component-count reply routing separately. Confirm supported integration and export access rather than inferring suite interoperability. Give each eligible purpose one sender and queue owner, and compare labor and delivery costs without running competing live cart reminders.
       </p>
@@ -249,9 +239,7 @@ const faqs = [
       </p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow tests: cart recovery, compliance, and collision</h2>
-      <p>
-        <strong>Test 1 — Cart recovery timing versus Sequenzy email.</strong> Mechanical keyboard shop paired Sequenzy email touch one at ninety minutes with SMSBump MMS at four hours when email unopened. Holdout cohort received email-only path. Combined path recovered 9.2% of abandoned cart GMV; email-only 6.8%. Incremental SMS justified on carts over $180 only — sub-threshold carts lost margin after message fees. Document minimum cart value in ops wiki, not buried in flow settings.
-      </p>
+      <p><strong>Test 1 — replacement cart timing.</strong> In a proposed keyboard test, simulate a purchase between email and SMS enrollment. Inspect the replacement queue for cancellation, then replay the original checkout event to check deduplication. Evaluate economics only after these controls work; no recovery lift or $180 cart floor has been established.</p>
       <p>
         <strong>Test 2 — TCPA consent audit before import.</strong> Use a hypothetical legacy export to inspect source, timestamp, disclosure, channel and purpose evidence alongside opt-outs. Quarantine records with missing evidence and determine an appropriate lawful resolution; do not assume an unsolicited re-permission text is allowed. No vendor block or six-day delay is claimed. Verify destination mapping and fresh suppression before dispatch.
       </p>
@@ -262,7 +250,7 @@ const faqs = [
         <strong>Test 4 — Yotpo review collision.</strong> Simulate overlapping review requests and cart events without live sends. A purchase must exit stale recovery paths, while review eligibility follows its own purpose rules. Inspect every sender queue, cancel obsolete jobs and deduplicate retries. Moving a calendar entry does not cancel a previously scheduled message.
       </p>
 
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist before annual SMSBump commitment</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Replacement acceptance checklist</h2>
       <p>
         Use this checklist for migration from historical SMSBump to a supported replacement. Resolve each critical control individually; a score cannot compensate for missing consent, stale queues or unverified access.
       </p>
@@ -280,20 +268,18 @@ const faqs = [
         Do not aggregate these checks into a purchase score. Missing permission, unsafe queue ownership or inability to cancel obsolete recovery jobs blocks activation regardless of other answers. Treat incomplete current vendor evidence as a verification task and retain a rollback owner and an exception log.
       </p>
 
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Rank context: where SMSBump sits in the Shopify SMS layer</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Historical catalog context</h2>
       <p>
         Catalog ranks are editorial metadata, not evidence that a retired service is available or that one replacement delivers better compliance or incremental recovery. Compare supported candidates against verified country coverage, reply workflows, consent exports, current suppression and all-in costs. Keep Reviews and Loyalty scope separate from the Email/SMS sunset.
       </p>
-      <p>
-        Graduation path: when order volume exceeds 1,200 monthly and collision rules exceed one hour weekly maintenance, evaluate consolidating SMS into Klaviyo or Postscript plus Sequenzy email — not because SMSBump failed, but because stack complexity outgrew founder bandwidth. Document keyword campaign performance and MMS SKU rules before migration; those insights transfer even when vendor changes.
-      </p>
+      <p>Changing senders must preserve usable history as well as flows. Keep original campaign identifiers, attribution definitions, delivery records, refunds and invoice periods. Mark missing history explicitly rather than treating a new dashboard as a continuous series. Order volume and weekly maintenance hours do not create a universal migration threshold.</p>
     </div>
   </section>
 
   <section class="container py-12">
     <div class="ledger-card">
-      <p class="catalog-kicker">90-day proof plan</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Prove SMSBump ROI before suite renewal</h2>
+      <p class="catalog-kicker">Replacement proof plan</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Validate the replacement messaging operation</h2>
       <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Design: predeclare eligible audiences, treatments, margin outcomes, uncertainty and stopping rules</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Safety: test current permission, suppression, purchase exits, local scheduling and stale-job cancellation</li>
@@ -312,5 +298,14 @@ const faqs = [
     </div>
   </section>
 
+  <section class="container py-12"><div class="prose-shopify">
+    <h2>Recover records without assuming dashboard access</h2>
+    <p>Start with exports already held by the merchant, consent archives, invoices, campaign creative and support correspondence. Ask Yotpo what additional records can still be recovered and in what format. Record missing timestamps, disclosures, suppression or reply history as explicit gaps; a list of phone numbers cannot replace permission evidence.</p>
+    <p>Keep archived files read-only and map original identifiers to replacement records. Reconcile imported, rejected, duplicate and suppressed counts. Test a withdrawn subscriber, a channel-only subscriber and a customer whose number changed. A successful CSV upload is not proof that the reachable audience is correct.</p>
+    <h2>Sending number, replies and retained module boundaries</h2>
+    <p>Identify the former sending number, registered business, account authority and any porting documentation. Confirm with the receiving provider and relevant support teams whether it can be transferred or needs replacement. Record registration dependencies and the date inbound replies change destination. Do not presume a decommissioned application can still forward replies or release a number automatically.</p>
+    <p>Inventory printed keywords, QR codes, onsite forms and old signup links. Disable dead capture paths or replace them with accurate disclosures for the new sender. A vinyl restock keyword must keep its specific purpose; historic campaign membership is not permission for all future drops.</p>
+    <p>For retained Reviews and Loyalty, name the account owner and inspect each live notification setting and integration. Preserve review history and points balances in their authoritative systems. Test a review event and a loyalty tier change against the replacement identity mapping; buying another sender does not migrate those records or cancel their existing jobs.</p>
+  </div></section>
   <FaqSection faqs={faqs} title="SMSBump Shopify FAQ" />
 </BaseLayout>
