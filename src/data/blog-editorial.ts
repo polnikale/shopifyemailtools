@@ -1,7 +1,7 @@
 /** Editorial acceptance fixtures, not performed merchant tests. */
 export type WelcomeAudience = 'small Shopify stores' | 'DTC brands' | 'fashion stores' | 'beauty stores' | 'food and beverage stores' | 'subscription brands' | 'Shopify Plus merchants' | 'international merchants' | 'new Shopify stores' | 'high-volume stores';
 /** Explicit editorial contracts; remaining goals retain their existing renderer. */
-export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps';
+export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps' | 'win-back email apps';
 export type GoalEditorial = {
   audience: WelcomeAudience; goal: EditorialGoal; question: string; entry: string;
   fields: string; guard: string; purchaseExit: string; retry: string;
@@ -615,5 +615,208 @@ export const postPurchaseEditorial: Record<string, PostPurchaseEditorial> = {
     "nativeRationale": "Consider Shopify Messaging: a bounded native thank-you remains useful if operations demonstrates representative burst handling. This proposed operating design requires the account exercise below.",
     "profileRationale": "Consider Klaviyo: metric entry and send-time profile filters provide checkpoints for a maintained state contract. These documented building blocks require verified field mapping in the account.",
     "acceptance": "Replay old payment after refund, lose an acknowledgement and split fulfillment across workers; accept no reopened promotion and an inspectable pause trace."
+  }
+};
+export type WinBackEditorial = GoalEditorial & { goal: 'win-back email apps' };
+export const winBackEditorial: Record<string, WinBackEditorial> = {
+  "best-shopify-win-back-email-apps-for-small-shopify-stores": {
+    "audience": "small Shopify stores",
+    "goal": "win-back email apps",
+    "question": "Can the owner close a lapsed-buyer conversation without creating an endless discount loop?",
+    "entry": "Buyer joins the owner-approved lapse segment after the normal reorder window",
+    "fields": "customer ID, last paid order, lapse rule version, permission, sender and backup, final-contact flag",
+    "guard": "Send one useful preference invitation; final-contact completion closes this lapse episode",
+    "purchaseExit": "A new paid order retires the episode and transfers to order care",
+    "retry": "Replay the customer/last-order/rule key; unresolved acknowledgement waits for the backup",
+    "failure": "Two apps repeatedly re-enroll the same inactive buyer",
+    "edges": [
+      "A historical import cannot become a newly lapsed buyer without dated orders",
+      "Owner absence holds the final invitation instead of restarting the series"
+    ],
+    "denominator": "Unique permitted lapsed buyers assigned under the owner-approved rule",
+    "handover": "Owner records the final-contact disposition; backup owns held replies",
+    "nativeRationale": "Consider Shopify Messaging: segment-based native win-back makes one small lapse list visible in the store workflow. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: a Placed Order flow with a no-new-order filter suits an owner already maintaining that feed. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Import an undated buyer, replay a completed episode and order during delay; accept no import entry, no reopened invitation and an order-care handoff."
+  },
+  "best-shopify-win-back-email-apps-for-dtc-brands": {
+    "audience": "DTC brands",
+    "goal": "win-back email apps",
+    "question": "Does reactivation earn contribution without rewarding every delayed repeat order?",
+    "entry": "Campaign buyer exceeds the observed reorder window within a margin band",
+    "fields": "customer ID, acquisition source, last order, margin band, incentive eligibility, offer version, holdout",
+    "guard": "Preserve a no-incentive cohort; release only the approved return offer for this band",
+    "purchaseExit": "Any new paid purchase closes reactivation regardless of campaign attribution",
+    "retry": "Expired incentives require growth approval; a replay retains original assignment",
+    "failure": "A repeat-order discount is counted as incremental profit without a comparison",
+    "edges": [
+      "A returned acquisition bundle changes eligibility before dispatch",
+      "An organic repeat order exits even when ad attribution is absent"
+    ],
+    "denominator": "Unique lapsed campaign buyers assigned within original source and margin band",
+    "handover": "Growth owns lapse and incentive versions; finance reconciles net contribution",
+    "nativeRationale": "Consider Shopify Messaging: a single native lapse segment is useful for a narrow approved return offer with inspectable ownership. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: order-triggered delays and purchase filters support separate maintained campaign cohorts. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Return the acquisition bundle, expire the offer and record an unattributed repeat order; accept revised eligibility, preserved holdout and no late incentive."
+  },
+  "best-shopify-win-back-email-apps-for-fashion-stores": {
+    "audience": "fashion stores",
+    "goal": "win-back email apps",
+    "question": "Is the buyer inactive or simply waiting for a relevant size and season?",
+    "entry": "Prior apparel buyer crosses a category-specific seasonal lapse threshold",
+    "fields": "customer ID, retained size, category, season, last order, variant stock timestamp, returns hold",
+    "guard": "Offer a relevant currently purchasable size or a preference update, never substitute fit silently",
+    "purchaseExit": "A new order ends the lapse episode; an open exchange routes to service",
+    "retry": "Recheck size and season after delay; a sold-out variant becomes a size-preference path",
+    "failure": "Off-season outerwear buyers receive generic urgency for unavailable sizes",
+    "edges": [
+      "An exchange is not evidence of a second independent purchase",
+      "A new season cannot reuse expired clearance terms"
+    ],
+    "denominator": "Unique lapsed apparel buyers by category and season at assignment",
+    "handover": "Merchandising owns season and size fallbacks; service resolves exchanges",
+    "nativeRationale": "Consider Shopify Messaging: a native segment can support a bounded seasonal return invitation with a stable size-guide fallback. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: order-based flows with maintained category properties help separate seasonal buying cycles. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Sell out the retained size, open an exchange and roll the season; accept a useful preference path with current terms and no exchange misclassification."
+  },
+  "best-shopify-win-back-email-apps-for-beauty-stores": {
+    "audience": "beauty stores",
+    "goal": "win-back email apps",
+    "question": "Can a routine invitation respect a buyer who stopped using the product?",
+    "entry": "Routine buyer passes a product-specific review window with no later order",
+    "fields": "customer ID, purchased routine, approved copy version, declared interest, use-related case, last order",
+    "guard": "Ask whether the routine is still relevant; hold promotion during a use-related case",
+    "purchaseExit": "A paid order ends win-back; a request to stop routine content closes that purpose",
+    "retry": "Changed product directions require educator review before replay",
+    "failure": "Inactivity is interpreted as a diagnosis and triggers a stronger product claim",
+    "edges": [
+      "A sample buyer cannot inherit a full-routine depletion estimate",
+      "A discontinued product needs approved alternatives rather than invented equivalence"
+    ],
+    "denominator": "Unique permitted routine buyers by purchased product and declared interest",
+    "handover": "Educator owns routine copy; service handles use-related replies",
+    "nativeRationale": "Consider Shopify Messaging: a native lapse invitation can ask a preference question without inferring product suitability. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: purchase-based delay and maintained profile filters help separate sample and routine cohorts. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Open a use-related case, discontinue the product and request no routine mail; accept a service hold, reviewed alternative and purpose closure."
+  },
+  "best-shopify-win-back-email-apps-for-food-and-beverage-stores": {
+    "audience": "food and beverage stores",
+    "goal": "win-back email apps",
+    "question": "Is the next useful contact a new gifting occasion rather than a pantry refill?",
+    "entry": "Gift buyer reaches an approved occasion-review date without another buyer order",
+    "fields": "buyer ID, gift/self intent, occasion permission, destination, shipping cutoff, pack availability",
+    "guard": "Invite the buyer to update occasion preferences; promise delivery only after a fresh cutoff check",
+    "purchaseExit": "New buyer purchase closes this occasion episode; recipient activity does not renew buyer permission",
+    "retry": "Retry recomputes occasion and cutoff; a missed date moves to a future-occasion preference path",
+    "failure": "A gift recipient is targeted as a lapsed buyer using delivery details",
+    "edges": [
+      "A chilled destination becoming unsupported holds the offer",
+      "A one-off gift must not imply recurring consumption"
+    ],
+    "denominator": "Unique permitted gift buyers by declared occasion and destination",
+    "handover": "Fulfillment owns cutoff changes; marketing owns buyer occasion preferences",
+    "nativeRationale": "Consider Shopify Messaging: a native segment-based invitation gives a small gifting program a clear buyer-only audience. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: maintained gift properties alongside order history support separate gift and self-purchase delays. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Pass the shipping cutoff, restrict the destination and change recipient details; accept no missed-date promise and no recipient marketing enrollment."
+  },
+  "best-shopify-win-back-email-apps-for-subscription-brands": {
+    "audience": "subscription brands",
+    "goal": "win-back email apps",
+    "question": "Is a former member ready to return, or is the plan merely paused?",
+    "entry": "Confirmed cancelled member passes an approved cancellation review date",
+    "fields": "customer ID, subscription ID, cancellation reason, pause/skip/active state, portal timestamp, offer eligibility",
+    "guard": "Refresh portal state; invite only eligible former members and respect cancellation reason",
+    "purchaseExit": "Resubscription or reactivation ends win-back; renewal service remains separately owned",
+    "retry": "Unavailable portal state holds replay until subscription operations reconciles it",
+    "failure": "A paused member is offered an acquisition discount for an active plan",
+    "edges": [
+      "A failed payment belongs to owned billing service rather than voluntary lapse",
+      "A one-time purchase does not prove the subscription resumed"
+    ],
+    "denominator": "Unique eligible cancelled members excluding active, paused and skipped plans",
+    "handover": "Subscription operations owns portal truth; retention approves return terms",
+    "nativeRationale": "Consider Shopify Messaging: a maintained former-member segment can keep native return invitations distinct from billing service. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: profile filters on supplied subscription state provide checkpoints around an order-based flow. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Pause a plan, fail a renewal and buy a one-time item; accept no paused-member offer, separate billing handoff and no false resubscription."
+  },
+  "best-shopify-win-back-email-apps-for-shopify-plus-merchants": {
+    "audience": "Shopify Plus merchants",
+    "goal": "win-back email apps",
+    "question": "Which region owns the return invitation after a cross-store purchase?",
+    "entry": "Store-local lapse segment entry under valid regional approval",
+    "fields": "store ID, identity version, regional permission, last orders across linked stores, approval version",
+    "guard": "Reconcile linked-store purchases and assign one region-approved return owner",
+    "purchaseExit": "A linked-store order closes competing win-back jobs while preserving separate permissions",
+    "retry": "Revoked regional approval blocks replay; identity uncertainty waits for platform review",
+    "failure": "Two stores offer conflicting return incentives to one merged buyer",
+    "edges": [
+      "Identical local customer IDs must remain store-scoped",
+      "A regional transfer cannot carry withdrawn marketing permission"
+    ],
+    "denominator": "Unique eligible reconciled identities by assigned region",
+    "handover": "Regional approver owns return copy; platform team owns cross-store queue reconciliation",
+    "nativeRationale": "Consider Shopify Messaging: store-local native segments make regional ownership explicit when the platform supplies cross-store gates. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: maintained region and identity properties offer explicit filter boundaries for a shared flow program. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Collide local IDs, buy in the linked store and revoke regional approval; accept one reconciled owner and no revoked incentive."
+  },
+  "best-shopify-win-back-email-apps-for-international-merchants": {
+    "audience": "international merchants",
+    "goal": "win-back email apps",
+    "question": "Can the returning buyer still shop the market and language used by the invitation?",
+    "entry": "Localized buyer exceeds the market-specific reorder window",
+    "fields": "customer ID, declared market, locale, last order currency, current shipping eligibility, timezone evidence",
+    "guard": "Use current market links and approved language; hold unsupported destinations",
+    "purchaseExit": "A purchase in any currency closes the matched lapse episode",
+    "retry": "A locale or market change invalidates old content; unknown time handling waits for operations",
+    "failure": "An old-market return offer links to unavailable goods in a different currency",
+    "edges": [
+      "Travel IP cannot redefine the declared destination",
+      "A translated promotion must preserve the approved expiry timezone"
+    ],
+    "denominator": "Unique eligible lapsed buyers by declared market and locale",
+    "handover": "Localization owns translations; market operations owns eligibility and time rules",
+    "nativeRationale": "Consider Shopify Messaging: a deliberately limited native segment set can support approved localized return copy. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: maintained market properties plus order filters provide checkpoints for locale-specific delays. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Change language and shipping market while queued, then buy in another currency; accept current links and a matched-order exit."
+  },
+  "best-shopify-win-back-email-apps-for-new-shopify-stores": {
+    "audience": "new Shopify stores",
+    "goal": "win-back email apps",
+    "question": "Does the new store have evidence of lapse before calling its first buyers inactive?",
+    "entry": "First live buyer cohort reaches a founder-approved review date",
+    "fields": "live/test flag, customer ID, last paid order, observation start, order feed health, permission source",
+    "guard": "Exclude staff and incomplete history; use a preference question when reorder evidence is sparse",
+    "purchaseExit": "A real repeat order ends the episode even if analytics is blocked",
+    "retry": "Missing order history holds retry; founder reconciles rather than inventing a lapse date",
+    "failure": "A tiny cohort is reported as proof of profitable reactivation",
+    "edges": [
+      "Zero eligible buyers has no rate",
+      "A long-lead preorder cannot be treated as unused goods awaiting replenishment"
+    ],
+    "denominator": "Unique live buyers with complete history assigned at review, excluding staff",
+    "handover": "Founder owns the first cohort trace; support owns preference replies",
+    "nativeRationale": "Consider Shopify Messaging: one native segment invitation gives the founder a bounded first retention workflow to inspect. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: an existing Placed Order feed can anchor a traceable lapse delay when live/test separation is demonstrated. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Include a staff order, incomplete history and a live unattributed repeat order; accept staff exclusion, history hold and a real order exit without a performance claim."
+  },
+  "best-shopify-win-back-email-apps-for-high-volume-stores": {
+    "audience": "high-volume stores",
+    "goal": "win-back email apps",
+    "question": "Can late order events prevent a stale lapse segment from draining during a backlog?",
+    "entry": "Versioned lapse eligibility event enters the maintained dispatch queue",
+    "fields": "event ID, identity version, last-order watermark, rule version, permission watermark, queue age",
+    "guard": "Reject stale eligibility and check current order, permission and final-contact state before dispatch",
+    "purchaseExit": "A newer paid-order watermark invalidates every matched pending lapse job",
+    "retry": "Lost acknowledgement goes to reconciliation; old segment events cannot reopen closed episodes",
+    "failure": "An old lapse event arrives after purchase and recreates a return offer",
+    "edges": [
+      "A rule change must not re-enroll an already completed episode automatically",
+      "Backlog beyond offer validity expires with an owned disposition"
+    ],
+    "denominator": "Unique eligible identities assigned at ingest including later expired jobs",
+    "handover": "Messaging operations owns backlog and reconciliation; incident lead owns pause and rollback",
+    "nativeRationale": "Consider Shopify Messaging: a bounded native segment program remains useful if operations demonstrates freshness during representative bursts. This proposed design requires the configured-account exercise.",
+    "profileRationale": "Consider Klaviyo: purchase profile filters provide documented action checkpoints alongside a maintained watermark contract. Supplied audience fields and queue behavior still require demonstration.",
+    "acceptance": "Replay stale eligibility after purchase, lose an acknowledgement and change the lapse rule; accept no reopened episode, no blind resend and an inspectable pause trace."
   }
 };
