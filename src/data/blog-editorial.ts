@@ -1,12 +1,15 @@
 /** Editorial acceptance fixtures, not performed merchant tests. */
 export type WelcomeAudience = 'small Shopify stores' | 'DTC brands' | 'fashion stores' | 'beauty stores' | 'food and beverage stores' | 'subscription brands' | 'Shopify Plus merchants' | 'international merchants' | 'new Shopify stores' | 'high-volume stores';
-/** Only welcome is implemented; other route goals deliberately retain their existing renderer. */
-export type WelcomeEditorial = {
-  audience: WelcomeAudience; goal: 'welcome email apps'; question: string; entry: string;
+/** Explicit editorial contracts; remaining goals retain their existing renderer. */
+export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps';
+export type GoalEditorial = {
+  audience: WelcomeAudience; goal: EditorialGoal; question: string; entry: string;
   fields: string; guard: string; purchaseExit: string; retry: string;
   nativeRationale: string; profileRationale: string; acceptance: string;
   failure: string; edges: readonly [string, string]; denominator: string; handover: string;
 };
+export type WelcomeEditorial = GoalEditorial & { goal: 'welcome email apps' };
+export type CartEditorial = GoalEditorial & { goal: 'abandoned cart apps' };
 export const welcomeEditorial: Record<string, WelcomeEditorial> = {
   "best-shopify-welcome-email-apps-for-small-shopify-stores": {
     "audience": "small Shopify stores",
@@ -207,5 +210,207 @@ export const welcomeEditorial: Record<string, WelcomeEditorial> = {
     ],
     "denominator": "Unique eligible identities assigned at ingest, including later expired jobs in assigned cohorts",
     "handover": "Messaging operations owns backlog alerts; incident lead can pause and reconcile delivery acknowledgements"
+  }
+};
+export const cartEditorial: Record<string, CartEditorial> = {
+  "best-shopify-abandoned-cart-apps-for-small-shopify-stores": {
+    "audience": "small Shopify stores",
+    "goal": "abandoned cart apps",
+    "question": "Can one owner recover a checkout without competing senders?",
+    "entry": "Identified abandoned checkout; anonymous cart additions do not qualify",
+    "fields": "checkout ID, cart token, customer ID, permission source, paid-order state, sender owner",
+    "guard": "Resolve cart token to checkout and permit only the maintained sender",
+    "purchaseExit": "Refresh order state for the checkout before sending; an unmatched order enters owner review",
+    "retry": "Replay checkout ID once; uncertain delivery acknowledgement stays held",
+    "failure": "Native and installed app both send a recovery coupon",
+    "edges": [
+      "An empty cart must stop the job rather than link to an empty basket",
+      "Owner absence transfers the exception queue to a named backup"
+    ],
+    "denominator": "Unique permission-eligible identified checkouts assigned before dispatch",
+    "handover": "Store owner records active sender and backup; service answers checkout problems",
+    "nativeRationale": "Consider Shopify Messaging: a single maintained checkout reminder keeps inspection within the owner budget. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: separate cart and checkout entry becomes useful if the existing team already maintains both event feeds. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Replay a checkout through both installed senders and accept only one intended dispatch; empty the cart and prove the hold. Prefer the setup the backup can pause."
+  },
+  "best-shopify-abandoned-cart-apps-for-dtc-brands": {
+    "audience": "DTC brands",
+    "goal": "abandoned cart apps",
+    "question": "Will recovering this checkout preserve the acquisition offer and contribution?",
+    "entry": "Identified campaign checkout with its original offer version",
+    "fields": "checkout ID, campaign, cart value, margin band, offer version, first-order eligibility",
+    "guard": "Revalidate the original offer and stacking rules; preserve the full-price branch",
+    "purchaseExit": "Paid order for the identity invalidates recovery offers even if campaign attribution arrives late",
+    "retry": "Expired offer versions require growth approval; never silently create a replacement coupon",
+    "failure": "A retry replaces an expired acquisition offer with a larger unapproved discount",
+    "edges": [
+      "A merged repeat buyer must lose first-order eligibility",
+      "A product substitution that changes margin must invalidate the old offer calculation"
+    ],
+    "denominator": "Unique eligible checkouts assigned within campaign and margin band",
+    "handover": "Growth owns offer versions; finance reconciles discount, return and fulfillment cost",
+    "nativeRationale": "Consider Shopify Messaging: a narrow checkout reminder can preserve one approved acquisition promise with fewer handoffs. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: distinct cart and checkout paths help growth separate early product interest from checkout objections. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Demonstrate a full-price checkout, expired offer and merged repeat buyer. Accept only with correct offer decisions and a finance-readable trace; neither candidate is assumed to calculate margin."
+  },
+  "best-shopify-abandoned-cart-apps-for-fashion-stores": {
+    "audience": "fashion stores",
+    "goal": "abandoned cart apps",
+    "question": "Can the shopper still buy the exact size left in the cart?",
+    "entry": "Identified added-to-cart event for a variant; checkout start transfers ownership",
+    "fields": "cart token, checkout ID when created, variant and size, stock observation, preorder flag",
+    "guard": "Refresh the actual variant; stop on empty cart and transfer to checkout flow without duplicate outreach",
+    "purchaseExit": "A paid order for the shopper ends recovery for the purchased cart; uncertain identity goes to review",
+    "retry": "Re-read cart contents and stock on replay, retaining the original job key",
+    "failure": "The style is available but the cart size sold out during the delay",
+    "edges": [
+      "Removing the last size must close recovery rather than substitute another size",
+      "Preorder stock keeps its distinct delivery promise and cannot inherit in-stock urgency"
+    ],
+    "denominator": "Unique eligible identified carts by known size and stock state at assignment",
+    "handover": "Merchandising owns variant fallbacks; service answers fit and preorder questions",
+    "nativeRationale": "Consider Shopify Messaging: native cart and checkout templates offer a bounded starting point for a merchandiser-owned variant exercise. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: separate Added to Cart entry offers a useful earlier size-help path before checkout begins. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Empty a size-specific cart, sell out that size and start checkout during delay. Accept only the candidate whose configuration holds stale content and transfers ownership once."
+  },
+  "best-shopify-abandoned-cart-apps-for-beauty-stores": {
+    "audience": "beauty stores",
+    "goal": "abandoned cart apps",
+    "question": "Does the cart reminder preserve the selected kit and approved usage guidance?",
+    "entry": "Identified cart addition of a routine kit, with checkout promotion tracked separately",
+    "fields": "cart token, kit SKU, instruction version, declared interest, checkout ID, support hold",
+    "guard": "Use current kit contents and approved copy; unknown interest cannot become a diagnosis",
+    "purchaseExit": "Paid kit order stops recovery selling and transfers to the actual purchased-kit education",
+    "retry": "A substituted kit requires instruction refresh and educator approval before retry",
+    "failure": "A cart edit replaces a kit but queued copy retains incompatible usage instructions",
+    "edges": [
+      "A product-use support case holds promotion for service review",
+      "A sample-only cart must not inherit a full-routine efficacy promise"
+    ],
+    "denominator": "Unique eligible kit carts by kit version and declared versus unknown interest",
+    "handover": "Product educator approves changed copy; service owns use-related replies",
+    "nativeRationale": "Consider Shopify Messaging: a simple native reminder can link to approved kit guidance without inventing personalization. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: cart versus checkout entry allows kit questions to precede payment objections when event mapping is maintained. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Replace the kit and open a service case during delay. Accept only with refreshed instructions, the correct hold and a paid-kit exit trace."
+  },
+  "best-shopify-abandoned-cart-apps-for-food-and-beverage-stores": {
+    "audience": "food and beverage stores",
+    "goal": "abandoned cart apps",
+    "question": "Can the abandoned gift cart still meet the delivery occasion?",
+    "entry": "Identified gift cart; checkout adds buyer and destination evidence",
+    "fields": "cart token, checkout ID, buyer permission, destination, gift date, pack, shipping cutoff",
+    "guard": "Recompute destination and perishable cutoff before promising delivery; recipient details never grant permission",
+    "purchaseExit": "Paid gift checkout ends buyer recovery; recipient fulfillment notices remain separately owned",
+    "retry": "A delayed retry past cutoff drops the occasion promise and asks fulfillment for an approved alternative",
+    "failure": "A queued gift reminder promises a delivery date after the dispatch cutoff",
+    "edges": [
+      "An unsupported chilled-shipping destination holds the offer",
+      "A recipient email different from the buyer must not become the recovery identity"
+    ],
+    "denominator": "Unique eligible buyer carts by destination and gift/self intent",
+    "handover": "Fulfillment owns cutoffs and alternatives; service handles gift changes",
+    "nativeRationale": "Consider Shopify Messaging: native checkout recovery is a useful bounded buyer path when destination is established at checkout. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: cart entry can support earlier pack questions if later checkout events reliably supersede it. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Advance the cutoff and change buyer/recipient addresses. Accept only after the expired promise is held and marketing remains attached to the permitted buyer."
+  },
+  "best-shopify-abandoned-cart-apps-for-subscription-brands": {
+    "audience": "subscription brands",
+    "goal": "abandoned cart apps",
+    "question": "Is this an abandoned acquisition cart or a member changing an existing plan?",
+    "entry": "Identified subscription-plan cart, distinct from portal pause and renewal events",
+    "fields": "cart token, checkout ID, selling plan, subscription ID, paused/skipped/active state, state timestamp",
+    "guard": "Refresh portal state; pause and skip are not new-cart acquisition permission or cancellation",
+    "purchaseExit": "Paid initial order exits recovery; renewal and failed-payment service keep separate owners",
+    "retry": "Unavailable subscription state holds retry; reconcile order and portal clocks before dispatch",
+    "failure": "A paused member receives a new-customer discount from a portal event mislabeled as cart abandonment",
+    "edges": [
+      "A one-time item beside a subscription retains its separate order meaning",
+      "A skipped renewal must not generate an abandoned acquisition checkout"
+    ],
+    "denominator": "Unique eligible acquisition carts excluding existing active, paused and skipped members",
+    "handover": "Subscription operations resolves portal mismatches; service owns member requests",
+    "nativeRationale": "Consider Shopify Messaging: a narrow native checkout path can keep initial acquisition separate from renewal service. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: cart and checkout filters are useful where maintained selling-plan fields distinguish prospect intent. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Replay pause, skip and one-time-item fixtures alongside an initial purchase. Accept only with correct membership exclusion and a demonstrated order exit, without claiming automatic cancellation."
+  },
+  "best-shopify-abandoned-cart-apps-for-shopify-plus-merchants": {
+    "audience": "Shopify Plus merchants",
+    "goal": "abandoned cart apps",
+    "question": "Which storefront owns recovery when one identity has carts in two regions?",
+    "entry": "Identified store-local cart with explicit checkout and cross-store identity mapping",
+    "fields": "store ID, cart token, checkout ID, identity version, regional permission, content approval",
+    "guard": "Use store-scoped keys and region-approved content; shared identity does not merge permissions",
+    "purchaseExit": "A linked-store paid order triggers reconciliation before any competing offer is released",
+    "retry": "Approval withdrawal invalidates queued copy; unresolved cross-store match holds replay",
+    "failure": "Two regional flows treat the same checkout intent as separate eligible people",
+    "edges": [
+      "The same cart token in two stores must not collide",
+      "An identity merge must preserve regional permission and currency boundaries"
+    ],
+    "denominator": "Unique eligible store-scoped intents with documented cross-store deduplication",
+    "handover": "Regional approver owns content; platform operations owns identity and queue holds",
+    "nativeRationale": "Consider Shopify Messaging: native store-local recovery can give each regional team a clear operating boundary. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: separate event-based paths are useful when the platform team supplies store-scoped identity fields. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Replay colliding tokens, revoke approval and purchase in the linked store. Accept only with preserved permissions, traceable reconciliation and one accountable queue owner."
+  },
+  "best-shopify-abandoned-cart-apps-for-international-merchants": {
+    "audience": "international merchants",
+    "goal": "abandoned cart apps",
+    "question": "Does the recovered checkout still match its market, currency and permitted local time?",
+    "entry": "Identified localized cart; checkout resolves shipping market and currency",
+    "fields": "cart token, checkout ID, market, displayed currency, locale, timezone evidence, permission version",
+    "guard": "Refresh market eligibility and currency; unknown timezone uses approved hold handling",
+    "purchaseExit": "Paid order in any currency stops matched checkout recovery; do not reset identity on currency change",
+    "retry": "Changed market or language invalidates old queued copy before retry",
+    "failure": "A cart reminder displays one currency but restores checkout in another market",
+    "edges": [
+      "Travel IP cannot overwrite declared shipping market",
+      "A language or permission change during delay must defeat the old queued template"
+    ],
+    "denominator": "Unique eligible carts by declared market and currency at assignment",
+    "handover": "Localization approves copy; operations owns market restrictions and time handling",
+    "nativeRationale": "Consider Shopify Messaging: localized native recovery is a useful starting point for a deliberately supported market set. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: separate cart and checkout paths help preserve declared locale as shipping evidence becomes available. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Switch market, currency and language while queued, then buy in another currency. Accept only with refreshed links, current permission and matched-order suppression."
+  },
+  "best-shopify-abandoned-cart-apps-for-new-shopify-stores": {
+    "audience": "new Shopify stores",
+    "goal": "abandoned cart apps",
+    "question": "Can the founder trace the first live abandoned checkout without mistaking tests for demand?",
+    "entry": "First identified live checkout abandonment after instrumentation signoff",
+    "fields": "live/test flag, checkout ID, cart token, event timestamp, permission record, order ID",
+    "guard": "Exclude staff fixtures; hold missing IDs rather than infer a reachable anonymous cart",
+    "purchaseExit": "Use paid-order state to stop recovery even when analytics attribution is blocked",
+    "retry": "Replay the stable checkout ID; missing or conflicting events enter the founder exception log",
+    "failure": "A test checkout or duplicate event is reported as recovered live revenue",
+    "edges": [
+      "Zero eligible checkouts has no conversion rate",
+      "A real purchase with blocked analytics still needs an order-based exit"
+    ],
+    "denominator": "Unique live eligible checkouts excluding staff and test fixtures; zero means no rate",
+    "handover": "Founder signs the first event trace; support owns replies and payment questions",
+    "nativeRationale": "Consider Shopify Messaging: native checkout recovery provides a bounded first pipeline the founder can inspect. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: event-based checkout recovery is useful if the store already maintains that feed and can verify live/test separation. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Trace one live fixture and one staff fixture through retry and purchase. Accept only with stable IDs and no test conversions; keep performance undecided with sparse counts."
+  },
+  "best-shopify-abandoned-cart-apps-for-high-volume-stores": {
+    "audience": "high-volume stores",
+    "goal": "abandoned cart apps",
+    "question": "Can duplicate cart events arriving after purchase stay out of the recovery queue?",
+    "entry": "Identified cart event through ingest; checkout event advances the same intent version",
+    "fields": "event ID, cart/checkout link, identity version, order watermark, consent version, queue age",
+    "guard": "Reject stale event versions and check latest order and permission state at dispatch",
+    "purchaseExit": "Paid-order watermark invalidates matched queued intents; prove worker behavior before rollout",
+    "retry": "Lost acknowledgement reconciles without blind resend; duplicate old cart events cannot reopen a purchased intent",
+    "failure": "An old cart event arrives after the paid-order event and recreates recovery",
+    "edges": [
+      "A burst crossing offer expiry must expire rather than drain stale jobs",
+      "Checkout promotion during a cart retry must retain one owner across workers"
+    ],
+    "denominator": "Unique eligible intents assigned at ingest including later expired jobs, deduplicated across cart and checkout",
+    "handover": "Messaging operations owns backlog and reconciliation; incident lead pauses dispatch and approves rollback",
+    "nativeRationale": "Consider Shopify Messaging: a bounded native recovery path remains useful if operations demonstrates burst handling and owned exceptions. This is our proposed operating design, conditional on the account demonstration.",
+    "profileRationale": "Consider Klaviyo: distinct cart/checkout triggers provide explicit transition points for a maintained ingest contract. This rationale requires maintained fields and verified transitions in the offered account.",
+    "acceptance": "Replay duplicate events after purchase, lose an acknowledgement and promote cart to checkout across workers. Accept only with no stale reopening, one intended dispatch and an actionable pause trace."
   }
 };
