@@ -14,7 +14,7 @@ const desc = description(site, 'apps/firepush');
 const faqs = [
   {
     question: 'Is Firepush a full Shopify email marketing platform?',
-    answer: 'No — web push, SMS, and basic email recovery at low entry. Lifecycle depth for welcome, winback, replenishment belongs in Sequenzy or Omnisend.',
+    answer: 'The Shopify listing describes SMS and web push, including recovery and notification workflows. It does not establish current email availability. Evaluate required email journeys separately from the push layer.',
   },
   {
     question: 'Does web push work for Shopify cart recovery?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'How coordinate Firepush with Klaviyo or Sequenzy?',
-    answer: 'Manual Shopify tags for suppression — purchased_last_48h, cart_recovered. Document channel priority. Tedious at scale; graduate when tag maintenance exceeds one hour weekly.',
+    answer: 'Assign one sender per purpose and verify purchase exits and current permission at dispatch. Tags can record state, but delayed writes or missing updates can leave stale jobs queued. Test failure alerts and cancellation before enabling both senders.',
   },
   {
     question: 'What causes push opt-in collapse?',
@@ -57,10 +57,10 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Push + recovery · Rank #19</p>
+      <p class="catalog-kicker mt-6">Push + recovery</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Firepush bundles web push, SMS, and basic email recovery at entry pricing that undercuts Omnisend and Postscript for young Shopify stores testing incremental channels. Cart nudges, price-drop alerts, and back-in-stock push notifications land without enterprise contracts — but push permission is a scarce resource merchants burn with daily promotional spam. Correct role: recovery spice layered on Sequenzy or Omnisend email lifecycle, not standalone retention platform.
+        Firepush’s Shopify listing describes SMS and web push for cart recovery, price alerts, restock and promotional notifications. These can serve a short, purpose-specific alert alongside an email program. The useful buying question is whether eligible reach and incremental contribution justify another sender, permission store and queue. Current email capability and comparative entry costs are not established here.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">The examples below propose evaluations for a desktop-heavy board-game shop, a limited-pressing vinyl store and a mechanical keyboard startup. They are not observed tests: no recovery lift, opt-in change or order threshold is established. Compare added channel value with permission, maintenance and total cost requirements before adopting the layer.</p>
       <div class="mt-9 flex flex-wrap gap-3">
@@ -72,14 +72,15 @@ const faqs = [
   </section>
 
   <section class="container pb-12">
+    <p>Scope checked November 25, 2026: the <a class="link" href="https://apps.shopify.com/firepush">Firepush Shopify listing</a> describes SMS, web push, cart recovery, price alerts and restock notifications. This is supplier-described scope, not a performance test or a quote.</p>
     <TldrBox
       title="Verdict: Firepush for Shopify"
       picks={[
         { label: 'Channels', tool: 'Verify channels', reason: 'Listing describes SMS and web push; email capability needs confirmation.' },
         { label: 'Pricing', tool: 'Current quote', reason: 'Confirm billable units, included usage and operating costs.' },
-        { label: 'Strength', tool: 'Back-in-stock push', reason: 'Speed for limited SKU restocks — vinyl, games.' },
-        { label: 'Tradeoff', tool: 'Segmentation', reason: 'Shallow versus Omnisend or Sequenzy unified suppression.' },
-        { label: 'Best for', tool: 'Budget recovery layer', reason: 'Teams able to validate permission, queue ownership and added channel value.' },
+        { label: 'Strength', tool: 'Back-in-stock push', reason: 'A short alert for a requested limited-SKU restock — verify inventory before dispatch.' },
+        { label: 'Tradeoff', tool: 'Segmentation', reason: 'Verify cross-sender purchase exits and queue cancellation in the intended setup.' },
+        { label: 'Best for', tool: 'Additional alert layer', reason: 'Teams able to validate permission, queue ownership and added channel value.' },
       ]}
     />
 
@@ -88,8 +89,7 @@ const faqs = [
       <p>A board-game shop could evaluate web push for eligible repeat visitors alongside email recovery. Choose timing from the purchase cycle, cancel reminders after purchase and compare against a suitable control. Platform-attributed carts alone do not prove incremental recovery or justify replacing an email platform.</p>
       <p>Assess actual browser, device and installation requirements before designing push enrollment. A vinyl restock alert could target people who requested that purpose, with stock rechecked before sending. Neither a universal Safari conversion ratio nor a sales result is established by this example.</p>
       <p>
-        Keyboard startup paired Firepush push hour six with Sequenzy email cart hour two using manual Shopify tags — workable under 300 orders/mo, tedious at scale. Graduated Omnisend at 380 orders/mo when unified multichannel suppression beat tag spaghetti. Firepush graduation threshold is operational pain, not magic order number.
-      </p>
+        A proposed keyboard setup could schedule email before push. Use controlled records to purchase between touches, withdraw permission, delay the purchase event and fail the tag write. The later touch should cancel or enter a documented safe state; record the responsible system and repair steps.</p>
     </div>
 
     <div class="prose-shopify mb-12">
@@ -105,8 +105,7 @@ const faqs = [
       <p><strong>Quiet month — board games:</strong> Model eligible audience, intended sends and matched all-in costs for an illustrative $89 cart. Include margin, discounts and returns; this example provides no measured incremental recovery or positive ROI.</p>
       <p><strong>Restock week — vinyl:</strong> Model restock and promotional sends to an illustrative 800-person eligible audience under the quoted billing rules. Overlapping campaigns may change usage, but neither a doubled bill nor savings from calendar separation is established.</p>
       <p>
-        <strong>Graduation — keyboards 380 orders/mo:</strong> Firepush plus Sequenzy admin exceeded four hours weekly; Omnisend unified channels at ~$65/mo replaced both for cart and push — net simplification worth migration afternoon.
-      </p>
+        <strong>Coordination budget — keyboards:</strong> Record event mapping, monitoring, failed-write repair and weekly queue review effort. Compare a split stack with a consolidated candidate using matched channel coverage and a dated quote. Change architecture when required controls fail or maintenance exceeds the team’s budget.</p>
     </div>
 
     <div class="prose-shopify mb-12">
@@ -114,16 +113,14 @@ const faqs = [
       <p><strong>1. Desktop cart push — board games.</strong> Test an illustrative $89 game cart using a supported browser and valid push permission. Set timing from the purchase cycle, recheck purchase state and compare incremental margin against a suitable control; no recovery percentage is established.</p>
       <p><strong>2. Back-in-stock — vinyl 500-copy restock.</strong> Evaluate alerts only for subscribers who requested that restock purpose. Verify stock before sending and distinguish attributed orders from additional orders caused by the alert; no sell-through result is established.</p>
       <p>
-        <strong>3. Sequenzy coordination — keyboards.</strong> Email cart hour two; push hour six if tagged not recovered. Manual Shopify tags worked until 380 orders/mo.
-      </p>
+        <strong>3. Email coordination — keyboards.</strong> Propose email at hour two and push at hour six as test settings. Purchase between touches and confirm both current-state exclusion and cancellation of the queued push; the timing itself is not a suppression mechanism.</p>
       <p><strong>4. Push fatigue evaluation.</strong> Set purpose-specific frequency limits and monitor permission revocations, complaints and purchases. Compare a restrained recovery/restock schedule with any proposed promotional cadence; no opt-in loss or restoration rate is established.</p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Lifecycle, newsletters, and when to graduate</h2>
       <p>
-        Firepush basic email handles sale blasts and simple cart reminders — not replenishment by consumption window, welcome branching by signup source, or winback before markdown. Pair with Sequenzy for lifecycle email operating system. Newsletters for drop announcements should respect push subscribers with coordinated timing — push alert six hours before email blast to full list prevents notification pile-up same hour.
-      </p>
+        Keep welcome, replenishment and winback requirements in a separate email inventory until current email support is confirmed. For drop announcements, define audience overlap and which channel owns the first alert. A six-hour gap does not prevent a duplicate offer or an ineligible send.</p>
       <p>Shipping updates and promotional recovery have different purposes. Assign an owner to each message and define cross-channel priority for delivery delays. A service update does not establish marketing permission; verify current channel eligibility and cancel conflicting queued promotions where the systems permit it.</p>
       <p>Evaluate alternatives when required channels, reporting or suppression cannot be maintained reliably within your staffing budget. Record actual coordination time and required fields; neither four weekly hours nor an order count establishes a universal migration threshold or compliance guarantee.</p>
     </div>
@@ -145,13 +142,13 @@ const faqs = [
       <div class="card">
         <p class="catalog-kicker">Pros</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+          {['Separate channel evaluation with documented owners', 'Preserve useful events and assets when changing senders'].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
         </ul>
       </div>
       <div class="card">
         <p class="catalog-kicker">Cons</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+          {['Cross-tool dispatch controls require verification', 'Historical catalog labels do not establish current availability'].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
         </ul>
       </div>
     </div>
@@ -169,9 +166,9 @@ const faqs = [
       <div class="ledger-card">
         <p class="catalog-kicker">Who should skip</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Mobile-first catalog without desktop browse pattern</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need unified lifecycle in one platform — Omnisend</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>SMS compliance-heavy support catalog — Postscript</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required browser or installation states do not support the planned reach</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need one validated owner for the required lifecycle channels</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need SMS reply or escalation workflows absent from the validated setup</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required suppression exceeds the validated integration or staffing capacity</li>
         </ul>
       </div>
@@ -203,7 +200,7 @@ const faqs = [
   <section class="container py-12"><div class="ledger-card"><p class="catalog-kicker">Safari limitations</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Mobile web push reality check</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Validate current web-push requirements on the actual browsers, operating systems and installed-app states your audience uses. Measure eligible enrollment separately from total site traffic; this page provides no same-store Safari-to-Chrome ratio or observed opt-in result.</p></div></section>
 
 <!-- FINAL_EXPANSION_v6 -->
-  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Firepush and Sequenzy email pairing</h2><p>Keyboard startup tagged Shopify customers cart_recovered_email and cart_recovered_push separately — Sequenzy email touch two suppressed when push recovered hour six. Manual tags broke once at 340 orders/mo when theme update dropped tag script; monitoring alert on missing tags prevented duplicate-channel complaints. Graduate to Omnisend when tag maintenance exceeds one hour weekly or duplicate-channel complaints exceed one per month.</p><p>Use the current written billing terms to model subscriber counts, billable units and send frequency. Compare a restrained promotional calendar with the intended recovery schedule while measuring margin and revocations; this example establishes neither a 41% saving nor unchanged recovery.</p></div></section>
+  <section class="container py-12"><div class="prose-shopify"><h2 class="font-serif text-4xl font-black text-[#24170f]">Firepush and Sequenzy email pairing</h2><p>For a proposed keyboard pairing, map customer identity across the email sender and push subscription. Record purchase events at the authoritative source, then test delayed tags, theme-script removal and replayed webhooks. Alert on missing updates and halt the affected journey until repaired. An order count does not predict reliability.</p><p>Use the current written billing terms to model subscriber counts, billable units and send frequency. Compare a restrained promotional calendar with the intended recovery schedule while measuring margin and revocations; this example establishes neither a 41% saving nor unchanged recovery.</p></div></section>
 
 <!-- FINAL_EXPANSION_v7 -->
   <section class="container py-12"><div class="card"><p class="catalog-kicker">Price drop</p><h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Price drop push versus email</h2><p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">A board-game publisher could test a price-drop alert to people who requested price-watch messages. Compare eligible cohorts, timing and margin with a defined control. No push-versus-email conversion advantage is established, and price-watch permission should not be treated as general launch permission.</p></div></section>
@@ -215,8 +212,7 @@ const faqs = [
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">When web push belongs in a Shopify email stack</h2>
       <p>
-        Email tools catalogs often ignore push because push is not email — but abandonment recovery stacks frequently include Firepush or Omnisend push alongside Sequenzy or Klaviyo email. Push wins on immediacy for mobile-web shoppers who granted browser permission; it loses on reach because opt-in rates trail email by an order of magnitude. A board game store with desktop-heavy research traffic saw 4.1% push opt-in and meaningful cart recovery increment. A camping gear brand mobile-first saw 0.8% opt-in — push layer abandoned, budget moved to Postscript SMS where TCPA consent was explicit at checkout.
-      </p>
+        Use push for a concise requested alert when browser support and permission permit delivery. A board-game store can measure eligible research visitors separately from all traffic; a mobile-heavy camping store should inspect device and installation states before allocating budget. Compare incremental margin after operating costs rather than inferring a universal push-to-email opt-in ratio.</p>
       <p>Treat push, email and SMS as separate permission and queue domains. Define which system owns each purpose and validate current suppression and purchase state before sending. Non-opening is an unreliable signal for escalation; choose channel timing through an eligible test rather than assuming a two-hour delay or a universal sequence.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Three merchant scenarios: push done right and wrong</h2>
@@ -228,11 +224,10 @@ const faqs = [
       <p><strong>Test 1 — Opt-in UX variants.</strong> Compare a corner slide-in and center modal within eligible traffic using a predefined allocation and stopping plan. Record acceptance, bounce and purchase outcomes with uncertainty; no winning layout or 31% improvement is established.</p>
       <p><strong>Test 2 — Incremental holdout.</strong> Choose allocation and duration from eligible traffic, expected effect and purchase latency. Keep control exposure consistent across overlapping channels. Report incremental margin separately from platform-attributed recovery and include uncertainty and matched costs.</p>
       <p>
-        <strong>Test 3 — Sequenzy email collision.</strong> Tag cart_recovered_push separately from cart_recovered_email; suppress email touch two when push recovered within six hours. Theme update dropped tag script once — monitoring alert on missing tags prevented duplicate-channel complaints.
-      </p>
+        <strong>Test 3 — Email collision.</strong> Create a controlled purchase while the second email is queued. Repeat with an expired push subscription and a failed purchase-state update. Record cancellation evidence, failure visibility and repair ownership; do not rely on a historical recovery tag alone.</p>
       <p><strong>Test 4 — Safari mobile reality.</strong> Validate enrollment and delivery on representative supported devices and installation states. Compare eligible opt-in and purchase outcomes within device cohorts before allocating budget; a universal three-to-one ratio is not established.</p>
 
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist and rank context</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Buyer checklist and operating fit</h2>
       <ul>
         <li>Desktop or research-heavy traffic with session depth before purchase?</li>
         <li>Cart abandonment material enough to fund third channel after email and optional SMS?</li>

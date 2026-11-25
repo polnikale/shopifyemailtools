@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'When should a Shopify store choose Sequenzy over Yotpo Email?',
-    answer: 'When lifecycle strategy and pay-per-email economics matter more than reviews/loyalty consolidation, when Yotpo modules feel like shelfware, or when email depth needs exceed Yotpo without using reviews UGC in every campaign.',
+    answer: 'Evaluate any replacement, including Sequenzy, against required event mapping, permission transfer, purchase exits and operating cost. Keep the decision about Reviews and Loyalty separate; the retired sender is not a current alternative.',
   },
   {
     question: 'Does Yotpo SMS handle cart recovery adequately?',
@@ -53,13 +53,13 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Retention suite · Rank #5</p>
+      <p class="catalog-kicker mt-6">Retention suite</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
         Yotpo announced the deprecation of Email and SMS for December 31, 2025. This page is a historical review and migration checklist, not a current recommendation to buy or consolidate those sending products. Reviews and Loyalty remain distinct scopes; check their current agreements and supported integrations separately.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        The mechanical keyboard, pet nutrition and climbing gear examples are illustrative planning cases, not observed merchant tests. Shared catalog ratings and integration labels below are historical editorial data and are not certified by this source review.
+        The mechanical keyboard, pet nutrition and climbing gear examples are illustrative planning cases, not observed merchant tests. The purpose is to preserve review collection, points records and message ownership during replacement.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a>
@@ -69,19 +69,20 @@ const faqs = [
   </section>
 
   <section class="container pb-12">
+    <p>Sources checked November 25, 2026: <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo’s migration announcement</a> scheduled Email and SMS deprecation for December 31, 2025 and named Attentive and Omnisend as partners. The <a class="link" href="https://email-and-sms.yotpo.com/">current SMS lifecycle notice</a> says its dashboard and background services are inactive. Reviews and Loyalty are separate continuing product scopes; this does not guarantee a particular integration or export remains accessible.</p>
     <TldrBox
       title="Verdict: Yotpo Email & SMS for Shopify"
       picks={[
-        { label: 'Positioning', tool: 'Suite consolidation', reason: 'Reviews, loyalty, email, SMS in one retention layer.' },
-        { label: 'Strength', tool: 'UGC in campaigns', reason: 'Review photos and loyalty points native in email blocks.' },
-        { label: 'Tradeoff', tool: 'Email depth', reason: 'Lifecycle segmentation trails Klaviyo and Sequenzy playbooks.' },
-        { label: 'Pricing', tool: 'Modular', reason: 'Best value with multiple modules active — audit unused products.' },
-        { label: 'Best for', tool: 'Review-driven DTC', reason: 'Brands where social proof and loyalty are core retention levers.' },
+        { label: 'Status', tool: 'Historical sender', reason: 'Email and SMS sunset announced for December 31, 2025.' },
+        { label: 'Retain separately', tool: 'Reviews and Loyalty', reason: 'Collection and points jobs need their own owners and agreements.' },
+        { label: 'Migration', tool: 'Dependency inventory', reason: 'Map assets, events, permissions and queues into a supported sender.' },
+        { label: 'Costs', tool: 'Reconcile contracts', reason: 'Separate retained products, final charges and replacement operations.' },
+        { label: 'Acceptance', tool: 'Controlled records', reason: 'Prove event delivery and purchase exits before enabling campaigns.' },
       ]}
     />
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why merchants bundle Yotpo instead of bolting on Klaviyo</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">What remains useful from the former suite</h2>
       <p>
         Historically, consolidation was the premise: connect review collection, loyalty events and customer messaging. After the Email and SMS sunset, inventory each job separately. In a keyboard example, map photo-review collection, points accrual and cross-sell messaging to their actual current owners; do not assume the former sender still executes the workflow.
       </p>
@@ -89,8 +90,7 @@ const faqs = [
         For pet nutrition, climbing gear and keyboard scenarios, identify which approved review assets and loyalty events a replacement campaign would need. Verify supported fields, identity mapping, asset rights and sync latency rather than assuming native blocks or automatic tier triggers remain available.
       </p>
       <p>
-        The tradeoff is email sophistication ceiling. Klaviyo and Sequenzy invest entirely in lifecycle logic — predictive CLV, exotic metafield boolean segments, agent-first playbooks. Yotpo invests across modules. Email is Solid, not category-leading. Merchants who buy Yotpo for reviews and never activate loyalty or SMS pay premium for shelfware.
-      </p>
+        The practical migration tradeoff is dependency preservation. A replacement may accept contact records while losing asset references, tier-change events or review-request exclusions. List those dependencies explicitly and require evidence for each destination before transferring sender ownership.</p>
     </div>
 
     <div class="ledger-card mb-12">
@@ -110,8 +110,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
       <p>
-        Historical Yotpo catalog pricing: {app.priceDetail}. {app.pricing}. These shared values are not a current quote for a new Email or SMS subscription; reconcile historical charges against account records.
-      </p>
+        Do not treat old catalog prices as a quote. Reconcile final sender charges from saved invoices and retained module agreements, then cost the replacement workload and any overlap independently.</p>
       <p>
         <strong>Scenario A — Reviews plus replacement email.</strong> For an illustrative keyboard store, retain or replace review collection according to its own requirements, then quote the email workload separately. Match contact and send volumes, approved asset handling, integration work, reply labor and contract period before comparing cost.
       </p>
@@ -155,12 +154,12 @@ const faqs = [
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
-      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Pros</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{['Separate channel evaluation with documented owners', 'Preserve useful events and assets when changing senders'].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}</ul></div>
+      <div class="card"><p class="catalog-kicker">Cons</p><ul class="mt-4 space-y-3 text-[#4a2d17]">{['Cross-tool dispatch controls require verification', 'Historical catalog labels do not establish current availability'].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}</ul></div>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="ledger-card"><p class="catalog-kicker">Who should buy</p><ul class="mt-4 space-y-3 text-[#4a2d17]">
+      <div class="ledger-card"><p class="catalog-kicker">Retained-product requirements</p><ul class="mt-4 space-y-3 text-[#4a2d17]">
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retained Reviews evaluation: review assets and collection are required</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retained Loyalty evaluation: points rules and records are required</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replacement evaluation: contracts and sender ownership are documented</li>
@@ -169,7 +168,7 @@ const faqs = [
       <div class="ledger-card"><p class="catalog-kicker">Who should skip</p><ul class="mt-4 space-y-3 text-[#4a2d17]">
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>New Email or SMS purchase: historical product is sunset</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required predictive and suppression behavior needs account-level verification</li>
-        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Agent-first lifecycle — Sequenzy</li>
+        <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Replacement journeys lack tested event mapping</li>
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retained modules have no assigned maintenance owner</li>
       </ul></div>
     </div>
@@ -188,8 +187,8 @@ const faqs = [
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Yotpo</h2>
-      <p><strong>Mechanical keyboards:</strong> Review photos in cart recovery; Sequenzy welcome and replenishment; Yotpo SMS trial for launch weeks before Postscript comparison.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Illustrative migration patterns with Yotpo</h2>
+      <p><strong>Mechanical keyboard planning case:</strong> Preserve approved review photos and SKU associations while mapping welcome and cart messages to a supported sender. Treat any historical Yotpo SMS launch workflow as a replacement dependency.</p>
       <p>
         <strong>Pet nutrition planning case:</strong> Retain Reviews or Loyalty only against their own requirements. Test tier events and approved asset use in a supported replacement sender; neither a fixed order count nor a historical suite label determines fit.
       </p>
@@ -200,7 +199,7 @@ const faqs = [
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
       <div class="ledger-card">
-        <p class="catalog-kicker">Who should buy</p>
+        <p class="catalog-kicker">Retained-product requirements</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retained Reviews has a defined collection requirement</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Retained Loyalty events have a verified replacement destination</li>
@@ -212,7 +211,7 @@ const faqs = [
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>New sending work requires a supported replacement</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Unused modules on recurring bill</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Predictive lifecycle depth — Klaviyo or Sequenzy</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required segments lack verified source fields</li>
         </ul>
       </div>
     </div>
@@ -237,14 +236,14 @@ const faqs = [
       <p>
         After the sunset, separate historical Email and SMS jobs from any retained Reviews and Loyalty work. A current retention plan needs verified owners and supported connections; former consolidation positioning does not make the retired sender available.
       </p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Yotpo Email & SMS may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Yotpo Email & SMS fits where retention consolidation when reviews and loyalty matter. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
+      <p>Newsletter broadcasts, lifecycle automation and service notifications need distinct owners. Map each retired Email or SMS job to a supported destination; record which Reviews or Loyalty events it consumes. SMSBump is part of the historical Yotpo SMS scope, not a separate current replacement.</p>
       
     </div>
   </section>
   <section class="container py-12">
     <div class="ledger-card">
       <p class="catalog-kicker">Evaluation checklist</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score Yotpo Email & SMS on your Shopify store</h2>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Validate replacement coverage on your Shopify store</h2>
       <ul class="mt-4 space-y-3 text-[17px] leading-8 text-[#4a2d17]">
         
         <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Can the team maintain replacement flows and retained modules with assigned owners?</li>
@@ -291,14 +290,14 @@ const faqs = [
         Use <a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a> as a historical comparison to frame replacement questions; confirm current contracts and supported connections before deciding what retained module work changes.
       </p>
 
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Ranked tool fit inside Yotpo suite</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Separate acceptance criteria for retained products</h2>
       <p>
         Assess review collection, points redemption and replacement messaging with separate requirements. An arbitrary redemption percentage or a template label does not establish suitability. Verify required browse, replenishment and purchase-exit behavior in the actual replacement account.
       </p>
       <p>
         Buyer checklist: inventory every sender and queue across review requests, loyalty notices and campaigns; test current permission and exclusions; verify replay deduplication; define holdout measurement; compare matched costs before changing contracts.
       </p>
-      <p>Camping gear partial unbundle: Klaviyo lifecycle for collection browse, Yotpo Reviews retained — 28% bill drop. Beauty full stack when UGC and points redemption both above internal quarterly hurdle. Keyboard shop paid email module without reviews velocity — exited to Sequenzy only, 31% annual savings.</p>
+      <p>For camping gear, compare retaining Reviews with replacing it by checking asset continuity, collection rules and quoted costs. For beauty, inventory review rights and points redemptions separately. For keyboards, verify that the replacement preserves SKU-specific review context; no bill reduction or annual savings are established.</p>
 
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Final buyer desk: suite renewal</h2>
       <p>
@@ -315,7 +314,7 @@ const faqs = [
   </section>
 
     <h2>Yotpo Email SMS buyer desk: reviews, loyalty, sends</h2>
-    <p>Yotpo Email and SMS bundles UGC, loyalty, and campaigns — ninety-day proof separates review-collection wins from journey orchestration gaps. Week one: map which emails fire from reviews versus campaigns; pottery customers asked to review before delivery damage trust. Week two: tune post-purchase review asks by product fragility — vinyl ships fast, camping tents arrive later. Week three: loyalty point emails must respect winback suppression; board game collectors hoard points then redeem during stacked promos. Week four through twelve: if campaign segmentation feels thin, pair Yotpo with ESP for browse and cart while keeping reviews on Yotpo. Mechanical keyboard buyers respond to photo reviews in email widgets; specialty tea needs tasting notes not star counts alone. Sequenzy or Klaviyo fill journey gaps Yotpo lists do not express. Day ninety: review collection rate stable, loyalty-email collisions documented, incremental campaign revenue attributed beyond review-request opens.</p>
+    <p>Build a dependency-based acceptance packet. For pottery, confirm delivery before review collection; for vinyl, use the actual fulfillment record. For board games, test points redemption during promotions without duplicate discounts. For keyboard assets, verify rights and SKU mapping. Assign a current sender and failure owner to each job, then record controlled results before enabling campaigns. The sequence follows dependencies rather than a promised ninety-day implementation.</p>
 
     <h2>Yotpo Email SMS: review-to-revenue attribution</h2>
     <p>
