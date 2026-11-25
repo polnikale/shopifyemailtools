@@ -1,7 +1,7 @@
 /** Editorial acceptance fixtures, not performed merchant tests. */
 export type WelcomeAudience = 'small Shopify stores' | 'DTC brands' | 'fashion stores' | 'beauty stores' | 'food and beverage stores' | 'subscription brands' | 'Shopify Plus merchants' | 'international merchants' | 'new Shopify stores' | 'high-volume stores';
 /** Explicit editorial contracts; remaining goals retain their existing renderer. */
-export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps';
+export type EditorialGoal = 'welcome email apps' | 'abandoned cart apps' | 'post-purchase email apps';
 export type GoalEditorial = {
   audience: WelcomeAudience; goal: EditorialGoal; question: string; entry: string;
   fields: string; guard: string; purchaseExit: string; retry: string;
@@ -412,5 +412,208 @@ export const cartEditorial: Record<string, CartEditorial> = {
     "nativeRationale": "Consider Shopify Messaging: a bounded native recovery path remains useful if operations demonstrates burst handling and owned exceptions. This is our proposed operating design, conditional on the account demonstration.",
     "profileRationale": "Consider Klaviyo: distinct cart/checkout triggers provide explicit transition points for a maintained ingest contract. This rationale requires maintained fields and verified transitions in the offered account.",
     "acceptance": "Replay duplicate events after purchase, lose an acknowledgement and promote cart to checkout across workers. Accept only with no stale reopening, one intended dispatch and an actionable pause trace."
+  }
+};
+export type PostPurchaseEditorial = GoalEditorial & { goal: 'post-purchase email apps' };
+export const postPurchaseEditorial: Record<string, PostPurchaseEditorial> = {
+  "best-shopify-post-purchase-email-apps-for-small-shopify-stores": {
+    "audience": "small Shopify stores",
+    "goal": "post-purchase email apps",
+    "question": "Can the owner send a useful thank-you without duplicating the receipt?",
+    "entry": "Paid first order awaiting fulfillment",
+    "fields": "order ID, paid timestamp, first-order count, sender owner, service hold",
+    "guard": "Send one approved thank-you without claiming delivery",
+    "purchaseExit": "A second paid order retires first-order copy; cancellation or refund holds promotion",
+    "retry": "Replay the order-purpose key; uncertain acknowledgement goes to the owner",
+    "failure": "The native receipt and two apps all send the same sales offer",
+    "edges": [
+      "An unpaid order is not a paid first purchase",
+      "Owner absence transfers queued exceptions to the backup"
+    ],
+    "denominator": "Unique eligible first-order buyers assigned at payment",
+    "handover": "Owner maintains sender inventory; backup handles exceptions",
+    "nativeRationale": "Consider Shopify Messaging: a native first-purchase thank-you keeps a small sender inventory inspectable. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: Placed Order entry and first-versus-repeat splits suit an owner already maintaining customer history. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Replay payment twice and place a second order before dispatch; accept one intended thank-you and current purchase wording."
+  },
+  "best-shopify-post-purchase-email-apps-for-dtc-brands": {
+    "audience": "DTC brands",
+    "goal": "post-purchase email apps",
+    "question": "Can product onboarding protect the original acquisition promise?",
+    "entry": "Paid campaign order entering product onboarding",
+    "fields": "order ID, campaign promise, purchased SKU, offer version, margin band, refund state",
+    "guard": "Teach the purchased product before any approved complementary offer",
+    "purchaseExit": "A repeat purchase removes already-owned recommendations; refund holds the affected product branch",
+    "retry": "Refresh purchased items and offer version; expired approvals require growth signoff",
+    "failure": "A refunded acquisition bundle still receives a cross-sell built on its original margin",
+    "edges": [
+      "A full-price buyer keeps the no-incentive branch",
+      "A partial refund removes only the returned item from education"
+    ],
+    "denominator": "Unique eligible campaign buyers assigned within source and margin band",
+    "handover": "Growth owns promise and offer versions; finance reconciles returns",
+    "nativeRationale": "Consider Shopify Messaging: a narrow thank-you can preserve the acquisition promise without an immediate incentive. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: product-specific order filters provide an explicit starting cohort for maintained SKU education. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Refund one bundle item and buy the suggested accessory before release; accept corrected education and no already-owned upsell."
+  },
+  "best-shopify-post-purchase-email-apps-for-fashion-stores": {
+    "audience": "fashion stores",
+    "goal": "post-purchase email apps",
+    "question": "Does care guidance describe the size and fabric actually retained?",
+    "entry": "Paid apparel order with line-level fulfillment pending",
+    "fields": "order ID, line ID, size, fabric, care version, exchange ID, delivered evidence",
+    "guard": "Release wear-and-care content only for the delivered retained item",
+    "purchaseExit": "A new order updates ownership; exchange or refund invalidates old size-specific follow-up",
+    "retry": "Reload exchange mapping before retry; unknown replacement holds care copy",
+    "failure": "An exchanged garment receives instructions for the returned fabric",
+    "edges": [
+      "A split shipment cannot mark all garments received",
+      "A preorder retains its distinct arrival window"
+    ],
+    "denominator": "Unique eligible apparel buyers by original size and fulfillment cohort",
+    "handover": "Merchandiser owns care versions; service owns exchanges",
+    "nativeRationale": "Consider Shopify Messaging: a native thank-you can link to a stable care hub while garment state is reconciled. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: order-product filtering supports separate fabric cohorts when line and exchange mapping is maintained. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Exchange to a different fabric and split the shipment; accept care for the retained delivered item only."
+  },
+  "best-shopify-post-purchase-email-apps-for-beauty-stores": {
+    "audience": "beauty stores",
+    "goal": "post-purchase email apps",
+    "question": "Can purchased-kit education stay aligned with approved instructions?",
+    "entry": "Paid routine-kit order awaiting verified receipt",
+    "fields": "order ID, kit version, instruction approval, substitution, receipt evidence, use-related case",
+    "guard": "Use approved directions for the actual delivered kit; do not infer a diagnosis",
+    "purchaseExit": "Another kit purchase refreshes ownership; a refund or use-related case holds promotional follow-up",
+    "retry": "Changed instructions need educator approval before replay under the same job key",
+    "failure": "A substituted kit receives outdated directions from the original order",
+    "edges": [
+      "Unknown preference asks a question rather than assigning a condition",
+      "A sample purchase cannot inherit full-kit usage claims"
+    ],
+    "denominator": "Unique eligible kit buyers by instruction version at assignment",
+    "handover": "Educator approves directions; service handles use-related replies",
+    "nativeRationale": "Consider Shopify Messaging: a native thank-you can provide an approved instruction link without speculative personalization. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: product-specific entry filters help maintain separate kit-education cohorts. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Substitute the kit and open a use-related case while delayed; accept current approved directions and a promotion hold."
+  },
+  "best-shopify-post-purchase-email-apps-for-food-and-beverage-stores": {
+    "audience": "food and beverage stores",
+    "goal": "post-purchase email apps",
+    "question": "Who should receive gift guidance when buyer and recipient differ?",
+    "entry": "Paid gift order with destination and dispatch promise",
+    "fields": "order ID, buyer permission, gift flag, pack, recipient role, dispatch cutoff, delivery exception",
+    "guard": "Keep buyer promotion separate from recipient delivery information; use current fulfillment evidence",
+    "purchaseExit": "A repeat gift order remains a separate occasion; refund or delivery exception holds celebratory offers",
+    "retry": "Recompute delivery context after delay; missed occasion goes to service rather than urgency",
+    "failure": "A buyer receives an invitation to consume a gift that has not reached its recipient",
+    "edges": [
+      "A chilled-shipping exception requires fulfillment review",
+      "Recipient contact details do not enroll that person in marketing"
+    ],
+    "denominator": "Unique eligible gift buyers by destination and occasion at assignment",
+    "handover": "Fulfillment owns exceptions; service handles missed occasions",
+    "nativeRationale": "Consider Shopify Messaging: a native thank-you gives the buyer a clear order follow-up while delivery stays separately owned. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: order filters offer a basis for gift versus self-purchase paths with maintained gift fields. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Delay a perishable shipment past the occasion and change recipient contact; accept buyer-only promotion and an owned service handoff."
+  },
+  "best-shopify-post-purchase-email-apps-for-subscription-brands": {
+    "audience": "subscription brands",
+    "goal": "post-purchase email apps",
+    "question": "Can initial plan education remain distinct from renewal service?",
+    "entry": "Paid initial subscription order, excluding renewal events",
+    "fields": "order ID, subscription ID, selling plan, initial/renewal flag, pause/skip state, state timestamp",
+    "guard": "Refresh portal state before onboarding; do not treat a renewal as a new member",
+    "purchaseExit": "Another purchase updates the plan context; refund, cancellation or pause holds acquisition-style upsell",
+    "retry": "Unavailable portal state holds retry until subscription operations reconciles clocks",
+    "failure": "A skipped renewal starts a fresh welcome-to-the-plan promotion",
+    "edges": [
+      "A one-time add-on keeps its separate usage instructions",
+      "A changed delivery interval invalidates the old consumption calendar"
+    ],
+    "denominator": "Unique eligible initial-plan buyers excluding renewal events at assignment",
+    "handover": "Subscription operations owns portal mapping; service owns billing notices",
+    "nativeRationale": "Consider Shopify Messaging: a bounded first-purchase thank-you can keep initial plan explanation separate from required billing. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: first-versus-repeat order splits are a starting point when operations supplies the true initial-plan flag. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Replay renewal, skip and interval change alongside an initial order; accept only the initial onboarding with refreshed plan context."
+  },
+  "best-shopify-post-purchase-email-apps-for-shopify-plus-merchants": {
+    "audience": "Shopify Plus merchants",
+    "goal": "post-purchase email apps",
+    "question": "Which storefront owns education for a shared customer order?",
+    "entry": "Paid store-local order with regional approval",
+    "fields": "store ID, order ID, identity version, region, approval version, fulfillment owner",
+    "guard": "Require store-scoped order keys and valid regional approval",
+    "purchaseExit": "A linked-store purchase reconciles overlapping offers; refund or approval withdrawal holds queued promotion",
+    "retry": "Revoked approval cannot be replayed; unresolved identity mapping waits for platform review",
+    "failure": "Two regional teams send conflicting instructions for one transferred order",
+    "edges": [
+      "Identical order numbers in two stores must not collide",
+      "An identity merge preserves store-specific permissions"
+    ],
+    "denominator": "Unique eligible buyers within store and region with declared cross-store deduplication",
+    "handover": "Regional approver owns copy; platform operations owns identity and queue inventory",
+    "nativeRationale": "Consider Shopify Messaging: store-local native thank-you ownership can make regional accountability visible. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: order-trigger filters provide cohort boundaries when store and approval fields are maintained. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Revoke approval, collide order numbers and transfer fulfillment; accept one accountable instruction owner and no revoked template."
+  },
+  "best-shopify-post-purchase-email-apps-for-international-merchants": {
+    "audience": "international merchants",
+    "goal": "post-purchase email apps",
+    "question": "Will delivered-product guidance preserve the order language and market?",
+    "entry": "Paid localized order with fulfillment and locale evidence",
+    "fields": "order ID, market, currency, declared locale, timezone evidence, delivery state, copy version",
+    "guard": "Use approved current-language guidance and distinguish shipped from received",
+    "purchaseExit": "A cross-currency repeat order updates ownership; refund or market restriction holds recommendations",
+    "retry": "A locale change invalidates queued translations; unknown timezone uses approved hold handling",
+    "failure": "A delayed translated guide links to an accessory unavailable in the delivery market",
+    "edges": [
+      "Travel IP must not replace declared order market",
+      "A customs delay prevents received-product wording"
+    ],
+    "denominator": "Unique eligible buyers by declared market and locale at assignment",
+    "handover": "Localization owns approved copy; operations owns market and customs exceptions",
+    "nativeRationale": "Consider Shopify Messaging: a native thank-you is a bounded starting point for a deliberately supported language set. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: order-based entry and maintained profile filters support explicit locale cohorts. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Change locale and delay customs clearance; accept current-language links and no received-product claim before evidence."
+  },
+  "best-shopify-post-purchase-email-apps-for-new-shopify-stores": {
+    "audience": "new Shopify stores",
+    "goal": "post-purchase email apps",
+    "question": "Can the founder trace a real order through education without counting staff fixtures?",
+    "entry": "First live paid order after event signoff",
+    "fields": "live/test flag, order ID, paid event ID, fulfillment timestamp, permission source, support owner",
+    "guard": "Exclude staff fixtures and hold missing order IDs; first message is a useful thank-you",
+    "purchaseExit": "A real repeat purchase ends first-order wording; cancelled or refunded orders leave promotion",
+    "retry": "Replay stable live order ID; conflicting payment and fulfillment timestamps require founder review",
+    "failure": "A staff order is reported as successful customer onboarding",
+    "edges": [
+      "Zero eligible live buyers produces no rate",
+      "Blocked analytics does not erase order or refund state"
+    ],
+    "denominator": "Unique live eligible buyers excluding test and staff orders",
+    "handover": "Founder signs the event trace; support owns real replies",
+    "nativeRationale": "Consider Shopify Messaging: one native thank-you gives the founder a bounded order-to-message trace. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: Placed Order entry is useful if the existing integration demonstrably separates live and test orders. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Trace a staff order, a live refund and a repeated payment event; accept only one live eligible onboarding and no fabricated conversion."
+  },
+  "best-shopify-post-purchase-email-apps-for-high-volume-stores": {
+    "audience": "high-volume stores",
+    "goal": "post-purchase email apps",
+    "question": "Can delayed order events avoid reopening completed education?",
+    "entry": "Paid order event received through maintained ingest",
+    "fields": "event ID, store/order key, line version, fulfillment watermark, consent version, queue age",
+    "guard": "Reject stale versions and check latest fulfillment and permission at dispatch",
+    "purchaseExit": "New purchases update owned products; refund watermarks invalidate affected promotional jobs across workers",
+    "retry": "Lost acknowledgement requires reconciliation; older paid events cannot reopen a refunded order",
+    "failure": "A replayed payment after refund recreates a queued cross-sell",
+    "edges": [
+      "Partial fulfillment across workers keeps line-level ownership",
+      "A backlog beyond instruction validity expires rather than draining stale copy"
+    ],
+    "denominator": "Unique eligible buyers assigned at ingest including later expired jobs",
+    "handover": "Messaging operations owns reconciliation; incident lead owns pause and rollback",
+    "nativeRationale": "Consider Shopify Messaging: a bounded native thank-you remains useful if operations demonstrates representative burst handling. This proposed operating design requires the account exercise below.",
+    "profileRationale": "Consider Klaviyo: metric entry and send-time profile filters provide checkpoints for a maintained state contract. These documented building blocks require verified field mapping in the account.",
+    "acceptance": "Replay old payment after refund, lose an acknowledgement and split fulfillment across workers; accept no reopened promotion and an inspectable pause trace."
   }
 };
