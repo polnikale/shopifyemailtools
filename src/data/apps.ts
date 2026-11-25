@@ -642,36 +642,36 @@ export const APPS: ShopifyApp[] = [
   {
     "slug": "firepush",
     "name": "Firepush",
-    "category": "Push and mobile messaging evaluation",
-    "bestFor": "Teams evaluating push and mobile notification evaluation",
+    "category": "Web push notifications",
+    "bestFor": "Teams evaluating permission-based browser alerts",
     "pricing": "Check current supplier pricing",
     "priceDetail": "Compare contacts, sends, channel charges, required features, and services",
     "rating": "Not independently rated",
     "shopifyDepth": "Verify required events",
     "automationDepth": "Verify required controls",
-    "tagline": "Push and mobile notification evaluation.",
+    "tagline": "Web push notifications; email and SMS are no longer offered.",
     "strengths": [
-      "Evaluation focus: push and mobile notification evaluation",
-      "Proposed acceptance case: Confirm current channels first; demonstrate a variant restock with opt-out and a second stockout before dispatch. Do not assume email is included."
+      "Web push is the current supplier-described channel",
+      "Proposed acceptance case: demonstrate a variant restock with current browser permission, purchase exit and a second stockout before dispatch."
     ],
     "limits": [
-      "Confirm current plan, integration and channel availability with the supplier",
+      "Firepush no longer offers email or SMS campaigns",
+      "Confirm supported browsers, store events and current pricing with the supplier",
       "No comparative speed, cost or revenue advantage is established by this profile"
     ],
     "features": [
-      "Demonstrate: Web push notifications",
-      "Demonstrate: SMS automations",
-      "Demonstrate: Email campaigns",
-      "Demonstrate: Abandoned cart flows",
-      "Demonstrate: Price drop alerts",
-      "Demonstrate: Back-in-stock push"
+      "Demonstrate: browser permission and revocation",
+      "Demonstrate: web push delivery on supported devices",
+      "Demonstrate: cart purchase exits",
+      "Demonstrate: price-watch and restock eligibility",
+      "Demonstrate: queued notification cancellation"
     ],
     "channels": [
-      "sms",
-      "marketing"
+      "push"
     ],
-    "shopifyFit": "Confirm current channels first; demonstrate a variant restock with opt-out and a second stockout before dispatch. Do not assume email is included. Record the event payload, operator steps and unresolved requirements; this is a proposed evaluation, not a performed merchant test."
+    "shopifyFit": "Firepush identifies its current product as web push and states that email and SMS campaigns are no longer offered. Evaluate supported browser reach and required store events; demonstrate restock permission, inventory checks and purchase exits before adopting it. This is a proposed evaluation, not a performed merchant test."
   },
+
   {
     "slug": "smsbump",
     "name": "SMSBump (Yotpo SMS)",

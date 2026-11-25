@@ -14,7 +14,7 @@ const desc = description(site, 'apps/firepush');
 const faqs = [
   {
     question: 'Is Firepush a full Shopify email marketing platform?',
-    answer: 'The Shopify listing describes SMS and web push, including recovery and notification workflows. It does not establish current email availability. Evaluate required email journeys separately from the push layer.',
+    answer: 'No. Firepush’s current vendor notice identifies it as a web-push app and says email and SMS campaigns are no longer offered. Evaluate required email journeys through a separate current sender.',
   },
   {
     question: 'Does web push work for Shopify cart recovery?',
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'Can Firepush replace Postscript?',
-    answer: 'Evaluate your required SMS workflows, permission records, replies, suppression and support against current supplier documentation and a written quote. An order threshold does not establish suitability or certify compliance; test the exact intended setup.',
+    answer: 'Not for SMS sending: Firepush no longer offers SMS campaigns. Web push is a separate channel with its own browser permission and reach. If replacing an SMS workflow, assess a current SMS sender rather than treating browser subscriptions as phone-marketing permission.',
   },
   {
     question: 'How coordinate Firepush with Klaviyo or Sequenzy?',
@@ -60,7 +60,7 @@ const faqs = [
       <p class="catalog-kicker mt-6">Push + recovery</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Firepush’s Shopify listing describes SMS and web push for cart recovery, price alerts, restock and promotional notifications. These can serve a short, purpose-specific alert alongside an email program. The useful buying question is whether eligible reach and incremental contribution justify another sender, permission store and queue. Current email capability and comparative entry costs are not established here.
+        Firepush’s current vendor notice identifies it as a web-push app and says email and SMS campaigns are no longer offered. Evaluate a short, purpose-specific browser alert alongside your existing email program. The useful buying question is whether supported, permissioned browser reach and incremental contribution justify another sender and queue; comparative entry costs are not established here.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">The examples below propose evaluations for a desktop-heavy board-game shop, a limited-pressing vinyl store and a mechanical keyboard startup. They are not observed tests: no recovery lift, opt-in change or order threshold is established. Compare added channel value with permission, maintenance and total cost requirements before adopting the layer.</p>
       <div class="mt-9 flex flex-wrap gap-3">
@@ -72,11 +72,11 @@ const faqs = [
   </section>
 
   <section class="container pb-12">
-    <p>Scope checked November 25, 2026: the <a class="link" href="https://apps.shopify.com/firepush">Firepush Shopify listing</a> describes SMS, web push, cart recovery, price alerts and restock notifications. This is supplier-described scope, not a performance test or a quote.</p>
+    <p>Scope checked November 25, 2026: <a class="link" href="https://getfirepush.com/blog/targeted-email-marketing/">Firepush’s current notice</a> says the product is web push and no longer offers email or SMS campaigns. Its November 18 article update is not a documented channel-shutdown date. This current notice takes precedence over older listing descriptions; it is not a merchant performance test or a quote.</p>
     <TldrBox
       title="Verdict: Firepush for Shopify"
       picks={[
-        { label: 'Channels', tool: 'Verify channels', reason: 'Listing describes SMS and web push; email capability needs confirmation.' },
+        { label: 'Channels', tool: 'Web push', reason: 'Current vendor notice: no email or SMS campaigns. Verify supported browsers and required events.' },
         { label: 'Pricing', tool: 'Current quote', reason: 'Confirm billable units, included usage and operating costs.' },
         { label: 'Strength', tool: 'Back-in-stock push', reason: 'A short alert for a requested limited-SKU restock — verify inventory before dispatch.' },
         { label: 'Tradeoff', tool: 'Segmentation', reason: 'Verify cross-sender purchase exits and queue cancellation in the intended setup.' },
@@ -94,9 +94,9 @@ const faqs = [
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Shopify integration depth and gaps</h2>
-      <p>The current Firepush Shopify listing describes SMS and web push. It does not settle whether email is supported through another route. Confirm the exact recovery, browse, price-drop and restock events available in the intended installation before designing flows; email capability remains unverified here.</p>
+      <p>The current vendor notice establishes web push rather than email or SMS campaign sending. Confirm the exact recovery, browse, price-watch and restock events available in the intended installation before designing notification flows. An event checklist is a proposed test, not a guarantee that every trigger is included.</p>
       <p><strong>Evaluate:</strong> Cart recovery and limited-restock alerts where the required events and permissions are available. Obtain a current quote and validate setup effort rather than assuming low-volume billing or a sales-free installation.</p>
-      <p><strong>Friction to test:</strong> Check suppression and purchase updates across Firepush and the external ESP, including queued messages. A historical purchase tag is not a current eligibility check. Confirm segmentation and email capability instead of assuming either support or absence.</p>
+      <p><strong>Friction to test:</strong> Check suppression and purchase updates across Firepush and the external ESP, including queued messages. A historical purchase tag is not a current eligibility check. Confirm required segmentation and browser-notification controls; keep email and SMS jobs with their separately chosen current senders.</p>
     </div>
 
     <div class="prose-shopify mb-12">
@@ -120,7 +120,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Lifecycle, newsletters, and when to graduate</h2>
       <p>
-        Keep welcome, replenishment and winback requirements in a separate email inventory until current email support is confirmed. For drop announcements, define audience overlap and which channel owns the first alert. A six-hour gap does not prevent a duplicate offer or an ineligible send.</p>
+        Keep welcome, replenishment and winback email requirements with a current email sender; Firepush no longer offers email campaigns. For drop announcements, define audience overlap and which channel owns the first alert. A six-hour gap does not prevent a duplicate offer or an ineligible send.</p>
       <p>Shipping updates and promotional recovery have different purposes. Assign an owner to each message and define cross-channel priority for delivery delays. A service update does not establish marketing permission; verify current channel eligibility and cancel conflicting queued promotions where the systems permit it.</p>
       <p>Evaluate alternatives when required channels, reporting or suppression cannot be maintained reliably within your staffing budget. Record actual coordination time and required fields; neither four weekly hours nor an order count establishes a universal migration threshold or compliance guarantee.</p>
     </div>
@@ -160,7 +160,7 @@ const faqs = [
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Desktop-heavy traffic with repeat visitors</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Limited-run restock urgency where push speed matters</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Budget covers a current matched quote and controlled channel evaluation</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Already on Sequenzy or Omnisend email needing push layer</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Existing email setup leaves a distinct browser-alert requirement</li>
         </ul>
       </div>
       <div class="ledger-card">
@@ -168,7 +168,7 @@ const faqs = [
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required browser or installation states do not support the planned reach</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need one validated owner for the required lifecycle channels</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need SMS reply or escalation workflows absent from the validated setup</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need SMS sending, replies or escalation as a required channel</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Required suppression exceeds the validated integration or staffing capacity</li>
         </ul>
       </div>
