@@ -75,12 +75,15 @@ const faqs = [
     <table class="data-table"><thead><tr><th>Supplier</th><th>Evaluation focus</th><th>Cost</th></tr></thead>
     <tbody>{activeApps.map(app => <tr><td><a class="link" href={`/apps/${app.slug}`}>{app.name}</a></td><td>{app.tagline}</td><td>{app.pricing}</td></tr>)}</tbody></table>
   </div></section>
-  <section class="container pb-12 space-y-8">
+  <section class="container pb-12">
+  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate. Obtain comparable normal-month and peak-month quotes, including services and operator work. Choose an observation window from the buying cycle and report net contribution after returns, discounts and fees separately from platform-attributed revenue.</p>
+</section>
+<section class="container pb-12 space-y-8">
     {activeApps.map(app => <ToolReview app={app} rank={0} paragraphs={[
       app.shopifyFit,
       `Proposed acceptance case: ${pilots[app.slug]}`,
       `Record the source event, profile identifier, channel permission, required fields, delay and cancellation behavior. Ask the supplier to demonstrate missing data, duplicate delivery and a state change while a message is queued. Feature demonstrations below are procurement questions rather than certified entitlements.`,
-      `Cost review: ${app.priceDetail}. Obtain comparable normal-month and peak-month quotes, including services and operator work. Choose an observation window from the buying cycle and report net contribution after returns, discounts and fees separately from platform-attributed revenue.`,
+      `Supplier cost inputs: ${app.priceDetail}.`,
     ]} />)}
   </section>
   <section class="container pb-12"><article class="prose-shopify card">
