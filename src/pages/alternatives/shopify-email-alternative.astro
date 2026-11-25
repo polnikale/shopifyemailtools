@@ -3,115 +3,74 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('shopify-email')!;
 const path = '/alternatives/shopify-email-alternative';
-const title = 'Best Shopify Email Alternatives (2026)';
-const desc = 'Compare alternatives to Shopify Email, now Shopify Messaging, against native workflows, migration requirements, and matched operating costs before changing platforms.';
-
-const altSlugs = ['sequenzy', 'omnisend', 'klaviyo', 'brevo', 'mailchimp', 'privy', 'tinyemail', 'drip'];
-const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
+const title = 'Best Shopify Email Alternatives for Shopify (2026)';
+const desc = 'Compare Shopify Email alternatives through native workflow baseline and incremental migration value, practical workflow checks and matched operating costs.';
 const faqs = [
   {
-    question: 'Why do merchants leave Shopify Email?',
-    answer: 'Consider moving when a documented workflow, reporting, channel, or operating requirement fails in the current native setup. Do not assume native Shopify messaging lacks automation. For a vinyl shop, test VIP access, restock eligibility, purchase exits, and collisions directly. Current native product naming, pricing, and exact workflow availability require official verification before publication.',
+    "question": "Does native Shopify messaging support recovery?",
+    "answer": "Yes. Official documentation lists browse, cart and checkout automations. These are distinct stages; verify available identifiers, channel eligibility, purchase exits and reporting in the store. Native automation is not limited to manual broadcasts."
   },
   {
-    question: 'Is Shopify Email free enough to stay?',
-    answer: 'Ten thousand free emails monthly covers launch-phase newsletters for a pottery studio or board-game preorder updates. Once abandoned checkout value exceeds one recovered order weekly, the opportunity cost of missing cart automation dwarfs the subscription you would pay Sequenzy or Omnisend. Free is not free when recovery revenue sits on the table.',
+    "question": "What is the native email allowance?",
+    "answer": "On supported Basic, Grow, Advanced and Plus plans, Shopify documents 10,000 free emails per calendar month. Ordinary email automations count toward the allowance; abandoned-checkout emails are free and excluded. Additional email rates are volume based. Verify current billing and other-channel charges separately."
   },
   {
-    question: 'What is the best first upgrade from Shopify Email?',
-    answer: 'Sequenzy when lifecycle strategy and pay-per-email economics are the goal — describe welcome-through-winback outcomes in plain language. Omnisend when you need cart recovery live before next weekend\'s climbing-gear rack sale. Both connect to Shopify without abandoning the ecosystem mindset that made native email attractive.',
+    "question": "Does reporting stop at sends and clicks?",
+    "answer": "No. Shopify provides marketing automation metrics and reports. Reconcile the definitions and attribution window with finance, then test whether they meet the actual reporting requirement. Attributed revenue on either platform does not by itself establish incremental profit."
   },
   {
-    question: 'Can I run Shopify Email alongside another ESP?',
-    answer: 'Coexistence requires a documented division of journeys and sending responsibility. Assign one sender and queue owner to each journey, synchronize purpose-specific and channel-specific permissions and suppressions, check purchase exits at dispatch, and deduplicate repeated events. Test draining or canceling old queues and rollback before switching; a fixed fourteen-day deadline does not establish safe coexistence.',
+    "question": "When is a dedicated platform justified?",
+    "answer": "When a documented requirement remains unmet after configuration review and the replacement demonstrates it within acceptable operating cost and maintenance. Order count, captured contacts, a planning horizon or checkout balance alone does not establish a migration threshold."
   },
   {
-    question: 'How do I migrate subscribers from Shopify Email?',
-    answer: 'Inventory forms, integrations, journeys, sender identities, and queued messages before switching. Preserve permission evidence by purpose and channel, withdrawal and suppression history, and current purchase state. Test mappings, purchase exits, and dispatch eligibility; assign one sender and queue owner per journey, drain or cancel old queued messages, and deduplicate replayed events. Advance by readiness with a rollback plan rather than a fixed overlap period. Verify available exports and number-transfer terms with the providers before depending on them.',
+    "question": "Can the old and new platforms coexist?",
+    "answer": "Yes, with a written division of journeys. Assign one sender and queue owner to each journey. Preserve permission evidence by purpose and channel, withdrawals, suppressions and current purchase state. Stop old entry, drain or cancel pending messages, deduplicate replayed events and test rollback before enabling replacement sends. A fixed overlap period cannot establish readiness."
   },
   {
-    question: 'Does Shopify Email support abandoned cart recovery?',
-    answer: 'Evaluate the current native abandoned-checkout automation and its eligibility rules rather than treating native messaging as broadcasts only. Test the distinction between checkout, cart, and browse events, timing, purchase exits, suppressions, and reporting in the actual account. A proposed mechanical-keyboard group-buy test should include preorder exclusions and repeated events. No universal recovery-rate comparison is established here; current naming and exact feature coverage remain publication holds.',
+    "question": "How should I compare migration cost?",
+    "answer": "Compare the same contacts, sends, channels and required workflows. Include platform fees, add-ons, overages, implementation, support, maintenance and overlapping subscriptions. Separate attributed orders from incremental contribution after discounts and returns; one recovered cart does not establish payback."
   },
   {
-    question: 'When should I stay on Shopify Email?',
-    answer: 'Stay when the native setup meets required journeys, permissions, reporting, reliability, and matched all-in costs. Campaign count, weekly order volume, or a large abandoned-checkout total alone does not establish a migration trigger. Test the required workflow and expected operating burden before adding a platform.',
+    "question": "What should transfer with subscribers?",
+    "answer": "Export field definitions, permission sources and timestamps, withdrawal history, suppressions, journey membership and relevant order state. Verify the actual export and import fields. Quarantine records whose eligibility is unresolved; an importable email address is not evidence of permission for every purpose or channel."
   },
   {
-    question: 'What about order confirmations and shipping updates?',
-    answer: 'Those are operational notifications — Shopify notification settings, AfterShip, or your fulfillment stack — not Shopify Email campaigns. Do not confuse the native campaign tool with transactional post-purchase messaging. Graduation targets marketing lifecycle, not replacing shipping emails.',
-  },
+    "question": "When can the old account be closed?",
+    "answer": "After event mapping, current eligibility checks, purchase exits, queue reconciliation, sender authentication and rollback have passed. Export needed documentation under applicable access and retention terms. Choose an observation period appropriate to the product buying cycle rather than imposing a universal deadline."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
-  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/alternatives">Alternatives</a>
-        <span class="mx-2 text-slate-500">/</span>
-        <span class="text-slate-600">Shopify Email alternatives</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Graduation guide</p>
-        <h1 class="hero-title mt-5">Best Shopify Email alternatives</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Shopify Email, now Shopify Messaging, offers a native starting point for Shopify merchants. Consider a replacement when a tested workflow, reporting need, or operating requirement remains unmet. For a specialty-tea shop, compare reorder reminders using actual consumption-cycle data, current purchase state, and subscription exclusions in both setups. This is a proposed evaluation, not an observed merchant migration.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked tools for stores outgrowing native Shopify Email — newsletters, lifecycle automation, and order-adjacent moments beyond Admin campaigns. Sequenzy leads when strategy matters; Omnisend when speed matters. This is not a knock on Shopify Email; it is the natural second chapter for retention-focused DTC.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          title="Top Shopify Email upgrades"
-          picks={[
-            { label: 'Best overall upgrade', tool: 'Sequenzy', reason: 'Lifecycle playbooks and pay-per-email — the first real retention operating system after native email.' },
-            { label: 'Best fast setup', tool: 'Omnisend', reason: 'Cart and welcome live in days with optional SMS for drop-week urgency.' },
-            { label: 'Best data depth', tool: 'Klaviyo', reason: 'Skip double migration if you know advanced segmentation arrives within twelve months.' },
-            { label: 'Best budget path', tool: 'Brevo', reason: 'Volume pricing with more automation rules than Shopify Email will ship.' },
-            { label: 'Best capture pairing', tool: 'Privy', reason: 'Popups feeding a real ESP — native email never owned full-funnel capture.' },
-          ]}
-        />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why merchants graduate off Shopify Email</h2>
-        <p>
-          Shopify now calls the product Shopify Messaging, formerly Shopify Email. Its current documentation includes marketing automations and customer segments, so a migration decision should not assume native messaging only sends manual campaigns. Inventory the workflows available in the store and test the specific requirement: for a climbing-gear shop, verify how purchase state updates a winback exclusion; for a tea shop, check whether the required consumption-cycle data is available to the chosen workflow. Confirm channel eligibility and current integration behavior before treating an unmet configuration requirement as a product exclusion.
-        </p>
-        <p>
-          An abandoned checkout balance is not guaranteed recoverable revenue. Evaluate the native recovery workflow alongside a proposed replacement using comparable eligible audiences, purchase exits, discount costs, refunds, and reporting windows. A pottery studio can use its actual checkout history to plan that evaluation, but no recovery percentage or merchant revenue result is established here. Separate attributed orders from causal incremental contribution margin, and include messaging, implementation, overlap, and operator costs in the decision.
-        </p>
-        <p>
-          Reporting stops at sends and clicks. Finance asks revenue per automated flow; Shopify Email answers with campaign totals. Graduation triggers when someone builds the first spreadsheet comparing attributed recovery revenue to platform cost — Sequenzy and Omnisend typically pay for themselves within weeks once cart flows go live and test orders pass QA.
-        </p>
-        <p>
-          List growth can change operating costs without proving that a replacement is needed. For a climbing-gear shop, test whether signup source, collection interest, and current marketing eligibility are available to the intended workflow. Compare the same contact population and send volume, including inactive profiles, messaging charges, setup, overlap, and operator time; no list-size threshold establishes the right platform.
-        </p>
-
-        <h2>Newsletters, lifecycle, and transactional moments</h2>
-        <p>
-          Evaluate upgrades on three overlapping jobs: editorial newsletters such as drops and restocks, lifecycle automations such as welcome and winback, and operational notifications such as shipping updates. Native Shopify messaging includes automations, so inventory the actual setup first. A promotional review request and an operational delivery notice can require different permission and sending treatment; do not infer marketing eligibility from an order alone.
-        </p>
-        <p>
-          Before installing an upgrade, inventory the journeys already running, their triggers, current exclusions, and responsible sender. A tea shop can test replenishment against subscription skips and recent purchases. A pottery studio can test workshop-ticket exclusions in a product promotion. Move only when a documented requirement remains unmet after configuration review; abandoned checkout value alone does not establish recoverable margin.
-        </p>
-
-        <h2>Shopify Email graduation checklist</h2>
-        <p>Run this sequence before running parallel campaigns from Admin and a new lifecycle app. Skipping steps causes duplicate sends and attribution gaps finance will notice.</p>
-        <ol>
+<ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+<div class="container py-14 max-w-4xl">
+<nav><a class="link" href="/alternatives">Alternatives</a></nav>
+<h1 class="hero-title mt-5">{title}</h1>
+<TldrBox title="Decision checks" picks={[
+{ label: 'Workflow', tool: 'Current setup first', reason: 'Reproduce the unmet requirement before selecting a replacement.' },
+{ label: 'Migration', tool: 'One queue owner', reason: 'Preserve eligibility, purchase exits and replay deduplication.' },
+{ label: 'Economics', tool: 'Matched workload', reason: 'Compare actual invoices and quotes; measure contribution separately.' },
+]} />
+<section class="prose-shopify mt-12"><h2>Start with the workflow that needs to change</h2><p>Shopify Email is now Shopify Messaging. Native automation is a real baseline, not a missing capability to assume away. Compare a candidate only after checking the store’s current journeys, reporting and data requirements. A tea replenishment policy or vinyl VIP rule needs an executable test in both setups.</p><p>This guide proposes acceptance exercises, not performed merchant tests. Supplier documentation establishes advertised scope; it does not establish launch speed, comparative performance, payback or legal permission for a particular recipient. Alternatives appear as a shortlist, without a score or universal winner.</p></section>
+<section class="prose-shopify mt-12"><h2>Documented scope before comparison</h2><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify Messaging documentation</a> covers native campaigns and automations. Its <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">automation guide</a> distinguishes channel eligibility and directs custom or third-party workflows to Shopify Flow. Default marketing subscription checks and configurable checkout behavior need account review, not assumptions about universal permission.</p><p><a class="link" href="https://www.tinyemail.com/faqs">tinyEmail’s current FAQ</a> advertises Shopify connectivity, automation, unlimited contacts and a Shopify-specific free send allowance. Check eligibility and add-ons rather than carrying forward an old contact-tier estimate or a campaign-only label.</p><p><a class="link" href="https://www.sequenzy.com/features/shopify-integration">Sequenzy’s Shopify page</a> documents customer, order and product sync and cart, post-purchase and winback sequences. Its <a class="link" href="https://www.sequenzy.com/pricing">pricing page</a> describes send-volume billing, unlimited contacts, AI drafting and a visual builder. Test custom consumption data, gift and subscription exclusions; these documents do not prove that a natural-language request produces a validated merchant policy.</p><p><a class="link" href="https://www.drip.com/sms">Drip’s SMS page</a> describes staged access for existing paid US customers with Support All People enabled. It requires an email with a phone record and lists one-way toll-free sending at launch. Check actual access, number arrangements and separate SMS charges before replacing or retaining an SMS specialist.</p></section>
+<section class="prose-shopify mt-12"><h2>Three decisions before adding another sender</h2><p>First, establish the native baseline in the actual store: list active campaigns and automations, their entry events, audience rules, delays, purchase exits and reporting. Reproduce the complaint with a named example. A missing recent-purchase exclusion may be a configuration repair; it is not evidence that native messaging has no recovery capability.</p><p>Second, examine a Flow extension when the missing job is custom logic or a third-party event. Shopify’s linked automation guide explicitly points to Flow for these cases. Draw the trigger, data writer, condition and messaging action; verify available fields and actions in the account. Name an owner for failed runs and late updates. Staying native with an unmaintained connector is not an operational saving.</p><p>Third, write the requirement that still fails: for example, a variant-interest update cannot reach the intended audience before a release, or the team cannot safely maintain a required exception. Give a candidate that exact case. Move only if the demonstrated improvement warrants rebuilding templates, queues and reporting. More orders or a larger contact list is not itself the missing requirement.</p></section>
+<section class="prose-shopify mt-12"><h2>Sequenzy</h2><p>Bring the native coffee journey and the policy it cannot yet express: roast date, gift status, subscription skip and a purchase during the wait. Use Sequenzy’s documented sync and drafting tools to propose the replacement, then have the merchant locate each exception in the reviewed implementation. The useful benefit to establish is a policy the team can edit with less recurring work.</p><p>Compare that work with the native configuration plus any Flow extension, including the source of roast-date data. A generated sequence does not resolve an absent field. Quote the complete send schedule and count review hours before claiming a saving over the native allowance.</p><p><a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy versus native email</a></p></section>
+<section class="prose-shopify mt-12"><h2>Omnisend</h2><p>Use Omnisend as a candidate for a planned change in channel operations. Specify a vinyl release with an email announcement, an optional SMS reminder and a purchase between them. Ask to see the proposed templates, channel permissions and stop conditions, then compare the number of places the operator must edit against the current native arrangement.</p><p>The potential benefit is a simpler release process, but first establish what the offered plan and integrations cover. Include channel charges and capture tools in the quote. If email alone meets the release brief, adding another channel is a separate decision rather than a reason native email has failed.</p><p><a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend versus native email</a></p></section>
+<section class="prose-shopify mt-12"><h2>Klaviyo</h2><p>Make the missing data rule the evaluation brief: an outdoor customer wants a specific variant restock, has returned a related item and buys before the reminder. Show the same records in the native baseline, any proposed Flow path and the Klaviyo demonstration. Ask where interest, stock and return state live and when each refreshes.</p><p>The benefit to establish is reliable audience membership for this rule. Record connector ownership, plan access and the work of changing the rule after handover. Quote the required profiles, sends and channels; a more elaborate segment is useful only if it resolves the documented gap.</p><p><a class="link" href="/compare/klaviyo-vs-shopify-email">Klaviyo versus native email</a></p></section>
+<section class="prose-shopify mt-12"><h2>Brevo</h2><p>Use Brevo for an invoice-and-workload comparison when the complaint is campaign cost or administration. Bring the native monthly bill, eligible recipients and quiet versus peak campaign calendar. Request a quote that includes the Shopify data connection, required automation and any external forms.</p><p>The useful result is a lower total operating burden for the retained work. Rebuild one pottery product-care audience with workshop-only customers excluded and check late purchases before accepting it. Include maintenance and template recreation; a platform quote alone cannot establish savings against native email.</p></section>
+<section class="prose-shopify mt-12"><h2>Mailchimp</h2><p>Evaluate Mailchimp when an incoming operator has an established production process there. Have that operator recreate the native studio-sale campaign, including product links, footer, audience exclusions and approval steps. Document what needs rebuilding and who maintains Shopify data after the handover.</p><p>The possible benefit is continuity of people and process. Compare a routine edit and one exception-handling task with staying in Shopify. Familiarity deserves weight, but it does not establish that the next replenishment or preorder requirement works; include that demonstration and peak sends in the decision.</p></section>
+<section class="prose-shopify mt-12"><h2>Privy</h2><p>If the missing job is capture, trace the board-game waitlist before replacing the sender. Use a signup, duplicate submission, withdrawal and failed handoff to locate the defect in the existing form-to-native path. Ask Privy to demonstrate the repair and identify which messaging jobs the selected plan would own.</p><p>The benefit to establish is dependable signup context and follow-through. Retaining native campaigns may be the smaller change if capture is the only gap. If Privy would also send, require a journey ownership map so a waitlist acknowledgement and a native welcome do not compete. Include both retained tools in the cost.</p></section>
+<section class="prose-shopify mt-12"><h2>tinyEmail</h2><p>Treat tinyEmail as an alternative campaign operating environment, not an inevitable step up from native. Recreate a studio-sale newsletter and the next required follow-up. Compare template editing, segment refresh, purchase exits and reporting reconciliation using the same store records.</p><p>Its documented Shopify offer makes eligibility and send allowances relevant quote inputs. Confirm add-ons and the actual automation requirement before moving; the benefit must be an observable improvement in work or capability, rather than replacing one free allowance with another. Count template transfer and ongoing reconciliation too.</p><p><a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail versus native email</a></p></section>
+<section class="prose-shopify mt-12"><h2>Drip</h2><p>Use Drip when the merchant wants to evaluate explicit workflow ownership outside the native setup. Translate the board-game preorder rule into entry, wait, purchase exit and correction behavior; ask an operator and backup to explain the resulting tags, fields and pending messages.</p><p>The potential benefit is a workflow library the team can inspect and maintain. Compare the same policy edit with the native and Flow version, then include rebuilding, account access and queue handling in the quote. Confirm any SMS requirement separately under the documented access restrictions; do not infer it from email workflow capability.</p></section>
+<section class="prose-shopify mt-12"><h2>Pair-specific trial scenarios</h2></section>
+<section class="prose-shopify mt-12"><h2>Vinyl: VIP early access</h2><p>Proposed exercise: represent limited pressings, VIP eligibility and restock interest in the native setup and a candidate. Test a purchase and unsubscribe during the delay. This is not a nine-day payback story or proof that native segments cannot express VIP access.</p></section>
+<section class="prose-shopify mt-12"><h2>Board games: preorder recovery</h2><p>Test preorder eligibility, variant data, current purchase state and repeated checkout events. Verify waitlist permission continuity and one queue owner. Assess incremental margin separately from attributed recovery; no implementation deadline or recovered amount is reported.</p></section>
+<section class="prose-shopify mt-12"><h2>Coffee: remain native</h2><p>Inventory newsletters and any existing automations before proposing a move. For roast-date replenishment, test actual available fields and subscription exclusions. Remain native if required journeys and economics pass, regardless of how many months the account has been used.</p></section>
+<section class="prose-shopify mt-12"><h2>Pottery: product versus workshop</h2><p>Monthly studio-sale messaging and product-care education have different audiences. Test workshop-only customer exclusions before adding another sender. A strategy reset can stay native; the exercise does not assume a later mandatory move to Sequenzy.</p></section>
+<section class="prose-shopify mt-12"><h2>Outdoor gear: replacement value</h2><p>Use actual collection-interest, recent-purchase and return states to test winback in both configurations. Compare reporting windows, discounts, refunds and maintenance cost. A large abandoned-checkout balance is neither guaranteed recovery nor proof of lost revenue.</p></section>
+<section class="prose-shopify mt-12"><h2>Migration checklist and queue ownership</h2><p>The following migration jobs remain relevant. Adapt their order to dependencies and risk; a fixed launch calendar cannot replace readiness checks.</p></section>
+<ol>
           <li>Inventory permission evidence by purpose and channel, including signup source, withdrawal history, and current suppression; verify export fields before relying on them.</li>
           <li>Estimate eligible abandoned-checkout opportunity using actual history, purchase exits, discounts, refunds, and a comparable measurement window; balance is not guaranteed recovery.</li>
           <li>Connect the proposed platform in a controlled setup and verify catalog, order history, field mapping, and replay behavior before enabling sends.</li>
@@ -124,154 +83,11 @@ const faqs = [
           <li>Assess authentication, reputation, and a sending transition appropriate to the infrastructure change; use the deliverability guide for planning, not a delivery guarantee.</li>
           <li>Test templates, audience membership, dispatch eligibility, event reconciliation, and rollback before the first production newsletter.</li>
           <li>Retire superseded journeys only when readiness checks pass; reconcile queued messages, deduplicate replayed events, and keep rollback ownership documented.</li>
-        </ol>
+        </ol><section class="prose-shopify mt-12"><h2>Keep native and replacement state accountable</h2><p>Make a journey ledger before changing entry points. For each native automation, Flow workflow and external sender, record the triggering event, stable customer and order identifiers, delay, last eligibility check, pending-message location and named operator. Include Shopify notifications separately from marketing; moving a newsletter does not transfer order confirmations or shipping updates.</p><p>For a partial move, leave each journey with one sender. A pottery workshop acknowledgement may stay in its existing system while product-care marketing moves. Disable old entry deliberately, then inspect whether waiting messages should drain or be cancelled. A disabled trigger alone does not prove that no old message remains queued.</p><p>For the coffee case, identify who writes roast date, gift status and subscription skips and how corrections arrive. Exercise a late purchase after scheduling, a refunded order and an unsubscribe before dispatch. Compare the native/Flow and candidate results against the same policy. Retain the field map and failed-run procedure so the next operator can correct the audience without guessing.</p><p>At cutover, reconcile captures that arrived during the change and preserve source, purpose, channel and withdrawal history. Keep rollback instructions for forms, workflow entry and pending queues separately. Reverting the form destination cannot retract a message already handed to a sender.</p></section>
+<section class="prose-shopify mt-12"><h2>Matched billing worksheet</h2><p>Build two quote workloads: a quiet period and a representative peak. Record retained contacts, billable contacts under each supplier’s definition, total sends, capture traffic, destinations and required features. Add SMS segments, extra apps, support, overages, migration labor and overlapping subscriptions.</p><p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/email/pricing/">Shopify email pricing</a> documents 10,000 monthly free emails on supported plans, with ordinary automations counting and abandoned-checkout emails excluded. Treat the native allowance and tinyEmail’s Shopify offer as real comparison inputs rather than assuming every captured profile adds cost.</p><p>Use current written quotes for all other suppliers. A price indexed only by contact count cannot establish a send-volume platform’s total. Avoid numeric automation ratings; attach a pass, failure or unresolved requirement to each tested workflow instead.</p></section>
+<table class="data-table"><thead><tr><th>Cost line</th><th>Current setup</th><th>Candidate</th><th>Evidence needed</th></tr></thead><tbody><tr><td>Platform and channels</td><td>Actual invoice</td><td>Matched quote</td><td>Billing definition, sends and destinations</td></tr><tr><td>Implementation</td><td>Maintenance baseline</td><td>Rebuild and review</td><td>Named tasks and recorded operator hours</td></tr><tr><td>Overlap</td><td>Old queues and access</td><td>Activation and rollback</td><td>One sender per journey</td></tr><tr><td>Contribution</td><td>Comparable baseline</td><td>Incremental estimate</td><td>Discounts, returns and uncertainty</td></tr></tbody></table><section class="prose-shopify mt-12"><h2>Measurement and closure</h2><p>Predeclare success: correct eligibility and purchase exits, no duplicate sends, reconciled reporting, acceptable delivery signals and maintainable edits. Record authentication and infrastructure changes before choosing a sending transition. A test order passing QA establishes behavior for that fixture, not production revenue.</p><p>Use comparable cohorts and a suitable holdout where feasible to estimate incremental contribution after discounts, returns and operating costs. Reconcile attribution windows across platforms to avoid double-counting an order. Low sample size or inconclusive lift should remain visible in the decision.</p><p>Close the old account only after queue, suppression and rollback checks pass. Archive field maps, screenshots, cost assumptions and policy decisions with a date and owner. Keep a backup operator able to explain why the cart delay or replenishment interval was chosen.</p></section>
+<section class="prose-shopify mt-12"><h2>Related guides</h2><p><a class="link" href="/apps/shopify-email">Shopify Email review</a> · <a class="link" href="/alternatives">All alternatives</a> · <a class="link" href="/use-cases/deliverability">Deliverability planning</a></p></section>
 
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Vinyl record shop — six months on Shopify Email.</strong> Native blasts worked for monthly arrivals; limited pressings needed VIP early-access and restock winback native email cannot segment. Graduated to Sequenzy with drop-day sequences and pay-per-email economics — cart recovery alone covered platform cost in nine days.</p>
-        <p><strong>Board-game retailer — proposed evaluation.</strong> Test preorder eligibility and checkout recovery in the native setup and Omnisend using the same product and audience. Verify purchase exits, repeat events, suppression updates, and operator edits before a holiday rush. No recovery amount, implementation deadline, or merchant result is established.</p>
-        <p><strong>Artisan coffee roaster — stayed native fourteen months.</strong> Under sixty weekly orders, newsletters only, no popup growth yet. Graduated to Sequenzy when subscription replenishment and roast-date exclusions became revenue-critical — timing followed math, not calendar guilt.</p>
-      </article>
-
-      <section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Shopify Email alternatives</h2>
-
-        <ToolReview
-          app={alternatives[0]}
-          rank={1}
-          badge="Top pick"
-          paragraphs={[
-            'Sequenzy is the graduation path we recommend most — not because Shopify Email failed, but because retention needs strategy defaults Shopify Admin will never ship. Describe lifecycle outcomes in plain language — "winback mug buyers before pottery clearance, suppress workshop ticket purchasers" — and get welcome through winback without learning a complex builder during your first busy season.',
-            'Pay-per-email scales with sends, not list size — ideal when popup growth outpaces purchases. Unlimited contacts mean your vinyl mailing list can grow without native usage tiers becoming a second billing surprise. Strategy defaults replace the blank-canvas paralysis that makes founders send only manual sale blasts.',
-            'Sequenzy will not replicate every native convenience — you leave Admin for capability, not for another newsletter editor. Pair Postscript for SMS drop urgency if needed. Read <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> for the full tradeoff map.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[1]}
-          rank={2}
-          paragraphs={[
-            'Evaluate Omnisend for the required welcome, checkout, and post-purchase workflows against the native setup. For a climbing-gear sale, test exclusions and operator edits before choosing a launch date; no implementation speed or recovery result is established here.',
-            'For any proposed multichannel setup, verify permission separately by purpose and channel, including withdrawal propagation and dispatch checks. Confirm current channel availability and billing terms in the account; a shared customer profile does not establish shared sending permission.',
-            'For Omnisend, test the actual segment expression across collection interest, purchases, and replenishment exclusions. Catalog size does not establish whether a platform meets that logic. Confirm supported fields and integration behavior before publication.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[2]}
-          rank={3}
-          paragraphs={[
-            'Evaluate Klaviyo when documented data and segmentation requirements justify it. Test variant restock data, channel-specific eligibility, and the required integration fields before planning a migration; a twelve-month forecast alone does not establish suitability.',
-            'For Klaviyo, compare the billable audience definition and planned sends using the same contact population as other options. Assign an operator to maintain mappings, exclusions, and segments; choose a review cadence based on changes and risk rather than a universal weekly rule.',
-            'For an outdoor-gear catalog, test whether browse events and variant-level data are available and eligible for the proposed workflow. A large variant count alone does not prove incremental margin or justify a migration.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[3]}
-          rank={4}
-          paragraphs={[
-            'Brevo is the budget graduation when newsletters plus basic automation suffice short term — pay-per-email without native email\'s automation ceiling, though lifecycle templates trail Sequenzy and Omnisend.',
-            'For Brevo, test browse-event availability, catalog mapping, purchase exits, and operator maintenance in the actual integration. Compare matched all-in costs before calling it a budget improvement; no capability exclusion or cost advantage is established here.',
-            'Pair Brevo with Privy capture and plan a second graduation to Sequenzy when replenishment timing becomes the bottleneck — common for specialty-tea and artisan-coffee stores.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[4]}
-          rank={5}
-          paragraphs={[
-            'Mailchimp only if your team already knows Customer Journeys and insists on familiarity — usually a lateral move, not an upgrade from native Shopify Email. Shopify-focused stores typically skip straight to Omnisend or Sequenzy.',
-            'For Mailchimp, test the required Shopify event mappings and journeys rather than assuming shallow lifecycle support. Compare billable contacts, sends, relevant plan access, integration effort, and operator time at the same workload.',
-            'Choose Mailchimp when wholesale pottery newsletters and DTC lifecycle must split across tools temporarily — rare as a first step off native email.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[5]}
-          rank={6}
-          paragraphs={[
-            'Privy pairs with any ESP above — capture popups and exit intent Shopify Email does not provide. Not a Shopify Email replacement alone; the architecture is Privy capture feeding Sequenzy or Omnisend lifecycle.',
-            'For Privy, verify current billing units and plan scope before estimating cost for SEO-driven traffic. Evaluate capture eligibility and downstream workflow requirements separately; neither traffic volume nor a form submission proves an incremental purchaser.',
-            'Change capture destinations when permission mappings, suppression propagation, retry handling, and queue ownership pass readiness checks. Reconcile profiles created during the transition and test rollback; a fixed forty-eight-hour deadline does not prove readiness.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[6]}
-          rank={7}
-          paragraphs={[
-            'tinyEmail is a stepping stone for AI-assisted campaigns — slightly more than native email, still not lifecycle depth. Graduate again to Sequenzy or Omnisend when automation becomes revenue-critical.',
-            'AI copy speed exists in Sequenzy and Klaviyo post-graduation — you are not trading AI for automation. Avoid tinyEmail → Mailchimp → Omnisend chains; graduate once to a real lifecycle platform.',
-            'Evaluate tinyEmail against the required newsletter and automation workflows, available event data, exclusions, and operating burden. Monthly order count and a fixed planning horizon are not universal suitability thresholds.',
-          ]}
-        />
-
-        <ToolReview
-          app={alternatives[7]}
-          rank={8}
-          paragraphs={[
-            'Drip for operators who want visual workflow control from day one — more builder, less hand-holding than Sequenzy. Per-contact pricing follows list-growth patterns native email masked because you were not automating yet.',
-            'For Drip, test a proposed mechanical-keyboard workflow using switch preference, collection browsing, and purchase state. Confirm which events and fields the current integration supplies, then test eligibility, repeated events, and purchase exits; the scenario is not evidence of supported functionality.',
-            'Pick Drip if someone on your team enjoys hands-on automation design. Compare with <a class="link" href="/compare/klaviyo-vs-shopify-email">Klaviyo vs Shopify Email</a> before committing to per-contact economics.',
-          ]}
-        />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Cost vs Shopify Email</h2>
-        <p class="px-5 pb-4 text-slate-600">Illustrative costs — native email is cheap until recovery revenue is counted.</p>
-        <table class="data-table">
-          <thead>
-            <tr><th>Platform</th><th>Entry cost</th><th>Automation depth</th><th>Typical graduate trigger</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Shopify Email (leaving)</td><td>10k free/mo</td><td>Minimal</td><td>Cart recovery gap</td></tr>
-            <tr><td>Sequenzy</td><td>From $19/mo</td><td>Advanced</td><td>Lifecycle strategy</td></tr>
-            <tr><td>Omnisend</td><td>Free tier</td><td>Solid</td><td>Speed to cart flow</td></tr>
-            <tr><td>Klaviyo</td><td>Free tier</td><td>Advanced</td><td>Data depth early</td></tr>
-            <tr><td>Brevo</td><td>Free tier</td><td>Solid</td><td>Budget automation</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2">
-          <a class="link" href="/apps/shopify-email">Shopify Email review</a> ·
-          <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> ·
-          <a class="link" href="/use-cases/abandoned-cart">Cart recovery playbook</a> ·
-          <a class="link" href="/alternatives">All alternatives</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Buyer desk: measuring graduation success</h2>
-    <p>Evaluate migration success against predeclared operational and economic criteria, including permission continuity, reliable purchase exits, reporting reconciliation, and matched all-in costs. Where feasible, use a suitably designed holdout to estimate incremental contribution after discounts, returns, messaging, and operator time. A week-four attributed revenue total cannot by itself establish payback. Overlap reporting may double-count orders unless attribution definitions are reconciled.</p>
-    <p>Document collision rules in both native and replacement workflows: recent full-price buyers may need exclusion from winback discounts, subscription skippers from replenishment, and crowdfunding backers from retail promotions. These are proposed merchant policies, not universal exclusions. Check current suppression and purchase state at dispatch and assign a sender and queue owner to each journey. Test ordinary operator edits before committing to a platform.</p>
-    <p>Shopify Email will keep improving as a campaign sender inside Admin — product blocks, brand sync, low friction. It will not ship lifecycle collision rules or consumption-cycle replenishment. Graduation is a revenue decision: when automated retention is a line item in your growth model, pick Sequenzy or Omnisend and connect popup capture the same week cart goes live.</p>
-
-    <h2>Three graduation scenarios from native Shopify Email</h2>
-    <p>
-      <strong>Scenario A — Board game publisher, hypothetical.</strong> Compare native and proposed checkout journeys for preorder eligibility, variant data, current purchase state, and repeated checkout events. Verify that waitlist capture preserves permission and that only one queue owns each message. Assess incremental margin separately from attributed recovery; no result or launch duration is reported.
-    </p>
-    <p>
-      <strong>Scenario B — Pottery studio, intentional pause.</strong> Founder honestly assessed needs: monthly studio-sale broadcast only, no replenishment complexity. Shopify Email sufficient for ninety-day strategy reset while rebuilding catalog — then Sequenzy for post-purchase education when workshop tickets became revenue line.
-    </p>
-    <p>
-      <strong>Scenario C — Vinyl shop boomerang.</strong> Left Klaviyo for cost, landed Shopify Email alone, lost browse abandonment entirely — returned to Sequenzy within two quarters when drop-week revenue dropped 18%. Shopify Email is pause button, not downgrade destination for retention-focused DTC.
-    </p>
-
-    <h2>Workflow tests before picking a Shopify Email alternative</h2>
-    <p>
-      Build four proposed trial workflows in both the current native setup and a candidate platform: welcome by signup source, checkout recovery with variant data, post-purchase excluding gift orders, and winback by engagement. Verify data availability, current permissions, suppression updates, purchase exits, queue ownership, and replay deduplication. Assess editing safety and maintenance effort against actual requirements; a count of unsupported workflows is not a universal migration threshold.
-    </p>
-    <p>
-      Ranked alternatives on this page: Sequenzy for strategy and pay-per-email, Omnisend for speed, Klaviyo for data depth, Brevo for volume economics. Match alternative to job breaking — not logo familiarity. See <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> for head-to-head.
-    </p>
-  </article>
-
-  <FaqSection faqs={faqs} title="Shopify Email alternatives FAQ" />
+<FaqSection faqs={faqs} title="Shopify Email alternatives FAQ" />
+</div>
 </BaseLayout>
