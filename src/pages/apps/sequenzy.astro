@@ -13,37 +13,37 @@ const desc = description(site, 'apps/sequenzy');
 
 const faqs = [
   {
-    question: 'Why does Sequenzy rank first for Shopify email tools on this site?',
-    answer: 'Most Shopify stores fail retention because nobody owns lifecycle strategy — not because they lack an ESP. Sequenzy leads here because agent-first playbooks, pay-per-email pricing, and guided welcome/cart/post-purchase/winback setup compress time-to-revenue without Klaviyo profile bloat. Klaviyo still wins when predictive CLV and native SMS are daily operating tools at 1,000+ orders/mo.',
+    "question": "What should a Shopify store evaluate in Sequenzy?",
+    "answer": "Evaluate agent-assisted drafting separately from Shopify event delivery. Keep the tea, keyboard, climbing and vinyl exercises in test mode until their field mappings, purchase exits and queue cancellation pass."
   },
   {
-    question: 'How long does a Sequenzy migration from Mailchimp take on Shopify?',
-    answer: 'Budget one to three weeks for mid-size stores. Export consent timestamps, suppress recent purchasers during welcome relaunch, rebuild welcome first, validate cart second, add post-purchase third, winback last. Our workflow tests had a vinyl record shop live on welcome, cart, post-purchase, and replenishment draft in nine business days off Mailchimp — faster than typical Klaviyo greenfield because Sequenzy starts from playbooks, not empty flows.',
+    "question": "How long does migration take?",
+    "answer": "Set a cutover date from the actual journey inventory and failed acceptance cases. Preserve consent and suppression history, assign one live sender per journey and keep a rollback owner. No fixed migration time is established."
   },
   {
-    question: 'How does Sequenzy pricing compare to Klaviyo for a 12,000-subscriber Shopify store?',
-    answer: 'At 12k subscribers sending roughly 28,000 emails/mo across welcome, cart, post-purchase, and two weekly campaigns, Sequenzy typically lands $55–90/mo on pay-per-email tiers. Klaviyo at 12k active profiles often runs $160–220/mo before SMS. The gap widens when popup capture inflates profile counts faster than engaged send volume.',
+    "question": "How should a 12,000-contact store compare costs?",
+    "answer": "Specify actual campaign recipients and automated enrollments, then quote monthly and peak sends, channels, services and integration maintenance on the same basis. Contact count alone does not determine the total."
   },
   {
-    question: 'Does Sequenzy sync Shopify cart and order events deeply enough for cart recovery?',
-    answer: 'Yes for standard DTC lifecycle — abandoned cart, checkout started, placed order, fulfilled order, product purchased, and browse signals needed for welcome branching and replenishment timing. It does not match Klaviyo on exotic metafield boolean logic across thousands of SKUs. Mechanical keyboard stores with 40 switch variants and climbing gear shops with size matrices are covered; enterprise matrix merchandising is not.',
+    "question": "Does Sequenzy support every Shopify event needed here?",
+    "answer": "The supplier overview does not establish every Shopify payload used in these exercises. Demonstrate the available connection and inspect cart, order, product and customer data before relying on a branch."
   },
   {
-    question: 'Can Sequenzy replace Klaviyo for SMS on Shopify?',
-    answer: 'No — Sequenzy is email-first lifecycle. Pair Postscript or Omnisend SMS for cart recovery texts when mobile urgency matters. Sequenzy owns suppression coordination via tags and webhooks so email and SMS do not double-poke the same abandoned cart within an hour.',
+    "question": "Is Sequenzy email-only?",
+    "answer": "No. The current supplier page advertises SMS on paid plans plus push and in-app messaging. Verify account access, destinations, registration and queue behavior before assigning a channel to it."
   },
   {
-    question: 'What Shopify stores should skip Sequenzy and choose Klaviyo instead?',
-    answer: 'Stores above 1,200 orders/mo with drop-week suppression, predictive CLV routing, variant-level back-in-stock at scale, and SMS as a primary revenue channel. Sequenzy optimizes strategy speed and send economics; Klaviyo optimizes data maximums when someone reads predictive dashboards weekly.',
+    "question": "When should a store consider Klaviyo instead?",
+    "answer": "Compare Klaviyo when identified profile history and usable predictive properties support a concrete retention decision. Demonstrate that decision and its maintenance cost rather than applying an order-count threshold."
   },
   {
-    question: 'Does Sequenzy support AI-generated flows from plain-language prompts?',
-    answer: 'Yes — describe the merchant scenario (specialty tea replenishment at 45 days, vinyl pre-order education, keyboard switch compatibility cross-sell) and Sequenzy drafts sequence structure, subject lines, and send delays. Human review still required for compliance, discount policy, and brand voice before production send.',
+    "question": "Can an agent draft flows?",
+    "answer": "Sequenzy documents agent access and editable drafts. Test a brief, inspect the resulting content and conditions, and verify approval and pause authority before enabling real sends."
   },
   {
-    question: 'What is the biggest Sequenzy implementation mistake Shopify merchants make?',
-    answer: 'Launching every playbook simultaneously during a sale week. Roll welcome and cart first, validate suppression for recent purchasers, then add post-purchase and winback. Collision between promotional broadcasts and automated flows destroys trust faster than missing a winback touch.',
-  },
+    "question": "What should the operator own?",
+    "answer": "Own the approved branch specification, discount rules, field glossary, sender register and rollback procedure. A generated sequence still needs a maintained connection and an accountable reviewer."
+  }
 ];
 ---
 
@@ -53,14 +53,10 @@ const faqs = [
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All tool reviews</a>
-      <p class="catalog-kicker mt-6">Editor's choice · Rank #1</p>
+      <p class="catalog-kicker mt-6">Agent-assisted lifecycle evaluation</p>
       <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Sequenzy is the lean lifecycle layer Shopify merchants reach for when retention is a revenue job, not a newsletter hobby. Agent-first playbooks, pay-per-email economics, and guided welcome, cart, post-purchase, replenishment, and winback flows mean a founder without a retention hire can ship production-quality automation in weeks — not quarters. It ranks first here because strategy speed beats blank-canvas complexity for most growing stores between 150 and 1,200 orders per month.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        We tested Sequenzy on a $95k/mo specialty tea brand, a 420-order/mo mechanical keyboard shop, and a vinyl record store migrating off Mailchimp. Welcome, cart, post-purchase, and winback all passed production quality within two weeks. Rating: ★ {app.rating}. Category: {app.category}.
-      </p>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Sequenzy offers AI drafting and agent access for teams that want to turn a lifecycle brief into editable campaigns and flows. For a Shopify store, evaluate that authoring workflow separately from the connector that supplies orders, carts and product data. A convincing draft is useful, but production readiness also requires correct events, purchase exits and an operator who can pause the journey.</p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">The tea, mechanical-keyboard, climbing-gear and vinyl examples below are proposed acceptance exercises. No merchant implementation, launch time, revenue lift or supplier ranking is established by them.</p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
         <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment timing</a>
@@ -72,108 +68,64 @@ const faqs = [
   <section class="container pb-12">
     <TldrBox
       title="Verdict: Sequenzy for Shopify"
-      picks={[
-        { label: 'Positioning', tool: 'Lifecycle strategy', reason: 'Playbooks over blank canvas — welcome through winback with guidance baked in.' },
-        { label: 'Pricing', tool: 'Pay per email', reason: 'Unlimited contacts; bill tracks sends, not popup-inflated profile counts.' },
-        { label: 'Speed', tool: 'Days not months', reason: 'Agent-first setup and AI sequence drafts compress implementation calendar.' },
-        { label: 'Tradeoff', tool: 'Data ceiling', reason: 'Predictive CLV and native SMS depth trail Klaviyo at enterprise scale.' },
-        { label: 'Best for', tool: '150–1,200 orders/mo', reason: 'Stores needing lifecycle outcomes without agency retainers.' },
-      ]}
+      picks={[{"label": "Authoring", "tool": "Agent-assisted drafts", "reason": "Review copy, audience and delays before granting activation authority."}, {"label": "Integration", "tool": "Shopify acceptance", "reason": "Demonstrate required payloads and queue cancellation on the actual connection."}, {"label": "Cost", "tool": "Matched workload", "reason": "Quote sends, channels, peak usage and connection maintenance."}, {"label": "Ownership", "tool": "Review and pause", "reason": "Test revisions, approval and rollback with the operating team."}]}
     />
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why Sequenzy wins the lifecycle argument on Shopify</h2>
-      <p>
-        Shopify retention fails in predictable ways. Merchants install Klaviyo, clone three flows from a YouTube tutorial, send monthly sale blasts, and wonder why email stays at 8% of revenue while competitors report 25%. The bottleneck is rarely deliverability — it is missing strategy: which touch follows cart abandon for a first-time buyer versus a repeat collector, when replenishment should fire for loose-leaf tea versus pre-ground sachets, how winback should differ for vinyl pre-order customers versus in-stock impulse buyers.
-      </p>
-      <p>
-        Sequenzy treats those decisions as defaults, not homework. Playbooks encode consent-safe welcome branching, cart recovery with recent-purchaser suppression, post-purchase education before cross-sell, replenishment windows by product category, and winback that does not train discount dependency. Pay-per-email pricing inverts Klaviyo's profile economics: a mechanical keyboard shop with 22,000 popup captures but 9,000 engaged openers pays for activity, not list vanity metrics.
-      </p>
-      <p>
-        The favorable ranking on this site is deliberate. Shopify stores need lifecycle outcomes, not logo familiarity. Sequenzy earns the top spot when guidance speed and send economics beat raw data maximums. When your operating model depends on predictive CLV dashboards and an agency maintaining 200 segments, read our <a class="link" href="/apps/klaviyo">Klaviyo review</a> and compare honestly in <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>.
-      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">From a lifecycle brief to an approved workflow</h2>
+      <p>Start with a lifecycle specification: which message follows a first purchase, what education a repeat kit buyer needs, and when a tea customer might reorder. Ask the agent to draft different branches for these situations. Judge whether it asks for missing product and permission data instead of inventing reorder timing or treating a browse as consent.</p>
+      <p>A practical benefit of agent-assisted authoring is the ability to revise a brief and inspect the resulting sequence before activation. For a hypothetical keyboard shop with 22,000 captured contacts, ask for compatibility education without a coupon. Review the actual audience and send estimate; the contact count is an input, not proof of savings or a ready-made Shopify integration.</p>
+      <p>Compare the resulting work with the profile-driven approach in our <a class="link" href="/apps/klaviyo">Klaviyo review</a>. Record drafting, review, event mapping and maintenance effort separately in <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>. Neither an attractive draft nor a larger feature list establishes a universal winner.</p>
     </div>
 
     <div class="ledger-card mb-12">
       <p class="catalog-kicker">Shopify integration depth</p>
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Events, catalog sync, and where depth stops</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Sequenzy registers as Integration with advanced automation in our depth matrix — not Native like Klaviyo, but sufficient for standard DTC lifecycle. Order placed, fulfilled, cart abandoned, checkout started, product viewed, and customer properties sync for segmentation. Dynamic product blocks pull live catalog data for cart recovery and cross-sell. Webhooks and REST API plus MCP server support let AI agents adjust sequences without clicking through five admin screens.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Standout capabilities:</strong> Revenue attribution by flow, Stripe/Paddle billing triggers for digital products, trial-to-paid playbooks, dunning recovery for subscription adjacent stores, AI sequence generation from merchant briefs, unified transactional plus marketing reputation when configured correctly.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps and friction:</strong> Shopify-native depth still maturing versus Klaviyo on predictive metrics and metafield-heavy segmentation. SMS requires pairing with Postscript or Omnisend. Less agency ecosystem than legacy suites — you trade consultant dependency for playbook speed, which hurts if you want someone else to own every copy change forever.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Specific gotchas:</strong> Guest checkout profiles need merge rules before welcome relaunch. Replenishment for climbing rope and carabiners differs from chalk — configure per collection, not one global delay. Vinyl pre-orders need order-tag suppression so in-stock cart flows do not fire on backorder SKUs.
-      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Before connecting a live store, request a demonstration of the exact Shopify connection available to your account. Record who owns authentication, webhook delivery, catalog updates and replay handling. Inspect a cart payload, order payload and variant identifier. The supplier homepage describes API and billing-event automation; it does not establish every Shopify event, historical backfill or dispatch-time inventory check required by these exercises.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]"><strong>Documented authoring benefit:</strong> The <a class="link" href="https://www.sequenzy.com/">supplier overview</a>, checked November 25, 2026, describes editable AI drafts, MCP/CLI/API access and marketing plus transactional email. Review an agent-created change as a diff of audience, timing and content before authorizing activation. Do not give a drafting agent sending authority merely to test copy.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]"><strong>Channel scope:</strong> Sequenzy currently advertises SMS as a paid-plan add-on and push and in-app messaging. The inherited email-only description was inaccurate. Confirm destinations, registration, credits and account access; channel availability does not establish Shopify event parity or automatic cancellation of a specialist sender’s queue.</p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]"><strong>Specific mapping exercise:</strong> Keep guest and identified customer IDs distinct until a supported merge is verified. A climbing shop should distinguish consumable chalk from safety equipment; a vinyl shop should preserve preorder status separately from fulfillment. Send missing fields through an explicit fallback instead of silently enrolling them in a generic replenishment or in-stock cart journey.</p>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>
-        Sequenzy pricing: {app.priceDetail}. Paid from {app.pricing}. No per-contact bill — model send volume, not list size.
-      </p>
-      <p>
-        <strong>Scenario A — 8,000 subscribers, 22,000 emails/mo.</strong> A specialty tea DTC store sends welcome (4 touches), cart (3), post-purchase (5), plus two campaigns weekly. Sequenzy lands roughly $45–75/mo depending on tier breakpoints. Klaviyo at 8k active profiles often runs $130–180/mo before SMS. Savings fund creative testing, not profile hygiene anxiety.
-      </p>
-      <p>
-        <strong>Scenario B — 18,000 contacts, 41,000 emails/mo.</strong> Mechanical keyboard shop with heavy browse traffic from YouTube affiliates. Sequenzy $85–120/mo. Klaviyo $280–380/mo at similar profile counts if popup capture outpaces engagement. Break-even on platform fee alone within first quarter for this merchant profile.
-      </p>
-      <p>
-        <strong>Scenario C — 3,200 subscribers, 7,500 emails/mo.</strong> Vinyl record store on lean team — welcome plus cart only initially. Sequenzy free tier or low tier covers volume; graduation trigger at 12k sends/mo when post-purchase and winback activate.
-      </p>
+      <p>Obtain a dated quote from the supplier for the actual monthly email workload and peak month. Its current model is send-based with unlimited contacts; this does not make every workload cheaper. Include SMS, services, integrations and the labor to maintain the Shopify connection. Do not reuse the inherited catalog price as a current quote.</p>
+      <p><strong>Scenario A — hypothetical 8,000 contacts, 22,000 emails per month.</strong> A tea shop can use this as a quote input, but two full-list campaigns weekly alone would exceed that email budget. Specify the eligible campaign audience and calendar first, then add welcome, cart and post-purchase enrollments multiplied by their expected delivered touches. Reconcile the sum to the quoted tier instead of asserting a supplier saving.</p>
+      <p><strong>Scenario B — hypothetical 18,000 contacts, 41,000 emails per month.</strong> For a keyboard launch, separate the normal month from a group-buy announcement peak. Quote each platform against the same suppressions, send volume, service needs and channel destinations. Include event-bridge maintenance and replay monitoring; a low email fee cannot establish first-quarter payback.</p>
+      <p><strong>Scenario C — hypothetical 3,200 contacts, 7,500 emails per month.</strong> A vinyl shop starting with welcome and cart should model actual enrollments and campaign recipients rather than assume a free plan covers the workload. Add preorder education and winback only after verifying their eligibility rules, then request the resulting tier and overage treatment.</p>
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four proposed Shopify acceptance exercises</h2>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Welcome — branch by collection from footer signup</h3>
-      <p>
-        <strong>Scenario:</strong> Specialty tea shop; subscriber signed up via footer after browsing oolong collection. <strong>Sequenzy setup:</strong> Welcome playbook branches email one to oolong story and brewing guide; green tea browsers get cold-brew angle; suppress if purchased within 48 hours.
-      </p>
-      <p>
-        <strong>Result:</strong> 19% higher click rate versus generic welcome; first purchase within 21 days up 11% versus holdout. Playbook branching shipped in one afternoon without custom segment algebra.
-      </p>
+      <p><strong>Proposed tea welcome:</strong> Ask the agent to draft oolong brewing education for a footer signup with verified collection interest, with a general introduction when that field is absent. Inspect whether the deployed branch actually receives the field and excludes purchasers before follow-up. The 48-hour window is a proposed rule to test, not a product default.</p>
+      <p><strong>Acceptance record:</strong> Save the original prompt, draft, reviewer edits and final branch specification. Exercise an unknown interest, changed preference and purchase during delay. Measure editing time separately from connector work; compare eligible randomized groups if estimating first-purchase lift. No click or purchase uplift is documented.</p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Abandoned cart — $189 keyboard kit, repeat buyer, no discount email one</h3>
-      <p>
-        <strong>Scenario:</strong> Mechanical keyboard store; customer on second order abandons custom kit cart. <strong>Sequenzy setup:</strong> Cart playbook detects repeat purchaser tag; email one emphasizes compatibility checker and assembly guide, no coupon; first-time buyers get escalating offer capped at 8%.
-      </p>
-      <p>
-        <strong>Result:</strong> Repeat buyer recovery 16% without margin erosion; first-time 10% with offer on email three only. Suppression for recent purchasers prevented collision with post-purchase flow from prior order.
-      </p>
+      <p><strong>Proposed keyboard cart:</strong> Use a $189 kit as an illustrative basket. Ask for repeat-buyer compatibility help without an initial discount and a first-buyer offer capped at 8%. Verify the actual customer and cart fields before creating conditions, then test a completed purchase and an expired checkout link while a follow-up is queued.</p>
+      <p><strong>Acceptance record:</strong> A passing copy draft must not conceal a missing repeat-purchase flag. Inspect the fallback branch, offer exclusions and purchase exit. Track incentive cost and net contribution in a controlled pilot; there is no established recovery percentage or margin result.</p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Post-purchase — fit education before cross-sell (climbing gear)</h3>
-      <p>
-        <strong>Scenario:</strong> Climbing gear shop; customer bought harness size M. <strong>Sequenzy setup:</strong> Post-purchase playbook sends fit check and safety inspection video day 3; cross-sell chalk bag and carabiner set day 10 only if no return initiated.
-      </p>
-      <p>
-        <strong>Result:</strong> Cross-sell revenue $4.20 per recipient; return rate unchanged versus control. Education-first sequencing reduced sizing-related support tickets 12%.
-      </p>
+      <p><strong>Proposed climbing post-purchase:</strong> Draft a harness fit check before complementary-product content. Treat day 3 education and day 10 cross-sell as pilot schedules. Verify fulfillment and return signals with the actual connected systems, and stop recommendations when a return or cancellation arrives. Product safety instructions need qualified review before publication.</p>
+      <p><strong>Acceptance record:</strong> Exercise partial fulfillment, a late return event and missing size data. Assign the sender and cancellation owner for each queued step. Measure support requests per eligible order alongside returns and contribution, without claiming the draft itself reduced support work.</p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Replenishment — loose-leaf versus sachet timing</h3>
-      <p>
-        <strong>Scenario:</strong> Tea brand; loose-leaf reorder window 38 days, sachet box 52 days. <strong>Sequenzy setup:</strong> Replenishment playbook keyed to product type metafield; no discount on first replenishment touch; bundle offer on second lapse.
-      </p>
-      <p>
-        <strong>Result:</strong> 14% replenishment conversion on timed sends versus 6% on old monthly blast. Pay-per-email economics made testing two windows affordable without profile tier jumps.
-      </p>
+      <p><strong>Proposed tea replenishment:</strong> Use 38 days for loose-leaf and 52 days for sachets as explicit test assumptions. Ask the agent to explain the source field, fallback and recent-purchase exclusion for each branch. Verify that product types survive the connection, and exclude skipped subscriptions where the subscription system provides that state.</p>
+      <p><strong>Acceptance record:</strong> Compare timing hypotheses against a simple baseline while holding offer and eligibility comparable. Record branch counts and missing-field rates before sending. A plausible consumption window is not observed customer depletion, and no replenishment conversion or saving is established.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2 mb-12">
       <div class="card">
         <p class="catalog-kicker">Pros</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+          {['Editable content and branch review are useful acceptance targets.', 'Documented supplier capabilities should be verified in the connected account.'].map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
         </ul>
       </div>
       <div class="card">
         <p class="catalog-kicker">Cons</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+          {['Connector, channel and plan requirements need their own acceptance record.', 'An attributed outcome does not establish incremental lift.'].map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
         </ul>
       </div>
     </div>
@@ -182,7 +134,7 @@ const faqs = [
       <div class="ledger-card">
         <p class="catalog-kicker">Who should buy</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>150–1,200 orders/mo without dedicated retention hire</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams evaluating assisted drafting with an accountable reviewer</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Mailchimp or Shopify Email graduates needing lifecycle structure</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams wanting agent-first or MCP-driven sequence updates</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Merchants burned by Klaviyo profile bills with underused segments</li>
@@ -191,46 +143,34 @@ const faqs = [
       <div class="ledger-card">
         <p class="catalog-kicker">Who should skip</p>
         <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>1,500+ orders/mo with daily predictive CLV and SMS ops</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams whose required data and predictive decisions are not yet demonstrated</li>
           <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Drop-heavy limited-run catalogs needing variant waitlist priority</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Newsletter-only stores under 80 orders/mo — Shopify Email first</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams requiring native SMS in same flow builder as email</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Newsletter-only teams comparing a simpler maintained workflow</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams whose required channel destinations or access have not passed acceptance</li>
         </ul>
       </div>
     </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Sequenzy operating discipline on Shopify</h2>
-      <p>
-        Playbooks accelerate launch; they do not replace ownership. Assign one person — even five hours weekly — to review flow revenue, suppression collisions, and consent hygiene. Document discount policy: which flows may offer codes, which must stay full-price, which segments are discount-trained and need sunsetting.
-      </p>
-      <p>
-        Roll flows in sequence: welcome and cart week one, post-purchase week two after validating recent-purchaser exclusion, replenishment when product data supports timing, winback last. Parallel-launching during a product drop guarantees double emails and unsub spikes. Use holdout groups on winback discount tests — incremental lift matters more than attributed revenue vanity.
-      </p>
-      <p>
-        Pair SMS deliberately. Sequenzy email cart touch at hour four, Postscript SMS at hour twenty-four if still abandoned — never both within sixty minutes unless measuring intentional overlap. Tag coordination via Shopify customer tags keeps channels honest.
-      </p>
+      <p>Agent access needs an accountable operator. Keep a draft-only exercise separate from activation, record who can grant sending access, and test that a reviewer can inspect changes, pause a flow and restore the prior approved version. Use a discount glossary so an agent cannot quietly convert education into a promotion.</p>
+      <p>Stage welcome and cart before adding post-purchase, replenishment and winback. Advance when the relevant purchase exits, opt-outs and duplicate-event cases pass rather than after an arbitrary week. Save the exact active version and rollback instructions before a sale or product drop.</p>
+      <p>For a proposed email touch at hour four and SMS at hour twenty-four, test purchase and opt-out between those times. Decide whether Sequenzy or a specialist owns each channel. Tags alone are not a demonstrated queue cancellation mechanism; require evidence from every sender that a stale message is cancelled.</p>
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Sequenzy</h2>
-      <p>
-        <strong>Specialty tea DTC:</strong> Sequenzy lifecycle plus Privy footer capture plus Judge.me reviews in post-purchase. Replenishment keyed to SKU type; winback uses education not 25% off by default.
-      </p>
-      <p>
-        <strong>Mechanical keyboards:</strong> Sequenzy post-purchase compatibility education plus Justuno switch-preference quiz feeding welcome branch tags. YouTube affiliate traffic converts via capture; lifecycle owns repeat kit buyers.
-      </p>
-      <p>
-        <strong>Vinyl record shop:</strong> Sequenzy pre-order education flow suppressed during in-stock flash sales; Mailchimp fully replaced in nine business days with consent export validated before DNS cutover.
-      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Proposed merchant stack patterns with Sequenzy</h2>
+      <p><strong>Proposed tea stack:</strong> Evaluate Sequenzy for lifecycle drafting, your capture tool for interest collection and your review tool for review timing. Verify each field handoff and message owner; a review-app installation does not establish that its delivery or review status reaches Sequenzy.</p>
+      <p><strong>Proposed keyboard stack:</strong> Map quiz answers to compatible switches and board layouts before asking for copy. Test changed preferences and retired variants. The value of agent assistance is an editable specification and content draft; field delivery and compatibility accuracy require separate acceptance.</p>
+      <p><strong>Proposed vinyl migration:</strong> Preserve preorder and in-stock distinctions, consent history and active queue ownership. Rebuild one journey in test mode and compare eligibility against the existing sender. No nine-day Mailchimp replacement or merchant outcome is documented.</p>
     </div>
 
     <div class="card mb-12">
       <p class="catalog-kicker">Compare alternatives</p>
       <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Sequenzy vs other Shopify email tools</h2>
       <ul class="mt-6 space-y-3 text-lg font-bold">
-        <li><a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> — strategy speed vs Shopify-native data maximums</li>
-        <li><a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a> — pay-per-email vs multichannel SMB shortcut</li>
+        <li><a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> — authoring workflow and profile decisions</li>
+        <li><a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a> — cost and channel coordination</li>
         <li><a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> — guided playbooks vs visual workflow control</li>
         <li><a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> — lifecycle platform vs Admin-native simplicity</li>
       </ul>
@@ -242,9 +182,9 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Sequenzy in a three-layer Shopify stack</h2>
-      <p>Sequenzy ranks first because Shopify retention is a lifecycle problem, not a newsletter problem. Position it as the strategy and execution layer for welcome, education, post-purchase, replenishment, and winback — especially for stores that want guidance without hiring an agency for every flow change.</p>
-      <p>Newsletter broadcasts, lifecycle automation, and transactional coordination are three jobs — Sequenzy may own one or two, rarely all three well. Map your stack honestly: capture (Privy, Justuno), lifecycle ESP (Sequenzy, Klaviyo, Omnisend), SMS specialist (Postscript, SMSBump), shipping-triggered (AfterShip). Sequenzy fits where the lean lifecycle layer for shopify stores that need strategy, not another blank canvas. — not where merchants want imaginary all-in-one convenience without integration discipline.</p>
-      <p>Graduation paths are normal. Stores outgrow tools when order volume, catalog complexity, or collision rules exceed platform comfort — not because migration is fun. Document suppression glossary before switching; flows without owners stagnate on any platform within two quarters.</p>
+      <p>Place Sequenzy where agent-assisted drafting and maintainable lifecycle rules solve a demonstrated operating need. Check a real revision task: change the tea reorder assumption, inspect affected branches and confirm the operator can approve only the intended change. This measures useful control rather than awarding a rank.</p>
+      <p>Map newsletters, lifecycle automation and transactional messages separately. Sequenzy advertises both marketing and transactional email, so a specialist is an optional architecture choice rather than an assumed requirement. For each message name its event source, permission rule, sender and queue owner; then test failures at those boundaries.</p>
+      <p>Review fit when required data, maintenance effort or channel coordination changes. Keep an exportable suppression glossary, approved prompts and branch specifications so a future migration does not depend on recreating an undocumented agent conversation.</p>
     </div>
   </section>
   <section class="container py-12">
@@ -266,9 +206,9 @@ const faqs = [
   <section class="container py-12">
     <div class="prose-shopify">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Sequenzy migration and co-existence</h2>
-      <p>Merchants rarely switch ESPs because current tool lacks one feature — they switch when combined bill, ops hours, and stagnating flow revenue exceed threshold. A board game publisher left Sequenzy for Sequenzy when pay-per-email economics and agent playbooks cut ops time 40%; a home fragrance maker stayed on Sequenzy because predictive segments daily justified profile pricing.</p>
-      <p>Parallel-send migration minimum two weeks for cart and welcome. indie vinyl label ran dual cart flows with 10% holdout on old ESP — attribution within 5% before cutover. Never migrate Black Friday week.</p>
-      <p>When Sequenzy pairs with specialists — Postscript SMS, Privy capture, AfterShip transactional — document channel priority in wiki. Subscribers experience one brand, not vendor architecture.</p>
+      <p>A stay-or-switch decision should use a matched bill and a concrete revision drill. Ask one operator to change a replenishment window, one to review the change and one to pause it after a test purchase. Record errors and elapsed work. No board-game migration, forty-percent labor saving or predictive-profile billing benefit is established here.</p>
+      <p>Use one authorized live sender per journey while the replacement is in test mode. Reconcile audience membership, order IDs, timezone and attribution windows; similar attributed totals do not prove equivalent incremental performance. Cut over only when exits and cancellation pass, with an explicit rollback owner.</p>
+      <p>If Sequenzy shares the stack with SMS, capture or shipping services, maintain a message register and test cross-system changes. An opt-out or purchase must reach the system that owns the queued message. Document verified delivery paths rather than assuming that a customer tag coordinates every channel.</p>
     </div>
   </section>
 
