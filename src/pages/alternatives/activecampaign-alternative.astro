@@ -10,204 +10,111 @@ import { appBySlug } from '../../data/apps';
 const leaving = appBySlug('activecampaign')!;
 const path = '/alternatives/activecampaign-alternative';
 const title = 'Best ActiveCampaign Alternatives for Shopify (2026)';
-const desc = 'Why Shopify merchants leave ActiveCampaign — overbuilt CRM complexity, weak Shopify-native depth, per-contact pricing — plus eight ranked ecommerce alternatives and migration checklist.';
-
+const desc = 'Compare ActiveCampaign retention and CRM ownership with eight Shopify alternatives, current eligibility checks, and a staged migration method.';
 const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'sendlane', 'brevo', 'mailchimp', 'shopify-email'];
 const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
 const faqs = [
-  { question: 'Why do Shopify stores leave ActiveCampaign?', answer: 'ActiveCampaign excels when CRM pipelines overlap marketing — merchants leave when ecommerce lifecycle was the real job and CRM complexity became overhead. Shopify browse events, variant back-in-stock, and catalog segmentation trail Klaviyo and Omnisend; per-contact pricing punishes popup growth without CRM revenue to justify it.' },
-  { question: 'Is Sequenzy simpler than ActiveCampaign?', answer: 'Sequenzy trades CRM breadth for Shopify lifecycle focus — agent-first sequences without pipeline maintenance. Choose Sequenzy when ActiveCampaign became a second job nobody staffed; stay if wholesale deals and DTC automation genuinely share one database with assigned owner.' },
-  { question: 'ActiveCampaign to Klaviyo migration?', answer: 'Export contacts, tags, deals if relevant; screenshot automations and CRM triggers. Klaviyo rebuilds ecommerce flows from spec — no native import. Set cutover timing from tested field mapping, permission transfer, queue cancellation and staffing; CRM workflows may remain while DTC moves, with named sending owners.' },
-  { question: 'When should I keep ActiveCampaign?', answer: 'Keep when B2B wholesale pipelines, consultative high-ticket sales, and DTC email share one system with someone auditing weekly — pottery studio workshop inquiries plus mug lifecycle is a common fit.' },
-  { question: 'Best ActiveCampaign alternative for pure DTC?', answer: 'Sequenzy for strategy-first lifecycle; Omnisend for fast multichannel; Klaviyo for data depth. Pure DTC without CRM needs rarely justifies ActiveCampaign complexity.' },
-  { question: 'ActiveCampaign pricing at 25k contacts?', answer: 'Often $200–400/month depending on plan — comparable to Klaviyo with less Shopify-native depth. Sequenzy pay-per-email may undercut if sends target engaged subsets only.' },
-  { question: 'Can I use ActiveCampaign CRM with another ESP?', answer: 'A split stack is possible if each purpose has one sending and queue owner. Reconcile purpose- and channel-specific permission, current suppression and purchase state across both systems; test withdrawal and role changes while messages are queued. Retaining CRM work does not authorize DTC marketing, and a tag export alone is not permission evidence.' },
-  { question: 'How do I document ActiveCampaign for migration?', answer: 'Screenshot automations, deal triggers, and Shopify integrations. Export tag definitions. Identify which workflows are CRM-driven vs purchase-driven — migrate purchase-driven first.' },
+  { question: 'Why evaluate an ActiveCampaign replacement?', answer: 'Evaluate an observed workflow, staffing or cost mismatch. ActiveCampaign supports Shopify commerce data and automations as well as sales workflows; an empty pipeline does not prove that switching improves retention or removes necessary service work.' },
+  { question: 'Is Sequenzy simpler?', answer: 'Sequenzy advertises Shopify sync and lifecycle flows. Have the intended operator build and maintain the required journeys before judging simplicity. Software does not replace an owner, and no migration or performance parity is established here.' },
+  { question: 'Can I migrate to Klaviyo?', answer: 'Inventory exportable contacts, fields, tags and required sales history. Rebuild logic from a documented specification and test current permission, identity mapping, purchase exits and old queue cancellation. Do not assume automations import or historical reporting transfers unchanged.' },
+  { question: 'When should I keep ActiveCampaign?', answer: 'Consider retaining it when required sales, service and Shopify workflows work well under the actual plan and a named operator. Pottery wholesale quotes alongside mug lifecycle are a proposed fit test, not a documented success story.' },
+  { question: 'Which option fits pure DTC?', answer: 'Compare required event coverage, operator effort and matched costs across the candidates. Sequenzy, Klaviyo and Omnisend are options to test, not universal winners. Lack of a sales pipeline alone does not disqualify ActiveCampaign.' },
+  { question: 'What does ActiveCampaign cost at 25k contacts?', answer: 'Obtain a current quote for the required contact tier, email allowance, base plan, enhanced CRM, users and channels. Contact count alone cannot establish an equivalent price. Sequenzy publishes email-volume pricing, but that does not establish savings for a particular store.' },
+  { question: 'Can CRM and another ESP coexist?', answer: 'Yes, subject to integration testing and ownership. Give every purpose one sender and queue owner; reconcile channel permission, current suppression, purchase and deal state. Separate domains and tag exports do not establish permission or prevent duplicate sends.' },
+  { question: 'How should I document migration?', answer: 'Record triggers, conditions, delays, field meanings, account access, reporting definitions and queue ownership. Preserve current permission evidence and stable source IDs. Test rollback against the dispatch ledger before handing operation to a trained owner.' },
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">ActiveCampaign alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">CRM unbundle</p>
-        <h1 class="hero-title mt-5">Best ActiveCampaign alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          ActiveCampaign is the CRM-plus-email Swiss Army knife — pipelines, conditional automations, deal stages. Merchants leave when they bought a CRM but only needed cart recovery, when Shopify catalog data lives in spreadsheets because ActiveCampaign never learned variant logic, or when per-contact bills climbed on popup lists with zero wholesale pipeline revenue.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores exiting or slimming ActiveCampaign — ecommerce-native lifecycle first, CRM complexity second. Sequenzy leads for pure DTC; Klaviyo when data depth was the gap. Empty deal pipelines mean leave CRM behind — do not rebuild pipelines on another platform out of habit.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top ActiveCampaign replacements" picks={[
-          { label: 'Best DTC lifecycle', tool: 'Sequenzy', reason: 'Shopify retention without pipeline maintenance tax.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'Ecommerce-native when ActiveCampaign Shopify sync was the ceiling.' },
-          { label: 'Best multichannel', tool: 'Omnisend', reason: 'Prebuilt journeys without CRM overhead.' },
-          { label: 'Best workflow builder', tool: 'Drip', reason: 'Visual automation without deal-stage complexity.' },
-          { label: 'Best guided switch', tool: 'Sendlane', reason: 'Migration support when ActiveCampaign rebuild stalled.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave ActiveCampaign</h2>
-        <p>Overbuilt for pure DTC. A vinyl shop running welcome, cart, and winback does not need deal pipelines — yet pays for CRM complexity and maintains automations nobody understands. ActiveCampaign assumes sales and marketing share one database; many Shopify merchants need retention only.</p>
-        <p>Shopify-native depth trails specialists. Browse abandonment across climbing-gear collections, variant back-in-stock, predictive winback — ActiveCampaign can approximate with workarounds but Klaviyo and Omnisend productize for ecommerce. Operators export Shopify data weekly to patch gaps.</p>
-        <p>Per-contact pricing without CRM ROI. Popup captures inflate contacts while only DTC email runs — no wholesale deals justify the CRM bill. Merchants compare to Sequenzy pay-per-email or Omnisend prebuilt journeys and question ActiveCampaign fit.</p>
-        <p>ActiveCampaign is right for hybrid models. Leaving is wrong when B2B pottery wholesale, custom outdoor packages, and DTC welcome genuinely share pipelines with assigned owner. Exit when CRM modules sit empty while ecommerce struggles.</p>
-
-        <h2>CRM, lifecycle, and when to unbundle</h2>
-        <p>Evaluate whether ActiveCampaign CRM drives revenue — wholesale inquiries closed, high-ticket consultative sales nurtured. If CRM is empty and DTC email is the job, migrate lifecycle to Sequenzy or Klaviyo and slim or cancel ActiveCampaign. If CRM works, consider split: CRM stays, DTC lifecycle moves — document consent and suppression across systems carefully.</p>
-        <p>Pure DTC should not choose ActiveCampaign replacements that recreate CRM complexity. Match exit to actual job: newsletters, lifecycle automation, order-adjacent moments — not pipeline stages nobody updates.</p>
-
-        <h2>Newsletters, lifecycle, and wholesale collision</h2>
-        <p>ActiveCampaign sent DTC newsletters and wholesale follow-ups from one account — dangerous without suppression. Pottery studio mug sale must exclude open wholesale quote contacts. Split-stack migration separates DTC lifecycle to Sequenzy while CRM pipelines stay for workshop B2B.</p>
-        <p>Lifecycle automation for Shopify events should not trigger on deal stage changes meant for sales — document trigger source before rebuilding on Klaviyo to avoid CRM noise in cart recovery.</p>
-
-        <h2>ActiveCampaign migration checklist</h2>
-        <ol>
-          <li><strong>Audit CRM usage</strong> — inspect deals, pipeline use and dependencies; an empty pipeline alone does not establish which service or sales workflows can be retired.</li>
-          <li><strong>Export contacts, tags, custom fields</strong> — retain purpose, channel, source and timestamp of permission plus current suppression; tags alone do not authorize marketing.</li>
-          <li><strong>Screenshot purchase-driven automations</strong> — separate from deal-triggered workflows.</li>
-          <li><strong>Map Shopify integrations</strong> — what pushes order data into ActiveCampaign segments.</li>
-          <li><strong>Connect replacement to Shopify</strong> — verify catalog and order sync.</li>
-          <li><strong>Rebuild welcome and cart first</strong> — validate with outbound sends disabled, then cancel old queued messages before transferring each sending purpose to one owner.</li>
-          <li><strong>Reconcile permission and suppression</strong> — test duplicate events, withdrawal and purchase before dispatch; observing both systems does not authorize duplicate live sending.</li>
-          <li><strong>Migrate winback and replenishment</strong> — tea, coffee, consumables.</li>
-          <li><strong>Decide CRM fate</strong> — stay on ActiveCampaign for sales only or migrate CRM elsewhere.</li>
-          <li><strong>Redirect popup integrations</strong> — verify destination fields, permission evidence, replay deduplication and current suppression before activating new DTC sends.</li>
-          <li><strong>Plan sending changes</strong> — verify authentication, engaged audience selection and monitored volume with the actual sending provider.</li>
-          <li><strong>Archive ActiveCampaign DTC automations</strong> — keep CRM access if split stack.</li>
-        </ol>
-
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Pure DTC vinyl — left ActiveCampaign entirely.</strong> CRM unused twelve months; migrated to Sequenzy for drop lifecycle and pay-per-email. Maintenance hours dropped seventy percent; no pipeline guilt.</p>
-        <p><strong>Pottery studio — proposed split stack.</strong> Keep wholesale workshop inquiries and B2B deals in the CRM if they remain useful; test mug-collection browse workflows in the selected ESP. Separate domains do not reconcile permission or prevent duplicate sends. Name one sender per purpose and test suppression across both systems.</p>
-        <p><strong>Outdoor gear consultative — possible retained CRM.</strong> Custom package quotes may need sales pipelines alongside DTC post-purchase. Evaluate actual usage, operating effort and matched total costs with a dedicated sales owner; this is a decision scenario, not a documented merchant result.</p>
-
-        <h2>CRM revenue test before ActiveCampaign exit</h2>
-        <p>Export deal pipeline value last twelve months — if zero or negligible, CRM is shelfware and DTC lifecycle should move to Sequenzy without replicating pipelines elsewhere. If wholesale pottery or custom climbing packages close through ActiveCampaign stages, slim to CRM-only during DTC migration rather than ripping entire stack. Dual-stack consent documentation critical — B2B contact must not receive DTC winback discounts.</p>
-        <p>ActiveCampaign exit failures come from migrating forty automations including unused CRM triggers — prune before rebuild. Tag taxonomy export with definitions; Klaviyo and Sequenzy segments need human-readable spec not orphan tag names.</p>
-
-        <h2>Due diligence before ActiveCampaign migration</h2>
-        <p>Interview the sales team and inspect service dependencies before retiring a CRM; daily deal usage alone is not a sufficient exit rule. Map Shopify webhook integrations feeding tags and separate deal-stage entry from purchase triggers. Review authentication and domain strategy where wholesale and DTC share a brand. Inspect actual engagement and delivery evidence rather than assuming a mixed audience has damaged inbox placement.</p>
-      </article>
-
-      <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
-</section>
-<section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight ActiveCampaign alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
-          'Sequenzy is the ActiveCampaign exit for pure DTC — lifecycle outcomes without pipeline stages. Describe "winback harness buyers before rack sale, suppress recent purchasers" instead of maintaining CRM automations nobody touches.',
-          'Pay-per-email addresses contact inflation from popups when CRM never justified per-contact bill. Strategy defaults replace overbuilt conditional trees for standard ecommerce journeys.',
-          'Choose Sequenzy when ActiveCampaign became configuration debt — not when CRM pipelines drive real revenue.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Evaluate Klaviyo when Shopify event or catalog depth is the migration requirement. Test browse tracking, variant availability and predictive metric eligibility on the proposed plan; compare profile charges and operating effort with a named retention owner.',
-          'For finance, compare reporting definitions, order reconciliation, attribution windows and refunds. Agency support may help a complex migration, but scope, access and cost need confirmation.',
-          'Pick Klaviyo for catalog-heavy DTC — climbing gear, vinyl variants, board-game expansions.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Evaluate Omnisend for cart, welcome and post-purchase across the channels currently supported for the store and plan. Do not assume a shared suppression model authorizes every channel; test purpose-specific permission and withdrawal propagation.',
-          'Credible when ActiveCampaign complexity stalled team but revenue targets did not shrink.',
-          'Choose Omnisend when speed beats pipeline maintenance.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Drip visual workflows without deal stages — tag-based branching, revenue dashboards, Shopify product triggers. For operators who liked ActiveCampaign builder but not CRM module.',
-          'Per-contact pricing continues — sunset lists before migrating. Focused catalogs fit well.',
-          'Compare <a class="link" href="/compare/drip-vs-activecampaign">Drip vs ActiveCampaign</a>.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Sendlane guided migration when ActiveCampaign rebuild stalled — ecommerce templates, deliverability review, onboarding support.',
-          'Higher entry price assumes order volume. Fits teams leaving complexity without internal migration bandwidth.',
-          'Choose when white-glove cutover beats self-serve trial-and-error.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'Brevo budget path — pay-per-email without CRM bill. Lighter Shopify lifecycle than Sequenzy; acceptable short-term cost fix.',
-          'Wrong long-term if strategy is gap — plan Sequenzy upgrade when replenishment matters.',
-          'Choose when bill was primary pain and automations were modest.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Evaluate Mailchimp against the actual Shopify event, branching and reporting requirements. A platform ranking does not establish which required journeys the current plan supports.',
-          'For deliberate simplification, inventory required automations before accepting any loss of capability; newsletters-only is a merchant scope choice.',
-          'Test the required DTC retention workflows and their operating cost before choosing or excluding it.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Shopify Email reset — if ActiveCampaign was vast overkill and need is admin blasts temporarily.',
-          'Not lifecycle replacement. Ninety-day pause while planning Sequenzy or Klaviyo.',
-          'Choose only after testing the required segments, automation triggers and reporting; simpler administration alone does not establish a capability loss or gain.',
-        ]} />
-      </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Pricing vs ActiveCampaign</h2>
-        <table class="data-table">
-          <thead><tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>CRM included</th></tr></thead>
-          <tbody>
-            <tr><td>ActiveCampaign (leaving)</td><td>$100–200</td><td>$200–400</td><td>Yes</td></tr>
-            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>No</td></tr>
-            <tr><td>Klaviyo</td><td>$150–200</td><td>$350–450</td><td>No</td></tr>
-            <tr><td>Omnisend</td><td>$60–100</td><td>$120–180</td><td>No</td></tr>
-            <tr><td>Drip</td><td>$80–120</td><td>$150–250</td><td>No</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/apps/activecampaign">ActiveCampaign review</a> · <a class="link" href="/compare/activecampaign-vs-klaviyo">ActiveCampaign vs Klaviyo</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
+  <section class="container py-14">
+    <nav><a class="link" href="/alternatives">Alternatives</a> / ActiveCampaign alternatives</nav>
+    <header class="max-w-4xl">
+      <p class="catalog-kicker">CRM and commerce ownership</p>
+      <h1 class="hero-title mt-5">ActiveCampaign alternatives for Shopify</h1>
+      <p class="mt-7 text-xl">A replacement should solve a demonstrated workflow or staffing gap. ActiveCampaign can combine sales and commerce automation; a specialist may fit a store’s operating model better, while a split stack introduces reconciliation work. Test the required paths before deciding to retain, split or replace it.</p>
+    </header>
+    <div class="mt-10">
+      <TldrBox title="Options by requirement, not a universal ranking" picks={[
+        { label: 'Lifecycle candidate', tool: 'Sequenzy', reason: 'Test advertised Shopify flows with the intended operator.' },
+        { label: 'Catalog candidate', tool: 'Klaviyo', reason: 'Validate required product events and reporting.' },
+        { label: 'Channel candidate', tool: 'Omnisend', reason: 'Verify each channel and its permission handling.' },
+        { label: 'Workflow candidate', tool: 'Drip', reason: 'Reproduce required branches and purchase exits.' },
+        { label: 'Support candidate', tool: 'Sendlane', reason: 'Confirm current provider and contracted handoff scope.' },
+      ]} />
     </div>
+    <article class="prose-shopify max-w-4xl mt-12">
+      <h2>What ActiveCampaign currently supports</h2>
+      <p>Its <a class="link" href="https://help.activecampaign.com/hc/en-us/articles/360012461899-Data-synced-from-the-ActiveCampaign-Shopify-integration">Shopify data documentation</a> describes customer, order, product and abandoned-cart sync for guests and logged-in shoppers. This is not evidence that every browse event, variant availability signal or prediction required by a store is available. Reproduce the climbing-gear collection and variant back-in-stock requirements against the connected store rather than assuming the integration lacks commerce data.</p>
+      <p><a class="link" href="https://help.activecampaign.com/hc/en-us/articles/360001045964-Abandoned-cart-overview">Abandoned-cart documentation</a> describes checkout-stage capture requirements. Test guest checkout, purchase completion and late events; a cart created in a test does not establish eligibility for every visitor.</p>
+      <p><a class="link" href="https://help.activecampaign.com/hc/en-us/articles/14251311251356-Overview-of-ActiveCampaign-plans">Plan documentation</a> separates base plans from enhanced CRM and other add-ons. Confirm pipeline, sales engagement, automation limits and user access in the offered account. CRM is neither necessarily included in every email plan nor inherently wasted by a DTC store.</p>
+      <p><a class="link" href="https://help.activecampaign.com/hc/en-us/articles/23392070583068-Purchase-the-SMS-add-on">SMS requires an add-on</a> on an eligible Plus, Professional or Enterprise plan. Verify supported destinations, credits, registration and channel opt-in before launch. Two-way inbox eligibility is narrower: the documented offering requires a registered dedicated number in the US, UK or Australia. Email permission does not authorize SMS.</p>
+
+      <h2>Decide which work belongs together</h2>
+      <p>A vinyl store may need drop newsletters, welcome, cart and winback without sales deals. Compare the effort of maintaining these in ActiveCampaign with rebuilding them elsewhere; no seventy-percent maintenance reduction has been measured here. A pottery studio may retain wholesale workshop inquiries while testing mug-collection browse and replenishment elsewhere. An outdoor gear store may retain consultative custom-package quotes alongside DTC post-purchase.</p>
+      <p>Audit the last twelve months of deal and service activity with sales staff. Zero attributed revenue does not make service workflows disposable. Define an authoritative current deal state; closing, reopening or reassigning a quote must update the relevant exclusions. A wholesale role is not itself a universal ban on retail marketing: define eligibility by purpose, channel and the store’s documented policy.</p>
+      <h2>Proposed merchant tests</h2>
+      <ul>
+        <li><strong>Mechanical keyboard custom build:</strong> route a post-purchase survey inquiry into a consult, then test an account_approved task and deal closure. Measure task latency and eligible conversions separately; no 23-percent faster close is claimed.</li>
+        <li><strong>Tea, coffee and consumables:</strong> test replenishment timing against actual order state. Artisan coffee wholesale samples must follow the defined retail winback exclusions; an unused CRM seat is a cost input, not proof another tool improves results.</li>
+        <li><strong>Pottery and climbing gear:</strong> test MOQ negotiations, workshop nurture, mug winback, glaze restock and harness replenishment with both retail and trade roles. Change role, purchase and deal state while messages are queued.</li>
+        <li><strong>Vinyl and board-game drops:</strong> map distributor versus collector identity and variant or expansion interest. Try a Thursday pre-drop edit, gift-order handling and a delayed purchase event without accidentally entering winback.</li>
+      </ul>
+      <h2>Migration and operator handover</h2>
+      <ol>
+        <li>Inventory every journey, form, popup, integration and service dependency. Record trigger source, field definitions, conditions, delays, sender, queue owner and required account access. Separate deal-stage logic from purchase-driven paths.</li>
+        <li>Export available contacts, tags, fields and necessary history. Map stable source IDs, guest accounts, duplicate emails, order IDs and retail/trade roles. Preserve purpose, channel, source and timestamp of permission plus withdrawals and current suppression; tags alone are not evidence of permission.</li>
+        <li>Connect the candidate with live sends disabled. Verify catalog and order sync, event latency, duplicates, refunds and current purchase exits. Choose welcome, cart, winback or replenishment priority from actual operational need rather than a fixed migration order.</li>
+        <li>Test dispatch against authoritative current permission, suppression, purchase and deal state. A stale deal_open tag must not control eligibility indefinitely. Include late and replayed events, role changes and withdrawal while queued.</li>
+        <li>Transfer each sending purpose to one named operator. Cancel or drain old queued work before enabling its replacement; stopping new entry does not cancel delayed messages. Record message and event IDs in a dispatch ledger to prevent duplicate sends.</li>
+        <li>Test rollback: disable the new queue, reconcile dispatched IDs and current eligibility, and resume only unsent eligible work. Do not replay historical purchases into live welcome or cart flows. Keep necessary CRM access and document recovery permissions.</li>
+        <li>Verify authentication, monitored volumes, reporting and popup destinations. Hand over the runbook, access, alerts, exception queue and escalation contact to sales and retention owners who can explain each active path.</li>
+      </ol>
+      <p>Advance by tested readiness and staffing, without a fixed week-two launch or ninety-day replacement mandate. Observe both systems without allowing duplicate live sends. A split stack is an option when dependencies warrant it, not a mandatory consequence of deal awareness.</p>
+      <h2>Consistent measurement</h2>
+      <p>Record delivered messages, eligible people, orders, refunds, staff hours and incidents using the same definitions and observation windows before and after a change. Keep task latency in hours distinct from conversion rate over eligible consults. Align attribution windows and currency; UTM parity alone does not make dashboards equivalent. Flow-attributed revenue does not establish incremental contribution: use a suitable holdout for causal claims and report uncertainty. Set store-specific acceptance and rollback criteria rather than a universal ten-percent revenue tolerance.</p>
+      <p><strong>Cost comparison:</strong> Obtain current quotes using the same contact eligibility rules, monthly email volume, destination-specific SMS credits, required features and users. Include base plans, enhanced CRM, channel fees, integrations, services and internal labor hours at a stated hourly rate. Report recurring monthly totals separately from one-time migration cost, or amortize both over the same stated horizon. Compare full exit and split-stack totals without double counting shared labor. Popup growth alone does not prove contact inflation or savings under a different billing model.</p>
+    </article>
+    <section class="space-y-12 py-12">
+      <h2 class="font-serif text-4xl">Eight candidates to test</h2>
+      <p>These cards also render shared catalog descriptors, strengths, limits and features. Treat those as an inventory to verify against current plans, not evidence of feature parity or a completed migration. Ordering is editorial and does not establish a winner.</p>
+      <ToolReview app={alternatives[0]} rank={1} paragraphs={[
+        'Sequenzy advertises Shopify customer, order and product sync plus cart, post-purchase and winback flows. Test the harness-buyer exclusion before a rack sale and current-purchase suppression with the person who will maintain it.',
+        'Its published pricing uses email volume and unlimited contacts; that billing basis alone does not prove lower total cost. Confirm required features and any separate channel charges. Software does not supply a sales operator or guarantee migration parity.',
+      ]} />
+      <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+        'Evaluate Klaviyo for catalog-heavy climbing gear, vinyl variants or board-game expansions. Validate browse tracking, variant availability and predictive eligibility on the offered plan instead of assuming the brand guarantees them.',
+        'Have finance reconcile orders, refunds and attribution definitions. Check agency access and support scope separately from product capability.',
+      ]} />
+      <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+        'Evaluate Omnisend when coordinated welcome, cart and post-purchase across supported channels is the requirement. Test independent channel withdrawal and queued-message exclusions.',
+        'Time the intended operator building and editing a real journey; a prebuilt template does not establish a faster or safer cutover.',
+      ]} />
+      <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+        'Evaluate Drip when the operator wants a focused commerce workflow. Reproduce tag branching, product triggers, exits and reporting on the current plan.',
+        'Compare <a class="link" href="/compare/drip-vs-activecampaign">Drip vs ActiveCampaign</a>; required sales and service work still needs an owner if moved out of scope.',
+      ]} />
+      <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+        'For Sendlane, confirm the current provider and account-continuity terms following the Privy acquisition. Ask what onboarding, data access, support and migration work is actually contracted.',
+        'A guided handoff can suit limited internal capacity when its deliverables meet the store’s needs. Do not assume templates, retained access or a white-glove migration are included.',
+      ]} />
+      <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+        'Evaluate Brevo for the required messaging and automation mix. Its current Shopify documentation describes Brevo PushOwl; verify the exact app, sync, channels and workflow dependencies for this account.',
+        'Treat it as a potential long-term fit if it passes the store’s requirements, without assuming a later Sequenzy upgrade is necessary.',
+      ]} />
+      <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+        'Evaluate Mailchimp against actual Shopify events, branching and reporting requirements on the proposed plan. Newsletters-only can be a deliberate scope choice.',
+        'Inventory required automations before accepting any loss of capability. Measure operator effort rather than inferring it from platform category.',
+      ]} />
+      <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+        'Evaluate Shopify Email when working in Shopify administration fits the operator. Test required segments, automation triggers and reporting in the current offering.',
+        'It need not be a temporary pause before another purchase. Keep necessary sales and service work somewhere with explicit ownership; this page establishes neither full replacement nor incapability.',
+      ]} />
+    </section>
+    <article class="prose-shopify max-w-4xl">
+      <h2>Source and review boundaries</h2>
+      <p>Primary documentation reviewed November 25, 2026: ActiveCampaign links above; <a class="link" href="https://www.sequenzy.com/pricing">Sequenzy pricing</a> and <a class="link" href="https://www.sequenzy.com/features/shopify-integration">Shopify integration</a>; <a class="link" href="https://help.brevo.com/hc/en-us/articles/360014912879-Brevo-PushOwl-app-for-Shopify-Connect-your-Shopify-store-with-Brevo-PushOwl">Brevo PushOwl</a>; <a class="link" href="https://www.privy.com/sendlane-acquisition">Privy acquisition notice</a>. Advertised functionality is not a store-specific acceptance test. No merchant result, guaranteed saving, portable workflow or retained CRM equivalence is established here.</p>
+      <p><a class="link" href="/apps/activecampaign">ActiveCampaign review</a> · <a class="link" href="/compare/activecampaign-vs-klaviyo">ActiveCampaign vs Klaviyo</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+    </article>
   </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Illustrative ActiveCampaign split sequence</h2>
-    <p><strong>Stage 1 — CRM truth test.</strong> Pipeline export. Sales team interview. Tag taxonomy documentation. Decide full exit versus CRM-only remainder.</p>
-    <p><strong>Week 2 — DTC core on new ESP.</strong> Sequenzy or Klaviyo cart and welcome. Wholesale deals stay in ActiveCampaign if split. Separate suppression documented.</p>
-    <p><strong>Stage 3 — Prune automations.</strong> Migrate purchase-driven flows only. Retire deal-stage triggers from DTC migration scope. B2B newsletter collision check.</p>
-    <p><strong>Stage 4 — Deliverability and cutover checks.</strong> Review mixed B2B/DTC engagement history, authentication and domain strategy. Transfer each sending purpose only after field mapping, permission, current suppression and cancellation of old queued work have been tested. Staffing and integration dependencies determine duration; four weeks is not a guaranteed completion time.</p>
-
-    <h2>Buyer desk: CRM vs DTC lifecycle</h2>
-    <p>ActiveCampaign exits fail when merchants migrate CRM complexity to Klaviyo without pruning — expensive neglect. Audit empty pipelines before switching. Pure DTC should land on Sequenzy or Omnisend, not another overbuilt platform.</p>
-    <p>A split stack can retain CRM work while DTC moves. Assign one sending owner per purpose, reconcile permission and current suppression across both systems, and test withdrawal, purchase and role changes at dispatch. Wholesale pottery deals and mug winback require explicit eligibility rules, not documentation alone.</p>
-    <p>Use a ninety-day review as an illustrative checkpoint: reconcile delivered messages, queue ownership, permission and suppression failures, operating effort and matched all-in costs. Flow-attributed revenue does not establish incremental lift; use a suitable holdout for causal claims. Retain necessary CRM service workflows even when they have no attributed sales. Split-stack reviews should cover wholesale and DTC, with named owners who can explain each active journey.</p>
-
-    <h2>Pure DTC versus hybrid exit paths</h2>
-    <p><strong>Sequenzy or Omnisend:</strong> pure DTC without sales pipeline — ActiveCampaign overkill. <strong>Klaviyo:</strong> when leaving AC for Shopify data depth, prune CRM first. <strong>Split stack:</strong> CRM stays for wholesale MOQ deals, Klaviyo owns DTC mugs and replenishment — document suppression across systems.</p>
-    <p><strong>Scenario — pottery wholesale plus DTC.</strong> Proposed test: keep MOQ negotiations in CRM while rebuilding mug winback in the destination ESP. Use test profiles with retail and wholesale roles, then change role, purchase and suppression state while messages are queued. Verify exclusion at dispatch and record both queue owners; no successful merchant cutover is documented.</p>
-    <h2>Empty pipeline purge</h2>
-    <p>Audit CRM stages before Shopify ESP migration. Stale deal-open tags can leave DTC exclusions inconsistent; verify billing rules rather than assuming each stale deal increases the bill. Define the authoritative current deal state and test how closing or reopening a quote changes queued messages.</p>
-
-    <h2>Workflow ranking matrix for ActiveCampaign exits</h2>
-    <p><strong>Rank 1 — Sequenzy:</strong> pure DTC tea, vinyl, board games without sales pipeline; need lifecycle outcomes in plain language; pay-per-email beats per-contact CRM bloat. <strong>Rank 2 — Klaviyo:</strong> leaving AC for Shopify browse depth and variant replenishment; CRM pruned to active deals only. <strong>Rank 3 — Omnisend:</strong> SMB needs cart live in days after AC overbuild collapse. <strong>Rank 4 — Split stack:</strong> wholesale climbing packages in AC deals, DTC harness replenishment in Klaviyo — documented suppression when deal_open tag true.</p>
-    <p>Mechanical keyboard custom build consults entered AC pipeline from post-purchase survey — marketing suppressed promo blasts while deal open; converted 23% faster MOQ close when rep task fired same day as account_approved tag. Pure consumables brand without consults paid six months unused CRM seats — Sequenzy replaced entire AC instance.</p>
-    <p>Buyer checklist: audit unused deal stages before retirement; test retail and wholesale pricing exclusions; name DTC and sales queue owners; reconcile attribution definitions over matched observation windows. A ninety-day review is a planning example, and a ten-percent revenue tolerance is not an established acceptance threshold. Test a Thursday pre-drop edit without allowing deal-stage changes to enqueue mug winback.</p>
-    <p>Workflow test before commit: build mug replenishment and cart recovery in candidate ESP while AC still runs wholesale — if DTC flows need deal-stage awareness, split stack mandatory; if not, full exit to Sequenzy or Klaviyo simplifies ops hours measurably.</p>
-    <p>Pure DTC tea without pipeline paid six months unused CRM seats — Sequenzy replaced entire AC. Wholesale climbing MOQ in deal stages, DTC harness replenishment Klaviyo — retail never received trade pricing email.</p>
-
-    <h2>ActiveCampaign exit desk: automation power, Shopify fit</h2>
-    <p>ActiveCampaign leavers usually keep the CRM for sales pipelines but move Shopify ecommerce sends where product sync and revenue reporting are native. Week one: tag every ecommerce automation versus sales sequence; B2B vinyl distributors must not receive DTC flash promos. Week two: rebuild cart and post-purchase on Shopify ESP with UTM parity for finance. Week three: climbing gear dealers with rep-assigned accounts need explicit suppression when DTC abandonment fires. Week four through twelve: integrate or isolate — half-migrations send duplicate post-purchase from AC and Klaviyo. Artisan coffee wholesale samples in CRM should gate retail winback. Pottery workshop nurture drips stay in AC; glaze restock in ESP. Sequenzy for DTC strategy; Klaviyo for unified commerce reporting; ActiveCampaign retained for complex B2B only. Day ninety: zero duplicate ecommerce sends, Shopify revenue attributed in one dashboard, sales automations documented separately with consent boundaries.</p>
-  </article>
-
-  <div class="prose-shopify container max-w-4xl pb-8">
-    <h2>ActiveCampaign split: ecommerce send registry</h2>
-    <p>Maintain a registry of every automation referencing orders, products or carts, including trigger, purpose, channel, sender and queue owner. In a quarterly review, investigate zero attributed revenue before disabling a workflow: necessary service notices and long sales cycles cannot be judged by attributed sales alone. Map vinyl distributor and collector roles separately from channel permission at import. Reconcile withdrawals and current suppression across the CRM and ESP rather than isolating unsubscribe records. Before a staffed cutover, test gift-order rules, duplicate events, purchases and withdrawals while messages are queued; cancel stale work and recheck state at dispatch.</p>
-  </div>
-
   <FaqSection faqs={faqs} title="ActiveCampaign alternatives FAQ" />
 </BaseLayout>
