@@ -1,215 +1,88 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('recart')!;
 const path = '/alternatives/recart-alternative';
-const title = 'Best Recart Alternatives for Shopify (2026)';
-const desc = 'Evaluate eight Recart alternatives for Shopify, with a recovery migration checklist, channel permission checks, sender ownership and a plan to measure incremental margin.';
-
-const altSlugs = ['postscript', 'sequenzy', 'omnisend', 'klaviyo', 'firepush', 'smsbump', 'sendlane', 'privy'];
-const alternatives = altSlugs.map((s) => appBySlug(s)!);
-
+const title = 'Recart Alternatives for Shopify (2026)';
+const desc = 'Compare Recart alternatives by verified channel scope, merchant workflow requirements, permission evidence and a tested cutover plan.';
+const options = [
+  { slug: 'postscript', name: 'Postscript', fit: 'Consider for SMS campaigns and recovery when its messaging tools meet your requirements. Postscript also announces Email; confirm account availability, onboarding and pricing before treating email consolidation as ready.', test: 'Demonstrate a drop-alert campaign, replies and a recovery flow using your Shopify events. Check preorder stock gates, quiet hours, purchase exits and who handles support replies.', source: 'https://postscript.io/email', label: 'Postscript Email' },
+  { slug: 'sequenzy', name: 'Sequenzy', fit: 'Consider for event-driven email journeys when the required Shopify data can reach the automation. Its pricing describes monthly email volume, included web and app push, and a paid SMS/MMS beta add-on; it is not necessarily an email-only companion.', test: 'Prove cart and order identity mapping, variant content, replenishment triggers and withdrawal handling in the proposed integration. Verify beta region, sender, credit and support constraints before assigning SMS work.', source: 'https://www.sequenzy.com/pricing', label: 'Sequenzy pricing and channels' },
+  { slug: 'omnisend', name: 'Omnisend', fit: 'Consider when email, SMS and web push in one product match the journeys you need. A shared dashboard still requires testing of channel eligibility and frequency rules.', test: 'Run a cart-to-purchase fixture across the selected channels, including a withdrawal between steps. Verify templates, catalog fields and the service scope of any migration offer.', source: 'https://www.omnisend.com/', label: 'Omnisend channels' },
+  { slug: 'klaviyo', name: 'Klaviyo', fit: 'Consider when event segmentation and catalog requirements justify the operating work. Its mobile-app channel is distinct from browser web push; verify the channels and regions your plan supports.', test: 'Inspect actual cart, variant and order payloads. Test anonymous-to-known identity resolution, a late purchase event and conflicting segment membership before enabling a recovery flow.', source: 'https://www.klaviyo.com/', label: 'Klaviyo platform' },
+  { slug: 'firepush', name: 'Firepush', fit: 'Consider for a demonstrated browser web-push requirement. Its current site focuses on web push, so evaluate it for that role rather than assuming an email or SMS replacement.', test: 'Test browser permission capture, device coverage, expired subscriptions and purchase exits. Establish how other senders learn about a purchase before adding another recovery touch.', source: 'https://getfirepush.com/', label: 'Firepush web push' },
+  { slug: 'smsbump', name: 'SMSBump / Yotpo SMS', fit: 'Keep this historical identity in the comparison for readers with legacy accounts. Yotpo’s lifecycle notice says the SMS application is decommissioned and its dashboard and background services are inactive; it is not a current replacement shortlist entry.', test: 'Ask the provider what legacy records remain accessible and through which process. Do not assume dashboard exports, active sends or automatic migration remain available.', source: 'https://email-and-sms.yotpo.com/', label: 'Yotpo lifecycle notice' },
+  { slug: 'sendlane', name: 'Sendlane', fit: 'Consider its email and SMS platform when the demonstrated journeys and support scope meet your requirements.', test: 'Ask for a walkthrough of cart, welcome and post-purchase flows with your event fields. Agree which migration tasks the provider owns, escalation times and how your team pauses sends.', source: 'https://www.sendlane.com/', label: 'Sendlane platform' },
+  { slug: 'privy', name: 'Privy', fit: 'Consider for capture plus email and SMS journeys. Its current site describes automation as well as list growth, so do not treat it as capture-only by default.', test: 'Follow a popup signup through channel-specific evidence, identity creation, welcome and recovery. Verify how withdrawals reach every sending system if another platform remains.', source: 'https://www.privy.com/', label: 'Privy platform' },
+];
 const faqs = [
-  { question: 'Why do Shopify merchants leave Recart?', answer: 'Consider a replacement when the recovery journeys, channels or operating support you need are not available in your current agreement. Inventory the flows you actually use, including capture and campaign work, before assuming that a different product will reduce cost or workload. Treat the comparisons below as a shortlist requiring current vendor verification.' },
-  { question: 'What is the best Recart replacement for cart recovery?', answer: 'Postscript for SMS depth; Omnisend or Sequenzy for email cart plus full lifecycle. Many stores add email recovery alongside or instead of Recart SMS when attributed email recovery exceeds SMS.' },
-  { question: 'Is Recart enough alone?', answer: 'Assess your own coverage rather than using store size as a cutoff. Map recovery, welcome, post-purchase and winback to the tools responsible for each. A specialist can remain part of the stack if ownership, permission checks, purchase exits and cross-channel frequency rules are explicit and tested.' },
-  { question: 'What happened to Recart messenger recovery?', answer: 'Do not assume a general decline explains your results. Check which Messenger functions are available in your account and inspect your own eligible audience, delivery, costs and attribution settings. Historical channel permission does not establish permission to send email or SMS after migration.' },
-  { question: 'Firepush vs Recart?', answer: 'Verify current Firepush and Recart channel availability, integrations and support with each vendor before choosing. If web push is the requirement, test permission capture, device coverage, purchase exits and reporting in the proposed setup. Compare the complete stack rather than assuming that a channel list proves equivalent recovery behavior.' },
-  { question: 'When should I stay on Recart?', answer: 'Stay when the current setup meets documented requirements and a measured alternative has not demonstrated a worthwhile improvement after all costs. Confirm that the email and SMS owners coordinate current suppression, purpose-specific eligibility, purchase exits and frequency rules; attributed recovery alone does not prove incremental return.' },
-  { question: 'How does Recart migration work?', answer: 'Export SMS consent; document recovery flow timing, discount rules, and messenger opt-ins if applicable. Rebuild in Postscript or Omnisend; align suppression with email ESP on Sequenzy or Klaviyo.' },
-  { question: 'Does Sequenzy replace Recart?', answer: 'Sequenzy replaces email lifecycle Recart never provided — common stack was Sequenzy email plus Recart SMS. Leaving Recart means moving SMS to Postscript or consolidating Omnisend with email cart recovery.' },
+  { question: 'Why consider leaving Recart?', answer: 'Start with an unmet requirement, service concern or matched cost comparison. Recart currently describes SMS, list growth, campaigns and multiple lifecycle flows; leaving is not an automatic graduation from recovery.' },
+  { question: 'Which alternative is best for recovery?', answer: 'Choose from tested cart events, current channel eligibility, purchase exits and operating requirements. The options here are conditional fits, not a performance ranking.' },
+  { question: 'Does Recart only handle abandoned carts?', answer: 'No. Its current site lists welcome, browse abandonment, fulfillment, replenishment and review flows alongside cart recovery and campaigns. Verify account-specific availability. Email list capture or an email campaign library does not by itself establish native email sending.' },
+  { question: 'Can Messenger subscribers move to email or SMS?', answer: 'Historical Messenger permission does not establish eligibility for a different channel or purpose. Confirm available records and destination import rules; unresolved records stay out of sends.' },
+  { question: 'Does Sequenzy replace Recart?', answer: 'Potentially for verified requirements. Sequenzy advertises email automation, web and app push and a paid SMS/MMS beta. Demonstrate the Shopify integration, sender eligibility and needed workflows before selecting a combined or split stack.' },
+  { question: 'Is Postscript SMS-only?', answer: 'Postscript has announced Email. Confirm current account access, rollout, service scope and pricing directly before planning consolidation; a launch announcement and a pricing waitlist can coexist.' },
+  { question: 'When should I stay on Recart?', answer: 'Stay when the current account meets requirements and an alternative has not shown a worthwhile improvement after matched costs and operational effort. Coordinate any remaining senders with explicit journey ownership.' },
+  { question: 'How long does migration take?', answer: 'Timing depends on data access, sender arrangements, rebuild work and successful tests. Do not activate replacement sends until old queues and retries can be retired, purchase exits work and a rollback owner is ready.' },
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-slate-500">/</span><span class="text-slate-600">Recart alternatives</span></nav>
-      <header class="max-w-4xl">
-        <p class="catalog-kicker">Recovery graduation</p>
-        <h1 class="hero-title mt-5">Best Recart alternatives for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-800">
-          Recart is cart recovery narrow and deep — SMS and messenger abandonment texts that convert. Merchants leave when retention matures beyond recovery, when messenger channel died quietly, or when paying for recovery-only while email lifecycle on Sequenzy drives stronger attributed margin without second QA process.
-        </p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Eight ranked alternatives for stores graduating off Recart — broader SMS platforms, multichannel consolidators, and lifecycle email tools. Holdout-test SMS versus email recovery before assuming Recart SMS was the hero — many merchants find Sequenzy email cart outperformed narrow SMS recovery all along.
-        </p>
+    <div class="container max-w-4xl">
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a> / Recart alternatives</nav>
+      <header>
+        <p class="catalog-kicker">Shopify messaging requirements</p>
+        <h1 class="hero-title mt-5">Recart alternatives for Shopify</h1>
+        <p class="mt-7 text-xl leading-9">Choose a replacement from the work your store needs: capture, campaigns, recovery, replenishment or support. Keeping Recart, splitting channels and consolidating are all candidates when the workflows and costs support them.</p>
       </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox title="Top Recart replacements" picks={[
-          { label: 'Best SMS upgrade', tool: 'Postscript', reason: 'Full SMS marketing beyond recovery-only Recart scope.' },
-          { label: 'Best email lifecycle', tool: 'Sequenzy', reason: 'Lifecycle layer Recart never was — pair or replace recovery.' },
-          { label: 'Best consolidation', tool: 'Omnisend', reason: 'Email and SMS cart recovery in one suppression model.' },
-          { label: 'Best data depth', tool: 'Klaviyo', reason: 'Unified recovery plus browse abandonment and winback.' },
-          { label: 'Best push add-on', tool: 'Firepush', reason: 'Web push when recovery needed third channel.' },
-        ]} />
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why Shopify merchants leave Recart</h2>
-        <p>Coverage audit. A hypothetical specialty-tea shop might need recovery, welcome, replenishment and winback across more than one tool. List what the current account actually handles, then test whether consolidation reduces the work of maintaining those journeys. This is a planning example, not a reported merchant result.</p>
-        <p>Channel audit. Review current Messenger availability and your own delivery and conversion records before attributing a change to channel decline. Compare eligible audiences, offer exposure and reporting windows; similar attributed recovery rates do not demonstrate equivalent incremental profit.</p>
-        <p>Email recovery gap. Shopify merchants discover email cart recovery often attributes higher than SMS for same cohort — Recart feels expensive when Sequenzy or Klaviyo email recovery outperforms while Recart bill continues for narrow job.</p>
-        <p>Keeping a specialist can be reasonable when the existing recovery setup meets requirements and the separate email owner coordinates suppression. Before leaving, assign each journey a destination, including journeys intentionally left inactive until their eligibility and purchase exits are tested.</p>
-
-        <h2>Recovery, lifecycle, and channel mix</h2>
-        <p>Before exit, reconcile channel reports over a representative business cycle. Attribution describes credited orders, not orders caused by a message. Where feasible, randomize eligible customers into email, SMS, combined and no-recovery groups; use adequate sample size and uncertainty rather than a fixed test duration. Compare net incremental margin after matched platform, message, carrier, discount, integration and operating costs.</p>
-        <p>Audit permission evidence by channel and purpose during exit. Preserve timestamps, collection text, source and withdrawals where available. A Messenger opt-in is not transferable permission for SMS or email; unresolved records stay out of sends until an appropriate basis is established.</p>
-
-        <h2>Newsletters, lifecycle, and recovery-only limits</h2>
-        <p>Recart exit forces full funnel design — editorial newsletters and winback on Sequenzy while SMS consolidates to Postscript or Omnisend with shared suppression rules.</p>
-
-        <h2>Recart migration checklist</h2>
-        <ol>
-          <li><strong>Export channel permission evidence</strong> — separate SMS, Messenger and email, collection purpose and withdrawals; obtain appropriate review for each channel and jurisdiction.</li>
-          <li><strong>Document Recart recovery timing and discount rules</strong> — rebuild spec for new platform.</li>
-          <li><strong>Compare recovery evidence</strong> — reconcile attribution definitions and use an eligible holdout to estimate incremental margin with matched costs.</li>
-          <li><strong>Choose recovery upgrade vs full consolidation</strong> — Postscript vs Omnisend/Klaviyo.</li>
-          <li><strong>Align current suppression and purchase exits</strong> — recheck eligibility before each send and coordinate frequency and offers across owners.</li>
-          <li><strong>Port numbers or provision new with compliance review</strong>.</li>
-          <li><strong>Rebuild cart recovery on new platform</strong> — QA test abandonment path.</li>
-          <li><strong>Assign sender ownership before cutover</strong> — cancel old queues and retries, deduplicate replayed events and test rollback before enabling replacement sends.</li>
-          <li><strong>Add welcome and winback if consolidating</strong> — do not stop at cart only on new tool.</li>
-          <li><strong>Update opt-in capture flows</strong> — feed replacement SMS platform.</li>
-          <li><strong>Weekly spend review first month</strong> on new SMS stack.</li>
-          <li><strong>Archive required records</strong> — retain accessible permission, withdrawal and reporting evidence under a documented retention policy rather than an arbitrary ninety-day rule.</li>
-        </ol>
-
-        <h2>Three merchant scenarios</h2>
-        <p><strong>Board games — upgraded to Postscript.</strong> Recart recovery worked; needed marketing SMS for drop alerts and TCPA tooling for list growth. Sequenzy handles email lifecycle and Kickstarter suppression.</p>
-        <p><strong>Mechanical keyboards — consolidation candidate.</strong> In this hypothetical case, the team would compare email and SMS recovery for the same eligible audience before consolidating. Test cart, welcome and post-purchase behavior and inspect delayed purchases before deciding that a tool is redundant.</p>
-        <p><strong>Climbing gear — specialist candidate.</strong> A hypothetical store could keep its recovery specialist while email remains elsewhere. Retention depends on demonstrated incremental margin, sustainable costs and tested coordination between senders, rather than a prescribed share of weekly revenue.</p>
-
-        <h2>Recovery channel incrementality</h2>
-        <p>A recovery experiment should distinguish incremental lift from credited sales. Predefine eligible populations, offers, evaluation windows and a no-message holdout where feasible; analyze customers consistently across channels. Do not shrink SMS solely because an email report claims more revenue. Choose a broader platform only after verifying the needed campaign functions and the cost of operating the complete stack.</p>
-        <p>Keep Messenger, email and SMS permission evidence separate. Review current purpose-specific eligibility rather than importing channel subscribers as universally marketable contacts. Document discount escalation, purchase exits and suppression checks so rebuilding a flow does not silently change who receives an offer.</p>
-
-        <h2>Due diligence before Recart migration</h2>
-        <p>Export available recovery reports and document their attribution rules with finance. Confirm any sender or number transfer with the providers before setting a date. Assign one sender to each journey and channel; stop old scheduled retries and queues before enabling replacement sends. Deduplicate replayed events with stable event or order identifiers. Test purchases, withdrawals and suppressed profiles against current state immediately before dispatch, and retain a rollback owner.</p>
+      <article class="prose-shopify mt-12">
+        <h2>Establish the current scope first</h2>
+        <p><a class="link" href="https://recart.com/">Recart’s current product site</a> describes SMS and list growth, campaigns, cart and browse recovery, plus welcome, fulfillment, replenishment and review flows. That is broader than recovery alone. Confirm which capabilities your agreement enables. Email capture and an email campaign library are not sufficient evidence of native email delivery, and neither supports a categorical claim about what Recart has never offered.</p>
+        <p>Inventory each active journey, its channel, trigger, offer, eligibility rule, sender and support owner. Check historical Messenger functions against the account rather than assuming a channel decline caused your results. Retain the specialist when it meets the requirement; consolidate only when the proposed setup resolves a documented gap.</p>
+        <h2>Compare the same work and costs</h2>
+        <p><strong>Cost comparison:</strong> Request current quotes for the same eligible audience, geography, message volume, channel mix, features and evaluation period. Include platform fees, message segments or credits, carrier charges, overages, required add-ons, integration and operating labor, plus discounts and refunds. Separate one-time rebuild costs from recurring costs and price the whole proposed stack. Sequenzy’s email-volume model and paid SMS beta require different inputs from a contact-based quote.</p>
+        <p>Attributed sales identify credited orders, not orders caused by messages. Where feasible, predefine eligible email, SMS, combined and no-recovery groups with consistent offers and measurement windows. Estimate incremental margin after matched costs, report uncertainty and use a sample appropriate to the purchase cycle. A higher email attribution report alone does not justify retiring SMS or prove a vendor wins.</p>
       </article>
-
-      <section class="container pb-12">
-  <p class="mt-4 text-sm text-slate-600"><strong>Cost comparison:</strong> Check the supplier’s current pricing for your contact count, sending volume, channels, and required features. Include overages and any separate services in your estimate.</p>
-</section>
-<section class="container space-y-12 py-16">
-        <p class="catalog-kicker">Ranked alternatives</p>
-        <h2 class="font-serif text-4xl font-black text-slate-950">Eight Recart alternatives for Shopify stores</h2>
-
-        <ToolReview app={alternatives[0]} rank={1} badge="SMS upgrade" paragraphs={[
-          'Evaluate Postscript against your required SMS recovery and campaign workflows. Verify current conversation handling, consent evidence exports, regional availability and onboarding support rather than assuming a broader feature set.',
-          'Pair Sequenzy for email lifecycle — replaces common Recart plus email split with clearer specialization. Document cross-channel suppression.',
-          'Choose after testing the actual campaign requirements that prompted the migration, with sender ownership and current eligibility checks documented.',
-        ]} />
-
-        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
-          'Sequenzy email lifecycle Recart never provided — welcome through winback with pay-per-email. Email cart recovery often attributes higher than SMS for same merchants — evaluate before keeping SMS-only tool.',
-          'Agent-first setup for replenishment and winback after cart stabilizes. Architecture: migrate email recovery to Sequenzy, SMS to Postscript, retire Recart.',
-          'Choose Sequenzy when retention maturity beyond recovery is exit driver.',
-        ]} />
-
-        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
-          'Evaluate Omnisend for the proposed email and SMS journeys. Test purchase exits, channel eligibility and frequency coordination rather than assuming that one dashboard guarantees unified suppression.',
-          'Verify which templates, events and channels your plan supports; estimate the rebuild and ongoing QA effort for your actual catalog.',
-          'Choose consolidation when verified coverage and matched total operating costs justify it.',
-        ]} />
-
-        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
-          'Evaluate Klaviyo against the event data and segmentation required by your recovery, browse and winback journeys. Test actual Shopify event payloads and purchase exits before relying on inferred behavior.',
-          'Obtain a current quote for the eligible profiles, channels and message volume. Include migration, QA and ongoing operations in the comparison.',
-          'Choose based on tested catalog and event requirements rather than assuming that complexity alone creates margin.',
-        ]} />
-
-        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
-          'Firepush web push add-on — when recovery needed third channel Recart messenger no longer provided. Push plus email on Omnisend or Sequenzy plus Postscript SMS.',
-          'Measure incremental margin and permission capture before adding another channel; more send surfaces also require coordinated ownership and frequency controls.',
-          'Confirm the missing recovery requirement before adding push; a historical Messenger result does not establish a current push opportunity.',
-        ]} />
-
-        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
-          'SMSBump is a historical option here, not a current SMS replacement: Yotpo has decommissioned its SMS application. Its notice says the dashboard and background services are inactive.',
-          'Yotpo announced full Email and SMS deprecation for December 31, 2025. This sunset is scoped to those products; it is not a statement that Reviews or Loyalty were discontinued.',
-          'For migration planning, use a currently available provider and verify account-specific access and export arrangements. See the official lifecycle notice and migration announcement linked below.',
-        ]} />
-
-        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
-          'Ask Sendlane to demonstrate the email and SMS journeys and migration work required for your stack. Confirm which tasks the provider performs and which remain with your team.',
-          'Compare a current all-in quote, onboarding scope and service commitments against the cost of implementing the same journeys elsewhere.',
-          'Choose guided migration only when the verified support scope addresses the work your team needs help completing.',
-        ]} />
-
-        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
-          'Privy capture pairing — Recart never owned list growth. Architecture: Privy capture feeding Sequenzy or Omnisend lifecycle replacing Recart recovery role.',
-          'Verify whether the current Privy account can perform each required recovery and lifecycle task before treating it as either a complete replacement or capture-only component.',
-          'Choose from tested capture, journey and integration requirements, including how permission and withdrawal events reach the sending system.',
-        ]} />
-        <p class="text-sm">Yotpo sources: <a class="link" href="https://email-and-sms.yotpo.com/">SMS lifecycle notice</a> and <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Email and SMS migration announcement</a>.</p>
+      <section class="space-y-8 py-12">
+        <h2 class="font-serif text-4xl font-black">Eight alternative identities to evaluate</h2>
+        <p>These are requirement-based options; the legacy SMSBump entry explains its current availability rather than recommending a discontinued product.</p>
+        {options.map((option) => (
+          <article class="card prose-shopify" id={option.slug}>
+            <h3>{option.name}</h3>
+            <p>{option.fit}</p>
+            <p><strong>Proposed acceptance exercise:</strong> {option.test}</p>
+            <p><a class="link" href={option.source}>{option.label}</a> · <a class="link" href={`/apps/${option.slug}`}>Related {option.name} guide</a></p>
+          </article>
+        ))}
       </section>
-
-      <div class="container mb-12 max-w-4xl card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Recovery stack comparison</h2>
-        <table class="data-table">
-          <thead><tr><th>Platform</th><th>Cart SMS</th><th>Email lifecycle</th><th>vs Recart</th></tr></thead>
-          <tbody>
-            <tr><td>Recart (leaving)</td><td>Primary</td><td>No</td><td>Recovery-only</td></tr>
-            <tr><td>Postscript</td><td>Primary</td><td>No</td><td>SMS upgrade</td></tr>
-            <tr><td>Omnisend</td><td>Yes</td><td>Yes</td><td>Consolidate</td></tr>
-            <tr><td>Sequenzy + Postscript</td><td>Via Postscript</td><td>Yes</td><td>Unbundle</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="container max-w-4xl pb-8 text-sm">
-        <p class="font-black text-slate-950">Related guides</p>
-        <p class="mt-2"><a class="link" href="/compare/recart-vs-postscript">Recart vs Postscript</a> · <a class="link" href="/alternatives/postscript-alternative">Postscript alternatives</a> · <a class="link" href="/use-cases/abandoned-cart">Cart recovery playbook</a> · <a class="link" href="/alternatives">All alternatives</a></p>
-      </div>
+      <article class="prose-shopify pb-12">
+        <h2>Merchant exercises before choosing a stack</h2>
+        <p>The following are proposed fixtures, not completed migrations or reported merchant outcomes. Run the relevant cases against the current account and each candidate with equivalent inputs.</p>
+        <ul>
+          <li><strong>Board games:</strong> simulate a preorder drop with limited allocations. Gate every reminder on stock and purchase state; exclude Kickstarter backers from an unsuitable offer and test the handoff to customer support.</li>
+          <li><strong>Mechanical keyboards:</strong> use a cart with switch and layout variants. Confirm compatibility content, variant links and discount rules survive a changed popup or identity merge. Buy on another device before the next queued touch and verify it exits.</li>
+          <li><strong>Climbing gear:</strong> test a flash promotion while a recovery journey is active. Resolve competing offers and frequency caps across senders; keep a specialist only if the coordinated setup meets the requirement.</li>
+          <li><strong>Specialty tea:</strong> map sampler education, editorial newsletters, replenishment and winback to explicit owners. Test subscription and purchase exclusions before adding new journeys.</li>
+          <li><strong>Artisan coffee:</strong> propose subscribe-and-save education after cart recovery. Separate legacy Messenger permission from new channel eligibility; test subscription status updates and evaluate low-value carts using margin after message and offer costs.</li>
+          <li><strong>Apparel and accessories:</strong> compare a capped discount, free shipping and no offer within an eligible experiment. Set offer limits from inventory, margin and customer experience; do not assume a universal winning percentage or cart-value cutoff.</li>
+        </ul>
+        <h2>Cut over by readiness, with one owner per journey</h2>
+        <ol>
+          <li><strong>Establish feasibility:</strong> ask both providers which records can be accessed, exported and imported, including permission evidence, withdrawals, reports and identifiers. Verify any sender or number transfer before scheduling; neither export nor portability is guaranteed.</li>
+          <li><strong>Map identity and permission:</strong> reconcile Shopify customer, cart and order IDs with email addresses, phone numbers and device subscriptions. Preserve collection text, source, timestamps, purpose and withdrawals where available. Quarantine ambiguous matches and unresolved channel eligibility.</li>
+          <li><strong>Rebuild inactive:</strong> document triggers, intervals, stock gates, offers, quiet hours and exits. Replay duplicate and out-of-order events in a controlled fixture. A replayed cart event must not create a second recovery enrollment.</li>
+          <li><strong>Test dispatch state:</strong> withdraw permission or place an order after enrollment but before a queued message. Verify current eligibility and purchase state before dispatch, including a delayed order event, merged profile and retried send. Record failures and resolve them before activation.</li>
+          <li><strong>Retire the old queue:</strong> identify scheduled campaigns, flow steps, retry workers and integration replays. Demonstrate cancellation or safe draining, prevent overlapping sender ownership, and confirm retirement in logs before enabling the replacement. A paused flow alone may not cancel queued work.</li>
+          <li><strong>Hand off and roll back:</strong> give support the sender map, reply destination, pause procedure and escalation owner. Define how rollback stops replacement queues before the prior sender resumes. Test that procedure with sample events.</li>
+          <li><strong>Review and expand:</strong> reconcile finance definitions, permission records and recurring spend after cutover. Add welcome, replenishment or winback only when the business requirement and tests justify them. Set review dates from purchase cycles and experiment power rather than a fixed four-week or ninety-day graduation target.</li>
+        </ol>
+        <p>Success is a documented improvement against your predefined requirements with reliable ownership and no duplicate or ineligible sends in the tested cases. No migration duration, revenue uplift, unchanged deliverability or automatic lifecycle expansion is promised.</p>
+        <h2>Related guides</h2>
+        <p><a class="link" href="/compare/recart-vs-postscript">Recart vs Postscript</a> · <a class="link" href="/alternatives/postscript-alternative">Postscript alternatives</a> · <a class="link" href="/use-cases/abandoned-cart">Cart recovery playbook</a> · <a class="link" href="/alternatives">All alternatives</a></p>
+      </article>
     </div>
   </section>
-
-  <article class="prose-shopify container max-w-4xl pb-8">
-    <h2>Four-week Recart graduation timeline</h2>
-    <p><strong>Week 1 — Recovery attribution.</strong> Illustrative planning phase: export reports, separate channel permission evidence and design an appropriately powered incrementality test. Verify account capabilities and migration dependencies before selecting the replacement; the week labels are not promised completion dates.</p>
-    <p><strong>Week 2 — SMS replacement live.</strong> Cart recovery QA on new platform. Email cart on Sequenzy if not already running. Parallel suppression tags applied.</p>
-    <p><strong>Week 3 — Lifecycle expand.</strong> Inventory welcome and post-purchase work already running before adding journeys. Test discount rules, purchase exits and suppression for each owner. Support should know which sender handles each message and how to halt it.</p>
-    <p><strong>Week 4 — Recart off.</strong> Cut over only after queue, retry and rollback checks pass. Reconcile reporting definitions with finance and preserve records needed for permission, suppression and audit purposes. Timing depends on tested readiness and provider transfer constraints.</p>
-
-    <h2>Buyer desk: beyond recovery-only</h2>
-    <p>Define the actual reason for leaving before choosing between a specialist and consolidation. Compare verified workflow coverage, operating load, matched total costs and incremental margin. Preserve permission evidence and withdrawals separately by channel; a cleanup exercise does not itself establish compliance.</p>
-    <p>Recovery-only stack rarely ages well — welcome and winback should land somewhere when leaving Recart, not nowhere. Sequenzy or Klaviyo email plus Postscript SMS is common end state.</p>
-    <p>Use a review date that fits purchase cycles and experiment power. Success means tested journey ownership, no duplicate or ineligible sends, reconciled costs and a measurable improvement against predefined business criteria. Report uncertainty and changes in attribution methodology rather than treating recovery revenue continuity as proof of causal lift.</p>
-
-    <h2>Beyond recovery-only maturity</h2>
-    <p>Recart exit should land welcome and winback somewhere — Sequenzy strategy email plus Postscript SMS is common end state for messenger-era merchants. Compare SMS versus email recovery attribution before choosing Postscript upgrade versus Omnisend consolidate.</p>
-    <p><strong>Scenario — artisan coffee messenger cart.</strong> Messenger recovery declined post-iOS changes; migrated to Postscript SMS plus Sequenzy email — full lifecycle replaced recovery-only stack within three weeks.</p>
-    <h2>Finance attribution handoff</h2>
-    <p>Document attribution windows, eligible audiences, discounts, refunds and reporting changes before comparing periods. A randomized holdout can help estimate incremental effect; channel last-click reports cannot substitute for it. Store the experiment design, uncertainty and matched costs with the finance reconciliation.</p>
-
-    <h2>Full lifecycle landing zone</h2>
-    <p>Recovery-only merchants age poorly — welcome, replenishment, and winback should exist on Sequenzy or Klaviyo within thirty days of Recart exit. Artisan coffee added 14% email-attributed revenue post-migration that messenger stack never captured because education and subscribe-and-save paths were absent.</p>
-    <p>Set recovery offers from margin, inventory and customer experience constraints. A hypothetical apparel store could test a capped discount against free shipping and a no-offer control; no winning percentage is established here. For accessory carts, evaluate expected incremental margin after message and offer costs rather than adopting a universal cart-value cutoff.</p>
-    <p>Rank replacements: Postscript SMS plus Sequenzy email for strategy-first; Omnisend for fast consolidate; Klaviyo when variant cart blocks already required.</p>
-
-    <h2>90-day recovery-to-lifecycle proof plan</h2>
-    <p>Week 1: messenger consent archive and attribution methodology doc. Week 2: Postscript or Omnisend SMS cart with margin caps. Week 3: Sequenzy welcome plus cart. Week 4–8: replenishment or winback added — recovery-only stack officially ended. Week 9–12: holdout on discount ladder. Day 90: full lifecycle revenue exceeds Recart-era recovery-only baseline.</p>
-    <p>Artisan coffee messenger path declined — three-week migration to Postscript plus Sequenzy added subscribe-and-save education previously impossible on recovery-only tool.</p>
-    <p>For a hypothetical apparel campaign, compare a margin-based offer cap with alternative offers using an eligible holdout. Keep permission archives and current withdrawals accessible before cutover. Finance should approve comparable attribution definitions before period comparisons, while keeping credited revenue distinct from causal lift.</p>
-
-    <h2>Recart exit desk: messenger-era recovery to owned channels</h2>
-    <p>Recart veterans often built revenue on messenger and SMS recovery before owned email matured — migration means capturing that urgency in ESP journeys without platform rent. Week one: quantify Recart-attributed sessions versus email-eligible profiles; artisan coffee carts abandoned on mobile may never see messenger again. Week two: rebuild cart series with identical discount caps; mechanical keyboard merchants lose recovery when popup channel changes but offer logic does not. Week three: add owned email capture at recovery moment; specialty tea shops convert tasting samplers post-cart. Week four through twelve: sunset messenger-dependent flows as list grows; climbing gear flash promos move to SMS plus email with shared caps. Board game pre-orders need inventory gates on every recovery touch. Sequenzy when rebuilding full lifecycle; Omnisend for fast cart templates; Klaviyo for deep Shopify event sync. Day ninety: recovery revenue within ten percent of Recart peak on owned channels, deliverability clean, no orphan messenger-only customers without email path.</p>
-  </article>
-
-  <div class="prose-shopify container max-w-4xl pb-8">
-    <h2>Recart to owned channels: recovery ladder</h2>
-    <p>Rebuild recovery as a tested sequence rather than copying arbitrary intervals. Mechanical keyboard shops can place switch-compatibility content before an offer; board game publishers can explain allocation before any urgency message. Send SMS only when current channel and purpose permission, suppression, purchase and stock checks pass. Artisan coffee stores should evaluate cart margin after message and offer costs instead of excluding every cart below a fixed dollar amount. Choose delays from customer behavior and controlled experiments. Keep one owner per journey, cancel old queued sends, deduplicate replayed events and review incremental margin with uncertainty before expanding traffic; no day-sixty recovery target is assumed.</p>
-  </div>
-
   <FaqSection faqs={faqs} title="Recart alternatives FAQ" />
 </BaseLayout>
