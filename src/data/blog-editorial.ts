@@ -1125,5 +1125,105 @@ export const backInStockEditorial: Record<string, GoalEditorial> = {
     ],
     "denominator": "Unique customer/pack-variant/destination request units actually sent before cutoff; count matching paid purchases within seven days and fulfilled matching orders separately after the declared fulfillment window. Deduplicate lot batches and exclude unrelated plan renewals",
     "handover": "Fulfillment owns lot release, shelf-life and destination rules; lifecycle owner signs cutoff timezone, copy and batch dispositions; finance records spoilage and shipping costs before transfer"
+  },
+  "best-shopify-back-in-stock-email-apps-for-subscription-brands": {
+    "question": "Can a paused subscriber request an exact restock without acquiring member-only access?",
+    "entry": "Confirmed email stock request for one variant with a separately recorded membership-access requirement; subscription billing status is not stock-notice permission",
+    "fields": "request/customer/variant IDs, plan and access source/version/time, paused or cancelled billing state, request permission, sellable observation source/time, episode expiry, copy approval and acknowledgement key",
+    "guard": "Refresh the exact variant and destination, fresh sellable availability and current access entitlement. A paused billing plan neither grants nor necessarily removes storefront access; hold until the access owner resolves the entitlement independently",
+    "purchaseExit": "Paid matching-variant purchase closes the request. Billing renewal or an unrelated subscription shipment does not; withdrawal and expiry close pending work without enrolling the requester in renewal marketing",
+    "retry": "Retain the request/variant/episode key and recheck access on every retry. Reconcile provider acknowledgements before replay; never restart a closed request when a plan resumes",
+    "failure": "A plan-resumed event releases a member-only stock notice to a requester whose access was revoked",
+    "edges": [
+      "Proposed fixture: billing is paused but access remains valid. Expect an eligible exact-variant request to survive billing pause, with current access evidence and stock checks saved; no renewal campaign is created.",
+      "Proposed fixture: access is revoked after selection while billing remains active. Hold the queued notice, reconcile any accepted provider job and route the access discrepancy to the membership owner before retry."
+    ],
+    "handover": "Membership operations owns access disputes; merchandising owns variant freshness; dispatch cover receives permission, access version, acknowledged and held jobs before assuming the sole sender",
+    "nativeRationale": "An approved member restock template can fit Shopify Messaging when the team wants centralized copy review. Choose this candidate only after demonstrating a separate request ledger and current access checks; billing segments alone cannot authorize release",
+    "profileRationale": "Klaviyo filtering is a useful candidate when maintained membership properties support eligibility review. Demonstrate independent billing and access fields, simultaneous variant requests and permanent closure in the offered account before selection",
+    "acceptance": "Propose both membership fixtures with recorded expected and actual dispositions. Require distinct billing/access evidence and a matching-purchase exit; do not accept a renewal event as permission. Compare access reconciliation work and integration cost for the same cohort. These are proposed acceptance exercises, not performed merchant tests. Hold selection for unknown state or an unowned queue.",
+    "audience": "subscription brands",
+    "goal": "back-in-stock email apps",
+    "denominator": "Unique permitted live customer/variant requests actually sent in this restock episode; numerator is those same request units with a paid matching-variant purchase within seven days of dispatch. Deduplicate retries, exclude test orders and report uncertain acknowledgements separately until reconciled"
+  },
+  "best-shopify-back-in-stock-email-apps-for-shopify-plus-merchants": {
+    "question": "Can a Plus restock release survive a catalog approval change without treating the plan as authorization?",
+    "entry": "Confirmed exact-variant stock request linked to a specific company location and approved catalog revision, independent of general marketing membership",
+    "fields": "request/customer/company-location/variant IDs, catalog and approval revision, approver, destination and entitlement timestamps, sellable observation source/time, copy approval, episode expiry and dispatch receipt",
+    "guard": "Refresh company-location authorization, published catalog revision, destination and fresh sellable availability before dispatch. Plus status is not catalog approval; hold removed or ambiguous catalog access even when global stock is positive",
+    "purchaseExit": "Matching-variant paid purchase for the requesting company location closes its request; another location order does not silently consume it. Withdrawal, approval revocation and expiry close or hold pending work with explicit dispositions",
+    "retry": "Use the company-location/request/variant/episode key. Reconcile uncertain acknowledgements before retry and require an approved current catalog revision; never inherit authority from a superseded approval",
+    "failure": "An enterprise stock batch sends an obsolete catalog link after the approver withdraws that company location from the release",
+    "edges": [
+      "Proposed fixture: an approver revokes a catalog revision after selection. Expect unsent jobs held and approved destination/version evidence required before release; accepted jobs receive an explicit acknowledged disposition.",
+      "Proposed fixture: one buyer requests the same variant at two company locations and purchases at one. Close only the matching location request and recheck catalog access for the other, without merging distinct authorization contexts."
+    ],
+    "handover": "Catalog approver signs revision and location scope; commerce operations owns access refresh; dispatch owner transfers the sole sender only with location-level holds, closures and provider receipts",
+    "nativeRationale": "Shopify Messaging is a useful drafting candidate for a catalog-approved batch where one approver maintains the copy. Selection requires demonstrated company-location request records and dispatch authorization checks beyond customer segments",
+    "profileRationale": "Klaviyo conditions can help review maintained eligibility properties across enterprise workflows. Select it only if the team demonstrates location-scoped requests and current catalog approvals without flattening them into one customer flag",
+    "acceptance": "Propose approval revocation and two-location purchase traces. Require catalog revision, approver, location-specific closure and queue disposition evidence. Compare ongoing approval maintenance and integration quotes before choosing a sender. These are proposed acceptance exercises, not performed merchant tests. Hold selection for unknown state or an unowned queue.",
+    "audience": "Shopify Plus merchants",
+    "goal": "back-in-stock email apps",
+    "denominator": "Unique permitted live customer/company-location/variant requests actually sent in this restock episode; numerator is those same request units with a paid matching-variant purchase within seven days of dispatch. Deduplicate retries, exclude test orders and report uncertain acknowledgements separately until reconciled"
+  },
+  "best-shopify-back-in-stock-email-apps-for-international-merchants": {
+    "question": "Can a stock notice still be fulfilled in the requested destination before its local window closes?",
+    "entry": "Confirmed email request for one variant in a declared destination and notification window; language preference alone does not establish the destination",
+    "fields": "request/customer/variant IDs, destination country, market and currency, shipping eligibility, timezone/window, approved localized URL/copy version, permission, sellable source/time and episode receipt",
+    "guard": "Refresh exact-variant sellability in the destination, approved URL/currency, shipping eligibility and local cutoff using an owned timezone rule. Hold changed destinations or stale observations; stock in another market cannot release this request",
+    "purchaseExit": "A paid matching-variant purchase for this destination closes the request; an unrelated market purchase requires reconciliation. Withdrawal or the declared local expiry terminates queued notices without rolling them into tomorrow",
+    "retry": "Keep request/variant/destination/episode identity and reconcile acknowledgements before replay. Recompute the local window and freshness; a destination change needs renewed review rather than automatic translation and resend",
+    "failure": "A translated notice points to stock that cannot ship to the requester before the destination cutoff",
+    "edges": [
+      "Proposed fixture: the requester changes country after selection. Hold the old destination job; require current shipping, currency, URL and permission evidence before any reviewed release to the new destination.",
+      "Proposed fixture: a retry crosses the local cutoff during a timezone change. Expire the job, record the timezone calculation and reconcile any provider acceptance; do not extend the promise to clear the backlog."
+    ],
+    "handover": "Market owner approves localized promise and timezone; fulfillment owns destination eligibility; support and dispatch cover receive expired jobs, destination exceptions and acknowledged receipts",
+    "nativeRationale": "Shopify Messaging is useful for an owner-approved localized restock template with a selected audience. Choose it only after demonstrating destination-scoped request records and fresh shipping/window checks outside copy selection",
+    "profileRationale": "Klaviyo filtering is useful when maintained market properties support destination review. Require separate request-level destination history and cutoff evaluation so a language property cannot silently redirect stock notices",
+    "acceptance": "Propose the country-change and cutoff fixtures, saving destination, timestamp, timezone and expected versus actual queue states. Compare matched integration and localization work; no merchant exercises have been performed. These are proposed acceptance exercises, not performed merchant tests. Hold selection for unknown state or an unowned queue.",
+    "audience": "international merchants",
+    "goal": "back-in-stock email apps",
+    "denominator": "Unique permitted live customer/variant/destination requests actually sent in this restock episode; numerator is those same request units with a paid matching-variant purchase within seven days of dispatch. Deduplicate retries, exclude test orders and report uncertain acknowledgements separately until reconciled"
+  },
+  "best-shopify-back-in-stock-email-apps-for-new-shopify-stores": {
+    "question": "Can a first restock distinguish a live request from rehearsal when order history is empty?",
+    "entry": "Confirmed live email request for an exact sold-out variant, explicitly separated from owner rehearsal identities and test orders",
+    "fields": "live/test mode, request/customer/variant IDs, permission source/time, publication and sellable observation source/time, owner freshness limit, rehearsal receipt, live approval, episode expiry and provider acknowledgement",
+    "guard": "Require owned live evidence of variant publication, destination and fresh sellable availability. Empty purchase history does not establish consent or demand. Hold the first batch until a live-state destination check and separate rehearsal review are signed",
+    "purchaseExit": "Only a live paid matching-variant purchase closes a live request. Rehearsal purchases prove a proposed branch only; withdrawal and expiry terminate pending live work without promoting test contacts into the queue",
+    "retry": "Keep live and rehearsal keys and acknowledgement ledgers separate. Reconcile uncertain live receipts before retry, refresh stock and permission, and never infer success or safe replay from an empty event log",
+    "failure": "An owner test purchase suppresses a real stock request and a single rehearsal send is reported as merchant conversion evidence",
+    "edges": [
+      "Proposed fixture: the owner uses the same email for rehearsal and a live request. Expect mode-specific ledgers and a test order unable to close the live variant request; save both dispositions.",
+      "Proposed fixture: first live inventory evidence is missing and no notices were sent. Hold dispatch for a dated sellable observation and signed live destination check; report zero sends with no rate, rather than treating the rehearsal as proof."
+    ],
+    "handover": "Store owner approves the first live batch and freshness limit; named cover receives separate rehearsal/live ledgers, held observations, acknowledged jobs and pause instructions",
+    "nativeRationale": "Shopify Messaging offers a useful familiar template workspace for a first owner-approved notice. Selection requires a demonstrated live request register and explicit rehearsal separation before unattended sending",
+    "profileRationale": "Klaviyo filtering is a useful candidate when explicit live/test properties can organize the growing workflow. Require request-level evidence and mode-specific purchase exits instead of inferring intent from sparse profiles",
+    "acceptance": "Propose shared-identity rehearsal and missing-live-evidence traces with expected and actual states. Require signed live checks and zero-denominator treatment. Compare register upkeep and setup cost before introducing another sender. These are proposed acceptance exercises, not performed merchant tests. Hold selection for unknown state or an unowned queue.",
+    "audience": "new Shopify stores",
+    "goal": "back-in-stock email apps",
+    "denominator": "Unique permitted live customer/variant requests actually sent in this restock episode; numerator is those same request units with a paid matching-variant purchase within seven days of dispatch. Deduplicate retries, exclude test orders and report uncertain acknowledgements separately until reconciled"
+  },
+  "best-shopify-back-in-stock-email-apps-for-high-volume-stores": {
+    "question": "Can a large restock batch stop after a single-unit race without replaying accepted notices?",
+    "entry": "Confirmed exact-variant email requests admitted to a finite restock episode with an approved contact budget, batch watermark and expiry",
+    "fields": "request/customer/variant/episode IDs, queue order and batch watermark, permission/purchase refresh, sellable source/time and freshness limit, allocation policy, cutoff, attempt/acknowledgement IDs and unresolved dispositions",
+    "guard": "Refresh permission, exact-variant sellability and destination before each batch; use an operator-approved batch size and ordering policy. A single sellable unit does not justify a claim that every selected requester can buy; email never reserves inventory. Stop dispatch on depletion, stale state or cutoff",
+    "purchaseExit": "A paid matching-variant purchase closes only that customer request; depletion holds other unsent jobs until fresh evidence within the same approved budget. Withdrawal or expiry closes work and does not create another restock episode automatically",
+    "retry": "Resume only reconciled request/variant/episode keys after joining provider receipts to per-request state. Watermark advancement is not acknowledgement. Hold uncertain attempts and recheck depletion before retry; never replay the entire batch after timeout",
+    "failure": "Two workers select the same single unit, advance watermarks and replay accepted notices while inventory has already disappeared",
+    "edges": [
+      "Proposed fixture: two workers observe one sellable unit and a matching purchase consumes it between batches. Expect one dispatch owner, documented contact budget and a depletion hold for unsent jobs; no reservation or guaranteed purchase is claimed.",
+      "Proposed fixture: the provider accepts a batch but its response is lost as the backlog reaches expiry. Hold uncertain jobs, reconcile receipts and close expired unsent work; restarting from the watermark must not resend acknowledged requests."
+    ],
+    "handover": "Dispatch on-call owns batch pause and sole-sender transfer; inventory operations owns freshness and depletion decisions; backup receives watermark, per-request receipts, expired jobs and unresolved acknowledgements",
+    "nativeRationale": "Shopify Messaging is a useful template candidate when a finite batch fits demonstrated operator controls. Require an independent request ledger, stock refresh and reconciliation demonstration; segment selection alone does not resolve competing workers",
+    "profileRationale": "Klaviyo filtering is useful for maintained purchase and eligibility conditions in a larger workflow. Select it only alongside demonstrated request-level reconciliation and batch ownership; profile conditions are not inventory locks",
+    "acceptance": "Propose the single-unit race and lost-response/expiry fixtures. Require per-request receipts, observed depletion holds and documented ordering decisions before restart. Compare reconciliation labor and integration cost at the same deduplicated request volume. These are proposed acceptance exercises, not performed merchant tests. Hold selection for unknown state or an unowned queue.",
+    "audience": "high-volume stores",
+    "goal": "back-in-stock email apps",
+    "denominator": "Unique permitted live customer/variant requests actually sent in this restock episode; numerator is those same request units with a paid matching-variant purchase within seven days of dispatch. Deduplicate retries, exclude test orders and report uncertain acknowledgements separately until reconciled"
   }
 };
