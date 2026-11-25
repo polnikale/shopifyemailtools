@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import { welcomeEditorial, cartEditorial, postPurchaseEditorial, winBackEditorial, launchEditorial, backInStockEditorial } from '../../data/blog-editorial';
+import { vipEditorial } from '../../data/blog-vip-editorial';
 import { reviewEditorial } from '../../data/blog-review-editorial';
 import { getBlogPaths } from '../../data/blog-topics';
 
@@ -11,6 +12,7 @@ export function getStaticPaths() {
 
 const { topic } = Astro.props;
 const editorial = { ...welcomeEditorial, ...cartEditorial, ...postPurchaseEditorial, ...winBackEditorial, ...launchEditorial, ...backInStockEditorial }[Astro.params.slug ?? ''];
+const vip = vipEditorial[Astro.params.slug ?? ''];
 const review = reviewEditorial[Astro.params.slug ?? ''];
 const isStock = editorial?.goal === 'back-in-stock email apps';
 const isLaunch = editorial?.goal === 'product launch email apps';
@@ -179,7 +181,28 @@ const narratives: Record<string, { one: string; two: string; pilot: string }> = 
       <a href="/" class="text-sm text-neutral-500 mb-5 inline-block">← Shopify email app guide</a>
       <h1 class="section-title">{title}</h1>
       <p class="section-description">The right Shopify email app depends on catalog events, fulfillment state, consent, message frequency, and the team operating the flows. This guide focuses on {topic.goal} for {topic.audience}.</p>
-      {review ? <>
+      {vip ? <>
+        <h2>{vip.question}</h2><p>Proposed acceptance exercises for {vip.audience}; no merchant tests, results or supplier rankings are claimed.</p>
+        <h2>Membership, benefits and dispatch contract</h2>
+        <dl>
+          <dt>Qualification and requalification</dt><dd>{vip.entry}</dd>
+          <dt>Required bindings</dt><dd>{vip.fields}</dd>
+          <dt>Benefit approval, permission and access</dt><dd>{vip.guard}</dd>
+          <dt>Returns, refunds and closure</dt><dd>{vip.purchaseExit}</dd>
+          <dt>Queue ownership and retries</dt><dd>{vip.retry}</dd>
+        </dl>
+        <h2>Two conditional supplier fits</h2>
+        <h3>Shopify Messaging</h3><p>{vip.nativeRationale}</p>
+        <h3>Klaviyo</h3><p>{vip.profileRationale}</p>
+        <p>Primary scope checked November 25, 2026: <a href="https://help.shopify.com/en/manual/customers/customer-segmentation/manage-customer-segments">Shopify segment management</a> describes sending campaigns to selected customer segments. <a href="https://help.klaviyo.com/hc/en-us/articles/115005065707">Klaviyo VIP segmentation</a> describes identifying VIP profiles. These sources establish segmentation scope, not membership administration, benefit approval or storefront authorization. Demonstrate those controls in the actual account.</p>
+        <h2>Two proposed edge fixtures</h2><ol>{vip.edges.map(edge => <li>{edge}</li>)}</ol>
+        <p>{vip.acceptance}</p><p>Failure to catch: {vip.failure}</p>
+        <h2>Measurement and handover</h2><p>{vip.denominator}</p><p>{vip.handover}</p>
+        <h2>VIP questions</h2>
+        <h3>Does a member email unlock the catalog?</h3><p>No. A separate storefront authorization check must enforce access for the current signed-in identity, even for forwarded or expired links.</p>
+        <h3>Does a refund always remove membership?</h3><p>Apply the published retained-purchase policy and reconcile the membership episode; do not use a universal revenue cutoff.</p>
+        <h3>Where can the operator inspect audience rules?</h3><p>Review <a href="https://help.shopify.com/en/manual/customers/customer-segmentation/manage-customer-segments">Shopify customer segments</a> or <a href="https://help.klaviyo.com/hc/en-us/articles/115005065707">Klaviyo VIP segment criteria</a>, then reconcile them with the separate membership and benefit ledger.</p>
+      </> : review ? <>
         <h2>{review.question}</h2>
         <p>These are proposed acceptance exercises for {review.audience}, not performed merchant tests or supplier rankings.</p>
         <h2>Review request readiness and ownership contract</h2>
